@@ -25,6 +25,9 @@ print = functools.partial(print, flush=True)
 # Load data
 print(now() + ": Loading data")
 X = np.loadtxt('data/genes_tpm_values.gct', delimiter='\t')
+y = np.loadtxt('data/tissue_types_matched.tsv', delimiter='\t', dtype='str')
+y = y[:,1]
+y = np.char.strip(y)
 
 # Perform log2 transformation and transpose
 print(now() + ": Transposing and performing log2 transformation")

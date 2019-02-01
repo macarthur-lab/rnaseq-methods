@@ -1,10 +1,13 @@
 import os.path
 import sys
+import functools
 import numpy as np
 from sklearn.preprocessing import StandardScaler, RobustScaler, Normalizer
 from sklearn.decomposition import PCA
 import pickle 
 import datetime
+
+print = functools.partial(print, flush=True)
 
 def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_of_interest=None, log_transform = True, scaling = 'standard', n_components = None, save_pca = True, pca_name = "GTEx_pca", save_scaler = True):
 	""" Given a set of gene expression values, run an exploratory Principal Component Analysis (PCA) and store the loadings.
@@ -29,10 +32,10 @@ def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_o
 		print("Only one of the following parameters can be set: data or file_path")
 		sys.exit()
 		
-	if A:
+	if not A:
 		tpms = np.asarray(data)
 
-	if B:
+	if not B:
 		if not os.path.exists(file_path):	
 			print("Please provide a valid file")
 			sys.exit()
