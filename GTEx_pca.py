@@ -9,7 +9,8 @@ import datetime
 def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_of_interest=None, log_transform = True, scaling = 'standard', n_components = None, save_pca = True, pca_name = "GTEx_pca", save_scaler = True):
 	""" Given a set of gene expression values, run an exploratory Principal Component Analysis (PCA) and store the loadings.
 
-	:param file_path (str):			file path of tab separated gene expression values
+	:param data (Numpy arr):		data to be analyzed as numpy array (default None)
+	:param file_path (str):			file path of tab separated gene expression values (default None)
 	:param transpose (bool):		transpose gene expression values matrix (default True)
 	:param tissues (str):			file path of tissues corresponding to each sample [id, tissue, subtissue] (optional)
 	:param tissues_of_interest (str array):	tissues in which to perform PCA (optional)
@@ -100,6 +101,7 @@ def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_o
 		file_name = str(pca_name) + "." + scaling + "_scaler.object"
 		pickle.dump(pca, open(file_name, 'wb'), protocol=4)
 
+	print(now() + ": Finishing pca and scaling execution")
 	return pca, scaler	
 
 def now():
