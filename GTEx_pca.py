@@ -6,10 +6,10 @@ from sklearn.decomposition import PCA
 import pickle 
 import datetime
 
-def run_pca(file, transpose=True, tissues = None, tissues_of_interest=None, log_transform = True, scaling = 'standard', n_components = None, save_pca = True, pca_name = "GTEx_pca"):
+def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_of_interest=None, log_transform = True, scaling = 'standard', n_components = None, save_pca = True, pca_name = "GTEx_pca", save_scaler = True):
 	""" Given a set of gene expression values, run an exploratory Principal Component Analysis (PCA) and store the loadings.
 
-	:param file (str):			file path of tab separated gene expression values
+	:param file_path (str):			file path of tab separated gene expression values
 	:param transpose (bool):		transpose gene expression values matrix (default True)
 	:param tissues (str):			file path of tissues corresponding to each sample [id, tissue, subtissue] (optional)
 	:param tissues_of_interest (str array):	tissues in which to perform PCA (optional)
@@ -18,18 +18,29 @@ def run_pca(file, transpose=True, tissues = None, tissues_of_interest=None, log_
 	:param n_components (int):		number of principal components to store. If 'None', all are stored (default None)
 	:param save_pca (bool):			store sklearn.decomposition.PCA object fitted to data as pickle object (default True) 			
 	:param pca_name (str):			basename of files to be stored (default 'GTEx_pca')
-
+	:param save_scaler (bool):		store sklearn.preprocessing object fitted to data as pickle object (default True)
 	"""
 
-	if not os.path.exists(file):	
-		print("Please provide a valid file")
+	A = data is None
+	B = file_path is None
+
+	if (A and B) or (not A and not B):
+		print("Only one of the following parameters can be set: data or file_path")
 		sys.exit()
+		
+	if A:
+		tpms = np.asarray(data)
 
-	print(now() + ": Loading " + file)
-	tpms = np.loadtxt(file, delimiter='\t')
+	if B:
+		if not os.path.exists(file_path):	
+			print("Please provide a valid file")
+			sys.exit()
 
-	print(now() + ": Transposing")
+		print(now() + ": Loading " + file)
+		tpms = np.loadtxt(file, delimiter='\t')
+
 	if transpose:
+		print(now() + ": Transposing")
 		tpms = tpms.transpose()
 	
 	if tissues_of_interest is not None:
@@ -70,6 +81,8 @@ def run_pca(file, transpose=True, tissues = None, tissues_of_interest=None, log_
 		print(now() + ": Scaling data")
 		scaler.fit(tpms)
 		tpms = scaler.transform(tpms)
+	else:
+		scaler = None
 
 	print(now() + ": Performing PCA")
 	pca = PCA(n_components=n_components, random_state = 42, svd_solver = 'full')
@@ -82,12 +95,12 @@ def run_pca(file, transpose=True, tissues = None, tissues_of_interest=None, log_
 		pickle.dump(pca, open(file_name, 'wb'), protocol=4)
 		# file_name.close()
 	
-	print(now() + ": Transforming principal components")
-	pcs = pca.transform(tpms)
-	
-	print(now() + ": Saving loadings")
-	pcs_file_name = pca_name + "_pcs.tsv"
-	np.savetxt(pcs_file_name, pcs, delimiter='\t')
-	
+	if save_scaler and scaling is not None:
+		print(now() + ": Saving scaler object")
+		file_name = str(pca_name) + "." + scaling + "_scaler.object"
+		pickle.dump(pca, open(file_name, 'wb'), protocol=4)
+
+	return pca, scaler	
+
 def now():
 	return(str(datetime.datetime.now()))
