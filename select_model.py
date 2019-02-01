@@ -1,4 +1,6 @@
-from GTEX_pca import *
+import sys
+import functools
+from GTEx_pca import *
 from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import StandardScaler, RobustScaler, Normalizer
 # from sklearn.decomposition import PCA
@@ -6,8 +8,10 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
-
 from sklearn.metrics import accuracy_score
+
+print = functools.partial(print, flush=True)
+
 
 # Naive bayes
 # https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB
@@ -24,7 +28,7 @@ X = np.loadtxt('data/genes_tpm_values.gct', delimiter='\t')
 
 # Perform log2 transformation and transpose
 print(now() + ": Transposing and performing log2 transformation")
-X = X.transpose
+X = X.transpose()
 X = np.log2(X + 1)
 
 # Train test split
