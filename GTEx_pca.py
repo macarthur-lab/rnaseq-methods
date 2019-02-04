@@ -23,6 +23,9 @@ def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_o
 	:param save_pca (bool):			store sklearn.decomposition.PCA object fitted to data as pickle object (default True) 			
 	:param pca_name (str):			basename of files to be stored (default 'GTEx_pca')
 	:param save_scaler (bool):		store sklearn.preprocessing object fitted to data as pickle object (default True)
+
+	:r pca (obj):				sklearn.decomposition.PCA object fitted to data
+	:r scaler (obj):			sklearn.preprocessing object with selected scaler fitted to data. If 'scaling' == 'None', then 'None' is returned
 	"""
 
 	A = data is None
