@@ -6,16 +6,21 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
+from sklearn.svm import SVC, LinearSVC
 from sklearn.metrics import accuracy_score
 
 print = functools.partial(print, flush=True)
 
+def get_accuracy(classifier, X_train, y_train, X_test, y_test):
+    classifier.fit(X_train, y_train)
+    y_pred = classifier.predict(X_test)
+    return accuracy_score(y_test, y_pred)
+
 classifiers_to_use = {
-    'gnb': {'classifier': GaussianNB(), 'acc'=[]},
-    'knn': {'classifier': KNeighborsClassifier(n_neighbors=7), 'acc'=[]},
-    'lr': {'classifier': LogisticRegression(randome_state = 42, solver = 'lbfgs', multi_class='ovr', n_jobs = -1), 'acc' = []},
-    'lin_svc': {'classifier': LinearSVC(multi_class='ovr', random_state = 42, max_iter = 2500), 'acc' = []}
+    'gnb': {'classifier': GaussianNB(), 'acc': []},
+    'knn': {'classifier': KNeighborsClassifier(n_neighbors=7), 'acc': []},
+    'lr': {'classifier': LogisticRegression(random_state = 42, solver = 'lbfgs', multi_class='ovr', n_jobs = -1), 'acc': []},
+    'lin_svc': {'classifier': LinearSVC(multi_class='ovr', random_state = 42, max_iter = 2500), 'acc': []}
 }
 
 
@@ -36,7 +41,7 @@ print(now() + ": Splitting into training and test sets")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .20, random_state = 42, stratify = y)
 
 # Get pca and scaler fitted to training set
-pca, scaler = run_pca(data = X_train, transpose = False, log_transform = False, scaling = "normalizer", n_components = 500, save_pca = True, save_scaler = True, pca_name = "training_pca_2")
+pca, scaler = run_pca(data = X_train, transpose = False, log_transform = False, scaling = "normalizer", n_components = 40, save_pca = True, save_scaler = True, pca_name = "training_pca_2")
 
 print(now() + ": Normalizing sets")
 X_train = scaler.transform(X_train)
@@ -58,12 +63,9 @@ for i in pcs:
         classifiers_to_use[method]['acc'].append(get_accuracy(classifiers_to_use[method]['classifier'], X_train_slice, y_train, X_test_slice, y_test))
 	
 print(now() + ": Saving accuracy scores")
+
 for method in classifiers_to_use:
     np.savetxt(method, np.asarray(classifiers_to_use[method]['acc']))
 
-def get_accuracy(classifier, X_train, y_train, X_test, y_test):
-    classifier.fit(X_train, y_train)
-    y_pred = classifier.predict(X_test)
-    return accuracy_score(y_test, y_pred)
 
 
