@@ -43,8 +43,8 @@ def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_o
 			print("Please provide a valid file")
 			sys.exit()
 
-		print(now() + ": Loading " + file)
-		tpms = np.loadtxt(file, delimiter='\t')
+		print(now() + ": Loading " + file_path)
+		tpms = np.loadtxt(file_path, delimiter='\t')
 
 	if transpose:
 		print(now() + ": Transposing")
