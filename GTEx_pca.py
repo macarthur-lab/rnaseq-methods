@@ -105,7 +105,7 @@ def run_pca(data=None, file_path=None, transpose=True, tissues = None, tissues_o
 	if save_scaler and scaling is not None:
 		print(now() + ": Saving scaler object")
 		file_name = str(pca_name) + "." + scaling + "_scaler.object"
-		pickle.dump(pca, open(file_name, 'wb'), protocol=4)
+		pickle.dump(scaler, open(file_name, 'wb'), protocol=4)
 
 	print(now() + ": Finishing pca and scaling execution")
 	return pca, scaler	

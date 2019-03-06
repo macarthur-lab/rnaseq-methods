@@ -8,9 +8,10 @@ SAMPLE_NAME=$(basename ${BAM})
 	rnaseqc.v2.1.2.linux ${GTF_REFERENCE} ${BAM} --coverage .
 # 
 
-if [ ! -f ${BAM}.gene_tpm.gct ]
-	exit
+if [ ! -f ${SAMPLE_NAME}.gene_tpm.gct ]
+then
+	exit $?
 fi
 
-tail -n+4 ${BAM}.gene_tpm.gct | sort | cut -f3 >> gene_tpm.gct
+tail -n+4 ${SAMPLE_NAME}.gene_tpm.gct | sort | cut -f3 >> gene_tpm.gct
 
