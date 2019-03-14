@@ -1,6 +1,6 @@
 import functools
 import numpy as np
-from model import *
+from model_funcs import *
 
 print = functools.partial(print, flush=True)
 
@@ -44,11 +44,12 @@ model = np.array(list(splices.values()))
 # filter
 to_keep = []
 for i in range(0, len(model)):
-    props = model[i, 1:]
+    props = model[i]
     if len(props[props > 0]) / num_samples > min_samples:
         to_keep.append(i)
 
-with open('NEB_model_no_annotation', 'a') as model:
-     for key in splices:
-        mystr = ' '.join(splices[key])
-        model.write(key + ' ' + mystr + '\n')
+splice_sites = np.array(list(splices.keys()))
+splice_sites = ' '.join(splice_sites[to_keep])
+
+print("Saving finished model")
+np.savetxt('NEB_model_no_annotation_filtered', model[to_keep].transpose(), delimiter=' ', header=splice_sites)
