@@ -1,20 +1,22 @@
 from model import *
 
 splice_file = '/home/jperezde/work/NEB_prop_model/153BR_JB_M1.splicing.txt'
-model_file = '/home/jperezde/work/NEB_prop_model/NEB_model_no_annotation'
+model_file = '/home/jperezde/work/NEB_prop_model/NEB_model_no_annotation_filtered'
 
-model = np.loadtxt(model_file, delimiter=' ', dtype='str')
-model_splices = model[:, 0]
-model_prop = model[:, 1:]
+with open(model_file) as f:
+	model_splices = f.readline()
+
+model_splices = np.fromstring(model_splices, dtype='str', sep=' ')
+
+model_prop = np.loadtxt(model_file, delimiter=' ', skiprows=1)
 num_controls = len(model[0]) - 1
-zeros = np.zeros(num_controls)
 
 patient_splices, patient_prop = detect_and_count(splice_file)
 joined_splices = np.concatenate((model_splices, patient_splices), axis=None)
 joined_splices = np.unique(joined_splices)
 
 len_comparison_model = len(joined_splices)
-comparison_model = np.asarray([zeros], dtype='str')
+comparison_model = np.zeros((num_controls, len_comparison_model))
 
 for i in range(0, len(joined_splices)):
 	key = joined_splices[i]
