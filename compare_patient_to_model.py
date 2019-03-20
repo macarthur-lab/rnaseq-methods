@@ -37,4 +37,4 @@ patient_splices = ' '.join(patient_splices)
 joined_splices = ' '.join(joined_splices)
 
 np.savetxt('NEB_comparison_model', comparison_model, delimiter=' ', header=patient_splices)
-np.savetxt('NEB_patient_model', patient_prop.reshape(1, len(patient_prop)), delimiter=' ', header=joined_splices)
+np.savetxt('NEB_patient_model', patient_prop.reshape(1, len(patient_prop)), delimiter=' ', header=patient_splices)
