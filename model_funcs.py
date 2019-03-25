@@ -1,6 +1,13 @@
 import numpy as np
 
 def detect_and_count(splice_file):
+	"""Given a file with splice sites, calculate the proportion in which they occur in each gene
+	
+	:param splice_file (tab separated file):	splice file
+
+	:r splices (numpy array):	location of splice sites in genome (chrom:start-end)
+	:r prop (numpy array):		proportion of splice occurence in gene
+	"""
 	splices = np.asarray([], dtype='str')
 	counts = np.asarray([])
 

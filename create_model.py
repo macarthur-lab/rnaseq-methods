@@ -6,7 +6,6 @@ print = functools.partial(print, flush=True)
 
 # filters
 min_samples = .05
-# min_uniq_proportion = 
 
 splices = {}
 
