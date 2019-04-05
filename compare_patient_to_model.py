@@ -29,7 +29,7 @@ for i in range(0, len(joined_splices)):
         patient_splices = np.append(patient_splices, key)
         patient_prop = np.append(patient_prop, 0)
 
-    elif len(patient_idx) != 0 and len(model_idx) != 0:
+    elif len(model_idx) != 0:
     # splice site in patient and model
         comparison_model[:,i] = model_prop[:,model_idx[0]]
 
