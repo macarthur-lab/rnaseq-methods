@@ -14,9 +14,9 @@ def detect_and_count(splice_file):
 	with open(splice_file, 'r') as f:
 		for splice_event in f:
 			splice_event = splice_event.rstrip('\n').split()
-			chrom = splice_event[2]
-			start = splice_event[3]
-			end = splice_event[4]
+			chrom = splice_event[3]
+			start = splice_event[4]
+			end = splice_event[5]
 			key = chrom + ':' + start + '-' + end
 
 			if key not in splices:

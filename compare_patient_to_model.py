@@ -1,9 +1,6 @@
 import argparse
 from model_funcs import *
 
-splice_file = '/home/jperezde/work/NEB_prop_model/26I_SK_M1.splicing.txt'
-model_file = '/home/jperezde/work/NEB_prop_model/NEB_model_no_annotation_filtered'
-
 def main(args):
     with open(args.model) as f:
         model_splices = f.readline().rstrip('\n').split(' ')
@@ -38,13 +35,13 @@ def main(args):
     patient_splices = ' '.join(patient_splices)
     joined_splices = ' '.join(joined_splices)
 
-    np.savetxt('NEB_26I_SK_M1_comparison_model', comparison_model, delimiter=' ', header=patient_splices)
-    np.savetxt('NEB_26I_SK_M1_patient_model', patient_prop.reshape(1, len(patient_prop)), delimiter=' ', header=patient_splices)
+    np.savetxt(str(args.base_name + '_comparison_model'), comparison_model, delimiter=' ', header=patient_splices)
+    np.savetxt(str(args.base_name + '_patient_model'), patient_prop.reshape(1, len(patient_prop)), delimiter=' ', header=patient_splices)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Compare patient splicing against model")
     parser.add_argument('--model', help = "File path of gene model", required = True)
     parser.add_argument('--patient_splices', help = "File with patient splices", required = True)
-    parser.add_arguemnt('--base_name', help = "Base name of files to be saved", default = '')
+    parser.add_argument('--base_name', help = "Base name of files to be saved", default = '')
     args=parser.parse_args()
     main(args)

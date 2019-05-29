@@ -45,8 +45,8 @@ def main(args):
     to_keep = []
     for i in range(0, len(model)):
         props = model[i]
-        if len(props[props > 0]) / num_samples > min_samples:
-            to_keep.append(i)
+        #if len(props[props > 0]) / num_samples > min_samples:
+        to_keep.append(i)
 
     splice_sites = np.array(list(splices.keys()))
     splice_sites = ' '.join(splice_sites[to_keep])
