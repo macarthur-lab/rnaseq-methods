@@ -16,12 +16,16 @@ def detect_and_count(splice_file):
     i = -1
     with open(splice_file, 'r') as f:
         for splice_event in f:
+            i += 1
             splice_event = splice_event.rstrip('\n').split()
             gene = splice_event[0]
             chrom = splice_event[3]
             start = splice_event[4]
             end = splice_event[5]
             key = chrom + ':' + start + '-' + end
+
+            if i == 0:
+                current_gene = gene
 
             if key not in splices:
                 splices = np.append(splices, key)
@@ -33,9 +37,12 @@ def detect_and_count(splice_file):
                 gene_total = np.sum(counts[current_gene_start:i])
                 counts[current_gene_start:i] = np.divide(counts[current_gene_start:i], gene_total)
                 current_gene_start = i
-
     # account for very last gene
     gene_total = np.sum(counts[current_gene_start:i+1])
+    # print('Current gene start: ' + str(current_gene_start) + 'i: ' + str(i))
     counts[current_gene_start:i] = np.divide(counts[current_gene_start:i+1], gene_total)
+    print(counts)
+    print(gene)
+    print('')
 
     return splices, counts
