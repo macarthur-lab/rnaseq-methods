@@ -34,17 +34,13 @@ def detect_and_count(splice_file):
             counts[np.where(splices == key)[0][0]] += 1
 
             if gene != current_gene:
-                print(current_gene)
-                print(current_gene_start)
                 gene_total = np.sum(counts[current_gene_start:(counts.size - 1)])
-                print(gene_total)
-                print(counts)
                 counts[current_gene_start:(counts.size - 1)] = np.divide(counts[current_gene_start:(counts.size - 1)], gene_total)
                 current_gene_start = counts.size - 1
                 current_gene = gene
 
     # account for very last gene
     gene_total = np.sum(counts[current_gene_start:counts.size])
-    # print('Current gene start: ' + str(current_gene_start) + 'i: ' + str(i))
     counts[current_gene_start:counts.size] = np.divide(counts[current_gene_start:counts.size], gene_total)
+
     return splices, counts
