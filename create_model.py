@@ -58,5 +58,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Build gene model based on splice file")
     parser.add_argument('--splices', help = "File with paths of splice files", required = True)
     parser.add_argument('--name', help = "Name of model file to save", default = "gene_model")
+    parser.add_argument('--filter', help = "Filter junctions", action="store_true")
     args=parser.parse_args()
     main(args)
