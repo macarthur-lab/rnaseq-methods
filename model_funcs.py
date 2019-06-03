@@ -12,11 +12,10 @@ def detect_and_count(splice_file):
     counts = np.asarray([])
 
     current_gene = ''
-    current_gene_start = 0
-    i = -1
+    current_gene_start = -1
+
     with open(splice_file, 'r') as f:
         for splice_event in f:
-            i += 1
             splice_event = splice_event.rstrip('\n').split()
             gene = splice_event[0]
             chrom = splice_event[3]
@@ -24,8 +23,9 @@ def detect_and_count(splice_file):
             end = splice_event[5]
             key = chrom + ':' + start + '-' + end
 
-            if i == 0:
+            if current_gene_start == 1:
                 current_gene = gene
+                current_gene_start = 0
 
             if key not in splices:
                 splices = np.append(splices, key)
@@ -33,16 +33,18 @@ def detect_and_count(splice_file):
 
             counts[np.where(splices == key)[0][0]] += 1
 
-            if gene != current_gene and i != 0:
-                gene_total = np.sum(counts[current_gene_start:i])
-                counts[current_gene_start:i] = np.divide(counts[current_gene_start:i], gene_total)
-                current_gene_start = i
-    # account for very last gene
-    gene_total = np.sum(counts[current_gene_start:i+1])
-    # print('Current gene start: ' + str(current_gene_start) + 'i: ' + str(i))
-    counts[current_gene_start:i] = np.divide(counts[current_gene_start:i+1], gene_total)
-    print(counts)
-    print(gene)
-    print('')
+            if gene != current_gene:
+                print(current_gene)
+                print(current_gene_start)
+                gene_total = np.sum(counts[current_gene_start:(counts.size - 1)])
+                print(gene_total)
+                print(counts)
+                counts[current_gene_start:(counts.size - 1)] = np.divide(counts[current_gene_start:(counts.size - 1)], gene_total)
+                current_gene_start = counts.size - 1
+                current_gene = gene
 
+    # account for very last gene
+    gene_total = np.sum(counts[current_gene_start:counts.size])
+    # print('Current gene start: ' + str(current_gene_start) + 'i: ' + str(i))
+    counts[current_gene_start:counts.size] = np.divide(counts[current_gene_start:counts.size], gene_total)
     return splices, counts
