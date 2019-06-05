@@ -72,7 +72,7 @@ def test_aKLPE(query, data, data_gs=None, k=DEFAULT_K, b=DEFAULT_B, far=DEFAULT_
     gs = data_gs
     is_outlier = False
 
-    distances = distances_to_n(query, data, sort=False)
+    distances = distance_to_n(query, data, sort=False)
     
     if gs is None:
         gs = train_aKLPE(data, k, b)
