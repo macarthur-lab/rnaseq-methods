@@ -38,7 +38,7 @@ def calculate_G(distances, k=DEFAULT_K):
     lower_bound = int(k - np.floor((k-1)/2) - 1)
     upper_bound = int(k + np.floor(k/2))
 
-    G = np.average(np.sort(distances)[lower_bound, upper_bound])
+    G = np.average(np.sort(distances)[lower_bound:upper_bound])
 
     return G
 
@@ -164,7 +164,8 @@ def distance_to_n(query, data, sort=True):
 
 def split_set(n):
     idx = np.random.choice(n, n, replace=False)
-    set_1 = idx[0:np.floor(n/2)]
-    set_2 = idx[np.floor(n/2):]
+    bound = int(np.floor(n/2))
+    set_1 = idx[0:bound]
+    set_2 = idx[bound:]
 
     return set_1, set_2
