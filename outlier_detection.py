@@ -79,7 +79,7 @@ def test_aKLPE(query, data, data_gs=None, k=DEFAULT_K, b=DEFAULT_B, far=DEFAULT_
     
     for i in range(0, b):
         subset = np.random.choice(n, int(np.floor(n/2)), replace=False)
-        g += calculate_G(distances[subset], k=k)
+        g += calculate_G(distances[0,subset], k=k)
         
     g /= b
 
