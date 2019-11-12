@@ -111,9 +111,9 @@ def main():
         print_stats(path, ht)
         
         combined_ht = combined_ht.join(ht, how="outer")
-        combined_ht = combined_ht.transmute(
+        combined_ht = combined_ht.annotate(
             strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
-            strand_counter=hl.sum([combined_ht.strand_counter, combined_ht.strand_counter]),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
+            strand_counter=hl.sum([combined_ht.strand_counter, combined_ht.strand_counter_1]),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
             intron_motif=hl.or_else(combined_ht.intron_motif, combined_ht.intron_motif_1),  ## double-check that left == right?
             known_splice_junction=(hl.cond((combined_ht.known_splice_junction == 1) | (combined_ht.known_splice_junction_1 == 1), 1, 0)), ## double-check that left == right?
             unique_reads=hl.sum([combined_ht.unique_reads, combined_ht.unique_reads_1]),
