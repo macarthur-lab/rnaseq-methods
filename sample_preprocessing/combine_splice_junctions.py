@@ -64,8 +64,6 @@ def main():
         ht = import_SJ_out_tab(path)
         ht = ht.key_by("chrom", "start_1based", "end_1based")
 
-        ht = ht.annotate_globals(path = path)
-
         if args.normalize_read_counts:
             ht = ht.annotate_globals(
                 unique_reads_in_sample = ht.aggregate(hl.agg.sum(ht.unique_reads)),
@@ -115,7 +113,7 @@ def main():
             strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
             strand_counter=hl.sum([combined_ht.strand_counter, combined_ht.strand_counter_1]),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
             intron_motif=hl.or_else(combined_ht.intron_motif, combined_ht.intron_motif_1),  ## double-check that left == right?
-            known_splice_junction=(hl.cond((combined_ht.known_splice_junction == 1) | (combined_ht.known_splice_junction_1 == 1), 1, 0)), ## double-check that left == right?
+            known_splice_junction=hl.or_else(hl.cond((combined_ht.known_splice_junction == 1) | (combined_ht.known_splice_junction_1 == 1), 1, 0), 0), ## double-check that left == right?
             unique_reads=hl.sum([combined_ht.unique_reads, combined_ht.unique_reads_1]),
             multi_mapped_reads=hl.sum([combined_ht.multi_mapped_reads, combined_ht.multi_mapped_reads_1]),
             maximum_overhang=hl.max([combined_ht.maximum_overhang, combined_ht.maximum_overhang_1]),
@@ -133,6 +131,10 @@ def main():
             .when(combined_ht.strand_counter > 0, 1)
             .when(combined_ht.strand_counter < 0, 2)
             .default(0))
+
+    combined_ht = combined_ht.annotate_globals(
+        combined_tables=args.paths,
+        n_combined_tables=len(args.paths))
 
     if strand_conflicts_count:
         print(f"WARNING: Found {strand_conflicts_count} strand_conflicts out of {total_junctions_count} total_junctions")
