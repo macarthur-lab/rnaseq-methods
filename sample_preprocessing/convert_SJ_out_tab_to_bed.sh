@@ -39,7 +39,7 @@ OUTPUT_PATH=$(basename $INPUT_PATH | sed 's/.tab.gz//').bed.gz
 # filter out junctions with 0 uniquely-mapped reads ($7 == 0)
 # print chrom, start-1, end, unique+multimapped, unique, strand
 echo Writing: ${OUTPUT_PATH}
-gzcat $INPUT_PATH | awk -v OFS='\t' '{ if($7 > 0) { print }}' | awk -v OFS='\t' '{ print $1, $2 - 1, $3, $7 + $8, $7, (($4 != 2) ? "+" : "-") }' | bgzip > $OUTPUT_PATH
+gunzip -c $INPUT_PATH | awk -v OFS='\t' '{ if($7 > 0) { print }}' | awk -v OFS='\t' '{ print $1, $2 - 1, $3, $7 + $8, $7, (($4 != 2) ? "+" : "-") }' | bgzip > $OUTPUT_PATH
 
 echo Writing: ${OUTPUT_PATH}.tbi
 tabix $OUTPUT_PATH
