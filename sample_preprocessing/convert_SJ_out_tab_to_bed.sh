@@ -34,7 +34,7 @@ chr7    127474697  127475864  Pos4  0  +
 chr7    127475864  127477031  Neg1  0  -
 '
 
-OUTPUT_PATH=$(basename $INPUT_PATH | sed 's/.tab.gz//').bed.gz
+OUTPUT_PATH=$(echo $INPUT_PATH | sed 's/.tab.gz//').bed.gz
 
 # filter out junctions with 0 uniquely-mapped reads ($7 == 0)
 # print chrom, start-1, end, unique+multimapped, unique, strand
