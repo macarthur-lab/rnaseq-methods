@@ -88,7 +88,8 @@ def main():
         multi_mapped_reads_multiplier = mean_multi_mapped_reads_in_sample / float(hl.eval(ht.multi_mapped_reads_in_sample))
         print(f"unique_reads_multiplier: {unique_reads_multiplier:01f}, multi_mapped_reads_multiplier: {multi_mapped_reads_multiplier:01f}")
         ht = ht.annotate(
-            num_samples_with_this_junction = 1,
+            strand_counter=hl.or_else(hl.switch(ht.strand).when(1, 1).when(2, -1).or_missing(), 0),
+            num_samples_with_this_junction=1,
         )
 
         if args.normalize_read_counts:
@@ -106,8 +107,8 @@ def main():
         
         combined_ht = combined_ht.join(ht, how="outer")
         combined_ht = combined_ht.transmute(
-            #strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
-            plus_vs_minus_strand=hl.or_else(combined_ht.plus_vs_minus_strand, 0) + hl.or_else(hl.switch(combined_ht.strand).when(1, 1).when(2, -1).or_missing(), 0),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
+            strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
+            strand_counter=hl.sum([combined_ht.strand_counter, combined_ht.strand_counter]),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
             intron_motif=hl.or_else(combined_ht.intron_motif, combined_ht.intron_motif_1),  ## double-check that left == right?
             known_splice_junction=(hl.cond((combined_ht.known_splice_junction == 1) | (combined_ht.known_splice_junction_1 == 1), 1, 0)), ## double-check that left == right?
             unique_reads=hl.sum([combined_ht.unique_reads, combined_ht.unique_reads_1]),
@@ -120,13 +121,13 @@ def main():
         combined_ht = combined_ht.checkpoint(f"checkpoint{i % 2}.ht", overwrite=True) #, _read_if_exists=True)
     
     total_junctions_count = combined_ht.count()
-    strand_conflicts_count = combined_ht.filter(hl.abs(combined_ht.plus_vs_minus_strand)/hl.float(combined_ht.num_samples_with_this_junction) < 0.1, keep=True).count()
+    strand_conflicts_count = combined_ht.filter(hl.abs(combined_ht.strand_counter)/hl.float(combined_ht.num_samples_with_this_junction) < 0.1, keep=True).count()
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
     combined_ht = combined_ht.annotate(
         strand=hl.case()
-            .when(combined_ht.plus_vs_minus_strand > 0, 1)
-            .when(combined_ht.plus_vs_minus_strand < 0, 2)
+            .when(combined_ht.strand_counter > 0, 1)
+            .when(combined_ht.strand_counter < 0, 2)
             .default(0))
 
     if strand_conflicts_count:
