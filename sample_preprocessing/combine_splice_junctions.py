@@ -64,11 +64,13 @@ def main():
         ht = import_SJ_out_tab(path)
         ht = ht.key_by("chrom", "start_1based", "end_1based")
 
-        ht = ht.annotate_globals(
-            path = path,
-            unique_reads_in_sample = ht.aggregate(hl.agg.sum(ht.unique_reads)),
-            multi_mapped_reads_in_sample = ht.aggregate(hl.agg.sum(ht.multi_mapped_reads)),
-        )
+        ht = ht.annotate_globals(path = path)
+
+        if args.normalize_read_counts:
+            ht = ht.annotate_globals(
+                unique_reads_in_sample = ht.aggregate(hl.agg.sum(ht.unique_reads)),
+                multi_mapped_reads_in_sample = ht.aggregate(hl.agg.sum(ht.multi_mapped_reads)),
+            )
 
         # add 'interval' column
         #ht = ht.annotate(interval=hl.interval(
@@ -78,15 +80,18 @@ def main():
         tables.append(ht)
 
     # compute mean
-    mean_unique_reads_in_sample = sum([hl.eval(ht.unique_reads_in_sample) for ht in tables])/float(len(tables))
-    mean_multi_mapped_reads_in_sample = sum([hl.eval(ht.multi_mapped_reads_in_sample) for ht in tables])/float(len(tables))
-    print(f"mean_unique_reads_in_sample: {mean_unique_reads_in_sample:01f}, mean_multi_mapped_reads_in_sample: {mean_multi_mapped_reads_in_sample:01f}")
+    if args.normalize_read_counts:
+        mean_unique_reads_in_sample = sum([hl.eval(ht.unique_reads_in_sample) for ht in tables])/float(len(tables))
+        mean_multi_mapped_reads_in_sample = sum([hl.eval(ht.multi_mapped_reads_in_sample) for ht in tables])/float(len(tables))
+        print(f"mean_unique_reads_in_sample: {mean_unique_reads_in_sample:01f}, mean_multi_mapped_reads_in_sample: {mean_multi_mapped_reads_in_sample:01f}")
 
     combined_ht = None
     for i, ht in enumerate(tables):
-        unique_reads_multiplier = mean_unique_reads_in_sample / float(hl.eval(ht.unique_reads_in_sample))
-        multi_mapped_reads_multiplier = mean_multi_mapped_reads_in_sample / float(hl.eval(ht.multi_mapped_reads_in_sample))
-        print(f"unique_reads_multiplier: {unique_reads_multiplier:01f}, multi_mapped_reads_multiplier: {multi_mapped_reads_multiplier:01f}")
+        if args.normalize_read_counts:
+            unique_reads_multiplier = mean_unique_reads_in_sample / float(hl.eval(ht.unique_reads_in_sample))
+            multi_mapped_reads_multiplier = mean_multi_mapped_reads_in_sample / float(hl.eval(ht.multi_mapped_reads_in_sample))
+            print(f"unique_reads_multiplier: {unique_reads_multiplier:01f}, multi_mapped_reads_multiplier: {multi_mapped_reads_multiplier:01f}")
+
         ht = ht.annotate(
             strand_counter=hl.or_else(hl.switch(ht.strand).when(1, 1).when(2, -1).or_missing(), 0),
             num_samples_with_this_junction=1,
@@ -116,7 +121,6 @@ def main():
             maximum_overhang=hl.max([combined_ht.maximum_overhang, combined_ht.maximum_overhang_1]),
             num_samples_with_this_junction=hl.sum([combined_ht.num_samples_with_this_junction, combined_ht.num_samples_with_this_junction_1]),
         )
-        #combined_ht = combined_ht.drop('unique_reads_in_sample_1', 'multi_mapped_reads_in_sample_1')
 
         combined_ht = combined_ht.checkpoint(f"checkpoint{i % 2}.ht", overwrite=True) #, _read_if_exists=True)
     
