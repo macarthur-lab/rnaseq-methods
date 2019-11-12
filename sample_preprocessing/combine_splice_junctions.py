@@ -23,7 +23,7 @@ def import_SJ_out_tab(path):
     """
 
     ht = hl.import_table(
-        path, 
+        path,
         no_header=True,
         impute=True,
     ).rename({
@@ -120,7 +120,7 @@ def main():
             maximum_overhang=hl.max([combined_ht.maximum_overhang, combined_ht.maximum_overhang_1]),
             num_samples_with_this_junction=hl.sum([combined_ht.num_samples_with_this_junction, combined_ht.num_samples_with_this_junction_1]),
         )
-        #combined_ht = combined_ht.drop_globals('path_1', 'unique_reads_in_sample_1', 'multi_mapped_reads_in_sample_1')
+        #combined_ht = combined_ht.drop('unique_reads_in_sample_1', 'multi_mapped_reads_in_sample_1')
 
         combined_ht = combined_ht.checkpoint(f"checkpoint{i % 2}.ht", overwrite=True) #, _read_if_exists=True)
     
@@ -128,7 +128,7 @@ def main():
     strand_conflicts_count = combined_ht.filter(hl.abs(combined_ht.plus_vs_minus_strand)/hl.float(combined_ht.num_samples_with_this_junction) < 0.1, keep=True).count()
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
-    combined_ht = combined_ht.transmute(
+    combined_ht = combined_ht.annotate(
         strand=hl.case()
             .when(combined_ht.plus_vs_minus_strand > 0, 1)
             .when(combined_ht.plus_vs_minus_strand < 0, 2)
@@ -138,10 +138,13 @@ def main():
         print(f"WARNING: Found {strand_conflicts_count} strand_conflicts out of {total_junctions_count} total_junctions")
 
     # write as HT
-    combined_ht.write("combined.SJ.out.ht", overwrite=True)
+    combined_ht = combined_ht.checkpoint(f"combined.SJ.out.ht", overwrite=True) #, _read_if_exists=True)
 
     ## write as tsv
-    combined_ht = combined_ht.key_by().select(
+    combined_ht = combined_ht.key_by()
+    combined_ht.export("combined.SJ.out.with_header.tab", header=True)
+
+    combined_ht = combined_ht.select(
         "chrom",
         "start_1based",
         "end_1based",
@@ -152,8 +155,6 @@ def main():
         "multi_mapped_reads",
         "maximum_overhang",
     )
-
-    combined_ht.export("combined.SJ.out.with_header.tab", header=True)
     combined_ht.export("combined.SJ.out.tab", header=False)
 
     print(f"unique_reads_in combined table: {combined_ht.aggregate(hl.agg.sum(combined_ht.unique_reads))}")
