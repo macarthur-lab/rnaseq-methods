@@ -86,7 +86,7 @@ def main():
     combined_ht = None
     for i, ht in enumerate(tables):
         print(f"Processing table #{i} out of {len(tables)}")
-        
+
         if args.normalize_read_counts:
             unique_reads_multiplier = mean_unique_reads_in_sample / float(hl.eval(ht.unique_reads_in_sample))
             multi_mapped_reads_multiplier = mean_multi_mapped_reads_in_sample / float(hl.eval(ht.multi_mapped_reads_in_sample))
@@ -147,7 +147,6 @@ def main():
     ## write as tsv
     combined_ht = combined_ht.key_by()
     combined_ht.export("combined.SJ.out.with_header.tab", header=True)
-
     combined_ht = combined_ht.select(
         "chrom",
         "start_1based",
