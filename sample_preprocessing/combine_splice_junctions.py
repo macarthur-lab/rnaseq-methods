@@ -26,6 +26,7 @@ def import_SJ_out_tab(path):
         path,
         no_header=True,
         impute=True,
+        force=True,
     ).rename({
         "f0": "chrom",
         "f1": "start_1based",
