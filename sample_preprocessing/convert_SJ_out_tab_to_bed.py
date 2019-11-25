@@ -53,9 +53,10 @@ if args.interval:
         suffix = "." + "__".join([i.replace(",", "").replace(":", "-") for i in args.interval]) + suffix
     else:
         suffix = ".filtered" + suffix
+else:
+    args.interval = []
 
 output_path = args.output_path or (re.sub(".tab(.gz)?$", "", args.input_path) + suffix)
-print(output_path)
 
 STRAND_LOOKUP = {
     '0': '.',
@@ -128,7 +129,7 @@ with (guzip.open if args.input_path.endswith("gz") else open)(args.input_path) a
             strand,
         ])) + "\n")
         
-os.system(f"bgzip {output_path}")
+os.system(f"bgzip -f {output_path}")
 os.system(f"tabix {output_path}.gz")
 
 print(f"Wrote {counter} intervals to {output_path}.gz")
