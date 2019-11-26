@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import gzip
 import os
 import re
 
@@ -86,7 +87,7 @@ def parse_interval(i):
     
 intervals = [parse_interval(i) for i in args.interval]
 
-with (guzip.open if args.input_path.endswith("gz") else open)(args.input_path) as f, open(output_path, "wt") as bed_file:
+with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "rt") as f, open(output_path, "wt") as bed_file:
     counter = 0
     for line in f:
         fields = line.strip("\n").split("\t")
