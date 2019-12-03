@@ -1,5 +1,7 @@
 import argparse
 import pandas as pd
+import psutil
+import os
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -49,6 +51,9 @@ def main():
         tables.append(df)
 
     joined_table = pd.DataFrame().join(tables, how="outer").reset_index()
+
+    print(f'Memory used: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
+    
     joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
 
 
