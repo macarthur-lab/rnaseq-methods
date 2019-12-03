@@ -27,7 +27,7 @@ def print_stats(path, ht):
 def main():
     args = parse_args()
 
-    tables = []
+    joined_table = pd.DataFrame()
     for i, path in enumerate(args.paths):
 
         """
@@ -48,12 +48,12 @@ def main():
                     f'strand_{i}', f'intron_motif_{i}', f'known_splice_junction_{i}',
                     f'unique_reads_{i}', f'multi_mapped_reads_{i}', f'maximum_overhang_{i}'],
             index_col=['chrom', 'start_1based', 'end_1based'])
-        tables.append(df)
+        joined_table = joined_table.join(df, how="outer")
 
-    joined_table = pd.DataFrame().join(tables, how="outer").reset_index()
+    joined_table = joined_table.reset_index()
 
     print(f'Memory used: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
-    
+
     joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
 
 
