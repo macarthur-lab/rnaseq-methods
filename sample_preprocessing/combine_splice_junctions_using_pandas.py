@@ -84,7 +84,8 @@ def main():
 
         joined_table = joined_table.join(df, how="outer", rsuffix=f"_{i}")
 
-        #joined_table.loc[joined_table['strand'].isnull(), 'strand'] = joined_table[f'strand_{i}']  ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
+        ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
+        #joined_table.loc[joined_table['strand'].isnull(), 'strand'] = joined_table[f'strand_{i}']
         #joined_table['strand'] = joined_table['strand'].astype(COLUMN_TYPES['strand'])
 
         joined_table.loc[joined_table['intron_motif'].isnull(), f'intron_motif'] = joined_table[f'intron_motif_{i}']
@@ -101,7 +102,7 @@ def main():
         joined_table[f'unique_reads_{i}'] = joined_table[f'unique_reads_{i}'].fillna(0).astype('int32')
         joined_table[f'multi_mapped_reads_{i}'] = joined_table[f'multi_mapped_reads_{i}'].fillna(0).astype('int32')
 
-        print_memory_stats(run_gc=True)
+        print_memory_stats(f'after table {i}')
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
     joined_table['strand'] = joined_table['strand_counter'].apply(lambda s: 1 if s > 0 else (2 if s < 0 else 0)).astype('int8')
