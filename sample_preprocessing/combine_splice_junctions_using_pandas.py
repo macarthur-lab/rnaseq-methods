@@ -34,6 +34,7 @@ def main():
     args = parse_args()
 
     COLUMN_TYPES = {
+        'chrom': 'str',
         'start_1based': 'int32',
         'end_1based': 'int32',
         'strand': 'int8',
@@ -99,8 +100,6 @@ def main():
         joined_table['strand_counter'] = joined_table[['strand_counter', f'strand_counter_{i}']].sum(axis=1).fillna(0).astype(COLUMN_TYPES['strand_counter'])
 
         joined_table.drop(columns=[f'strand_{i}', f'strand_counter_{i}', f'intron_motif_{i}', f'known_splice_junction_{i}', f'maximum_overhang_{i}', f'num_samples_with_this_junction_{i}'], inplace=True)
-        joined_table[f'unique_reads_{i}'] = joined_table[f'unique_reads_{i}'].fillna(0).astype('int32')
-        joined_table[f'multi_mapped_reads_{i}'] = joined_table[f'multi_mapped_reads_{i}'].fillna(0).astype('int32')
 
         print_memory_stats(f'after table {i}')
 
@@ -108,6 +107,13 @@ def main():
     joined_table['strand'] = joined_table['strand_counter'].apply(lambda s: 1 if s > 0 else (2 if s < 0 else 0)).astype('int8')
 
     joined_table = joined_table.reset_index()
+
+    read_count_columns = [f'unique_reads_{i}' for i in range(len(args.paths))] + [f'multi_mapped_reads_{i}' for i in range(len(args.paths))]
+    joined_table[read_count_columns] = joined_table[read_count_columns].fillna(0).astype('int32')
+
+    logging.info(joined_table.dtypes)
+    logging.info("-----")
+    logging.info(joined_table.describe())
 
     joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
 
