@@ -32,7 +32,6 @@ def print_memory_stats(message="", run_gc=False):
 def main():
     args = parse_args()
 
-    joined_table = None
     for i, path in enumerate(args.paths):
 
         """
@@ -49,17 +48,55 @@ def main():
         print(f"Table {i}: {path}")
         df = pd.read_table(
             path,
-            names=['chrom', 'start_1based', 'end_1based',
-                    f'strand_{i}', f'intron_motif_{i}', f'known_splice_junction_{i}',
-                    f'unique_reads_{i}', f'multi_mapped_reads_{i}', f'maximum_overhang_{i}'],
-            index_col=['chrom', 'start_1based', 'end_1based'])
+            names=[
+                'chrom', 'start_1based', 'end_1based',
+                    f'strand',
+                    f'intron_motif',
+                    f'known_splice_junction',
+                    f'unique_reads',
+                    f'multi_mapped_reads',
+                    f'maximum_overhang'],
+            index_col=['chrom', 'start_1based', 'end_1based'],
+            dtype={
+                'start_1based': 'int32',
+                'end_1based': 'int32',
+                'strand': 'int8',
+                'known_splice_junction': 'int8',
+                'unique_reads': 'int32',
+                'multi_mapped_reads': 'int32',
+                'maximum_overhang': 'int16',
+            })
 
-        if joined_table is None:
+        df['num_samples_with_this_junction'] = 1
+        df['strand_counter'] = df['strand'].apply(lambda s: 1 if s == 1 else (-1 if s == 2 else 0))
+
+        if i == 0:
+            df['unique_reads_0'] = df['unique_reads']
+            df['multi_mapped_reads_0'] = df['multi_mapped_reads']
             joined_table = df
-        else:
-            joined_table = joined_table.join(df, how="outer")
+            continue
+
+        joined_table = joined_table.join(df, how="outer", rsuffix=f"_{i}")
+
+        #joined_table['strand'] = joined_table.loc[joined_table['strand'].isnull(), f'strand_{i}']  ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
+        joined_table['strand_counter'] = joined_table[['strand_counter', f'strand_counter_{i}']].sum(axis=1).fillna(0, downcast='infer')
+        joined_table['intron_motif'] = joined_table.loc[joined_table['intron_motif'].isnull(), f'intron_motif_{i}']
+        joined_table['known_splice_junction'] = (joined_table['known_splice_junction'].fillna(False).astype('int8') | joined_table[f'known_splice_junction_{i}'].fillna(False).astype('int8'))
+        joined_table['unique_reads'] = joined_table[['unique_reads', f'unique_reads_{i}']].sum(axis=1).fillna(0, downcast='infer')
+        joined_table['multi_mapped_reads'] = joined_table[['multi_mapped_reads', f'multi_mapped_reads_{i}']].sum(axis=1).fillna(0, downcast='infer')
+        joined_table['maximum_overhang'] = joined_table[['maximum_overhang', f'maximum_overhang_{i}']].max(axis=1).fillna(0, downcast='infer')
+        joined_table['num_samples_with_this_junction'] = joined_table[['num_samples_with_this_junction', f'num_samples_with_this_junction_{i}']].sum(axis=1)
+        joined_table.drop(columns=[f'strand_{i}', f'strand_counter_{i}', f'intron_motif_{i}', f'known_splice_junction_{i}', f'maximum_overhang_{i}', f'num_samples_with_this_junction_{i}'], inplace=True)  # f'unique_reads_{i}', f'multi_mapped_reads_{i}',
 
         print_memory_stats(run_gc=True)
+
+
+    # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
+    joined_table['strand'] = joined_table['strand_counter'].apply(lambda s: 1 if s > 0 else (2 if s < 0 else 0))
+
+    print(joined_table.columns)
+    print(joined_table.dtypes)
+    #strand_conflicts_count = combined_ht.filter(hl.abs(combined_ht.strand_counter)/hl.float(combined_ht.num_samples_with_this_junction) < 0.1, keep=True).count()
 
     joined_table = joined_table.reset_index()
 
@@ -75,14 +112,12 @@ def main():
             num_samples_with_this_junction=1,
         )
 
-        print("----")
-        print_stats(path, ht)
-
         combined_ht = combined_ht.join(ht, how="outer")
         combined_ht = combined_ht.transmute(
             strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
             strand_counter=hl.sum([combined_ht.strand_counter, combined_ht.strand_counter_1]),  # samples vote on whether strand = 1 (eg. '+') or 2 (eg. '-')
             intron_motif=hl.or_else(combined_ht.intron_motif, combined_ht.intron_motif_1),  ## double-check that left == right?
+            
             known_splice_junction=hl.or_else(hl.cond((combined_ht.known_splice_junction == 1) | (combined_ht.known_splice_junction_1 == 1), 1, 0), 0), ## double-check that left == right?
             unique_reads=hl.sum([combined_ht.unique_reads, combined_ht.unique_reads_1]),
             multi_mapped_reads=hl.sum([combined_ht.multi_mapped_reads, combined_ht.multi_mapped_reads_1]),
