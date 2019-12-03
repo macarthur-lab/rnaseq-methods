@@ -1,7 +1,9 @@
 import argparse
+import gc
 import pandas as pd
 import psutil
 import os
+
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -22,6 +24,12 @@ def print_stats(path, ht):
     print(f"Table: {path}")
     print(f"{total_splice_junctions} total splice junctions")
     print(f"{novel_splice_junctions} novel splice junctions ({100*novel_splice_junctions/total_splice_junctions:0.1f}%)")
+
+
+def print_memory_stats(message="", run_gc=False):
+    if run_gc:
+        gc.collect()
+    print(f'memory used - {message}: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
 
 
 def main():
@@ -54,12 +62,20 @@ def main():
         else:
             joined_table = joined_table.join(df, how="outer")
 
+        print_memory_stats(run_gc=True)
+
     joined_table = joined_table.reset_index()
 
-    print(f'Memory used: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
+    print_memory_stats('after reset index',  run_gc=True)
 
-    joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
+    #joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
+    joined_table.to_feather(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.feather")
 
+    print_memory_stats('after exporting to feather', run_gc=True)
+
+    joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.pqt")
+
+    print_memory_stats('after exporting to parquet', run_gc=True)
 
     """
         ht = ht.annotate(
