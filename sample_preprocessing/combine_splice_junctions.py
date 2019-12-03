@@ -38,7 +38,7 @@ def import_SJ_out_tab(path):
         "f7": "multi_mapped_reads",
         "f8": "maximum_overhang",
     })
-    
+
     return ht
 
 
@@ -48,7 +48,7 @@ def print_stats(path, ht):
     total_splice_junctions = ht.count()
     known_splice_junctions = ht.filter(ht.known_splice_junction == 1).count()
     novel_splice_junctions = ht.filter(ht.known_splice_junction == 0).count()
-    
+
     assert known_splice_junctions + novel_splice_junctions == total_splice_junctions
 
     print(f"Table: {path}")
@@ -110,7 +110,7 @@ def main():
 
         print("----")
         print_stats(path, ht)
-        
+
         combined_ht = combined_ht.join(ht, how="outer")
         combined_ht = combined_ht.transmute(
             strand=hl.or_else(combined_ht.strand, combined_ht.strand_1), ## in rare cases, the strand for the same junction may differ across samples, so use a 2-step process that assigns strand based on majority of samples
@@ -124,7 +124,7 @@ def main():
         )
 
         combined_ht = combined_ht.checkpoint(f"checkpoint{i % 2}.ht", overwrite=True) #, _read_if_exists=True)
-    
+
     total_junctions_count = combined_ht.count()
     strand_conflicts_count = combined_ht.filter(hl.abs(combined_ht.strand_counter)/hl.float(combined_ht.num_samples_with_this_junction) < 0.1, keep=True).count()
 
@@ -146,8 +146,9 @@ def main():
     combined_ht = combined_ht.checkpoint(f"combined.SJ.out.ht", overwrite=True) #, _read_if_exists=True)
 
     ## write as tsv
+    output_prefix = f"combined.{len(tables)}_samples{'.normalized_counts' if args.normalize_read_counts else ''}"
     combined_ht = combined_ht.key_by()
-    combined_ht.export("combined.SJ.out.with_header.tab", header=True)
+    combined_ht.export(f"{output_prefix}.with_header.combined.SJ.out.tab", header=True)
     combined_ht = combined_ht.select(
         "chrom",
         "start_1based",
@@ -159,7 +160,7 @@ def main():
         "multi_mapped_reads",
         "maximum_overhang",
     )
-    combined_ht.export("combined.SJ.out.tab", header=False)
+    combined_ht.export(f"{output_prefix}.SJ.out.tab", header=False)
 
     print(f"unique_reads_in combined table: {combined_ht.aggregate(hl.agg.sum(combined_ht.unique_reads))}")
 
