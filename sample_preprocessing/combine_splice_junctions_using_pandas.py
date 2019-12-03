@@ -1,8 +1,11 @@
 import argparse
 import gc
+import logging
 import pandas as pd
 import psutil
 import os
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
 
 def parse_args():
@@ -27,9 +30,11 @@ def print_stats(path, ht):
 
 
 def print_memory_stats(message="", run_gc=False):
+    if message:
+        message = " - " + message
     if run_gc:
         gc.collect()
-    print(f'memory used - {message}: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
+    logging.info(f'memory used {message}: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
 
 
 def main():
@@ -73,9 +78,16 @@ def main():
 
     print_memory_stats('after exporting to feather', run_gc=True)
 
-    joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.pqt")
+    joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
 
     print_memory_stats('after exporting to parquet', run_gc=True)
+
+    columns = joined_table.columns
+    joined_table = pd.read_feather(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.feather", columns=columns)
+    print_memory_stats('after importing from feather', run_gc=True)
+
+    joined_table = pd.read_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet", columns=columns)
+    print_memory_stats('after importing from parquet', run_gc=True)
 
     """
         ht = ht.annotate(
