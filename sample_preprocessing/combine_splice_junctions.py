@@ -100,8 +100,8 @@ def main():
 
         if args.normalize_read_counts:
             ht = ht.annotate(
-                unique_reads=ht.unique_reads * unique_reads_multiplier,
-                multi_mapped_reads=ht.multi_mapped_reads * multi_mapped_reads_multiplier
+                unique_reads=hl.int32(ht.unique_reads * unique_reads_multiplier),
+                multi_mapped_reads=hl.int32(ht.multi_mapped_reads * multi_mapped_reads_multiplier),
             )
 
         if combined_ht is None:
