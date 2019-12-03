@@ -27,7 +27,7 @@ def print_stats(path, ht):
 def main():
     args = parse_args()
 
-    joined_table = pd.DataFrame()
+    joined_table = None
     for i, path in enumerate(args.paths):
 
         """
@@ -48,7 +48,10 @@ def main():
                     f'strand_{i}', f'intron_motif_{i}', f'known_splice_junction_{i}',
                     f'unique_reads_{i}', f'multi_mapped_reads_{i}', f'maximum_overhang_{i}'],
             index_col=['chrom', 'start_1based', 'end_1based'])
-        joined_table = joined_table.join(df, how="outer")
+        if joined_table is None:
+            joined_table = df
+        else:
+            joined_table = joined_table.join(df, how="outer")
 
     joined_table = joined_table.reset_index()
 
