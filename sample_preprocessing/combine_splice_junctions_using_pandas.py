@@ -29,12 +29,18 @@ def print_stats(path, ht):
     print(f"{novel_splice_junctions} novel splice junctions ({100*novel_splice_junctions/total_splice_junctions:0.1f}%)")
 
 
+prev_memory_bytes = 0
 def print_memory_stats(message="", run_gc=False):
+    global prev_memory_bytes
     if message:
         message = " - " + message
     if run_gc:
         gc.collect()
-    logging.info(f'memory used {message}: {psutil.Process(os.getpid()).memory_info().rss//10**6} Mb')
+
+    memory_bytes = psutil.Process(os.getpid()).memory_info().rss
+
+    logging.info(f'memory used {message}: {memory_bytes//10**6} Mb    delta: {(memory_bytes - prev_memory_bytes)//10**6} Mb')
+    prev_memory_bytes = memory_bytes
 
 
 def main():
@@ -74,17 +80,11 @@ def main():
     print_memory_stats('after reset index',  run_gc=True)
 
     #joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
-    joined_table.to_feather(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.feather")
-
-    print_memory_stats('after exporting to feather', run_gc=True)
 
     joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
-
     print_memory_stats('after exporting to parquet', run_gc=True)
 
     columns = joined_table.columns
-    joined_table = pd.read_feather(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.feather", columns=columns)
-    print_memory_stats('after importing from feather', run_gc=True)
 
     joined_table = pd.read_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet", columns=columns)
     print_memory_stats('after importing from parquet', run_gc=True)
