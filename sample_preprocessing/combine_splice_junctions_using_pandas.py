@@ -15,20 +15,6 @@ def parse_args():
     return p.parse_args()
 
 
-def print_stats(path, ht):
-
-    # print some stats
-    total_splice_junctions = ht.count()
-    known_splice_junctions = ht.filter(ht.known_splice_junction == 1).count()
-    novel_splice_junctions = ht.filter(ht.known_splice_junction == 0).count()
-
-    assert known_splice_junctions + novel_splice_junctions == total_splice_junctions
-
-    print(f"Table: {path}")
-    print(f"{total_splice_junctions} total splice junctions")
-    print(f"{novel_splice_junctions} novel splice junctions ({100*novel_splice_junctions/total_splice_junctions:0.1f}%)")
-
-
 prev_memory_bytes = 0
 def print_memory_stats(message="", run_gc=False):
     global prev_memory_bytes
@@ -77,17 +63,11 @@ def main():
 
     joined_table = joined_table.reset_index()
 
-    print_memory_stats('after reset index',  run_gc=True)
-
     #joined_table.to_csv(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.tab", sep="\t", header=True, index=False)
 
     joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
-    print_memory_stats('after exporting to parquet', run_gc=True)
 
-    columns = joined_table.columns
-
-    joined_table = pd.read_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet", columns=columns)
-    print_memory_stats('after importing from parquet', run_gc=True)
+    #joined_table = pd.read_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
 
     """
         ht = ht.annotate(
