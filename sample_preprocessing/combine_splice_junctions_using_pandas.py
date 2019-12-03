@@ -115,7 +115,7 @@ def main():
 
     logging.info(joined_table.dtypes)
     logging.info("-----")
-    pd.set_option('display.max_columns', 500)
+    pd.set_option('display.max_columns', 30)
     logging.info(joined_table.describe())
 
     joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
