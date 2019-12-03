@@ -81,6 +81,8 @@ def main():
             df['unique_reads_0'] = df['unique_reads']
             df['multi_mapped_reads_0'] = df['multi_mapped_reads']
             joined_table = df
+
+            print_memory_stats(f'after table {i}')
             continue
 
         joined_table = joined_table.join(df, how="outer", rsuffix=f"_{i}")
@@ -113,6 +115,7 @@ def main():
 
     logging.info(joined_table.dtypes)
     logging.info("-----")
+    pd.set_option('display.max_columns', 500)
     logging.info(joined_table.describe())
 
     joined_table.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
