@@ -28,6 +28,7 @@ COLUMN_TYPES = {
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("-b", "--batch-size", help="How many tables to merge at once. Bigger batch sizes use more memory.", type=int, default=100)
+    p.add_argument("-o", "--output-path")
     p.add_argument("paths", nargs="+", help="Paths of 1 or more SJ.out.tab tables")
     return p.parse_args()
 
@@ -155,7 +156,8 @@ def main():
     #pd.set_option('display.max_columns', 10000)
     #logging.info(result.describe())
 
-    result.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet", index=True)
+    output_path = args.output_path or f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet"
+    write_to_parquet(result, output_path)
 
     logging.info("Combine parquet files: ")
     for column in ['unique_reads', 'multi_mapped_reads']:
@@ -166,8 +168,7 @@ def main():
         result.fillna(0, inplace=True)
         result = result.astype('int32')
 
-        write_to_parquet(result, f"combined.{column}.{len(result.columns)}_samples.SJ.out.parquet")
-
+        write_to_parquet(result, f"{column}.{output_path}")
 
 
 if __name__ == "__main__":
