@@ -89,7 +89,7 @@ def main():
         tables_in_batch = []
         batch_start_i = i
         for path in batch:
-            print(f"Batch {batch_number}, Table {i}: {path}")
+            logging.info(f"Batch {batch_number}, Table {i}: {path}")
             df = read_table(path, i)
             tables_in_batch.append(df)
             i += 1
@@ -117,6 +117,10 @@ def main():
             result.drop(columns=batch_columns[column], inplace=True)
 
         print_memory_stats(f'after table {i}')
+        logging.info(result.dtypes)
+        logging.info("-----")
+        pd.set_option('display.max_columns', 30)
+        logging.info(result.describe())
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
     result['strand'] = result['strand_counter'].apply(lambda s: 1 if s > 0 else (2 if s < 0 else 0)).astype('int8')
