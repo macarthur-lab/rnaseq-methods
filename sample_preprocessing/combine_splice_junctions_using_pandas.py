@@ -87,7 +87,7 @@ def main():
     for batch_number, batch in enumerate(batched_iter(args.paths, args.batch_size)):
         tables_in_batch = []
         batch_start_i = i
-        for path in enumerate(batch):
+        for path in batch:
             print(f"Batch {batch_number}, Table {i}: {path}")
             df = read_table(path, i)
             tables_in_batch.append(df)
