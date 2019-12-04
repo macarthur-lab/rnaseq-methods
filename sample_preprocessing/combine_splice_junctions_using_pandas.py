@@ -111,6 +111,8 @@ def main():
         result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).fillna(0).astype(COLUMN_TYPES['strand_counter'])
 
         for column in column_names:
+            if column in ['unique_reads', 'multi_mapped_reads']:
+                continue  # keep the per-sample read count columns
             if batch_number > 0: batch_columns[column].remove(column)
             result.drop(columns=batch_columns[column], inplace=True)
 
