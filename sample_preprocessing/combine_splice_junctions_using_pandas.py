@@ -1,4 +1,5 @@
 import argparse
+from collections import defaultdict
 import gc
 import itertools
 import logging
@@ -72,10 +73,19 @@ def read_table(path, i):
     df['num_samples_with_this_junction'] = np.int32(1)
     df['strand_counter'] = df['strand'].apply(lambda s: 1 if s == 1 else (-1 if s == 2 else 0)).astype('int32')
 
+    # print some stats
+    print(f"   {df.unique_reads.sum()/1_000_000:0.1f} million uniquely-mapped reads")
+    print(f"   {100*df.multi_mapped_reads.sum()/float(df.unique_reads.sum() + df.multi_mapped_reads.sum()):0.0f}% multi-mapped")
+
     name_mapping = dict(zip(df.columns, [f"{c}_{i}" for c in df.columns]))
     df.rename(columns=name_mapping, inplace=True)
 
     return df
+
+
+def write_to_parquet(df, path):
+    df.to_parquet(path, index=True)
+    logging.info(f"Wrote out {path}")
 
 
 def main():
@@ -84,7 +94,9 @@ def main():
 
     result = pd.DataFrame()
     column_names = ['strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang', 'num_samples_with_this_junction', 'strand_counter']
+    parquet_files = defaultdict(list)
     i = 0
+    logging.info(f"Processing {len(args.paths)} tables")
     for batch_number, batch in enumerate(batched_iter(args.paths, args.batch_size)):
         tables_in_batch = []
         batch_start_i = i
@@ -122,33 +134,40 @@ def main():
         result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).astype(COLUMN_TYPES['strand_counter'])
 
         for column in column_names:
-            if column in ['unique_reads', 'multi_mapped_reads']:
-                continue  # keep the per-sample read count columns
             if batch_number > 0: batch_columns[column].remove(column)
+            if column in ['unique_reads', 'multi_mapped_reads']:
+                output_file_name = f"{column}.batch_{batch_number}.{args.batch_size}_samples.SJ.out.parquet"
+                parquet_files[column].append(output_file_name)
+
+                read_count_df = result[batch_columns[column]].astype('float32')
+                write_to_parquet(read_count_df, output_file_name)
+
             result.drop(columns=batch_columns[column], inplace=True)
 
         print_memory_stats(f'after table {i}')
-        logging.info(result.dtypes)
-        logging.info("-----")
-        pd.set_option('display.max_columns', 10000)
-        logging.info(result.describe())
+        logging.info(f"Done processing batch {batch_number}")
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
     result['strand'] = result['strand_counter'].apply(lambda s: 1 if s > 0 else (2 if s < 0 else 0)).astype('int8')
 
-    result = result.reset_index()
-
-    read_count_columns = [f'unique_reads_{i}' for i in range(len(args.paths))] + [f'multi_mapped_reads_{i}' for i in range(len(args.paths))]
-    df = result[read_count_columns]
-    df.fillna(0, inplace=True)
-    result[read_count_columns] = df.astype('int32')
-
     logging.info(result.dtypes)
     logging.info("-----")
-    pd.set_option('display.max_columns', 30)
-    logging.info(result.describe())
+    #pd.set_option('display.max_columns', 10000)
+    #logging.info(result.describe())
 
-    result.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet")
+    result.to_parquet(f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet", index=True)
+
+    logging.info("Combine parquet files: ")
+    for column in ['unique_reads', 'multi_mapped_reads']:
+        tables = []
+        for path in parquet_files[column]:
+            tables.append(pd.read_parquet(path))
+        result = pd.DataFrame().join(tables, how="outer")
+        result.fillna(0, inplace=True)
+        result = result.astype('int32')
+
+        write_to_parquet(result, f"combined.{column}.{len(result.columns)}_samples.SJ.out.parquet")
+
 
 
 if __name__ == "__main__":
