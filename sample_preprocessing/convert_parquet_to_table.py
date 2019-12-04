@@ -30,10 +30,12 @@ def main():
     num_samples = len([c for c in df.columns if c.startswith("unique_reads_")])
 
     ## write as tsv
-    output_prefix = f"combined.{num_samples}_samples{'.normalized_counts' if args.normalize_read_counts else ''}"
+    output_prefix = f"combined.{num_samples}_samples"
+    if args.normalize_read_counts:
+        output_prefix += ".normalized_counts"
 
-    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.with_header.SJ.out.tab", header=True, sep="\t")
-    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.SJ.out.tab", header=False, sep="\t")
+    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.with_header.SJ.out.tab", header=True, sep="\t", index=False)
+    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.SJ.out.tab", header=False, sep="\t", index=False)
 
 
 if __name__ == "__main__":
