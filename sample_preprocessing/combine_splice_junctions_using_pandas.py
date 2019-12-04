@@ -130,7 +130,7 @@ def main():
         print_memory_stats(f'after table {i}')
         logging.info(result.dtypes)
         logging.info("-----")
-        pd.set_option('display.max_columns', 30)
+        pd.set_option('display.max_columns', 10000)
         logging.info(result.describe())
 
     # set final strand value to 1 (eg. '+') or 2 (eg. '-') or 0 (eg. uknown) based on the setting in the majority of samples
