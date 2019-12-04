@@ -101,14 +101,14 @@ def main():
         for column in column_names:
             batch_columns[column] = [f'{column}_{k}' for k in range(batch_start_i, batch_end_i)]
             if batch_number > 0: batch_columns[column].append(column)
-        result['intron_motif'] = result[batch_columns['intron_motif']].ffill(axis=1).iloc[:,-1].astype(COLUMN_TYPES['intron_motif'])
-        result['known_splice_junction'] = result[batch_columns['known_splice_junction']].replace(0, np.nan).ffill(axis=1).iloc[:,-1].fillna(0).astype(COLUMN_TYPES['known_splice_junction'])
+        result['intron_motif'] = result[batch_columns['intron_motif']].ffill(axis=1, inplace=True).iloc[:,-1].astype(COLUMN_TYPES['intron_motif'])
+        result['known_splice_junction'] = result[batch_columns['known_splice_junction']].replace(0, np.nan, inplace=True).ffill(axis=1, inplace=True).iloc[:,-1].fillna(0, inplace=True).astype(COLUMN_TYPES['known_splice_junction'])
 
-        result['unique_reads'] = result[batch_columns['unique_reads']].sum(axis=1).fillna(0).astype(COLUMN_TYPES['unique_reads'])
-        result['multi_mapped_reads'] = result[batch_columns['multi_mapped_reads']].sum(axis=1).fillna(0).astype(COLUMN_TYPES['multi_mapped_reads'])
-        result['maximum_overhang'] = result[batch_columns['maximum_overhang']].max(axis=1).fillna(0).astype(COLUMN_TYPES['maximum_overhang'])
+        result['unique_reads'] = result[batch_columns['unique_reads']].sum(axis=1).fillna(0, inplace=True).astype(COLUMN_TYPES['unique_reads'])
+        result['multi_mapped_reads'] = result[batch_columns['multi_mapped_reads']].sum(axis=1).fillna(0, inplace=True).astype(COLUMN_TYPES['multi_mapped_reads'])
+        result['maximum_overhang'] = result[batch_columns['maximum_overhang']].max(axis=1).fillna(0, inplace=True).astype(COLUMN_TYPES['maximum_overhang'])
         result['num_samples_with_this_junction'] = result[batch_columns['num_samples_with_this_junction']].sum(axis=1).astype(COLUMN_TYPES['num_samples_with_this_junction'])
-        result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).fillna(0).astype(COLUMN_TYPES['strand_counter'])
+        result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).fillna(0, inplace=True).astype(COLUMN_TYPES['strand_counter'])
 
         for column in column_names:
             if column in ['unique_reads', 'multi_mapped_reads']:
@@ -128,7 +128,7 @@ def main():
     result = result.reset_index()
 
     read_count_columns = [f'unique_reads_{i}' for i in range(len(args.paths))] + [f'multi_mapped_reads_{i}' for i in range(len(args.paths))]
-    result[read_count_columns] = result[read_count_columns].fillna(0).astype('int32')
+    result[read_count_columns] = result[read_count_columns].fillna(0, inplace=True).astype('int32')
 
     logging.info(result.dtypes)
     logging.info("-----")
