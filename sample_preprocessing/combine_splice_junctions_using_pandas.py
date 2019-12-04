@@ -168,7 +168,7 @@ def main():
         result.fillna(0, inplace=True)
         result = result.astype('int32')
 
-        write_to_parquet(result, f"{column}.{output_path}")
+        write_to_parquet(result, os.path.join(os.path.dirname(output_path), f"{column}.{os.path.basename(output_path)}"))
 
 
 if __name__ == "__main__":
