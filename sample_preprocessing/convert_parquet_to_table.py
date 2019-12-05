@@ -31,7 +31,7 @@ def main():
     if args.normalize_read_counts:
         output_prefix += ".normalized_counts"
 
-    print(f"Outputting columns {df[COLUMNS_TO_OUTPUT].columns} to {output_prefix}.with_header.tab")
+    print(f"Outputting columns {df[COLUMNS_TO_OUTPUT].columns} from {args.path} to {output_prefix}.with_header.tab")
     df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.with_header.tab", header=True, sep="\t", index=False)
     df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.tab", header=False, sep="\t", index=False)
 
