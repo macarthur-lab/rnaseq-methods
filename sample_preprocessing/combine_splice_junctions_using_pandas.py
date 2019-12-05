@@ -17,8 +17,8 @@ COLUMN_TYPES = {
     'strand': 'int8',
     'intron_motif': 'int8',
     'known_splice_junction': 'int8',
-    'unique_reads': 'int32',
-    'multi_mapped_reads': 'int32',
+    'unique_reads': 'float32',
+    'multi_mapped_reads': 'float32',
     'maximum_overhang': 'int16',
     'num_samples_with_this_junction': 'int32',
     'strand_counter': 'int32',
@@ -28,6 +28,8 @@ COLUMN_TYPES = {
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("-b", "--batch-size", help="How many tables to merge at once. Bigger batch sizes use more memory.", type=int, default=100)
+    p.add_argument("-N", "--normalize-read-counts", action="store_true", help="whether to normalize read counts")
+    p.add_arugment("-c", "--save-read-counts", action="store_true", help="Export separate parquet files with matrices of per-sample unique- and multi-mapped-read counts")
     p.add_argument("-o", "--output-path")
     p.add_argument("paths", nargs="+", help="Paths of 1 or more SJ.out.tab tables")
     return p.parse_args()
@@ -56,7 +58,7 @@ def print_memory_stats(message="", run_gc=False):
     prev_memory_bytes = memory_bytes
 
 
-def read_table(path, i):
+def read_table(path, i=None):
     df = pd.read_csv(
         path,
         names=[
@@ -78,8 +80,9 @@ def read_table(path, i):
     print(f"   {df.unique_reads.sum()/1_000_000:0.1f} million uniquely-mapped reads")
     print(f"   {100*df.multi_mapped_reads.sum()/float(df.unique_reads.sum() + df.multi_mapped_reads.sum()):0.0f}% multi-mapped")
 
-    name_mapping = dict(zip(df.columns, [f"{c}_{i}" for c in df.columns]))
-    df.rename(columns=name_mapping, inplace=True)
+    if i is not None:
+        name_mapping = dict(zip(df.columns, [f"{c}_{i}" for c in df.columns]))
+        df.rename(columns=name_mapping, inplace=True)
 
     return df
 
@@ -93,6 +96,15 @@ def main():
 
     args = parse_args()
 
+    if args.normalize_read_counts:
+        total_unique_reads_across_all_samples = 0
+        for path in args.paths:
+            df = read_table(path)
+            total_unique_reads_across_all_samples += df.unique_reads.sum()
+
+        average_unique_reads_per_sample = total_unique_reads_across_all_samples/float(len(args.paths))
+
+
     result = pd.DataFrame()
     column_names = ['strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang', 'num_samples_with_this_junction', 'strand_counter']
     parquet_files = defaultdict(list)
@@ -104,6 +116,11 @@ def main():
         for path in batch:
             logging.info(f"Batch {batch_number}, Table {i}: {path}")
             df = read_table(path, i)
+            if args.normalize_read_counts:
+                scaler = average_unique_reads_per_sample/df.unique_reads.sum()
+                df.unqiue_reads *= scaler
+                df.multi_mapped_reads *= scaler
+
             tables_in_batch.append(df)
             i += 1
         batch_end_i = i
@@ -136,7 +153,7 @@ def main():
 
         for column in column_names:
             if batch_number > 0: batch_columns[column].remove(column)
-            if column in ['unique_reads', 'multi_mapped_reads']:
+            if args.save_read_counts and column in ['unique_reads', 'multi_mapped_reads']:
                 output_file_name = f"{column}.batch_{batch_number}.{args.batch_size}_samples.SJ.out.parquet"
                 parquet_files[column].append(output_file_name)
 
@@ -156,19 +173,24 @@ def main():
     #pd.set_option('display.max_columns', 10000)
     #logging.info(result.describe())
 
-    output_path = args.output_path or f"combined_using_pandas.{len(args.paths)}_samples.SJ.out.parquet"
+    output_path = args.output_path or f"combined.{len(args.paths)}_samples"
+    if args.normalize_read_counts:
+        output_path += ".normalized"
+
+    output_path += ".SJ.out.parquet"
     write_to_parquet(result, output_path)
 
-    logging.info("Combine parquet files: ")
-    for column in ['unique_reads', 'multi_mapped_reads']:
-        tables = []
-        for path in parquet_files[column]:
-            tables.append(pd.read_parquet(path))
-        result = pd.DataFrame().join(tables, how="outer")
-        result.fillna(0, inplace=True)
-        result = result.astype('int32')
+    if args.save_read_counts:
+        logging.info("Combine parquet files: ")
+        for column in ['unique_reads', 'multi_mapped_reads']:
+            tables = []
+            for path in parquet_files[column]:
+                tables.append(pd.read_parquet(path))
+            result = pd.DataFrame().join(tables, how="outer")
+            result.fillna(0, inplace=True)
+            result = result.astype('float32')
 
-        write_to_parquet(result, os.path.join(os.path.dirname(output_path), f"{column}.{os.path.basename(output_path)}"))
+            write_to_parquet(result, os.path.join(os.path.dirname(output_path), f"{column}.{os.path.basename(output_path)}"))
 
 
 if __name__ == "__main__":
