@@ -9,6 +9,19 @@ def parse_args():
     return p.parse_args()
 
 
+COLUMNS_TO_OUTPUT = [
+    "chrom",
+    "start_1based",
+    "end_1based",
+    "strand",
+    "intron_motif",
+    "known_splice_junction",
+    "unique_reads",
+    "multi_mapped_reads",
+    "maximum_overhang",
+]
+
+
 def main():
     args = parse_args()
 
@@ -18,8 +31,8 @@ def main():
     if args.normalize_read_counts:
         output_prefix += ".normalized_counts"
 
-    df.to_csv(f"{output_prefix}.with_header.tab", header=True, sep="\t", index=False)
-    df.to_csv(f"{output_prefix}.tab", header=False, sep="\t", index=False)
+    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.with_header.tab", header=True, sep="\t", index=False)
+    df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.tab", header=False, sep="\t", index=False)
 
     print(f"Converted {args.path} out {output_prefix}.tab")
 
