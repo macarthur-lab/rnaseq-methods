@@ -29,7 +29,7 @@ def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("-b", "--batch-size", help="How many tables to merge at once. Bigger batch sizes use more memory.", type=int, default=100)
     p.add_argument("-N", "--normalize-read-counts", action="store_true", help="whether to normalize read counts")
-    p.add_arugment("-c", "--save-read-counts", action="store_true", help="Export separate parquet files with matrices of per-sample unique- and multi-mapped-read counts")
+    p.add_argument("-c", "--save-read-counts", action="store_true", help="Export separate parquet files with matrices of per-sample unique- and multi-mapped-read counts")
     p.add_argument("-o", "--output-path")
     p.add_argument("paths", nargs="+", help="Paths of 1 or more SJ.out.tab tables")
     return p.parse_args()
@@ -117,10 +117,11 @@ def main():
             logging.info(f"Batch {batch_number}, Table {i}: {path}")
             df = read_table(path, i)
             if args.normalize_read_counts:
-                scaler = average_unique_reads_per_sample/df.unique_reads.sum()
-                df.unqiue_reads *= scaler
-                df.multi_mapped_reads *= scaler
-
+                unique_reads_in_sample = df[f"unique_reads_{i}"].sum()
+                scalar = average_unique_reads_per_sample/unique_reads_in_sample
+                df[f"unique_reads_{i}"] *= scalar
+                df[f"multi_mapped_reads_{i}"] *= scalar
+                logging.info(f"{path} has {int(unique_reads_in_sample)} total unique reads while the per-sample average is {average_unique_reads_per_sample}. Scaling read counts by {scalar}")
             tables_in_batch.append(df)
             i += 1
         batch_end_i = i
