@@ -118,10 +118,10 @@ def main():
             df = read_table(path, i)
             if args.normalize_read_counts:
                 unique_reads_in_sample = df[f"unique_reads_{i}"].sum()
-                scalar = average_unique_reads_per_sample/unique_reads_in_sample
-                df[f"unique_reads_{i}"] *= scalar
-                df[f"multi_mapped_reads_{i}"] *= scalar
-                logging.info(f"{path} has {int(unique_reads_in_sample)} total unique reads while the per-sample average is {average_unique_reads_per_sample}. Scaling read counts by {scalar}")
+                scalar = average_unique_reads_per_sample / float(unique_reads_in_sample)
+                df[f"unique_reads_{i}"] *= scalar / float(len(args.paths))
+                df[f"multi_mapped_reads_{i}"] *= scalar / float(len(args.paths))
+                logging.info(f"{path} has {int(unique_reads_in_sample)} total unique reads while the per-sample average is {average_unique_reads_per_sample}. Scaling read counts by {scalar} and dividing by {len(args.path)}")
             tables_in_batch.append(df)
             i += 1
         batch_end_i = i
