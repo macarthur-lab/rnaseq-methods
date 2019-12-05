@@ -106,9 +106,13 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
         strand = STRAND_LOOKUP[fields[3]]
         intron_motif = MOTIF_LOOKUP[fields[4]]
         is_annotated = str(bool(int(fields[5]))).lower()
-        num_uniquely_mapped_reads = int(float(fields[6]))
-        num_multi_mapped_reads = int(float(fields[7]))
+        num_uniquely_mapped_reads = int(round(float(fields[6])))
+        num_multi_mapped_reads = int(round(float(fields[7])))
         maximum_spliced_alignment_overhang = int(fields[8])
+
+        if num_uniquely_mapped_reads + num_multi_mapped_reads == 0:
+            # skip junctions with no read support. Rounding down to 0 may result in this.
+            continue
 
         gffTags = ";".join([
                 f"motif={intron_motif}",
