@@ -66,8 +66,8 @@ STRAND_LOOKUP = {
 }
 
 MOTIF_LOOKUP =  {
-    '0': 'non-canonical', 
-    '1': 'GT/AG', 
+    '0': 'non-canonical',
+    '1': 'GT/AG',
     '2': 'CT/AC',
     '3': 'GC/AG',
     '4': 'CT/GC',
@@ -77,14 +77,14 @@ MOTIF_LOOKUP =  {
 
 
 def parse_interval(i):
-    
+
     try:
         chrom, start_end = i.split(":")
         start, end = map(int, start_end.replace(",", "").split("-"))
         return chrom, start, end
     except Exception as e:
         raise ValueError(f"Couldn't parse interval: {i}. {e}")
-    
+
 intervals = [parse_interval(i) for i in args.interval]
 
 with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "rt") as f, open(output_path, "wt") as bed_file:
@@ -94,7 +94,7 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
         chrom = fields[0]
         start_1based = int(fields[1])
         end_1based = int(fields[2])
-        
+
         if intervals:
             for interval_chrom, interval_start, interval_end in intervals:
                 if interval_chrom == chrom and start_1based >= interval_start and end_1based <= interval_end:
@@ -106,10 +106,10 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
         strand = STRAND_LOOKUP[fields[3]]
         intron_motif = MOTIF_LOOKUP[fields[4]]
         is_annotated = str(bool(int(fields[5]))).lower()
-        num_uniquely_mapped_reads = int(fields[6])
-        num_multi_mapped_reads = int(fields[7])
+        num_uniquely_mapped_reads = int(float(fields[6]))
+        num_multi_mapped_reads = int(float(fields[7]))
         maximum_spliced_alignment_overhang = int(fields[8])
-            
+
         gffTags = ";".join([
                 f"motif={intron_motif}",
                 f"uniquely_mapped={num_uniquely_mapped_reads}",
@@ -129,7 +129,7 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
             score,
             strand,
         ])) + "\n")
-        
+
 os.system(f"bgzip -f {output_path}")
 os.system(f"tabix {output_path}.gz")
 
