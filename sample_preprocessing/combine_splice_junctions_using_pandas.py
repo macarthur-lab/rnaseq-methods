@@ -174,11 +174,15 @@ def main():
     #pd.set_option('display.max_columns', 10000)
     #logging.info(result.describe())
 
-    output_path = args.output_path or f"combined.{len(args.paths)}_samples"
-    if args.normalize_read_counts:
-        output_path += ".normalized"
 
-    output_path += ".SJ.out.parquet"
+    if args.output_path:
+        output_path = args.output_path
+    else:
+        output_path = f"combined.{len(args.paths)}_samples"
+        if args.normalize_read_counts:
+            output_path += ".normalized"
+        output_path += ".SJ.out.parquet"
+
     write_to_parquet(result, output_path)
 
     if args.save_read_counts:
