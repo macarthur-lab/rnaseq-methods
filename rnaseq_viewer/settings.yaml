@@ -19,6 +19,8 @@ sjOptions:
   labelMotif: false
   labelAnnotatedJunction: false
   labelAnnotatedJunctionValue: ' [A]'
+  showOnlyPlusStrand: false
+  showOnlyMinusStrand: false
   hideAnnotated: false
   hideUnannotated: false
   minUniquelyMappedReads: 0
