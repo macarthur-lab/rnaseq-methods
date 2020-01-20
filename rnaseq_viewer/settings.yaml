@@ -1,6 +1,7 @@
 genome: hg38
 locus: chr15:92,835,700-93,031,800
 bamOptions:
+  showBams: false
   trackHeight: 200
   viewAsPairs: false
   showSoftClips: true
@@ -28,6 +29,7 @@ sjOptions:
   maxFractionMultiMappedReads: 1.0
   minSplicedAlignmentOverhang: 0
 vcfOptions:
+  showVcfs: false
   displayMode: EXPANDED
 selectedSampleNamesByCategoryName:
   Reference Data: []
