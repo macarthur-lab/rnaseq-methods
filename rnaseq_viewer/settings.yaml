@@ -30,8 +30,8 @@ sjOptions:
 vcfOptions:
   displayMode: EXPANDED
 selectedSampleNamesByCategoryName:
-  - Reference Data: []
-  - Samples: []
+  Reference Data: []
+  Samples: []
 samplesInCategories:
   - categoryName: Reference Data
     samples:
