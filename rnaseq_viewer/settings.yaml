@@ -29,6 +29,9 @@ sjOptions:
   minSplicedAlignmentOverhang: 0
 vcfOptions:
   displayMode: EXPANDED
+selectedSampleNamesByCategoryName:
+  - Reference Data: []
+  - Samples: []
 samplesInCategories:
   - categoryName: Reference Data
     samples:
