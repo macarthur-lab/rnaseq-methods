@@ -96,6 +96,26 @@
                     "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
                     "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz",
                     "name": "GTEx All Fibs - Norm."
+                },
+                {
+                    "name": "Splice AI scores - SNVs",
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig"
+                },
+                {
+                    "name": "Splice AI scores - SNVs - alt allele A",
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-A.bigWig"
+                },
+                {
+                    "name": "Splice AI scores - SNVs - alt allele C",
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig"
+                },
+                {
+                    "name": "Splice AI scores - SNVs - alt allele G",
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-G.bigWig"
+                },
+                {
+                    "name": "Splice AI scores - SNVs - alt allele T",
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig"
                 }
             ]
         },
