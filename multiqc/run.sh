@@ -1,1 +1,1 @@
-multiqc --filename index.html -f -m star -m fastqc .
+multiqc --filename index.html -f -m star -m fastqc -ip .
