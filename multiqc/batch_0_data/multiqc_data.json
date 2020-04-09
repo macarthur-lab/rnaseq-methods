@@ -241,7 +241,6 @@
                 "BON_B18-24_1_R1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/BON_B18-24_1_R1.Log.final.out",
                 "BON_B15-118_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/BON_B15-118_1.Log.final.out",
                 "B13-07-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/B13-07-1M.Log.final.out",
-                "1179-1-chr22": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/1179-1-chr22.Log.final.out",
                 "RGP_7_2_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/RGP_7_2_2.Log.final.out",
                 "RGP_54_3_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/RGP_54_3_2.Log.final.out",
                 "MAN_1001_01_M1_D1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/MAN_1001_01_M1_D1.Log.final.out"
@@ -267,7 +266,6 @@
                 "BON_B12-76-1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/BON_B12-76-1_2.ReadsPerGene.out.tab",
                 "RP-2073_INMR_HZ_401_R1_v3_RNA_OnPrem": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/RP-2073_INMR_HZ_401_R1_v3_RNA_OnPrem.ReadsPerGene.out.tab",
                 "CLA_180CJ_DP_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/CLA_180CJ_DP_2.ReadsPerGene.out.tab",
-                "1179-1-chr22": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/1179-1-chr22.ReadsPerGene.out.tab",
                 "HK088-001_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/HK088-001_2.ReadsPerGene.out.tab",
                 "NH11-441": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/NH11-441.ReadsPerGene.out.tab",
                 "MBEL028_001_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/MBEL028_001_3.ReadsPerGene.out.tab",
@@ -26551,34 +26549,6 @@
                 "unmapped_mismatches": 251827,
                 "unmapped_tooshort": 2486789,
                 "unmapped_other": 31478
-            },
-            "1179-1-chr22": {
-                "total_reads": 1749148.0,
-                "avg_input_read_length": 152.0,
-                "uniquely_mapped": 1666226.0,
-                "uniquely_mapped_percent": 95.26,
-                "avg_mapped_read_length": 146.9,
-                "num_splices": 683838.0,
-                "num_annotated_splices": 683829.0,
-                "num_GTAG_splices": 679054.0,
-                "num_GCAG_splices": 4204.0,
-                "num_ATAC_splices": 185.0,
-                "num_noncanonical_splices": 395.0,
-                "mismatch_rate": 0.61,
-                "deletion_rate": 0.0,
-                "deletion_length": 1.5,
-                "insertion_rate": 0.0,
-                "insertion_length": 1.28,
-                "multimapped": 66038.0,
-                "multimapped_percent": 3.78,
-                "multimapped_toomany": 57.0,
-                "multimapped_toomany_percent": 0.0,
-                "unmapped_mismatches_percent": 0.03,
-                "unmapped_tooshort_percent": 0.11,
-                "unmapped_other_percent": 0.01,
-                "unmapped_mismatches": 3365,
-                "unmapped_tooshort": 12340,
-                "unmapped_other": 1122
             },
             "RGP_7_2_2": {
                 "total_reads": 43859201.0,
@@ -77786,34 +77756,6 @@
                 "unmapped_tooshort": 2486789,
                 "unmapped_other": 31478
             },
-            "1179-1-chr22": {
-                "total_reads": 1749148.0,
-                "avg_input_read_length": 152.0,
-                "uniquely_mapped": 1666226.0,
-                "uniquely_mapped_percent": 95.26,
-                "avg_mapped_read_length": 146.9,
-                "num_splices": 683838.0,
-                "num_annotated_splices": 683829.0,
-                "num_GTAG_splices": 679054.0,
-                "num_GCAG_splices": 4204.0,
-                "num_ATAC_splices": 185.0,
-                "num_noncanonical_splices": 395.0,
-                "mismatch_rate": 0.61,
-                "deletion_rate": 0.0,
-                "deletion_length": 1.5,
-                "insertion_rate": 0.0,
-                "insertion_length": 1.28,
-                "multimapped": 66038.0,
-                "multimapped_percent": 3.78,
-                "multimapped_toomany": 57.0,
-                "multimapped_toomany_percent": 0.0,
-                "unmapped_mismatches_percent": 0.03,
-                "unmapped_tooshort_percent": 0.11,
-                "unmapped_other_percent": 0.01,
-                "unmapped_mismatches": 3365,
-                "unmapped_tooshort": 12340,
-                "unmapped_other": 1122
-            },
             "RGP_7_2_2": {
                 "total_reads": 43859201.0,
                 "avg_input_read_length": 202.0,
@@ -86074,10 +86016,6 @@
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 82007391.0
             },
-            "1179-1-chr22": {
-                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 95.26,
-                "STAR_mqc-generalstats-star-uniquely_mapped": 1666226.0
-            },
             "INMR_IK_581_R1": {
                 "FastQC_mqc-generalstats-fastqc-percent_duplicates": 78.2764502251499,
                 "FastQC_mqc-generalstats-fastqc-percent_gc": 49.0,
@@ -86177,7 +86115,7 @@
     "config_analysis_dir": [
         "."
     ],
-    "config_creation_date": "2020-04-09, 10:11",
+    "config_creation_date": "2020-04-09, 12:03",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,

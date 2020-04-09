@@ -1,6 +1,5 @@
 Sample	RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency	RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Genes_Detected	RNA-SeQCv2_mqc-generalstats-rna_seqcv2-rRNA_Rate	STAR_mqc-generalstats-star-uniquely_mapped_percent	STAR_mqc-generalstats-star-uniquely_mapped	FastQC_mqc-generalstats-fastqc-percent_duplicates	FastQC_mqc-generalstats-fastqc-percent_gc	FastQC_mqc-generalstats-fastqc-avg_sequence_length	FastQC_mqc-generalstats-fastqc-percent_fails	FastQC_mqc-generalstats-fastqc-total_sequences
 1179-1	0.824959	27003	0.0139946	88.84	76969620.0	35.963547847022454	49.0	76.0	18.181818181818183	179056715.0
-1179-1-chr22				95.26	1666226.0					
 1211-1	0.802356	29094	0.0176384	81.55	149232351.0	45.41613617410325	49.0	76.0	18.181818181818183	381837666.0
 1258-1	0.836815	28741	0.0106231	86.64	172635677.0	46.98009779274535	50.0	76.0	18.181818181818183	411949605.0
 126BG_CB_M1	0.852703	22706	0.0328905	82.85	46728578.0	46.785145489183876	51.0	76.0	9.090909090909092	120209409.0

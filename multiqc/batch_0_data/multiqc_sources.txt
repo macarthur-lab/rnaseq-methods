@@ -238,7 +238,6 @@ STAR	SummaryLog	SRPK3_USA_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/
 STAR	SummaryLog	BON_B18-24_1_R1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/BON_B18-24_1_R1.Log.final.out
 STAR	SummaryLog	BON_B15-118_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/BON_B15-118_1.Log.final.out
 STAR	SummaryLog	B13-07-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/B13-07-1M.Log.final.out
-STAR	SummaryLog	1179-1-chr22	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/1179-1-chr22.Log.final.out
 STAR	SummaryLog	RGP_7_2_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/RGP_7_2_2.Log.final.out
 STAR	SummaryLog	RGP_54_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/RGP_54_3_2.Log.final.out
 STAR	SummaryLog	MAN_1001_01_M1_D1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/MAN_1001_01_M1_D1.Log.final.out
@@ -262,7 +261,6 @@ STAR	ReadsPerGene	SWE_36326_1	/Users/weisburd/project__rnaseq/code/rnaseq_method
 STAR	ReadsPerGene	BON_B12-76-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/BON_B12-76-1_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RP-2073_INMR_HZ_401_R1_v3_RNA_OnPrem	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/RP-2073_INMR_HZ_401_R1_v3_RNA_OnPrem.ReadsPerGene.out.tab
 STAR	ReadsPerGene	CLA_180CJ_DP_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/CLA_180CJ_DP_2.ReadsPerGene.out.tab
-STAR	ReadsPerGene	1179-1-chr22	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/1179-1-chr22.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK088-001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/HK088-001_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	NH11-441	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/NH11-441.ReadsPerGene.out.tab
 STAR	ReadsPerGene	MBEL028_001_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_0/star/genecounts/MBEL028_001_3.ReadsPerGene.out.tab
