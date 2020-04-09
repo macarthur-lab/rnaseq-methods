@@ -25,6 +25,11 @@ def run(cmd):
     os.system(cmd)
 
 
+def chdir(new_dir):
+    logger.info("cd %s" % new_dir)
+    os.chdir(new_dir)
+
+
 def gsutil_cp(source, dest, mkdir=True):
     if mkdir:
         run("mkdir -p " + dest)
@@ -35,14 +40,14 @@ def main():
     args = parse_args()
     logger.info("Args: " + pprint.pformat(args.__dict__))
 
+    original_dir = os.path.abspath(os.getcwd())
     source_prefix = "gs://macarthurlab-rnaseq/" + (args.batch_name if args.batch_name != "all" else "*")
-    dest_prefix = "multiqc/data/"
+    dest_prefix = os.path.join(original_dir, "multiqc/data/")
     if not os.path.isdir(dest_prefix):
         logger.error(dest_prefix + " dir not found.")
         sys.exit(1)
 
-    dest_prefix = os.path.abspath(dest_prefix + args.batch_name)
-
+    dest_prefix = os.path.join(dest_prefix, args.batch_name)
 
     # star
     gsutil_cp("%s/star/*.Log.final.out" % source_prefix, dest_prefix+"/star/")
@@ -56,13 +61,16 @@ def main():
 
     # unzip
     run("gunzip -f " + dest_prefix+"/star/genecounts/*.gz")
-
-    os.chdir(dest_prefix+"/fastqc/zip/")
+    chdir(dest_prefix+"/fastqc/zip/")
     for zip_path in glob.glob("*.zip"):
         run("unzip -o " + zip_path)
 
-    os.chdir(dest_prefix)
+    # run multiqc
+    chdir(dest_prefix)
     run("python3 -m multiqc -f -m star -m fastqc -m rna_seqc --filename %s.html ." % args.batch_name)
+
+    run("rm -r %s" % os.path.join(original_dir, "multiqc/%s_data" % args.batch_name))
+    run("mv -f %s* %s" % (args.batch_name, os.path.join(original_dir, "multiqc/")))
     logger.info("Done")
 
 
