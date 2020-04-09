@@ -5,6 +5,7 @@ import glob
 import logging
 import os
 import pprint
+import sys
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
