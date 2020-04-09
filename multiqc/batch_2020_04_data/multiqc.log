@@ -1,200 +1,200 @@
-[2020-04-09 10:15:00,912] multiqc                                            [DEBUG  ]  No MultiQC config found: /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc_config.yaml
-[2020-04-09 10:15:00,914] multiqc                                            [DEBUG  ]  Loading config settings from: /Users/weisburd/.multiqc_config.yaml
-[2020-04-09 10:15:00,914] multiqc                                            [DEBUG  ]  Added to filename patterns: {'rna_seqc/metrics': {'fn': '*.metrics.tsv'}}
-[2020-04-09 10:15:00,914] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
-[2020-04-09 10:15:00,914] multiqc                                            [DEBUG  ]  Command used: /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc/__main__.py -f -m star -m fastqc -m rna_seqc --filename batch_2020_04.html .
-[2020-04-09 10:15:01,503] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.8
-[2020-04-09 10:15:01,503] multiqc                                            [INFO   ]  This is MultiQC v1.8.dev0
-[2020-04-09 10:15:01,503] multiqc                                            [DEBUG  ]  Command     : /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc/__main__.py -f -m star -m fastqc -m rna_seqc --filename batch_2020_04.html .
-[2020-04-09 10:15:01,504] multiqc                                            [DEBUG  ]  Working dir : /Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04
-[2020-04-09 10:15:01,504] multiqc                                            [INFO   ]  Template    : default
-[2020-04-09 10:15:01,504] multiqc                                            [DEBUG  ]  Running Python 3.7.6 (default, Dec 30 2019, 19:38:28)  [Clang 11.0.0 (clang-1100.0.33.16)]
-[2020-04-09 10:15:01,504] multiqc                                            [INFO   ]  Searching   : /Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04
-[2020-04-09 10:15:01,504] multiqc                                            [INFO   ]  Only using modules star, fastqc, rna_seqc
-[2020-04-09 10:15:01,505] multiqc                                            [DEBUG  ]  Analysing modules: rna_seqc, star, fastqc
-[2020-04-09 10:15:01,505] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3
-[2020-04-09 10:15:01,608] multiqc                                            [DEBUG  ]  Ignored 198 search patterns as didn't match running modules.
-[2020-04-09 10:15:01,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,664] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,666] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,668] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,671] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,675] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,716] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,790] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,795] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,804] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,808] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,816] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,821] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,826] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,832] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,836] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,839] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,848] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,852] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,856] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,861] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,871] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,880] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,884] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,907] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,912] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:01,915] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
-[2020-04-09 10:15:02,887] multiqc.modules.rna_seqc.rna_seqc                  [INFO   ]  Found 57 samples
-[2020-04-09 10:15:03,084] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-107
-[2020-04-09 10:15:03,184] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1314_HK088-001
-[2020-04-09 10:15:03,288] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK085-001
-[2020-04-09 10:15:03,393] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK047_0116
-[2020-04-09 10:15:03,499] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK006_0016
-[2020-04-09 10:15:03,625] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK112_001
-[2020-04-09 10:15:03,799] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK010_0026
-[2020-04-09 10:15:03,961] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK079_001
-[2020-04-09 10:15:04,080] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-2034_RGP_554_3
-[2020-04-09 10:15:04,213] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK116_001
-[2020-04-09 10:15:04,354] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-108
-[2020-04-09 10:15:04,477] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK018_0047
-[2020-04-09 10:15:04,606] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-127
-[2020-04-09 10:15:04,740] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-006
-[2020-04-09 10:15:04,921] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK044_0109
-[2020-04-09 10:15:05,054] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-047
-[2020-04-09 10:15:05,164] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-071-004
-[2020-04-09 10:15:05,280] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK137_001
-[2020-04-09 10:15:05,387] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK081_001
-[2020-04-09 10:15:05,492] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-070
-[2020-04-09 10:15:05,605] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-115
-[2020-04-09 10:15:05,758] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-071-001
-[2020-04-09 10:15:05,943] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-075
-[2020-04-09 10:15:06,064] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-134
-[2020-04-09 10:15:06,164] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-015
-[2020-04-09 10:15:06,288] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-010
-[2020-04-09 10:15:06,408] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-131
-[2020-04-09 10:15:06,510] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-095
-[2020-04-09 10:15:06,615] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK080_001
-[2020-04-09 10:15:06,760] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-022
-[2020-04-09 10:15:06,917] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK101-001
-[2020-04-09 10:15:07,030] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-087
-[2020-04-09 10:15:07,138] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-114
-[2020-04-09 10:15:07,239] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-035
-[2020-04-09 10:15:07,341] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-2034_RGP_552_3
-[2020-04-09 10:15:07,442] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK028_0073
-[2020-04-09 10:15:07,548] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-126
-[2020-04-09 10:15:07,655] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK124_001
-[2020-04-09 10:15:07,803] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK024_0065
-[2020-04-09 10:15:07,960] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-081
-[2020-04-09 10:15:08,081] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-100
-[2020-04-09 10:15:08,183] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1512_HK060-0154
-[2020-04-09 10:15:08,303] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-116
-[2020-04-09 10:15:08,419] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-085
-[2020-04-09 10:15:08,528] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-032
-[2020-04-09 10:15:08,660] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-073
-[2020-04-09 10:15:08,825] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-124
-[2020-04-09 10:15:08,959] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK106-001
-[2020-04-09 10:15:09,113] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-119
-[2020-04-09 10:15:09,277] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-133
-[2020-04-09 10:15:09,400] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1418_BEG_1435-01
-[2020-04-09 10:15:09,542] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1418_BEG_1111-1
-[2020-04-09 10:15:09,658] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-061
-[2020-04-09 10:15:09,806] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-139
-[2020-04-09 10:15:09,951] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK011_0029
-[2020-04-09 10:15:10,096] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-104
-[2020-04-09 10:15:10,254] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-025
-[2020-04-09 10:15:10,254] multiqc.modules.star.star                          [INFO   ]  Found 57 reports and 57 gene count files
-[2020-04-09 10:15:25,001] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK006_0016
-[2020-04-09 10:15:25,251] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-015
-[2020-04-09 10:15:25,491] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-032
-[2020-04-09 10:15:25,748] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-025
-[2020-04-09 10:15:25,989] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK106-001
-[2020-04-09 10:15:26,249] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-035
-[2020-04-09 10:15:26,518] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-022
-[2020-04-09 10:15:26,801] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK124_001
-[2020-04-09 10:15:27,099] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-107
-[2020-04-09 10:15:27,354] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-100
-[2020-04-09 10:15:27,602] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-075
-[2020-04-09 10:15:27,846] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-127
-[2020-04-09 10:15:28,089] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK081_001
-[2020-04-09 10:15:28,281] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-126
-[2020-04-09 10:15:28,534] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-131
-[2020-04-09 10:15:28,795] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-073
-[2020-04-09 10:15:29,033] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK044_0109
-[2020-04-09 10:15:29,274] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-116
-[2020-04-09 10:15:29,511] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK112_001
-[2020-04-09 10:15:29,697] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-2034_RGP_554_3
-[2020-04-09 10:15:29,970] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK085-001
-[2020-04-09 10:15:30,268] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1314_HK088-001
-[2020-04-09 10:15:30,313] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1512_HK060-0154
-[2020-04-09 10:15:30,594] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-081
-[2020-04-09 10:15:30,846] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK116_001
-[2020-04-09 10:15:31,025] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-071-004
-[2020-04-09 10:15:31,273] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK024_0065
-[2020-04-09 10:15:31,507] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK137_001
-[2020-04-09 10:15:31,710] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK079_001
-[2020-04-09 10:15:31,888] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-2034_RGP_552_3
-[2020-04-09 10:15:32,122] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK101-001
-[2020-04-09 10:15:32,388] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-087
-[2020-04-09 10:15:32,643] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK010_0026
-[2020-04-09 10:15:32,881] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-071-001
-[2020-04-09 10:15:33,142] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-108
-[2020-04-09 10:15:33,371] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-095
-[2020-04-09 10:15:33,630] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK028_0073
-[2020-04-09 10:15:33,913] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-085
-[2020-04-09 10:15:34,199] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-139
-[2020-04-09 10:15:34,456] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK080_001
-[2020-04-09 10:15:34,646] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-119
-[2020-04-09 10:15:34,898] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK047_0116
-[2020-04-09 10:15:35,074] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-006
-[2020-04-09 10:15:35,321] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-134
-[2020-04-09 10:15:35,554] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-061
-[2020-04-09 10:15:35,802] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-124
-[2020-04-09 10:15:36,036] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-133
-[2020-04-09 10:15:36,282] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-114
-[2020-04-09 10:15:36,539] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1418_BEG_1435-01
-[2020-04-09 10:15:36,792] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-104
-[2020-04-09 10:15:37,025] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK018_0047
-[2020-04-09 10:15:37,214] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-010
-[2020-04-09 10:15:37,454] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-047
-[2020-04-09 10:15:37,702] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-115
-[2020-04-09 10:15:37,929] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK011_0029
-[2020-04-09 10:15:38,160] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1418_BEG_1111-1
-[2020-04-09 10:15:38,430] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-070
-[2020-04-09 10:15:38,670] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 57 reports
-[2020-04-09 10:15:39,832] multiqc                                            [INFO   ]  Compressing plot data
-[2020-04-09 10:15:41,278] multiqc                                            [INFO   ]  Report      : batch_2020_04.html
-[2020-04-09 10:15:41,278] multiqc                                            [INFO   ]  Data        : batch_2020_04_data
-[2020-04-09 10:15:41,279] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_fastqc.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,279] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_rna_seqc.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,279] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_star.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,280] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_general_stats.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,280] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_sources.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,281] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpzb173ja3/multiqc_data/multiqc_data.json' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
-[2020-04-09 10:15:41,478] multiqc                                            [INFO   ]  MultiQC complete
+[2020-04-09 11:31:23,681] multiqc                                            [DEBUG  ]  No MultiQC config found: /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc_config.yaml
+[2020-04-09 11:31:23,682] multiqc                                            [DEBUG  ]  Loading config settings from: /Users/weisburd/.multiqc_config.yaml
+[2020-04-09 11:31:23,682] multiqc                                            [DEBUG  ]  Added to filename patterns: {'rna_seqc/metrics': {'fn': '*.metrics.tsv'}}
+[2020-04-09 11:31:23,682] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2020-04-09 11:31:23,682] multiqc                                            [DEBUG  ]  Command used: /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc/__main__.py -f -m star -m fastqc -m rna_seqc --filename batch_2020_04.html .
+[2020-04-09 11:31:24,467] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.8
+[2020-04-09 11:31:24,467] multiqc                                            [INFO   ]  This is MultiQC v1.8.dev0
+[2020-04-09 11:31:24,467] multiqc                                            [DEBUG  ]  Command     : /usr/local/lib/python3.7/site-packages/multiqc-1.8.dev0-py3.7.egg/multiqc/__main__.py -f -m star -m fastqc -m rna_seqc --filename batch_2020_04.html .
+[2020-04-09 11:31:24,467] multiqc                                            [DEBUG  ]  Working dir : /Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04
+[2020-04-09 11:31:24,467] multiqc                                            [INFO   ]  Template    : default
+[2020-04-09 11:31:24,468] multiqc                                            [DEBUG  ]  Running Python 3.7.6 (default, Dec 30 2019, 19:38:28)  [Clang 11.0.0 (clang-1100.0.33.16)]
+[2020-04-09 11:31:24,468] multiqc                                            [INFO   ]  Searching   : /Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04
+[2020-04-09 11:31:24,469] multiqc                                            [INFO   ]  Only using modules star, fastqc, rna_seqc
+[2020-04-09 11:31:24,469] multiqc                                            [DEBUG  ]  Analysing modules: rna_seqc, star, fastqc
+[2020-04-09 11:31:24,469] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y
+[2020-04-09 11:31:24,635] multiqc                                            [DEBUG  ]  Ignored 198 search patterns as didn't match running modules.
+[2020-04-09 11:31:24,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,760] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,791] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,793] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,795] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,797] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,803] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,814] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,816] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,821] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,823] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,825] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,827] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,831] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,835] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,840] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,842] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,848] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,850] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,852] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,855] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,857] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,862] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,864] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:24,868] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2020-04-09 11:31:25,222] multiqc.modules.rna_seqc.rna_seqc                  [INFO   ]  Found 57 samples
+[2020-04-09 11:31:25,377] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-107
+[2020-04-09 11:31:25,462] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1314_HK088-001
+[2020-04-09 11:31:25,549] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK085-001
+[2020-04-09 11:31:25,634] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK047_0116
+[2020-04-09 11:31:25,724] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK006_0016
+[2020-04-09 11:31:25,808] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK112_001
+[2020-04-09 11:31:25,894] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK010_0026
+[2020-04-09 11:31:25,980] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK079_001
+[2020-04-09 11:31:26,064] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-2034_RGP_554_3
+[2020-04-09 11:31:26,150] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK116_001
+[2020-04-09 11:31:26,235] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-108
+[2020-04-09 11:31:26,318] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK018_0047
+[2020-04-09 11:31:26,406] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-127
+[2020-04-09 11:31:26,500] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-006
+[2020-04-09 11:31:26,584] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK044_0109
+[2020-04-09 11:31:26,670] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-047
+[2020-04-09 11:31:26,757] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-071-004
+[2020-04-09 11:31:26,843] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK137_001
+[2020-04-09 11:31:26,927] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK081_001
+[2020-04-09 11:31:27,015] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-070
+[2020-04-09 11:31:27,098] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-115
+[2020-04-09 11:31:27,186] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-071-001
+[2020-04-09 11:31:27,271] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-075
+[2020-04-09 11:31:27,357] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-134
+[2020-04-09 11:31:27,443] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-015
+[2020-04-09 11:31:27,528] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-010
+[2020-04-09 11:31:27,615] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-131
+[2020-04-09 11:31:27,699] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-095
+[2020-04-09 11:31:27,785] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK080_001
+[2020-04-09 11:31:27,869] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-022
+[2020-04-09 11:31:27,953] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK101-001
+[2020-04-09 11:31:28,039] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-087
+[2020-04-09 11:31:28,123] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-114
+[2020-04-09 11:31:28,210] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-035
+[2020-04-09 11:31:28,293] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-2034_RGP_552_3
+[2020-04-09 11:31:28,377] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK028_0073
+[2020-04-09 11:31:28,471] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-126
+[2020-04-09 11:31:28,557] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_OUN_HK124_001
+[2020-04-09 11:31:28,642] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK024_0065
+[2020-04-09 11:31:28,732] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-081
+[2020-04-09 11:31:28,817] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-100
+[2020-04-09 11:31:28,901] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1512_HK060-0154
+[2020-04-09 11:31:28,991] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-116
+[2020-04-09 11:31:29,083] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-085
+[2020-04-09 11:31:29,176] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-032
+[2020-04-09 11:31:29,268] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-073
+[2020-04-09 11:31:29,362] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-124
+[2020-04-09 11:31:29,445] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK106-001
+[2020-04-09 11:31:29,533] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-119
+[2020-04-09 11:31:29,619] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-133
+[2020-04-09 11:31:29,707] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1418_BEG_1435-01
+[2020-04-09 11:31:29,792] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1418_BEG_1111-1
+[2020-04-09 11:31:29,874] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-061
+[2020-04-09 11:31:29,958] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-139
+[2020-04-09 11:31:30,043] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK011_0029
+[2020-04-09 11:31:30,124] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-104
+[2020-04-09 11:31:30,214] multiqc.modules.star.star                          [DEBUG  ]  Duplicate ReadsPerGene sample name found! Overwriting: RP-1903_HK-025
+[2020-04-09 11:31:30,215] multiqc.modules.star.star                          [INFO   ]  Found 57 reports and 57 gene count files
+[2020-04-09 11:31:39,851] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK006_0016
+[2020-04-09 11:31:40,037] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-015
+[2020-04-09 11:31:40,221] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-032
+[2020-04-09 11:31:40,399] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-025
+[2020-04-09 11:31:40,586] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK106-001
+[2020-04-09 11:31:40,775] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-035
+[2020-04-09 11:31:40,955] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-022
+[2020-04-09 11:31:41,135] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK124_001
+[2020-04-09 11:31:41,316] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-107
+[2020-04-09 11:31:41,494] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-100
+[2020-04-09 11:31:41,676] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-075
+[2020-04-09 11:31:41,857] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-127
+[2020-04-09 11:31:42,043] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK081_001
+[2020-04-09 11:31:42,182] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-126
+[2020-04-09 11:31:42,363] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-131
+[2020-04-09 11:31:42,560] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-073
+[2020-04-09 11:31:42,748] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK044_0109
+[2020-04-09 11:31:42,925] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-116
+[2020-04-09 11:31:43,103] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK112_001
+[2020-04-09 11:31:43,244] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-2034_RGP_554_3
+[2020-04-09 11:31:43,422] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK085-001
+[2020-04-09 11:31:43,602] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1314_HK088-001
+[2020-04-09 11:31:43,635] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1512_HK060-0154
+[2020-04-09 11:31:43,818] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-081
+[2020-04-09 11:31:43,999] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK116_001
+[2020-04-09 11:31:44,141] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-071-004
+[2020-04-09 11:31:44,341] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK024_0065
+[2020-04-09 11:31:44,543] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK137_001
+[2020-04-09 11:31:44,680] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK079_001
+[2020-04-09 11:31:44,829] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-2034_RGP_552_3
+[2020-04-09 11:31:45,007] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK101-001
+[2020-04-09 11:31:45,188] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-087
+[2020-04-09 11:31:45,366] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK010_0026
+[2020-04-09 11:31:45,549] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-071-001
+[2020-04-09 11:31:45,739] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-108
+[2020-04-09 11:31:45,910] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-095
+[2020-04-09 11:31:46,091] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK028_0073
+[2020-04-09 11:31:46,273] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-085
+[2020-04-09 11:31:46,458] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-139
+[2020-04-09 11:31:46,636] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK080_001
+[2020-04-09 11:31:46,776] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-119
+[2020-04-09 11:31:46,950] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK047_0116
+[2020-04-09 11:31:47,092] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-006
+[2020-04-09 11:31:47,275] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-134
+[2020-04-09 11:31:47,450] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-061
+[2020-04-09 11:31:47,640] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-124
+[2020-04-09 11:31:47,824] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-133
+[2020-04-09 11:31:48,002] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-114
+[2020-04-09 11:31:48,184] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1418_BEG_1435-01
+[2020-04-09 11:31:48,366] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-104
+[2020-04-09 11:31:48,559] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_OUN_HK018_0047
+[2020-04-09 11:31:48,708] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-010
+[2020-04-09 11:31:48,888] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-047
+[2020-04-09 11:31:49,082] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-115
+[2020-04-09 11:31:49,283] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK011_0029
+[2020-04-09 11:31:49,477] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1418_BEG_1111-1
+[2020-04-09 11:31:49,663] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Duplicate sample name found! Overwriting: RP-1903_HK-070
+[2020-04-09 11:31:49,835] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 57 reports
+[2020-04-09 11:31:50,723] multiqc                                            [INFO   ]  Compressing plot data
+[2020-04-09 11:31:51,793] multiqc                                            [INFO   ]  Report      : batch_2020_04.html
+[2020-04-09 11:31:51,793] multiqc                                            [INFO   ]  Data        : batch_2020_04_data
+[2020-04-09 11:31:51,794] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_fastqc.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,794] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_rna_seqc.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,795] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_star.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,795] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_general_stats.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,796] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_sources.txt' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,796] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/4k/jh2hjdp10jj7g6346ydf96v8k_60_2/T/tmpv52opm3y/multiqc_data/multiqc_data.json' to '/Users/weisburd/project__rnaseq/code/rnaseq_methods/multiqc/data/batch_2020_04/batch_2020_04_data'
+[2020-04-09 11:31:51,967] multiqc                                            [INFO   ]  MultiQC complete
