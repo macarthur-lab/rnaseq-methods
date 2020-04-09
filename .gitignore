@@ -1,7 +1,5 @@
 .idea
 *.iml
 
-star
-fastqc
-rna_seqc
-reference_tracks
+#reference_tracks
+multiqc/data/
