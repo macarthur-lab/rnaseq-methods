@@ -16,6 +16,8 @@ def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--source-namespace", default="macarthurlab-rnaseq-terra")
     p.add_argument("--dest-bucket", default="macarthurlab-rnaseq")
+    p.add_argument("-w", "--workflow-id", help="(optional) workflow id. Can specify more than one", action="append")
+    p.add_argument("-g", "--group", nargs="+", default=["star", "rnaseqc", "fastqc"], choices=["hg19_bams", "star", "ranseqc", "fastqc"], help="(optional) what types of files to transfer", action="append")
     p.add_argument("source_workspace")
     p.add_argument("batch_name")
     args = p.parse_args()
@@ -78,30 +80,36 @@ def main():
     bucket_and_batch_name = (args.dest_bucket, args.batch_name)
 
     # hg19 bams
-    copy_hg19_bams(args)
+    #copy_hg19_bams(args)
 
-    # star
-    dest = "gs://%s/%s/star/" % bucket_and_batch_name
-    gsutil_cp("gs://%s/**star_out/*.Aligned.sortedByCoord.out.bam" % source_bucket, dest)
-    gsutil_cp("gs://%s/**star_out/*.Aligned.sortedByCoord.out.bam.bai" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.Chimeric.out.junction.gz" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.Log.final.out" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.Log.out" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.Log.progress.out" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.ReadsPerGene.out.tab.gz" % source_bucket,  dest)
-    gsutil_cp("gs://%s/**star_out/*.SJ.out.tab.gz" % source_bucket,  dest)
+    for workflow_id in (args.workflow_id or ['']):
+        if workflow_id:
+            logger.info("------------------------------------------------")
+            logger.info("Processing workflow id: " + workflow_id)
+            
+        source_prefix = "gs://%s/%s" % (source_bucket, workflow_id)
+        
+        # star
+        dest = "gs://%s/%s/star/" % bucket_and_batch_name
+        gsutil_cp("%s**star_out/*.Aligned.sortedByCoord.out.bam" % source_prefix, dest)
+        gsutil_cp("%s**star_out/*.Aligned.sortedByCoord.out.bam.bai" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.Chimeric.out.junction.gz" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.Log.final.out" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.Log.out" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.Log.progress.out" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.ReadsPerGene.out.tab.gz" % source_prefix,  dest)
+        gsutil_cp("%s**star_out/*.SJ.out.tab.gz" % source_prefix,  dest)
+        
+        # rnaseqc
+        dest = "gs://%s/%s/rnaseqc/" % bucket_and_batch_name
+        gsutil_cp("%s**call-rnaseqc2/*.metrics.tsv" % source_prefix, dest)
+        gsutil_cp("%s**call-rnaseqc2/*.exon_reads.gct.gz" % source_prefix, dest)
+        gsutil_cp("%s**call-rnaseqc2/*.gene_reads.gct.gz" % source_prefix, dest)
+        gsutil_cp("%s**call-rnaseqc2/*.gene_tpm.gct.gz" % source_prefix, dest)
 
-    # rnaseqc
-    dest = "gs://%s/%s/rnaseqc/" % bucket_and_batch_name
-    gsutil_cp("gs://%s/**call-rnaseqc2/*.metrics.tsv" % source_bucket, dest)
-    gsutil_cp("gs://%s/**call-rnaseqc2/*.fragmentSizes.txt" % source_bucket, dest)
-    gsutil_cp("gs://%s/**call-rnaseqc2/*.exon_reads.gct.gz" % source_bucket, dest)
-    gsutil_cp("gs://%s/**call-rnaseqc2/*.gene_reads.gct.gz" % source_bucket, dest)
-    gsutil_cp("gs://%s/**call-rnaseqc2/*.gene_tpm.gct.gz" % source_bucket, dest)
-
-    # fastqc
-    dest = "gs://%s/%s/fastqc/zip/" % bucket_and_batch_name
-    gsutil_cp("gs://%s/**_fastqc.zip" % source_bucket, dest)
+        # fastqc
+        dest = "gs://%s/%s/fastqc/zip/" % bucket_and_batch_name
+        gsutil_cp("%s**_fastqc.zip" % source_prefix, dest)
 
     logger.info("Done")
 
