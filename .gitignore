@@ -1,5 +1,8 @@
 .idea
 *.iml
 
-#reference_tracks
+*.pyc
+
+*.tsv
+
 multiqc/data/
