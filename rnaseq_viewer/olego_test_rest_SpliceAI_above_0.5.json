@@ -1,0 +1,216 @@
+{
+    "genome": "hg38",
+    "locus": "chr15:92,835,700-93,031,800",
+    "leftSideBarLocusList": [
+"chr1:220769300",
+"chr10:75917016",
+"chr11:1086366",
+"chr11:5986041",
+"chr11:64926551",
+"chr11:124740877",
+"chr16:20790685",
+"chr17:41437386",
+"chr17:81545215",
+"chr18:54366964",
+"chr19:8247563",
+"chr2:26318945",
+"chr2:84705596",
+"chr2:97143088",
+"chr2:137272462",
+"chr20:63546770",
+"chr22:30491568",
+"chr4:121868535",
+"chr4:163716562",
+"chr7:73865329",
+"chr8:10538473",
+"chr9:113428889",
+"chr9:136055174",
+"chrX:20141436"
+    ],
+    "rightSideBarLocusList": [
+    	"chr10:95559837",
+"chr11:1086366",
+"chr11:18565692",
+"chr16:58586159",
+"chr17:16645945",
+"chr17:63530079",
+"chr17:74744051",
+"chr2:176301370",
+"chr2:238279731",
+"chr20:33002582",
+"chr20:63311783",
+"chr22:18156886",
+"chr22:38115172",
+"chr3:37146459",
+"chr4:1369253",
+"chr7:106016025",
+"chr8:74849300",
+"chr8:102273930",
+"chr8:102273930
+    ],
+    "bamOptions": {
+	"showBams": true,
+        "trackHeight": 200,
+        "viewAsPairs": false,
+        "showSoftClips": true,
+        "alignmentShading": "strand"
+    },
+    "sjOptions": {
+        "showCoverage": true,
+        "showJunctions": true,
+        "trackHeight": 170,
+        "colorBy": "strand",
+	"colorByNumReadsThreshold": 5,
+        "thicknessBasedOn": "numUniqueReads",
+        "bounceHeightBasedOn": "random",
+        "labelUniqueReadCount": true,
+        "labelMultiMappedReadCount": false,
+        "labelTotalReadCount": false,
+        "labelMotif": false,
+        "labelAnnotatedJunction": false,
+        "labelAnnotatedJunctionValue": " [A]",
+	"showOnlyPlusStrand": false,
+       	"showOnlyMinusStrand": false,
+        "hideAnnotated": false,
+        "hideUnannotated": false,
+        "minUniquelyMappedReads": 0,
+        "minTotalReads": 1,
+        "maxFractionMultiMappedReads": 1,
+        "minSplicedAlignmentOverhang": 0
+    },
+    "vcfOptions": {
+ 	"showVcfs": true,
+        "displayMode": "EXPANDED"
+    },
+    "selectedSampleNamesByCategoryName": {
+	 "Reference Data": [],
+	 "Samples": []
+    },
+    "samplesInCategories": [
+        {
+            "categoryName": "Reference Data",
+            "samples": [
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig",
+                    "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz",
+                    "name": "GTEx 100 Muscle"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig",
+                    "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz",
+                    "name": "GTEx 100 Blood"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig",
+                    "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz",
+                    "name": "GTEx 100 Fibs"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig",
+                    "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz",
+                    "name": "GTEx All Muscle"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig",
+                    "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz",
+                    "name": "GTEx All Blood"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig",
+                    "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz",
+                    "name": "GTEx All Fibs"
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig",
+                    "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz",
+                    "name": "GTEx All Muscle - Norm."
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig",
+                    "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz",
+                    "name": "GTEx All Blood - Norm."
+                },
+                {
+                    "coverage": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig",
+                    "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
+                    "junctions": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz",
+                    "name": "GTEx All Fibs - Norm."
+                }
+            ]
+        },
+        {
+            "categoryName": "RGP_248_3",
+            "samples": [
+		     {
+			"name": "RGP_248_3 WGS vcf",
+	                "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.SNPs.vcf.gz"
+		    },
+		    {
+			"name": "RGP_248_3 WGS vcf SpliceAI >= 0.5",
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr__in_top_30_percent_muscle_expressed_exons.vcf.gz" 
+		    },
+                    {
+                      "name": "RGP_248_3 STAR bam",
+                      "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_248_3.Aligned.sortedByCoord.out.bam"
+                    },
+		    {
+			"name": "RGP_248_3 STAR junctions",
+			"coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_248_3.bigWig",
+	                "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3.junctions.bed.gz"
+		    },
+		    
+                {
+                  "name": "RGP_248_3 OLego bam",
+                  "bam": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.bam"
+                },
+		    {
+                  "name": "RGP_248_3 OLego junctions",
+		  "coverage": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_olego_output.bigWig",
+                  "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.sorted.olego.bed.gz"
+                }
+		    
+		    
+		]
+	},
+        {
+            "categoryName": "RGP_273_3",
+            "samples": [
+		    {
+			"name": "RGP_273_3 WGS vcf",
+	                "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.SNPs.vcf.gz"
+		    },
+		    {
+			"name": "RGP_273_3 WGS vcf SpliceAI >= 0.5",
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_variants_from_seqr__in_top_30_percent_muscle_expressed_exons.vcf.gz" 
+		    },
+                {
+                  "name": "RGP_273_3 STAR bam",
+                  "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam"
+                },
+		{
+                  "name": "RGP_273_3 STAR junctions",
+                  "coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_273_3.bigWig",
+                  "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3.junctions.bed.gz"
+                },
+                {
+                  "name": "RGP_273_3 OLego bam",
+                  "bam": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_output.bam"
+                },
+		{
+                  "name": "RGP_273_3 OLego junctions",
+		  "coverage": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_olego_output.bigWig",
+                  "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_output.sorted.olego.bed.gz"
+                }
+		 
+             ]
+          }
+      ]
+  }
