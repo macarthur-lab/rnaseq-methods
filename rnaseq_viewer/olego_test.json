@@ -126,8 +126,7 @@
 		    {
 			"name": "RGP_273_3 vars SpliceAI >= 0.5",
 			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_variants_from_seqr.vcf.gz",    
-		    }
-
+		    },
                 {
                   "name": "RGP_273_3 star",
                   "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam",
