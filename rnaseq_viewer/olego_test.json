@@ -104,7 +104,7 @@
             "samples": [
 		    {
 			"name": "RGP_248_3 vars SpliceAI >= 0.5",
-			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr.vcf.gz",    
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr.vcf.gz"
 		    },
                 {
                   "name": "RGP_248_3 star",
@@ -114,9 +114,9 @@
                   "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.SNPs.vcf.gz"
                 },
                 {
-                  "name": "RGP_248_3 olego"
+                  "name": "RGP_248_3 olego",
                   "bam": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.bam",
-                  "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.sorted.olego.bed.gz",
+                  "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.sorted.olego.bed.gz"
                 }
 		]
 	},
