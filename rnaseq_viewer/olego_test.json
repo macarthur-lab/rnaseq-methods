@@ -151,6 +151,7 @@
                 },
 		    {
                   "name": "RGP_248_3 OLego junctions",
+		  "coverage": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_olego_output.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.sorted.olego.bed.gz"
                 }
 		    
@@ -183,6 +184,7 @@
                 },
 		{
                   "name": "RGP_273_3 OLego junctions",
+		  "coverage": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_olego_output.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_output.sorted.olego.bed.gz"
                 }
 		 
