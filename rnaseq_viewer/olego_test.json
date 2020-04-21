@@ -27,7 +27,7 @@
 	"chr7:139417752"
     ],
     "bamOptions": {
-	"showBams": false,
+	"showBams": true,
         "trackHeight": 200,
         "viewAsPairs": false,
         "showSoftClips": true,
@@ -57,7 +57,7 @@
         "minSplicedAlignmentOverhang": 0
     },
     "vcfOptions": {
- 	"showVcfs": false,
+ 	"showVcfs": true,
         "displayMode": "EXPANDED"
     },
     "selectedSampleNamesByCategoryName": {
