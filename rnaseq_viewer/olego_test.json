@@ -138,7 +138,7 @@
 		    },
                     {
                       "name": "RGP_248_3 STAR bam",
-                      "bam": "gs://macarthurlab-rnaseq/star/RGP_248_3.Aligned.sortedByCoord.out.bam"
+                      "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_248_3.Aligned.sortedByCoord.out.bam"
                     },
 		    {
 			"name": "RGP_248_3 STAR junctions",
