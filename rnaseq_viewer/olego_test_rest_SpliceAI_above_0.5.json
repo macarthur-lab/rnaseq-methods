@@ -155,7 +155,7 @@
 		    },
 		    {
 			"name": "RGP_248_3 WGS vcf SpliceAI >= 0.5",
-			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr__in_top_30_percent_muscle_expressed_exons.vcf.gz" 
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr.vcf.gz" 
 		    },
                     {
                       "name": "RGP_248_3 STAR bam",
@@ -189,7 +189,7 @@
 		    },
 		    {
 			"name": "RGP_273_3 WGS vcf SpliceAI >= 0.5",
-			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_variants_from_seqr__in_top_30_percent_muscle_expressed_exons.vcf.gz" 
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_variants_from_seqr.vcf.gz" 
 		    },
                 {
                   "name": "RGP_273_3 STAR bam",
