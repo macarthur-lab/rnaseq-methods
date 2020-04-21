@@ -1,8 +1,32 @@
 {
     "genome": "hg38",
     "locus": "chr15:92,835,700-93,031,800",
-    "leftSideBarLocusList": [],
-    "rightSideBarLocusList": [],
+    "leftSideBarLocusList": [
+	"chr12:70534826",	
+	"chr16:70514316",	
+	"chr19:11238284",	
+	"chr21:46428552",	
+	"chr22:30427263",	
+	"chr3:132618633",	
+	"chr4:48163693",	
+	"chr5:169747480",	
+	"chr6:75703030",	
+	"chr8:17576760",	
+	"chr8:33461373",	
+	"chr8:129750591"
+    ],
+    "rightSideBarLocusList": [
+    	"chr1:201087925",
+	"chr1:244705743",
+	"chr11:94493786",
+	"chr14:94380925",
+	"chr15:52061301",
+	"chr17:82005866",
+	"chr3:132499113",
+	"chr5:95522127",
+	"chr5:169747480",
+	"chr7:139417752"
+    ],
     "bamOptions": {
 	"showBams": false,
         "trackHeight": 200,
