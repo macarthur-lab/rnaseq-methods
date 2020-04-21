@@ -100,31 +100,45 @@
             ]
         },
         {
-            "categoryName": "Samples",
+            "categoryName": "RGP_248_3",
             "samples": [
+		    {
+			"name": "RGP_248_3 vars SpliceAI >= 0.5",
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_variants_from_seqr.vcf.gz",    
+		    },
                 {
+                  "name": "RGP_248_3 star",
                   "bam": "gs://macarthurlab-rnaseq/star/RGP_248_3.Aligned.sortedByCoord.out.bam",
                   "coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_248_3.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_248_3.junctions.bed.gz",
-                  "name": "RGP_248_3_star",
                   "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.SNPs.vcf.gz"
                 },
                 {
+                  "name": "RGP_248_3 olego"
                   "bam": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.bam",
                   "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_248_3_output.sorted.olego.bed.gz",
-                  "name": "RGP_248_3_olego"
-                },
+                }
+		]
+	},
+        {
+            "categoryName": "RGP_273_3",
+            "samples": [
+		    {
+			"name": "RGP_273_3 vars SpliceAI >= 0.5",
+			"vcf": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_variants_from_seqr.vcf.gz",    
+		    }
+
                 {
+                  "name": "RGP_273_3 star",
                   "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam",
                   "coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_273_3.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_273_3.junctions.bed.gz",
-                  "name": "RGP_273_3_star",
                   "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.SNPs.vcf.gz"
                 },
                 {
+                  "name": "RGP_273_3 olego"
                   "bam": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_output.bam",
                   "junctions": "gs://macarthurlab-rnaseq/olego_test/RGP_273_3_output.sorted.olego.bed.gz",
-                  "name": "RGP_273_3_olego"
                 }
              ]
           }
