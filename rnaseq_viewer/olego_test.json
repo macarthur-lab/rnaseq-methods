@@ -103,17 +103,10 @@
             "categoryName": "Samples",
             "samples": [
                 {
-                    "bam": "gs://macarthurlab-rnaseq/star/1179-1.Aligned.sortedByCoord.out.bam",
-                    "coverage": "gs://macarthurlab-rnaseq/bigWig/1179-1.bigWig",
-                    "junctions": "gs://macarthurlab-rnaseq/junctions_bed_for_igv_js/1179-1.junctions.bed.gz",
-                    "name": "1179-1",
-                    "vcf": "gs://macarthurlab-rnaseq/grch38_vcfs/1179-1.SNPs.vcf.gz"
-                },
-                {
                   "bam": "gs://macarthurlab-rnaseq/star/RGP_248_3.Aligned.sortedByCoord.out.bam",
                   "coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_248_3.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_248_3.junctions.bed.gz",
-                  "name": "RGP_248_3",
+                  "name": "RGP_248_3_star",
                   "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.SNPs.vcf.gz"
                 },
                 {
@@ -125,7 +118,7 @@
                   "bam": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam",
                   "coverage": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_273_3.bigWig",
                   "junctions": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_273_3.junctions.bed.gz",
-                  "name": "RGP_273_3",
+                  "name": "RGP_273_3_star",
                   "vcf": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.SNPs.vcf.gz"
                 },
                 {
