@@ -1,3 +1,5 @@
+.DS_store
+.vscode
 .idea
 *.iml
 
@@ -5,4 +7,20 @@
 
 *.tsv
 
-multiqc/data/
+pipelines/multiqc/data/
+pca_to_impute_tissue/pca_on_gtex/data/
+
+*.log
+*.pickle
+*.tab
+*.tab.gz
+*.bed
+*.bed.gz
+*.tbi
+
+*.aside
+*.bam
+*.bai
+*.gff
+*.gff3
+*.gtf

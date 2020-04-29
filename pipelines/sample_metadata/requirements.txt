@@ -1,0 +1,6 @@
+# APIs for accessing Google sheets. Install instructions @ https://developers.google.com/sheets/api/quickstart/python
+oauth2client
+gspread
+gspread-dataframe
+google-cloud-storage
+firecloud
