@@ -41,10 +41,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx 100 Muscle", 
@@ -53,10 +55,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx 100 Blood", 
@@ -65,10 +69,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx 100 Fibs", 
@@ -77,10 +83,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Muscle", 
@@ -89,10 +97,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Blood", 
@@ -101,10 +111,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Fibs", 
@@ -113,10 +125,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Muscle - Norm.", 
@@ -125,10 +139,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Blood - Norm.", 
@@ -137,10 +153,12 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig", 
+              "type": "coverage"
             }, 
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz", 
+              "type": "junctions"
             }
           ], 
           "name": "GTEx All Fibs - Norm.", 
@@ -149,7 +167,8 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig", 
+              "type": "coverage"
             }
           ], 
           "name": "Splice AI scores - SNVs"
@@ -157,7 +176,8 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-A.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-A.bigWig", 
+              "type": "coverage"
             }
           ], 
           "name": "Splice AI scores - SNVs - alt allele A"
@@ -165,7 +185,8 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig", 
+              "type": "coverage"
             }
           ], 
           "name": "Splice AI scores - SNVs - alt allele C"
@@ -173,7 +194,8 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-G.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-G.bigWig", 
+              "type": "coverage"
             }
           ], 
           "name": "Splice AI scores - SNVs - alt allele G"
@@ -181,7 +203,8 @@
         {
           "data": [
             {
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig"
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig", 
+              "type": "coverage"
             }
           ], 
           "name": "Splice AI scores - SNVs - alt allele T"
