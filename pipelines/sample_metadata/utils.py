@@ -27,10 +27,27 @@ def get_spreasheet(spreadsheet_name):
 
 
 RNASEQ_METADATA_SPREADSHEET = get_spreasheet("RNA-seq metadata")
+
 SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("seqr info + other metadata (auto)")
 DATA_PATHS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("data paths (auto)")
+IMPUTED_METADATA_SPREADSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("imputed (auto)")
 BERYLS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's Supplementary Table 1")
 BERYLS_WORKSHEET_2 = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's RNAseq Probands")
+
+
+def get_seqr_info_and_other_metadata_df():
+    rows = SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_data_paths_df():
+    rows = DATA_PATHS_WORKSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_impute_metadata_df():
+    rows = IMPUTED_METADATA_SPREADSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
 def get_joined_metadata_df():
@@ -67,7 +84,6 @@ def get_rnaseqc_metrics(rnaseqc_metrics_file_path):
 
 
 RNASEQ_SAMPLE_IDS_TO_EXCLUDE = {
-
     "VIL_17_097",
     "VIL_17_098",
     "VIL_17_099",
