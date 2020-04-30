@@ -1,0 +1,5561 @@
+{
+  "sjOptions": {
+    "hideUnannotated": false, 
+    "hideAnnotated": false, 
+    "minSplicedAlignmentOverhang": 0, 
+    "trackHeight": 170, 
+    "labelUniqueReadCount": true, 
+    "colorBy": "strand", 
+    "labelAnnotatedJunction": false, 
+    "labelTotalReadCount": false, 
+    "showJunctions": true, 
+    "labelMultiMappedReadCount": false, 
+    "labelMotif": false, 
+    "bounceHeightBasedOn": "random", 
+    "showCoverage": true, 
+    "colorByNumReadsThreshold": 5, 
+    "thicknessBasedOn": "numUniqueReads", 
+    "minUniquelyMappedReads": 0, 
+    "maxFractionMultiMappedReads": 1, 
+    "minTotalReads": 1, 
+    "showOnlyMinusStrand": false, 
+    "labelAnnotatedJunctionValue": " [A]", 
+    "showOnlyPlusStrand": false
+  }, 
+  "bamOptions": {
+    "showSoftClips": true, 
+    "trackHeight": 200, 
+    "showBams": false, 
+    "viewAsPairs": false, 
+    "alignmentShading": "strand"
+  }, 
+  "locus": "chr15:92,835,700-93,031,800", 
+  "vcfOptions": {
+    "displayMode": "EXPANDED", 
+    "showVcfs": false
+  }, 
+  "genome": "hg38", 
+  "rowsInCategories": [
+    {
+      "rows": [
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx 100 Muscle", 
+          "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx 100 Blood", 
+          "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx 100 Fibs", 
+          "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Muscle", 
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Blood", 
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Fibs", 
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples."
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Muscle - Norm.", 
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Blood - Norm.", 
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+            }, 
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
+            }
+          ], 
+          "name": "GTEx All Fibs - Norm.", 
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig"
+            }
+          ], 
+          "name": "Splice AI scores - SNVs"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-A.bigWig"
+            }
+          ], 
+          "name": "Splice AI scores - SNVs - alt allele A"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig"
+            }
+          ], 
+          "name": "Splice AI scores - SNVs - alt allele C"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-G.bigWig"
+            }
+          ], 
+          "name": "Splice AI scores - SNVs - alt allele G"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig"
+            }
+          ], 
+          "name": "Splice AI scores - SNVs - alt allele T"
+        }
+      ], 
+      "categoryName": "Reference Data"
+    }, 
+    {
+      "rows": [
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1179-1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/1179-1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1179-1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "1179-1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1211-1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/1211-1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1211-1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/1211-1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "1211-1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1258-1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/1258-1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/1258-1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "1258-1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/126BG_CB_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/126BG_CB_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/126BG_CB_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/126BG_CB_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "126BG_CB_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/146BO_JB_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/146BO_JB_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/146BO_JB_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/146BO_JB_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "146BO_JB_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/149BP_AB_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/149BP_AB_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/149BP_AB_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/149BP_AB_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "149BP_AB_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/153BR_JB_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/153BR_JB_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/153BR_JB_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/153BR_JB_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "153BR_JB_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/163BV_JE_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/163BV_JE_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/163BV_JE_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/163BV_JE_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "163BV_JE_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/164BW_KC_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/164BW_KC_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/164BW_KC_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/164BW_KC_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "164BW_KC_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/167BZ_SP_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/167BZ_SP_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/167BZ_SP_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/167BZ_SP_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "167BZ_SP_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/193CP_LS.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/193CP_LS.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/193CP_LS.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "193CP_LS"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/204H_AM_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/204H_AM_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/204H_AM_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/204H_AM_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "204H_AM_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/205E_BD_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/205E_BD_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/205E_BD_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/205E_BD_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "205E_BD_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/210DB_BW_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/210DB_BW_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/210DB_BW_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/210DB_BW_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "210DB_BW_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/227DJ_JP_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/227DJ_JP_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/227DJ_JP_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/227DJ_JP_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "227DJ_JP_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/247DT_SH_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/247DT_SH_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/247DT_SH_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/247DT_SH_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "247DT_SH_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/250DV_LR_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/250DV_LR_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/250DV_LR_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/250DV_LR_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "250DV_LR_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/251DW_SD_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/251DW_SD_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/251DW_SD_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/251DW_SD_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "251DW_SD_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/252DX_DC_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/252DX_DC_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/252DX_DC_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/252DX_DC_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "252DX_DC_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/253DY_HA_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/253DY_HA_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/253DY_HA_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/253DY_HA_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "253DY_HA_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/254DZ_WP_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/254DZ_WP_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/254DZ_WP_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/254DZ_WP_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "254DZ_WP_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/255EA_GC_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/255EA_GC_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/255EA_GC_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/255EA_GC_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "255EA_GC_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/26I_SK_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/26I_SK_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/26I_SK_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/26I_SK_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "26I_SK_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/361AL_CC_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/361AL_CC_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/361AL_CC_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "361AL_CC_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/373HQ_BTG_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/373HQ_BTG_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/373HQ_BTG_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "373HQ_BTG_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/37L_NA_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/37L_NA_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/37L_NA_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/37L_NA_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "37L_NA_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/41M_MW_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/41M_MW_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/41M_MW_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/41M_MW_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "41M_MW_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/431-1_A_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/431-1_A_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-1_A_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/431-1_A_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "431-1_A_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/431-2_A_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/431-2_A_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-2_A_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/431-2_A_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "431-2_A_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/432-3_A_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/432-3_A_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/432-3_A_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/432-3_A_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "432-3_A_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/437-2_A_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/437-2_A_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-2_A_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/437-2_A_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "437-2_A_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/437-3_A_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/437-3_A_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-3_A_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/437-3_A_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "437-3_A_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/447-3_A_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/447-3_A_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/447-3_A_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/447-3_A_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "447-3_A_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/46N_RL_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/46N_RL_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/46N_RL_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/46N_RL_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "46N_RL_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/49O_NM_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/49O_NM_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "49O_NM_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/65T_CR_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/65T_CR_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/65T_CR_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/65T_CR_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "65T_CR_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/81AB_MM_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/81AB_MM_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/81AB_MM_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/81AB_MM_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "81AB_MM_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/92AI_SM.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/92AI_SM.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/92AI_SM.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "92AI_SM"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/9C_DH_M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/9C_DH_M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/9C_DH_M1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/9C_DH_M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "9C_DH_M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-24-1RNA_UNKNOWN.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B09-24-1RNA_UNKNOWN.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-24-1RNA_UNKNOWN.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B09-24-1RNA_UNKNOWN.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B09-24-1RNA_UNKNOWN"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-25-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B09-25-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B09-25-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B09-25-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-40-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B09-40-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-40-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B09-40-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B09-40-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B10-02-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B10-02-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B10-02-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B10-02-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B11-11-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B11-11-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-11-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B11-11-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B11-11-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B11-25-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B11-25-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B11-25-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B11-25-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B11-48-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B11-48-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-48-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B11-48-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B11-48-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-21-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B12-21-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-21-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-21-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B12-21-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B12-30RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-30RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B12-30RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-07-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-07-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-07-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-07-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B13-07-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-07-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-07-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-07-1RNA.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-07-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B13-07-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-15RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-15RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-15RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B13-15RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-52-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-52-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-52-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B13-52-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-07RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-07RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-07RNA.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-07RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-07RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-117-1RNA-2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-117-1RNA-2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-117-1RNA-2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-117-1RNA-2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-130-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-130-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-130-1M.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-130-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-130-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-48-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-48-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-48-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-48-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-70-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-70-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-70-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-70-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-78-1-U.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-78-1-U.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-78-1-U.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-78-1-U.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B14-78-1-U"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B15-15_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B15-15_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B15-15_1_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B15-15_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B15-15_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B15-25_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B15-25_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B15-25_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B15-25_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B15-28_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B15-28_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B15-28_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B15-28_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B16-47_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B16-47_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B16-47_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B16-47_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B16-48_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B16-48_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B16-48_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "B16-48_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BB0280_CH_AffF_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BB0280_CH_AffF_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BB0280_CH_AffF_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BB0280_CH_AffF_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BB0280_CH_AffF_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1025-1_T999.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_1025-1_T999.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1025-1_T999.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1025-1_T999.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1025-1_T999"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1078-1_T1071.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_1078-1_T1071.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1078-1_T1071.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1078-1_T1071.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1078-1_T1071"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1230-1_T1227.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_1230-1_T1227.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1230-1_T1227.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1230-1_T1227.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1230-1_T1227"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_14-4_T65.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_14-4_T65.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_14-4_T65.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_14-4_T65.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_14-4_T65"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1438-1_T1339.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_1438-1_T1339.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1438-1_T1339.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1438-1_T1339.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1438-1_T1339"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_851-1_T840.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_851-1_T840.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_851-1_T840.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_851-1_T840.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_851-1_T840"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_887-1_T1240.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_887-1_T1240.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_887-1_T1240.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_887-1_T1240.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_887-1_T1240"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_916-1_T916.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BEG_916-1_T916.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_916-1_T916.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_916-1_T916.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_916-1_T916"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B09-27-1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B09-27-1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B09-27-1_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B09-27-1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B09-27-1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-33-2_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B12-33-2_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B12-33-2_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B12-33-2_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-71_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B12-71_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-71_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B12-71_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B12-71_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-74-1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B12-74-1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B12-74-1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B12-74-1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-76-1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B12-76-1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-76-1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B12-76-1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B12-76-1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B13-55_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B13-55_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B13-55_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B13-55_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B13-55_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-163-1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-163-1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-163-1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-163-1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-20_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-20_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-20_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-20_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-20_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-51_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-51_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-51_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-51_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-51_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-60-1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-60-1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-60-1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-60-1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-60-1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-71-2_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-71-2_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-71-2_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-71-2_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-75-1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-75-1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-75-1_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B14-75-1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B14-75-1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-118_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B15-118_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B15-118_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B15-118_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-125_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B15-125_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-125_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B15-125_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B15-125_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-26_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B15-26_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B15-26_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B15-26_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-76-2_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B15-76-2_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-76-2_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B15-76-2_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B15-76-2_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-98_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B15-98_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-98_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B15-98_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B15-98_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-19_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-19_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-19_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-19_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-19_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-22_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-22_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-22_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-22_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-50_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-50_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-50_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-50_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-50_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-53-1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-53-1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-53-1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-53-1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-57_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-57_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-57_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-57_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-57_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-75-1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16-75-1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-75-1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16-75-1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16-75-1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16_30_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16_30_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_30_1_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16_30_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16_30_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16_80_1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B16_80_1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_80_1_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B16_80_1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B16_80_1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B17-23_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B17-23_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-23_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B17-23_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B17-23_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B17-28_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B17-28_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-28_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B17-28_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B17-28_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-24_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B18-24_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-24_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B18-24_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B18-24_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-25_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B18-25_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B18-25_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B18-25_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-54_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B18-54_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-54_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B18-54_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_B18-54_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_UC219-1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_UC219-1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_UC219-1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_UC219-1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_UC473_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_UC473_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_UC473_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_UC473_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BON_UC473_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_143BN_BB_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_143BN_BB_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_143BN_BB_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_143BN_BB_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_143BN_BB_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_179CI_GG_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_179CI_GG_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_179CI_GG_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_179CI_GG_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_179CI_GG_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_180CJ_DP_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_180CJ_DP_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_180CJ_DP_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_180CJ_DP_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_180CJ_DP_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_214DF_AB_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_214DF_AB_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_214DF_AB_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_214DF_AB_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_214DF_AB_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_329FK_RR_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_329FK_RR_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_329FK_RR_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_329FK_RR_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_329FK_RR_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_338FT_DM_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_338FT_DM_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_338FT_DM_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_338FT_DM_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_388HV_XX_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_388HV_XX_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_388HV_XX_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_388HV_XX_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_388HV_XX_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_62R_CaM_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_62R_CaM_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_62R_CaM_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_62R_CaM_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_62R_CaM_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_62R_CaM_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_62R_CaM_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_62R_CaM_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_62R_CaM_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_79Z_CP_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_79Z_CP_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_79Z_CP_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_79Z_CP_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "CLA_79Z_CP_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK006_0016.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK006_0016.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK006_0016.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK006_0016.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK006_0016"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK010_0026.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK010_0026.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK010_0026.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK010_0026.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK010_0026"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK011_0029.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK011_0029.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK011_0029.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK011_0029.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK011_0029"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK018_0047_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK018_0047_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK018_0047_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK018_0047_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK018_0047_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK024_0065.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK024_0065.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK024_0065.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK024_0065.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK024_0065"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK028_0073.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK028_0073.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK028_0073.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK028_0073.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK028_0073"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK044_0109.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK044_0109.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK044_0109.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK044_0109.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK044_0109"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK069-0177_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK069-0177_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK069-0177_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK069-0177_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK069-0177_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK072-001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK072-001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK072-001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK072-001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK072-001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK085-001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK085-001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK085-001.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK085-001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK085-001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK088-001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK088-001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK088-001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK088-001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK088-001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK101-001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK101-001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK101-001.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK101-001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK101-001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK106-001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/HK106-001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK106-001.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/HK106-001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK106-001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/ICCV_458_10CC06258_02.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/ICCV_458_10CC06258_02.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/ICCV_458_10CC06258_02.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/ICCV_458_10CC06258_02.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "ICCV_458_10CC06258_02"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_GB_408.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_GB_408.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_GB_408.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_GB_408"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_GI_456.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_GI_456.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_GI_456.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_GI_456"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_HW_389.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_HW_389.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_HW_389.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_HW_389"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_HZ_401.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_HZ_401.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_HZ_401.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_HZ_401"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_IG_561.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_IG_561.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_IG_561.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_IG_561"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_IK_581.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_IK_581.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_IK_581.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_IK_581"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_IV_615.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/INMR_IV_615.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_IV_615.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "INMR_IV_615"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/K1157-1-4.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/K1157-1-4.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/K1157-1-4.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "K1157-1-4"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_EDW01_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/LIA_EDW01_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/LIA_EDW01_1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/LIA_EDW01_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "LIA_EDW01_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_MAS02_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/LIA_MAS02_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/LIA_MAS02_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "LIA_MAS02_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_TIS03_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/LIA_TIS03_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/LIA_TIS03_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "LIA_TIS03_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_0063_01_02.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MAN_0063_01_02.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_02.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_0063_01_02.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MAN_0063_01_02"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_0063_01_03.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MAN_0063_01_03.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_03.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_0063_01_03.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MAN_0063_01_03"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_1001_01_M1_D1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MAN_1001_01_M1_D1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_1001_01_M1_D1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_1001_01_M1_D1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MAN_1001_01_M1_D1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_1438-01-M1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MAN_1438-01-M1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_1438-01-M1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MAN_1438-01-M1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBEL028_001_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MBEL028_001_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MBEL028_001_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MBEL028_001_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBEL028_002_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MBEL028_002_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MBEL028_002_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MBEL028_002_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBRU030_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MBRU030_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBRU030_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MBRU030_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MBRU030_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MCOP008_001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MCOP008_001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MCOP008_001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MCOP008_001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MCOP008_001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MESP014_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MESP014_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP014_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MESP014_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MESP014_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MESP021_001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MESP021_001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP021_001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MESP021_001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MESP021_001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MESP039_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MESP039_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP039_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MESP039_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MESP039_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MGLA003_001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MGLA003_001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MGLA003_001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MGLA003_001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MGLA003_001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MMAD002_001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MMAD002_001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MMAD002_001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MMAD002_001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MMAD002_001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MTEH041_001_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MTEH041_001_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MTEH041_001_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/MTEH041_001_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MTEH041_001_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/M_0146-01-H1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/M_0146-01-H1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/M_0146-01-H1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "M_0146-01-H1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH11-441.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/NH11-441.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/NH11-441.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "NH11-441"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH12-1413.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/NH12-1413.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-1413.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/NH12-1413.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "NH12-1413"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH12-843_Fibroblasts.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/NH12-843_Fibroblasts.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_Fibroblasts.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/NH12-843_Fibroblasts.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "NH12-843_Fibroblasts"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH12-843_MyoD_Day5.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/NH12-843_MyoD_Day5.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_MyoD_Day5.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/NH12-843_MyoD_Day5.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "NH12-843_MyoD_Day5"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK018_0047.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK018_0047.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK018_0047.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK018_0047"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK047_0116.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK047_0116.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK047_0116.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK047_0116"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK079_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK079_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK079_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK079_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK080_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK080_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK080_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK080_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK081_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK081_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK081_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK081_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK112_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK112_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK112_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK112_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK116_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK116_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK116_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK116_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK124_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK124_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK124_001.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK124_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK124_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK137_001.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK137_001.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK137_001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "OUN_HK137_001"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_248_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_248_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_248_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_248_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_273_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_273_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_273_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_54_3_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_54_3_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_54_3_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_54_3_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_54_3_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_56_3_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_56_3_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_56_3_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_56_3_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_56_3_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_7_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_7_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_7_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_7_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_7_2_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_7_2_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_2_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_7_2_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_7_2_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_7_3_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_7_3_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_3_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_7_3_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_7_3_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_7_4_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_7_4_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_4_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_7_4_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_7_4_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_7_5_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_7_5_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_5_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_7_5_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_7_5_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_800_3_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_800_3_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_800_3_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_800_3_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_3_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_94_3_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_94_3_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_94_3_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_4_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_94_4_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_94_4_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_94_4_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_EM__1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/SRPK3_EM__1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/SRPK3_EM__1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "SRPK3_EM__1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_JAP_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/SRPK3_JAP_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/SRPK3_JAP_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "SRPK3_JAP_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_USA_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/SRPK3_USA_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/SRPK3_USA_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "SRPK3_USA_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SWE_36223_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/SWE_36223_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/SWE_36223_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "SWE_36223_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SWE_36326_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/SWE_36326_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/SWE_36326_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "SWE_36326_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T1244.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/T1244.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/T1244.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "T1244"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T238.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/T238.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/T238.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "T238"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T757.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/T757.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/T757.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "T757"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T850.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/T850.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/T850.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "T850"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T892.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/T892.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/T892.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "T892"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/TOP_MAAC031_F_Muscle1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/TOP_MAAC031_F_Muscle1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/TOP_MAAC031_F_Muscle1.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/TOP_MAAC031_F_Muscle1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "TOP_MAAC031_F_Muscle1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC223-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC223-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC223-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC223-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC305-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC305-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC305-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC305-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC316-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC316-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC316-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC316-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC368-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC368-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC368-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC368-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC393-1M.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC393-1M.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC393-1M.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC393-1M"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC84-1RNA.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC84-1RNA.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC84-1RNA.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UC84-1RNA.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UC84-1RNA"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UWA_FAM7_PT_D16-1243_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UWA_FAM7_PT_D16-1243_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UWA_FAM7_PT_D16-1243_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/UWA_FAM7_PT_D16-1243_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "UWA_FAM7_PT_D16-1243_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_DLS_FAM1_1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_DLS_FAM1_1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_DLS_FAM1_1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_DLS_FAM1_1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM11_32_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM11_32_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM11_32_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM11_32_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM11_32_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM12_36_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM12_36_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM12_36_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM12_36_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM12_36_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM147_459_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM147_459_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM147_459_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM147_459_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM147_459_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM148_462_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM148_462_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM148_462_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM148_462_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM148_462_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM149_465_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM149_465_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM149_465_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM149_465_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM149_465_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM150_468_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM150_468_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM150_468_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM150_468_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM150_468_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM1_1_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM1_1_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM1_1_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM1_1_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM1_1_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM22_69_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM22_69_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM22_69_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM22_69_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM26_81_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM26_81_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM26_81_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM26_81_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM27_84_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM27_84_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM27_84_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM27_84_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM27_84_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM29_90.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM29_90.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM29_90.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM29_90.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM29_90"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM2_4_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM2_4_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM2_4_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM2_4_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM2_4_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM31_97_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM31_97_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM31_97_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM31_97_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM31_97_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM39_123.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM39_123.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM39_123.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM39_123.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM39_123"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM3_7_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM3_7_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM3_7_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM3_7_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM3_7_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM41_129_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM41_129_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM41_129_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM41_129_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM41_129_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM42_132_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM42_132_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM42_132_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM42_132_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM42_132_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM49_153.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM49_153.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM49_153.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM49_153.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM49_153"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM4_13_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM4_13_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM4_13_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM4_13_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM4_13_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM52_162_3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM52_162_3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM52_162_3.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM52_162_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM52_162_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM58_181.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM58_181.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM58_181.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM58_181.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM58_181"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM61_190.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM61_190.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM61_190.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM61_190.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM61_190"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM67_209.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM67_209.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM67_209.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM67_209.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM67_209"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM73_227_2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM73_227_2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM73_227_2.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM73_227_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM73_227_2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM84_260.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/VCGS_FAM84_260.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM84_260.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM84_260.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "VCGS_FAM84_260"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_01.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_01.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_01.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM1_CTRL_01"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_02.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_02.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_02.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM1_CTRL_02"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_03.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_03.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_03.SNPs.vcf.gz", 
+              "type": "vcf"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_03.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM1_CTRL_03"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_04.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_04.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_04.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM1_CTRL_04"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_02.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_02.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_02.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM2_TOTALMDC1A1_02"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_03.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_03.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_03.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM2_TOTALMDC1A1_03"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_04.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_04.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_04.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM2_TOTALMDC1A1_04"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_05.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_05.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_05.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM2_TOTALMDC1A1_05"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_01.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_01.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_01.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM3_PARTIALMDC1A1_01"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_02.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_02.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_02.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM3_PARTIALMDC1A1_02"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_03.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_03.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_03.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM3_PARTIALMDC1A1_03"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_05.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_05.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_05.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM3_PARTIALMDC1A1_05"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM4_ATYPICALMDC1A_01_R1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM4_ATYPICALMDC1A_01_R2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM4_ATYPICALMDC1A_01_R3"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R1.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R1.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM5_SIBLINGMDC1A_01_R1"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R2.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R2.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM5_SIBLINGMDC1A_01_R2"
+        }, 
+        {
+          "data": [
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R3.junctions.bed.gz", 
+              "type": "junctions"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R3.bigWig", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1111-1_T1105.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1111-1_T1105"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1435-01_T1370.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "BEG_1435-01_T1370"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-006"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-010.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-010"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-015"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-022.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-022"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-025.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-025"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-032.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-032"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-035.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-035"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-047.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-047"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-061.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-061"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-070.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-070"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-001.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-071-001"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-004.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-071-004"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-073"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-075"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-081.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-081"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-085"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-087.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-087"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-095.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-095"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-100.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-100"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-104.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-104"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-107"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-108"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-114.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-114"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-115.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-115"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-116.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-116"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-119"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-124"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-126.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-126"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-127.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-127"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-131.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-131"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-133"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-134.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-134"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK-139"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "HK060-0154"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_552_3.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_552_3"
+        }, 
+        {
+          "data": [
+            {
+              "url": " ", 
+              "type": "junctions"
+            }, 
+            {
+              "url": " ", 
+              "type": "coverage"
+            }, 
+            {
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam", 
+              "type": "alignment"
+            }
+          ], 
+          "name": "RGP_554_3_2"
+        }
+      ], 
+      "categoryName": "gCNV Batches"
+    }
+  ]
+}
