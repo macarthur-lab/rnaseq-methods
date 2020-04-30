@@ -227,7 +227,7 @@ settings_json = """
             ]
         },
         {
-            "categoryName": "gCNV Batches",
+            "categoryName": "Samples",
             "rows": %(rnaseq_sample_rows)s
         }
     ]
@@ -236,5 +236,5 @@ settings_json = """
 
 #%%
 with open("settings.json", "wt") as f:
-    json.dump(json.loads(settings_json), f, indent=2)
+    json.dump(json.loads(settings_json), f, indent=2, sort_keys=True)
 
