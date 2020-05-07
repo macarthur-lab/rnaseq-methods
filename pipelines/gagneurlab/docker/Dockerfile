@@ -35,20 +35,25 @@ RUN install_packages \
 #RUN install_packages default-jdk
 
 # install RScript
-RUN wget https://cran.r-project.org/src/base/R-3/R-3.6.3.tar.gz \
-    && tar xzf R-3.6.3.tar.gz \
-    && rm R-3.6.3.tar.gz \
-    && cd R-3.6.3 \
-    && ./configure LIBnn=lib --with-x=no \
+
+RUN wget https://cran.r-project.org/src/base/R-4/R-4.0.0.tar.gz \
+    && tar xzf R-4.0.0.tar.gz \
+    && rm R-4.0.0.tar.gz \
+    && cd R-4.0.0 \
+    && ./configure --with-x=no --with-pcre1 \
     && make \
     && make install
 
 # install R pacakges
-RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
 RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
-RUN R -e "devtools::install_github('gagneurlab/FRASER', ref='R3.6', dependencies=TRUE)"
-RUN R -e "devtools::install_github('gagneurlab/OUTRIDER', dependencies=TRUE)"
-RUN R -e "BiocManager::install('mumichae/tMAE')"
+RUN R -e "BiocManager::install('OUTRIDER')"
+RUN R -e "BiocManager::install('FRASER')"
+#RUN R -e "BiocManager::install('mumichae/tMAE')"
+
+#RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
+#RUN R -e "devtools::install_github('gagneurlab/FRASER', ref='R3.6', dependencies=TRUE)"
+#RUN R -e "devtools::install_github('gagneurlab/OUTRIDER', dependencies=TRUE)"
+
 
 #
 ## install python3.7 (adds 800Mb)
