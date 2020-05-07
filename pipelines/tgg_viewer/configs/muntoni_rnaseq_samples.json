@@ -1,535 +1,535 @@
 {
   "bamOptions": {
-    "alignmentShading": "strand", 
-    "showBams": false, 
-    "showSoftClips": true, 
-    "trackHeight": 200, 
+    "alignmentShading": "strand",
+    "showBams": false,
+    "showSoftClips": true,
+    "trackHeight": 200,
     "viewAsPairs": false
-  }, 
-  "genome": "hg38", 
-  "locus": "chr15:92,835,700-93,031,800", 
+  },
+  "genome": "hg38",
+  "locus": "chr15:92,835,700-93,031,800",
   "rowsInCategories": [
     {
-      "categoryName": "Reference Data", 
+      "categoryName": "GTEx Tracks",
       "rows": [
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.", 
+          ],
+          "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
           "name": "GTEx 100 Muscle"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.", 
+          ],
+          "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
           "name": "GTEx 100 Blood"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.", 
+          ],
+          "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
           "name": "GTEx 100 Fibs"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.", 
+          ],
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
           "name": "GTEx All Muscle"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.", 
+          ],
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
           "name": "GTEx All Blood"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
             }
-          ], 
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.", 
+          ],
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
           "name": "GTEx All Fibs"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
             }
-          ], 
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)", 
+          ],
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
           "name": "GTEx All Muscle - Norm."
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
             }
-          ], 
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)", 
+          ],
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
           "name": "GTEx All Blood - Norm."
-        }, 
+        },
         {
           "data": [
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
-            }, 
+            },
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
             }
-          ], 
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)", 
+          ],
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
           "name": "GTEx All Fibs - Norm."
-        }, 
-        {
-          "data": [
-            {
-              "type": "coverage", 
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig"
-            }
-          ], 
-          "name": "Splice AI scores - SNVs"
-        }, 
-        {
-          "data": [
-            {
-              "type": "coverage", 
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-A.bigWig"
-            }
-          ], 
-          "name": "Splice AI scores - SNVs - alt allele A"
-        }, 
-        {
-          "data": [
-            {
-              "type": "coverage", 
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig"
-            }
-          ], 
-          "name": "Splice AI scores - SNVs - alt allele C"
-        }, 
-        {
-          "data": [
-            {
-              "type": "coverage", 
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-G.bigWig"
-            }
-          ], 
-          "name": "Splice AI scores - SNVs - alt allele G"
-        }, 
-        {
-          "data": [
-            {
-              "type": "coverage", 
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig"
-            }
-          ], 
-          "name": "Splice AI scores - SNVs - alt allele T"
         }
       ]
-    }, 
+    },
     {
-      "categoryName": "Samples", 
+      "categoryName": "Mappability Tracks",
       "rows": [
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k36_m2.bw"
+            }
+          ],
+          "description": "Mappability of 36-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "36-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k50_m2.bw"
+            }
+          ],
+          "description": "Mappability of 50-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "50-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k75_m2.bw"
+            }
+          ],
+          "description": "Mappability of 75-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "75-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k100_m2.bw"
+            }
+          ],
+          "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "100-mer mappability "
+        }
+      ]
+    },
+    {
+      "categoryName": "Samples",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_01.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_01.bigWig"
-            }, 
+            },
             {
-              "type": "vcf", 
+              "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_01.SNPs.vcf.gz"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM1_CTRL_01"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_02.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_02.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_02.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM1_CTRL_02"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_03.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_03.bigWig"
-            }, 
+            },
             {
-              "type": "vcf", 
+              "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_03.SNPs.vcf.gz"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_03.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM1_CTRL_03"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_04.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_04.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_04.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM1_CTRL_04"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_02.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_02.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM2_TOTALMDC1A1_02"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_03.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_03.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM2_TOTALMDC1A1_03"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_04.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_04.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_04.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM2_TOTALMDC1A1_04"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_05.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM2_TOTALMDC1A1_05.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM2_TOTALMDC1A1_05"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_01.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_01.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_01.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM3_PARTIALMDC1A1_01"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_02.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_02.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM3_PARTIALMDC1A1_02"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_03.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_03.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM3_PARTIALMDC1A1_03"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_05.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM3_PARTIALMDC1A1_05.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM3_PARTIALMDC1A1_05"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R1.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R1.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R1"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R2.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R2.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R2"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R3.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM4_ATYPICALMDC1A_01_R3.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R3"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R1.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R1.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R1"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R2.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R2.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R2"
-        }, 
+        },
         {
           "data": [
             {
-              "type": "junctions", 
+              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R3.junctions.bed.gz"
-            }, 
+            },
             {
-              "type": "coverage", 
+              "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM5_SIBLINGMDC1A_01_R3.bigWig"
-            }, 
+            },
             {
-              "type": "alignment", 
+              "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
-          ], 
+          ],
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
         }
       ]
     }
-  ], 
+  ],
   "sjOptions": {
-    "bounceHeightBasedOn": "random", 
-    "colorBy": "strand", 
-    "colorByNumReadsThreshold": 5, 
-    "hideAnnotated": false, 
-    "hideUnannotated": false, 
-    "labelAnnotatedJunction": false, 
-    "labelAnnotatedJunctionValue": " [A]", 
-    "labelMotif": false, 
-    "labelMultiMappedReadCount": false, 
-    "labelTotalReadCount": false, 
-    "labelUniqueReadCount": true, 
-    "maxFractionMultiMappedReads": 1, 
-    "minSplicedAlignmentOverhang": 0, 
-    "minTotalReads": 1, 
-    "minUniquelyMappedReads": 0, 
-    "showCoverage": true, 
-    "showJunctions": true, 
-    "showOnlyMinusStrand": false, 
-    "showOnlyPlusStrand": false, 
-    "thicknessBasedOn": "numUniqueReads", 
+    "bounceHeightBasedOn": "random",
+    "colorBy": "strand",
+    "colorByNumReadsThreshold": 5,
+    "hideAnnotated": false,
+    "hideUnannotated": false,
+    "labelAnnotatedJunction": false,
+    "labelAnnotatedJunctionValue": " [A]",
+    "labelMotif": false,
+    "labelMultiMappedReadCount": false,
+    "labelTotalReadCount": false,
+    "labelUniqueReadCount": true,
+    "maxFractionMultiMappedReads": 1,
+    "minSplicedAlignmentOverhang": 0,
+    "minTotalReads": 1,
+    "minUniquelyMappedReads": 0,
+    "showCoverage": true,
+    "showJunctions": true,
+    "showOnlyMinusStrand": false,
+    "showOnlyPlusStrand": false,
+    "thicknessBasedOn": "numUniqueReads",
     "trackHeight": 170
-  }, 
+  },
   "vcfOptions": {
-    "displayMode": "EXPANDED", 
+    "displayMode": "EXPANDED",
     "showVcfs": false
   }
 }

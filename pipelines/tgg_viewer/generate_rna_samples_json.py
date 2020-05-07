@@ -124,7 +124,7 @@ for batch_name, rows in rows_by_batch.items():
         },
         "rowsInCategories": [
             {
-                "categoryName": "Reference Data",
+                "categoryName": "GTEx Tracks",
                 "rows": [
                     {
                         "name": "GTEx 100 Muscle",
@@ -197,8 +197,59 @@ for batch_name, rows in rows_by_batch.items():
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz" }
                         ]
+                    }
+                ]
+            },
+            {
+                "categoryName": "Mappability Tracks",
+                "rows": [
+                    {
+                        "name": "36-mer mappability ",
+                        "description": "Mappability of 36-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+                        "data": [
+                            { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k36_m2.bw" }
+                        ]
                     },
                     {
+                        "name": "50-mer mappability ",
+                        "description": "Mappability of 50-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+                        "data": [
+                            { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k50_m2.bw" }
+                        ]
+                    },
+                    {
+                        "name": "75-mer mappability ",
+                        "description": "Mappability of 75-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+                        "data": [
+                            { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k75_m2.bw" }
+                        ]
+                    },
+                    {
+                        "name": "100-mer mappability ",
+                        "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+                        "data": [
+                            { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k100_m2.bw" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "categoryName": "Samples",
+                "rows": %(rnaseq_sample_rows)s
+            }
+        ]
+    }
+    """ % locals()
+
+    output_path = "configs/"+batch_name+"_rnaseq_samples.json"
+    with open(output_path, "wt") as f:
+        json.dump(json.loads(settings_json), f, indent=2, sort_keys=True)
+    print("Wrote to " + output_path)
+
+
+
+x = """
+{
                         "name": "Splice AI scores - SNVs",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.all.bigWig" }
@@ -228,16 +279,4 @@ for batch_name, rows in rows_by_batch.items():
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-T.bigWig" }
                         ]
                     }
-                ]
-            },
-            {
-                "categoryName": "Samples",
-                "rows": %(rnaseq_sample_rows)s
-            }
-        ]
-    }
-    """ % locals()
-
-    with open("configs/"+batch_name+"_rnaseq_samples.json", "wt") as f:
-        json.dump(json.loads(settings_json), f, indent=2, sort_keys=True)
-
+"""
