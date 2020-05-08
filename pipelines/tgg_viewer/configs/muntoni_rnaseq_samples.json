@@ -1,11 +1,15 @@
 {
   "bamOptions": {
     "alignmentShading": "strand",
-    "showBams": false,
     "showSoftClips": true,
     "trackHeight": 200,
     "viewAsPairs": false
   },
+  "dataTypesToShow": [
+    "junctions",
+    "coverage",
+    "vcf"
+  ],
   "genome": "hg38",
   "locus": "chr15:92,835,700-93,031,800",
   "rowsInCategories": [
@@ -505,6 +509,8 @@
       ]
     }
   ],
+  "selectedRowNamesByCategoryName": {},
+  "selectedSamplesByCategoryNameAndRowName": {},
   "sjOptions": {
     "bounceHeightBasedOn": "random",
     "colorBy": "strand",
@@ -521,15 +527,12 @@
     "minSplicedAlignmentOverhang": 0,
     "minTotalReads": 1,
     "minUniquelyMappedReads": 0,
-    "showCoverage": true,
-    "showJunctions": true,
     "showOnlyMinusStrand": false,
     "showOnlyPlusStrand": false,
     "thicknessBasedOn": "numUniqueReads",
     "trackHeight": 170
   },
   "vcfOptions": {
-    "displayMode": "EXPANDED",
-    "showVcfs": false
+    "displayMode": "EXPANDED"
   }
 }

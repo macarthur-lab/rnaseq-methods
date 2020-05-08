@@ -1,7 +1,6 @@
 import argparse
 import collections
 import logging
-import os
 import pprint
 
 from sample_metadata.utils import get_joined_metadata_df
@@ -88,16 +87,16 @@ for batch_name, rows in rows_by_batch.items():
     {
         "genome": "hg38",
         "locus": "chr15:92,835,700-93,031,800",
+        "selectedRowNamesByCategoryName": {},
+        "selectedSamplesByCategoryNameAndRowName": {},
+        "dataTypesToShow": [ "junctions", "coverage", "vcf" ],
         "bamOptions": {
-            "showBams": false,
             "trackHeight": 200,
             "viewAsPairs": false,
             "showSoftClips": true,
             "alignmentShading": "strand"
         },
         "sjOptions": {
-            "showCoverage": true,
-            "showJunctions": true,
             "trackHeight": 170,
             "colorBy": "strand",
             "colorByNumReadsThreshold": 5,
@@ -119,7 +118,6 @@ for batch_name, rows in rows_by_batch.items():
             "minSplicedAlignmentOverhang": 0
         },
         "vcfOptions": {
-            "showVcfs": false,
             "displayMode": "EXPANDED"
         },
         "rowsInCategories": [
@@ -246,6 +244,8 @@ for batch_name, rows in rows_by_batch.items():
         json.dump(json.loads(settings_json), f, indent=2, sort_keys=True)
     print("Wrote to " + output_path)
 
+
+#%%
 
 
 x = """
