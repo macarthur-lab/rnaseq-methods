@@ -86,8 +86,17 @@ for batch_name, rows in rows_by_batch.items():
     settings_json = """
     {
         "genome": "hg38",
-        "locus": "chr15:92,835,700-93,031,800",
-        "selectedRowNamesByCategoryName": {},
+        "locus": "chr21:45988674-45991233",
+        "selectedRowNamesByCategoryName": {
+              "Samples": [
+                   "UC316-1M"
+              ],
+              "GTEx Tracks": [
+                   "GTEx All Muscle - Norm.",
+                   "GTEx All Blood - Norm.",
+                   "GTEx All Fibs - Norm."
+              ]
+         },
         "selectedSamplesByCategoryNameAndRowName": {},
         "dataTypesToShow": [ "junctions", "coverage", "vcf" ],
         "bamOptions": {
@@ -97,25 +106,25 @@ for batch_name, rows in rows_by_batch.items():
             "alignmentShading": "strand"
         },
         "sjOptions": {
-            "trackHeight": 170,
-            "colorBy": "strand",
-            "colorByNumReadsThreshold": 5,
-            "thicknessBasedOn": "numUniqueReads",
-            "bounceHeightBasedOn": "random",
-            "labelUniqueReadCount": true,
-            "labelMultiMappedReadCount": false,
-            "labelTotalReadCount": false,
-            "labelMotif": false,
-            "labelAnnotatedJunction": false,
-            "labelAnnotatedJunctionValue": " [A]",
-            "showOnlyPlusStrand": false,
-            "showOnlyMinusStrand": false,
-            "hideAnnotated": false,
-            "hideUnannotated": false,
-            "minUniquelyMappedReads": 0,
-            "minTotalReads": 1,
-            "maxFractionMultiMappedReads": 1,
-            "minSplicedAlignmentOverhang": 0
+              "bounceHeightBasedOn": "random",
+              "colorBy": "numUniqueReads",
+              "colorByNumReadsThreshold": 5,
+              "hideAnnotated": false,
+              "hideUnannotated": false,
+              "labelAnnotatedJunction": false,
+              "labelAnnotatedJunctionValue": " [A]",
+              "labelMotif": false,
+              "labelMultiMappedReadCount": false,
+              "labelTotalReadCount": false,
+              "labelUniqueReadCount": true,
+              "maxFractionMultiMappedReads": 1,
+              "minSplicedAlignmentOverhang": 0,
+              "minTotalReads": 1,
+              "minUniquelyMappedReads": 0,
+              "showOnlyMinusStrand": false,
+              "showOnlyPlusStrand": false,
+              "thicknessBasedOn": "numUniqueReads",
+              "trackHeight": 170
         },
         "vcfOptions": {
             "displayMode": "EXPANDED"
