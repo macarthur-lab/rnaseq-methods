@@ -1,157 +1,132 @@
 import argparse
-import hailtop.batch as hp
+import hail as hl  # used for hadoop file utils
+import hailtop.batch as hb
+import logging
 import os
 
 from sample_metadata.utils import get_joined_metadata_df
+
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
 
-def parse_args():
+def main():
+    rnaseq_sample_metadata_df = get_joined_metadata_df()
+
     p = argparse.ArgumentParser()
-    g = p.add_mutually_exclusive_group(required=True)
-    g.add_argument("--local", action="store_true", help="Batch: run locally")
-    g.add_argument("--cluster", action="store_true", help="Batch: submit to cluster")
-    p.add_argument("--project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
-    p.add_argument("--name", help="Batch: (optional) job name")
+    grp = p.add_mutually_exclusive_group(required=True)
+    grp.add_argument("--local", action="store_true", help="Batch: run locally")
+    grp.add_argument("--cluster", action="store_true", help="Batch: submit to cluster")
+    p.add_argument("--batch-billing-project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
+    p.add_argument("--batch-job-name", help="Batch: (optional) job name")
+
+    p.add_argument("--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
+    grp = p.add_mutually_exclusive_group(required=True)
+    grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process", choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
+    grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process", choices=set(rnaseq_sample_metadata_df['sample_id']))
     args = p.parse_args()
 
-    return args
+    #logger.info("\n".join(df.columns))
 
+    if args.rnaseq_batch_name:
+        batch_names = args.rnaseq_batch_name
+        sample_ids = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'].isin(batch_names)].sample_id
+    elif args.rnaseq_sample_id:
+        sample_ids = args.rnaseq_sample_id
 
-def main():
-    args = parse_args()
-
-    df = get_joined_metadata_df()
-    print("\n".join(df.columns))
-    #print(", ".join(df.index))
-    sample_ids = df[df['star_pipeline_batch'] == 'batch_1_muntoni'].sample_id
-
-    print(f"Processing sample id sets: {', '.join(sample_ids)}")
-    return
+    logger.info(f"Processing {len(sample_ids)} sample ids: {', '.join(sample_ids)}")
 
     # see https://hail.zulipchat.com/#narrow/stream/223457-Batch-support/topic/auth.20as.20user.20account for more details
-    backend = hp.LocalBackend(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json")) if args.local else hp.ServiceBackend(args.project)
-    p = hp.Batch(backend=backend, name=args.name)
+    if args.local:
+        backend = hb.LocalBackend(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    else:
+        backend = hb.ServiceBackend(args.batch_billing_project)
 
+    b = hb.Batch(backend=backend, name=args.batch_job_name)
+
+    # define workflow inputs
+    if args.local:
+        genes_gtf = b.read_input("gencode.v26.annotation.gff3", extension=".gff3")
+    else:
+        genes_gtf = b.read_input("gs://macarthurlab-rnaseq/ref/gencode.v26.annotation.GRCh38.gff3", extension=".gff3")
+
+    # define parallel execution for samples
     for sample_id in sample_ids:
-        metadata_row = df.loc[sample_id]
+        metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
         batch_name = metadata_row['star_pipeline_batch']
 
-        t = p.new_job(name=args.name)
-        t.image("weisburd/majiq:latest")
+        # set job inputs & outputs
+        input_read_data = b.read_input_group(
+            bam=metadata_row['star_bam'],
+            bai=metadata_row['star_bai'],
+        )
 
-        if args.local:
-            genes_gtf = p.read_input("gencode.v26.annotation.gff3", extension=".gff3")
-            input_file = p.read_input_group(
-                bam="250DV_LR_M1__100000_reads.Aligned.sortedByCoord.out.bam",  # metadata_row['star_bam'],
-                bai="250DV_LR_M1__100000_reads.Aligned.sortedByCoord.out.bam.bai",  # metadata_row['star_bai'],
-            )
-        else:
-            genes_gtf = p.read_input("gs://macarthurlab-rnaseq/ref/gencode.v26.annotation.GRCh38.gff3", extension=".gff3")
-            input_file = p.read_input_group(
-                bam=metadata_row['star_bam'],
-                bai=metadata_row['star_bai'],
-            )
+        output_dir = f"gs://macarthurlab-rnaseq/{batch_name}/majiq_build/"
+        output_file_path = os.path.join(output_dir, f"majiq_build_{sample_id}.tar.gz")
+
+        # check if output file already exists
+        if hl.hadoop_is_file(output_file_path) and not args.force:
+            logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
+            continue
+
+        file_stats = hl.hadoop_stat(metadata_row['star_bam'])
+        bam_size = int(round(file_stats['size_bytes']/10.**9))
+
+        # define majiq build commands for this sample
+        j = b.new_job(name=args.batch_job_name)
+        j.image("weisburd/majiq:latest")
+        j.storage(f'{bam_size*2}Gi')
+        j.cpu(0.25)  # default: 1
+        #j.memory(5)  # default: 3.75G
+        logger.info(f'Requesting: {j._storage or "default"}, {j._cpu or "default"} CPU, {j._memory or "default"} RAM')
 
         # switch to user account
-        t.command(f"gcloud auth activate-service-account --key-file /gsa-key/key.json")
-        t.command(f"gsutil -m cp -r {GCLOUD_CREDENTIALS_LOCATION}/.config /tmp/")
-        t.command(f"rm -rf ~/.config")
-        t.command(f"mv /tmp/.config ~/")
-        t.command(f"gcloud config set account {GCLOUD_USER_ACCOUNT}")
-        t.command(f"gcloud config set project {GCLOUD_PROJECT}")
+        j.command(f"gcloud auth activate-service-account --key-file /gsa-key/key.json")
+        j.command(f"gsutil -m cp -r {GCLOUD_CREDENTIALS_LOCATION}/.config /tmp/")
+        j.command(f"rm -rf ~/.config")
+        j.command(f"mv /tmp/.config ~/")
+        j.command(f"gcloud config set account {GCLOUD_USER_ACCOUNT}")
+        j.command(f"gcloud config set project {GCLOUD_PROJECT}")
 
         # run majiq build
-        #t.command(f"gsutil -u {GCLOUD_PROJECT} -m cp gs://gtex-resources/GENCODE/gencode.v26.GRCh38.ERCC.genes.collapsed_only.gtf .")
-        t.command(f"mv {genes_gtf} gencode.gff3")
-        t.command(f"mv {input_file.bam} {sample_id}.bam")
-        t.command(f"mv {input_file.bai} {sample_id}.bam.bai")
+        #j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp gs://gtex-resources/GENCODE/gencode.v26.GRCh38.ERCC.genes.collapsed_only.gtf .")
+        j.command(f"mv {genes_gtf} gencode.gff3")
+        j.command(f"mv {input_read_data.bam} {sample_id}.bam")
+        j.command(f"mv {input_read_data.bai} {sample_id}.bam.bai")
 
-        t.command(f"echo '[info]' >> majiq_build.cfg")
-        t.command(f"echo 'readlen={metadata_row['read length (rnaseqc)']}' >> majiq_build.cfg")
-        t.command(f"echo 'bamdirs=.' >> majiq_build.cfg")
-        t.command(f"echo 'genome=hg38' >> majiq_build.cfg")
-        t.command(f"echo 'strandness={'None' if metadata_row['stranded? (rnaseqc)'] == 'no' else 'reverse'}' >> majiq_build.cfg")
-        t.command(f"echo '[experiments]' >> majiq_build.cfg")
-        t.command(f"echo '{sample_id}={sample_id}' >> majiq_build.cfg")
+        j.command(f"echo '[info]' >> majiq_build.cfg")
+        j.command(f"echo 'readlen={metadata_row['read length (rnaseqc)']}' >> majiq_build.cfg")
+        j.command(f"echo 'bamdirs=.' >> majiq_build.cfg")
+        j.command(f"echo 'genome=hg38' >> majiq_build.cfg")
+        j.command(f"echo 'strandness={'None' if metadata_row['stranded? (rnaseqc)'] == 'no' else 'reverse'}' >> majiq_build.cfg")
+        j.command(f"echo '[experiments]' >> majiq_build.cfg")
+        j.command(f"echo '{sample_id}={sample_id}' >> majiq_build.cfg")
 
-        t.command(f"cat majiq_build.cfg >> {t.ofile}")
-        t.command(f"majiq build gencode.gff3 -c majiq_build.cfg -j 1 -o majiq_build_{sample_id} >> {t.ofile}")
+        j.command(f"cat majiq_build.cfg >> {j.logfile}")
+        j.command(f"majiq build gencode.gff3 -c majiq_build.cfg -j 1 -o majiq_build_{sample_id} >> {j.logfile}")
 
-        t.command(f"tar czf majiq_build_{sample_id}.tar.gz majiq_build_{sample_id}")
-        t.command(f"cp majiq_build_{sample_id}.tar.gz {t.output_tar_gz}")
+        j.command(f"tar czf majiq_build_{sample_id}.tar.gz majiq_build_{sample_id}")
+        j.command(f"cp majiq_build_{sample_id}.tar.gz {j.output_tar_gz}")
 
-        t.command(f"ls -lh . >> {t.ofile}")
-        t.command(f"echo ls majiq_build_{sample_id} >> {t.ofile}")
-        t.command(f"ls -1 majiq_build_{sample_id} >> {t.ofile}")
-        t.command(f"echo --- done gs://macarthurlab-rnaseq/{batch_name}/majiq_build/majiq_build_{sample_id}.tar.gz >> {t.ofile}")
+        #j.command(f"ls -lh . >> {j.logfile}")
+        #j.command(f"echo ls majiq_build_{sample_id} >> {j.logfile}")
+        #j.command(f"ls -1 majiq_build_{sample_id} >> {j.logfile}")
+        j.command(f"echo --- done  {output_file_path} >> {j.logfile}")
 
-        if args.local:
-            p.write_output(t.output_tar_gz, f"majiq_build_{sample_id}.tar.gz")
-            p.write_output(t.ofile, 'temp.txt')
-        else:
-            p.write_output(t.output_tar_gz, f"gs://macarthurlab-rnaseq/{batch_name}/majiq_build/majiq_build_{sample_id}.tar.gz")
-            p.write_output(t.ofile, 'gs://gnomad-bw2/temp.txt')
+        # copy output
+        b.write_output(j.output_tar_gz, output_file_path)
+        b.write_output(j.logfile, os.path.join(output_dir, f"majiq_build_{sample_id}.log"))
 
-    p.run()
+    b.run()
 
-    if isinstance(backend, hp.ServiceBackend):
+    if isinstance(backend, hb.ServiceBackend):
         backend.close()
 
 
 if __name__ == "__main__":
     main()
-
-
-"""
-Metadata columns:
-star_pipeline_batch_x
-star_bam
-star_bai
-star_SJ_out_tab
-star_reads_per_gene_tab
-grch38_vcf
-rnaseqc_gene_reads
-rnaseqc_exon_reads
-rnaseqc_gene_tpm
-rnaseqc_metrics
-junctions_bed
-coverage_bigwig
-hg19_bam
-hg19_bai
-fastqc_zip
-star_pipeline_batch_y
-batch_date_from_hg19_bam_header
-stranded? (rnaseqc)
-read length (rnaseqc)
-total reads x 10^6 (rnaseqc)
-mapping rate (rnaseqc)
-solved using RNA-seq?
-solved not using RNA-seq?
-proj (seqr)
-fam (seqr)
-proj2 (seqr)
-fam2 (seqr)
-sex
-genome (seqr)
-population (seqr)
-sample type (seqr)
-analysis status (seqr)
-variant tags (seqr)
-variant notes (seqr)
-coded phenotype (seqr)
-anlaysis summary + notes (seqr)
-internal case review notes (seqr)
-cram path (seqr)
-Alias (Beryl)
-Clinical Diagnosis (Beryl)
-Sex (Beryl)
-Age at muscle biopsy (Beryl)
-Site of biopsy (Beryl)
-Previous NGS testing (Beryl)
-Genetic diagnosis before RNA-seq (Beryl)
-Notes (Beryl)
-"""

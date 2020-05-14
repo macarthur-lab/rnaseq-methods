@@ -80,6 +80,5 @@ RUN python3 -m pip install cython numpy GitPython -U
 RUN python3 -m pip install git+https://bitbucket.org/biociphers/majiq_stable.git#egg=majiq
 RUN python3 -m pip install Flask==1.0.2 Flask-WTF==0.14.2 gunicorn==19.9.0 waitress==1.1.0 h5py psutil scipy
 
-#COPY bashrc /root/.bashrc
 
 
