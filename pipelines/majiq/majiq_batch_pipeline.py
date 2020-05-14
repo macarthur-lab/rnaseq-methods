@@ -82,8 +82,8 @@ def main():
         j.image("weisburd/majiq:latest")
         j.storage(f'{bam_size*2}Gi')
         j.cpu(0.25)  # default: 1
-        #j.memory(5)  # default: 3.75G
-        logger.info(f'Requesting: {j._storage or "default"}, {j._cpu or "default"} CPU, {j._memory or "default"} RAM')
+        j.memory("3G")  # default: 3.75G
+        logger.info(f'Requesting: {j._storage or "default"} storage, {j._cpu or "default"} CPU, {j._memory or "default"} memory')
 
         # switch to user account
         j.command(f"gcloud auth activate-service-account --key-file /gsa-key/key.json")
