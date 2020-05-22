@@ -24,3 +24,5 @@ pca_to_impute_tissue/pca_on_gtex/data/
 *.gff
 *.gff3
 *.gtf
+
+seqr*.json
