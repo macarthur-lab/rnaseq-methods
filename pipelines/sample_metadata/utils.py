@@ -11,7 +11,7 @@ def get_spreasheet(spreadsheet_name):
     global _GSPREAD_CLIENT
     if _GSPREAD_CLIENT is None:
         creds = Credentials.from_service_account_file(
-            os.path.expanduser('~/.config/gcloud/seqr-project-fcfb2f45e8e4.json'),
+            os.path.expanduser('~/.config/gcloud/seqr-project-0cb2b89f436f.json'),
             scopes=[
                 'https://www.googleapis.com/auth/spreadsheets',
                 'https://www.googleapis.com/auth/drive.file',
