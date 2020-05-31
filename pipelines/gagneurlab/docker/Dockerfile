@@ -74,13 +74,14 @@ RUN install_packages less htop vim emacs procps
 
 # install R pacakges
 RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
-RUN R -e "BiocManager::install('FRASER')"
+#RUN R -e "BiocManager::install('FRASER')"
+RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
+RUN R -e "devtools::install_github('gagneurlab/FRASER', dependencies=TRUE)"
 RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
 
 #RUN R -e "BiocManager::install('OUTRIDER')"
 #RUN R -e "BiocManager::install('mumichae/tMAE')"
 
-#RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
 #RUN R -e "devtools::install_github('gagneurlab/FRASER', ref='R3.6', dependencies=TRUE)"
 #RUN R -e "devtools::install_github('gagneurlab/OUTRIDER', dependencies=TRUE)"
 
