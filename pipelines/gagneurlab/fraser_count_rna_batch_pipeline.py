@@ -1,5 +1,6 @@
 import argparse
 import datetime
+import hail as hl  # used for hadoop file utils
 import hailtop.batch as hb
 import hashlib
 import logging
@@ -10,7 +11,7 @@ from sample_metadata.utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
+DOCKER_IMAGE="weisburd/gagneurlab@sha256:a25fb524b1ff404e9adfb4a9b7123fa5dc20eab3168f37b1dcce037542b9d7d0"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -71,7 +72,7 @@ def main():
     grp.add_argument("--local", action="store_true", help="Batch: run locally")
     p.add_argument("-r", "--raw", action="store_true", help="Batch: run directly on the machine, without using a docker image")
     p.add_argument("--batch-billing-project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
-    p.add_argument("--batch-job-name", help="Batch: (optional) job name")
+    p.add_argument("--batch-name", help="Batch: (optional) batch name")
     p.add_argument("--batch-temp-bucket", default="macarthurlab-rnaseq", help="Batch: bucket where it stores temp files. "
         "The batch service-account must have Admin permissions for this bucket. These can be added by running "
         "gsutil iam ch serviceAccount:[SERVICE_ACCOUNT_NAME]:objectAdmin gs://[BUCKET_NAME]")
@@ -107,7 +108,7 @@ def main():
     else:
         backend = hb.ServiceBackend(billing_project=args.batch_billing_project) #, bucket=args.batch_temp_bucket)
 
-    b = hb.Batch(backend=backend, name=args.batch_job_name)
+    b = hb.Batch(backend=backend, name=args.batch_name)
 
     print("Working dir: " + working_dir)
 
@@ -120,11 +121,9 @@ def main():
     split_reads_samples = []
     split_reads_output_files = []
     split_reads_jobs = []
-    j_extract_splice_junctions = init_job(
-        b, name=f"Extract Splice-junctions {args.batch_job_name or ''}", switch_to_user_account=False,
-        image=None if args.raw else "weisburd/gagneurlab@sha256:8e5038eed349438b0c0778ada7bc41b1852e1be3cd69612ae26b28a43619b21d")
+    j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
 
-    for step in 1, 2:
+    for step in (1, 2):
         for sample_id in sample_ids:
             metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
             batch_name = metadata_row['star_pipeline_batch']
@@ -149,11 +148,14 @@ def main():
             else:
                 output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}.tar.gz")
 
+            if step == 1:
+                split_reads_samples.append(sample_id)
+                split_reads_output_files.append(output_file_path)
+
             # check if output file already exists
             if args.local:
                 disk_size = None
             else:
-                import hail as hl  # used for hadoop file utils
                 if hl.hadoop_is_file(output_file_path) and not args.force:
                     logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
                     continue
@@ -162,9 +164,8 @@ def main():
                 bam_size = int(round(file_stats['size_bytes']/10.**9))
                 disk_size = bam_size * 2
 
-            job_label = f"Count {'Split' if step == 1 else 'Non-split'} Reads"
-            j = init_job(b, name=f"{job_label} {args.batch_job_name or ''}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=False,
-                                image=None if args.raw else "weisburd/gagneurlab@sha256:8e5038eed349438b0c0778ada7bc41b1852e1be3cd69612ae26b28a43619b21d")
+            job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
+            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=False, image=DOCKER_IMAGE if not args.raw else None)
 
             if not args.raw:
                 j.command(f"cp {input_read_data.bam} {os.path.join(working_dir, sample_id)}.bam")
@@ -194,23 +195,28 @@ def main():
             print("Output file path: ", output_file_path)
 
             if step == 1:
-                split_reads_samples.append(sample_id)
-                split_reads_output_files.append(output_file_path)
                 split_reads_jobs.append(j)
+
+        if len(split_reads_samples) == 0:
+            break
 
         if step == 1:
             batch_label = get_batch_label(split_reads_samples)
+            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"spliceJunctions_{batch_label}.RDS")
+            if hl.hadoop_is_file(output_file_path) and not args.force:
+                logger.info(f"{output_file_path} file already exists. Skipping extractSpliceJunctions.R step...")
+                continue
+
             for j in split_reads_jobs:
                 j_extract_splice_junctions.depends_on(j)
 
             j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
+            j_extract_splice_junctions.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
             j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
             j_extract_splice_junctions.command(f"pwd && ls && date")
-            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')}")
+            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} bam_header.bam")
             j_extract_splice_junctions.command(f"ls .")
-            j_extract_splice_junctions.command(f"cp splice_junctions.RDS {j_extract_splice_junctions.splice_junctions_RDS}")
-            output_file_path = os.path.join("gs://macarthurlab-rnaseq", f"splice_junctions_{batch_label}.RDS")
-
+            j_extract_splice_junctions.command(f"cp spliceJunctions.RDS {j_extract_splice_junctions.splice_junctions_RDS}")
             b.write_output(j_extract_splice_junctions.splice_junctions_RDS, output_file_path)
             print("Output file path: ", output_file_path)
 
