@@ -106,7 +106,7 @@ def main():
         else:
             backend = hb.LocalBackend(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     else:
-        backend = hb.ServiceBackend(billing_project=args.batch_billing_project) #, bucket=args.batch_temp_bucket)
+        backend = hb.ServiceBackend(billing_project=args.batch_billing_project, bucket=args.batch_temp_bucket)
 
     b = hb.Batch(backend=backend, name=args.batch_name)
 
