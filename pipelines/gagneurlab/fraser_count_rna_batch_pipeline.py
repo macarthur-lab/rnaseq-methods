@@ -24,12 +24,12 @@ def main():
     p.add_argument("-r", "--raw", action="store_true", help="Batch: run directly on the machine, without using a docker image")
     p.add_argument("--batch-billing-project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
     p.add_argument("--batch-job-name", help="Batch: (optional) job name")
-    p.add_argument("--cpu", type=float, help="Batch: (optional) number of CPUs to request", default=1, choices=[0.25, 0.5, 1, 2, 4, 8, 16])
-    p.add_argument("--memory", type=float, help="Batch: (optional) memory in gigabytes", default=3.75)
+    p.add_argument("-t", "--cpu", type=float, help="Batch: (optional) number of CPUs (eg. 0.5)", default=1, choices=[0.25, 0.5, 1, 2, 4, 8, 16])
+    p.add_argument("-m", "--memory", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
     grp = p.add_mutually_exclusive_group(required=True)
-    grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process", choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
-    grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process", choices=set(rnaseq_sample_metadata_df['sample_id']))
+    grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)", choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
+    grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)", choices=set(rnaseq_sample_metadata_df['sample_id']))
     args = p.parse_args()
 
     #logger.info("\n".join(df.columns))
@@ -39,6 +39,8 @@ def main():
         sample_ids = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'].isin(batch_names)].sample_id
     elif args.rnaseq_sample_id:
         sample_ids = args.rnaseq_sample_id
+    else:
+        p.error("Must specify -b or -s")
 
     logger.info(f"Processing {len(sample_ids)} sample ids: {', '.join(sample_ids)}")
 
@@ -130,7 +132,6 @@ def main():
         else:
             bam_path = f"{input_read_data.bam}"
 
-        j.command("bla")
         j.command(f"pwd >> {j.logfile}")
         j.command(f"ls >> {j.logfile}")
         j.command(f"date >> {j.logfile}")
