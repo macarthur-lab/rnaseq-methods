@@ -87,7 +87,7 @@ RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
 
 ENV PATH=/google-cloud-sdk/bin:$PATH
 
-COPY countRNA.R /
+COPY *.R /
 
 WORKDIR /
 
