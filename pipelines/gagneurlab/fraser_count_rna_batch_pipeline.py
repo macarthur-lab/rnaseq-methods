@@ -121,8 +121,12 @@ def main():
     split_reads_samples = []
     split_reads_output_files = []
     split_reads_jobs = []
-    j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
 
+    non_split_reads_output_files = []
+    non_split_reads_jobs = []
+
+    j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+    j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
     for step in (1, 2):
         for sample_id in sample_ids:
             metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
@@ -145,12 +149,14 @@ def main():
             input_read_data = b.read_input_group(bam=input_bam, bai=input_bai)
             if step == 1:
                 output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
-            else:
-                output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}.tar.gz")
+            elif step == 2:
+                output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}__{batch_label}.tar.gz")
 
             if step == 1:
                 split_reads_samples.append(sample_id)
                 split_reads_output_files.append(output_file_path)
+            elif step == 2:
+                non_split_reads_output_files.append(output_file_path)
 
             # check if output file already exists
             if args.local:
@@ -196,15 +202,17 @@ def main():
 
             if step == 1:
                 split_reads_jobs.append(j)
+            elif step == 2:
+                non_split_reads_jobs.append(j)
 
         if len(split_reads_samples) == 0:
             break
 
         if step == 1:
             batch_label = get_batch_label(split_reads_samples)
-            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"spliceJunctions_{batch_label}.RDS")
-            if hl.hadoop_is_file(output_file_path) and not args.force:
-                logger.info(f"{output_file_path} file already exists. Skipping extractSpliceJunctions.R step...")
+            output_file_path_splice_junctions_RDS = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"spliceJunctions_{batch_label}.RDS")
+            if hl.hadoop_is_file(output_file_path_splice_junctions_RDS) and not args.force:
+                logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
             for j in split_reads_jobs:
@@ -217,7 +225,27 @@ def main():
             j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} bam_header.bam")
             j_extract_splice_junctions.command(f"ls .")
             j_extract_splice_junctions.command(f"cp spliceJunctions.RDS {j_extract_splice_junctions.splice_junctions_RDS}")
-            b.write_output(j_extract_splice_junctions.splice_junctions_RDS, output_file_path)
+            b.write_output(j_extract_splice_junctions.splice_junctions_RDS, output_file_path_splice_junctions_RDS)
+            print("Output file path: ", output_file_path_splice_junctions_RDS)
+        elif step == 2:
+            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"calculatedPSIValues_{batch_label}.RDS")
+            if hl.hadoop_is_file(output_file_path) and not args.force:
+                logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
+                continue
+
+            for j in non_split_reads_jobs:
+                j_calculate_psi_values.depends_on(j)
+
+            j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
+            j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
+            j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
+            j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
+            j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
+            j_calculate_psi_values.command(f"pwd && ls && date")
+            j_calculate_psi_values.command(f"Rscript --vanilla {os.path.join(working_dir, 'calculatePSIValues.R')} {os.path.basename(output_file_path_splice_junctions_RDS)}")
+            j_calculate_psi_values.command(f"ls .")
+            j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
+            b.write_output(j_calculate_psi_values.fdsWithPSIValues, output_file_path)
             print("Output file path: ", output_file_path)
 
     b.run()
