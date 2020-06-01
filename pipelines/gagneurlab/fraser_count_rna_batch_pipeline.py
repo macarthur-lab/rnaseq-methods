@@ -181,13 +181,15 @@ def main():
             else:
                 bam_path = f"{input_read_data.bam}"
 
+            j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
             j.command(f"pwd && ls && date")
+
             if step == 1:
                 script = os.path.join(working_dir, 'countSplitReads.R')
                 j.command(f"Rscript --vanilla {script} {sample_id} {bam_path}")
-            else:
+            elif step == 2:
                 script = os.path.join(working_dir, 'countNonSplitReads.R')
-                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {j_extract_splice_junctions.splice_junctions_RDS}")
+                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {os.path.basename(output_file_path_splice_junctions_RDS)}")
 
             j.command(f"ls .")
             j.command(f"tar czf {j.output_tar_gz} cache")
@@ -224,8 +226,7 @@ def main():
             j_extract_splice_junctions.command(f"pwd && ls && date")
             j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} bam_header.bam")
             j_extract_splice_junctions.command(f"ls .")
-            j_extract_splice_junctions.command(f"cp spliceJunctions.RDS {j_extract_splice_junctions.splice_junctions_RDS}")
-            b.write_output(j_extract_splice_junctions.splice_junctions_RDS, output_file_path_splice_junctions_RDS)
+            j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
             print("Output file path: ", output_file_path_splice_junctions_RDS)
         elif step == 2:
             output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"calculatedPSIValues_{batch_label}.RDS")
