@@ -27,7 +27,7 @@ def init_job(
 ):
 
     j = batch.new_job(name=name)
-    if not image:
+    if image:
         j.image(image)
 
     if disk_size:
@@ -101,11 +101,11 @@ def main():
     if args.local:
         if args.raw:
             backend = hb.LocalBackend()
-            working_dir = os.path.abspath(os.path.dirname(__name__))
+            working_dir = "./"
         else:
             backend = hb.LocalBackend(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     else:
-        backend = hb.ServiceBackend(billing_project=args.batch_billing_project, bucket=args.batch_temp_bucket)
+        backend = hb.ServiceBackend(billing_project=args.batch_billing_project) #, bucket=args.batch_temp_bucket)
 
     b = hb.Batch(backend=backend, name=args.batch_job_name)
 
@@ -146,10 +146,8 @@ def main():
             input_read_data = b.read_input_group(bam=input_bam, bai=input_bai)
             if step == 1:
                 output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
-                log_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.log")
             else:
                 output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}.tar.gz")
-                log_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}.log")
 
             # check if output file already exists
             if args.local:
@@ -166,37 +164,34 @@ def main():
 
             job_label = f"Count {'Split' if step == 1 else 'Non-split'} Reads"
             j = init_job(b, name=f"{job_label} {args.batch_job_name or ''}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=False,
-                            image=None if args.raw else "weisburd/gagneurlab@sha256:8e5038eed349438b0c0778ada7bc41b1852e1be3cd69612ae26b28a43619b21d")
+                                image=None if args.raw else "weisburd/gagneurlab@sha256:8e5038eed349438b0c0778ada7bc41b1852e1be3cd69612ae26b28a43619b21d")
 
             if not args.raw:
-                j.command(f"cp {input_read_data.bam} {os.path.join(working_dir, sample_id)}.bam >> {j.logfile}")
-                j.command(f"cp {input_read_data.bai} {os.path.join(working_dir, sample_id)}.bam.bai >> {j.logfile}")
-                j.command(f"touch {os.path.join(working_dir, sample_id)}.bam.bai >> {j.logfile}")
+                j.command(f"cp {input_read_data.bam} {os.path.join(working_dir, sample_id)}.bam")
+                j.command(f"cp {input_read_data.bai} {os.path.join(working_dir, sample_id)}.bam.bai")
+                j.command(f"touch {os.path.join(working_dir, sample_id)}.bam.bai")
                 bam_path = os.path.join(working_dir, sample_id) + ".bam"
             else:
                 bam_path = f"{input_read_data.bam}"
 
-            j.command(f"pwd && ls && date >> {j.logfile}")
+            j.command(f"pwd && ls && date")
             if step == 1:
                 script = os.path.join(working_dir, 'countSplitReads.R')
-                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} >> {j.logfile}")
+                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path}")
             else:
                 script = os.path.join(working_dir, 'countNonSplitReads.R')
-                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {j_extract_splice_junctions.splice_junctions_RDS} >> {j.logfile}")
+                j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {j_extract_splice_junctions.splice_junctions_RDS}")
 
-            j.command(f"ls . >> {j.logfile}")
+            j.command(f"ls .")
             j.command(f"tar czf {j.output_tar_gz} cache")
 
-            #j.command(f"ls -lh . >> {j.logfile}")
-            j.command(f"echo Done: {output_file_path} >> {j.logfile}")
-            j.command(f"date >> {j.logfile}")
+            #j.command(f"ls -lh .")
+            j.command(f"echo Done: {output_file_path}")
+            j.command(f"date")
 
             # copy output
             b.write_output(j.output_tar_gz, output_file_path)
             print("Output file path: ", output_file_path)
-
-            b.write_output(j.logfile, log_file_path)
-            print("Log file path: ", log_file_path)
 
             if step == 1:
                 split_reads_samples.append(sample_id)
@@ -210,17 +205,14 @@ def main():
 
             j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
             j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
-            j_extract_splice_junctions.command(f"pwd && ls && date >> {j_extract_splice_junctions.logfile}")
-            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} >> {j_extract_splice_junctions.logfile}")
-            j_extract_splice_junctions.command(f"ls . >> {j_extract_splice_junctions.logfile}")
+            j_extract_splice_junctions.command(f"pwd && ls && date")
+            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')}")
+            j_extract_splice_junctions.command(f"ls .")
             j_extract_splice_junctions.command(f"cp splice_junctions.RDS {j_extract_splice_junctions.splice_junctions_RDS}")
             output_file_path = os.path.join("gs://macarthurlab-rnaseq", f"splice_junctions_{batch_label}.RDS")
-            log_file_path = os.path.join("gs://macarthurlab-rnaseq", f"fraser_count_split_reads_{batch_label}.log")
 
             b.write_output(j_extract_splice_junctions.splice_junctions_RDS, output_file_path)
             print("Output file path: ", output_file_path)
-            b.write_output(j_extract_splice_junctions.logfile, log_file_path)
-            print("Log file path: ", log_file_path)
 
     b.run()
 
