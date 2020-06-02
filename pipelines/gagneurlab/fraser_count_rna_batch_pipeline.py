@@ -11,7 +11,7 @@ from sample_metadata.utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE="weisburd/gagneurlab@sha256:a25fb524b1ff404e9adfb4a9b7123fa5dc20eab3168f37b1dcce037542b9d7d0"
+DOCKER_IMAGE="weisburd/gagneurlab@sha256:4e49bc93730a034f7ea4f0b4b153a5276fffdce8e055419239181e4a9b605de5"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -171,7 +171,7 @@ def main():
                 disk_size = bam_size * 2
 
             job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=False, image=DOCKER_IMAGE if not args.raw else None)
+            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
 
             if not args.raw:
                 j.command(f"cp {input_read_data.bam} {os.path.join(working_dir, sample_id)}.bam")
@@ -181,7 +181,6 @@ def main():
             else:
                 bam_path = f"{input_read_data.bam}"
 
-            j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
             j.command(f"pwd && ls && date")
 
             if step == 1:
@@ -189,6 +188,7 @@ def main():
                 j.command(f"Rscript --vanilla {script} {sample_id} {bam_path}")
             elif step == 2:
                 script = os.path.join(working_dir, 'countNonSplitReads.R')
+                j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
                 j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {os.path.basename(output_file_path_splice_junctions_RDS)}")
 
             j.command(f"ls .")
