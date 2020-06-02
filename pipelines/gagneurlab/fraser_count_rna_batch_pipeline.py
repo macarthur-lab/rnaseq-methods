@@ -11,7 +11,7 @@ from sample_metadata.utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE="weisburd/gagneurlab@sha256:4e49bc93730a034f7ea4f0b4b153a5276fffdce8e055419239181e4a9b605de5"
+DOCKER_IMAGE="weisburd/gagneurlab@sha256:d609bb8e0485745a812d5e917021943270e31fbcf349a18faec9fa53762a9ecd"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -119,15 +119,16 @@ def main():
     #    genes_gtf = b.read_input("gs://macarthurlab-rnaseq/ref/gencode.v26.annotation.GRCh38.gff3", extension=".gff3")
 
     split_reads_samples = []
+
     split_reads_output_files = []
-    split_reads_jobs = []
+    split_reads_jobs = {}
 
     non_split_reads_output_files = []
-    non_split_reads_jobs = []
+    non_split_reads_jobs = {}
 
     j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
     j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
-    for step in (1, 2):
+    for step in 1, 2:
         for sample_id in sample_ids:
             metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
             batch_name = metadata_row['star_pipeline_batch']
@@ -187,6 +188,10 @@ def main():
                 script = os.path.join(working_dir, 'countSplitReads.R')
                 j.command(f"Rscript --vanilla {script} {sample_id} {bam_path}")
             elif step == 2:
+                if sample_id in split_reads_jobs:
+                    j.depends_on(split_reads_jobs[sample_id])
+                j.depends_on(j_extract_splice_junctions)
+
                 script = os.path.join(working_dir, 'countNonSplitReads.R')
                 j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
                 j.command(f"Rscript --vanilla {script} {sample_id} {bam_path} {os.path.basename(output_file_path_splice_junctions_RDS)}")
@@ -203,9 +208,9 @@ def main():
             print("Output file path: ", output_file_path)
 
             if step == 1:
-                split_reads_jobs.append(j)
+                split_reads_jobs[sample_id] = j
             elif step == 2:
-                non_split_reads_jobs.append(j)
+                non_split_reads_jobs[sample_id] = j
 
         if len(split_reads_samples) == 0:
             break
@@ -217,7 +222,7 @@ def main():
                 logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
-            for j in split_reads_jobs:
+            for j in split_reads_jobs.values():
                 j_extract_splice_junctions.depends_on(j)
 
             j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
@@ -234,7 +239,10 @@ def main():
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
-            for j in non_split_reads_jobs:
+            for j in split_reads_jobs.values():
+                j_calculate_psi_values.depends_on(j)
+            j_calculate_psi_values.depends_on(j_extract_splice_junctions)
+            for j in non_split_reads_jobs.values():
                 j_calculate_psi_values.depends_on(j)
 
             j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
