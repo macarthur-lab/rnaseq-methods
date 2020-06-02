@@ -11,7 +11,7 @@ from sample_metadata.utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE="weisburd/gagneurlab@sha256:d609bb8e0485745a812d5e917021943270e31fbcf349a18faec9fa53762a9ecd"
+DOCKER_IMAGE = "weisburd/gagneurlab@sha256:7f936057a0120b62af6c6cfe9831ba39b824394a2e265d65441a959d5b06b4c5"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -225,7 +225,7 @@ def main():
                 logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
-            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, memory=15, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_extract_splice_junctions.depends_on(j)
 
@@ -243,7 +243,7 @@ def main():
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
-            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", memory=15, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=30, memory=15, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_calculate_psi_values.depends_on(j)
             if j_extract_splice_junctions:
