@@ -77,7 +77,8 @@ def main():
         "The batch service-account must have Admin permissions for this bucket. These can be added by running "
         "gsutil iam ch serviceAccount:[SERVICE_ACCOUNT_NAME]:objectAdmin gs://[BUCKET_NAME]")
     p.add_argument("-t", "--cpu", type=float, help="Batch: (optional) number of CPUs (eg. 0.5)", default=1, choices=[0.25, 0.5, 1, 2, 4, 8, 16])
-    p.add_argument("-m", "--memory", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
+    p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
+    p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
     grp = p.add_mutually_exclusive_group(required=True)
     grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)", choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
@@ -126,8 +127,8 @@ def main():
     non_split_reads_output_files = []
     non_split_reads_jobs = {}
 
-    j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
-    j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+    j_extract_splice_junctions = None
+    j_calculate_psi_values = None
     for step in 1, 2:
         for sample_id in sample_ids:
             metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
@@ -150,15 +151,16 @@ def main():
             input_read_data = b.read_input_group(bam=input_bam, bai=input_bai)
             if step == 1:
                 output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
+                memory = args.memory_step1
             elif step == 2:
                 output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}__{batch_label}.tar.gz")
+                memory = args.memory_step2
 
             if step == 1:
                 split_reads_samples.append(sample_id)
                 split_reads_output_files.append(output_file_path)
             elif step == 2:
                 non_split_reads_output_files.append(output_file_path)
-
             # check if output file already exists
             if args.local:
                 disk_size = None
@@ -172,7 +174,7 @@ def main():
                 disk_size = bam_size * 2
 
             job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=args.memory, disk_size=disk_size, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=memory, disk_size=disk_size, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
 
             if not args.raw:
                 j.command(f"cp {input_read_data.bam} {os.path.join(working_dir, sample_id)}.bam")
@@ -190,7 +192,8 @@ def main():
             elif step == 2:
                 if sample_id in split_reads_jobs:
                     j.depends_on(split_reads_jobs[sample_id])
-                j.depends_on(j_extract_splice_junctions)
+                if j_extract_splice_junctions:
+                    j.depends_on(j_extract_splice_junctions)
 
                 script = os.path.join(working_dir, 'countNonSplitReads.R')
                 j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
@@ -222,6 +225,7 @@ def main():
                 logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
+            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_extract_splice_junctions.depends_on(j)
 
@@ -239,19 +243,22 @@ def main():
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
+            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", memory=15, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_calculate_psi_values.depends_on(j)
-            j_calculate_psi_values.depends_on(j_extract_splice_junctions)
+            if j_extract_splice_junctions:
+                j_calculate_psi_values.depends_on(j_extract_splice_junctions)
             for j in non_split_reads_jobs.values():
                 j_calculate_psi_values.depends_on(j)
 
             j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
             j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
             j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
+            j_calculate_psi_values.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
             j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
             j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
             j_calculate_psi_values.command(f"pwd && ls && date")
-            j_calculate_psi_values.command(f"Rscript --vanilla {os.path.join(working_dir, 'calculatePSIValues.R')} {os.path.basename(output_file_path_splice_junctions_RDS)}")
+            j_calculate_psi_values.command(f"Rscript --vanilla {os.path.join(working_dir, 'calculatePSIValues.R')} {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")
             j_calculate_psi_values.command(f"ls .")
             j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
             b.write_output(j_calculate_psi_values.fdsWithPSIValues, output_file_path)
