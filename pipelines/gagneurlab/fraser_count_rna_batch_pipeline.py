@@ -11,7 +11,7 @@ from sample_metadata.utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE = "weisburd/gagneurlab@sha256:9524e8c66e952f70273fff51abcb0b89d8e6f6e589ac85153b65a98794b2d0cf"
+DOCKER_IMAGE = "weisburd/gagneurlab@sha256:38fb60e6caca1b89bcef67318aca443bcd7ceb20e207c3c2ae3bfb01299805d5"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -128,7 +128,7 @@ def main():
     non_split_reads_jobs = {}
 
     j_extract_splice_junctions = None
-    j_calculate_psi_values = None
+    #j_calculate_psi_values = None
     for step in 1, 2:
         for sample_id in sample_ids:
             metadata_row = rnaseq_sample_metadata_df.loc[sample_id]
@@ -218,7 +218,7 @@ def main():
         if len(split_reads_samples) == 0:
             break
 
-        CPUs = 4
+        #CPUs = 4
         if step == 1:
             batch_label = get_batch_label(split_reads_samples)
             output_file_path_splice_junctions_RDS = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"spliceJunctions_{batch_label}.RDS")
@@ -226,7 +226,7 @@ def main():
                 logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
-            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, cpu=CPUs, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, memory=30, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_extract_splice_junctions.depends_on(j)
 
@@ -234,17 +234,17 @@ def main():
             j_extract_splice_junctions.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
             j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
             j_extract_splice_junctions.command(f"pwd && ls && date")
-            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} --num-threads={CPUs} bam_header.bam")
+            j_extract_splice_junctions.command(f"Rscript --vanilla {os.path.join(working_dir, 'extractSpliceJunctions.R')} bam_header.bam")  # --num-threads={CPUs}
             j_extract_splice_junctions.command(f"ls .")
             j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
             print("Output file path: ", output_file_path_splice_junctions_RDS)
         elif step == 2:
-            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"calculatedPSIValues_{batch_label}.RDS")
+            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"calculatedPSIValues_{batch_label}.tar.gz")
             if hl.hadoop_is_file(output_file_path) and not args.force:
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
-            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=30, cpu=CPUs, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
+            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=30, memory=60, switch_to_user_account=True, image=DOCKER_IMAGE if not args.raw else None)
             for j in split_reads_jobs.values():
                 j_calculate_psi_values.depends_on(j)
             if j_extract_splice_junctions:
@@ -259,10 +259,11 @@ def main():
             j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
             j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
             j_calculate_psi_values.command(f"pwd && ls && date")
-            j_calculate_psi_values.command(f"Rscript --vanilla {os.path.join(working_dir, 'calculatePSIValues.R')} --num-threads={CPUs} {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")
+            j_calculate_psi_values.command(f"Rscript --vanilla {os.path.join(working_dir, 'calculatePSIValues.R')} {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")  # --num-threads={CPUs}
             j_calculate_psi_values.command(f"ls .")
-            j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
-            b.write_output(j_calculate_psi_values.fdsWithPSIValues, output_file_path)
+            #j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
+            j_calculate_psi_values.command(f"tar czf {j_calculate_psi_values.output_tar_gz} cache savedObjects fdsWithPSIValues.RDS")
+            b.write_output(j_calculate_psi_values.output_tar_gz, output_file_path)
             print("Output file path: ", output_file_path)
 
     b.run()
