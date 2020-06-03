@@ -25,14 +25,20 @@ def get_spreasheet(spreadsheet_name):
 
     return spreadsheet
 
+## Spreadsheets must be Shared with 733952080251-compute@developer.gserviceaccount.com
 
 RNASEQ_METADATA_SPREADSHEET = get_spreasheet("RNA-seq metadata")
-
 SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("seqr info + other metadata (auto)")
 DATA_PATHS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("data paths (auto)")
 IMPUTED_METADATA_SPREADSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("imputed (auto)")
 BERYLS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's Supplementary Table 1")
 BERYLS_WORKSHEET_2 = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's RNAseq Probands")
+
+GTEX_METADATA_SPREADSHEET = get_spreasheet("GTEx v8 metadata")
+GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("RNA-seq sample metadata (auto)")
+GTEX_WES_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("WES sample metadata (auto)")
+GTEX_WGS_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("WGS sample metadata (auto)")
+GTEX_INDIVIDUAL_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("individual metadata (auto)")
 
 
 def get_seqr_info_and_other_metadata_df():
@@ -120,3 +126,17 @@ RNASEQ_SAMPLE_IDS_TO_EXCLUDE = {
     "HF_8",
     "HF_9",
 }
+
+def get_gtex_rnaseq_sample_metadata_df():
+    rows = GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
+
+
+def get_gtex_wes_sample_metadata_df():
+    rows = GTEX_WES_SAMPLE_METADATA_WORKSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
+
+
+def get_gtex_wgs_sample_metadata_df():
+    rows = GTEX_WGS_SAMPLE_METADATA_WORKSHEET.get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
