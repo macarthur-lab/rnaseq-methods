@@ -35,5 +35,5 @@ splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
 fds = calculatePSIValues(fds, BPPARAM=bpparam)
-
+fds = annotateRanges(fds, GRCh=38)
 saveRDS(fds, "fdsWithPSIValues.RDS")

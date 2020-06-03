@@ -11,5 +11,5 @@ push:
 	docker push $(TAG2)
 
 update_sha:
-	docker pull weisburd/gagneurlab:latest 2>&1 | grep Digest | cut -c 9- > sha256.txt
+	docker pull $(TAG2) 2>&1 | grep Digest | cut -c 9- > sha256.txt
 	cat sha256.txt && [ ! -z "`cat sha256.txt`" ] && sed -i.bak "s/@sha256:[^\"]*/"@`cat sha256.txt`"/"  ../*.py
