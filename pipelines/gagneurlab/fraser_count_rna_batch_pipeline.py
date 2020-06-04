@@ -128,6 +128,7 @@ def main():
     p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
+    p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
     grp = p.add_mutually_exclusive_group(required=True)
     grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)",
         choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["gtex_muscle", "gtex_fibroblasts", "gtex_blood"]))
@@ -215,6 +216,10 @@ def main():
                 split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
             elif step == 2:
                 non_split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
+
+            if step == 1 and args.skip_step1:
+                continue
+
             # check if output file already exists
             if hl.hadoop_is_file(output_file_path) and not args.force:
                 logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
