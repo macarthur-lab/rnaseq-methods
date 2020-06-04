@@ -184,7 +184,7 @@ all_samples_df
 #%%
 
 # export the df to the  "data paths (auto)" worksheet in google docs.
-set_with_dataframe(DATA_PATHS_WORKSHEET, all_samples_df.fillna(' '), resize=True)
+set_with_dataframe(DATA_PATHS_WORKSHEET, all_samples_df.fillna(''), resize=True)
 
 print("Updated", RNASEQ_METADATA_SPREADSHEET.title, "/", DATA_PATHS_WORKSHEET.title)
 print(DATA_PATHS_WORKSHEET.url)

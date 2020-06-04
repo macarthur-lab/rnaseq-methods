@@ -11,27 +11,27 @@ import sys
 
 from gspread_dataframe import set_with_dataframe
 
-from utils import RNASEQ_METADATA_SPREADSHEET, SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
+from sample_metadata.utils import RNASEQ_METADATA_SPREADSHEET, SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
 
 
 #%%
 
 # get worksheet rows and convert them to DataFrames
 
-from utils import DATA_PATHS_WORKSHEET
+from sample_metadata.utils import DATA_PATHS_WORKSHEET
 data_paths_ws_rows = DATA_PATHS_WORKSHEET.get()
 data_paths_ws_df = pd.DataFrame(data=data_paths_ws_rows[1:], columns=data_paths_ws_rows[0])
 data_paths_ws_df
 
 #%%
 
-from utils import BERYLS_WORKSHEET
+from sample_metadata.utils import BERYLS_WORKSHEET
 beryls_ws_rows = BERYLS_WORKSHEET.get()
 beryls_ws_df = pd.DataFrame(data=beryls_ws_rows[1:], columns=beryls_ws_rows[0])
 beryls_ws_df
 
 #%%
-from utils import BERYLS_WORKSHEET_2
+from sample_metadata.utils import BERYLS_WORKSHEET_2
 beryls_ws2_rows = BERYLS_WORKSHEET_2.get()
 beryls_ws2_df = pd.DataFrame(data=beryls_ws2_rows[1:], columns=beryls_ws2_rows[0])
 
@@ -114,7 +114,7 @@ beryls_ws_df_merged = beryls_ws_df_merged.rename(columns={
 
 beryls_ws_df_merged = beryls_ws_df_merged.rename(columns={c: c.replace("\n", " ") + " (Beryl)" for c in columns_from_beryls_worksheets if c != "Sample ID"})
 
-beryls_ws_df_merged["Notes (Beryl)"] = beryls_ws_df_merged["Notes on genetic diagnosis status (Beryl)"].fillna(' ')
+beryls_ws_df_merged["Notes (Beryl)"] = beryls_ws_df_merged["Notes on genetic diagnosis status (Beryl)"].fillna('')
 
 for i, row in beryls_ws_df_merged.iterrows():
     #print(i, ",", df_export.at[i, "Notes (Beryl)"], ",", row["Notes from paper"])
@@ -160,7 +160,7 @@ print('  "'+ '",\n  "'.join(joined_df.columns) + '",')
 
 # update batch_date_from_hg19_bam_header column
 
-from utils import get_date_from_bam_header
+from sample_metadata.utils import get_date_from_bam_header
 
 joined_df3 = joined_df.merge(seqr_info_and_other_metadata_ws_rows[["sample_id", "batch_date_from_hg19_bam_header"]], on="sample_id", how="left")
 for i, row in joined_df3.iterrows():
@@ -662,7 +662,7 @@ df_export = joined_df5[[
 ] + SEQR_INFO_COLUMNS + [c for c in beryls_ws_df_merged.columns if c not in ('sample_id', 'Sample ID')]]
 
 # export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-set_with_dataframe(SEQR_INFO_AND_OTHER_METADATA_WORKSHEET, df_export.fillna(' '), resize=True)
+set_with_dataframe(SEQR_INFO_AND_OTHER_METADATA_WORKSHEET, df_export.fillna(''), resize=True)
 
 print("Updated", RNASEQ_METADATA_SPREADSHEET.title, "/", SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.title)
 print(RNASEQ_METADATA_SPREADSHEET.url)
