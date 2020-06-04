@@ -74,22 +74,27 @@ for _, row in df.iterrows():
     if data:
         batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
 
-        description = "<br />".join(map(str, [
-            row['batch_date_from_hg19_bam_header'],
-            row['imputed tissue'],
-            row['read length (rnaseqc)'],
-            row['proj (seqr)'],
-            row['analysis status (seqr)'],
-            row['variant tags (seqr)'],
-            row['coded phenotype (seqr)'],
-            f"in Beryls paper: {row['Include in manuscript? (Beryl)']}",
-            row['Phenotype (Beryl)'],
-            row['Clinical Diagnosis (Beryl)'],
-            row['Data_type (Beryl)'],
-            row['Status (Beryl)'],
-            row['CanditateGenes (culprit,if solved) (Beryl)'],
-            row['Candidate  Variants (Beryl)'],
-        ]))
+        COLUMN_LABELS = {
+            "batch_date_from_hg19_bam_header": "sequencing date",
+        }
+        description = "<table>"
+        description += "\n".join([f"<tr><td>{COLUMN_LABELS.get(c, c)}</td><td>{row[c]}</td></tr>" for c in [
+            'batch_date_from_hg19_bam_header',
+            'imputed tissue',
+            'read length (rnaseqc)',
+            'proj (seqr)',
+            'analysis status (seqr)',
+            'variant tags (seqr)',
+            'coded phenotype (seqr)',
+            'Include in manuscript? (Beryl)',
+            'Phenotype (Beryl)',
+            'Clinical Diagnosis (Beryl)',
+            'Data_type (Beryl)',
+            'Status (Beryl)',
+            'CanditateGenes (culprit,if solved) (Beryl)',
+            'Candidate  Variants (Beryl)',
+        ]])
+        description += "</table>"
 
         rows_by_batch[batch_name].append({'name': row.sample_id, 'data': data, "description": description})
         rows_by_batch["all"].append({'name': row.sample_id, 'data': data, "description": description})
