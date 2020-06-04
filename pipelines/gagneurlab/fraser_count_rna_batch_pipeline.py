@@ -183,10 +183,10 @@ def main():
 
     split_reads_samples = []
 
-    split_reads_output_files = []
+    split_reads_output_files = set()
     split_reads_jobs = {}
 
-    non_split_reads_output_files = []
+    non_split_reads_output_files = set()
     non_split_reads_jobs = {}
 
     j_extract_splice_junctions = None
@@ -212,9 +212,9 @@ def main():
 
             if step == 1:
                 split_reads_samples.append(sample_id)
-                split_reads_output_files.append(output_file_path)
+                split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
             elif step == 2:
-                non_split_reads_output_files.append(output_file_path)
+                non_split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
             # check if output file already exists
             if hl.hadoop_is_file(output_file_path) and not args.force:
                 logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
@@ -261,7 +261,7 @@ def main():
             elif step == 2:
                 non_split_reads_jobs[sample_id] = j
 
-        if len(split_reads_samples) == 0:
+        if len(split_reads_output_files) == 0:
             break
 
         if step == 1:
@@ -288,9 +288,7 @@ def main():
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
-            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=30, cpu=16, memory=64, switch_to_user_account=True, image=DOCKER_IMAGE)
-            for j in split_reads_jobs.values():
-                j_calculate_psi_values.depends_on(j)
+            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=50, cpu=16, memory=64, switch_to_user_account=True, image=DOCKER_IMAGE)
             if j_extract_splice_junctions:
                 j_calculate_psi_values.depends_on(j_extract_splice_junctions)
             for j in non_split_reads_jobs.values():
