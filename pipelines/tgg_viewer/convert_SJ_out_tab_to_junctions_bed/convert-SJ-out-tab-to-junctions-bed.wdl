@@ -16,7 +16,7 @@ task convert_SJ_out_tab_to_junctions_bed {
     }
 
     runtime {
-        docker: "weisburd/rnaseq-utils:v1"
+        docker: "weisburd/convert-sj-out-tab-to-junctions-bed@sha256:dc234b2e49129b3cbebbccad0e75504b766da7fac8eb2af90356e320ba50d12c"
         memory: "1GB"
         disks: "local-disk ${disk_space} HDD"
         cpu: "1"

@@ -1,7 +1,7 @@
-TAG1 = weisburd/rnaseq-utils:v1
-TAG2 = weisburd/rnaseq-utils:latest
+TAG1 = weisburd/convert-sj-out-tab-to-junctions-bed:v1
+TAG2 = weisburd/convert-sj-out-tab-to-junctions-bed:latest
 
-all: build push
+all: build push update_sha
 
 build:
 	docker build -t $(TAG1) -t $(TAG2) .
@@ -9,3 +9,7 @@ build:
 push:
 	docker push $(TAG1)
 	docker push $(TAG2)
+
+update_sha:
+	docker pull $(TAG2) 2>&1 | grep Digest | cut -c 9- > sha256.txt
+	cat sha256.txt && [ ! -z "`cat sha256.txt`" ] && sed -i.bak "s/@sha256:[^\"]*/"@`cat sha256.txt`"/"  ../*.py
