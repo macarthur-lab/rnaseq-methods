@@ -76,9 +76,10 @@ for _, row in df.iterrows():
 
         COLUMN_LABELS = {
             "batch_date_from_hg19_bam_header": "sequencing date",
+            "CanditateGenes (culprit,if solved) (Beryl)": "Canditate Genes (Beryl)",
         }
         description = "<table>"
-        description += "\n".join([f"<tr><td>{COLUMN_LABELS.get(c, c)}</td><td>{row[c]}</td></tr>" for c in [
+        description += "\n".join([f"<tr><td><b>{COLUMN_LABELS.get(c, c)}:</b></td><td>{row[c]}</td></tr>" for c in [
             'batch_date_from_hg19_bam_header',
             'imputed tissue',
             'read length (rnaseqc)',
