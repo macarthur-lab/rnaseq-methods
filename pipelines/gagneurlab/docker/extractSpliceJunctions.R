@@ -18,8 +18,11 @@ sample_ids = unlist(map(strsplit(file_paths, '[.]'), parse_sample_id))
 sampleTable = data.table(sampleID=sample_ids, bamFile=args$bamHeaderPath)
 print(sampleTable)
 
-#bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-bpparam = MulticoreParam(args$num_threads, log=FALSE, progressbar=FALSE)
+if(args$num_threads == 1) {
+  bpparam = SerialParam(log=TRUE, progressbar=FALSE)
+} else {
+  bpparam = MulticoreParam(args$num_threads, log=FALSE, progressbar=FALSE)
+}
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)

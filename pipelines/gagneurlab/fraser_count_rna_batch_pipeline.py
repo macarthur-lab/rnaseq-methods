@@ -13,7 +13,7 @@ from sample_metadata.utils import get_joined_metadata_df, get_gtex_rnaseq_sample
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE = "weisburd/gagneurlab@sha256:2744e9eca6a93f1d2f5d071c9c794fe8f4141684442df5d64b1352d347e67317"
+DOCKER_IMAGE = "weisburd/gagneurlab@sha256:6771fc0341c8eff24ea67835bf21f6fbe6eed6c88401842e77ea7d49aac3ca21"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -110,7 +110,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     df.loc[source_df.sample_id, 'stranded'] = source_df['stranded? (rnaseqc)']
     df.loc[source_df.sample_id, 'RIN'] = None
 
-    return pd.concat([samples_df, df], axis="rows")
+    return pd.concat([samples_df, df], axis="rows", sort=True)
 
 
 def main():
@@ -131,7 +131,8 @@ def main():
     p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
     grp = p.add_mutually_exclusive_group(required=True)
     grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)",
-        choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["gtex_muscle", "gtex_fibroblasts", "gtex_blood"]))
+        choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["muscle", "fibroblasts", "whole_blood", "lymphocytes"])
+    )
     grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
         choices=set(rnaseq_sample_metadata_df['sample_id']) | set(['GTEX-1LG7Z-0005-SM-DKPQ6', 'GTEX-PX3G-0006-SM-5SI7E', 'GTEX-1KXAM-0005-SM-DIPEC']))
     p.add_argument("-tsv", "--only-generate-tsv", action="store_true", help="Exit after generating metadata tsv")
@@ -143,18 +144,23 @@ def main():
     samples_df = pd.DataFrame()
     if args.rnaseq_batch_name:
         for batch_name in args.rnaseq_batch_name:
-            if batch_name.startswith('gtex'):
-                if batch_name == "gtex_muscle":
-                    df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Muscle - Skeletal"]
-                elif batch_name == "gtex_fibroblasts":
-                    df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Cells - Cultured fibroblasts"]
-                elif batch_name == "gtex_blood":
-                    df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Whole Blood"]
+            if batch_name in set(["muscle", "fibroblasts", "whole_blood", "lymphocytes"]):
+                if batch_name == "muscle":
+                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Muscle - Skeletal"]
+                elif batch_name == "fibroblasts":
+                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Cells - Cultured fibroblasts"]
+                elif batch_name == "lymphocytes":
+                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Cells - EBV-transformed lymphocytes"]
+                elif batch_name == "whole_blood":
+                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Whole Blood"]
                 else:
                     p.error(f"Unexpected batch name: {batch_name}")
 
-                df = df.sort_values(by='SMRIN', ascending=False)
-                samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, df[:100], batch_name)
+                gtex_df = gtex_df.sort_values(by='SMRIN', ascending=False)
+                samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[:100], batch_name)
+
+                tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['imputed tissue'] == batch_name]
+                samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)
             else:
                 df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'] == batch_name]
                 samples_df = transfer_metadata_columns_from_df(samples_df, df)

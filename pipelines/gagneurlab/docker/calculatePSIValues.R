@@ -29,8 +29,12 @@ sampleTable = data.table(sampleID=sample_ids, bamFile=args$bamHeaderPath)
 print(sampleTable)
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
-#bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-bpparam = MulticoreParam(args$num_threads, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
+if(args$num_threads == 1) {
+  bpparam = SerialParam(log=TRUE, progressbar=FALSE)
+} else {
+  bpparam = MulticoreParam(args$num_threads, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
+}
+
 splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
