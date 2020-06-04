@@ -63,19 +63,36 @@ for _, row in df.iterrows():
 
     data = []
     if row.junctions_bed:
-        data.append({ 'type': 'junctions', 'url': row.junctions_bed })
+        data.append({'type': 'junctions', 'url': row.junctions_bed})
     if row.coverage_bigwig:
-        data.append({ 'type': 'coverage', 'url': row.coverage_bigwig })
+        data.append({'type': 'coverage', 'url': row.coverage_bigwig})
     if row.grch38_vcf and row.grch38_vcf.strip():
-        data.append({ 'type': 'vcf', 'url': row.grch38_vcf })
+        data.append({'type': 'vcf', 'url': row.grch38_vcf})
     if row.star_bam:
-        data.append({ 'type': 'alignment', 'url': row.star_bam })
+        data.append({'type': 'alignment', 'url': row.star_bam})
 
     if data:
         batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
 
-        rows_by_batch[batch_name].append({ 'name': row.sample_id, 'data': data })
-        rows_by_batch["all"].append({ 'name': row.sample_id, 'data': data })
+        description = "<br />".join(map(str, [
+            row['batch_date_from_hg19_bam_header'],
+            row['imputed tissue'],
+            row['read length (rnaseqc)'],
+            row['proj (seqr)'],
+            row['analysis status (seqr)'],
+            row['variant tags (seqr)'],
+            row['coded phenotype (seqr)'],
+            f"in Beryls paper: {row['Include in manuscript? (Beryl)']}",
+            row['Phenotype (Beryl)'],
+            row['Clinical Diagnosis (Beryl)'],
+            row['Data_type (Beryl)'],
+            row['Status (Beryl)'],
+            row['CanditateGenes (culprit,if solved) (Beryl)'],
+            row['Candidate  Variants (Beryl)'],
+        ]))
+
+        rows_by_batch[batch_name].append({'name': row.sample_id, 'data': data, "description": description})
+        rows_by_batch["all"].append({'name': row.sample_id, 'data': data, "description": description})
 
 
 #%%
@@ -88,9 +105,7 @@ for batch_name, rows in rows_by_batch.items():
         "genome": "hg38",
         "locus": "chr21:45988674-45991233",
         "selectedRowNamesByCategoryName": {
-              "Samples": [
-                   "UC316-1M"
-              ],
+              "Samples": [],
               "GTEx Tracks": [
                    "GTEx All Muscle - Norm.",
                    "GTEx All Blood - Norm.",
@@ -107,7 +122,7 @@ for batch_name, rows in rows_by_batch.items():
         },
         "sjOptions": {
               "bounceHeightBasedOn": "random",
-              "colorBy": "numUniqueReads",
+              "colorBy": "isAnnotatedJunction",
               "colorByNumReadsThreshold": 5,
               "hideAnnotated": false,
               "hideUnannotated": false,

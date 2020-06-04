@@ -11,7 +11,7 @@
     "vcf"
   ],
   "genome": "hg38",
-  "locus": "chr15:92,835,700-93,031,800",
+  "locus": "chr21:45988674-45991233",
   "rowsInCategories": [
     {
       "categoryName": "GTEx Tracks",
@@ -196,656 +196,701 @@
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1111-1_T1105.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/BEG_1111-1_T1105.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1111-1_T1105.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Beggs_WGS<br />Analysis in Progress, Reviewed, no clear candidate<br />5 Review tag(s) <br />Multiple congenital anomalies <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "BEG_1111-1_T1105"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1435-01_T1370.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/BEG_1435-01_T1370.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1435-01_T1370.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br /><br />101<br />CMG_Beggs_WGS<br />Analysis in Progress<br />8 Review tag(s) <br />Central/mini core myopathy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "BEG_1435-01_T1370"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-006.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-006.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />2 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) <br />neurodevelopmental, Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-006"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-010.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-010.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-010.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, currently pursuing candidates<br />7 VUS tag(s), 10 Review tag(s), 2 Likely Benign tag(s), 2 Excluded tag(s), 1 Confident AR one hit tag(s), 1 Benign tag(s) <br />Ritscher-Schinzel, Ritscher-Schinzel <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-010"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-015.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-015.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />5 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s) <br />neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-015"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-022.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-022.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-022.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, no clear candidate<br />2 VUS tag(s), 3 Review tag(s), 1 Likely Benign tag(s), 1 Excluded tag(s) <br />Neurodevelopmental disorder with epilepsy, neurodevelopmental with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-022"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-025.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-025.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-025.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, no clear candidate<br />1 VUS tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 Likely Benign tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) <br />Neurodevelopmental disorder, neurodevelopmental <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-025"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-032.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-032.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-032.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, currently pursuing candidates<br />1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) <br />craniosynostosis with epilepsy, craniosynostosis with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-032"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-035.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-035.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-035.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, currently pursuing candidates<br />4 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 7 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) <br />Neurodevelopmental disorder, neurodevelopmental <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-035"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-047.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-047.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-047.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />CMG_Estonia_WGS<br />Reviewed, currently pursuing candidates<br />6 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 2 Sanger validated tag(s), 15 Review tag(s), 4 MatchBox (MME) tag(s), 7 Likely Benign tag(s) <br />Progressive spastic paraparesis and dystonias, neuromuscular <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-047"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-061.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-061.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-061.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />Estonian External Exomes<br />Strong candidate - known gene for phenotype<br />3 VUS tag(s), 2 Secondary finding tag(s), 2 Sanger validated tag(s), 1 Review tag(s), 5 Excluded tag(s) <br />holoprosencephaly with hearing loss <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-061"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-070.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-070.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-070.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />muscle<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) <br />Juvenile idiopathic arthritis with developmetal delay <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-070"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-001.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-071-001.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-001.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />CMG_Estonia_WGS<br />Solved - known gene for phenotype<br />2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) <br />Neurodevelopmental disorder with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-071-001"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-004.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-071-004.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-004.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />CMG_Estonia_WGS<br />Solved - known gene for phenotype<br />2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) <br />Neurodevelopmental disorder with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-071-004"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-073.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-073.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />1 VUS tag(s), 1 Secondary finding tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-073"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-075.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-075.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />1 VUS tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-075"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-081.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-081.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-081.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />4 Review tag(s) <br />Mitochondrial DNA depletion syndrome - PS603041 <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-081"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-085.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-085.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />CMG_Estonia_WES<br />Analysis in Progress, Reviewed, currently pursuing candidates<br />2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) <br />Silver-Russell, Silver-Russell <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-085"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-087.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-087.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-087.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />3 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 3 Secondary finding tag(s), 2 Review tag(s) <br />CORNELIA DE LANGE SYNDROME 1; CDLS1 <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-087"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-095.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-095.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-095.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />CMG_Estonia_WGS<br />Strong candidate - novel gene<br />1 Tier 1 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 3 Review tag(s), 1 MatchBox (MME) tag(s) <br />multiple congenital anomalies <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-095"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-100.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-100.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-100.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Strong candidate - novel gene<br />2 Tier 2 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 1 Benign tag(s) <br />Neurodevelopmental disorder with epilepsy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-100"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-104.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-104.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-104.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />lymphocytes<br />101<br />CMG_Estonia_WGS<br />Analysis in Progress<br />1 VUS tag(s), 1 Send for Sanger validation tag(s), 3 Review tag(s), 1 Excluded tag(s) <br />Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-104"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-107.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-107.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />lymphocytes<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) <br />Oliver-McFarlane syndrome <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-107"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-108.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-108.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, no clear candidate<br /> <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-108"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-114.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-114.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-114.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Strong candidate - known gene for phenotype<br />1 Tier 1 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-114"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-115.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-115.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-115.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-03<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />2 Tier 2 - Novel gene and phenotype tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-115"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-116.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-116.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-116.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />1 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s), 2 Analyst high priority tag(s) <br />progressive myopathy <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-116"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-119.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-119.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Analysis in Progress<br />8 Review tag(s) <br />SPASTIC PARAPLEGIA 62, AUTOSOMAL RECESSIVE; SPG62 <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-119"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-124.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-124.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, no clear candidate<br /> <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-124"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-126.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-126.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-126.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, no clear candidate<br />2 Review tag(s), 2 Excluded tag(s) <br />Methylmalonic aciduria, lactic acidemia, recurrent ketosis with hypoglycemia, short stature <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-126"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-127.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-127.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-127.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />CMG_Estonia_WES<br />Analysis in Progress<br />6 Review tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-127"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-131.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-131.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-131.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />1 VUS tag(s), 1 Review tag(s), 1 MatchBox (MME) tag(s) <br />Neurodevelopmental disorder with dysmorphic features <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-131"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-133.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-133.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />CMG_Estonia_WES<br />Analysis in Progress<br />6 Review tag(s) <br />Ectodermal dysplasia <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-133"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-134.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-134.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-134.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Strong candidate - novel gene<br />3 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) <br />Neurodevelopmental disorder, dysmorphic features, short stature <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-134"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-139.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-139.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-3<br />fibroblasts<br />101<br />Estonian External Exomes<br />Reviewed, currently pursuing candidates<br />1 VUS tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) <br />FEBRILE SEIZURES, FAMILIAL, 8; FEB8 <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK-139"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK060-0154.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK060-0154.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-2<br />fibroblasts<br />101<br />Estonian External Exomes<br />Strong candidate - novel gene<br />2 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 1 Likely Benign tag(s) <br />Neurodevelopmental disorder <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "HK060-0154"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_552_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/RGP_552_3.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_552_3.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-1<br />fibroblasts<br />101<br />Rare Genomes Project_Genomes<br />Reviewed, currently pursuing candidates<br />3 Review tag(s), 1 MatchBox (MME) tag(s) <br />Infantile spasms, Global developmental delay <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "RGP_552_3"
         },
         {
           "data": [
             {
               "type": "junctions",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_554_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": " "
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/RGP_554_3_2.bigWig"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2020-1<br />fibroblasts<br />101<br />Rare Genomes Project_Genomes<br />Strong candidate - known gene for phenotype<br />9 Review tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) <br />Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "RGP_554_3_2"
         }
       ]
     }
   ],
-  "selectedRowNamesByCategoryName": {},
+  "selectedRowNamesByCategoryName": {
+    "GTEx Tracks": [
+      "GTEx All Muscle - Norm.",
+      "GTEx All Blood - Norm.",
+      "GTEx All Fibs - Norm."
+    ],
+    "Samples": []
+  },
   "selectedSamplesByCategoryNameAndRowName": {},
   "sjOptions": {
     "bounceHeightBasedOn": "random",
-    "colorBy": "strand",
+    "colorBy": "isAnnotatedJunction",
     "colorByNumReadsThreshold": 5,
     "hideAnnotated": false,
     "hideUnannotated": false,

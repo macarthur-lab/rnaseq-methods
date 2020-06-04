@@ -11,7 +11,7 @@
     "vcf"
   ],
   "genome": "hg38",
-  "locus": "chr15:92,835,700-93,031,800",
+  "locus": "chr21:45988674-45991233",
   "rowsInCategories": [
     {
       "categoryName": "GTEx Tracks",
@@ -211,6 +211,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-8<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM1_CTRL_01"
         },
         {
@@ -228,6 +229,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_02.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM1_CTRL_02"
         },
         {
@@ -249,6 +251,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_03.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />whole_blood<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM1_CTRL_03"
         },
         {
@@ -266,6 +269,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_04.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM1_CTRL_04"
         },
         {
@@ -283,6 +287,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM2_TOTALMDC1A1_02"
         },
         {
@@ -300,6 +305,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM2_TOTALMDC1A1_03"
         },
         {
@@ -317,6 +323,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_04.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM2_TOTALMDC1A1_04"
         },
         {
@@ -334,6 +341,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM2_TOTALMDC1A1_05"
         },
         {
@@ -351,6 +359,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_01.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM3_PARTIALMDC1A1_01"
         },
         {
@@ -368,6 +377,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM3_PARTIALMDC1A1_02"
         },
         {
@@ -385,6 +395,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />whole_blood<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM3_PARTIALMDC1A1_03"
         },
         {
@@ -402,6 +413,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />whole_blood<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM3_PARTIALMDC1A1_05"
         },
         {
@@ -419,6 +431,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R1"
         },
         {
@@ -436,6 +449,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R2"
         },
         {
@@ -453,6 +467,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R3"
         },
         {
@@ -470,6 +485,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R1"
         },
         {
@@ -487,6 +503,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />fibroblasts<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R2"
         },
         {
@@ -504,16 +521,24 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
+          "description": "2019-08<br />muscle<br />101<br /> <br /> <br /> <br /> <br />in Beryls paper:  <br /> <br /> <br /> <br /> <br /> <br /> ",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
         }
       ]
     }
   ],
-  "selectedRowNamesByCategoryName": {},
+  "selectedRowNamesByCategoryName": {
+    "GTEx Tracks": [
+      "GTEx All Muscle - Norm.",
+      "GTEx All Blood - Norm.",
+      "GTEx All Fibs - Norm."
+    ],
+    "Samples": []
+  },
   "selectedSamplesByCategoryNameAndRowName": {},
   "sjOptions": {
     "bounceHeightBasedOn": "random",
-    "colorBy": "strand",
+    "colorBy": "isAnnotatedJunction",
     "colorByNumReadsThreshold": 5,
     "hideAnnotated": false,
     "hideUnannotated": false,
