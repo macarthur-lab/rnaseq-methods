@@ -53,7 +53,6 @@ def init_job(
         j.command(f"gcloud config set account {GCLOUD_USER_ACCOUNT}")
         j.command(f"gcloud config set project {GCLOUD_PROJECT}")
 
-    #j.command("((while true; do uptime; sleep 30; done) & )")
     j.command("set -x")
 
     return j
@@ -88,12 +87,9 @@ def main():
         choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["gtex_muscle", "gtex_fibroblasts", "gtex_blood"]))
     grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
         choices=set(rnaseq_sample_metadata_df['sample_id']) | set(['GTEX-1LG7Z-0005-SM-DKPQ6', 'GTEX-PX3G-0006-SM-5SI7E', 'GTEX-1KXAM-0005-SM-DIPEC']))
-    p.add_argument("-tsv", "--only-generate-tsv", action="store_true", help="Exit after generating metadata tsv")
     args = p.parse_args()
 
-    #logger.info("\n".join(df.columns))
-    # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
-
+    # Generate samples_df with these columns: sample_id, star_SJ_out_tab, output_dir, batch_name
     samples_df = pd.DataFrame()
     if args.rnaseq_batch_name:
         for batch_name in args.rnaseq_batch_name:
@@ -106,13 +102,6 @@ def main():
     else:
         p.error("Must specify -b or -s")
 
-    tsv_output_path = f"metadata_{len(samples_df)}_samples.tsv"
-    samples_df.to_csv(tsv_output_path, sep="\t", index=False)
-    print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
-
-    if args.only_generate_tsv:
-        sys.exit(0)
-
     logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
     # see https://hail.zulipchat.com/#narrow/stream/223457-Batch-support/topic/auth.20as.20user.20account for more details
@@ -124,12 +113,9 @@ def main():
         # set job inputs & outputs
         output_dir = metadata_row['output_dir']
 
-        #input_bam = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam"
-        #input_bai = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam.bai"
-
         print("Input file: ", metadata_row['star_SJ_out_tab'])
-        ouptut_filename = f"{sample_id}.junctions.bed.gz"
-        output_bed_gz_file_path = os.path.join(output_dir, ouptut_filename)
+        output_filename = f"{sample_id}.junctions.bed.gz"
+        output_bed_gz_file_path = os.path.join(output_dir, output_filename)
 
         # check if output file already exists
         if hl.hadoop_is_file(output_bed_gz_file_path) and not args.force:
@@ -143,8 +129,8 @@ def main():
         j.command(f"pwd && ls && date")
 
         j.command(f"python3 /convert_SJ_out_tab_to_junctions_bed.py -g gencode.v26.annotation.gff3.gz {os.path.basename(metadata_row['star_SJ_out_tab'])}")
-        j.command(f"cp {ouptut_filename} {j.output_bed_gz}")
-        j.command(f"cp {ouptut_filename}.tbi {j.output_bed_gz_tbi}")
+        j.command(f"cp {output_filename} {j.output_bed_gz}")
+        j.command(f"cp {output_filename}.tbi {j.output_bed_gz_tbi}")
         j.command(f"echo Done: {output_bed_gz_file_path}")
         j.command(f"date")
 
