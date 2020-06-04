@@ -25,7 +25,7 @@ def main():
     p.add_argument("--batch-billing-project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
     p.add_argument("--batch-job-name", help="Batch: (optional) job name")
 
-    p.add_argument("--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
+    p.add_argument("-f", "--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
     grp = p.add_mutually_exclusive_group(required=True)
     grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process", choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
     grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process", choices=set(rnaseq_sample_metadata_df['sample_id']))
@@ -80,9 +80,9 @@ def main():
         # define majiq build commands for this sample
         j = b.new_job(name=args.batch_job_name)
         j.image("weisburd/majiq:latest")
-        j.storage(f'{bam_size*2}Gi')
-        j.cpu(0.25)  # default: 1
-        j.memory("3G")  # default: 3.75G
+        j.storage(f'{bam_size*3}Gi')
+        j.cpu(1)  # default: 1
+        j.memory("15G")  # default: 3.75G
         logger.info(f'Requesting: {j._storage or "default"} storage, {j._cpu or "default"} CPU, {j._memory or "default"} memory')
 
         # switch to user account
