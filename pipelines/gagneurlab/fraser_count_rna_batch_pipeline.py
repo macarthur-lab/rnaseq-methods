@@ -38,9 +38,9 @@ def init_job(
 
     j.cpu(cpu)  # Batch default is 1
     if memory:
-        j.memory(f"{memory}G")  # Batch default is 3.75G
+        j.memory(f"{memory}Gi")  # Batch default is 3.75G
     else:
-        j.memory(f"{3.75*cpu}G")  # Batch default is 3.75G
+        j.memory(f"{3.75*cpu}Gi")  # Batch default is 3.75G
 
     logger.info(f'Requesting: {j._storage or "default"} storage, {j._cpu or "default"} CPU, {j._memory or "default"} memory')
 
@@ -136,6 +136,8 @@ def main():
     grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
         choices=set(rnaseq_sample_metadata_df['sample_id']) | set(['GTEX-1LG7Z-0005-SM-DKPQ6', 'GTEX-PX3G-0006-SM-5SI7E', 'GTEX-1KXAM-0005-SM-DIPEC']))
     p.add_argument("-tsv", "--only-generate-tsv", action="store_true", help="Exit after generating metadata tsv")
+    p.add_argument("-t1", "--num-threads-step1", type=int, help="Num threads to use in the 'gather' job of step 1", default=4)
+    p.add_argument("-t2", "--num-threads-step2", type=int, help="Num threads to use in the 'gather' job of step 2", default=4)
     args = p.parse_args()
 
     #logger.info("\n".join(df.columns))
@@ -173,7 +175,11 @@ def main():
 
     sample_set_label = get_sample_set_label(samples_df.sample_id)
 
-    tsv_output_path = f"metadata_{sample_set_label}.tsv"
+    if args.rnaseq_batch_name:
+        tsv_output_path = f"metadata_{'_'.join(sorted(args.rnaseq_batch_name))}__{sample_set_label}.tsv"
+    else:
+        tsv_output_path = f"metadata_{sample_set_label}.tsv"
+
     samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
 
@@ -281,15 +287,15 @@ def main():
                 logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
                 continue
 
-            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, memory=64, switch_to_user_account=True, image=DOCKER_IMAGE)
+            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, memory=60, switch_to_user_account=True, image=DOCKER_IMAGE)
             for j in split_reads_jobs.values():
                 j_extract_splice_junctions.depends_on(j)
 
             j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
             j_extract_splice_junctions.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
             j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
-            j_extract_splice_junctions.command(f"pwd && ls && date")
-            j_extract_splice_junctions.command(f"Rscript --vanilla /extractSpliceJunctions.R --num-threads=4 bam_header.bam")
+            j_extract_splice_junctions.command(f"pwd && ls && date && echo ------- && find cache -name '*.*'")
+            j_extract_splice_junctions.command(f"Rscript --vanilla /extractSpliceJunctions.R --num-threads={args.num_threads_step1} bam_header.bam")
             j_extract_splice_junctions.command(f"ls .")
             j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
             print("Output file path: ", output_file_path_splice_junctions_RDS)
@@ -299,7 +305,7 @@ def main():
                 logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
                 continue
 
-            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=50, cpu=16, memory=64, switch_to_user_account=True, image=DOCKER_IMAGE)
+            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=50, cpu=16, memory=60, switch_to_user_account=True, image=DOCKER_IMAGE)
             if j_extract_splice_junctions:
                 j_calculate_psi_values.depends_on(j_extract_splice_junctions)
             for j in non_split_reads_jobs.values():
@@ -309,10 +315,12 @@ def main():
             j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
             j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
             j_calculate_psi_values.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
+
             j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
             j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
-            j_calculate_psi_values.command(f"pwd && ls && date")
-            j_calculate_psi_values.command(f"Rscript --vanilla /calculatePSIValues.R --num-threads=4 {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")
+            j_extract_splice_junctions.command(f"rm cache/nonSplicedCounts/Data_Analysis/spliceSiteCoordinates.RDS")
+            j_extract_splice_junctions.command(f"pwd && ls && date && echo ------- && find cache -name '*.*'")
+            j_calculate_psi_values.command(f"Rscript --vanilla /calculatePSIValues.R --num-threads={args.num_threads_step2} {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")
             j_calculate_psi_values.command(f"ls .")
             #j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
             j_calculate_psi_values.command(f"tar czf {j_calculate_psi_values.output_tar_gz} cache savedObjects fdsWithPSIValues.RDS")
