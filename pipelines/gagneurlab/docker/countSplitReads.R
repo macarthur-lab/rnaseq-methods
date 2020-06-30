@@ -14,6 +14,3 @@ sampleTable = data.table(sampleID=c(args$sample_id), bamFile=c(args$bam_path))
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 
 getSplitReadCountsForAllSamples(fds)  # saves results to cache/
-
-
-
