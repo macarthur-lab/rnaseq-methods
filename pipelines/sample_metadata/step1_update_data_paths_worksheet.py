@@ -20,7 +20,7 @@ from gspread_dataframe import set_with_dataframe
 from firecloud import api
 from google.cloud import storage
 
-from sample_metadata.utils import RNASEQ_METADATA_SPREADSHEET, DATA_PATHS_WORKSHEET, RNASEQ_SAMPLE_IDS_TO_EXCLUDE
+from sample_metadata.utils import get_data_paths_worksheet, RNASEQ_SAMPLE_IDS_TO_EXCLUDE
 
 def run(cmd):
     print(cmd)
@@ -184,10 +184,10 @@ all_samples_df
 #%%
 
 # export the df to the  "data paths (auto)" worksheet in google docs.
-set_with_dataframe(DATA_PATHS_WORKSHEET, all_samples_df.fillna(''), resize=True)
+set_with_dataframe(get_data_paths_worksheet(), all_samples_df.fillna(''), resize=True)
 
-print("Updated", RNASEQ_METADATA_SPREADSHEET.title, "/", DATA_PATHS_WORKSHEET.title)
-print(DATA_PATHS_WORKSHEET.url)
+print("Updated", get_data_paths_worksheet().title)
+print(get_data_paths_worksheet().url)
 
 #%%
 

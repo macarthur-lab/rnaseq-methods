@@ -4,10 +4,10 @@ import os
 import pandas as pd
 from gspread_dataframe import set_with_dataframe
 from sample_metadata.utils import \
-    GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET, \
-    GTEX_WGS_SAMPLE_METADATA_WORKSHEET, \
-    GTEX_WES_SAMPLE_METADATA_WORKSHEET, \
-    GTEX_INDIVIDUAL_METADATA_WORKSHEET
+    get_gtex_rnaseq_sample_metadata_worksheet, \
+    get_gtex_wgs_sample_metadata_worksheet, \
+    get_gtex_wes_sample_metadata_worksheet, \
+    get_gtex_individual_metadata_worksheet
 from google.cloud import storage
 
 #%%
@@ -29,7 +29,8 @@ df_indivs['SEX'] = df_indivs.SEX.apply(lambda s: "M" if s == 1 else ('F' if s ==
 
 assert set(df_indivs.SEX == {'F', 'M'})
 
-set_with_dataframe(GTEX_INDIVIDUAL_METADATA_WORKSHEET, df_indivs.fillna(''), resize=True)
+ws = get_gtex_individual_metadata_worksheet()
+set_with_dataframe(ws, df_indivs.fillna(''), resize=True)
 
 #%%
 
@@ -95,6 +96,13 @@ df_rnaseq_samples.loc[:, 'rnaseq_bam'] = pd.Series(gtex_hg38_rnaseq_bams)
 df_rnaseq_samples.loc[:, 'rnaseq_bai'] = pd.Series({k: v.replace('.bam', '.bam.bai') for k, v in gtex_hg38_rnaseq_bams.items()})
 
 #%%
+gtex_star_SJ_out_tab = {get_sample_id_from_path(p): p for p in get_gtex_file_paths("GTEx_Analysis_2017-06-05_v8_RNAseq_aux_files") if p.endswith(".SJ.out.tab")}
+print("Found %s star SJ.out.tab files" % len(gtex_star_SJ_out_tab))
+
+df_rnaseq_samples.loc[:, 'star_SJ_out_tab'] = pd.Series(gtex_star_SJ_out_tab)
+
+
+#%%
 
 # WGS hg38 .cram, .crai files
 gtex_hg38_WGS_crams = {get_sample_id_from_path(p): p for p in get_gtex_file_paths("GTEx_Analysis_2017-06-05_v8_WGS_CRAM_files") if p.endswith(".cram")}
@@ -107,24 +115,18 @@ df_wgs_samples.loc[:, 'wgs_crai'] = pd.Series({k: v.replace('.cram', '.crai') fo
 
 #%%
 
-set_with_dataframe(
-    GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET,
-    df_rnaseq_samples,
-    resize=True)
+ws = get_gtex_rnaseq_sample_metadata_worksheet()
+set_with_dataframe(ws, df_rnaseq_samples, resize=True)
 
 #%%
 
-set_with_dataframe(
-    GTEX_WES_SAMPLE_METADATA_WORKSHEET,
-    df_wes_samples,
-    resize=True)
+ws = get_gtex_wes_sample_metadata_worksheet()
+set_with_dataframe(ws, df_wes_samples, resize=True)
 
 #%%
 
-set_with_dataframe(
-    GTEX_WGS_SAMPLE_METADATA_WORKSHEET,
-    df_wgs_samples,
-    resize=True)
+ws = get_gtex_wgs_sample_metadata_worksheet()
+set_with_dataframe(ws, df_wgs_samples, resize=True)
 
 
 #%%

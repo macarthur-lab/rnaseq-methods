@@ -11,31 +11,11 @@ import sys
 
 from gspread_dataframe import set_with_dataframe
 
-from sample_metadata.utils import RNASEQ_METADATA_SPREADSHEET, SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-
-
-#%%
-
-# get worksheet rows and convert them to DataFrames
-
-from sample_metadata.utils import DATA_PATHS_WORKSHEET
-data_paths_ws_rows = DATA_PATHS_WORKSHEET.get()
-data_paths_ws_df = pd.DataFrame(data=data_paths_ws_rows[1:], columns=data_paths_ws_rows[0])
-data_paths_ws_df
+from sample_metadata.utils import get_seqr_info_and_other_metadata_worksheet, get_beryls_df, get_beryls_df_2, \
+    get_data_paths_df, get_seqr_info_and_other_metadata_df
 
 #%%
-
-from sample_metadata.utils import BERYLS_WORKSHEET
-beryls_ws_rows = BERYLS_WORKSHEET.get()
-beryls_ws_df = pd.DataFrame(data=beryls_ws_rows[1:], columns=beryls_ws_rows[0])
-beryls_ws_df
-
-#%%
-from sample_metadata.utils import BERYLS_WORKSHEET_2
-beryls_ws2_rows = BERYLS_WORKSHEET_2.get()
-beryls_ws2_df = pd.DataFrame(data=beryls_ws2_rows[1:], columns=beryls_ws2_rows[0])
-
-beryls_ws_df_merged = beryls_ws_df.merge(beryls_ws2_df, on="Sample ID", how="left")
+beryls_ws_df_merged = get_beryls_df().merge(get_beryls_df_2(), on="Sample ID", how="left")
 
 """
 All columns in beryls_ws_df_merged:
@@ -121,19 +101,14 @@ for i, row in beryls_ws_df_merged.iterrows():
     if row["Notes from paper (Beryl)"] and not isinstance(row["Notes from paper (Beryl)"], float):
         beryls_ws_df_merged.at[i, "Notes (Beryl)"] += "\n" + row["Notes from paper (Beryl)"]
 
-
-#%%
-
-seqr_info_and_other_metadata_ws_rows = SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.get()
-seqr_info_and_other_metadata_ws_rows = pd.DataFrame(data=seqr_info_and_other_metadata_ws_rows[1:], columns=seqr_info_and_other_metadata_ws_rows[0])
-
 # %%
 
 # join DATA_PATHS_WORKSHEET with BERYLS_WORKSHEET
 
+data_paths_ws_df = get_data_paths_df()
 beryls_ws_df_merged['sample_id'] = ""
 for s in beryls_ws_df_merged['Sample ID']:
-    all_samples_row = data_paths_ws_df.loc[data_paths_ws_df['sample_id'].str.contains(s), ]
+    all_samples_row = data_paths_ws_df().loc[data_paths_ws_df['sample_id'].str.contains(s), ]
     if all_samples_row.shape[0] == 0:
         print("sample id " + s + " from Beryl's table not found in data_paths_ws_df")
         continue
@@ -162,6 +137,7 @@ print('  "'+ '",\n  "'.join(joined_df.columns) + '",')
 
 from sample_metadata.utils import get_date_from_bam_header
 
+seqr_info_and_other_metadata_ws_rows = get_seqr_info_and_other_metadata_df()
 joined_df3 = joined_df.merge(seqr_info_and_other_metadata_ws_rows[["sample_id", "batch_date_from_hg19_bam_header"]], on="sample_id", how="left")
 for i, row in joined_df3.iterrows():
     if not row["batch_date_from_hg19_bam_header"]:
@@ -193,8 +169,8 @@ for i, row in joined_df4.iterrows():
     elif end1_sense_rate < 0.05 and end2_sense_rate > 0.95:
         stranded = "yes"
     else:
+        stranded = None
         print("ERROR: End 1 Sense Rate and/or End 2 Sense Rate are out of bounds: %0.2f %0.2f" % (end1_sense_rate, end2_sense_rate))
-        continue
 
     print("%0.2f   %0.2f" % (float(metrics_dict['End 1 Sense Rate']), float(metrics_dict['End 2 Sense Rate'])))
     joined_df4.at[i, "stranded? (rnaseqc)"] = stranded
@@ -664,8 +640,7 @@ df_export = joined_df5[[
 # export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
 set_with_dataframe(SEQR_INFO_AND_OTHER_METADATA_WORKSHEET, df_export.fillna(''), resize=True)
 
-print("Updated", RNASEQ_METADATA_SPREADSHEET.title, "/", SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.title)
-print(RNASEQ_METADATA_SPREADSHEET.url)
+print("Updated", SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.title)
 
 
 # %%

@@ -25,42 +25,115 @@ def get_spreasheet(spreadsheet_name):
 
     return spreadsheet
 
-## Spreadsheets must be Shared with 733952080251-compute@developer.gserviceaccount.com
+## Spreadsheet must be Shared with 733952080251-compute@developer.gserviceaccount.com
+_RNASEQ_METADATA_SPREADSHEET = None
+_SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = None
+_DATA_PATHS_WORKSHEET = None
+_IMPUTED_METADATA_WORKSHEET = None
+_BERYLS_WORKSHEET = None
+_BERYLS_WORKSHEET_2 = None
 
-RNASEQ_METADATA_SPREADSHEET = get_spreasheet("RNA-seq metadata")
-SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("seqr info + other metadata (auto)")
-DATA_PATHS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("data paths (auto)")
-IMPUTED_METADATA_SPREADSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("imputed (auto)")
-BERYLS_WORKSHEET = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's Supplementary Table 1")
-BERYLS_WORKSHEET_2 = RNASEQ_METADATA_SPREADSHEET.worksheet("Beryl's RNAseq Probands")
+_GTEX_METADATA_SPREADSHEET = None
+_GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET = None
+_GTEX_WES_SAMPLE_METADATA_WORKSHEET = None
+_GTEX_WGS_SAMPLE_METADATA_WORKSHEET = None
+_GTEX_INDIVIDUAL_METADATA_WORKSHEET = None
 
-GTEX_METADATA_SPREADSHEET = get_spreasheet("GTEx v8 metadata")
-GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("RNA-seq sample metadata (auto)")
-GTEX_WES_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("WES sample metadata (auto)")
-GTEX_WGS_SAMPLE_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("WGS sample metadata (auto)")
-GTEX_INDIVIDUAL_METADATA_WORKSHEET = GTEX_METADATA_SPREADSHEET.worksheet("individual metadata (auto)")
+
+def get_gtex_v8_metadata_spreadsheet():
+    global _GTEX_METADATA_SPREADSHEET
+    _GTEX_METADATA_SPREADSHEET = get_spreasheet("GTEx v8 metadata")
+    return _GTEX_METADATA_SPREADSHEET
+
+
+def get_gtex_rnaseq_sample_metadata_worksheet():
+    global _GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET
+    _GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET = get_gtex_v8_metadata_spreadsheet().worksheet("RNA-seq sample metadata (auto)")
+    return _GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET
+
+
+def get_gtex_wes_sample_metadata_worksheet():
+    global _GTEX_WES_SAMPLE_METADATA_WORKSHEET
+    _GTEX_WES_SAMPLE_METADATA_WORKSHEET = get_gtex_v8_metadata_spreadsheet().worksheet("WES sample metadata (auto)")
+    return _GTEX_WES_SAMPLE_METADATA_WORKSHEET
+
+
+def get_gtex_wgs_sample_metadata_worksheet():
+    global _GTEX_WGS_SAMPLE_METADATA_WORKSHEET
+    _GTEX_WGS_SAMPLE_METADATA_WORKSHEET = get_gtex_v8_metadata_spreadsheet().worksheet("WGS sample metadata (auto)")
+    return _GTEX_WGS_SAMPLE_METADATA_WORKSHEET
+
+
+def get_gtex_individual_metadata_worksheet():
+    global _GTEX_INDIVIDUAL_METADATA_WORKSHEET
+    _GTEX_INDIVIDUAL_METADATA_WORKSHEET = get_gtex_v8_metadata_spreadsheet().worksheet("individual metadata (auto)")
+    return _GTEX_INDIVIDUAL_METADATA_WORKSHEET
+
+
+def get_rnaseq_metadata_spreadsheet():
+    global _RNASEQ_METADATA_SPREADSHEET
+    _RNASEQ_METADATA_SPREADSHEET = get_spreasheet("RNA-seq metadata")
+    return _RNASEQ_METADATA_SPREADSHEET
+
+
+def get_seqr_info_and_other_metadata_worksheet():
+    global _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
+    _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("seqr info + other metadata (auto)")
+    return _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
+
+
+def get_data_paths_worksheet():
+    global _DATA_PATHS_WORKSHEET
+    _DATA_PATHS_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("data paths (auto)")
+    return _DATA_PATHS_WORKSHEET
+
+
+def get_imputed_metadata_worksheet():
+    global _IMPUTED_METADATA_WORKSHEET
+    _IMPUTED_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("imputed (auto)")
+    return _IMPUTED_METADATA_WORKSHEET
+
+
+def get_beryls_worksheet():
+    global _BERYLS_WORKSHEET
+    _BERYLS_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("Beryl's Supplementary Table 1")
+    return _BERYLS_WORKSHEET
+
+
+def get_beryls_worksheet_2():
+    global _BERYLS_WORKSHEET_2
+    _BERYLS_WORKSHEET_2 = get_rnaseq_metadata_spreadsheet().worksheet("Beryl's RNAseq Probands")
+    return _BERYLS_WORKSHEET_2
 
 
 def get_seqr_info_and_other_metadata_df():
-    rows = SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.get()
+    rows = get_seqr_info_and_other_metadata_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
 def get_data_paths_df():
-    rows = DATA_PATHS_WORKSHEET.get()
+    rows = get_data_paths_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_impute_metadata_df():
-    rows = IMPUTED_METADATA_SPREADSHEET.get()
+def get_imputed_metadata_df():
+    rows = get_imputed_metadata_worksheet().get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_beryls_df():
+    rows = get_beryls_worksheet().get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_beryls_df_2():
+    rows = get_beryls_worksheet_2().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
 def get_joined_metadata_df():
-    df1_rows = DATA_PATHS_WORKSHEET.get()
-    df1 = pd.DataFrame(data=df1_rows[1:], columns=df1_rows[0])
-    df2_rows = SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.get()
-    df2 = pd.DataFrame(data=df2_rows[1:], columns=df2_rows[0])
+    df1 = get_data_paths_df()
+    df2 = get_seqr_info_and_other_metadata_df()
     df2 = df2[[c for c in df2.columns if c not in ("star_pipeline_batch")]]  # remove columns that exist in both tables
     return df1.merge(df2, on="sample_id", how="left").set_index("sample_id", drop=False)
 
@@ -127,16 +200,17 @@ RNASEQ_SAMPLE_IDS_TO_EXCLUDE = {
     "HF_9",
 }
 
+
 def get_gtex_rnaseq_sample_metadata_df():
-    rows = GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET.get()
+    rows = get_gtex_rnaseq_sample_metadata_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
 def get_gtex_wes_sample_metadata_df():
-    rows = GTEX_WES_SAMPLE_METADATA_WORKSHEET.get()
+    rows = get_gtex_wes_sample_metadata_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
 def get_gtex_wgs_sample_metadata_df():
-    rows = GTEX_WGS_SAMPLE_METADATA_WORKSHEET.get()
+    rows = get_gtex_wgs_sample_metadata_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
