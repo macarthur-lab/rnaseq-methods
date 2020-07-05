@@ -30,7 +30,8 @@ RUN install_packages \
     libpng-dev \
     libjpeg-dev \
     default-libmysqld-dev \
-    git
+    git \
+    libcairo2-dev
 
 #RUN install_packages default-jdk
 
@@ -40,7 +41,7 @@ RUN wget https://cran.r-project.org/src/base/R-4/R-4.0.0.tar.gz \
     && tar xzf R-4.0.0.tar.gz \
     && rm R-4.0.0.tar.gz \
     && cd R-4.0.0 \
-    && ./configure --with-x=no --with-pcre1 \
+    && ./configure --with-x=no --with-pcre1 --with-cairo=yes --with-libpng=yes \
     && make \
     && make install
 
@@ -62,12 +63,11 @@ RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VER
 RUN python3 -m pip install --upgrade pip
 
 # install gcloud
-ENV GCLOUD_SDK_VERISON="293.0.0"
+ENV GCLOUD_SDK_VERISON="299.0.0"
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_SDK_VERISON}-linux-x86_64.tar.gz \
     && tar xzf google-cloud-sdk-${GCLOUD_SDK_VERISON}-linux-x86_64.tar.gz \
     && /google-cloud-sdk/install.sh -q \
     && /google-cloud-sdk/bin/gcloud components update --quiet
-
 
 # nice-to-have linux utils
 RUN install_packages less htop vim emacs procps
@@ -78,9 +78,24 @@ RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
 RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
 RUN R -e "devtools::install_github('gagneurlab/FRASER', dependencies=TRUE)"
 RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
+RUN R -e "BiocManager::install('OUTRIDER')"
+RUN R -e "BiocManager::install('mumichae/tMAE')"
+RUN R -e "BiocManager::install('stephenturner/annotables')"
+RUN R -e "BiocManager::install('Biostrings')"
+RUN R -e "BiocManager::install('IRanges')"
+RUN R -e "BiocManager::install('DelayedArray')"
+RUN R -e "install.packages('data.table', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('dplyr', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('ggrepel', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('stringr', repos='http://cran.rstudio.com')"
 
-#RUN R -e "BiocManager::install('OUTRIDER')"
-#RUN R -e "BiocManager::install('mumichae/tMAE')"
+RUN install_packages libxt-dev
+RUN R -e "install.packages('Cairo', repos='http://cran.rstudio.com')"
+RUN install_packages xvfb xauth
 
 #RUN R -e "devtools::install_github('gagneurlab/FRASER', ref='R3.6', dependencies=TRUE)"
 #RUN R -e "devtools::install_github('gagneurlab/OUTRIDER', dependencies=TRUE)"
@@ -88,6 +103,7 @@ RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
 ENV PATH=/google-cloud-sdk/bin:$PATH
 
 COPY *.R /
+#COPY .Rprofile /root/
 
 WORKDIR /
 
