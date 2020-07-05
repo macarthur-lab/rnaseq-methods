@@ -128,9 +128,9 @@ def main():
         else:
             all_rdg_and_gtex_samples_df = pd.concat([all_rdg_and_gtex_samples_df, samples_df])
 
-        tsv_output_path = f"metadata_table_for_{tissue_name}.tsv"
-        samples_df.to_csv(tsv_output_path, sep="\t", index=False)
-        print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
+        #tsv_output_path = f"metadata_table_for_{tissue_name}.tsv"
+        #samples_df.to_csv(tsv_output_path, sep="\t", index=False)
+        #print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
 
         print("TGG table columns:")
         print(tgg_df.columns)
@@ -178,9 +178,9 @@ def main():
         print(len(rdg_counts_df.index), len(set(gtex_counts_df.index)), len(set(rdg_counts_df.index) & set(gtex_counts_df.index)))
         rdg_and_gtex_counts_df = pd.merge(rdg_counts_df, gtex_counts_df, left_index=True, right_index=True, how="outer")
         rdg_and_gtex_counts_df = rdg_and_gtex_counts_df.fillna(0)
-        tsv_output_path = f"OUTRIDER_input_table_for_{tissue_name}.tsv"
-        rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
-        print(f"Wrote {len(rdg_and_gtex_counts_df)} genes x {len(rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
+        #tsv_output_path = f"OUTRIDER_input_table_for_{tissue_name}.tsv"
+        #rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
+        #print(f"Wrote {len(rdg_and_gtex_counts_df)} genes x {len(rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
 
         if all_rdg_counts_df is None:
             all_rdg_counts_df = rdg_counts_df
@@ -192,23 +192,26 @@ def main():
         else:
             all_rdg_and_gtex_counts_df = pd.merge(all_rdg_and_gtex_counts_df, rdg_and_gtex_counts_df, left_index=True, right_index=True, how="outer")
 
-    tsv_output_path = f"metadata_table_for_all_RDG_samples.tsv"
-    all_rdg_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
-    print(f"Wrote {len(all_rdg_samples_df)} samples to {tsv_output_path}")
+    #tsv_output_path = f"metadata_table_for_all_RDG_samples.tsv"
+    #all_rdg_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
+    #print(f"Wrote {len(all_rdg_samples_df)} samples to {tsv_output_path}")
 
     tsv_output_path = f"metadata_table_for_all_RDG_and_GTEX_samples.tsv"
     all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
+    os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
 
-    all_rdg_counts_df = all_rdg_counts_df.fillna(0)
-    tsv_output_path = f"OUTRIDER_input_table_RDG_counts_for_all_tissues.tsv"
-    all_rdg_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
-    print(f"Wrote {len(all_rdg_counts_df)} genes x {len(all_rdg_counts_df.columns)} samples to {tsv_output_path}")
+    #all_rdg_counts_df = all_rdg_counts_df.fillna(0)
+    #tsv_output_path = f"OUTRIDER_input_table_RDG_counts_for_all_tissues.tsv"
+    #all_rdg_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
+    #print(f"Wrote {len(all_rdg_counts_df)} genes x {len(all_rdg_counts_df.columns)} samples to {tsv_output_path}")
 
     all_rdg_and_gtex_counts_df = all_rdg_and_gtex_counts_df.fillna(0)
-    tsv_output_path = f"OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv"
+    tsv_output_path = f"OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
     all_rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_counts_df)} genes x {len(all_rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
+
+    os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
 
 
 if __name__ == "__main__":
