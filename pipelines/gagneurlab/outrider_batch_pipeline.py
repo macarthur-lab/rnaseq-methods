@@ -64,7 +64,7 @@ def main():
 
         for batch_name in args.batch_name:
 
-            j = batch_utils.init_job(batch, None, DOCKER_IMAGE if not args.raw else None, args.cpu, args.memory, disk_size=10)
+            j = batch_utils.init_job(batch, batch_name, DOCKER_IMAGE if not args.raw else None, args.cpu, args.memory, disk_size=10)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
             # copy inputs
             j.command(f"""gsutil -m cp {GENCODE_TXDB} .""")
