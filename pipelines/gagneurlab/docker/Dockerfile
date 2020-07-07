@@ -102,7 +102,7 @@ RUN install_packages xvfb xauth
 
 ENV PATH=/google-cloud-sdk/bin:$PATH
 
-COPY *.R /
+#COPY *.R /
 #COPY .Rprofile /root/
 
 WORKDIR /

@@ -1,62 +1,15 @@
-import argparse
-import datetime
-import hail as hl  # used for hadoop file utils
-import hailtop.batch as hb
+import hail as hl
 import hashlib
 import logging
 import os
 import pandas as pd
 import sys
 
-from sample_metadata.utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
+from batch import batch_utils
+from gagneurlab.gagneur_utils import GAGNEUR_BATCHES, ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-DOCKER_IMAGE = "weisburd/gagneurlab@sha256:6771fc0341c8eff24ea67835bf21f6fbe6eed6c88401842e77ea7d49aac3ca21"
-GCLOUD_PROJECT = "seqr-project"
-GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
-GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
-
-
-def init_job(
-    batch,
-    name: str = None,
-    image: str = None,
-    disk_size: float = None,
-    cpu: float = 1,
-    memory: float = None,
-    switch_to_user_account: bool = False,
-):
-
-    j = batch.new_job(name=name)
-    if image:
-        j.image(image)
-
-    if disk_size:
-        j.storage(f'{disk_size}Gi')
-
-    j.cpu(cpu)  # Batch default is 1
-    if memory:
-        j.memory(f"{memory}Gi")  # Batch default is 3.75G
-    else:
-        j.memory(f"{3.75*cpu}Gi")  # Batch default is 3.75G
-
-    logger.info(f'Requesting: {j._storage or "default"} storage, {j._cpu or "default"} CPU, {j._memory or "default"} memory')
-
-    # switch to user account
-    if switch_to_user_account:
-        j.command(f"gcloud auth activate-service-account --key-file /gsa-key/key.json")
-        j.command(f"gsutil -m cp -r {GCLOUD_CREDENTIALS_LOCATION}/.config /tmp/")
-        j.command(f"mv ~/.config ~/.config."+datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
-        j.command(f"mv /tmp/.config ~/")
-        j.command(f"gcloud config set account {GCLOUD_USER_ACCOUNT}")
-        j.command(f"gcloud config set project {GCLOUD_PROJECT}")
-
-    #j.command("((while true; do uptime; sleep 30; done) & )")
-    j.command("set -x")
-
-    return j
 
 
 def get_sample_set_label(sample_ids):
@@ -65,272 +18,261 @@ def get_sample_set_label(sample_ids):
     return f"{len(sample_ids)}_samples_{h[:10]}"
 
 
-def transfer_metadata_columns_from_GTEx_df(samples_df, source_df, batch_name):
-    print("Adding")
-    print(source_df[['SAMPID', 'SMRIN']])
-    print("----------------")
-
-    df = pd.DataFrame()
-    df.loc[:, 'sample_id'] = source_df['SAMPID']
-    df.loc[source_df.SAMPID, 'batch'] = batch_name
-    df.loc[source_df.SAMPID, 'bam_path'] = source_df['rnaseq_bam']
-    df.loc[source_df.SAMPID, 'bai_path'] = source_df['rnaseq_bai']
-    df.loc[source_df.SAMPID, 'batch_detail'] = source_df['SMNABTCH']
-    df.loc[source_df.SAMPID, 'output_dir'] = f"gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
-    df.loc[source_df.SAMPID, 'project'] = "gtex_v8"
-    df.loc[source_df.SAMPID, 'sex'] = source_df['SEX']
-    df.loc[source_df.SAMPID, 'age'] = source_df['AGE']
-    df.loc[source_df.SAMPID, 'cause_of_death'] = source_df['DTHHRDY']
-    df.loc[source_df.SAMPID, 'ancestry'] = None
-    df.loc[source_df.SAMPID, 'tissue'] = source_df['SMTS']
-    df.loc[source_df.SAMPID, 'tissue_detail'] = source_df['SMTSD']
-    df.loc[source_df.SAMPID, 'read_length'] = source_df['SMRDLGTH']
-    df.loc[source_df.SAMPID, 'stranded'] = "no"
-    df.loc[source_df.SAMPID, 'RIN'] = source_df['SMRIN']
-
-    return pd.concat([samples_df, df], axis="rows")
-
-
-def transfer_metadata_columns_from_df(samples_df, source_df):
-    df = pd.DataFrame()
-    df.loc[:, 'sample_id'] = source_df['sample_id']
-    df.loc[source_df.sample_id, 'batch'] = source_df['star_pipeline_batch']
-    df.loc[source_df.sample_id, 'batch_detail'] = source_df['batch_date_from_hg19_bam_header']
-    df.loc[source_df.sample_id, 'bam_path'] = source_df['star_bam']
-    df.loc[source_df.sample_id, 'bai_path'] = source_df['star_bai']
-    df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/fraser_count_rna/")
-    df.loc[source_df.sample_id, 'project'] = source_df['proj (seqr)']
-    df.loc[source_df.sample_id, 'sex'] = source_df['sex']
-    df.loc[source_df.sample_id, 'age'] = None
-    df.loc[source_df.sample_id, 'cause_of_death'] = None
-    df.loc[source_df.sample_id, 'ancestry'] = None
-    df.loc[source_df.sample_id, 'tissue'] = None
-    df.loc[source_df.sample_id, 'tissue_detail'] = None
-    df.loc[source_df.sample_id, 'read_length'] = source_df['read length (rnaseqc)']
-    df.loc[source_df.sample_id, 'stranded'] = source_df['stranded? (rnaseqc)']
-    df.loc[source_df.sample_id, 'RIN'] = None
-
-    return pd.concat([samples_df, df], axis="rows", sort=True)
-
-
 def main():
-    rnaseq_sample_metadata_df = get_joined_metadata_df()
-    gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
-    #gtex_rnaseq_sample_metadata_df = gtex_rnaseq_sample_metadata_df #.rename({'SAMPID': 'sample_id'}, axis="columns").set_index('sample_id', drop=False)
-
-    p = argparse.ArgumentParser()
-    p.add_argument("--batch-billing-project", default="tgg-rare-disease", help="Batch: billing project. Required if submitting to cluster.")
-    p.add_argument("--batch-name", help="Batch: (optional) batch name")
-    p.add_argument("--batch-temp-bucket", default="macarthurlab-rnaseq", help="Batch: bucket where it stores temp files. "
-        "The batch service-account must have Admin permissions for this bucket. These can be added by running "
-        "gsutil iam ch serviceAccount:[SERVICE_ACCOUNT_NAME]:objectAdmin gs://[BUCKET_NAME]")
-    p.add_argument("-t", "--cpu", type=float, help="Batch: (optional) number of CPUs (eg. 0.5)", default=1, choices=[0.25, 0.5, 1, 2, 4, 8, 16])
+    p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
     p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
-    p.add_argument("-f", "--force", action="store_true", help="Recompute and overwrite cached or previously computed data")
-    p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
-    grp = p.add_mutually_exclusive_group(required=True)
-    grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)",
-        choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["muscle", "fibroblasts", "whole_blood", "lymphocytes"])
-    )
-    grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
-        choices=set(rnaseq_sample_metadata_df['sample_id']) | set(['GTEX-1LG7Z-0005-SM-DKPQ6', 'GTEX-PX3G-0006-SM-5SI7E', 'GTEX-1KXAM-0005-SM-DIPEC']))
-    p.add_argument("-tsv", "--only-generate-tsv", action="store_true", help="Exit after generating metadata tsv")
     p.add_argument("-t1", "--num-threads-step1", type=int, help="Num threads to use in the 'gather' job of step 1", default=4)
     p.add_argument("-t2", "--num-threads-step2", type=int, help="Num threads to use in the 'gather' job of step 2", default=4)
+    p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
+    p.add_argument("batch_name", nargs="+", choices=GAGNEUR_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
-    #logger.info("\n".join(df.columns))
-    # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
+    hl.init(log="/dev/null", quiet=True)
 
-    samples_df = pd.DataFrame()
-    if args.rnaseq_batch_name:
-        for batch_name in args.rnaseq_batch_name:
-            if batch_name in set(["muscle", "fibroblasts", "whole_blood", "lymphocytes"]):
-                if batch_name == "muscle":
-                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Muscle - Skeletal"]
-                elif batch_name == "fibroblasts":
-                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Cells - Cultured fibroblasts"]
-                elif batch_name == "lymphocytes":
-                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Cells - EBV-transformed lymphocytes"]
-                elif batch_name == "whole_blood":
-                    gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == "Whole Blood"]
-                else:
-                    p.error(f"Unexpected batch name: {batch_name}")
+    with hl.hadoop_open(args.metadata_tsv_path) as f:
+        original_samples_df = pd.read_table(f).set_index("sample_id", drop=False)
 
-                gtex_df = gtex_df.sort_values(by='SMRIN', ascending=False)
-                samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[:100], batch_name)
+    with batch_utils.run_batch(args) as batch:
 
-                tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['imputed tissue'] == batch_name]
-                samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)
-            else:
-                df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'] == batch_name]
-                samples_df = transfer_metadata_columns_from_df(samples_df, df)
+        for batch_name in args.batch_name:
+            samples_df = original_samples_df
+            batch_dict = GAGNEUR_BATCHES[batch_name]
+            samples_df = samples_df.loc[batch_dict['samples']]
+            sample_set_label = get_sample_set_label(samples_df.sample_id)
 
-    elif args.rnaseq_sample_id:
-        df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(set(args.rnaseq_sample_id))]
-        samples_df = transfer_metadata_columns_from_df(samples_df, df)
-    else:
-        p.error("Must specify -b or -s")
+            logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
-    sample_set_label = get_sample_set_label(samples_df.sample_id)
+            split_reads_samples = []
 
-    if args.rnaseq_batch_name:
-        tsv_output_path = f"metadata_{'_'.join(sorted(args.rnaseq_batch_name))}__{sample_set_label}.tsv"
-    else:
-        tsv_output_path = f"metadata_{sample_set_label}.tsv"
+            split_reads_output_files = set()
+            split_reads_jobs = {}
 
-    samples_df.to_csv(tsv_output_path, sep="\t", index=False)
-    print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
+            non_split_reads_output_files = set()
+            non_split_reads_jobs = {}
 
-    if args.only_generate_tsv:
-        sys.exit(0)
+            j_extract_splice_junctions = None
+            #j_calculate_psi_values = None
+
+            # based on docs @ https://bioconductor.org/packages/devel/bioc/vignettes/FRASER/inst/doc/FRASER.pdf
+            # step 1: count spliced reads
+            # step 2: count non-spliced reads at acceptors & donors of splice junctions detected in step 1
+            for step in 1, 2:
+                for sample_id in samples_df.sample_id:
+                    metadata_row = samples_df.loc[sample_id]
+
+                    # set job inputs & outputs
+                    input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
+                    if "GTEX" in sample_id:
+                        output_dir = "gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
+                    else:
+                        output_dir = f"gs://macarthurlab-rnaseq/{metadata_row['batch']}/fraser_count_rna/"
 
 
+                    #input_bam = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam"
+                    #input_bai = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam.bai"
 
-    logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
+                    print("Input bam: ", input_bam)
+                    if step == 1:
+                        output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
+                        memory = args.memory_step1
+                    elif step == 2:
+                        output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}__{sample_set_label}.tar.gz")
+                        memory = args.memory_step2
 
-    # see https://hail.zulipchat.com/#narrow/stream/223457-Batch-support/topic/auth.20as.20user.20account for more details
-    backend = hb.ServiceBackend(billing_project=args.batch_billing_project, bucket=args.batch_temp_bucket)
-    b = hb.Batch(backend=backend, name=args.batch_name)
+                    if step == 1:
+                        split_reads_samples.append(sample_id)
+                        split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
+                    elif step == 2:
+                        non_split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
 
-    split_reads_samples = []
+                    if step == 1 and args.skip_step1:
+                        continue
 
-    split_reads_output_files = set()
-    split_reads_jobs = {}
+                    # check if output file already exists
+                    if not args.force and hl.hadoop_is_file(output_file_path):
+                        logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
+                        continue
 
-    non_split_reads_output_files = set()
-    non_split_reads_jobs = {}
+                    if not args.local:
+                        file_stats = hl.hadoop_stat(metadata_row['bam_path'])
+                        bam_size = int(round(file_stats['size_bytes']/10.**9))
+                        disk_size = bam_size * 2
+                    else:
+                        disk_size = None
 
-    j_extract_splice_junctions = None
-    #j_calculate_psi_values = None
-    for step in 1, 2:
-        for sample_id in samples_df.sample_id:
-            metadata_row = samples_df.loc[sample_id]
+                    job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
+                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=args.cpu, memory=memory, disk_size=disk_size, image=DOCKER_IMAGE)
+                    batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-            # set job inputs & outputs
-            input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
-            output_dir = metadata_row['output_dir']
+                    j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bam} {sample_id}.bam")
+                    j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bai} {sample_id}.bam.bai")
+                    j.command(f"touch {sample_id}.bam.bai")
+                    bam_path = f"{sample_id}.bam"
 
-            #input_bam = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam"
-            #input_bai = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam.bai"
+                    j.command(f"pwd && ls -lh && date")
 
-            print("Input bam: ", input_bam)
-            if step == 1:
-                output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
-                memory = args.memory_step1
-            elif step == 2:
-                output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}__{sample_set_label}.tar.gz")
-                memory = args.memory_step2
+                    if step == 1:
+                        # count split reads
+                        j.command(f"""time xvfb-run Rscript -e '
+library(FRASER)
+library(data.table)
 
-            if step == 1:
-                split_reads_samples.append(sample_id)
-                split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
-            elif step == 2:
-                non_split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
+sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"))
+print(sampleTable)
+fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 
-            if step == 1 and args.skip_step1:
-                continue
+getSplitReadCountsForAllSamples(fds)  # saves results to cache/
+'""")
+                    elif step == 2:
+                        if sample_id in split_reads_jobs:
+                            j.depends_on(split_reads_jobs[sample_id])
+                        if j_extract_splice_junctions:
+                            j.depends_on(j_extract_splice_junctions)
 
-            # check if output file already exists
-            if hl.hadoop_is_file(output_file_path) and not args.force:
-                logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
-                continue
+                        j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
 
-            file_stats = hl.hadoop_stat(metadata_row['bam_path'])
-            bam_size = int(round(file_stats['size_bytes']/10.**9))
-            disk_size = bam_size * 2
+                        # count non-split reads
+                        j.command(f"""time xvfb-run Rscript -e '
+library(FRASER)
+library(data.table)
 
-            job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-            j = init_job(b, name=f"{job_label}: {sample_id}", cpu=args.cpu, memory=memory, disk_size=disk_size, switch_to_user_account=True, image=DOCKER_IMAGE)
+spliceJunctions = readRDS("{os.path.basename(output_file_path_splice_junctions_RDS)}")
 
-            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bam} {sample_id}.bam")
-            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bai} {sample_id}.bam.bai")
-            j.command(f"touch {sample_id}.bam.bai")
-            bam_path = f"{sample_id}.bam"
+sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"))
+print(sampleTable)
 
-            j.command(f"pwd && ls && date")
+fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 
-            if step == 1:
-                j.command(f"Rscript --vanilla /countSplitReads.R {sample_id} {bam_path}")
-            elif step == 2:
-                if sample_id in split_reads_jobs:
-                    j.depends_on(split_reads_jobs[sample_id])
-                if j_extract_splice_junctions:
-                    j.depends_on(j_extract_splice_junctions)
+getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cache/
+'""")
+                    j.command(f"ls -lh .")
+                    j.command(f"tar czf {os.path.basename(output_file_path)} cache")
+                    j.command(f"gsutil -m cp {os.path.basename(output_file_path)} {output_file_path}")
 
-                j.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
-                j.command(f"Rscript --vanilla /countNonSplitReads.R {sample_id} {bam_path} {os.path.basename(output_file_path_splice_junctions_RDS)}")
+                    j.command(f"echo Done: {output_file_path}")
+                    j.command(f"date")
 
-            j.command(f"ls .")
-            j.command(f"tar czf {j.output_tar_gz} cache")
+                    print("Output file path: ", output_file_path)
 
-            #j.command(f"ls -lh .")
-            j.command(f"echo Done: {output_file_path}")
-            j.command(f"date")
+                    if step == 1:
+                        split_reads_jobs[sample_id] = j
+                    elif step == 2:
+                        non_split_reads_jobs[sample_id] = j
 
-            # copy output
-            b.write_output(j.output_tar_gz, output_file_path)
-            print("Output file path: ", output_file_path)
+                if len(split_reads_output_files) == 0:
+                    break
 
-            if step == 1:
-                split_reads_jobs[sample_id] = j
-            elif step == 2:
-                non_split_reads_jobs[sample_id] = j
+                if step == 1:
+                    output_file_path_splice_junctions_RDS = os.path.join(output_dir, f"spliceJunctions_{sample_set_label}.RDS")
+                    if hl.hadoop_is_file(output_file_path_splice_junctions_RDS) and not args.force:
+                        logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions step...")
+                        continue
 
-        if len(split_reads_output_files) == 0:
-            break
+                    j_extract_splice_junctions = batch_utils.init_job(batch, f"Extract splice-junctions", disk_size=30, memory=60, image=DOCKER_IMAGE)
+                    batch_utils.switch_gcloud_auth_to_user_account(j_extract_splice_junctions, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-        if step == 1:
-            output_file_path_splice_junctions_RDS = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"spliceJunctions_{sample_set_label}.RDS")
-            if hl.hadoop_is_file(output_file_path_splice_junctions_RDS) and not args.force:
-                logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions.R step...")
-                continue
+                    for j in split_reads_jobs.values():
+                        j_extract_splice_junctions.depends_on(j)
 
-            j_extract_splice_junctions = init_job(b, name=f"Extract splice-junctions", disk_size=30, memory=60, switch_to_user_account=True, image=DOCKER_IMAGE)
-            for j in split_reads_jobs.values():
-                j_extract_splice_junctions.depends_on(j)
+                    j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
+                    j_extract_splice_junctions.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
+                    j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
+                    j_extract_splice_junctions.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
+                    j_extract_splice_junctions.command(f"""time xvfb-run Rscript -e '
+library(FRASER)
+library(data.table)
+library(stringr)
+library(purrr)
+library(BiocParallel)
 
-            j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
-            j_extract_splice_junctions.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
-            j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
-            j_extract_splice_junctions.command(f"pwd && ls && date && echo ------- && find cache -name '*.*'")
-            j_extract_splice_junctions.command(f"Rscript --vanilla /extractSpliceJunctions.R --num-threads={args.num_threads_step1} bam_header.bam")
-            j_extract_splice_junctions.command(f"ls .")
-            j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
-            print("Output file path: ", output_file_path_splice_junctions_RDS)
-        elif step == 2:
-            output_file_path = os.path.join("gs://macarthurlab-rnaseq/fraser/", f"calculatedPSIValues_{sample_set_label}.tar.gz")
-            if hl.hadoop_is_file(output_file_path) and not args.force:
-                logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues.R step...")
-                continue
+file_paths = list.files(".", pattern = "fraser_count_split_reads_.*.tar.gz$")
+print(file_paths)
+parse_sample_id = function(x) {{ return( str_replace(x[[1]], "fraser_count_split_reads_", "")) }}
+sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
 
-            j_calculate_psi_values = init_job(b, name=f"Calculate PSI values", disk_size=50, cpu=16, memory=60, switch_to_user_account=True, image=DOCKER_IMAGE)
-            if j_extract_splice_junctions:
-                j_calculate_psi_values.depends_on(j_extract_splice_junctions)
-            for j in non_split_reads_jobs.values():
-                j_calculate_psi_values.depends_on(j)
+sampleTable = data.table(sampleID=sample_ids, bamFile="{os.path.basename(BAM_HEADER_PATH)}")
+print(sampleTable)
 
-            j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
-            j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
-            j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
-            j_calculate_psi_values.command(f"gsutil -m cp gs://macarthurlab-rnaseq/fraser/bam_header.bam .")
+if({args.num_threads_step1} == 1) {{
+    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
+}} else {{
+    bpparam = MulticoreParam({args.num_threads_step1}, log=FALSE, progressbar=FALSE)
+}}
 
-            j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
-            j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
-            j_extract_splice_junctions.command(f"rm cache/nonSplicedCounts/Data_Analysis/spliceSiteCoordinates.RDS")
-            j_extract_splice_junctions.command(f"pwd && ls && date && echo ------- && find cache -name '*.*'")
-            j_calculate_psi_values.command(f"Rscript --vanilla /calculatePSIValues.R --num-threads={args.num_threads_step2} {os.path.basename(output_file_path_splice_junctions_RDS)} bam_header.bam")
-            j_calculate_psi_values.command(f"ls .")
-            #j_calculate_psi_values.command(f"cp fdsWithPSIValues.RDS {j_calculate_psi_values.fdsWithPSIValues}")
-            j_calculate_psi_values.command(f"tar czf {j_calculate_psi_values.output_tar_gz} cache savedObjects fdsWithPSIValues.RDS")
-            b.write_output(j_calculate_psi_values.output_tar_gz, output_file_path)
-            print("Output file path: ", output_file_path)
+fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
+splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
+splitCountRanges = rowRanges(splitCountsForAllSamples)
+print(splitCountRanges)
 
-    b.run()
+saveRDS(splitCountRanges, "spliceJunctions.RDS")
+'""")
+                    j_extract_splice_junctions.command(f"ls -lh .")
+                    j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
+                    print("Output file path: ", output_file_path)
 
-    if isinstance(backend, hb.ServiceBackend):
-        backend.close()
+                    print("Output file path: ", output_file_path_splice_junctions_RDS)
+                elif step == 2:
+                    output_file_path = os.path.join(output_dir, f"calculatedPSIValues_{sample_set_label}.tar.gz")
+                    if hl.hadoop_is_file(output_file_path) and not args.force:
+                        logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues step...")
+                        continue
+
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"Calculate PSI values", disk_size=50, cpu=(4 if args.local else 16), memory=60, image=DOCKER_IMAGE)
+                    batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
+
+                    if j_extract_splice_junctions:
+                        j_calculate_psi_values.depends_on(j_extract_splice_junctions)
+                    for j in non_split_reads_jobs.values():
+                        j_calculate_psi_values.depends_on(j)
+
+                    j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
+                    j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
+                    j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
+                    j_calculate_psi_values.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
+
+                    j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
+                    j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
+                    j_calculate_psi_values.command(f"rm cache/nonSplicedCounts/Data_Analysis/spliceSiteCoordinates.RDS")
+                    j_calculate_psi_values.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
+                    j_calculate_psi_values.command(f"""time xvfb-run Rscript -e '
+library(FRASER)
+library(data.table)
+library(stringr)
+library(purrr)
+library(BiocParallel)
+
+splitCountRanges = readRDS("{os.path.basename(output_file_path_splice_junctions_RDS)}")
+print(splitCountRanges)
+
+
+file_paths = list.files(".", pattern = "fraser_count_split_reads_.*.tar.gz$")
+print(file_paths)
+parse_sample_id = function(x) {{ return( str_replace(x[[1]], "fraser_count_split_reads_", "")) }}
+sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
+
+sampleTable = data.table(sampleID=sample_ids, bamFile="{os.path.basename(BAM_HEADER_PATH)}")
+print(sampleTable)
+
+fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
+if({args.num_threads_step2}L == 1L) {{
+    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
+}} else {{
+    bpparam = MulticoreParam({args.num_threads_step2}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
+}}
+
+splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
+nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
+fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
+fds = calculatePSIValues(fds, BPPARAM=bpparam)
+fds = annotateRanges(fds, GRCh=38)
+saveRDS(fds, "fdsWithPSIValues.RDS")
+'""")
+                    j_calculate_psi_values.command(f"ls -lh .")
+                    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path)} cache savedObjects fdsWithPSIValues.RDS")
+                    j_calculate_psi_values.command(f"gsutil -m cp {os.path.basename(output_file_path)} {output_file_path}")
+                    print("Output file path: ", output_file_path)
 
 
 if __name__ == "__main__":
