@@ -18,8 +18,6 @@ def main():
     p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
     p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
-    p.add_argument("-t1", "--num-threads-step1", type=int, help="Num threads to use in the 'gather' job of step 1", default=4)
-    p.add_argument("-t2", "--num-threads-step2", type=int, help="Num threads to use in the 'gather' job of step 2", default=4)
     p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
     p.add_argument("batch_name", nargs="+", choices=GAGNEUR_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
@@ -207,10 +205,10 @@ sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
 sampleTable = data.table(sampleID=sample_ids, bamFile="{os.path.basename(BAM_HEADER_PATH)}")
 print(sampleTable)
 
-if({args.num_threads_step1} == 1) {{
+if({args.cpu} == 1) {{
     bpparam = SerialParam(log=TRUE, progressbar=FALSE)
 }} else {{
-    bpparam = MulticoreParam({args.num_threads_step1}, log=FALSE, progressbar=FALSE)
+    bpparam = MulticoreParam({args.cpu}, log=FALSE, progressbar=FALSE)
 }}
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
@@ -232,8 +230,9 @@ saveRDS(splitCountRanges, "spliceJunctions.RDS")
                     if hl.hadoop_is_file(output_file_path) and not args.force:
                         logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues step...")
                         #continue
-
-                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", disk_size=50, cpu=(4 if args.local else 16), memory=60, image=DOCKER_IMAGE)
+                    num_cpu = 4 if args.local else 16
+                    memory = 60
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
                     if j_extract_splice_junctions:
@@ -285,10 +284,10 @@ sampleTable$bamFile = "{os.path.basename(BAM_HEADER_PATH)}"
 setnames(sampleTable, "sample_id", "sampleID")
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
-if({args.num_threads_step2}L == 1L) {{
+if({num_cpu}L == 1L) {{
     bpparam = SerialParam(log=TRUE, progressbar=FALSE)
 }} else {{
-    bpparam = MulticoreParam({args.num_threads_step2}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
+    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
 }}
 
 splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
