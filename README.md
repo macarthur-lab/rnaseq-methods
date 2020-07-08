@@ -40,7 +40,11 @@ For example:
 python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w a2220985-8c41-4c55-84b6-b1a219add9bf macarthurlab-rnaseq-terra batch_0
 ```
 
-Then, to update the [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693) 
+---
+
+**Metadata Spreadsheet**
+
+To update the [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693) 
 and add the new file paths, run 
 
 ```
@@ -71,4 +75,15 @@ run downstream analyses - using python scripts and [hail Batch](https://hail.is/
 - Outrider
 - Aneva
 - gene lists, chess genes
+
+---
+
+**TGG-Viewer**
+
+Configs:  
+- all samples: [tgg-viewer] (http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fall_rnaseq_samples.json)  [config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/all_rnaseq_samples.json)
+- batch_1_muntoni: [tgg-viewer] (http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fmuntoni_rnaseq_samples.json)  [config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/muntoni_rnaseq_samples.json)
+
+
+
 
