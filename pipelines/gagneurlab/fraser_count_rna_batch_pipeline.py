@@ -181,7 +181,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions step...")
                         continue
 
-                    j_extract_splice_junctions = batch_utils.init_job(batch, f"Extract splice-junctions", disk_size=30, memory=60, image=DOCKER_IMAGE)
+                    j_extract_splice_junctions = batch_utils.init_job(batch, f"{sample_set_label}: Extract splice-junctions", disk_size=30, memory=60, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j_extract_splice_junctions, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
                     for j in split_reads_jobs.values():
@@ -221,17 +221,19 @@ print(splitCountRanges)
 saveRDS(splitCountRanges, "spliceJunctions.RDS")
 '""")
                     j_extract_splice_junctions.command(f"ls -lh .")
+                    j_extract_splice_junctions.command(f"echo ===============; echo cache dir; echo ===============; find cache")
+                    j_extract_splice_junctions.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
+
                     j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
-                    print("Output file path: ", output_file_path)
 
                     print("Output file path: ", output_file_path_splice_junctions_RDS)
                 elif step == 2:
                     output_file_path = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
                     if hl.hadoop_is_file(output_file_path) and not args.force:
                         logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues step...")
-                        continue
+                        #continue
 
-                    j_calculate_psi_values = batch_utils.init_job(batch, f"Calculate PSI values", disk_size=50, cpu=(4 if args.local else 16), memory=60, image=DOCKER_IMAGE)
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", disk_size=50, cpu=(4 if args.local else 16), memory=60, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
                     if j_extract_splice_junctions:
@@ -239,6 +241,8 @@ saveRDS(splitCountRanges, "spliceJunctions.RDS")
                     for j in non_split_reads_jobs.values():
                         j_calculate_psi_values.depends_on(j)
 
+                    j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/{sample_set_label}")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+                    j_calculate_psi_values.command(f"cd /tmp/fraser/{sample_set_label}")
                     for split_reads_output_files_batch in [split_reads_output_files[i:i+10] for i in range(0, len(split_reads_output_files), 10)]:
                         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files_batch)} .")
                     for non_split_reads_output_files_batch in [non_split_reads_output_files[i:i+10] for i in range(0, len(non_split_reads_output_files), 10)]:
@@ -280,11 +284,16 @@ splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
 fds = calculatePSIValues(fds, BPPARAM=bpparam)
-fds = annotateRanges(fds, GRCh=38)
-saveRDS(fds, "fdsWithPSIValues.RDS")
+fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
+
+saveFraserDataSet(fds)
 '""")
+                    # #fds = annotateRanges(fds, GRCh=38)
+                    j_calculate_psi_values.command(f"pwd")
                     j_calculate_psi_values.command(f"ls -lh .")
-                    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path)} cache savedObjects fdsWithPSIValues.RDS")
+                    j_calculate_psi_values.command(f"echo ===============; echo cache dir; echo ===============; find cache")
+                    j_calculate_psi_values.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
+                    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path)} cache savedObjects")
                     j_calculate_psi_values.command(f"gsutil -m cp {os.path.basename(output_file_path)} {output_file_path}")
                     print("Output file path: ", output_file_path)
 
