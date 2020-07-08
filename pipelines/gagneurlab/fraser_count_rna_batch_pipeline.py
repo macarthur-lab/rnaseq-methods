@@ -27,12 +27,12 @@ def main():
     hl.init(log="/dev/null", quiet=True)
 
     with hl.hadoop_open(args.metadata_tsv_path) as f:
-        original_samples_df = pd.read_table(f).set_index("sample_id", drop=False)
+        samples_df_unmodified = pd.read_table(f).set_index("sample_id", drop=False)
 
     with batch_utils.run_batch(args) as batch:
 
         for batch_name in args.batch_name:
-            samples_df = original_samples_df
+            samples_df = samples_df_unmodified
             batch_dict = GAGNEUR_BATCHES[batch_name]
             batch_tissue = batch_dict['tissue']
             batch_sex = batch_dict['sex']
@@ -248,6 +248,8 @@ saveRDS(splitCountRanges, "spliceJunctions.RDS")
                     for non_split_reads_output_files_batch in [non_split_reads_output_files[i:i+10] for i in range(0, len(non_split_reads_output_files), 10)]:
                         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files_batch)} .")
                     j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
+                    j_calculate_psi_values.command(f"gsutil -m cp {args.metadata_tsv_path} .")
+
                     j_calculate_psi_values.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
 
                     j_calculate_psi_values.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
@@ -270,8 +272,15 @@ print(file_paths)
 parse_sample_id = function(x) {{ return( str_replace(x[[1]], "fraser_count_split_reads_", "")) }}
 sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
 
-sampleTable = data.table(sampleID=sample_ids, bamFile="{os.path.basename(BAM_HEADER_PATH)}")
-print(sampleTable)
+sampleTable = fread("{os.path.basename(args.metadata_tsv_path)}")
+sampleTable$read_length = as.character(sampleTable$read_length)
+sampleTable$bamFile = "{os.path.basename(BAM_HEADER_PATH)}"
+
+sampleTable = sampleTable[sampleTable$sample_id %in% sample_ids]
+if (nrow(sampleTable) != length(sample_ids)) {{
+    print(paste("ERROR: nrow(sampleTable) != length(sample_ids):", nrow(sampleTable), length(sample_ids)))
+    quit("yes")
+}}
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 if({args.num_threads_step2}L == 1L) {{
@@ -293,7 +302,9 @@ saveFraserDataSet(fds)
                     j_calculate_psi_values.command(f"ls -lh .")
                     j_calculate_psi_values.command(f"echo ===============; echo cache dir; echo ===============; find cache")
                     j_calculate_psi_values.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
-                    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path)} cache savedObjects")
+                    j_calculate_psi_values.command(f"rm *.tar.gz *.bam")
+                    j_calculate_psi_values.command(f"cd ..")
+                    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path)} {sample_set_label}")
                     j_calculate_psi_values.command(f"gsutil -m cp {os.path.basename(output_file_path)} {output_file_path}")
                     print("Output file path: ", output_file_path)
 
