@@ -274,13 +274,15 @@ sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
 
 sampleTable = fread("{os.path.basename(args.metadata_tsv_path)}")
 sampleTable$read_length = as.character(sampleTable$read_length)
-sampleTable$bamFile = "{os.path.basename(BAM_HEADER_PATH)}"
 
 sampleTable = sampleTable[sampleTable$sample_id %in% sample_ids]
 if (nrow(sampleTable) != length(sample_ids)) {{
     print(paste("ERROR: nrow(sampleTable) != length(sample_ids):", nrow(sampleTable), length(sample_ids)))
     quit("yes")
 }}
+
+sampleTable$bamFile = "{os.path.basename(BAM_HEADER_PATH)}"
+setnames(sampleTable, "sample_id", "sampleID")
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 if({args.num_threads_step2}L == 1L) {{
@@ -294,6 +296,18 @@ nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCount
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
 fds = calculatePSIValues(fds, BPPARAM=bpparam)
 fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
+
+fds = optimHyperParams(fds, "psi5", plot=FALSE, BPPARAM=bpparam)
+print(paste("psi5:", bestQ(fds, type="psi5"), sep=" "))
+fds = optimHyperParams(fds, "psi3", plot=FALSE, BPPARAM=bpparam)
+print(paste("psi3:", bestQ(fds, type="psi3"), sep=" "))
+fds = optimHyperParams(fds, "psiSite", plot=FALSE, BPPARAM=bpparam)
+print(paste("psiSite:", bestQ(fds, type="psiSite"), sep=" "))
+
+print("===============")
+print(paste("psi5:", bestQ(fds, type="psi5"), sep=" "))
+print(paste("psi3:", bestQ(fds, type="psi3"), sep=" "))
+print(paste("psiSite:", bestQ(fds, type="psiSite"), sep=" "))
 
 saveFraserDataSet(fds)
 '""")
