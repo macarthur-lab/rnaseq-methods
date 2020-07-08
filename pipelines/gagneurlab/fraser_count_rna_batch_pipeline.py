@@ -12,14 +12,9 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logg
 logger = logging.getLogger(__name__)
 
 
-def get_sample_set_label(sample_ids):
-    byte_string = ", ".join(sorted(sample_ids)).encode()
-    h = hashlib.md5(byte_string).hexdigest().upper()
-    return f"{len(sample_ids)}_samples_{h[:10]}"
-
-
 def main():
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    p.add_argument("--with-gtex", help="Use GTEX controls.", action="store_true")
     p.add_argument("--skip-step1", action="store_true", help="Skip count-split-reads step")
     p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
@@ -39,17 +34,33 @@ def main():
         for batch_name in args.batch_name:
             samples_df = original_samples_df
             batch_dict = GAGNEUR_BATCHES[batch_name]
-            samples_df = samples_df.loc[batch_dict['samples']]
-            sample_set_label = get_sample_set_label(samples_df.sample_id)
+            batch_tissue = batch_dict['tissue']
+            batch_sex = batch_dict['sex']
 
-            logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
+            sample_ids = list(batch_dict['samples'])
+            if args.with_gtex:
+                batch_name += "_with_GTEX"
+                samples_df_filter = (samples_df.tissue == batch_tissue)
+                samples_df_filter &= samples_df.sample_id.str.startswith("GTEX")
+                if batch_sex == "M" or batch_sex == "F":
+                    samples_df_filter &= (samples_df.sex == batch_sex)
+                sample_ids += list(samples_df[samples_df_filter].sample_id)
+            else:
+                batch_name += "_without_GTEX"
+
+            samples_df = samples_df.loc[sample_ids]
+            byte_string = ", ".join(sorted(samples_df.sample_id)).encode()
+            h = hashlib.md5(byte_string).hexdigest().upper()
+            sample_set_label = f"{batch_name}__{len(samples_df.sample_id)}_samples_{h[:10]}"
+
+            logger.info(f"Processing {sample_set_label}: {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
             split_reads_samples = []
 
-            split_reads_output_files = set()
+            split_reads_output_files = []
             split_reads_jobs = {}
 
-            non_split_reads_output_files = set()
+            non_split_reads_output_files = []
             non_split_reads_jobs = {}
 
             j_extract_splice_junctions = None
@@ -65,27 +76,27 @@ def main():
                     # set job inputs & outputs
                     input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
                     if "GTEX" in sample_id:
-                        output_dir = "gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
+                        output_dir_for_sample_specific_data = "gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
                     else:
-                        output_dir = f"gs://macarthurlab-rnaseq/{metadata_row['batch']}/fraser_count_rna/"
+                        output_dir_for_sample_specific_data = f"gs://macarthurlab-rnaseq/{metadata_row['batch']}/fraser_count_rna/"
 
-
+                    output_dir_for_batch_specific_data = f"gs://macarthurlab-rnaseq/gagneur/fraser/results/{sample_set_label}"
                     #input_bam = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam"
                     #input_bai = "gs://macarthurlab-rnaseq/temp/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.subset.bam.bai"
 
                     print("Input bam: ", input_bam)
                     if step == 1:
-                        output_file_path = os.path.join(output_dir, f"fraser_count_split_reads_{sample_id}.tar.gz")
+                        output_file_path = os.path.join(output_dir_for_sample_specific_data, f"fraser_count_split_reads_{sample_id}.tar.gz")
                         memory = args.memory_step1
                     elif step == 2:
-                        output_file_path = os.path.join(output_dir, f"fraser_count_non_split_reads_{sample_id}__{sample_set_label}.tar.gz")
+                        output_file_path = os.path.join(output_dir_for_batch_specific_data, f"fraser_count_non_split_reads_{sample_id}__{sample_set_label}.tar.gz")
                         memory = args.memory_step2
 
                     if step == 1:
                         split_reads_samples.append(sample_id)
-                        split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
+                        split_reads_output_files.append(output_file_path)
                     elif step == 2:
-                        non_split_reads_output_files.add(output_file_path.replace(sample_id, "*"))
+                        non_split_reads_output_files.append(output_file_path)
 
                     if step == 1 and args.skip_step1:
                         continue
@@ -165,7 +176,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     break
 
                 if step == 1:
-                    output_file_path_splice_junctions_RDS = os.path.join(output_dir, f"spliceJunctions_{sample_set_label}.RDS")
+                    output_file_path_splice_junctions_RDS = os.path.join(output_dir_for_batch_specific_data, f"spliceJunctions_{sample_set_label}.RDS")
                     if hl.hadoop_is_file(output_file_path_splice_junctions_RDS) and not args.force:
                         logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions step...")
                         continue
@@ -176,7 +187,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     for j in split_reads_jobs.values():
                         j_extract_splice_junctions.depends_on(j)
 
-                    j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
+                    for split_reads_output_files_batch in [split_reads_output_files[i:i+10] for i in range(0, len(split_reads_output_files), 10)]:
+                        j_extract_splice_junctions.command(f"gsutil -m cp {' '.join(split_reads_output_files_batch)} .")
                     j_extract_splice_junctions.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
                     j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
                     j_extract_splice_junctions.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
@@ -214,7 +226,7 @@ saveRDS(splitCountRanges, "spliceJunctions.RDS")
 
                     print("Output file path: ", output_file_path_splice_junctions_RDS)
                 elif step == 2:
-                    output_file_path = os.path.join(output_dir, f"calculatedPSIValues_{sample_set_label}.tar.gz")
+                    output_file_path = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
                     if hl.hadoop_is_file(output_file_path) and not args.force:
                         logger.info(f"{output_file_path} file already exists. Skipping calculatePSIValues step...")
                         continue
@@ -227,8 +239,10 @@ saveRDS(splitCountRanges, "spliceJunctions.RDS")
                     for j in non_split_reads_jobs.values():
                         j_calculate_psi_values.depends_on(j)
 
-                    j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files)} .")
-                    j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files)} .")
+                    for split_reads_output_files_batch in [split_reads_output_files[i:i+10] for i in range(0, len(split_reads_output_files), 10)]:
+                        j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files_batch)} .")
+                    for non_split_reads_output_files_batch in [non_split_reads_output_files[i:i+10] for i in range(0, len(non_split_reads_output_files), 10)]:
+                        j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files_batch)} .")
                     j_calculate_psi_values.command(f"gsutil -m cp {output_file_path_splice_junctions_RDS} .")
                     j_calculate_psi_values.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
 
