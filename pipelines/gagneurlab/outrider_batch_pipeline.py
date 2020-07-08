@@ -18,7 +18,11 @@ def main():
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
     p.add_argument("--counts-tsv-path", default=ALL_COUNTS_TSV_GZ, help="Counts .tsv")
-    p.add_argument("-GTEX", "--use-gtex-samples", help="Use GTEX controls.", action="store_true")
+
+    g = p.add_mutually_exclusive_group()
+    g.add_argument("--with-gtex", help="Use GTEX controls.", action="store_true")
+    g.add_argument("--only-gtex", help="Run on just the GTEX control samples to test FP rate.", action="store_true")
+
     p.add_argument("batch_name", nargs="+", choices=GAGNEUR_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
@@ -32,13 +36,18 @@ def main():
             batch_dict = GAGNEUR_BATCHES[batch_name]
             batch_tissue = batch_dict['tissue']
             batch_sex = batch_dict['sex']
-            if args.use_gtex_samples:
+
+            c_vector_of_sample_names = 'c("' + '", "'.join(batch_dict['samples']) + '")'
+            if args.with_gtex:
                 batch_include_GTEX_samples = "TRUE"
                 batch_name += "_with_GTEX"
+            elif args.only_gtex:
+                c_vector_of_sample_names = "c()"
+                batch_include_GTEX_samples = "TRUE"
+                batch_name += "_only_GTEX"
             else:
                 batch_include_GTEX_samples = "FALSE"
                 batch_name += "_without_GTEX"
-            c_vector_of_sample_names = 'c("' + '", "'.join(batch_dict['samples']) + '")'
 
             j = batch_utils.init_job(batch, batch_name, DOCKER_IMAGE if not args.raw else None, args.cpu, args.memory, disk_size=10)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
