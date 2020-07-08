@@ -40,15 +40,33 @@ sampleTable = data.table(sampleID=sample_ids, bamFile="~/project__rnaseq/data/sa
 # https://github.com/c-mertes/FRASER/blob/master/R/FraserDataSet-class.R   - strandSpecific: 0 = no, 1 = yes, 2 = reverse
 # strandSpecific = 1, 2 doesn't work for some
 
+extractSplitCountRanges <- function(splitCounts, filter=FALSE, 
+                                    minExpressionInOneSample=20){
+  if(isTRUE(filter)){
+    message(date(), ": Identifying introns with read count <= ", 
+            minExpressionInOneSample, " in all samples...")
+    
+    # extract counts and define cutoff function
+    maxCount <- rowMaxs(assay(splitCounts, "rawCountsJ"))
+    passed <- maxCount >= minExpressionInOneSample 
+    
+    # extract granges after filtering
+    return(rowRanges(splitCounts[passed,]))
+    
+  } else{
+    return(rowRanges(splitCounts))
+  }
+}
 
 print(sampleTable)
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds)
-splitCountRanges = rowRanges(splitCountsForAllSamples)
-print(splitCountRanges)
-splitCountRanges = readRDS("./spliceJunctions_188_samples_6A483623C9.RDS")
-print(splitCountRanges)
+#splitCountRanges = rowRanges(splitCountsForAllSamples)
+#print(splitCountRanges)
+#splitCountRanges = readRDS("./spliceJunctions_188_samples_6A483623C9.RDS")
+#print(splitCountRanges)
+splitCountRanges = extractSplitCountRanges(splitCounts = splitCountsForAllSamples, filter = TRUE, minExpressionInOneSample = 20)
 nonSplitCountsForSample = getNonSplitReadCountsForAllSamples(fds, splitCountRanges)
 #ds1 = addCountsToFraserDataSet(fds, splitCountsForSample, nonSplitCountsForSample)
 
