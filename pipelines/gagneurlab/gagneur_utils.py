@@ -26,3 +26,42 @@ GENCODE_TXDB = "gs://macarthurlab-rnaseq/gagneur/gencode.v26.annotation.txdb"
 ALL_METADATA_TSV = "gs://macarthurlab-rnaseq/gagneur/metadata_table_for_all_RDG_and_GTEX_samples.tsv"
 BAM_HEADER_PATH = "gs://macarthurlab-rnaseq/gagneur/fraser/bam_header.bam"
 
+
+
+import gspread
+import os
+from google.oauth2.service_account import Credentials
+
+_GSPREAD_CLIENT = None
+
+def get_spreasheet(spreadsheet_name):
+    global _GSPREAD_CLIENT
+    if _GSPREAD_CLIENT is None:
+        creds = Credentials.from_service_account_file(
+            os.path.expanduser('~/.config/gcloud/seqr-project-0cb2b89f436f.json'),
+            scopes=[
+                'https://www.googleapis.com/auth/spreadsheets',
+                'https://www.googleapis.com/auth/drive.file',
+                'https://www.googleapis.com/auth/drive',
+            ]
+        )
+
+        _GSPREAD_CLIENT = gspread.authorize(creds)
+
+    spreadsheet = _GSPREAD_CLIENT.open(spreadsheet_name)
+
+    return spreadsheet
+
+
+_OUTRIDER_RESULTS_SPREADSHEET = None
+def get_OUTRIDER_results_spreadsheet():
+    global _OUTRIDER_RESULTS_SPREADSHEET
+    _OUTRIDER_RESULTS_SPREADSHEET = get_spreasheet("RNA-seq OUTRIDER results")
+    return _OUTRIDER_RESULTS_SPREADSHEET
+
+
+_FRASER_RESULTS_SPREADSHEET = None
+def get_FRASER_results_spreadsheet():
+    global _FRASER_RESULTS_SPREADSHEET
+    _FRASER_RESULTS_SPREADSHEET = get_spreasheet("RNA-seq FRASER results")
+    return _FRASER_RESULTS_SPREADSHEET
