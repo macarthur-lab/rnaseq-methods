@@ -191,7 +191,7 @@ saveFraserDataSet(fds)
     print("Output file path: ", output_file_path_calculated_best_q_tar_gz)
 
 
-def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, num_cpu, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz):
+def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, num_cpu, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz, output_file_path_fraser_analysis_results_only_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
@@ -220,7 +220,7 @@ fds = loadFraserDataSet(".")
 if({num_cpu}L == 1L) {{
     bpparam = SerialParam(log=TRUE, progressbar=FALSE)
 }} else {{
-    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
+    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=TRUE)
 }}
 
 sampleSetLabel = "{sample_set_label}"
@@ -249,7 +249,14 @@ q_psi3 = bestQ(fds, type="psi3")
 q_psiSite = bestQ(fds, type="psiSite")
 q = max(q_psi5, q_psi3, q_psiSite)
 print(paste("Running FRASER with q=", q, ". This is max out of (", q_psiSite, ", ", q_psi5, " ", q_psi3, ")", sep=""))
-fds = FRASER(fds, q=q, implementation ="AE", BPPARAM=MulticoreParam(4, progressbar=TRUE)) # Should take around 3 min
+fds = FRASER(fds, q=q, implementation ="AE", BPPARAM=bpparam)
+
+print("Done with FRASER step.")
+
+res = results(fds, padjCutoff=1)
+res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
+res[, "q"] = q
+write.table(res, file=paste(sampleLabel, "_fds__", "q", q, "_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
 for(i in c("psi5", "psi3", "psiSite")) {{
     plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction_", i ,".pdf", sep=""))
@@ -258,12 +265,7 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_after_correction_", i ,".pdf", sep=""))
 }}
 
-saveFraserDataSet(fds)
-
-res = results(fds, padjCutoff=1)
-res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
-res[, "q"] = q
-write.table(res, file=paste(sampleLabel, "_fds__", "q", q, "_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+# saveFraserDataSet(fds)
 '""")
     # #fds = annotateRanges(fds, GRCh=38)
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
@@ -272,7 +274,6 @@ write.table(res, file=paste(sampleLabel, "_fds__", "q", q, "_results.tsv.gz", se
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {output_file_path_fraser_analysis_tar_gz}")
     print("Output file path: ", output_file_path_fraser_analysis_tar_gz)
 
-    output_file_path_fraser_analysis_results_only_tar_gz = f"{output_file_path_fraser_analysis_tar_gz.replace('.tar.gz', '')}_results_only.tar.gz"
     j_run_fraser_analysis.command(f"rm -rf {sample_set_label}/cache {sample_set_label}/savedObjects")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {sample_set_label}")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {output_file_path_fraser_analysis_results_only_tar_gz}")
@@ -353,6 +354,7 @@ def main():
                     output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
                     output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}.tar.gz")
                     output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_{sample_set_label}.tar.gz")
+                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_{sample_set_label}_results_oly.tar.gz")
 
                     print("Input bam: ", input_bam)
                     if step == 1:
@@ -503,8 +505,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     output_file_path_calculated_best_q_tar_gz)
 
             # output_file_path_fraser_analysis_tar_gz
-            if hl.hadoop_is_file(output_file_path_fraser_analysis_tar_gz) and not args.force:
-                logger.info(f"{output_file_path_fraser_analysis_tar_gz} file already exists. Skipping calculatedBestQ step...")
+            if hl.hadoop_is_file(output_file_path_fraser_analysis_results_only_tar_gz) and not args.force:
+                logger.info(f"{output_file_path_fraser_analysis_results_only_tar_gz} file already exists. Skipping run_fraser_analysis step...")
             else:
                 num_cpu = 4 if args.local else 16
                 memory = 3.75*num_cpu
@@ -518,7 +520,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     sample_set_label,
                     4,
                     output_file_path_calculated_best_q_tar_gz,
-                    output_file_path_fraser_analysis_tar_gz)
+                    output_file_path_fraser_analysis_tar_gz,
+                    output_file_path_fraser_analysis_results_only_tar_gz)
 
 
 if __name__ == "__main__":
