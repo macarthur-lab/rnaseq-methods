@@ -141,10 +141,19 @@ def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, calculated_p
     j_calculate_best_q.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_calculate_best_q.command(f"""time xvfb-run Rscript -e '
 library(FRASER)
+library(annotables)
 library(data.table)
-library(stringr)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
 library(purrr)
-library(BiocParallel)
+library(ggrepel)
+library(plotly)
+library(stringr)
+library(RColorBrewer)
+library(ggsci)
+library(ggplot2)
+library(gtable)
 
 fds = loadFraserDataSet(".")
 if({num_cpu}L == 1L) {{
@@ -157,24 +166,23 @@ sampleSetLabel = "{sample_set_label}"
 for(i in c("psi5", "psi3", "psiSite")) {{
     print("===============")
     fds = optimHyperParams(fds, i, plot=FALSE, implementation="PCA", BPPARAM=bpparam)
-    g = plotEncDimSearch(fds, type=i) 
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,".png", sep=""), g, device="png", type="cairo")
-    print(paste(i, ": ", bestQ(fds, type="psi5"), sep=""))
+    g = plotEncDimSearch(fds, type=i, plotType="auc") 
+    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_AUC.png", sep=""), g, device="png", type="cairo")
+    g = plotEncDimSearch(fds, type=i, plotType="loss") 
+    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_loss.png", sep=""), g, device="png", type="cairo")
+    
+    print(paste(i, ": ", bestQ(fds, type=i), sep=""))
 }}
 
-
-print(paste("psiSite:", bestQ(fds, type="psiSite"), sep=" "))
-
 print("===============")
-print(paste("psi5:", bestQ(fds, type="psi5"), sep=" "))
-print(paste("psi3:", bestQ(fds, type="psi3"), sep=" "))
-print(paste("psiSite:", bestQ(fds, type="psiSite"), sep=" "))
+for(i in c("psi5", "psi3", "psiSite")) {{
+    print(paste(i, bestQ(fds, type=i), sep=" "))
+}}
 
 saveFraserDataSet(fds)
 '""")
     # #fds = annotateRanges(fds, GRCh=38)
-    j_calculate_best_q.command(f"pwd")
-    j_calculate_best_q.command(f"ls -lh .")
+    j_calculate_best_q.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_calculate_best_q.command(f"echo ===============; echo cache dir; echo ===============; find cache")
     j_calculate_best_q.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
     j_calculate_best_q.command(f"cd ..")
@@ -207,8 +215,6 @@ library(RColorBrewer)
 library(ggsci)
 library(ggplot2)
 library(gtable)
-library(grid)
-library(gridExtra)
 
 fds = loadFraserDataSet(".")
 if({num_cpu}L == 1L) {{
@@ -255,19 +261,22 @@ for(i in c("psi5", "psi3", "psiSite")) {{
 saveFraserDataSet(fds)
 
 res = results(fds, padjCutoff=1)
-print(paste("colnames:", colnames(res)))
-
-res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore")][order(padjust),]
+res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
 write.table(res, file=paste(sampleLabel, "_fds__", "q", q, "_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
     # #fds = annotateRanges(fds, GRCh=38)
-    j_run_fraser_analysis.command(f"pwd")
-    j_run_fraser_analysis.command(f"ls -lh .")
+    j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {sample_set_label}")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {output_file_path_fraser_analysis_tar_gz}")
     print("Output file path: ", output_file_path_fraser_analysis_tar_gz)
+
+    output_file_path_fraser_analysis_results_only_tar_gz = f"{output_file_path_fraser_analysis_tar_gz.replace('.tar.gz', '')}_results_only.tar.gz"
+    j_run_fraser_analysis.command(f"rm -rf {sample_set_label}/cache {sample_set_label}/savedObjects")
+    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {sample_set_label}")
+    j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {output_file_path_fraser_analysis_results_only_tar_gz}")
+    print("Output file path (results only): ", output_file_path_fraser_analysis_results_only_tar_gz)
 
 
 def main():
@@ -478,8 +487,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
             if hl.hadoop_is_file(output_file_path_calculated_best_q_tar_gz) and not args.force:
                 logger.info(f"{output_file_path_calculated_best_q_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
-                num_cpu = 4 #if args.local else 16
-                memory = 3.75*4
+                num_cpu = 4 if args.local else 16
+                memory = 3.75*num_cpu
 
                 j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
 
@@ -489,7 +498,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 calculate_best_q(
                     j_calculate_best_q,
                     sample_set_label,
-                    num_cpu,
+                    4,
                     output_file_path_calculated_psi_values_tar_gz,
                     output_file_path_calculated_best_q_tar_gz)
 
@@ -497,8 +506,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
             if hl.hadoop_is_file(output_file_path_fraser_analysis_tar_gz) and not args.force:
                 logger.info(f"{output_file_path_fraser_analysis_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
-                num_cpu = 4 #if args.local else 16
-                memory = 3.75*4
+                num_cpu = 4 if args.local else 16
+                memory = 3.75*num_cpu
 
                 j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
                 if j_calculate_best_q:
@@ -507,7 +516,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 run_fraser_analysis(
                     j_fraser_analysis,
                     sample_set_label,
-                    num_cpu,
+                    4,
                     output_file_path_calculated_best_q_tar_gz,
                     output_file_path_fraser_analysis_tar_gz)
 
