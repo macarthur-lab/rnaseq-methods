@@ -243,29 +243,42 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_before_correction_", i ,".pdf", sep=""))
 }}
 
-#q = list(psi5=bestQ(fds, type="psi5"), psi3=bestQ(fds, type="psi3"), psiSite=bestQ(fds, type="psiSite"))
-q_psi5 = bestQ(fds, type="psi5")
-q_psi3 = bestQ(fds, type="psi3")
-q_psiSite = bestQ(fds, type="psiSite")
-q = max(q_psi5, q_psi3, q_psiSite)
-print(paste("Running FRASER with q=", q, ". This is max out of (", q_psiSite, ", ", q_psi5, " ", q_psi3, ")", sep=""))
-fds = FRASER(fds, q=q, implementation ="AE", BPPARAM=bpparam)
-
-print("Done with FRASER step.")
-
-res = results(fds, padjCutoff=1)
-res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
-res[, "q"] = q
-write.table(res, file=paste(sampleLabel, "_fds__", "q", q, "_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
-
+message("Running FRASER with q=", bestQ(fds, type="psi5"), ", ", bestQ(fds, type="psi3"), " ", bestQ(fds, type="psiSite"))
+implementation="AE"
+iterations = 15
 for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction_", i ,".pdf", sep=""))
-}}
-for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_after_correction_", i ,".pdf", sep=""))
+    q = bestQ(fds, type=i)
+    message(date(), ": Fit step for: ", i, ". q=", q)
+    fds = fit(fds, implementation = implementation, q = q, iterations=iterations, type=i, BPPARAM=bpparam)
+    message(date(), ": Compute p values for: ", i, ".")
+    fds = calculatePvalues(fds, type=i)
+    message(date(), ": Adjust p values for: ", i, ".")
+    fds = calculatePadjValues(fds, type=i)
+    message(date(), ": Compute Z scores for: ", i, ".")
+    fds = calculateZscore(fds, type = i)
+  
+    plot_filename1 = paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction_", i ,".pdf", sep="")
+    plot_filename2 = paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_after_correction_", i ,".pdf", sep="")
+    message("Creating heatamp plot: ", plot_filename1)  
+    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=plot_filename1)
+    message("Creating heatmap plot: ", plot_filename2)  
+    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=plot_filename2)
+    message("Done creating heatmap plots")  
 }}
 
-# saveFraserDataSet(fds)
+res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
+saveRDS(res, paste(sampleSetLabel, "_fds__", "q", q, "_results.RDS", sep=""))
+message("Done saving results RDS")  
+
+message(length(res), " junctions in results")
+filename=paste(sampleSetLabel, "_fds__", "psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), "_results.tsv.gz", sep="")
+write.table(as.data.table(results), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
+
+message("Done saving ", filename)
+
+saveFraserDataSet(fds)
+
+message("Done saving fds dataset")
 '""")
     # #fds = annotateRanges(fds, GRCh=38)
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
@@ -354,7 +367,7 @@ def main():
                     output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
                     output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}.tar.gz")
                     output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_{sample_set_label}.tar.gz")
-                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_{sample_set_label}_results_oly.tar.gz")
+                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_{sample_set_label}_results_only.tar.gz")
 
                     print("Input bam: ", input_bam)
                     if step == 1:
