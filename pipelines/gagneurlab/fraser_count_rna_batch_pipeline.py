@@ -257,8 +257,8 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     message(date(), ": Compute Z scores for: ", i, ".")
     fds = calculateZscore(fds, type = i)
   
-    plot_filename1 = paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction_", i ,".pdf", sep="")
-    plot_filename2 = paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_after_correction_", i ,".pdf", sep="")
+    plot_filename1 = paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction_", i, "__q", q, ".pdf", sep="")
+    plot_filename2 = paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_after_correction_", i, "__q", q ,".pdf", sep="")
     message("Creating heatamp plot: ", plot_filename1)  
     plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=plot_filename1)
     message("Creating heatmap plot: ", plot_filename2)  
@@ -266,14 +266,22 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     message("Done creating heatmap plots")  
 }}
 
+qLabel = "_fds__", "psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"),
 res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, "_fds__", "q", q, "_results.RDS", sep=""))
+saveRDS(res, paste(sampleSetLabel, qLabel "_all_results.RDS", sep=""))
 message("Done saving results RDS")  
 
 message(length(res), " junctions in results")
-filename=paste(sampleSetLabel, "_fds__", "psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), "_results.tsv.gz", sep="")
-write.table(as.data.table(results), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
+filename=paste(sampleSetLabel, qLabel  "_all_results.tsv.gz", sep="")
+write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 
+res = results(fds, padjCutoff=0.05, zScoreCutoff=NA, deltaPsiCutoff=NA)
+saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_0.05_results.RDS", sep=""))
+message("Done saving results RDS")  
+
+message(length(res), " junctions in results with p < 0.05")
+filename=paste(sampleSetLabel, qLabel, "_padj_0.05_results.tsv.gz", sep="")
+write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 message("Done saving ", filename)
 
 saveFraserDataSet(fds)
