@@ -2,13 +2,20 @@
 * [batch_0](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_0.html)
 * [batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)
 * [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)
+* [batch_2020_08](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08.html)
 * combined view across all batches: [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)
 
 
 ### pipelines
 
 Broad GP currently delivers RNA-seq data as hg19 bams.
-     
+   
+---
+When GP delivers new samples, we 
+1. manually copy the new .bam and .bai files to `gs://macarthurlab-rnaseq/[batch name]/hg19_bams/`
+2. run the steps in `step1_update_data_paths_worksheet.py` to updated the google docs sheet and generate sample and sample-set metadata tables which 
+can be uploaded to the [macarthurlab-rnaseq-terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows) workspace for running the following workflows.  
+3. update this README      
 ---
 Then the first stage of the TGG pipeline consists of the following steps run on Terra:
   1. SamToFastq 
