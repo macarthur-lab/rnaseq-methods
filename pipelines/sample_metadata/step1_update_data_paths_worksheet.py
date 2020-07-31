@@ -214,7 +214,7 @@ for batch_name in set(all_samples_df.star_pipeline_batch):
         'star_pipeline_batch': 'membership:sample_set_id',
         'sample_id': 'sample',
     }, axis=1)
-
+    print(len(df), "samples in ", batch_name)
     df.to_csv("sample_set_" + batch_name + ".tsv", index=False, sep="\t")
 
 #%%
