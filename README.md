@@ -15,7 +15,7 @@ When GP delivers new samples, we
 1. manually copy the new .bam and .bai files to `gs://macarthurlab-rnaseq/[batch name]/hg19_bams/`
 2. run the steps in `step1_update_data_paths_worksheet.py` to updated the google docs sheet and generate sample and sample-set metadata tables which 
 can be uploaded to the [macarthurlab-rnaseq-terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows) workspace for running the following workflows.  
-3. update this README      
+3. update this README with the new batch      
 ---
 Then the first stage of the TGG pipeline consists of the following steps run on Terra:
   1. SamToFastq 
@@ -33,7 +33,6 @@ Then the first stage of the TGG pipeline consists of the following steps run on 
   3b. FastQC
     ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/sanand/FastQC))
     ([wdl](https://portal.firecloud.org/?return=terra#methods/sanand/FastQC/1/wdl))
-  
 ---
  
 Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucket, run:
@@ -41,13 +40,16 @@ Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucke
 cd rnaseq_methods/pipelines
 python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] \
     macarthurlab-rnaseq-terra [RNA-seq batch name]
+
 ```
 For example:
 ```
-python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w a2220985-8c41-4c55-84b6-b1a219add9bf macarthurlab-rnaseq-terra batch_0
+python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py  macarthurlab-rnaseq-terra  batch_2020_08  \
+    -w 7e14e341-78a4-4f9e-9830-df68fae4bb27 (= job id from terra Job History page) -t rnaseqc
 ```
 
 ---
+
 
 **Metadata Spreadsheet**
 
@@ -63,7 +65,27 @@ interactively
 (TODO convert these to scripts) 
   
 ---
+To generate files for the TGG-viewer, run 
+1. `generate_junctions_bed_batch_pipeline.py` to generate .bed splice junction files
+2. `generate_bigWig_coverage_batch_pipeline.py` to generate .bigWig coverage files 
 
+Example:
+```
+ python3 ./tgg_viewer/junctions_track_pipelines/generate_junctions_bed_batch_pipeline.py -b batch_2020_08
+```
+
+Then, update the metadata paths worksheet again as described above.
+
+---
+To update the multiqc dashboard, run:
+
+```
+cd rnaseq_methods/pipelines/multiqc
+python3 ./download_files_and_run_multiqc.py [batch name]
+python3 ./download_files_and_run_multiqc.py all
+``` 
+
+---
 Now that all new samples are in the  [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693),
 run downstream analyses - using python scripts and [hail Batch](https://hail.is/docs/batch/api.html) ([zulip](https://hail.zulipchat.com/#narrow/stream/223457-Batch-support)).
 
