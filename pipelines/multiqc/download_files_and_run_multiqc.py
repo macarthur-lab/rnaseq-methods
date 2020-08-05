@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--clean", action="store_true", help="Delete previous files")
-    p.add_argument("batch_name", default="all", choices=["all", "batch_0", "batch_1_muntoni", "batch_2020_04"])
+    p.add_argument("batch_name", default="all", choices=["all", "batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08"])
     args = p.parse_args()
 
     return args

@@ -225,6 +225,7 @@ RGP_273_3	RGP_273_3.bam	Conventional base calls	Sanger / Illumina 1.9	132602012.
 RGP_54_3_2	RGP_54_3_2.bam	Conventional base calls	Sanger / Illumina 1.9	125776889.0	0.0	101.0	51.0	31.683789187122848	101.0	pass	pass	pass	pass	warn	warn	pass	pass	fail	warn	pass
 RGP_552_3	RGP_552_3.bam	Conventional base calls	Sanger / Illumina 1.9	119716706.0	0.0	101.0	49.0	13.783794319519385	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	pass
 RGP_554_3_2	RGP_554_3_2.bam	Conventional base calls	Sanger / Illumina 1.9	183120214.0	0.0	101.0	51.0	17.813727423025995	101.0	pass	pass	pass	pass	warn	warn	pass	pass	fail	fail	pass
+RGP_558_3	RGP_558_3.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	222271677.0	0.0	101.0	52.0	33.70176098817029	101.0	pass	pass	fail	pass	warn	warn	pass	pass	fail	warn	pass
 RGP_56_3_3	RGP_56_3_3.bam	Conventional base calls	Sanger / Illumina 1.9	89009155.0	0.0	101.0	50.0	29.35289878644909	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	pass	pass
 RGP_7_1_2	RGP_7_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	93607363.0	0.0	101.0	50.0	64.16598559789296	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 RGP_7_2_2	RGP_7_2_2.bam	Conventional base calls	Sanger / Illumina 1.9	91573742.0	0.0	101.0	50.0	64.12069272819376	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
@@ -278,3 +279,15 @@ VCGS_FAM61_190	VCGS_FAM61_190.bam	Conventional base calls	Sanger / Illumina 1.9	
 VCGS_FAM67_209	VCGS_FAM67_209.bam	Conventional base calls	Sanger / Illumina 1.9	105266207.0	0.0	101.0	49.0	58.51222549369071	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	warn	pass
 VCGS_FAM73_227_2	VCGS_FAM73_227_2.bam	Conventional base calls	Sanger / Illumina 1.9	148717875.0	0.0	101.0	49.0	56.82470146562668	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 VCGS_FAM84_260	VCGS_FAM84_260.bam	Conventional base calls	Sanger / Illumina 1.9	77596094.0	0.0	101.0	49.0	59.35174358737725	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2405f-Dec19	WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	156990576.0	0.0	101.0	48.0	58.86726577009605	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2405f-Feb20A	WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	135481561.0	0.0	101.0	47.0	57.004416805691015	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2405f-Feb20C	WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	149291299.0	0.0	101.0	48.0	54.53387546307492	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2406d-Dec19	WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	139006733.0	0.0	101.0	48.0	57.39109381267936	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2406d-Feb20A	WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	143803148.0	0.0	101.0	47.0	58.24778356645942	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2406d-Feb20B	WAL_OTH2406d-Feb20B.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	167227983.0	0.0	101.0	49.0	57.68949403013072	101.0	pass	pass	fail	pass	warn	fail	pass	pass	warn	warn	pass
+WAL_OTH2407d-Dec19	WAL_OTH2407d-Dec19.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	143702403.0	0.0	101.0	47.0	56.07743430887715	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2407d-Feb20A	WAL_OTH2407d-Feb20A.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	178687534.0	0.0	101.0	47.0	55.3345058923154	101.0	pass	pass	fail	pass	warn	fail	pass	pass	warn	warn	pass
+WAL_OTH2407d-Feb20B	WAL_OTH2407d-Feb20B.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	193584496.0	0.0	101.0	47.0	52.30086701892683	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	warn	pass
+WAL_OTH2419f-Dec19	WAL_OTH2419f-Dec19.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	146330268.0	0.0	101.0	48.0	58.65945371923429	101.0	pass	pass	fail	pass	warn	warn	pass	pass	warn	pass	pass
+WAL_OTH2419f-Feb20A	WAL_OTH2419f-Feb20A.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	151796897.0	0.0	101.0	47.0	58.9112179315046	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
+WAL_OTH2419f-Feb20B	WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	123370710.0	0.0	101.0	48.0	61.77641493000016	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
