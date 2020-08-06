@@ -11,17 +11,21 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+FILE_TYPES = ["hg19_bams", "star", "rnaseqc", "fastqc", "coverage"]
 
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--source-namespace", default="macarthurlab-rnaseq-terra")
     p.add_argument("--dest-bucket", default="macarthurlab-rnaseq")
     p.add_argument("-w", "--workflow-id", help="(optional) workflow id. Can specify more than one", action="append")
-    p.add_argument("-t", "--file-type", choices=["hg19_bams", "star", "rnaseqc", "fastqc"], help="(optional) what types of files to transfer", action="append")
+    p.add_argument("-t", "--file-type", choices=FILE_TYPES, help="(optional) what types of files to transfer", action="append")
     p.add_argument("-f", "--force", action="store_true", help="Force copy even if destination files already exist.")
     p.add_argument("source_workspace", default="macarthurlab-rnaseq-terra")
-    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04"])
+    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08"])
     args = p.parse_args()
+
+    if not args.file_type:
+        args.file_type = FILE_TYPES
 
     return args
 
@@ -79,7 +83,19 @@ def main():
     args = parse_args()
     logger.info("Args:\n" + pprint.pformat(args.__dict__))
 
-    ws = api.get_workspace(args.source_namespace, args.source_workspace).json()
+    try:
+        response = api.get_workspace(args.source_namespace, args.source_workspace)
+    except Exception as e:
+        logger.error(e)
+        return
+
+    try:
+        ws = response.json()
+    except Exception as e:
+        logger.error(e)
+        logger.error(response)
+        return
+
     logger.info("Workspace:\n" + pprint.pformat(ws))
 
     source_bucket = ws['workspace']['bucketName']
@@ -119,6 +135,10 @@ def main():
         if "fastqc" in args.file_type:
             dest = "gs://%s/%s/fastqc/zip/" % bucket_and_batch_name
             gsutil_cp("%s**_fastqc.zip" % source_prefix, dest, force=args.force)
+
+        if "coverage" in args.file_type:
+            dest = "gs://%s/%s/bigWig/" % bucket_and_batch_name
+            gsutil_cp("%s**.bigWig" % source_prefix, dest, force=args.force)
 
     logger.info("Done")
 
