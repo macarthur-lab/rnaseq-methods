@@ -32,6 +32,7 @@ _DATA_PATHS_WORKSHEET = None
 _IMPUTED_METADATA_WORKSHEET = None
 _BERYLS_WORKSHEET = None
 _BERYLS_WORKSHEET_2 = None
+_BERYLS_WORKSHEET_3 = None
 
 _GTEX_METADATA_SPREADSHEET = None
 _GTEX_RNASEQ_SAMPLE_METADATA_WORKSHEET = None
@@ -94,16 +95,22 @@ def get_imputed_metadata_worksheet():
     return _IMPUTED_METADATA_WORKSHEET
 
 
-def get_beryls_worksheet():
+def get_beryls_supplementary_table_worksheet():
     global _BERYLS_WORKSHEET
     _BERYLS_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("Beryl's Supplementary Table 1")
     return _BERYLS_WORKSHEET
 
 
-def get_beryls_worksheet_2():
+def get_beryls_rnaseq_probands_worksheet():
     global _BERYLS_WORKSHEET_2
-    _BERYLS_WORKSHEET_2 = get_rnaseq_metadata_spreadsheet().worksheet("Beryl's RNAseq Probands")
+    _BERYLS_WORKSHEET_2 = get_rnaseq_metadata_spreadsheet().worksheet("Copy of Beryl's RNAseq Probands")
     return _BERYLS_WORKSHEET_2
+
+
+def get_beryls_seqr_data_worksheet():
+    global _BERYLS_WORKSHEET_3
+    _BERYLS_WORKSHEET_3 = get_rnaseq_metadata_spreadsheet().worksheet("Copy of Beryl's Seqr-data")
+    return _BERYLS_WORKSHEET_3
 
 
 def get_seqr_info_and_other_metadata_df():
@@ -121,13 +128,18 @@ def get_imputed_metadata_df():
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_beryls_df():
-    rows = get_beryls_worksheet().get()
+def get_beryls_supplementary_table_df():
+    rows = get_beryls_supplementary_table_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_beryls_df_2():
-    rows = get_beryls_worksheet_2().get()
+def get_beryls_rnaseq_probands_df():
+    rows = get_beryls_rnaseq_probands_worksheet().get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_beryls_seqr_data_df():
+    rows = get_beryls_seqr_data_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
@@ -139,7 +151,7 @@ def get_joined_metadata_df():
 
 
 def get_date_from_bam_header(bam_path):
-    output = subprocess.check_output("gsutil cat %s | samtools view -H - | grep ^@RG | head -n 1" % bam_path, shell=True)
+    output = subprocess.check_output("gsutil cat %s | samtools view -H - | grep ^@RG | head -n 1" % bam_path, shell=True, encoding="UTF-8")
     read_group_annotations = {}
     for i, rg_field in enumerate(output.rstrip().split("\t")):
         if i == 0:
@@ -153,7 +165,7 @@ def get_date_from_bam_header(bam_path):
 
 
 def get_rnaseqc_metrics(rnaseqc_metrics_file_path):
-    output = subprocess.check_output("gsutil cat %s" % rnaseqc_metrics_file_path, shell=True)
+    output = subprocess.check_output("gsutil cat %s" % rnaseqc_metrics_file_path, shell=True, encoding="UTF-8")
     metrics_dict = {}
     for i, line in enumerate(output.rstrip().split("\n")):
         key, value = line.split("\t")

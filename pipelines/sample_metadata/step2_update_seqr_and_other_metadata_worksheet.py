@@ -3,160 +3,116 @@
 
 from __future__ import print_function
 import collections
-import json
 import os
 import pandas as pd
-import re
 import sys
+
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
 
 from gspread_dataframe import set_with_dataframe
 
-from sample_metadata.utils import get_seqr_info_and_other_metadata_worksheet, get_beryls_df, get_beryls_df_2, \
-    get_data_paths_df, get_seqr_info_and_other_metadata_df
-
-#%%
-beryls_ws_df_merged = get_beryls_df().merge(get_beryls_df_2(), on="Sample ID", how="left")
-
-"""
-All columns in beryls_ws_df_merged:
-Sample ID
-Alias
-Clinical Diagnosis
-Sex
-Age at muscle biopsy
-Site of biopsy
-Previous NGS testing
-Status of genetic diagnosis before RNA-seq
-Notes on genetic diagnosis status
-Notes from paper
-Data_type
-Phenotype
-Status
-CanditateGenes (culprit,if solved)
-Candidate  Variants
-Variant  type
-Variant consequence
-Famliy data (all WES unless otherwise noted)
-RNA BamPath
-WGS BamPath
-WES BAM
-Data details
-Collab PI
-Realigned
-Gender
-Gender  confirmed
-Tissue  verified
-Sample  matched 
-%Contamin  RNAseq
-Ethnicity
-Age at  Biopsy
-Biopsy type
-Phenotype comments
-Other comments
-Short Phenotype
-Family
-Include in manuscript?
-"""
-
-columns_from_beryls_worksheets = [
-    "Sample ID",
-    "Alias",
-    "Clinical Diagnosis",
-    "Sex",
-    "Age at muscle biopsy",
-    "Site of biopsy",
-    #"Previous NGS testing",
-    "Notes on genetic diagnosis status",
-    "Notes from paper",
-    "Data_type", # "sample types (Beryl)",
-    "Phenotype", # "phenotype (Beryl)",
-    "Status",  # "solved? (Beryl)",
-    'CanditateGenes\n(culprit,if solved)',
-    'Candidate \nVariants',
-    'Variant \ntype',
-    'Variant consequence',
-    'Data details',
-    'Collab PI',
-    '%Contamin\n RNAseq',
-    'Ethnicity',
-    'Age at \nBiopsy',
-    'Biopsy type',
-    'Phenotype comments',
-    'Other comments',
-    'Short Phenotype',
-    'Include in manuscript?',
-]
-beryls_ws_df_merged = beryls_ws_df_merged[columns_from_beryls_worksheets]
-
-beryls_ws_df_merged = beryls_ws_df_merged.rename(columns={
-    "Status": "Genetic diagnosis Status",
-})
-
-beryls_ws_df_merged = beryls_ws_df_merged.rename(columns={c: c.replace("\n", " ") + " (Beryl)" for c in columns_from_beryls_worksheets if c != "Sample ID"})
-
-beryls_ws_df_merged["Notes (Beryl)"] = beryls_ws_df_merged["Notes on genetic diagnosis status (Beryl)"].fillna('')
-
-for i, row in beryls_ws_df_merged.iterrows():
-    #print(i, ",", df_export.at[i, "Notes (Beryl)"], ",", row["Notes from paper"])
-    if row["Notes from paper (Beryl)"] and not isinstance(row["Notes from paper (Beryl)"], float):
-        beryls_ws_df_merged.at[i, "Notes (Beryl)"] += "\n" + row["Notes from paper (Beryl)"]
-
-# %%
-
-# join DATA_PATHS_WORKSHEET with BERYLS_WORKSHEET
-
-data_paths_ws_df = get_data_paths_df()
-beryls_ws_df_merged['sample_id'] = ""
-for s in beryls_ws_df_merged['Sample ID']:
-    all_samples_row = data_paths_ws_df().loc[data_paths_ws_df['sample_id'].str.contains(s), ]
-    if all_samples_row.shape[0] == 0:
-        print("sample id " + s + " from Beryl's table not found in data_paths_ws_df")
-        continue
-    elif all_samples_row.shape[0] > 1:
-        print("sample id " + s + " from Beryl's table matched more than 1 entry in data_paths_ws_df: " + ", ".join(all_samples_row.sample_id.tolist()))
-        continue
-
-    beryls_ws_df_merged.loc[beryls_ws_df_merged['Sample ID'] == s, 'sample_id'] = all_samples_row.sample_id.item()
-
-joined_df = data_paths_ws_df.merge(beryls_ws_df_merged, on="sample_id", how="left")
-joined_df2 = beryls_ws_df_merged.merge(data_paths_ws_df, on="sample_id", how="left")
-
-#joined_df
-print("Found match for", joined_df2[~joined_df2['hg19_bam'].isnull()].shape[0], "out of", beryls_ws_df_merged.shape[0], "rows")
-print("Match not found for\n  '" + "'\n  '".join(joined_df2[joined_df2['hg19_bam'].isnull()]['Sample ID']))
-
-print("Found match for", joined_df[~joined_df['Sex (Beryl)'].isnull()].shape[0], "out of", beryls_ws_df_merged.shape[0], "rows")
-print("-----------------")
-print("joined_df columns:")
-print('  "'+ '",\n  "'.join(joined_df.columns) + '",')
+from sample_metadata.utils import \
+    get_seqr_info_and_other_metadata_worksheet, \
+    get_beryls_supplementary_table_df, \
+    get_beryls_rnaseq_probands_df, \
+    get_beryls_seqr_data_df, \
+    get_data_paths_df, \
+    get_seqr_info_and_other_metadata_df, \
+    get_rnaseqc_metrics, \
+    get_date_from_bam_header
 
 
 #%%
 
+def left_join_beryls_table(df, beryls_df):
+    """Joins df 'sample_id' column to beryls_df 'Sample ID' column"""
+    beryls_df = beryls_df.copy()
+    beryls_df['sample_id'] = ""
+
+    found_sample_ids = set()
+    for s in beryls_df['Sample ID']:
+        all_samples_row = df.loc[df['sample_id'].str.contains(s), ]
+        if all_samples_row.shape[0] == 0:
+            print("sample id " + s + " from Beryl's table not found in data_paths_df")
+            continue
+        elif all_samples_row.shape[0] > 1:
+            print("sample id " + s + " from Beryl's table matched more than 1 entry in data_paths_ws_df: " + ", ".join(all_samples_row.sample_id.tolist()))
+            continue
+
+        beryls_df.loc[beryls_df['Sample ID'] == s, 'sample_id'] = all_samples_row.sample_id.item()
+        found_sample_ids.add(s)
+
+    not_found_sample_ids = set(beryls_df['Sample ID']) - found_sample_ids
+    print(f"{len(found_sample_ids)} out of {len(beryls_df)} sample ids found in left side df: {not_found_sample_ids}")
+    print(f"{len(not_found_sample_ids)} sample ids from right-side df not found in left side df: {not_found_sample_ids}")
+
+    joined_df = df.merge(beryls_df, on="sample_id", how="left")
+
+    print("-----------------")
+    print("joined_df columns:")
+    print('  "' + '",  "'.join(joined_df.columns) + '",')
+
+    return joined_df
+
+
+#%%
+
+data_paths_df = get_data_paths_df()
+print(data_paths_df.shape)
+print(data_paths_df.columns)
+
+print("Number of non-null data paths: ")
+get_count = lambda c: sum(data_paths_df[c].str.len() > 0)
+print("\n".join([f"{get_count(c)} {c}" for c in sorted(data_paths_df.columns, key=get_count, reverse=True)]))
+
+
+#%%
+
+final_df = data_paths_df[['sample_id',	'star_pipeline_batch', "hg19_bam", "rnaseqc_metrics"]]
+
+#%%
+# download current table to allow partial updates to some columns
+seqr_info_and_other_metadata_rows = get_seqr_info_and_other_metadata_df()
+
+final_df = final_df.merge(seqr_info_and_other_metadata_rows[[
+    "sample_id",
+    "batch_date_from_hg19_bam_header",
+    "imputed tissue",
+    "imputed sex"
+]], on="sample_id", how="left")
+
+
+#%%
 # update batch_date_from_hg19_bam_header column
 
-from sample_metadata.utils import get_date_from_bam_header
-
-seqr_info_and_other_metadata_ws_rows = get_seqr_info_and_other_metadata_df()
-joined_df3 = joined_df.merge(seqr_info_and_other_metadata_ws_rows[["sample_id", "batch_date_from_hg19_bam_header"]], on="sample_id", how="left")
-for i, row in joined_df3.iterrows():
-    if not row["batch_date_from_hg19_bam_header"]:
-        d = joined_df3.at[i, "batch_date_from_hg19_bam_header"] = get_date_from_bam_header(row["hg19_bam"])
-        print(d, joined_df3.at[i, "hg19_bam"])
-
-joined_df3
+for i, row in final_df.iterrows():
+    if not row.batch_date_from_hg19_bam_header or isinstance(row.batch_date_from_hg19_bam_header, float):
+        print(row.hg19_bam)
+        d = get_date_from_bam_header(row.hg19_bam)
+        print(d)
+        final_df.at[i, "batch_date_from_hg19_bam_header"] = d
 
 #%%
 
-# parse rnaseqc metrics.txt
+# parse rnaseqc metrics
 
-from utils import get_rnaseqc_metrics
+RNASEQC_COLUMNS = [
+    "stranded? (rnaseqc)",
+    "read length (rnaseqc)",
+    "total reads x 10^6 (rnaseqc)",
+    "mapping rate (rnaseqc)"
+]
 
-RNASEQC_COLUMNS =  ["stranded? (rnaseqc)", "read length (rnaseqc)", "total reads x 10^6 (rnaseqc)", "mapping rate (rnaseqc)"]
-joined_df4 = joined_df3.merge(seqr_info_and_other_metadata_ws_rows[["sample_id"] + RNASEQC_COLUMNS], on="sample_id", how="left")
-for i, row in joined_df4.iterrows():
+final_df = final_df.merge(seqr_info_and_other_metadata_rows[["sample_id"] + RNASEQC_COLUMNS], on="sample_id", how="left")
+for i, row in final_df.iterrows():
     rnaseqc_metrics_file_path = row["rnaseqc_metrics"].strip()
-    if not rnaseqc_metrics_file_path or row["stranded? (rnaseqc)"]:
+    if not rnaseqc_metrics_file_path:
+        continue
+
+    if row["stranded? (rnaseqc)"] and not isinstance(row["stranded? (rnaseqc)"], float):
+        # skip rows that already have rnaseqc values
         continue
 
     #print(row["rnaseqc_metrics"])
@@ -173,21 +129,24 @@ for i, row in joined_df4.iterrows():
         print("ERROR: End 1 Sense Rate and/or End 2 Sense Rate are out of bounds: %0.2f %0.2f" % (end1_sense_rate, end2_sense_rate))
 
     print("%0.2f   %0.2f" % (float(metrics_dict['End 1 Sense Rate']), float(metrics_dict['End 2 Sense Rate'])))
-    joined_df4.at[i, "stranded? (rnaseqc)"] = stranded
-    joined_df4.at[i, "read length (rnaseqc)"] = "%0.0f" % float(metrics_dict['Read Length'])
-    joined_df4.at[i, "total reads x 10^6 (rnaseqc)"] = "%0.0f" % (int(metrics_dict['Total Reads'])/10**6)
-    joined_df4.at[i, "mapping rate (rnaseqc)"] = "%0.2f" % float(metrics_dict['Mapping Rate'])
+    final_df.at[i, "stranded? (rnaseqc)"] = stranded
+    final_df.at[i, "read length (rnaseqc)"] = "%0.0f" % float(metrics_dict['Read Length'])
+    final_df.at[i, "total reads x 10^6 (rnaseqc)"] = "%0.0f" % (int(metrics_dict['Total Reads'])/10**6)
+    final_df.at[i, "mapping rate (rnaseqc)"] = "%0.2f" % float(metrics_dict['Mapping Rate'])
 
-    #print("stranded?", joined_df4.at[i, "stranded? (rnaseqc)"], rnaseqc_metrics_file_path)
-    print("read length", joined_df4.at[i, "read length (rnaseqc)"], rnaseqc_metrics_file_path)
+    #print("stranded?", final_df.at[i, "stranded? (rnaseqc)"], rnaseqc_metrics_file_path)
+    print("read length", final_df.at[i, "read length (rnaseqc)"], rnaseqc_metrics_file_path)
 
-joined_df4
+final_df
 
 
 # Alias
 # SpliceAI
 # Viewer Link
 # seqr link
+
+#%%
+
 
 #%%
 
@@ -200,33 +159,6 @@ django.setup()
 
 
 #%%
-
-"""
-            if i.phenotips_data:
-                phenotips_json = json.loads(i.phenotips_data)
-                phenotips_fields = _parse_phenotips_data(phenotips_json)
-            else:
-                phenotips_fields = {}
-
-            if include_hpo_terms_present:
-                row.append(phenotips_fields.get('phenotips_features_present', ''))
-            if include_hpo_terms_absent:
-                row.append(phenotips_fields.get('phenotips_features_absent', ''))
-            if include_paternal_ancestry:
-                row.append(phenotips_fields.get('paternal_ancestry', ''))
-            if include_maternal_ancestry:
-                row.append(phenotips_fields.get('maternal_ancestry', ''))
-            if include_age_of_onset:
-                row.append(phenotips_fields.get('age_of_onset', ''))
-
-"""
-"""
-Not found:
-46N_RN
-Dowling_7
-Muntoni-1
-Muntoni-2
-"""
 
 sample_id_to_seqr_indiv_id = {
 
@@ -459,15 +391,32 @@ no_seqr_record = {
     "HF_7",
     "HF_8",
     "HF_9",
+
+    "WAL_OTH2405f-Dec19",
+    "WAL_OTH2405f-Feb20A",
+    "WAL_OTH2405f-Feb20C",
+    "WAL_OTH2406d-Dec19",
+    "WAL_OTH2406d-Feb20A",
+    "WAL_OTH2406d-Feb20B",
+    "WAL_OTH2407d-Dec19",
+    "WAL_OTH2407d-Feb20A",
+    "WAL_OTH2407d-Feb20B",
+    "WAL_OTH2419f-Dec19",
+    "WAL_OTH2419f-Feb20A",
+    "WAL_OTH2419f-Feb20B",
 }
 
+
+#%%
+# populate sample_id_to_indivs dict
 
 from seqr.models import Project, Family, Individual, Sample, IgvSample, SavedVariant, VariantTag, VariantNote
 #print(Individual.objects.all().count())
 
-counters = collections.defaultdict(int)
 sample_id_to_indivs = {}
-for sample_id in joined_df4['sample_id']:
+
+counters = collections.defaultdict(int)
+for sample_id in final_df['sample_id']:
     if sample_id in no_seqr_record:
         continue
 
@@ -484,7 +433,7 @@ for sample_id in joined_df4['sample_id']:
         pass
         #print(sample_id + ":", " ||| ".join(i.family.project.name + "/" + i.family.family_id for i in indivs))
     elif len(indivs) == 0:
-        print(sample_id, type(sample_id))
+        print(f"seqr indiv not found for: {sample_id}")
 
     counters[len(indivs)] += 1
 
@@ -497,6 +446,8 @@ print(counters)
 
 #%%
 
+# add seqr metadata columns
+
 analysis_status_lookup = dict(Family.ANALYSIS_STATUS_CHOICES)
 
 seqr_fields_by_sample_id = collections.defaultdict(lambda: collections.defaultdict(list))
@@ -504,6 +455,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
 
     seqr_fields = seqr_fields_by_sample_id[sample_id]
     seqr_fields['sample_id'] = sample_id
+    seqr_fields['indiv (seqr)'] = indivs[0].individual_id
     variant_tag_counters = collections.defaultdict(int)
     num_variant_notes = 0
     for indiv in indivs:
@@ -547,11 +499,11 @@ for sample_id, indivs in sample_id_to_indivs.items():
             seqr_fields['internal case review notes (seqr)'].append((family.internal_case_review_notes or "").strip())
 
         if indiv.sex and indiv.sex != "U":
-            seqr_fields['sex'].append(indiv.sex)
+            seqr_fields['sex'].append(indiv.sex.decode('UTF-8') if isinstance(indiv.sex, bytes) else indiv.sex)
         if indiv.population:
-            seqr_fields['population (seqr)'].append(indiv.population or "")
+            seqr_fields['population (seqr)'].append(indiv.population.decode('UTF-8') if isinstance(indiv.population, bytes) else indiv.population)
 
-        sample_types = [sample.sample_type for sample in indiv.sample_set.all() if sample.sample_type and sample.sample_type.strip() and sample.sample_type != "RNA"]
+        sample_types = [(sample.sample_type.decode('UTF-8') if isinstance(sample.sample_type, bytes) else sample.sample_type) for sample in indiv.sample_set.all() if sample.sample_type and sample.sample_type.strip() and sample.sample_type != "RNA"]
         if sample_types:
             seqr_fields['sample type (seqr)'].append((" ".join(set(sample_types))))
         cram_paths = [sample.file_path for sample in indiv.igvsample_set.all()]
@@ -569,31 +521,30 @@ for sample_id, indivs in sample_id_to_indivs.items():
         # sample.dataset_type
         # sample.elasticsaerch_index
 
+    def join_fields(f, sep=", "):
+        return sep.join([c.encode("utf-8") if isinstance(c, bytes) else c for c in f])
 
-    if joined_df4[joined_df4['sample_id'] == sample_id].shape[0] > 0:
-        other_sex_annotation = joined_df4[joined_df4['sample_id'] == sample_id]['Sex (Beryl)']
-        if type(other_sex_annotation) != float and type(other_sex_annotation.item()) != float and other_sex_annotation.item():
-            seqr_fields['sex'].append(other_sex_annotation.item())
 
-    seqr_fields['sex'] = ", ".join(sorted(set(seqr_fields['sex']))).encode("utf-8")
-    seqr_fields['genome (seqr)'] = ", ".join(sorted(set(seqr_fields['genome (seqr)']))).encode("utf-8")
-    seqr_fields['population (seqr)'] = ", ".join(sorted(set(seqr_fields['population (seqr)']))).encode("utf-8")
-    seqr_fields['sample type (seqr)'] = ", ".join(sorted(set(seqr_fields['sample type (seqr)']))).encode("utf-8")
-    seqr_fields['analysis status (seqr)'] = ", ".join(sorted(set(seqr_fields['analysis status (seqr)']))).encode("utf-8")
+    seqr_fields['sex'] = join_fields(sorted(set(seqr_fields['sex'])))
+    seqr_fields['genome (seqr)'] = join_fields(sorted(set(seqr_fields['genome (seqr)'])))
+    seqr_fields['population (seqr)'] = join_fields(sorted(set(seqr_fields['population (seqr)'])))
+    seqr_fields['sample type (seqr)'] = join_fields(sorted(set(seqr_fields['sample type (seqr)'])))
+    seqr_fields['analysis status (seqr)'] = join_fields(sorted(set(seqr_fields['analysis status (seqr)'])))
 
     seqr_fields['variant tags (seqr)'] = ", ".join(["%s %s tag(s)" % (n, key) for key, n in sorted(variant_tag_counters.items(), key=lambda x: x[0], reverse=True)]) + " "
     seqr_fields['variant notes (seqr)'] = "%s" % num_variant_notes
 
-    seqr_fields['coded phenotype (seqr)'] = ", ".join(seqr_fields['coded phenotype (seqr)']).encode("utf-8") + " "
-    seqr_fields['anlaysis summary + notes (seqr)'] = "\n".join(seqr_fields['anlaysis summary + notes (seqr)']).encode("utf-8") + " "
-    seqr_fields['internal case review notes (seqr)'] = "\n".join(seqr_fields['internal case review notes (seqr)']).encode("utf-8") + " "
-    seqr_fields['cram path (seqr)'] = ", ".join(sorted(set(seqr_fields['cram path (seqr)']))).encode("utf-8") + " "
+    seqr_fields['coded phenotype (seqr)'] = join_fields(seqr_fields['coded phenotype (seqr)']) + " "
+    seqr_fields['anlaysis summary + notes (seqr)'] = join_fields(seqr_fields['anlaysis summary + notes (seqr)'], sep="\n") + " "
+    seqr_fields['internal case review notes (seqr)'] = join_fields(seqr_fields['internal case review notes (seqr)'], sep="\n") + " "
+    seqr_fields['cram path (seqr)'] = join_fields(sorted(set(seqr_fields['cram path (seqr)']))) + " "
 
 seqr_fields_by_sample_id.values()
 
 #sys.exit(0)
 #%%
 SEQR_INFO_COLUMNS = [
+    'indiv (seqr)',
     'proj (seqr)',
     'fam (seqr)',
     'proj2 (seqr)',
@@ -618,29 +569,131 @@ seqr_info_df = pd.DataFrame(
 
 seqr_info_df
 
+final_df = final_df.merge(seqr_info_df, on="sample_id", how="left")
+
+#%%
+final_df
 
 #%%
 
-joined_df5 = joined_df4.merge(seqr_info_df, on="sample_id", how="left")
+# data_paths_df left join Beryl's tables
 
-joined_df5["solved using RNA-seq?"] = ""
-joined_df5["solved not using RNA-seq?"] = ""
+beryls_supplementary_table_df = get_beryls_supplementary_table_df()
+print("beryls_supplementary_table_df", beryls_supplementary_table_df.shape, beryls_supplementary_table_df.columns)
+
+beryls_supplementary_table_df["Notes"] = beryls_supplementary_table_df["Notes on genetic diagnosis status"].fillna('')
+for i, row in beryls_supplementary_table_df.iterrows():
+    #print(i, ":", beryls_supplementary_table_df.at[i, "Notes"], ",", row["Notes from paper"])
+    if row["Notes from paper"] and not isinstance(row["Notes from paper"], float):
+        beryls_supplementary_table_df.at[i, "Notes"] += "\n" + row["Notes from paper"]
+
+beryls_supplementary_table_df = beryls_supplementary_table_df[[
+    "Sample ID",
+    "Alias",
+    "Clinical Diagnosis",
+    "Sex",
+    "Age at muscle biopsy",
+    "Site of biopsy",
+    "Notes",
+    #"Previous NGS testing",
+    #"Notes on genetic diagnosis status",
+    #"Notes from paper",
+]]
+
+beryls_supplementary_table_df = beryls_supplementary_table_df.rename(columns={c: c.replace("\n", " ") + " (Beryl:Supp.)" for c in beryls_supplementary_table_df.columns if c != "Sample ID"})
+
+final_df = left_join_beryls_table(final_df, beryls_supplementary_table_df)
+
+#%%
+
+beryls_rnaseq_probands_df = get_beryls_rnaseq_probands_df()
+beryls_rnaseq_probands_df = beryls_rnaseq_probands_df.replace({
+"Sample ID": {
+    '62R_CaM (new)': '62R_CaM_3',
+    '62R_CaM': '62R_CaM_2',
+    'B13-07': 'B13-07-1M',
+    '329FK_RR_R1': 'CLA_329FK_RR_2',
+    '338FT_DM_R1': '338FT_DM_2',
+    '214DF_AB_R1': 'CLA_214DF_AB_2',
+    'B14-78.1M': 'B14-78-1-U',
+}})
+
+beryls_rnaseq_probands_df = beryls_rnaseq_probands_df[[
+    "Sample ID",
+    '%Contamin\n RNAseq',
+    'Age at \nBiopsy',
+    'Biopsy type',
+    'Candidate \nVariants',
+    'CanditateGenes\n(culprit,if solved)',
+    'Collab PI',
+    'Data details',
+    'Data_type',
+    'Ethnicity',
+    'Include in manuscript?',
+    "Phenotype", # "phenotype (Beryl)",
+    'Short Phenotype',
+    'Phenotype comments',
+    'Other comments',
+    'Variant \ntype',
+    'Status',
+    'Variant consequence',
+]]
+
+beryls_rnaseq_probands_df = beryls_rnaseq_probands_df.rename(columns={
+    "Status": "Genetic diagnosis Status",
+})
+
+beryls_rnaseq_probands_df = beryls_rnaseq_probands_df.rename(columns={c: c.replace("\n", " ") + " (Beryl:Probands)" for c in beryls_rnaseq_probands_df.columns if c != "Sample ID"})
+
+final_df = left_join_beryls_table(final_df, beryls_rnaseq_probands_df)
+
+
+#%%
+
+beryls_seqr_data_df = get_beryls_seqr_data_df()
+beryls_seqr_data_df['Sample ID'] = beryls_seqr_data_df['Collaborator Participant ID']
+
+beryls_seqr_data_df = beryls_seqr_data_df.replace({
+"Sample ID": {
+    'B09-24.1_UNKNOWN': 'B09-24-1RNA_UNKNOWN',
+    'B13-07.1': 'B13-07-1M',
+    '62R_CaM': '62R_CaM_2',
+}})
+
+for i, row in beryls_seqr_data_df.iterrows():
+    #print(i, ":", beryls_supplementary_table_df.at[i, "Variant type(s)"], ",", row["Look at"])
+    if row["Variant type(s)"] and not isinstance(row["Variant type(s)"], float):
+        beryls_seqr_data_df.at[i, "Look at"] = (row["Variant type(s)"] or "") + ":" + (row["Look at"] or "")
+
+beryls_seqr_data_df = beryls_seqr_data_df[[
+    "Sample ID",
+    'Phenotype',
+    #'Variant type(s)',
+    'Look at',
+    'Notes',
+    'RNA tissue (definitive source)',
+]]
+
+beryls_seqr_data_df = beryls_seqr_data_df.rename(columns={c: c.replace("\n", " ") + " (Beryl:Seqr-data)" for c in beryls_seqr_data_df.columns if c != "Sample ID"})
+
+final_df = left_join_beryls_table(final_df, beryls_seqr_data_df)
+
+
+
+#%%
+
+df_export = final_df[[c for c in final_df.columns if c not in ('Sample ID', 'hg19_bam', 'rnaseqc_metrics')]]
+
+df_export.iloc[277:280]
 
 # %%
 
-df_export = joined_df5[[
-    "sample_id",
-    "star_pipeline_batch",
-    "batch_date_from_hg19_bam_header",
-] + RNASEQC_COLUMNS + [
-    "solved using RNA-seq?",
-    "solved not using RNA-seq?"
-] + SEQR_INFO_COLUMNS + [c for c in beryls_ws_df_merged.columns if c not in ('sample_id', 'Sample ID')]]
 
 # export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-set_with_dataframe(SEQR_INFO_AND_OTHER_METADATA_WORKSHEET, df_export.fillna(''), resize=True)
+ws = get_seqr_info_and_other_metadata_worksheet()
+set_with_dataframe(ws, df_export.fillna(''), resize=True)
 
-print("Updated", SEQR_INFO_AND_OTHER_METADATA_WORKSHEET.title)
+print("Updated", ws.title)
 
 
 # %%

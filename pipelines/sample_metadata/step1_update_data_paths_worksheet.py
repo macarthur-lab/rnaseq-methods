@@ -44,8 +44,8 @@ print("Found %s paths" % len(macarthurlab_rnaseq_bucket_file_paths))
 all_samples = {}
 
 batch_sample_counters = collections.defaultdict(int)
-for path in macarthurlab_rnaseq_bucket_file_paths:
-    hg19_bam_path_match = re.search("macarthurlab-rnaseq/([^/]+)/hg19_bams/([^/]+).bam", path)
+for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
+    hg19_bam_path_match = re.search("macarthurlab-rnaseq/([^/]+)/hg19_bams/([^/]+).bam$", path)
     if hg19_bam_path_match:
         sample_id = hg19_bam_path_match.group(2).replace(".", "-")
         if "ATYPICALMDC1A" not in path.upper() and "SIBLINGMDC1A" not in path.upper():
@@ -54,7 +54,9 @@ for path in macarthurlab_rnaseq_bucket_file_paths:
         sample_id = re.sub("_v[1-9]_RNA_OnPrem", "", sample_id)
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         if hg19_bam_path_match.group(2) != sample_id:
-            run("gsutil mv -n " + path + " " + "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam")
+            dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
+            run("gsutil mv -n " + path + " " + dest_path)
+            macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
             continue
@@ -69,6 +71,7 @@ for path in macarthurlab_rnaseq_bucket_file_paths:
         batch_sample_counters[batch] += 1
 
 pprint.pprint(dict(batch_sample_counters))
+
 
 #%%
 
@@ -89,7 +92,7 @@ gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.gene_tpm.gct.gz
 gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.metrics.tsv
 """
 
-for path in macarthurlab_rnaseq_bucket_file_paths:
+for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
     regexps = [
         ('hg19_bai', "macarthurlab-rnaseq/[^/]+/hg19_bams/([^/]+).bai"),
 
@@ -131,7 +134,10 @@ for path in macarthurlab_rnaseq_bucket_file_paths:
         sample_id = re.sub("_v[1-9]_RNA_OnPrem", "", sample_id)
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         if match.group(1) != sample_id:
-            run("gsutil mv -n " + path + " " + "/".join(path.split("/")[0:-1]) + "/" + regexp.replace("$", "").replace("([^/]+)", sample_id).split("/")[-1])
+            dest_path = "/".join(path.split("/")[0:-1]) + "/" + regexp.replace("$", "").replace("([^/]+)", sample_id).split("/")[-1]
+            run("gsutil mv -n " + path + " " + dest_path)
+            macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
+
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
             continue
@@ -179,6 +185,12 @@ all_samples_df = pd.DataFrame(
 )
 
 all_samples_df
+
+#%%
+
+print("Number of non-null data paths: ")
+get_count = lambda c: sum(all_samples_df[c].str.len() > 0)
+print("\n".join([f"{get_count(c)} {c}" for c in sorted(all_samples_df.columns, key=get_count, reverse=True)]))
 
 
 #%%
