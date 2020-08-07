@@ -87,13 +87,13 @@ for _, row in df.iterrows():
             'analysis status (seqr)',
             'variant tags (seqr)',
             'coded phenotype (seqr)',
-            'Include in manuscript? (Beryl)',
-            'Phenotype (Beryl)',
-            'Clinical Diagnosis (Beryl)',
-            'Data_type (Beryl)',
-            'Status (Beryl)',
-            'CanditateGenes (culprit,if solved) (Beryl)',
-            'Candidate  Variants (Beryl)',
+            'Include in manuscript? (Beryl:Probands)',
+            'Phenotype (Beryl:Probands)',
+            'Clinical Diagnosis (Beryl:Supp.)',
+            'Data_type (Beryl:Probands)',
+            'Genetic diagnosis Status (Beryl:Probands)',
+            'CanditateGenes (culprit,if solved) (Beryl:Probands)',
+            'Candidate  Variants (Beryl:Probands)',
         ]])
         description += "</table>"
 
