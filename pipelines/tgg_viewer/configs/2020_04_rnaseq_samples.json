@@ -20,48 +20,6 @@
           "data": [
             {
               "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Muscle"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Blood"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Fibs"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
             },
             {

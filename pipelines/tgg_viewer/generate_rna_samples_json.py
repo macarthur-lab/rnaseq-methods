@@ -128,31 +128,7 @@ for batch_name, rows in rows_by_batch.items():
         "rowsInCategories": [
             {
                 "categoryName": "GTEx Tracks",
-                "rows": [
-                    {
-                        "name": "GTEx 100 Muscle",
-                        "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
-                    {
-                        "name": "GTEx 100 Blood",
-                        "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
-                    {
-                        "name": "GTEx 100 Fibs",
-                        "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
+                "rows": [                    
                     {
                         "name": "GTEx All Muscle",
                         "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
