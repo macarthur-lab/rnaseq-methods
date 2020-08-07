@@ -1,6 +1,8 @@
 import argparse
 import collections
+import json
 import logging
+import os
 import pprint
 
 from sample_metadata.utils import get_joined_metadata_df
@@ -10,29 +12,6 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 #%%
-def parse_args():
-    p = argparse.ArgumentParser()
-    p.add_argument("-b", "--batch-name", help="optional batch name")
-    args = p.parse_args()
-
-    return args
-
-
-def main():
-    args = parse_args()
-    logger.info("Args:\n" + pprint.pformat(args.__dict__))
-
-    df = get_joined_metadata_df()
-
-    logger.info("Done")
-
-
-if __name__ == "__main__":
-    #main()
-    pass
-
-#%%
-
 
 df = get_joined_metadata_df()
 
@@ -43,10 +22,6 @@ batches = collections.Counter(df.star_pipeline_batch)
 
 print(batches)
 
-#%%
-
-import json
-import os
 
 #%%
 os.chdir("/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/tgg_viewer")
@@ -294,7 +269,7 @@ x = """
                     {
                         "name": "Splice AI scores - SNVs - alt allele C",
                         "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig" }
+                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig" }
                         ]
                     },
                     {
