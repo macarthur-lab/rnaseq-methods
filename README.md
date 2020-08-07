@@ -63,9 +63,20 @@ python3 -m pip install -r requirements.txt
 and then run through `step1_update_data_paths_worksheet.py` and `step2_update_seqr_and_other_metadata_worksheet.py` 
 interactively
 (TODO convert these to scripts) 
-  
+ 
 ---
-To generate files for the TGG-viewer, run 
+To generate a single-sample VCF for each new sample, so that it can be displayed in the TGG-viewer, do
+```
+hailctl dataproc start --num-workers 2 --num-preemptible 10 --autoscaling-policy=dataproc-autoscale --pkgs google-api-python-client,gnomad --max-idle 8h bw2
+hailctl dataproc connect bw2 nb
+
+Then, run through in the ipython notebook:
+
+gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb 
+```
+
+---
+To generate splice-junction tracks (.bed and .bigWig files) that can be displayed in the TGG-viewer, run 
 1. `generate_junctions_bed_batch_pipeline.py` to generate .bed splice junction files
 2. `generate_bigWig_coverage_batch_pipeline.py` to generate .bigWig coverage files 
 
@@ -92,7 +103,7 @@ run downstream analyses - using python scripts and [hail Batch](https://hail.is/
 - QC
     - Impute tissue 
     - Impute sex
-    - Check sample ID vs. DNA
+    - Check sample ID vs. DNA (?)
     - Impute Ancestry (?)
     
 - TGG-viewer
