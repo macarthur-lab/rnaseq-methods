@@ -92,7 +92,12 @@ gencode_v26_introns_set = parse_gencode_gff(args.gencode_gff)
 counter = 0
 annotated_counter = 0
 with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "rt") as f, open(output_path, "wt") as bed_file:
-    for line in f:
+    header = None
+    for i, line in enumerate(f):
+        if i == 0 and "chrom" in line.lower():
+            header = line.strip("\n").split("\t")
+            continue # skip header
+
         fields = line.strip("\n").split("\t")
         chrom = fields[0]
         start_1based = int(fields[1])
@@ -124,13 +129,22 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
             # skip junctions with no read support. Rounding down to 0 may result in this.
             continue
 
-        gffTags = ";".join([
-                f"motif={intron_motif}",
-                f"uniquely_mapped={num_uniquely_mapped_reads}",
-                f"multi_mapped={num_multi_mapped_reads}",
-                f"maximum_spliced_alignment_overhang={maximum_spliced_alignment_overhang}",
-                f"annotated_junction={is_annotated}",
-        ])
+        output_fields = [
+            f"motif={intron_motif}",
+            f"uniquely_mapped={num_uniquely_mapped_reads}",
+            f"multi_mapped={num_multi_mapped_reads}",
+            f"maximum_spliced_alignment_overhang={maximum_spliced_alignment_overhang}",
+            f"annotated_junction={is_annotated}",
+        ]
+
+        if header and 'num_samples_with_this_junction' in header and 'num_samples_total' in header:
+            idx = header.index('num_samples_with_this_junction')
+            output_fields.append(f"num_samples_with_this_junction={int(fields[idx])}")
+
+            idx = header.index('num_samples_total')
+            output_fields.append(f"num_samples_total={int(fields[idx])}")
+
+        gffTags = ";".join(output_fields)
 
         score = num_uniquely_mapped_reads
 

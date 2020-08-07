@@ -147,9 +147,6 @@ final_df
 
 #%%
 
-
-#%%
-
 sys.path.append(os.path.expanduser("~/code/seqr"))
 
 import django
@@ -503,9 +500,16 @@ for sample_id, indivs in sample_id_to_indivs.items():
         if indiv.population:
             seqr_fields['population (seqr)'].append(indiv.population.decode('UTF-8') if isinstance(indiv.population, bytes) else indiv.population)
 
-        sample_types = [(sample.sample_type.decode('UTF-8') if isinstance(sample.sample_type, bytes) else sample.sample_type) for sample in indiv.sample_set.all() if sample.sample_type and sample.sample_type.strip() and sample.sample_type != "RNA"]
+        samples = [sample for sample in indiv.sample_set.all() if sample.sample_type and sample.sample_type.strip() and sample.sample_type != "RNA"]
+
+        sample_ids = [(sample.sample_id.decode('UTF-8') if isinstance(sample.sample_id, bytes) else sample.sample_id) for sample in samples]
+        if sample_ids:
+            seqr_fields['sample id (seqr)'].append((", ".join(set(sample_ids))))
+
+        sample_types = [(sample.sample_type.decode('UTF-8') if isinstance(sample.sample_type, bytes) else sample.sample_type) for sample in samples]
         if sample_types:
             seqr_fields['sample type (seqr)'].append((" ".join(set(sample_types))))
+
         cram_paths = [sample.file_path for sample in indiv.igvsample_set.all()]
         if cram_paths:
             seqr_fields['cram path (seqr)'].append(" ".join(set(cram_paths)))
@@ -528,6 +532,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
     seqr_fields['sex'] = join_fields(sorted(set(seqr_fields['sex'])))
     seqr_fields['genome (seqr)'] = join_fields(sorted(set(seqr_fields['genome (seqr)'])))
     seqr_fields['population (seqr)'] = join_fields(sorted(set(seqr_fields['population (seqr)'])))
+    seqr_fields['sample id (seqr)'] = join_fields(sorted(set(seqr_fields['sample id (seqr)'])))
     seqr_fields['sample type (seqr)'] = join_fields(sorted(set(seqr_fields['sample type (seqr)'])))
     seqr_fields['analysis status (seqr)'] = join_fields(sorted(set(seqr_fields['analysis status (seqr)'])))
 
@@ -552,6 +557,7 @@ SEQR_INFO_COLUMNS = [
     'sex',
     'genome (seqr)',
     'population (seqr)',
+    'sample id (seqr)',
     'sample type (seqr)',
     'analysis status (seqr)',
     'variant tags (seqr)',
@@ -684,7 +690,7 @@ final_df = left_join_beryls_table(final_df, beryls_seqr_data_df)
 
 df_export = final_df[[c for c in final_df.columns if c not in ('Sample ID', 'hg19_bam', 'rnaseqc_metrics')]]
 
-df_export.iloc[277:280]
+df_export.iloc[270:280]
 
 # %%
 

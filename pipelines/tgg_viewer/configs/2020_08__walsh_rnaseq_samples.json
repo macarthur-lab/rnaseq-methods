@@ -1,0 +1,569 @@
+{
+  "bamOptions": {
+    "alignmentShading": "strand",
+    "showSoftClips": true,
+    "trackHeight": 200,
+    "viewAsPairs": false
+  },
+  "dataTypesToShow": [
+    "junctions",
+    "coverage",
+    "vcf"
+  ],
+  "genome": "hg38",
+  "locus": "chr21:45988674-45991233",
+  "rowsInCategories": [
+    {
+      "categoryName": "GTEx Tracks",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Muscle"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Blood"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Fibs"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
+          "name": "GTEx Lymph"
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+<<<<<<< HEAD
+>>>>>>> 1104f45... .
+          "name": "GTEx Lymphocytes"
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+=======
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+=======
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Lymph"
+>>>>>>> f8f9a8e... docs
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+=======
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Muscle (Norm.)"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+=======
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Blood (Norm.)"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Fibs (Norm.)"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.normalized.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+          "name": "GTEx Lymph (Norm.)"
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 0a2e750... docs
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 9bb1db6... docs
+          "name": "GTEx Lymph (Norm.)"
+        }
+      ]
+    },
+    {
+<<<<<<< HEAD
+      "categoryName": "Phenotype Tracks",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "bed",
+              "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_haploinsufficiency_gene_GRCh38.sorted.bed.gz"
+            }
+          ],
+          "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+          "name": "Haploinsufficiency Genes"
+        },
+        {
+          "data": [
+            {
+              "type": "bed",
+              "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_triplosensitivity_gene_GRCh38.sorted.bed.gz"
+            }
+          ],
+          "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+          "name": "Triploinsufficiency Genes"
+        },
+        {
+          "data": [
+            {
+              "type": "bed",
+              "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_recurrent_CNV.V1.1.sorted.bed.gz"
+            }
+          ],
+          "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+          "name": "Recurrent CNVs v1.1"
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+        }
+      ]
+    },
+    {
+=======
+>>>>>>> 0562c01... docs
+      "categoryName": "Mappability Tracks",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k36_m2.bw"
+            }
+          ],
+          "description": "Mappability of 36-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "36-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k50_m2.bw"
+            }
+          ],
+          "description": "Mappability of 50-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "50-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k75_m2.bw"
+            }
+          ],
+          "description": "Mappability of 75-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "75-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k100_m2.bw"
+            }
+          ],
+          "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
+          "name": "100-mer mappability "
+        }
+      ]
+    },
+    {
+      "categoryName": "Samples",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Dec19.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Dec19.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2405f-Dec19"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20A.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20A.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2405f-Feb20A"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20C.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20C.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2405f-Feb20C"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Dec19.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Dec19.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2406d-Dec19"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20A.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20A.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2406d-Feb20A"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20B.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20B.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20B.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2406d-Feb20B"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Dec19.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Dec19.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Dec19.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2407d-Dec19"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20A.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20A.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20A.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2407d-Feb20A"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20B.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20B.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20B.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2407d-Feb20B"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Dec19.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Dec19.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Dec19.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2419f-Dec19"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20A.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20A.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20A.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2419f-Feb20A"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20B.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20B.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "name": "WAL_OTH2419f-Feb20B"
+        }
+      ]
+    }
+  ],
+  "selectedRowNamesByCategoryName": {
+    "GTEx Tracks": [
+      "GTEx All Muscle - Norm.",
+      "GTEx All Blood - Norm.",
+      "GTEx All Fibs - Norm."
+    ],
+    "Samples": []
+  },
+  "selectedSamplesByCategoryNameAndRowName": {},
+  "sjOptions": {
+    "bounceHeightBasedOn": "random",
+    "colorBy": "isAnnotatedJunction",
+    "colorByNumReadsThreshold": 5,
+    "hideAnnotated": false,
+    "hideUnannotated": false,
+    "labelAnnotatedJunction": false,
+    "labelAnnotatedJunctionValue": " [A]",
+    "labelMotif": false,
+    "labelMultiMappedReadCount": false,
+    "labelTotalReadCount": false,
+    "labelUniqueReadCount": true,
+    "maxFractionMultiMappedReads": 1,
+    "minSplicedAlignmentOverhang": 0,
+    "minTotalReads": 1,
+    "minUniquelyMappedReads": 0,
+    "showOnlyMinusStrand": false,
+    "showOnlyPlusStrand": false,
+    "thicknessBasedOn": "numUniqueReads",
+    "trackHeight": 170
+  },
+  "vcfOptions": {
+    "displayMode": "EXPANDED"
+  }
+}

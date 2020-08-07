@@ -11,8 +11,8 @@ from collections import defaultdict
 # gsutil -m cp gs://macarthurlab-rnaseq/gagneur/outrider/results/*with*.tsv.gz .
 
 all_tables = defaultdict(list)
-results_tables = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/FRASER_results1/*/*.tsv.gz"
-for path in [p for p in glob.glob(results_tables) if "metadata" not in p and "only_GTEX" not in p]:
+results_tables = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/FRASER_results1/using_AE/*.tsv.gz"
+for path in [p for p in glob.glob(results_tables)]:
     name = os.path.basename(path)
     label = name.split("_with")[0]
     if "_without_GTEX" in name:

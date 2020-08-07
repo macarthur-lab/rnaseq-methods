@@ -1,6 +1,8 @@
 import argparse
 import collections
+import json
 import logging
+import os
 import pprint
 
 from sample_metadata.utils import get_joined_metadata_df
@@ -10,29 +12,6 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 #%%
-def parse_args():
-    p = argparse.ArgumentParser()
-    p.add_argument("-b", "--batch-name", help="optional batch name")
-    args = p.parse_args()
-
-    return args
-
-
-def main():
-    args = parse_args()
-    logger.info("Args:\n" + pprint.pformat(args.__dict__))
-
-    df = get_joined_metadata_df()
-
-    logger.info("Done")
-
-
-if __name__ == "__main__":
-    #main()
-    pass
-
-#%%
-
 
 df = get_joined_metadata_df()
 
@@ -43,10 +22,6 @@ batches = collections.Counter(df.star_pipeline_batch)
 
 print(batches)
 
-#%%
-
-import json
-import os
 
 #%%
 os.chdir("/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/tgg_viewer")
@@ -87,13 +62,13 @@ for _, row in df.iterrows():
             'analysis status (seqr)',
             'variant tags (seqr)',
             'coded phenotype (seqr)',
-            'Include in manuscript? (Beryl)',
-            'Phenotype (Beryl)',
-            'Clinical Diagnosis (Beryl)',
-            'Data_type (Beryl)',
-            'Status (Beryl)',
-            'CanditateGenes (culprit,if solved) (Beryl)',
-            'Candidate  Variants (Beryl)',
+            'Include in manuscript? (Beryl:Probands)',
+            'Phenotype (Beryl:Probands)',
+            'Clinical Diagnosis (Beryl:Supp.)',
+            'Data_type (Beryl:Probands)',
+            'Genetic diagnosis Status (Beryl:Probands)',
+            'CanditateGenes (culprit,if solved) (Beryl:Probands)',
+            'Candidate  Variants (Beryl:Probands)',
         ]])
         description += "</table>"
 
@@ -153,77 +128,69 @@ for batch_name, rows in rows_by_batch.items():
         "rowsInCategories": [
             {
                 "categoryName": "GTEx Tracks",
-                "rows": [
+                "rows": [                    
                     {
-                        "name": "GTEx 100 Muscle",
-                        "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
-                    {
-                        "name": "GTEx 100 Blood",
-                        "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
-                    {
-                        "name": "GTEx 100 Fibs",
-                        "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-                        "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig" },
-                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz" }
-                        ]
-                    },
-                    {
-                        "name": "GTEx All Muscle",
-                        "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                        "name": "GTEx Muscle",
+                        "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz" }
                         ]
                     },
                     {
-                        "name": "GTEx All Blood",
-                        "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                        "name": "GTEx Blood",
+                        "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz" }
                         ]
                     },
                     {
-                        "name": "GTEx All Fibs",
-                        "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+                        "name": "GTEx Fibs",
+                        "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz" }
                         ]
                     },
                     {
-                        "name": "GTEx All Muscle - Norm.",
-                        "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
+                        "name": "GTEx Lymph",
+                        "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
+                        "data": [
+                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig" },
+                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.junctions.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "GTEx Muscle (Norm.)",
+                        "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz" }
                         ]
                     },
                     {
-                        "name": "GTEx All Blood - Norm.",
-                        "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
+                        "name": "GTEx Blood (Norm.)",
+                        "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz" }
                         ]
                     },
                     {
-                        "name": "GTEx All Fibs - Norm.",
-                        "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
+                        "name": "GTEx Fibs (Norm.)",
+                        "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig" },
                             { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "GTEx Lymph (Norm.)",
+                        "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+                        "data": [
+                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig" },
+                            { "type": "junctions", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.normalized.junctions.bed.gz" }
                         ]
                     }
                 ]
@@ -279,6 +246,33 @@ for batch_name, rows in rows_by_batch.items():
 
 
 x = """
+            {
+                "categoryName": "Phenotype Tracks",
+                "rows": [
+                    {
+                        "name": "Haploinsufficiency Genes",
+                        "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+                        "data": [
+                            { "type": "bed", "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_haploinsufficiency_gene_GRCh38.sorted.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "Triploinsufficiency Genes",
+                        "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+                        "data": [
+                            { "type": "bed", "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_triplosensitivity_gene_GRCh38.sorted.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "Recurrent CNVs v1.1",
+                        "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
+                        "data": [
+                            { "type": "bed", "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_recurrent_CNV.V1.1.sorted.bed.gz" }
+                        ]
+                    }
+                ]
+            },
+        
 {
                         "name": "Splice AI scores - SNVs",
                         "data": [
@@ -294,7 +288,7 @@ x = """
                     {
                         "name": "Splice AI scores - SNVs - alt allele C",
                         "data": [
-                            { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig" }
+                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/spliceai/spliceai_scores.raw.snv.hg38.alt-allele-C.bigWig" }
                         ]
                     },
                     {
@@ -310,3 +304,6 @@ x = """
                         ]
                     }
 """
+
+#%%
+#%%

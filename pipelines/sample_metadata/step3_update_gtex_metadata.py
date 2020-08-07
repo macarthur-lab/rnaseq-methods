@@ -101,6 +101,11 @@ print("Found %s star SJ.out.tab files" % len(gtex_star_SJ_out_tab))
 
 df_rnaseq_samples.loc[:, 'star_SJ_out_tab'] = pd.Series(gtex_star_SJ_out_tab)
 
+#%%
+gtex_bigWig = {get_sample_id_from_path(p): p for p in get_gtex_file_paths("GTEx_Analysis_2017-06-05_v8_RNAseq_bigWig_files") if p.endswith(".bigWig")}
+print("Found %s bigWig files" % len(gtex_bigWig))
+
+df_rnaseq_samples.loc[:, 'bigWig'] = pd.Series(gtex_bigWig)
 
 #%%
 

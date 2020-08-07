@@ -20,57 +20,24 @@
           "data": [
             {
               "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/muscle_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Muscle"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/blood_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Blood"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/fibs_100_GTEx_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "100 randomly-chosen GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all 100 samples.",
-          "name": "GTEx 100 Fibs"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
+<<<<<<< HEAD
             },
             {
               "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
             }
           ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
           "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
-          "name": "GTEx All Muscle"
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Muscle"
         },
         {
           "data": [
@@ -83,22 +50,75 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
             }
           ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
           "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
-          "name": "GTEx All Blood"
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Blood"
         },
         {
           "data": [
             {
               "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
+=======
+>>>>>>> 4165bc8... removed 100-sample GTEx reference tracks
             },
             {
               "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
             }
           ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
+=======
           "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
-          "name": "GTEx All Fibs"
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+          "name": "GTEx Fibs"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
+          "name": "GTEx Lymph"
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
+<<<<<<< HEAD
+>>>>>>> 1104f45... .
+          "name": "GTEx Lymphocytes"
+>>>>>>> 22fdd19... updated reference data
+=======
+=======
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples. The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 554b707... docs
+=======
+          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Lymph"
+>>>>>>> f8f9a8e... docs
         },
         {
           "data": [
@@ -111,8 +131,28 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
-          "name": "GTEx All Muscle - Norm."
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+=======
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br/>average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br/>scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples)<br />normalized_read_count = raw_read_count * scalar<br/>",
+>>>>>>> dadb403... updated docs
+=======
+          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Muscle (Norm.)"
         },
         {
           "data": [
@@ -125,8 +165,28 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
-          "name": "GTEx All Blood - Norm."
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+=======
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br/>average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br/>scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples)<br />normalized_read_count = raw_read_count * scalar<br/>",
+>>>>>>> dadb403... updated docs
+=======
+          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Blood (Norm.)"
         },
         {
           "data": [
@@ -139,8 +199,75 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
-          "name": "GTEx All Fibs - Norm."
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
+>>>>>>> 22fdd19... updated reference data
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples)<br/>normalized_read_count = raw_read_count * scalar<br/>",
+>>>>>>> dadb403... updated docs
+=======
+          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+=======
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
+>>>>>>> 0a2e750... docs
+          "name": "GTEx Fibs (Norm.)"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.normalized.junctions.bed.gz"
+            }
+          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+          "name": "GTEx Lymph (Norm.)"
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_lymph_sample / (total_unqiue_reads_in_this_sample * number_of_lymph_samples), and average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)",
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br/>scalar = average_unique_reads_per_lymph_sample / (total_unqiue_reads_in_this_sample * number_of_lymph_samples)<br/>normalized_read_count = raw_read_count * scalar<br/>",
+>>>>>>> dadb403... updated docs
+=======
+          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> b29e228... 2020_08 walsh batch and other updates
+          "name": "GTEx Lymphocytes (Norm.)"
+>>>>>>> 22fdd19... updated reference data
+=======
+          "name": "GTEx Lymph. (Norm.)"
+>>>>>>> f22c595... docs
+=======
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 554b707... docs
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 0a2e750... docs
+=======
+          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
+>>>>>>> 9bb1db6... docs
+          "name": "GTEx Lymph (Norm.)"
+>>>>>>> f8f9a8e... docs
         }
       ]
     },
@@ -204,14 +331,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_01.SNPs.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_01.vcf.gz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM1_CTRL_01"
         },
         {
@@ -229,7 +356,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM1_CTRL_02"
         },
         {
@@ -244,14 +371,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_03.SNPs.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_03.vcf.gz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM1_CTRL_03"
         },
         {
@@ -269,7 +396,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_04.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM1_CTRL_04"
         },
         {
@@ -287,7 +414,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_02"
         },
         {
@@ -305,7 +432,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_03"
         },
         {
@@ -323,7 +450,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_04.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td></td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_04"
         },
         {
@@ -341,7 +468,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_05"
         },
         {
@@ -359,7 +486,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_01.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_01"
         },
         {
@@ -377,7 +504,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_02"
         },
         {
@@ -395,7 +522,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_03"
         },
         {
@@ -413,7 +540,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_05"
         },
         {
@@ -431,7 +558,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R1"
         },
         {
@@ -449,7 +576,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R2"
         },
         {
@@ -467,7 +594,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R3"
         },
         {
@@ -485,7 +612,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R1"
         },
         {
@@ -503,7 +630,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R2"
         },
         {
@@ -521,7 +648,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td> </td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td> </td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Phenotype (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Data_type (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Status (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Canditate Genes (Beryl):</b></td><td> </td></tr>\n<tr><td><b>Candidate  Variants (Beryl):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>None</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>None</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>None</td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>None</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
         }
       ]

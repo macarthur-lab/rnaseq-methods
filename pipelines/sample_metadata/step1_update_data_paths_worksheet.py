@@ -55,7 +55,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         if hg19_bam_path_match.group(2) != sample_id:
             dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
-            run("gsutil mv -n " + path + " " + dest_path)
+            if dest_path != path:
+                run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
@@ -113,8 +114,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
 
         ('fastqc_zip', "macarthurlab-rnaseq/[^/]+/fastqc/zip/([^/]+)_fastqc.zip"),
 
-        ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).SNPs.vcf.gz$"),
-        ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).SNPs.vcf.gz.tbi"),
+        ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.gz$"),
+        ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.gz.tbi"),
 
         ('junctions_bed', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz$"),
         ('junctions_bed_tbi', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
@@ -132,12 +133,13 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
             sample_id = re.sub("_[TR][123]$", "", sample_id)
         sample_id = re.sub("^RP-[0-9]{0,5}_", "", sample_id)
         sample_id = re.sub("_v[1-9]_RNA_OnPrem", "", sample_id)
+        sample_id = re.sub(".SNPs", "", sample_id)
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         if match.group(1) != sample_id:
             dest_path = "/".join(path.split("/")[0:-1]) + "/" + regexp.replace("$", "").replace("([^/]+)", sample_id).split("/")[-1]
-            run("gsutil mv -n " + path + " " + dest_path)
+            if dest_path != path:
+                run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
-
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
             continue

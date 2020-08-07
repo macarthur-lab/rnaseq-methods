@@ -21,7 +21,7 @@ def parse_args():
     p.add_argument("-t", "--file-type", choices=FILE_TYPES, help="(optional) what types of files to transfer", action="append")
     p.add_argument("-f", "--force", action="store_true", help="Force copy even if destination files already exist.")
     p.add_argument("source_workspace", default="macarthurlab-rnaseq-terra")
-    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08"])
+    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh"])
     args = p.parse_args()
 
     if not args.file_type:
