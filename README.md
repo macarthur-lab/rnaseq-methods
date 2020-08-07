@@ -33,6 +33,8 @@ Then the first stage of the TGG pipeline consists of the following steps run on 
   3b. FastQC
     ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/sanand/FastQC))
     ([wdl](https://portal.firecloud.org/?return=terra#methods/sanand/FastQC/1/wdl))
+
+
 ---
  
 Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucket, run:
@@ -65,6 +67,9 @@ interactively
 (TODO convert these to scripts) 
  
 ---
+
+**TGG-viewer: Single Sample VCFs**
+
 To generate a single-sample VCF for each new sample, so that it can be displayed in the TGG-viewer, do
 ```
 hailctl dataproc start --num-workers 2 --num-preemptible 10 --autoscaling-policy=dataproc-autoscale --pkgs google-api-python-client,gnomad --max-idle 8h bw2
@@ -76,6 +81,9 @@ gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb
 ```
 
 ---
+
+**TGG-viewer: Splice Junction Tracks**
+
 To generate splice-junction tracks (.bed and .bigWig files) that can be displayed in the TGG-viewer, run 
 1. `generate_junctions_bed_batch_pipeline.py` to generate .bed splice junction files
 2. `generate_bigWig_coverage_batch_pipeline.py` to generate .bigWig coverage files 
@@ -88,6 +96,9 @@ Example:
 Then, update the metadata paths worksheet again as described above.
 
 ---
+
+**MultiQC Dashboard**
+
 To update the multiqc dashboard, run:
 
 ```
