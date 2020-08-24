@@ -22,11 +22,12 @@ Broad GP currently delivers RNA-seq data as hg19 bams.
 ---
 When GP delivers new samples, we 
 1. manually copy the new .bam and .bai files to `gs://macarthurlab-rnaseq/[batch name]/hg19_bams/`
-2. run the steps in `step1_update_data_paths_worksheet.py` to updated the google docs sheet and generate sample and sample-set metadata tables which 
-can be uploaded to the [macarthurlab-rnaseq-terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows) workspace for running the following workflows.  
-3. update this README with the new batch      
+2. run the steps in `step1_update_data_paths_worksheet.py` to update the google docs [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693) 
+and generate sample and sample-set metadata tables which can be uploaded to the [macarthurlab-rnaseq-terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows) 
+workspace for running the following workflows.  
+3. add the new batch name to the top section of this README      
 ---
-Then the first stage of the TGG pipeline consists of the following steps run on Terra:
+Then, the first stage of the TGG RNA-seq pipeline consists of the following steps run on Terra:
   1. SamToFastq 
     ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/broadinstitute_gtex/samtofastq_v1-0_BETA_cfg))
     ([wdl](https://portal.firecloud.org/?return=terra#methods/broadinstitute_gtex/samtofastq_v1-0_BETA/6/wdl))
