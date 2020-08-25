@@ -110,7 +110,7 @@ def main():
 
     column_names = [
         'strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang',
-        'num_samples_with_this_junction', 'strand_counter',
+        'num_samples_with_this_junction', 'num_samples_total', 'strand_counter',
     ]
 
     i = 0
