@@ -27,7 +27,7 @@ COLUMN_TYPES = {
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("-b", "--batch-size", help="How many tables to merge at once. Bigger batch sizes use more memory.", type=int, default=100)
+    p.add_argument("-b", "--batch-size", help="How many tables to merge at once. Bigger batch sizes use more memory.", type=int, default=50)
     p.add_argument("-N", "--normalize-read-counts", action="store_true", help="whether to normalize read counts")
     p.add_argument("-c", "--save-read-counts", action="store_true", help="Export separate parquet files with matrices of per-sample unique- and multi-mapped-read counts")
     p.add_argument("-o", "--output-path")
@@ -104,9 +104,11 @@ def main():
 
         average_unique_reads_per_sample = total_unique_reads_across_all_samples/float(len(args.paths))
 
-
     result = pd.DataFrame()
-    column_names = ['strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang', 'num_samples_with_this_junction', 'strand_counter']
+    column_names = [
+        'strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang',
+        'num_samples_with_this_junction', 'strand_counter',
+    ]
     parquet_files = defaultdict(list)
     i = 0
     logging.info(f"Processing {len(args.paths)} tables")
@@ -156,7 +158,8 @@ def main():
             if batch_number > 0: batch_columns[column].remove(column)
             if args.save_read_counts and column in ['unique_reads', 'multi_mapped_reads']:
                 output_file_name = f"{column}.batch_{batch_number}.{args.batch_size}_samples.SJ.out.parquet"
-                parquet_files[column].append(output_file_name)
+                if args.save_read_counts:
+                    parquet_files[column].append(output_file_name)
 
                 read_count_df = result[batch_columns[column]].astype('float32')
                 write_to_parquet(read_count_df, output_file_name)
