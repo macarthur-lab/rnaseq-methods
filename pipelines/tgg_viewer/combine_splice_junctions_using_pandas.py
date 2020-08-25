@@ -197,8 +197,10 @@ def main():
             output_path += ".normalized"
         output_path += ".SJ.out"
 
-    result.reset_index().to_csv(f"{output_path}.tsv", index=False, sep="\t")
+    out = result.reset_index()
+    out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{output_path}.tsv", index=False, sep="\t")
     logging.info(f"Wrote out {output_path}.tsv")
+
 
     #write_to_parquet(result, output_path)
 
