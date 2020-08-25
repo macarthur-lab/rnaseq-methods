@@ -195,7 +195,7 @@ def main():
             output_path += ".normalized"
         output_path += ".SJ.out"
 
-    df.to_csv(f"{output_path}.tsv", index=False, sep="\t")
+    result.to_csv(f"{output_path}.tsv", index=False, sep="\t")
     logging.info(f"Wrote out {output_path}.tsv")
 
     #write_to_parquet(result, output_path)
