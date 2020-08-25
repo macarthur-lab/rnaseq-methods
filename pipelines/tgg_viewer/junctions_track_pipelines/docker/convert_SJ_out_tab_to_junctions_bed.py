@@ -92,8 +92,10 @@ gencode_v26_introns_set = parse_gencode_gff(args.gencode_gff)
 counter = 0
 annotated_counter = 0
 with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "rt") as f, open(output_path, "wt") as bed_file:
+    header = None
     for i, line in enumerate(f):
         if i == 0 and "chrom" in line.lower():
+            header = line.strip("\n").split("\t")
             continue # skip header
 
         fields = line.strip("\n").split("\t")
