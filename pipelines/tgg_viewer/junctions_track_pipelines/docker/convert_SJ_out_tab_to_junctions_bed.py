@@ -129,13 +129,22 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
             # skip junctions with no read support. Rounding down to 0 may result in this.
             continue
 
-        gffTags = ";".join([
-                f"motif={intron_motif}",
-                f"uniquely_mapped={num_uniquely_mapped_reads}",
-                f"multi_mapped={num_multi_mapped_reads}",
-                f"maximum_spliced_alignment_overhang={maximum_spliced_alignment_overhang}",
-                f"annotated_junction={is_annotated}",
-        ])
+        output_fields = [
+            f"motif={intron_motif}",
+            f"uniquely_mapped={num_uniquely_mapped_reads}",
+            f"multi_mapped={num_multi_mapped_reads}",
+            f"maximum_spliced_alignment_overhang={maximum_spliced_alignment_overhang}",
+            f"annotated_junction={is_annotated}",
+        ]
+
+        if header and 'num_samples_with_this_junction' in header and 'num_samples_total' in header:
+            idx = header.index('num_samples_with_this_junction')
+            output_fields.append(f"num_samples_with_this_junction={int(fields[idx])}")
+
+            idx = header.index('num_samples_with_this_junction')
+            output_fields.append(f"num_samples_total={int(fields[idx])}")
+
+        gffTags = ";".join(output_fields)
 
         score = num_uniquely_mapped_reads
 
