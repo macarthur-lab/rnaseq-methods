@@ -129,7 +129,8 @@ def main():
                 scalar = average_unique_reads_per_sample / float(unique_reads_in_sample)
                 df[f"unique_reads_{i}"] *= scalar / float(len(args.paths))
                 df[f"multi_mapped_reads_{i}"] *= scalar / float(len(args.paths))
-
+                df[f"unique_reads_{i}"] = df[f"unique_reads_{i}"].round(decimals=3)
+                df[f"multi_mapped_reads_{i}"] = df[f"multi_mapped_reads_{i}"].round(decimals=3)
                 logging.info(f"{path} has {int(unique_reads_in_sample)} total unique reads while the "
                     f"per-sample average is {average_unique_reads_per_sample}. Scaling read counts "
                     f"by {scalar} and dividing by {len(args.paths)}")
