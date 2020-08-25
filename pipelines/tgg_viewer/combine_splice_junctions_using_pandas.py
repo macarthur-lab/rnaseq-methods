@@ -174,7 +174,8 @@ def main():
                 write_to_parquet(read_count_df, output_file_name)
                 parquet_file_paths[column].append(output_file_name)
 
-        result.drop(columns=batch_columns[column], inplace=True)
+            logging.info(f"Dropping columns: {batch_columns[column]} from {result.columns}")
+            result.drop(columns=batch_columns[column], inplace=True)
 
         print_memory_stats(f'after table {i}')
         logging.info(f"Done processing batch {batch_number}")
