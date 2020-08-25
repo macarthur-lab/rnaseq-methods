@@ -141,7 +141,7 @@ with (gzip.open if args.input_path.endswith("gz") else open)(args.input_path, "r
             idx = header.index('num_samples_with_this_junction')
             output_fields.append(f"num_samples_with_this_junction={int(fields[idx])}")
 
-            idx = header.index('num_samples_with_this_junction')
+            idx = header.index('num_samples_total')
             output_fields.append(f"num_samples_total={int(fields[idx])}")
 
         gffTags = ";".join(output_fields)
