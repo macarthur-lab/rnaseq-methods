@@ -164,7 +164,7 @@ def main():
         result['multi_mapped_reads'] = result[batch_columns['multi_mapped_reads']].sum(axis=1).astype(COLUMN_TYPES['multi_mapped_reads'])
         result['maximum_overhang'] = result[batch_columns['maximum_overhang']].max(axis=1).astype(COLUMN_TYPES['maximum_overhang'])
         result['num_samples_with_this_junction'] = result[batch_columns['num_samples_with_this_junction']].sum(axis=1).astype(COLUMN_TYPES['num_samples_with_this_junction'])
-        result['num_samples_total'] = result[batch_columns['num_samples_total']].sum(axis=1).astype(COLUMN_TYPES['num_samples_total'])
+        result['num_samples_total'] = len(args.paths)
         result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).astype(COLUMN_TYPES['strand_counter'])
 
         for column in column_names:
@@ -197,7 +197,7 @@ def main():
             output_path += ".normalized"
         output_path += ".SJ.out"
 
-    result.to_csv(f"{output_path}.tsv", index=False, sep="\t")
+    result.reset_index().to_csv(f"{output_path}.tsv", index=False, sep="\t")
     logging.info(f"Wrote out {output_path}.tsv")
 
     #write_to_parquet(result, output_path)
