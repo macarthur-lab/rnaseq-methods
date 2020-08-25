@@ -4,7 +4,6 @@ import pandas as pd
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("-N", "--normalize-read-counts", action="store_true", help="whether to normalize read counts")
     p.add_argument("path", help="Path of .parquet file")
     return p.parse_args()
 
@@ -28,8 +27,6 @@ def main():
     df = pd.read_parquet(args.path).reset_index()
 
     output_prefix = args.path.replace(".parquet", "")
-    if args.normalize_read_counts:
-        output_prefix += ".normalized_counts"
 
     print(f"Outputting columns {df[COLUMNS_TO_OUTPUT].columns} from {args.path} to {output_prefix}.with_header.tab")
     df[COLUMNS_TO_OUTPUT].to_csv(f"{output_prefix}.with_header.tab", header=True, sep="\t", index=False)
