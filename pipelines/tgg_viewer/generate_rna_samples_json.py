@@ -93,6 +93,12 @@ rows_by_batch['2020_08__walsh'].extend([
             #{'type': 'alignment', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.cram'},
             {'type': 'vcf', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz'},
         ],
+    }, {
+        'name': '',
+        'description': "Shared by Victor",
+        'data': [
+            {'type': 'bed', 'url': 'gs://tgg-rnaseq-walsh/chr20_linkage_region_unnanotated_genes__grch38.bed'},
+        ],
     }
 ])
 
@@ -100,6 +106,7 @@ for d in rows_by_batch['2020_08__walsh']:
     d['name'] = d['name'].replace("WAL_", "").replace("_D1", "")
     for data in d['data']:
         data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
+
 
 
 # tgg-rnaseq-walsh

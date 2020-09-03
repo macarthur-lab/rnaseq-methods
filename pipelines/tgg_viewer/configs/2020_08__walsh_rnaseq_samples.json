@@ -413,6 +413,16 @@
           ],
           "description": "WGS DNA sample",
           "name": "OTH2400_OTH2405"
+        },
+        {
+          "data": [
+            {
+              "type": "bed",
+              "url": "gs://tgg-rnaseq-walsh/chr20_linkage_region_unnanotated_genes__grch38.bed"
+            }
+          ],
+          "description": "Shared by Victor",
+          "name": ""
         }
       ]
     }
