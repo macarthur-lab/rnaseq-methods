@@ -77,12 +77,7 @@ for _, row in df.iterrows():
 
 #%%
 
-# handle walsh batch samples - switch bucket, add a couple non-RNA WGS samples that are in seqr
-for d in rows_by_batch['2020_08__walsh']:
-    d['name'] = d['name'].replace("WAL_", "").replace("_D1", "")
-    for data in d['data']:
-        data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
-
+# handle walsh batch samples - switch bucket, add several non-RNA WGS samples that are in seqr
 rows_by_batch['2020_08__walsh'].extend([
     {
         'name': 'WAL_OTH2411b_1086394128_D1',
@@ -100,6 +95,12 @@ rows_by_batch['2020_08__walsh'].extend([
         ],
     }
 ])
+
+for d in rows_by_batch['2020_08__walsh']:
+    d['name'] = d['name'].replace("WAL_", "").replace("_D1", "")
+    for data in d['data']:
+        data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
+
 
 # tgg-rnaseq-walsh
 
