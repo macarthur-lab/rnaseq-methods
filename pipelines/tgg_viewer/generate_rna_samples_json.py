@@ -94,8 +94,8 @@ rows_by_batch['2020_08__walsh'].extend([
             {'type': 'vcf', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz'},
         ],
     }, {
-        'name': '',
-        'description': "Shared by Victor",
+        'name': 'Unannotated genes in linkage region',
+        'description': "Unannotated genes in chr20:1-2,135,825 linkage region - shared by Victor",
         'data': [
             {'type': 'bed', 'url': 'gs://tgg-rnaseq-walsh/chr20_linkage_region_unnanotated_genes__grch38.bed'},
         ],

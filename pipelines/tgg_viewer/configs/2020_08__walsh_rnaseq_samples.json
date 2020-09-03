@@ -421,8 +421,8 @@
               "url": "gs://tgg-rnaseq-walsh/chr20_linkage_region_unnanotated_genes__grch38.bed"
             }
           ],
-          "description": "Shared by Victor",
-          "name": ""
+          "description": "Unannotated genes in chr20:1-2,135,825 linkage region - shared by Victor",
+          "name": "Unannotated genes in linkage region"
         }
       ]
     }
