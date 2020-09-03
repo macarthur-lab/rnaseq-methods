@@ -397,30 +397,22 @@
         {
           "data": [
             {
-              "type": "alignment",
-              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.cram"
-            },
-            {
               "type": "vcf",
               "url": "gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.vcf.gz"
             }
           ],
           "description": "WGS DNA sample",
-          "name": "WAL_OTH2411b_1086394128_D1"
+          "name": "OTH2411b_1086394128"
         },
         {
           "data": [
-            {
-              "type": "alignment",
-              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.cram"
-            },
             {
               "type": "vcf",
               "url": "gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz"
             }
           ],
           "description": "WGS DNA sample",
-          "name": "WAL_OTH2400_OTH2405_D1"
+          "name": "OTH2400_OTH2405"
         }
       ]
     }
