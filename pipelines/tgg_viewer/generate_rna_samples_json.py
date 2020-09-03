@@ -69,12 +69,38 @@ for _, row in df.iterrows():
             'Genetic diagnosis Status (Beryl:Probands)',
             'CanditateGenes (culprit,if solved) (Beryl:Probands)',
             'Candidate  Variants (Beryl:Probands)',
-        ]])
+        ] if row[c]])
         description += "</table>"
 
         rows_by_batch[batch_name].append({'name': row.sample_id, 'data': data, "description": description})
         rows_by_batch["all"].append({'name': row.sample_id, 'data': data, "description": description})
 
+#%%
+
+# handle walsh batch samples - switch bucket, add a couple non-RNA WGS samples that are in seqr
+for d in rows_by_batch['2020_08__walsh']:
+    for data in d['data']:
+        data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
+
+rows_by_batch['2020_08__walsh'].extend([
+    {
+        'name': 'WAL_OTH2411b_1086394128_D1',
+        'description': 'WGS DNA sample',
+        'data': [
+            {'type': 'alignment', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.cram'},
+            {'type': 'vcf', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.vcf.gz'},
+        ],
+    }, {
+        'name': 'WAL_OTH2400_OTH2405_D1',
+        'description': 'WGS DNA sample',
+        'data': [
+            {'type': 'alignment', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.cram'},
+            {'type': 'vcf', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz'},
+        ],
+    }
+])
+
+# tgg-rnaseq-walsh
 
 #%%
 # output settings

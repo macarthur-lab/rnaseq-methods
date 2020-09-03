@@ -21,22 +21,13 @@
             {
               "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.bigWig"
-<<<<<<< HEAD
             },
             {
               "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
-=======
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All splice junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts and read coverage are summed across all samples.",
->>>>>>> 554b707... docs
           "name": "GTEx Muscle"
         },
         {
@@ -50,15 +41,7 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
-=======
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All splice junctions from all 755 GTEx v3 blood samples. The junction-spanning read counts and read coverage are summed across all samples.",
->>>>>>> 554b707... docs
           "name": "GTEx Blood"
         },
         {
@@ -66,23 +49,13 @@
             {
               "type": "coverage",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.bigWig"
-=======
->>>>>>> 4165bc8... removed 100-sample GTEx reference tracks
             },
             {
               "type": "junctions",
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
-=======
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All splice junctions from all 504 GTEx v3 fibroblast samples. The junction-spanning read counts and read coverage are summed across all samples.",
->>>>>>> 554b707... docs
           "name": "GTEx Fibs"
         },
         {
@@ -96,29 +69,8 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
           "name": "GTEx Lymph"
-=======
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
-=======
-          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values and raw splice-junction-spanning read counts across all samples.",
-<<<<<<< HEAD
->>>>>>> 1104f45... .
-          "name": "GTEx Lymphocytes"
->>>>>>> 22fdd19... updated reference data
-=======
-=======
-          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples. The junction-spanning read counts and read coverage are summed across all samples.",
->>>>>>> 554b707... docs
-=======
-          "description": "All splice junctions from all 174 GTEx v3 lymphocyte samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
->>>>>>> 0a2e750... docs
-          "name": "GTEx Lymph"
->>>>>>> f8f9a8e... docs
         },
         {
           "data": [
@@ -131,27 +83,7 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_muscle.803_samples.normalized.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
-=======
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples), and average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br/>average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br/>scalar = average_unique_reads_per_muscle_sample / (total_unqiue_reads_in_this_sample * number_of_muscle_samples)<br />normalized_read_count = raw_read_count * scalar<br/>",
->>>>>>> dadb403... updated docs
-=======
-          "description": "All 803 GTEx v3 muscle samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
->>>>>>> b29e228... 2020_08 walsh batch and other updates
-=======
-          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples. The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
->>>>>>> 554b707... docs
-=======
-          "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
->>>>>>> 0a2e750... docs
           "name": "GTEx Muscle (Norm.)"
         },
         {
@@ -165,27 +97,7 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_blood.755_samples.normalized.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
-=======
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples), and average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br/>average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br/>scalar = average_unique_reads_per_blood_sample / (total_unqiue_reads_in_this_sample * number_of_blood_samples)<br />normalized_read_count = raw_read_count * scalar<br/>",
->>>>>>> dadb403... updated docs
-=======
-          "description": "All 755 GTEx v3 blood samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
->>>>>>> b29e228... 2020_08 walsh batch and other updates
-=======
-          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
->>>>>>> 554b707... docs
-=======
-          "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
->>>>>>> 0a2e750... docs
           "name": "GTEx Blood (Norm.)"
         },
         {
@@ -199,27 +111,7 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_fibs.504_samples.normalized.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
-=======
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples), and average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)",
->>>>>>> 22fdd19... updated reference data
-=======
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />scalar = average_unique_reads_per_fibs_sample / (total_unqiue_reads_in_this_sample * number_of_fibs_samples)<br/>normalized_read_count = raw_read_count * scalar<br/>",
->>>>>>> dadb403... updated docs
-=======
-          "description": "All 504 GTEx v3 fibroblast samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
->>>>>>> b29e228... 2020_08 walsh batch and other updates
-=======
-          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
->>>>>>> 554b707... docs
-=======
-          "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
->>>>>>> 0a2e750... docs
           "name": "GTEx Fibs (Norm.)"
         },
         {
@@ -233,41 +125,8 @@
               "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_lymphocytes.174_samples.normalized.junctions.bed.gz"
             }
           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
           "name": "GTEx Lymph (Norm.)"
-=======
-          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples. The normalization is done by computing the normalized read count for each junction as normalized_read_count = raw_read_count * scalar. Here scalar = average_unique_reads_per_lymph_sample / (total_unqiue_reads_in_this_sample * number_of_lymph_samples), and average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)",
-=======
-          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br/>scalar = average_unique_reads_per_lymph_sample / (total_unqiue_reads_in_this_sample * number_of_lymph_samples)<br/>normalized_read_count = raw_read_count * scalar<br/>",
->>>>>>> dadb403... updated docs
-=======
-          "description": "All 174 GTEx v3 lymphocyte samples combined by summing raw coverage values across all samples and also<br /> summing normalized splice-junction-spanning read counts across all samples.<br /> The normalization is done by computing the normalized read count for each junction as <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> b29e228... 2020_08 walsh batch and other updates
-          "name": "GTEx Lymphocytes (Norm.)"
->>>>>>> 22fdd19... updated reference data
-=======
-          "name": "GTEx Lymph. (Norm.)"
->>>>>>> f22c595... docs
-=======
-=======
-          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br />junction-spanning read counts are normalized as follows: <br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
->>>>>>> 554b707... docs
-=======
-          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
->>>>>>> 0a2e750... docs
-=======
-          "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized using the formula below, and only junctions with normalized count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
->>>>>>> 9bb1db6... docs
-          "name": "GTEx Lymph (Norm.)"
->>>>>>> f8f9a8e... docs
         }
       ]
     },
@@ -338,7 +197,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1111-1_T1105.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disease, Multiple congenital anomalies </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disease, Multiple congenital anomalies </td></tr></table>",
           "name": "BEG_1111-1_T1105"
         },
         {
@@ -360,7 +219,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1435-01_T1370.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disease, Central/mini core myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disease, Central/mini core myopathy </td></tr></table>",
           "name": "BEG_1435-01_T1370"
         },
         {
@@ -382,7 +241,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 12 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 12 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-006"
         },
         {
@@ -404,7 +263,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-010.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 10 Review tag(s), 2 Likely Benign tag(s), 2 Excluded tag(s), 1 Confident AR one hit tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ritscher-Schinzel, Ritscher-Schinzel </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 10 Review tag(s), 2 Likely Benign tag(s), 2 Excluded tag(s), 1 Confident AR one hit tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ritscher-Schinzel, Ritscher-Schinzel </td></tr></table>",
           "name": "HK-010"
         },
         {
@@ -426,7 +285,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy, neurodevelopmental with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy, neurodevelopmental with epilepsy </td></tr></table>",
           "name": "HK-015"
         },
         {
@@ -448,7 +307,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-022.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 4 Review tag(s), 1 Likely Benign tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 4 Review tag(s), 1 Likely Benign tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr></table>",
           "name": "HK-022"
         },
         {
@@ -470,7 +329,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-025.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 Likely Benign tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, neurodevelopmental </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 Likely Benign tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, neurodevelopmental </td></tr></table>",
           "name": "HK-025"
         },
         {
@@ -492,7 +351,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-032.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>craniosynostosis with epilepsy, craniosynostosis with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>craniosynostosis with epilepsy, craniosynostosis with epilepsy </td></tr></table>",
           "name": "HK-032"
         },
         {
@@ -514,7 +373,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-035.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 7 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 7 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-035"
         },
         {
@@ -536,7 +395,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-047.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 VUS tag(s), 2 Sanger validated tag(s), 15 Review tag(s), 4 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive spastic paraparesis and dystonias, neuromuscular </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 VUS tag(s), 2 Sanger validated tag(s), 15 Review tag(s), 4 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive spastic paraparesis and dystonias, neuromuscular </td></tr></table>",
           "name": "HK-047"
         },
         {
@@ -554,7 +413,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-061.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 2 Secondary finding tag(s), 2 Sanger validated tag(s), 1 Review tag(s), 5 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>holoprosencephaly with hearing loss </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 2 Secondary finding tag(s), 2 Sanger validated tag(s), 1 Review tag(s), 5 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>holoprosencephaly with hearing loss </td></tr></table>",
           "name": "HK-061"
         },
         {
@@ -572,7 +431,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-070.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Juvenile idiopathic arthritis with developmetal delay </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Juvenile idiopathic arthritis with developmetal delay </td></tr></table>",
           "name": "HK-070"
         },
         {
@@ -594,7 +453,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-001.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
           "name": "HK-071-001"
         },
         {
@@ -616,7 +475,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-004.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 2 Sanger validated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
           "name": "HK-071-004"
         },
         {
@@ -634,7 +493,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Secondary finding tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Secondary finding tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-073"
         },
         {
@@ -652,7 +511,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-075"
         },
         {
@@ -670,7 +529,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-081.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial DNA depletion syndrome - PS603041 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial DNA depletion syndrome - PS603041 </td></tr></table>",
           "name": "HK-081"
         },
         {
@@ -692,7 +551,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr></table>",
           "name": "HK-085"
         },
         {
@@ -710,7 +569,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-087.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 3 Secondary finding tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CORNELIA DE LANGE SYNDROME 1; CDLS1 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 3 Secondary finding tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CORNELIA DE LANGE SYNDROME 1; CDLS1 </td></tr></table>",
           "name": "HK-087"
         },
         {
@@ -732,7 +591,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-095.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>multiple congenital anomalies </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>multiple congenital anomalies </td></tr></table>",
           "name": "HK-095"
         },
         {
@@ -750,7 +609,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-100.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 5 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 5 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
           "name": "HK-100"
         },
         {
@@ -772,7 +631,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-104.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 3 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 3 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) </td></tr></table>",
           "name": "HK-104"
         },
         {
@@ -790,7 +649,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Oliver-McFarlane syndrome </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Oliver-McFarlane syndrome </td></tr></table>",
           "name": "HK-107"
         },
         {
@@ -808,7 +667,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-108"
         },
         {
@@ -826,7 +685,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-114.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-114"
         },
         {
@@ -844,7 +703,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-115.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-115"
         },
         {
@@ -862,7 +721,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-116.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>progressive myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>progressive myopathy </td></tr></table>",
           "name": "HK-116"
         },
         {
@@ -880,7 +739,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>SPASTIC PARAPLEGIA 62, AUTOSOMAL RECESSIVE; SPG62 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>SPASTIC PARAPLEGIA 62, AUTOSOMAL RECESSIVE; SPG62 </td></tr></table>",
           "name": "HK-119"
         },
         {
@@ -898,7 +757,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-124"
         },
         {
@@ -916,7 +775,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-126.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Methylmalonic aciduria, lactic acidemia, recurrent ketosis with hypoglycemia, short stature </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Methylmalonic aciduria, lactic acidemia, recurrent ketosis with hypoglycemia, short stature </td></tr></table>",
           "name": "HK-126"
         },
         {
@@ -938,7 +797,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-127.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-127"
         },
         {
@@ -956,7 +815,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-131.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with dysmorphic features </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with dysmorphic features </td></tr></table>",
           "name": "HK-131"
         },
         {
@@ -978,7 +837,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",
           "name": "HK-133"
         },
         {
@@ -996,7 +855,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-134.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, dysmorphic features, short stature </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, dysmorphic features, short stature </td></tr></table>",
           "name": "HK-134"
         },
         {
@@ -1014,7 +873,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FEBRILE SEIZURES, FAMILIAL, 8; FEB8 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FEBRILE SEIZURES, FAMILIAL, 8; FEB8 </td></tr></table>",
           "name": "HK-139"
         },
         {
@@ -1032,7 +891,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 1 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 1 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK060-0154"
         },
         {
@@ -1054,7 +913,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_552_3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Global developmental delay </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Global developmental delay </td></tr></table>",
           "name": "RGP_552_3"
         },
         {
@@ -1076,7 +935,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>None</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr></table>",
           "name": "RGP_554_3_2"
         }
       ]

@@ -88,8 +88,11 @@ with open(output_filename, "wt") as f:
 print(f"Wrote {counter} rows {output_filename}")
 
 
-#%%
+##### See rnaseq-methods README for how to generate the vcfs using a hail cluster + notebook
 
+
+#%%
+"""
 def subset_vcf(mt, dna_sample_id, vcf_output_path):
     mt = mt.filter_cols(mt.s == dna_sample_id)
     sample_ids = mt.cols().s.collect()
@@ -120,4 +123,4 @@ snps_output_path = f"gs://macarthurlab-rnaseq-data/grch38_vcfs/{rna_sample_id.re
 
 print(f"{mt.count()} {rna_sample_id}  {dna_sample_id}   {snps_output_path}")
 
-
+"""

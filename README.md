@@ -88,7 +88,9 @@ hailctl dataproc connect bw2 nb
 
 Then, run through in the ipython notebook:
 
-gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb 
+gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb
+ 
+Then, download the vcf.gz files, covert them to bgzipped, tabix them, and copy the bgzipped vcfs and tabix indices back to the bucket. 
 ```
 
 Then, update the metadata paths worksheet again as described above.
