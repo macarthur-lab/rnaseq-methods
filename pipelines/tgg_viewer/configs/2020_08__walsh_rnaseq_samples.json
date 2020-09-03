@@ -422,7 +422,7 @@
             }
           ],
           "description": "Unannotated genes in chr20:1-2,135,825 linkage region - shared by Victor",
-          "name": "Unannotated genes in linkage region"
+          "name": "linkage region genes"
         }
       ]
     }
