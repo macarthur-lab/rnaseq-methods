@@ -3,6 +3,7 @@
 * [batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)
 * [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)
 * [batch_2020_08](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08.html)
+* [batch_2020_08__walsh](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08__walsh.html)
 * combined view across all batches: [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)
 
 
@@ -13,7 +14,7 @@
 - batch_1_muntoni: ([tgg-viewer](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fmuntoni_rnaseq_samples.json))  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/muntoni_rnaseq_samples.json))
 - batch_2020_04: ([tgg-viewer](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_04_rnaseq_samples.json))  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_04_rnaseq_samples.json))
 - batch_2020_08: ([tgg-viewer](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08_rnaseq_samples.json))  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08_rnaseq_samples.json))
-
+- batch_2020_08__walsh: ([tgg-viewer](https://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&show=~(~'junctions~'coverage~'vcf)&selectedRows=~(GTEx*20Tracks~(~'GTEx*20All*20Muscle*20-*20Norm.~'GTEx*20All*20Blood*20-*20Norm.~'GTEx*20All*20Fibs*20-*20Norm.)~Samples~(~))&selectedSamples=~()&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~200~viewAsPairs~false)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08__walsh_rnaseq_samples.json))  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08__walsh_rnaseq_samples.json))
 
 ### pipelines
 
@@ -87,8 +88,12 @@ hailctl dataproc connect bw2 nb
 
 Then, run through in the ipython notebook:
 
-gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb 
+gs://seqr-bw/project__rnaseq/subset_all_vcfs.ipynb
+ 
+Then, download the vcf.gz files, covert them to bgzipped, tabix them, and copy the bgzipped vcfs and tabix indices back to the bucket. 
 ```
+
+Then, update the metadata paths worksheet again as described above.
 
 ---
 
@@ -104,6 +109,12 @@ Example:
 ```
 
 Then, update the metadata paths worksheet again as described above.
+
+---
+
+**TGG-viewer: Update settings.json**
+
+Run the steps in the `rnaseq_methods/pipelines/tgg_viewer/generate_rna_samples_json.py` notebook.
 
 ---
 

@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--clean", action="store_true", help="Delete previous files")
-    p.add_argument("batch_name", default="all", choices=["all", "batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08"])
+    p.add_argument("batch_name", default="all", choices=["all", "batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh"])
     args = p.parse_args()
 
     return args
@@ -53,7 +53,7 @@ def main():
     if args.clean:
         for subdirs in ["star", "rna_seqc", "fastqc"]:
             run("rm -r %s" % os.path.join(dest_prefix, subdirs))
-        
+
     # star
     gsutil_cp("%s/star/*.Log.final.out" % source_prefix, dest_prefix+"/star/")
     gsutil_cp("%s/star/*.ReadsPerGene.out.tab.gz" % source_prefix,  dest_prefix+"/star/genecounts/")

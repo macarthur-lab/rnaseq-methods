@@ -210,7 +210,6 @@ def main():
             out = df.reset_index()
             out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{path.replace('.tab', '')}.tsv", index=False, sep="\t")
 
-
     #write_to_parquet(result, output_path)
 
     # combine batch parquet files into single parquet output file
