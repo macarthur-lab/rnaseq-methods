@@ -212,7 +212,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Brain: Frontal Cortex",
+                        "name": "GTEx Brain: Front. Cortex",
                         "description": "All splice junctions from all 209 GTEx v3 frontal cortex samples.<br/>The junction-spanning read counts and read coverage are summed across all samples.",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_frontal_cortex.209_samples.bigWig" },
@@ -252,7 +252,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Cortex (Norm.)",
+                        "name": "GTEx Brain: Cortex (Norm.)",
                         "description": "Highly expressed junctions from all 255 GTEx v3 brain cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_brain_cortex.255_samples.bigWig" },
@@ -260,7 +260,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Frontal Cortex (Norm.)",
+                        "name": "GTEx Brain: Front. Cortex (Norm.)",
                         "description": "Highly expressed junctions from all 209 GTEx v3 brain frontal cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://seqr-reference-data/GRCh38/rna-seq/GTEx_ref_data/GTEX_frontal_cortex.209_samples.bigWig" },
