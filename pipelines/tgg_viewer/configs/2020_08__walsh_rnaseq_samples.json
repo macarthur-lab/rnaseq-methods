@@ -11,7 +11,7 @@
     "vcf"
   ],
   "genome": "hg38",
-  "locus": "chr21:45988674-45991233",
+  "locus": "chr20:1-2,135,825",
   "rowsInCategories": [
     {
       "categoryName": "GTEx Tracks",

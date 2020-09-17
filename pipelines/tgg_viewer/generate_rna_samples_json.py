@@ -116,10 +116,15 @@ for d in rows_by_batch['2020_08__walsh']:
 for batch_name, rows in rows_by_batch.items():
     rnaseq_sample_rows = json.dumps(rows)
 
+    if batch_name == "2020_08__walsh":
+        locus = "chr20:1-2,135,825"
+    else:
+        locus = "chr21:45988674-45991233"
+
     settings_json = """
     {
         "genome": "hg38",
-        "locus": "chr21:45988674-45991233",
+        "locus": "%(locus)s",
         "selectedRowNamesByCategoryName": {
               "Samples": [],
               "GTEx Tracks": [
