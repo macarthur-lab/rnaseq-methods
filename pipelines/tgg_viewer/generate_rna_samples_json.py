@@ -97,7 +97,7 @@ rows_by_batch['2020_08__walsh'].extend([
         'name': 'linkage region genes',
         'description': "Unannotated genes in the chr20:1-2,135,825 linkage region - shared by Victor",
         'data': [
-            {'type': 'bed', 'url': 'gs://tgg-rnaseq-walsh/chr20_linkage_region_unnanotated_genes__grch38.bed.gz'},
+            {'type': 'bed', 'url': 'gs://seqr-reference-data/GRCh38/rna-seq/chr20_linkage_region_unnanotated_genes__grch38.bed.gz'},
         ],
     }
 ])
