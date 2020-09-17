@@ -300,11 +300,7 @@
     }
   ],
   "selectedRowNamesByCategoryName": {
-    "GTEx Tracks": [
-      "GTEx All Muscle - Norm.",
-      "GTEx All Blood - Norm.",
-      "GTEx All Fibs - Norm."
-    ],
+    "GTEx Tracks": [],
     "Samples": []
   },
   "selectedSamplesByCategoryNameAndRowName": {},

@@ -94,7 +94,7 @@ rows_by_batch['2020_08__walsh'].extend([
             {'type': 'vcf', 'url': 'gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz'},
         ],
     }, {
-        'name': 'linkage region genes',
+        'name': 'linkage region novel genes',
         'description': "Unannotated genes in the chr20:1-2,135,825 linkage region - shared by Victor",
         'data': [
             {'type': 'bed', 'url': 'gs://seqr-reference-data/GRCh38/rna-seq/chr20_linkage_region_unnanotated_genes__grch38.bed.gz'},
@@ -118,20 +118,18 @@ for batch_name, rows in rows_by_batch.items():
 
     if batch_name == "2020_08__walsh":
         locus = "chr20:1-2,135,825"
+        selected_sample_tracks = '["linkage region novel genes"]'
     else:
         locus = "chr21:45988674-45991233"
+        selected_sample_tracks = '[]'
 
     settings_json = """
     {
         "genome": "hg38",
         "locus": "%(locus)s",
         "selectedRowNamesByCategoryName": {
-              "Samples": [],
-              "GTEx Tracks": [
-                   "GTEx All Muscle - Norm.",
-                   "GTEx All Blood - Norm.",
-                   "GTEx All Fibs - Norm."
-              ]
+              "Samples": %(selected_sample_tracks)s,
+              "GTEx Tracks": []
          },
         "selectedSamplesByCategoryNameAndRowName": {},
         "dataTypesToShow": [ "junctions", "coverage", "vcf" ],
