@@ -180,7 +180,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Muscle (Norm.)",
+                        "name": "Norm. GTEx Muscle",
                         "description": "Highly expressed junctions from all 803 GTEx v3 muscle samples.<br/>The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_muscle_sample = (total_unqiue_reads_in_all_muscle_samples / number_of_muscle_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_muscle_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_muscle_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_muscle.803_samples.bigWig" },
@@ -197,7 +197,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Blood (Norm.)",
+                        "name": "Norm. GTEx Blood",
                         "description": "Highly expressed junctions from all 755 GTEx v3 blood samples.<br/>The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_blood_sample = (total_unqiue_reads_in_all_blood_samples / number_of_blood_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_blood_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_blood_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_blood.755_samples.bigWig" },
@@ -214,7 +214,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Fibs (Norm.)",
+                        "name": "Norm. GTEx Fibs",
                         "description": "Highly expressed junctions from all 504 GTEx v3 fibroblast samples.<br/>The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_fibs_sample = (total_unqiue_reads_in_all_fibs_samples / number_of_fibs_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_fibs_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_fibs_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_fibs.504_samples.bigWig" },
@@ -231,7 +231,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Lymph (Norm.)",
+                        "name": "Norm. GTEx Lymph",
                         "description": "Highly expressed junctions from all 174 GTEx v3 lymphocyte samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_lymph_sample = (total_unqiue_reads_in_all_lymph_samples / number_of_lymph_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_lymph_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_lymph_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_lymphocytes.174_samples.bigWig" },
@@ -248,7 +248,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Brain: Cortex (Norm.)",
+                        "name": "Norm. GTEx Brain: Cortex",
                         "description": "Highly expressed junctions from all 255 GTEx v3 brain cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_brain_cortex.255_samples.bigWig" },
@@ -265,7 +265,7 @@ for batch_name, rows in rows_by_batch.items():
                         ]
                     },
                     {
-                        "name": "GTEx Brain: Front. Cortex (Norm.)",
+                        "name": "Norm. GTEx Brain: Front. Cortex",
                         "description": "Highly expressed junctions from all 209 GTEx v3 brain frontal cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_frontal_cortex.209_samples.bigWig" },
