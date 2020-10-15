@@ -167,7 +167,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_brain_cortex.255_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "Highly expressed junctions from all 255 GTEx v3 brain cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
+          "description": "Highly expressed junctions from all 255 GTEx v3 brain cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below).<br />Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
           "name": "Norm. GTEx Brain: Cortex"
         },
         {
@@ -181,7 +181,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/gtex_v8/GTEX_frontal_cortex.209_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "Highly expressed junctions from all 209 GTEx v3 brain frontal cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below). Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
+          "description": "Highly expressed junctions from all 209 GTEx v3 brain frontal cortex samples.<br />The junction-spanning read counts are normalized to represent the average spanning read count per-sample (see formula below).<br />Only junctions with rounded normalized spanning read count > 0 are included in this track.<br /><br />average_unique_reads_per_cortex_sample = (total_unqiue_reads_in_all_cortex_samples / number_of_cortex_samples)<br />per_sample_normalized_read_count = raw_read_count * average_unique_reads_per_cortex_sample / total_unqiue_reads_in_this_sample<br/>normalized read count for junction = sum(per_sample_normalized_read_counts) / number_of_cortex_samples<br/>",
           "name": "Norm. GTEx Brain: Front. Cortex"
         }
       ]
@@ -266,7 +266,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_gain.bed.gz"
             }
           ],
-          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible <br />SNVs and small InDels within the exons and introns of GENCODE v24 canonical transcripts. <br/>This track shows an arc for each variant that's predicted to disrupt splicing at another nearby position in the mRNA with a score >= 0.5",
           "name": "SpliceAI gain (score >= 0.5) "
         },
         {
@@ -276,7 +276,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_loss.bed.gz"
             }
           ],
-          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible <br />SNVs and small InDels within the exons and introns of GENCODE v24 canonical transcripts. <br/>This track shows an arc for each variant that's predicted to disrupt splicing at another nearby position in the mRNA with a score >= 0.5",
           "name": "SpliceAI loss (score >= 0.5) "
         },
         {
@@ -286,7 +286,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_gain.bed.gz"
             }
           ],
-          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible <br />SNVs and small InDels within the exons and introns of GENCODE v24 canonical transcripts. <br/>This track shows an arc for each variant that's predicted to disrupt splicing at another nearby position in the mRNA with a score >= 0.2",
           "name": "SpliceAI gain (score >= 0.2) "
         },
         {
@@ -296,7 +296,7 @@
               "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_loss.bed.gz"
             }
           ],
-          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible <br />SNVs and small InDels within the exons and introns of GENCODE v24 canonical transcripts. <br/>This track shows an arc for each variant that's predicted to disrupt splicing at another nearby position in the mRNA with a score >= 0.2",
           "name": "SpliceAI loss (score >= 0.2) "
         }
       ]
