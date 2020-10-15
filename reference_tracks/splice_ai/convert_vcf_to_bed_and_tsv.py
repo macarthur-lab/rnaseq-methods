@@ -139,7 +139,7 @@ def main():
                         _shape = "v" if _G_or_L == "G" else "x"  # shape symbol corresponding to gain or loss
                         _color = "#11AA11" if _G_or_L == "G" else "#AA1111"   # green for gain, red for loss
                         #_label = f"{_ds_key[-2]}-{_gain_or_loss}:" + _alleles.replace(" ", "_") + f":{_max_score}"
-                        _shape_key = "left_shape" if (_start < _end and _strand == "+") or (_end < _start and _strand == "-") else "right_shape"
+                        _shape_key = "right_shape" if _start < _end else "left_shape"
                         _line_width = float((_max_score - (MIN_ALLOWED_SCORE_THRESHOLD - 0.05)) / (1 - MIN_ALLOWED_SCORE_THRESHOLD)) * 4.4
 
                         _effect = f"{_donor_or_acceptor}_{_gain_or_loss}"
