@@ -285,13 +285,6 @@ for batch_name, rows in rows_by_batch.items():
                         "data": [
                             { "type": "bed", "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_triplosensitivity_gene_GRCh38.sorted.bed.gz" }
                         ]
-                    },
-                    {
-                        "name": "Recurrent CNVs v1.1",
-                        "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
-                        "data": [
-                            { "type": "bed", "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_recurrent_CNV.V1.1.sorted.bed.gz" }
-                        ]
                     }
                 ]
             },
@@ -329,6 +322,39 @@ for batch_name, rows in rows_by_batch.items():
                 ]
             },
             {
+                "categoryName": "SpliceAI Tracks",
+                "rows": [
+                    {
+                        "name": "SpliceAI gain (score >= 0.5) ",
+                        "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+                        "data": [
+                            { "type": "junctions", "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_gain.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "SpliceAI loss (score >= 0.5) ",
+                        "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+                        "data": [
+                            { "type": "junctions", "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_loss.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "SpliceAI gain (score >= 0.2) ",
+                        "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+                        "data": [
+                            { "type": "junctions", "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_gain.bed.gz" }
+                        ]
+                    },
+                    {
+                        "name": "SpliceAI loss (score >= 0.2) ",
+                        "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+                        "data": [
+                            { "type": "junctions", "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_loss.bed.gz" }
+                        ]
+                    }
+                ]
+            },
+            {
                 "categoryName": "Samples",
                 "rows": %(rnaseq_sample_rows)s
             }
@@ -338,7 +364,7 @@ for batch_name, rows in rows_by_batch.items():
 
     output_path = "configs/"+batch_name+"_rnaseq_samples.json"
     with open(output_path, "wt") as f:
-        json.dump(json.loads(settings_json), f, indent=2, sort_keys=True)
+        json.dump(json.loads(settings_json.strip()), f, indent=2, sort_keys=True)
     print("Wrote to " + output_path)
 
 
