@@ -208,16 +208,6 @@
           ],
           "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
           "name": "Triploinsufficiency Genes"
-        },
-        {
-          "data": [
-            {
-              "type": "bed",
-              "url": "gs://tgg-viewer/ref/GRCh38/clingen/ClinGen_recurrent_CNV.V1.1.sorted.bed.gz"
-            }
-          ],
-          "description": "ClinGen dosage sensitivity curation tracks from https://clinicalgenome.org/working-groups/dosage-sensitivity-curation",
-          "name": "Recurrent CNVs v1.1"
         }
       ]
     },
@@ -263,6 +253,51 @@
           ],
           "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
           "name": "100-mer mappability "
+        }
+      ]
+    },
+    {
+      "categoryName": "SpliceAI Tracks",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_gain.bed.gz"
+            }
+          ],
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+          "name": "SpliceAI gain (score >= 0.5) "
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.5.splice_loss.bed.gz"
+            }
+          ],
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.5",
+          "name": "SpliceAI loss (score >= 0.5) "
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_gain.bed.gz"
+            }
+          ],
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+          "name": "SpliceAI gain (score >= 0.2) "
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://tgg-viewer/ref/GRCh38/spliceai/spliceai_scores.raw.snps_and_indels.hg38.filtered.sorted.score_0.2.splice_loss.bed.gz"
+            }
+          ],
+          "description": "SpliceAI delta score visualization. This is generated from Illumina's precomputed scores for all possible SNV and small InDel variants within the exons and introns of GENCODE v24 canonical transcripts. This track shows an arc for each variant that's predicted to disrupt splicing of another position in the mRNA with a score >= 0.2",
+          "name": "SpliceAI loss (score >= 0.2) "
         }
       ]
     },
