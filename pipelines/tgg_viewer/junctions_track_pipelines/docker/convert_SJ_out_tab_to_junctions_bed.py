@@ -95,7 +95,7 @@ for input_path in args.input_path:
     else:
         args.interval = []
 
-    output_path = re.sub("(.SJ.out)?.tab(.gz)?$", "", input_path) + suffix
+    output_path = re.sub("(.SJ.out)?(.tsv|.tab)(.gz)?$", "", input_path) + suffix
 
     counter = 0
     annotated_counter = 0
