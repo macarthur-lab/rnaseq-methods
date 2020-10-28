@@ -12,7 +12,8 @@ p = argparse.ArgumentParser(description="This script takes a STAR splice junctio
 p.add_argument('-g', '--gencode-gff', help="Path of gencode .gff3 file for annotating known junctions. "
     "This is needed because STAR in 2-pass mode marks junctions as 'known' when they were found on the 1st pass, "
     "which represents almost all junctions.")
-p.add_argument('-L', '--interval', action="append", help="Only keep junctions contained in the given chr:start-end interval(s)")
+p.add_argument('-L', '--interval', action="append", default=[], help="Only keep junctions contained in the given "
+    "chr:start-end interval(s)")
 p.add_argument('input_path', nargs="+", help="Input *.SJ.out.tab(.gz?) or .tsv(.gz?) file path. "
     "A header line with column labels is optional. If more than 1 input path is specified, they will be converted  "
     "one after the other, in a loop.")
