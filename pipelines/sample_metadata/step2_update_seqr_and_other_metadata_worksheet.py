@@ -59,6 +59,13 @@ def left_join_beryls_table(df, beryls_df):
 
 #%%
 
+def check_for_duplicate_sample_ids(df, column_name="sample_id"):
+    sample_ids = list(df[column_name])
+    if len(sample_ids) != len(set(sample_ids)):
+        print("Duplicate sample ids found: ", [(s, sample_ids.count(s)) for s in set([s for s in sample_ids if sample_ids.count(s) > 1])])
+
+#%%
+
 data_paths_df = get_data_paths_df()
 print(data_paths_df.shape)
 print(data_paths_df.columns)
@@ -85,6 +92,10 @@ final_df = final_df.merge(seqr_info_and_other_metadata_rows[[
 
 
 #%%
+
+check_for_duplicate_sample_ids(final_df)
+
+#%%
 # update batch_date_from_hg19_bam_header column
 
 for i, row in final_df.iterrows():
@@ -95,6 +106,7 @@ for i, row in final_df.iterrows():
         final_df.at[i, "batch_date_from_hg19_bam_header"] = d
 
 #%%
+
 
 # parse rnaseqc metrics
 
@@ -183,21 +195,21 @@ sample_id_to_seqr_indiv_id = {
     "BEG_887-1_T1240": "BEG_887-1_1",
     "BEG_916-1_T916": "BEG_916-1_1",
 
-    "BON_B09-27-1_1":   "B09-27-1",
+    "BON_B09-27-1_1":   "BON_B09_27_1_D2",
     "BON_B12-33-2_1":   "B12-33-2",
-    "BON_B12-74-1_1":   "B12-74-1",
-    "BON_B12-76-1_2":   "B12-76-1",
+    "BON_B12-74-1_1":   "BON_B12_74_1_D2",
+    "BON_B12-76-1_2":   "BON_B12-76_1_D1",
     "BON_B13-55_1_2":   "BON_B13-55_1_1",
-    "BON_B14-163-1_2":  "B14-163-1",
-    "BON_B14-20_1":     "B14-20",
+    "BON_B14-163-1_2":  "BON_B14_163_1_D1",
+    "BON_B14-20_1":     "BON_B14-20_2",
     "BON_B14-51_1_2":   "BON_B14-51_1_1",
-    "BON_B14-60-1_2":   "B14-60-1",
-    "BON_B14-71-2_1":   "B14-71-2",
-    "BON_B14-75-1_1":   "B14-75-1",
+    "BON_B14-60-1_2":   "BON_B14_60_1_D1",
+    "BON_B14-71-2_1":   "BON_B14_71_1_D1",
+    "BON_B14-75-1_1":   "BON_B14_75_1_D1",
     "BON_B15-118_1":    "BON_B15-118_2",
     "BON_B15-125_1_2":  "BON_B15-125_1_1",
     "BON_B15-26_1_1":   "BON_B15-26_1",
-    "BON_B15-76-2_2":   "B15-76-2",
+    "BON_B15-76-2_2":   "BON_B15-76_2_1",
     "BON_B15-98_1_2":   "BON_B15-98_1_1",
     "BON_B16-19_1":     "BON_B16-19_2",
     "BON_B16-22_1":     "BON_B16-22-1",
@@ -205,7 +217,6 @@ sample_id_to_seqr_indiv_id = {
     "BON_B16-53-1_1":   "BON_B16-53-1",
     "BON_B16-57_1_2":   "BON_B16-57_1_1",
     "BON_B16-75-1_2":   "BON_B16-75_1_1",
-    "BON_UC219-1_1":    "UC219-1",
 
     "HK-071-001": "HK071-001",
     "HK-071-004": "HK071-004",
@@ -263,9 +274,9 @@ sample_id_to_seqr_indiv_id = {
     "OUN_HK018_0047": "HK018_0047",
     "OUN_HK047_0116": "HK047_0116",
     "OUN_HK079_001": "HK079-001",
-    "OUN_HK080_001": "HK080-001",
-    "OUN_HK081_001": "HK081-001",
-    "OUN_HK112_001": "HK112-001",
+    "OUN_HK080_001": "HK080-001_D2",
+    "OUN_HK081_001": "HK081-001_D2",
+    "OUN_HK112_001": "HK112-001_1",
     "OUN_HK116_001": "HK116-001",
     "OUN_HK137_001": "OUN_HK137-001_D1",
 
@@ -296,7 +307,7 @@ sample_id_to_seqr_indiv_id = {
     "B15-25_1_2": "B15-25_1",
     "B15-28_1_1": "B15-28_1",
     "B16-47_1_2": "B16-47_1",
-    "BB0280_CH_AffF_2": "BB0290-CH-AffC",
+    "BB0280_CH_AffF_2": "BB0290_CH_AffC",
 
     "NH12-843_Fibroblasts": "NH12-843",
     "NH12-843_MyoD_Day5": "NH12-843",
@@ -307,19 +318,94 @@ sample_id_to_seqr_indiv_id = {
     "MBRU030_2": "MBRU030",
     "MESP014_2": "MESP014",
     "MESP039_2": "MESP039",
-    "MESP021_001_2": "MESP021_001",
-    "MBEL028_001_3": "MBEL028_001",
     "MCOP008_001_2": "MCOP008_001",
-    "MGLA003_001_2": "MGLA003_001",
-    "MMAD002_001_2": "MMAD002_001",
-    "MTEH041_001_2": "MTEH041_001",
 
     "MAN_0063_01_02": "MAN_0063_01_01",  # deceased - 2 different tissues from same autopsy, degrade low quality RNA
     "MAN_0063_01_03": "MAN_0063_01_01",  # deceased - 2 different tissues from same autopsy, degrade low quality RNA
 
     "LIA_TIS03_2": "LIA_TIS03_1",
-    "LIA_MAS02_2": "LIA_MAS02",
+    "LIA_MAS02_2": "LIA_MAS02_3",
     "K1157-1-4": "K1157-1",
+
+    "126BG_CB_M1": "126BG_CB_1",
+    "146BO_JB_M1": "146BO_JB_1",
+    "149BP_AB_M1": "149BP_AB_1",
+    "153BR_JB_M1": "153BR_JB_2",
+    "163BV_JE_M1": "163BV_JE_1",
+    "164BW_KC_M1": "164BW_KC_1",
+    "167BZ_SP_M1": "167BZ_SP_1",
+    "204H_AM_M1": "204H_AM_1",
+    "205E_BD_M1": "205E_BD_1",
+    "210DB_BW_M1": "210DB_BW_1",
+    "247DT_SH_M1": "247DT_SH_1",
+    "250DV_LR_M1": "250DV_LR_1",
+    "251DW_SD_M1": "251DW_SD_DNA",
+    "252DX_DC_M1": "252DX_DC_1",
+    "253DY_HA_M1": "253DY_HA_DNA",
+    "254DZ_WP_M1": "254DZ_WP_DNA",
+    "255EA_GC_M1": "255EA_GC_DNA",
+    "26I_SK_M1": "26I_SK_1",
+    "361AL_CC_M1": "361AL_CC_M1",
+    "373HQ_BTG_M1": "373HQ_BTG_M1",
+    "37L_NA_M1": "37L_NA_1",
+    "41M_MW_M1": "41M_MW_1",
+    "46N_RL_M1": "46N_RL_1",
+    "49O_NM_M1": "49O_NM_1",
+    #"65T_CR_M1": "65T_CR_1",
+    "81AB_MM_M1": "81AB_MM_1",
+
+    "9C_DH_M1": "9C_DH_1",
+    "B09-24-1RNA_UNKNOWN": "B09-24_1",
+
+    "B09-25-1RNA": "B09-25_1DNA",
+    "B09-40-1M": "B09-40_1",
+
+    "B10-02-1RNA": "BON_B10_02_1_D1",
+    "B11-11-1M": "B11-11_1",
+    "B11-48-1M": "B11-48_1",
+
+    "B12-21-1M": "B12-21_1",
+    "B12-30RNA": "B12-30DNA",
+    "B13-07-1M": "B13-07_1",
+    "B14-07RNA": "B14-07DNA",
+    "B14-130-1M": "B14-130_1",
+    "B14-70-1RNA": "BON_B14-70_1_1",
+    "B14-78-1-U": "B14-78_1",
+    "BON_B16_30_1_1": "BON_B16-30_1_1",
+    "BON_B16_80_1_1": "BON_B16-80_1_1",
+
+    "CLA_143BN_BB_2": "143BN_BB_1",
+    "CLA_179CI_GG_2": "179CI_GG_1",
+    "CLA_180CJ_DP_2": "180CJ_DP_1",
+    "CLA_214DF_AB_2": "214DF_AB_1",
+    "CLA_329FK_RR_2": "329FK_RR_1",
+    "CLA_338FT_DM_2": "338FT_DM_1",
+    "CLA_79Z_CP_2": "79Z_CP_1",
+    "LIA_EDW01_1": "LIA_EDW01_2",
+    "MBEL028_001_3": "MBEL028",
+    "MESP021_001_2": "MESP021",
+    "MGLA003_001_2": "MGLA003_001_1",
+    "MMAD002_001_2": "MMAD002_001_1",
+    "MTEH041_001_2": "MTEH041_001_1",
+    "UC223-1RNA": "BON_UC223_1_D1",
+    "UC305-1M": "UC305_1A",
+    "UC316-1M": "UC316_1",
+    "UC368-1M": "BON_UC368_1_D1",
+    "UC393-1M": "UC393_1C",
+    "UC84-1RNA": "BON_UC84_1_D1",
+    "UWA_FAM7_PT_D16-1243_2": "UWA_FAM7_PT_D16-1243_1",
+    "BON_UC219-1_1": "BON_UC219_1_D2",
+    "HK069-0177_2": "HK069-0177_1",
+    "HK072-001_2": "HK072-001_1",
+    "HK088-001_2": "HK088-001_1",
+    "HK101-001": "HK101-001_1",
+    "HK060-0154": "HK060-0154_1",
+    "OUN_HK124_001": "OUN_HK124_001_D1",
+
+    "B14-48-1RNA": "BON_B14_48_1_D2",
+    "B14-117-1RNA-2": "BON_B14_117_1_D1",
+    "B13-52-1M": "BON_B13_52_1_D1",
+    "B13-15RNA": "BON_B13_07_1_D1",
 }
 
 
@@ -431,10 +517,10 @@ for sample_id in final_df['sample_id']:
         #print(sample_id + ":", " ||| ".join(i.family.project.name + "/" + i.family.family_id for i in indivs))
     elif len(indivs) == 0:
         print(f"seqr indiv not found for: {sample_id}")
-
+        continue
     counters[len(indivs)] += 1
 
-    assert len(indivs) <= 2, "Expected no more than 2 records per sample_id"
+    assert len(indivs) <= 2, "Expected no more than 2 records per sample_id: " + sample_id
 
     sample_id_to_indivs[sample_id] = indivs
 
@@ -578,7 +664,7 @@ seqr_info_df
 final_df = final_df.merge(seqr_info_df, on="sample_id", how="left")
 
 #%%
-final_df
+check_for_duplicate_sample_ids(final_df)
 
 #%%
 
@@ -610,6 +696,9 @@ beryls_supplementary_table_df = beryls_supplementary_table_df.rename(columns={c:
 
 final_df = left_join_beryls_table(final_df, beryls_supplementary_table_df)
 
+#%%
+
+check_for_duplicate_sample_ids(final_df)
 #%%
 
 beryls_rnaseq_probands_df = get_beryls_rnaseq_probands_df()
@@ -651,9 +740,15 @@ beryls_rnaseq_probands_df = beryls_rnaseq_probands_df.rename(columns={
 
 beryls_rnaseq_probands_df = beryls_rnaseq_probands_df.rename(columns={c: c.replace("\n", " ") + " (Beryl:Probands)" for c in beryls_rnaseq_probands_df.columns if c != "Sample ID"})
 
+
+#%%
+
+check_for_duplicate_sample_ids(beryls_rnaseq_probands_df, 'Sample ID')
+
+#%%
 final_df = left_join_beryls_table(final_df, beryls_rnaseq_probands_df)
 
-
+check_for_duplicate_sample_ids(final_df)
 #%%
 
 beryls_seqr_data_df = get_beryls_seqr_data_df()
@@ -682,18 +777,23 @@ beryls_seqr_data_df = beryls_seqr_data_df[[
 
 beryls_seqr_data_df = beryls_seqr_data_df.rename(columns={c: c.replace("\n", " ") + " (Beryl:Seqr-data)" for c in beryls_seqr_data_df.columns if c != "Sample ID"})
 
+#%%
+check_for_duplicate_sample_ids(beryls_seqr_data_df, 'Sample ID')
+
+#%%
 final_df = left_join_beryls_table(final_df, beryls_seqr_data_df)
 
 
+#%%
+check_for_duplicate_sample_ids(final_df)
 
 #%%
 
 df_export = final_df[[c for c in final_df.columns if c not in ('Sample ID', 'hg19_bam', 'rnaseqc_metrics')]]
 
-df_export.iloc[270:280]
+check_for_duplicate_sample_ids(df_export)
 
 # %%
-
 
 # export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
 ws = get_seqr_info_and_other_metadata_worksheet()

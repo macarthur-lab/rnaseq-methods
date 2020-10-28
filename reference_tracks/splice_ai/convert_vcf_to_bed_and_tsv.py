@@ -27,6 +27,7 @@ with open("./annotations/grch38.txt", "rt") as f:
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--test", action="store_true", help="output only the 1st part of the vcf")
+    p.add_argument("--label-allele-counts", action="store_true", help="include number of alleles that have a high score in the label")
     p.add_argument("-s", "--score-threshold", type=float, help="min score", default=0.5)
     gain_or_loss = p.add_mutually_exclusive_group(required=True)
     gain_or_loss.add_argument("--gain", action="store_true", help="output only splice donor/acceptor gain events")
@@ -145,7 +146,13 @@ def main():
                         _effect = f"{_donor_or_acceptor}_{_gain_or_loss}"
                         #_alleles = ",".join([f"{_a}" for _a in sorted(_alleles, key=lambda a: (len(a), a))])
 
-                        _gff_tags = f"label={_max_score}_[{len(_alleles)}];line_width={_line_width:0.1f};color={_color};{_shape_key}={_shape};effect={_effect};"
+                        _gff_tags = ""
+                        if args.label_allele_counts:
+                            _gff_tags += f"label={_max_score}_[{len(_alleles)}];"
+                        else:
+                            _gff_tags += f"label={_max_score};"
+                            
+                        _gff_tags += f"line_width={_line_width:0.1f};color={_color};{_shape_key}={_shape};effect={_effect};"
                         _gff_tags += f"summary={len(_alleles)}_of_11_alleles_scored_above_{args.score_threshold};"
 
                         if len(_alleles) > 1:

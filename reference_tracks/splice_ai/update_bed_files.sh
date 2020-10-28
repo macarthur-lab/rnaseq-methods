@@ -17,4 +17,5 @@ done
 
 wait
 
+gsutil -m cp spliceai_scores.raw.snps_and_indels.hg38.filtered.*splice*.bed.gz* gs://tgg-viewer/ref/GRCh38/spliceai/
 
