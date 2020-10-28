@@ -5,13 +5,9 @@
     "trackHeight": 200,
     "viewAsPairs": false
   },
-  "dataTypesToShow": [
-    "junctions",
-    "coverage",
-    "vcf"
-  ],
+  "dataTypesToShow": ["junctions", "coverage", "vcf"],
   "genome": "hg38",
-  "locus": "chr21:45988674-45991233",
+  "locus": "chr15:92,835,700-93,031,800",
   "rowsInCategories": [
     {
       "categoryName": "GTEx Tracks",
@@ -303,36 +299,10 @@
     },
     {
       "categoryName": "Samples",
-      "rows": [
-        {
-          "data": [
-            {
-              "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
-            },
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_558_3.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.gz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_558_3.Aligned.sortedByCoord.out.bam"
-            }
-          ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
-          "name": "RGP_558_3"
-        }
-      ]
+      "rows": []
     }
   ],
-  "selectedRowNamesByCategoryName": {
-    "GTEx Tracks": [],
-    "Samples": []
-  },
+  "selectedRowNamesByCategoryName": {},
   "selectedSamplesByCategoryNameAndRowName": {},
   "sjOptions": {
     "bounceHeightBasedOn": "random",

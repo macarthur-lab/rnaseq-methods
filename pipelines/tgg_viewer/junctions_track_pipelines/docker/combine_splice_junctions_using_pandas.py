@@ -27,12 +27,18 @@ COLUMN_TYPES = {
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Combines multiple SJ.out.tab tables into one combined .bed file which can be loaded into TGG-viewer to visualize splice junctions")
-    p.add_argument("-n", "--batch-size", help="How many tables to merge in memory before writing to disk. Bigger batch sizes use more memory.", type=int, default=50)
-    p.add_argument("-m", "--normalize-read-counts", action="store_true", help="whether to normalize unique- and multi-mapped read counts rather than just summing them across input tables")
+    p = argparse.ArgumentParser(description="Combines multiple SJ.out.tab tables into one combined .bed file which "
+        "can be loaded into TGG-viewer to visualize splice junctions")
+    p.add_argument("-n", "--batch-size", type=int, default=50, help="How many tables to merge in memory before writing "
+        "to disk. Bigger batch sizes use more memory.")
+    p.add_argument("-m", "--normalize-read-counts", action="store_true", help="whether to normalize unique- and "
+        "multi-mapped read counts rather than just summing them across input tables")
     p.add_argument("-o", "--output-path", help="Combined .bed output path")
-    p.add_argument("-t", "--save-individual-tables", action="store_true", help="Also export individual .bed files with additional columns")
-    p.add_argument("-p", "--save-parquet-files", action="store_true", help="Also export parquet files with matrices containing per-sample unique_read and multi-mapped read counts. This allows downstream scripts to use these matrices for other kinds of normalization - such as using geometric mean instead of arithmetic mean")
+    p.add_argument("-t", "--save-individual-tables", action="store_true", help="Also export individual .bed files with "
+        "additional columns")
+    p.add_argument("-p", "--save-parquet-files", action="store_true", help="Also export parquet files with matrices "
+        "containing per-sample unique_read and multi-mapped read counts. This allows downstream scripts to use these "
+        "matrices for other kinds of normalization - such as using geometric mean instead of arithmetic mean")
     p.add_argument("paths", nargs="+", help="Paths of 1 or more input SJ.out.tab tables")
     return p.parse_args()
 

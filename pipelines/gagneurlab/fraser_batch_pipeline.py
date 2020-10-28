@@ -7,10 +7,14 @@ import sys
 
 from batch import batch_utils
 from gagneurlab.gagneur_utils import GAGNEUR_BATCHES, ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
+from gagneurlab.fraser_batch_pipeline_Rscripts import get_EXTRACT_SPLICE_JUNCTIONS_Rscript, \
+    get_CALCULATE_PSI_VALUES_Rscript, get_CALCULATE_BEST_Q_Rscript, get_RUN_FRASER_ANALYSIS_Rscript
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# NOTE: xvfb-run is used in the Rscript commands below to solve the issue of R graphics libraries requiring a
+# computer monitor and related graphics libraries to be set up in the execution environment
 
 def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_cpu, output_file_path_splice_junctions_RDS):
     batch_utils.switch_gcloud_auth_to_user_account(j_extract_splice_junctions, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
@@ -20,34 +24,7 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
     j_extract_splice_junctions.command(f"gsutil -m cp {BAM_HEADER_PATH} .")
     j_extract_splice_junctions.command(f"for i in fraser_count_split_reads*.tar.gz; do tar xzf $i; done")
     j_extract_splice_junctions.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_extract_splice_junctions.command(f"""time xvfb-run Rscript -e '
-library(FRASER)
-library(data.table)
-library(stringr)
-library(purrr)
-library(BiocParallel)
-
-file_paths = list.files(".", pattern = "fraser_count_split_reads_.*.tar.gz$")
-print(file_paths)
-parse_sample_id = function(x) {{ return( str_replace(x[[1]], "fraser_count_split_reads_", "")) }}
-sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
-
-sampleTable = data.table(sampleID=sample_ids, bamFile="{os.path.basename(BAM_HEADER_PATH)}")
-print(sampleTable)
-
-if({num_cpu} == 1) {{
-    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-}} else {{
-    bpparam = MulticoreParam({num_cpu}, log=FALSE, progressbar=FALSE)
-}}
-
-fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
-splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
-splitCountRanges = rowRanges(splitCountsForAllSamples)
-print(splitCountRanges)
-
-saveRDS(splitCountRanges, "spliceJunctions.RDS")
-'""")
+    j_extract_splice_junctions.command(f"""time xvfb-run Rscript -e '{get_EXTRACT_SPLICE_JUNCTIONS_Rscript(BAM_HEADER_PATH, num_cpu)}'""")
     j_extract_splice_junctions.command(f"ls -lh .")
     j_extract_splice_junctions.command(f"echo ===============; echo cache dir; echo ===============; find cache")
     j_extract_splice_junctions.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
@@ -75,49 +52,7 @@ def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_f
     j_calculate_psi_values.command(f"for i in fraser_count_non_split_reads*.tar.gz; do tar xzf $i; done")
     j_calculate_psi_values.command(f"rm cache/nonSplicedCounts/Data_Analysis/spliceSiteCoordinates.RDS")
     j_calculate_psi_values.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_calculate_psi_values.command(f"""time xvfb-run Rscript -e '
-library(FRASER)
-library(data.table)
-library(stringr)
-library(purrr)
-library(BiocParallel)
-
-splitCountRanges = readRDS("{os.path.basename(splice_junctions_RDS_path)}")
-print(splitCountRanges)
-
-
-file_paths = list.files(".", pattern = "fraser_count_split_reads_.*.tar.gz$")
-print(file_paths)
-parse_sample_id = function(x) {{ return( str_replace(x[[1]], "fraser_count_split_reads_", "")) }}
-sample_ids = unlist(map(strsplit(file_paths, "[.]"), parse_sample_id))
-
-sampleTable = fread("{os.path.basename(metadata_tsv_path)}")
-sampleTable$read_length = as.character(sampleTable$read_length)
-
-sampleTable = sampleTable[sampleTable$sample_id %in% sample_ids]
-if (nrow(sampleTable) != length(sample_ids)) {{
-    print(paste("ERROR: nrow(sampleTable) != length(sample_ids):", nrow(sampleTable), length(sample_ids)))
-    quit("yes")
-}}
-
-sampleTable$bamFile = "{os.path.basename(BAM_HEADER_PATH)}"
-setnames(sampleTable, "sample_id", "sampleID")
-
-fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
-if({num_cpu}L == 1L) {{
-    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-}} else {{
-    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
-}}
-
-splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
-nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
-fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
-fds = calculatePSIValues(fds, BPPARAM=bpparam)
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
-
-saveFraserDataSet(fds)
-'""")
+    j_calculate_psi_values.command(f"""time xvfb-run Rscript -e '{get_CALCULATE_PSI_VALUES_Rscript(splice_junctions_RDS_path, metadata_tsv_path, BAM_HEADER_PATH, num_cpu)}'""")
     # #fds = annotateRanges(fds, GRCh=38)
     j_calculate_psi_values.command(f"pwd")
     j_calculate_psi_values.command(f"ls -lh .")
@@ -139,48 +74,7 @@ def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, calculated_p
     j_calculate_best_q.command(f"tar xzf {os.path.basename(calculated_psi_values_tar_gz_path)}")
     j_calculate_best_q.command(f"cd {sample_set_label}")
     j_calculate_best_q.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_calculate_best_q.command(f"""time xvfb-run Rscript -e '
-library(FRASER)
-library(annotables)
-library(data.table)
-library(ggplot2)
-library(ggpubr)
-library(dplyr)
-library(purrr)
-library(ggrepel)
-library(plotly)
-library(stringr)
-library(RColorBrewer)
-library(ggsci)
-library(ggplot2)
-library(gtable)
-
-fds = loadFraserDataSet(".")
-if({num_cpu}L == 1L) {{
-    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-}} else {{
-    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=FALSE)
-}}
-
-sampleSetLabel = "{sample_set_label}"
-for(i in c("psi5", "psi3", "psiSite")) {{
-    print("===============")
-    fds = optimHyperParams(fds, i, plot=FALSE, implementation="PCA", BPPARAM=bpparam)
-    g = plotEncDimSearch(fds, type=i, plotType="auc") 
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_AUC.png", sep=""), g, device="png", type="cairo")
-    g = plotEncDimSearch(fds, type=i, plotType="loss") 
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_loss.png", sep=""), g, device="png", type="cairo")
-    
-    print(paste(i, ": ", bestQ(fds, type=i), sep=""))
-}}
-
-print("===============")
-for(i in c("psi5", "psi3", "psiSite")) {{
-    print(paste(i, bestQ(fds, type=i), sep=" "))
-}}
-
-saveFraserDataSet(fds)
-'""")
+    j_calculate_best_q.command(f"""time xvfb-run Rscript -e '{get_CALCULATE_BEST_Q_Rscript(sample_set_label, num_cpu)}'""")
     # #fds = annotateRanges(fds, GRCh=38)
     j_calculate_best_q.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_calculate_best_q.command(f"echo ===============; echo cache dir; echo ===============; find cache")
@@ -200,94 +94,7 @@ def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, num_cpu, calcul
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(calculated_best_q_tar_gz_path)}")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '
-library(FRASER)
-library(annotables)
-library(data.table)
-library(ggplot2)
-library(ggpubr)
-library(dplyr)
-library(purrr)
-library(ggrepel)
-library(plotly)
-library(stringr)
-library(RColorBrewer)
-library(ggsci)
-library(ggplot2)
-library(gtable)
-
-fds = loadFraserDataSet(".")
-if({num_cpu}L == 1L) {{
-    bpparam = SerialParam(log=TRUE, progressbar=FALSE)
-}} else {{
-    bpparam = MulticoreParam({num_cpu}, log=FALSE, threshold = "DEBUG", progressbar=TRUE)
-}}
-
-sampleSetLabel = "{sample_set_label}"
-
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
-g = plotFilterExpression(fds, bins=100)
-ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
-
-print(paste(length(fds), "splice junctions before filtering"))
-fds = fds[mcols(fds, type="j")[,"passed"],]
-print(paste(length(fds), "splice junctions after filtering"))
-
-fds = annotateRanges(fds, GRCh=38)
-
-possibleConfounders = c("tissue", "sex", "stranded", "read_length", "batch") 
-for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_before_correction_", i ,".pdf", sep=""))
-}}
-for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_before_correction_", i ,".pdf", sep=""))
-}}
-
-message("Running FRASER with q=", bestQ(fds, type="psi5"), ", ", bestQ(fds, type="psi3"), " ", bestQ(fds, type="psiSite"))
-implementation="PCA"
-iterations = 15
-for(i in c("psi5", "psi3", "psiSite")) {{
-    q = bestQ(fds, type=i)
-    message(date(), ": Fit step for: ", i, ". q=", q)
-    fds = fit(fds, implementation = implementation, q = q, iterations=iterations, type=i, BPPARAM=bpparam)
-    message(date(), ": Compute p values for: ", i, ".")
-    fds = calculatePvalues(fds, type=i)
-    message(date(), ": Adjust p values for: ", i, ".")
-    fds = calculatePadjValues(fds, type=i)
-    message(date(), ": Compute Z scores for: ", i, ".")
-    fds = calculateZscore(fds, type = i)
-  
-    plot_filename1 = paste(sampleSetLabel, "_using", implementation, "_plotCountCorHeatmap_after_correction_", i, "__q", q, ".pdf", sep="")
-    plot_filename2 = paste(sampleSetLabel, "_using", implementation, "_plotCountJunctionSampleHeatmap_after_correction_", i, "__q", q ,".pdf", sep="")
-    message("Creating heatmap plot: ", plot_filename1)  
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=plot_filename1)
-    message("Creating heatmap plot: ", plot_filename2)  
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=plot_filename2)
-    message("Done creating heatmap plots")  
-}}
-
-qLabel = paste("_using", implementation, "_fds__psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), sep="")
-res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, qLabel, "_all_results.RDS", sep=""))
-message("Done saving results RDS")  
-
-message(length(res), " junctions in results")
-filename=paste(sampleSetLabel, qLabel, "_all_results.tsv.gz", sep="")
-write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
-
-res = results(fds, padjCutoff=0.05, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_0.05_results.RDS", sep=""))
-message("Done saving results RDS")  
-
-message(length(res), " junctions in results with p < 0.05")
-filename=paste(sampleSetLabel, qLabel, "_padj_0.05_results.tsv.gz", sep="")
-write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
-message("Done saving ", filename)
-
-saveFraserDataSet(fds)
-
-message("Done saving fds dataset")
-'""")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu)}'""")
     # #fds = annotateRanges(fds, GRCh=38)
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
