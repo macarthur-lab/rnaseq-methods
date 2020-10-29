@@ -323,7 +323,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM1_CTRL_01"
         },
         {
@@ -341,7 +341,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM1_CTRL_02"
         },
         {
@@ -363,7 +363,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM1_CTRL_03"
         },
         {
@@ -381,7 +381,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_04.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM1_CTRL_04"
         },
         {
@@ -399,7 +399,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_02"
         },
         {
@@ -417,7 +417,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_03"
         },
         {
@@ -435,7 +435,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_04.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_04"
         },
         {
@@ -453,7 +453,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM2_TOTALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM2_TOTALMDC1A1_05"
         },
         {
@@ -471,7 +471,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_01.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_01"
         },
         {
@@ -489,7 +489,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_02"
         },
         {
@@ -507,7 +507,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_03"
         },
         {
@@ -525,7 +525,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM3_PARTIALMDC1A1_05.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM3_PARTIALMDC1A1_05"
         },
         {
@@ -543,7 +543,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R1"
         },
         {
@@ -561,7 +561,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R2"
         },
         {
@@ -579,7 +579,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM4_ATYPICALMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM4_ATYPICALMDC1A_01_R3"
         },
         {
@@ -597,7 +597,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R1"
         },
         {
@@ -615,7 +615,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R2"
         },
         {
@@ -633,7 +633,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM5_SIBLINGMDC1A_01_R3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
         }
       ]

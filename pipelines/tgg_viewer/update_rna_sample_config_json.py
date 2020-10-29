@@ -73,7 +73,14 @@ for _, row in df.iterrows():
         description += "</table>"
 
         rows_by_batch[batch_name].append({'name': row.sample_id, 'data': data, "description": description})
-        rows_by_batch["all"].append({'name': row.sample_id, 'data': data, "description": description})
+
+        all_samples_batch_data = []
+        for d in data:
+            d = dict(d)
+            if d["type"] == "junctions":
+                d["url"] = "/".join(["batch_all_samples" if "batch_" in p else p for p in d["url"].split("/")])
+            all_samples_batch_data.append(d)
+        rows_by_batch["all"].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
 
 #%%
 
