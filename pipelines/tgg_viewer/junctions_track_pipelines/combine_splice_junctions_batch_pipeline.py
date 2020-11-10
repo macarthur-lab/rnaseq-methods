@@ -15,16 +15,16 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-DOCKER_IMAGE = "weisburd/convert-sj-out-tab-to-junctions-bed@sha256:f02bd50967150ce962d393f206c142241286334cdecf6a20c0e59013ebe121d2"
+DOCKER_IMAGE = "weisburd/convert-sj-out-tab-to-junctions-bed@sha256:33b0ff3334a6f73613c2cf4f44e4a53e95793590c9fd0a92f03c74702feb7595"
 
 
 def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_individual_tables, normalize_read_counts, output_dir):
 
-    output_filename = f"combined.{batch_name}.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv"
+    output_filename = f"combined.{batch_name}.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv.gz"
     output_path = os.path.join(output_dir, output_filename)
     output_path_exists = hl.hadoop_is_file(output_path)
 
-    output_filename2 = output_filename.replace(".SJ.out.tsv", ".junctions.bed.gz")
+    output_filename2 = output_filename.replace(".SJ.out.tsv.gz", ".junctions.bed.gz")
     output_path2 = os.path.join(output_dir, output_filename2)
     output_path2_exists = hl.hadoop_is_file(output_path2)
 
@@ -51,7 +51,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_ind
             f"{save_individual_tables_option} "
             f"{normalize_read_counts_option} "
             f"{local_SJ_out_tab_paths}")
-        j.command(f"mv combined.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv {output_filename}")
+        j.command(f"mv combined.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv.gz {output_filename}")
         j.command(f"""gsutil -m cp {output_filename} {output_dir}""")
         input_path_for_step2 = output_filename
     else:

@@ -216,7 +216,7 @@ def main():
         output_path += ".SJ.out"
 
     out = result.reset_index()
-    out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{output_path}.tsv", index=False, sep="\t")
+    out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{output_path}.tsv.gz", index=False, sep="\t")
     logging.info(f"Wrote out {output_path}.tsv")
 
     # save individual tables
@@ -227,7 +227,7 @@ def main():
             df.drop(columns=columns_to_add_from_combined_table, inplace=True)
             df = df.join(result[columns_to_add_from_combined_table], how="left")
             out = df.reset_index()
-            out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{path.replace('.tab', '').replace('.gz', '')}.tsv", index=False, sep="\t")
+            out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{path.replace('.tab', '').replace('.gz', '')}.tsv.gz", index=False, sep="\t")
 
     #write_to_parquet(result, output_path)
 

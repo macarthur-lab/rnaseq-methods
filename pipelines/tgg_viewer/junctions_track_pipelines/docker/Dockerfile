@@ -44,14 +44,15 @@ ENV PATH=/google-cloud-sdk/bin:$PATH
 COPY --from=quay.io/biocontainers/tabix:0.2.6--ha92aebf_0 /usr/local/bin/tabix /usr/local/bin/tabix
 COPY --from=quay.io/biocontainers/tabix:0.2.6--ha92aebf_0 /usr/local/bin/bgzip /usr/local/bin/bgzip
 
-COPY combine_splice_junctions_using_pandas.py /
-COPY convert_SJ_out_tab_to_junctions_bed.py /
-COPY generate_known_introns_db.py /
 
 COPY gencode.v26.annotation.gff3.gz /
 COPY gencode.v35.annotation.gff3.gz /
 
 RUN python3 -m pip install pandas psutil
+
+COPY combine_splice_junctions_using_pandas.py /
+COPY convert_SJ_out_tab_to_junctions_bed.py /
+COPY gencode_utils.py /
 
 ENTRYPOINT /bin/bash
 
