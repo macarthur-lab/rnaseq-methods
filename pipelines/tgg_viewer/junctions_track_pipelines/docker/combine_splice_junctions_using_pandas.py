@@ -195,6 +195,7 @@ def main():
     #pd.set_option('display.max_columns', 10000)
     #logging.info(result.describe())
 
+    # save the combined table
     if args.output_path:
         output_path = args.output_path
     else:
@@ -207,6 +208,7 @@ def main():
     out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{output_path}.tsv", index=False, sep="\t")
     logging.info(f"Wrote out {output_path}.tsv")
 
+    # save individual tables
     if args.save_individual_tables:
         columns_to_add_from_combined_table = ["num_samples_with_this_junction", "num_samples_total"]
         for path in args.paths:

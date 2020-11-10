@@ -49,6 +49,7 @@ COPY convert_SJ_out_tab_to_junctions_bed.py /
 COPY generate_known_introns_db.py /
 
 COPY gencode.v26.annotation.gff3.gz /
+COPY gencode.v35.annotation.gff3.gz /
 
 RUN python3 -m pip install pandas psutil
 

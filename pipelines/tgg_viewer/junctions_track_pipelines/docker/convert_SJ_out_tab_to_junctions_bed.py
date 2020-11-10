@@ -4,7 +4,7 @@ import argparse
 import gzip
 import os
 import re
-from generate_known_introns_db import parse_gencode_gff
+from gencode_utils import parse_introns_from_gencode_gff
 
 p = argparse.ArgumentParser(description="This script takes a STAR splice junction file (*.SJ.out.tab) and converts "
     "it to a .junctions.bed.gz file (with .tbi index) which can be loaded into IGV.js."
@@ -82,7 +82,7 @@ def parse_interval(i):
 
 
 intervals = [parse_interval(i) for i in args.interval]
-gencode_v26_introns_set = parse_gencode_gff(args.gencode_gff)
+gencode_introns_set = parse_introns_from_gencode_gff(args.gencode_gff)
 
 for input_path in args.input_path:
 
@@ -127,7 +127,7 @@ for input_path in args.input_path:
             maximum_spliced_alignment_overhang = int(fields[8])
 
             key = (chrom, start_1based, end_1based)
-            if key in gencode_v26_introns_set:
+            if key in gencode_introns_set:
                 is_annotated = "true"
                 annotated_counter += 1
             else:

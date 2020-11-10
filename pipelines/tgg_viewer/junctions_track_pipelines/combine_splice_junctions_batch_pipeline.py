@@ -62,7 +62,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_ind
 
     if args.force or not output_path2_exists:
         j.command(f"python3 -u convert_SJ_out_tab_to_junctions_bed.py "
-            f"-g gencode.v26.annotation.gff3.gz "
+            f"-g gencode.v35.annotation.gff3.gz "
             f"{input_path_for_step2}")
         j.command(f"""gsutil -m cp {output_filename2}* {output_dir}""")
     else:
