@@ -8,6 +8,8 @@ import numpy as np
 import psutil
 import os
 
+#pd.options.mode.chained_assignment = 'raise'
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
 COLUMN_TYPES = {
@@ -36,6 +38,8 @@ def parse_args():
     p.add_argument("-o", "--output-path", help="Combined .bed output path")
     p.add_argument("-t", "--save-individual-tables", action="store_true", help="Also export individual .bed files with "
         "additional columns")
+    p.add_argument("--add-sample-id-column", action="store_true", help="Add a sample_id column with a list of samples "
+        "that have each splice junction. This increases compute time by 10x.")
     p.add_argument("-p", "--save-parquet-files", action="store_true", help="Also export parquet files with matrices "
         "containing per-sample unique_read and multi-mapped read counts. This allows downstream scripts to use these "
         "matrices for other kinds of normalization - such as using geometric mean instead of arithmetic mean")
@@ -84,6 +88,7 @@ def read_SJ_out_tab(path, i=None):
     df['num_samples_with_this_junction'] = np.int32(1)
     df['num_samples_total'] = np.int32(1)
     df['strand_counter'] = df['strand'].apply(lambda s: 1 if s == 1 else (-1 if s == 2 else 0)).astype('int32')
+    df['sample_id'] = os.path.basename(path).replace(".SJ.out.tab", "").replace(".gz", "")
 
     # print some stats
     print(f"   {df.unique_reads.sum()/1_000_000:0.1f} million uniquely-mapped reads")
@@ -110,6 +115,8 @@ def main():
         total_unique_reads_across_all_samples = 0
         for path in args.paths:
             df = read_SJ_out_tab(path)
+            if not args.add_sample_id_column:
+                df.drop(columns=['sample_id'], inplace=True)
             total_unique_reads_across_all_samples += df.unique_reads.sum()
 
         average_unique_reads_per_sample = total_unique_reads_across_all_samples/float(len(args.paths))
@@ -118,6 +125,8 @@ def main():
         'strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang',
         'num_samples_with_this_junction', 'num_samples_total', 'strand_counter',
     ]
+    if args.add_sample_id_column:
+        column_names += ['sample_id']
 
     i = 0
     parquet_file_paths = defaultdict(list)
@@ -170,6 +179,8 @@ def main():
         result['multi_mapped_reads'] = result[batch_columns['multi_mapped_reads']].sum(axis=1).astype(COLUMN_TYPES['multi_mapped_reads'])
         result['maximum_overhang'] = result[batch_columns['maximum_overhang']].max(axis=1).astype(COLUMN_TYPES['maximum_overhang'])
         result['num_samples_with_this_junction'] = result[batch_columns['num_samples_with_this_junction']].sum(axis=1).astype(COLUMN_TYPES['num_samples_with_this_junction'])
+        if args.add_sample_id_column:
+            result['sample_id'] = result[batch_columns['sample_id']].apply(lambda row: ",".join(row[~row.isna()]), axis=1).astype('str')
         result['num_samples_total'] = len(args.paths)
         result['strand_counter'] = result[batch_columns['strand_counter']].sum(axis=1).astype(COLUMN_TYPES['strand_counter'])
 
@@ -181,7 +192,7 @@ def main():
                 write_to_parquet(read_count_df, output_file_name)
                 parquet_file_paths[column].append(output_file_name)
 
-            logging.info(f"Dropping columns: {batch_columns[column]} from {result.columns}")
+            #logging.info(f"Dropping columns: {batch_columns[column]} from {result.columns}")
             result.drop(columns=batch_columns[column], inplace=True)
 
         print_memory_stats(f'after table {i}')
