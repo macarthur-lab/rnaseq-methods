@@ -16,7 +16,7 @@ from batch import batch_utils
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE = "weisburd/convert-sj-out-tab-to-junctions-bed@sha256:3be35e1eb34cbea3a1ca32d8108b969793f41071730bc6135366add601c0cc7c"
+DOCKER_IMAGE = "weisburd/convert-sj-out-tab-to-junctions-bed@sha256:f02bd50967150ce962d393f206c142241286334cdecf6a20c0e59013ebe121d2"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
