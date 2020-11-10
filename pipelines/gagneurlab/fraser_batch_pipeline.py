@@ -6,7 +6,8 @@ import pandas as pd
 import sys
 
 from batch import batch_utils
-from gagneurlab.gagneur_utils import GAGNEUR_BATCHES, ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
+from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES
+from gagneurlab.gagneur_utils import ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 from gagneurlab.fraser_batch_pipeline_Rscripts import get_EXTRACT_SPLICE_JUNCTIONS_Rscript, \
     get_CALCULATE_PSI_VALUES_Rscript, get_CALCULATE_BEST_Q_Rscript, get_RUN_FRASER_ANALYSIS_Rscript
 
@@ -117,7 +118,7 @@ def main():
     p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
     p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
-    p.add_argument("batch_name", nargs="+", choices=GAGNEUR_BATCHES.keys(), help="Name of RNA-seq batch to process")
+    p.add_argument("batch_name", nargs="+", choices=ANALYSIS_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
     hl.init(log="/dev/null", quiet=True)
@@ -129,7 +130,7 @@ def main():
 
         for batch_name in args.batch_name:
             samples_df = samples_df_unmodified
-            batch_dict = GAGNEUR_BATCHES[batch_name]
+            batch_dict = ANALYSIS_BATCHES[batch_name]
             batch_tissue = batch_dict['tissue']
             batch_sex = batch_dict['sex']
 

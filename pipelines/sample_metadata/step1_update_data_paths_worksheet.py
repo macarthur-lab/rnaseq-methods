@@ -20,7 +20,7 @@ from gspread_dataframe import set_with_dataframe
 from firecloud import api
 from google.cloud import storage
 
-from sample_metadata.utils import get_data_paths_worksheet, RNASEQ_SAMPLE_IDS_TO_EXCLUDE
+from sample_metadata.rnaseq_metadata_utils import get_data_paths_worksheet, RNASEQ_SAMPLE_IDS_TO_EXCLUDE
 
 def run(cmd):
     print(cmd)

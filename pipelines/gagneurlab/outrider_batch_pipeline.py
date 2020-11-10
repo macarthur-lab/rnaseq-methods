@@ -5,7 +5,8 @@ import pandas as pd
 import sys
 
 from batch import batch_utils
-from gagneurlab.gagneur_utils import GAGNEUR_BATCHES, ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
+from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES
+from gagneurlab.gagneur_utils import ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -23,7 +24,7 @@ def main():
     g.add_argument("--with-gtex", help="Use GTEX controls.", action="store_true")
     g.add_argument("--only-gtex", help="Run on just the GTEX control samples to test FP rate.", action="store_true")
 
-    p.add_argument("batch_name", nargs="+", choices=GAGNEUR_BATCHES.keys(), help="Name of RNA-seq batch to process")
+    p.add_argument("batch_name", nargs="+", choices=ANALYSIS_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
     if not args.force:
@@ -33,7 +34,7 @@ def main():
     with batch_utils.run_batch(args) as batch:
 
         for batch_name in args.batch_name:
-            batch_dict = GAGNEUR_BATCHES[batch_name]
+            batch_dict = ANALYSIS_BATCHES[batch_name]
             batch_tissue = batch_dict['tissue']
             batch_sex = batch_dict['sex']
 

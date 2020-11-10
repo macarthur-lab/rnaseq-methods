@@ -13,7 +13,7 @@ pd.set_option('display.width', 1000)
 
 from gspread_dataframe import set_with_dataframe
 
-from sample_metadata.utils import \
+from sample_metadata.rnaseq_metadata_utils import \
     get_seqr_info_and_other_metadata_worksheet, \
     get_beryls_supplementary_table_df, \
     get_beryls_rnaseq_probands_df, \
@@ -21,7 +21,8 @@ from sample_metadata.utils import \
     get_data_paths_df, \
     get_seqr_info_and_other_metadata_df, \
     get_rnaseqc_metrics, \
-    get_date_from_bam_header
+    get_date_from_bam_header, \
+    SAMPLE_ID_TO_ANALYSIS_BATCH
 
 
 #%%
@@ -104,6 +105,12 @@ for i, row in final_df.iterrows():
         d = get_date_from_bam_header(row.hg19_bam)
         print(d)
         final_df.at[i, "batch_date_from_hg19_bam_header"] = d
+
+#%%
+# update "analysis_batch" column
+
+for i, row in final_df.iterrows():
+    final_df.at[i, "analysis batch"] = SAMPLE_ID_TO_ANALYSIS_BATCH.get(row.sample_id, "")
 
 #%%
 

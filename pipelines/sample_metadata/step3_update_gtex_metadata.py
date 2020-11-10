@@ -3,7 +3,7 @@
 import os
 import pandas as pd
 from gspread_dataframe import set_with_dataframe
-from sample_metadata.utils import \
+from sample_metadata.rnaseq_metadata_utils import \
     get_gtex_rnaseq_sample_metadata_worksheet, \
     get_gtex_wgs_sample_metadata_worksheet, \
     get_gtex_wes_sample_metadata_worksheet, \

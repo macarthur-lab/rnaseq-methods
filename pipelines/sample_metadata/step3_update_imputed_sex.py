@@ -11,7 +11,7 @@ import traceback
 
 from gspread_dataframe import set_with_dataframe
 
-from sample_metadata.utils import \
+from sample_metadata.rnaseq_metadata_utils import \
     get_joined_metadata_df, \
     get_seqr_info_and_other_metadata_df, \
     get_seqr_info_and_other_metadata_worksheet
