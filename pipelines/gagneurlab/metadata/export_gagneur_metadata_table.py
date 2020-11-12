@@ -39,7 +39,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     #df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/fraser_count_rna/")
     df.loc[source_df.sample_id, 'project'] = source_df['proj (seqr)']
     df.loc[source_df.sample_id, 'sex'] = source_df['imputed sex']
-    df.loc[source_df.sample_id, 'age'] = source_df['Age at muscle biopsy (Beryl)'].apply(lambda x: ('' if not x.strip() else ('0' if (x == 'At birth' or 'm' in x) else x.replace('y', ''))))
+    df.loc[source_df.sample_id, 'age'] = source_df['Age at muscle biopsy (Beryl:Supp.)'].apply(lambda x: ('' if not x or not x.strip() else ('0' if (x and (x == 'At birth' or 'm' in x)) else x.replace('y', ''))))
     df.loc[source_df.sample_id, 'cause_of_death'] = None
     df.loc[source_df.sample_id, 'ancestry'] = None
     df.loc[source_df.sample_id, 'tissue'] = None
@@ -199,7 +199,7 @@ def main():
     tsv_output_path = f"metadata_table_for_all_RDG_and_GTEX_samples.tsv"
     all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
-    os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
+    #os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
 
     #all_rdg_counts_df = all_rdg_counts_df.fillna(0)
     #tsv_output_path = f"OUTRIDER_input_table_RDG_counts_for_all_tissues.tsv"
@@ -211,7 +211,7 @@ def main():
     all_rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_counts_df)} genes x {len(all_rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
 
-    os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
+    #os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
 
 
 if __name__ == "__main__":
