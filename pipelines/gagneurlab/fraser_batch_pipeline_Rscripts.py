@@ -71,7 +71,7 @@ splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
 fds = calculatePSIValues(fds, BPPARAM=bpparam)
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi=0.1, minExpressionInOneSample=4, filter=FALSE)
 
 saveFraserDataSet(fds)
 """
@@ -147,7 +147,7 @@ if({num_cpu}L == 1L) {{
 
 sampleSetLabel = "{sample_set_label}"
 
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.0, filter=FALSE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi=0.1, minExpressionInOneSample=4, filter=FALSE)
 g = plotFilterExpression(fds, bins=100)
 ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
 
