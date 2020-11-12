@@ -31,7 +31,12 @@ def main():
         hl.init(log="/dev/null", quiet=True)
 
     # process samples
-    with batch_utils.run_batch(args) as batch:
+    batch_label = f"OUTRIDER"
+    if args.with_gtex:
+        batch_label += " (with GTEx)"
+    batch_label += ": "
+    batch_label += ','.join(args.batch_name)
+    with batch_utils.run_batch(args, batch_label) as batch:
 
         for batch_name in args.batch_name:
             batch_dict = ANALYSIS_BATCHES[batch_name]
@@ -98,9 +103,11 @@ if ({batch_include_GTEX_samples}) {{
     }}
 }}
 
+
 sampleLabel = "{batch_name}_"
 sampleSubset = {c_vector_of_sample_names}
 sampleSubset = c(sampleSubset, GTEX_sampleIds)
+print("sampleSubset: ")
 print(sampleSubset)
 
 sampleInfo = sampleInfo[sampleInfo$sample_id %in% sampleSubset]
