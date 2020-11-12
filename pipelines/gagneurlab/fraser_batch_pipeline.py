@@ -126,7 +126,12 @@ def main():
     with hl.hadoop_open(args.metadata_tsv_path) as f:
         samples_df_unmodified = pd.read_table(f).set_index("sample_id", drop=False)
 
-    with batch_utils.run_batch(args) as batch:
+    batch_label = f"FRASER"
+    if args.with_gtex:
+        batch_label += " (with GTEx)"
+    batch_label += ": "
+    batch_label += ','.join(args.batch_name)
+    with batch_utils.run_batch(args, batch_label) as batch:
 
         for batch_name in args.batch_name:
             samples_df = samples_df_unmodified
