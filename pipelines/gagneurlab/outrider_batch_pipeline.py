@@ -190,10 +190,11 @@ plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, 
 res = results(ods, padjCutoff=1)
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleLabel, "_ods__", "q", q, "_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleLabel, "_ods__", "q", q, "_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
 
-            j.command(f"""gsutil -m cp  *.tsv.gz *.pdf *.png *.RDS {OUTPUT_BASE_DIR}""")
+            j.command("gzip *.tsv")
+            j.command(f"gsutil -m cp  *.tsv.gz *.pdf *.png *.RDS {OUTPUT_BASE_DIR}")
 
             logger.info(f"Output: {output_file}")
 
