@@ -1,5 +1,8 @@
 import os
 
+PADJ_THRESHOLD=0.1
+DELTA_PSI_THRESHOLD=0.3
+
 def get_EXTRACT_SPLICE_JUNCTIONS_Rscript(bam_header_path, num_cpu):
     return f"""
 library(FRASER)
@@ -71,7 +74,7 @@ splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
 fds = calculatePSIValues(fds, BPPARAM=bpparam)
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.1, minExpressionInOneSample=4, filter=FALSE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
 
 saveFraserDataSet(fds)
 """
@@ -147,7 +150,7 @@ if({num_cpu}L == 1L) {{
 
 sampleSetLabel = "{sample_set_label}"
 
-fds = filterExpressionAndVariability(fds, minDeltaPsi=0.1, minExpressionInOneSample=4, filter=FALSE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
 g = plotFilterExpression(fds, bins=100)
 ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
 
@@ -197,12 +200,12 @@ message(length(res), " junctions in results")
 filename=paste(sampleSetLabel, qLabel, "_all_results.tsv.gz", sep="")
 write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 
-res = results(fds, padjCutoff=0.05, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_0.05_results.RDS", sep=""))
+res = results(fds, padjCutoff={PADJ_THRESHOLD}, zScoreCutoff=NA, deltaPsiCutoff=NA)
+saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.RDS", sep=""))
 message("Done saving results RDS")  
 
-message(length(res), " junctions in results with p < 0.05")
-filename=paste(sampleSetLabel, qLabel, "_padj_0.05_results.tsv.gz", sep="")
+message(length(res), " junctions in results with p < {PADJ_THRESHOLD}")
+filename=paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep="")
 write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 message("Done saving ", filename)
 
