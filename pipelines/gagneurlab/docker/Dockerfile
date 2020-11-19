@@ -65,31 +65,6 @@ RUN python3 -m pip install --upgrade pip
 # nice-to-have linux utils
 RUN install_packages less htop vim emacs procps
 
-# install R pacakges
-RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
-#RUN R -e "BiocManager::install('FRASER')"
-RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
-RUN R -e "devtools::install_github('gagneurlab/FRASER', dependencies=TRUE)"
-RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
-RUN R -e "BiocManager::install('OUTRIDER')"
-RUN R -e "BiocManager::install('mumichae/tMAE')"
-RUN R -e "BiocManager::install('stephenturner/annotables')"
-RUN R -e "BiocManager::install('Biostrings')"
-RUN R -e "BiocManager::install('IRanges')"
-RUN R -e "BiocManager::install('DelayedArray')"
-RUN R -e "install.packages('data.table', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('dplyr', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('ggrepel', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com')"
-RUN R -e "install.packages('stringr', repos='http://cran.rstudio.com')"
-
-RUN install_packages libxt-dev
-RUN R -e "install.packages('Cairo', repos='http://cran.rstudio.com')"
-RUN install_packages xvfb xauth
-
 # install gcloud
 ENV GCLOUD_SDK_VERISON="299.0.0"
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_SDK_VERISON}-linux-x86_64.tar.gz \
@@ -97,9 +72,6 @@ RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud
     && /google-cloud-sdk/install.sh -q \
     && /google-cloud-sdk/bin/gcloud components update --quiet \
     && rm -rf /google-cloud-sdk/.install/
-
-#RUN R -e "devtools::install_github('gagneurlab/FRASER', ref='R3.6', dependencies=TRUE)"
-#RUN R -e "devtools::install_github('gagneurlab/OUTRIDER', dependencies=TRUE)"
 
 RUN install_packages bc graphviz netbase gnupg
 
@@ -157,10 +129,28 @@ RUN wget https://hackage.haskell.org/package/pandoc-${PANDOC_VERSION}/pandoc-${P
     && rm -rf /root/.stack/
 
 ENV PATH=/root/.local/bin:$PATH
+ENV PATH=/google-cloud-sdk/bin:$PATH
+
+
+# install R pacakges
+RUN install_packages libxt-dev
+RUN R -e "install.packages('Cairo', repos='http://cran.rstudio.com')"
+RUN install_packages xvfb xauth
+
+RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('argparse', repos='http://cran.rstudio.com')"
+RUN R -e "BiocManager::install('gagneurlab/OUTRIDER')"
+RUN R -e "BiocManager::install('c-mertes/FRASER')"
+RUN R -e "BiocManager::install('mumichae/tMAE')"
+RUN R -e "BiocManager::install('stephenturner/annotables')"
+RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com')"
+RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com')"
 
 # install drop
+ENV DROP_VERSION="1.0.2"
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install git+https://github.com/gagneurlab/drop.git@1.0.1
+RUN python3 -m pip install git+https://github.com/gagneurlab/drop.git@${DROP_VERSION}
 RUN python3 -m pip install snakemake
 RUN mkdir ~/drop_demo \
     && cd ~/drop_demo \
@@ -169,7 +159,6 @@ RUN mkdir ~/drop_demo \
     && rm -rf resource/rna_bam/ resource/dna_vcf/ resource/*.vcf.gz resource/chr21.fa.gz \
     && rm /tmp/resource.tar.gz
 
-ENV PATH=/google-cloud-sdk/bin:$PATH
 
 #COPY *.R /
 #COPY .Rprofile /root/
