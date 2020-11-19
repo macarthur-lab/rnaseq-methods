@@ -144,14 +144,17 @@ RUN R -e "BiocManager::install('gagneurlab/OUTRIDER')"
 RUN R -e "BiocManager::install('c-mertes/FRASER')"
 RUN R -e "BiocManager::install('mumichae/tMAE')"
 RUN R -e "BiocManager::install('stephenturner/annotables')"
+RUN R -e "BiocManager::install('VariantAnnotation')"
 RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com')"
 RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com')"
+RUN R -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg19')"
+RUN R -e "BiocManager::install('rmarkdown')"
+RUN R -e "BiocManager::install('ggtheme')"
 
 # install drop
-ENV DROP_VERSION="1.0.2"
+ENV DROP_VERSION="ca40b4c"
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install git+https://github.com/gagneurlab/drop.git@${DROP_VERSION}
-RUN python3 -m pip install snakemake
 RUN mkdir ~/drop_demo \
     && cd ~/drop_demo \
     && drop demo \
