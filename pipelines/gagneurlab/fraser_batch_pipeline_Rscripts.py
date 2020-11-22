@@ -73,9 +73,49 @@ if({num_cpu}L == 1L) {{
 splitCountsForAllSamples = getSplitReadCountsForAllSamples(fds, BPPARAM=bpparam)
 nonSplitCountsForAllSamples = getNonSplitReadCountsForAllSamples(fds, splitCountRanges, BPPARAM=bpparam)
 fds = addCountsToFraserDataSet(fds, splitCountsForAllSamples, nonSplitCountsForAllSamples)
-fds = calculatePSIValues(fds, BPPARAM=bpparam)
-fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
+nonSplitCountsForAllSamples = splitCountsForAllSamples = NULL
+gc()
 
+fds = calculatePSIValues(fds, BPPARAM=bpparam)
+saveFraserDataSet(fds)
+"""
+
+def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label):
+    return f"""
+library(FRASER)
+library(data.table)
+library(stringr)
+library(purrr)
+library(BiocParallel)
+library(annotables)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(ggrepel)
+library(plotly)
+library(RColorBrewer)
+library(ggsci)
+library(ggplot2)
+library(gtable)
+
+fds = loadFraserDataSet(".")
+sampleSetLabel = "{sample_set_label}"
+
+options(repr.plot.width=5, repr.plot.height=4)
+fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
+g = plotFilterExpression(fds, bins=100)
+ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
+
+g = plotFilterVariability(fds) + theme(legend.position="none")
+ggsave(file=paste(sampleSetLabel, "_plotFilterVariability.png", sep=""), g, device="png", type="cairo")
+g = NULL
+gc()
+
+print(paste(length(fds), "splice junctions before filtering"))
+fds = fds[mcols(fds, type="j")[,"passed"],]
+print(paste(length(fds), "splice junctions after filtering"))
+
+fds = annotateRanges(fds, GRCh=38)
 saveFraserDataSet(fds)
 """
 
@@ -113,6 +153,7 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_loss.png", sep=""), g, device="png", type="cairo")
     
     print(paste(i, ": ", bestQ(fds, type=i), sep=""))
+    gc()
 }}
 
 print("===============")
@@ -150,16 +191,6 @@ if({num_cpu}L == 1L) {{
 
 sampleSetLabel = "{sample_set_label}"
 
-fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
-g = plotFilterExpression(fds, bins=100)
-ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
-
-print(paste(length(fds), "splice junctions before filtering"))
-fds = fds[mcols(fds, type="j")[,"passed"],]
-print(paste(length(fds), "splice junctions after filtering"))
-
-fds = annotateRanges(fds, GRCh=38)
-
 possibleConfounders = c("tissue", "sex", "stranded", "read_length", "batch") 
 for(i in c("psi5", "psi3", "psiSite")) {{
     plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_before_correction_", i ,".pdf", sep=""))
@@ -167,6 +198,8 @@ for(i in c("psi5", "psi3", "psiSite")) {{
 for(i in c("psi5", "psi3", "psiSite")) {{
     plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_before_correction_", i ,".pdf", sep=""))
 }}
+
+gc()
 
 message("Running FRASER with q=", bestQ(fds, type="psi5"), ", ", bestQ(fds, type="psi3"), " ", bestQ(fds, type="psiSite"))
 implementation="PCA"
@@ -189,25 +222,33 @@ for(i in c("psi5", "psi3", "psiSite")) {{
     message("Creating heatmap plot: ", plot_filename2)  
     plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=plot_filename2)
     message("Done creating heatmap plots")  
+    gc()
 }}
 
 qLabel = paste("_using", implementation, "_fds__psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), sep="")
-res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, qLabel, "_all_results.RDS", sep=""))
-message("Done saving results RDS")  
 
-message(length(res), " junctions in results")
-filename=paste(sampleSetLabel, qLabel, "_all_results.tsv.gz", sep="")
-write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
+g = plotAberrantPerSample(fds)
+ggsave(file=paste(sampleSetLabel, "_plotAberrantPerSample.png", sep=""), g, device="png", type="cairo")
+
+#res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
+#saveRDS(res, paste(sampleSetLabel, qLabel, "_all_results.RDS", sep=""))
+#message("Done saving results RDS") 
+#gc()
+
+#filename=paste(sampleSetLabel, qLabel, "_all_results.tsv.gz", sep="")
+#write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
+#gc()
 
 res = results(fds, padjCutoff={PADJ_THRESHOLD}, zScoreCutoff=NA, deltaPsiCutoff=NA)
 saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.RDS", sep=""))
 message("Done saving results RDS")  
+gc()
 
 message(length(res), " junctions in results with p < {PADJ_THRESHOLD}")
 filename=paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep="")
 write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 message("Done saving ", filename)
+gc()
 
 saveFraserDataSet(fds)
 
