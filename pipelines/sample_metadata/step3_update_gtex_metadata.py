@@ -2,6 +2,7 @@
 #%%
 import os
 import pandas as pd
+import subprocess
 from gspread_dataframe import set_with_dataframe
 from sample_metadata.rnaseq_metadata_utils import \
     get_gtex_rnaseq_sample_metadata_worksheet, \
@@ -10,6 +11,9 @@ from sample_metadata.rnaseq_metadata_utils import \
     get_gtex_individual_metadata_worksheet
 from google.cloud import storage
 
+#%%
+
+pd.set_option('display.max_columns', 500)
 #%%
 
 # sample info table
@@ -43,9 +47,6 @@ df_wes_samples = df_wes_samples.set_index('SAMPID', drop=False).dropna(axis='col
 df_wgs_samples = df_samples[df_samples.SMAFRZE == "WGS"].merge(df_indivs, how="left", on="SUBJID").dropna(axis='columns', how="all").fillna('')
 df_wgs_samples = df_wgs_samples.set_index('SAMPID', drop=False).dropna(axis='columns', how="all").fillna('')
 
-
-#%%
-#//GTEx_Analysis_2017-06-05_v8_RNAseq_BAM_files
 
 #%%
 
@@ -96,12 +97,14 @@ df_rnaseq_samples.loc[:, 'rnaseq_bam'] = pd.Series(gtex_hg38_rnaseq_bams)
 df_rnaseq_samples.loc[:, 'rnaseq_bai'] = pd.Series({k: v.replace('.bam', '.bam.bai') for k, v in gtex_hg38_rnaseq_bams.items()})
 
 #%%
+
 gtex_star_SJ_out_tab = {get_sample_id_from_path(p): p for p in get_gtex_file_paths("GTEx_Analysis_2017-06-05_v8_RNAseq_aux_files") if p.endswith(".SJ.out.tab")}
 print("Found %s star SJ.out.tab files" % len(gtex_star_SJ_out_tab))
 
 df_rnaseq_samples.loc[:, 'star_SJ_out_tab'] = pd.Series(gtex_star_SJ_out_tab)
 
 #%%
+
 gtex_bigWig = {get_sample_id_from_path(p): p for p in get_gtex_file_paths("GTEx_Analysis_2017-06-05_v8_RNAseq_bigWig_files") if p.endswith(".bigWig")}
 print("Found %s bigWig files" % len(gtex_bigWig))
 
@@ -117,6 +120,20 @@ df_wgs_samples.loc[:, 'wgs_cram'] = pd.Series(gtex_hg38_WGS_crams)
 df_wgs_samples.loc[:, 'wgs_crai'] = pd.Series({k: v.replace('.cram', '.crai') for k, v in gtex_hg38_rnaseq_bams.items()})
 
 #gtex_hg38_WGS_vcf = "gs://fc-secure-ff8156a3-ddf3-42e4-9211-0fd89da62108/GTEx_Analysis_2017-06-05_v8_WGS_VCF_files/GTEx_Analysis_2017-06-05_v8_WholeGenomeSeq_838Indiv_Analysis_Freeze.vcf.gz"
+
+#%%
+
+df_rnaseq_samples = df_rnaseq_samples.set_index("SUBJID", drop=False)
+
+# WGS vcf
+WGS_VCF_PATH = "gs://fc-secure-ff8156a3-ddf3-42e4-9211-0fd89da62108/GTEx_Analysis_2017-06-05_v8_WGS_VCF_files/GTEx_Analysis_2017-06-05_v8_WholeGenomeSeq_866Indiv.vcf.gz"
+subj_ids = subprocess.check_output(f"gsutil -u seqr-project cat {WGS_VCF_PATH} | gunzip -c - | head -n 1000 | grep CHROM | cut -f 10- | tr '\t' '\n'", shell=True, encoding="UTF-8").strip().split()
+df_rnaseq_samples.loc[:, 'wgs_vcf'] = pd.Series({subj_id: WGS_VCF_PATH for subj_id in subj_ids})
+
+# WES vcf
+WES_VCF_PATH = "gs://fc-secure-ff8156a3-ddf3-42e4-9211-0fd89da62108/GTEx_Analysis_2017-06-05_v8_WES_VCF_files/GTEx_Analysis_2017-06-05_v8_WholeExomeSeq_979Indiv_VEP_annot.vcf.gz"
+subj_ids = subprocess.check_output(f"gsutil -u seqr-project cat {WES_VCF_PATH} | gunzip -c - | head -n 1000 | grep CHROM | cut -f 10- | tr '\t' '\n'", shell=True, encoding="UTF-8").strip().split()
+df_rnaseq_samples.loc[:, 'wes_vcf'] = pd.Series({subj_id: WES_VCF_PATH for subj_id in subj_ids})
 
 #%%
 
