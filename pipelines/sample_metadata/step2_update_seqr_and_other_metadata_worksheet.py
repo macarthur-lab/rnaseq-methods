@@ -81,6 +81,7 @@ print("\n".join([f"{get_count(c)} {c}" for c in sorted(data_paths_df.columns, ke
 final_df = data_paths_df[['sample_id',	'star_pipeline_batch', "hg19_bam", "rnaseqc_metrics"]]
 
 #%%
+
 # download current table to allow partial updates to some columns
 seqr_info_and_other_metadata_rows = get_seqr_info_and_other_metadata_df()
 
@@ -412,7 +413,11 @@ sample_id_to_seqr_indiv_id = {
     "B14-48-1RNA": "BON_B14_48_1_D2",
     "B14-117-1RNA-2": "BON_B14_117_1_D1",
     "B13-52-1M": "BON_B13_52_1_D1",
-    "B13-15RNA": "BON_B13_07_1_D1",
+    "B09-25-1RNA": "B09-25-1",
+    "B11-11-1M": "B11-11-1",
+    "B13-07-1M": "B13-07-1",
+    "BB0280_CH_AffF_2": "BB0280-CH-AffF",
+    "UC393-1M": "UC393-1",
 }
 
 
