@@ -5,7 +5,7 @@ import logging
 import os
 import pprint
 
-from sample_metadata.utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
