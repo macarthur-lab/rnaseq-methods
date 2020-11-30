@@ -56,7 +56,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         if hg19_bam_path_match.group(2) != sample_id:
             dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
             if dest_path != path:
-                run("gsutil mv -n " + path + " " + dest_path)
+                print("Would move " + path + " to " + dest_path)
+                #run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
@@ -114,8 +115,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
 
         ('fastqc_zip', "macarthurlab-rnaseq/[^/]+/fastqc/zip/([^/]+)_fastqc.zip"),
 
-        ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.gz$"),
-        ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.gz.tbi"),
+        ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz$"),
+        ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz.tbi"),
 
         ('junctions_bed', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz$"),
         ('junctions_bed_tbi', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
@@ -129,6 +130,10 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
             continue
 
         sample_id = match.group(1).replace(".", "-")
+        if sample_id.startswith("combined-") and "junctions_bed_for_igv_js" in path:
+            print(f"Skipping {path}")
+            continue
+
         if "ATYPICALMDC1A" not in path.upper() and "SIBLINGMDC1A" not in path.upper():
             sample_id = re.sub("_[TR][123]$", "", sample_id)
         sample_id = re.sub("^RP-[0-9]{0,5}_", "", sample_id)
@@ -137,8 +142,9 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         if match.group(1) != sample_id:
             dest_path = "/".join(path.split("/")[0:-1]) + "/" + regexp.replace("$", "").replace("([^/]+)", sample_id).split("/")[-1]
-            if dest_path != path:
-                run("gsutil mv -n " + path + " " + dest_path)
+            if dest_path != path and "combined." not in path:
+                print("Would run gsutil mv -n " + path + " " + dest_path)
+                #run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
@@ -156,7 +162,7 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
             continue
 
         if label in all_samples[sample_id]:
-            print("ERROR: found more than one " + label  + " path for " +  sample_id + ":\n" +  all_samples[sample_id][label] + "\n" + path)
+            print("ERROR: found more than one " + label + " path for " + sample_id + ":\n" + all_samples[sample_id][label] + "\n" + path)
             continue
 
         all_samples[sample_id][label] = path
