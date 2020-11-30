@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import sys
 
-from sample_metadata.utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
 
 from batch import batch_utils
 
