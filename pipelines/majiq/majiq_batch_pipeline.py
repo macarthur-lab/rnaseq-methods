@@ -4,7 +4,7 @@ import hailtop.batch as hb
 import logging
 import os
 
-from sample_metadata.utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
