@@ -50,7 +50,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     df.loc[source_df.sample_id, 'HPO_TERMS'] = ""
     df.loc[source_df.sample_id, 'COUNT_MODE'] = "IntersectionStrict"
     df.loc[source_df.sample_id, 'COUNT_OVERLAPS'] = True
-    df.loc[source_df.sample_id, 'ANNOTATION'] = "v26"
+    df.loc[source_df.sample_id, 'ANNOTATION'] = "v34"
     df.loc[source_df.sample_id, 'GENE_COUNTS_FILE'] = ""
 
     #df.loc[source_df.sample_id, 'star_SJ_out_tab'] = source_df['star_SJ_out_tab']
@@ -90,7 +90,7 @@ def transfer_metadata_columns_from_GTEx_df(samples_df, source_df, batch_name):
     df.loc[source_df.SAMPID, 'HPO_TERMS'] = ""
     df.loc[source_df.SAMPID, 'COUNT_MODE'] = "IntersectionStrict"
     df.loc[source_df.SAMPID, 'COUNT_OVERLAPS'] = True
-    df.loc[source_df.SAMPID, 'ANNOTATION'] = "v26"
+    df.loc[source_df.SAMPID, 'ANNOTATION'] = "v34"
     df.loc[source_df.SAMPID, 'GENE_COUNTS_FILE'] = ""
 
     #df.loc[source_df.SAMPID, 'batch_detail'] = "GTEx_v8 " + source_df['SMNABTCH']
@@ -190,7 +190,8 @@ def main():
     print("Output columns:")
     print(all_rdg_and_gtex_samples_df.columns)
 
-    tsv_output_path = f"drop_metadata_table.tsv"
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    tsv_output_path = f"drop_metadata_table__{timestamp}.tsv"
     all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
 
