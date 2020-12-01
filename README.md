@@ -1,5 +1,5 @@
 
-### TGG-Viewer Links
+## TGG-Viewer links
 
 - [all samples](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fall_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/all_rnaseq_samples.json))
 - [batch_0](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2foriginal_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/original_rnaseq_samples.json))
@@ -9,7 +9,7 @@
 - [batch_2020_08__walsh](https://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08__walsh_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08__walsh_rnaseq_samples.json))
 
 
-### multiqc links
+## multiqc links
 * [batch_0](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_0.html)
 * [batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)
 * [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)
@@ -18,7 +18,7 @@
 * combined view across all batches: [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)
 
 
-### Data processing steps
+## data processing steps
 
 **First Stage Pipelines**
 
