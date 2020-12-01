@@ -15,12 +15,13 @@ FILE_TYPES = ["hg19_bams", "star", "rnaseqc", "fastqc", "coverage"]
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--source-namespace", default="macarthurlab-rnaseq-terra")
+    p.add_argument("--source-namespace", help="Terra namespace", default="macarthurlab-rnaseq-terra")
+    p.add_argument("--source-workspace", help="Terra workspace name", default="macarthurlab-rnaseq-terra")
     p.add_argument("--dest-bucket", default="macarthurlab-rnaseq")
     p.add_argument("-w", "--workflow-id", help="(optional) workflow id. Can specify more than one", action="append")
     p.add_argument("-t", "--file-type", choices=FILE_TYPES, help="(optional) what types of files to transfer", action="append")
     p.add_argument("-f", "--force", action="store_true", help="Force copy even if destination files already exist.")
-    p.add_argument("source_workspace", default="macarthurlab-rnaseq-terra")
+
     p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh"])
     args = p.parse_args()
 
