@@ -418,6 +418,7 @@ sample_id_to_seqr_indiv_id = {
     "B13-07-1M": "B13-07-1",
     "BB0280_CH_AffF_2": "BB0280-CH-AffF",
     "UC393-1M": "UC393-1",
+    "HK117_001": "HK117-001_1",
 }
 
 
