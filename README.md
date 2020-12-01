@@ -52,14 +52,12 @@ Then, the first stage of the TGG RNA-seq pipeline consists of the following step
 Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucket, run:
 ```
 cd rnaseq_methods/pipelines
-python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] \
-    macarthurlab-rnaseq-terra [RNA-seq batch name]
+python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] [RNA-seq batch name]
 
 ```
 For example:
 ```
-python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py  macarthurlab-rnaseq-terra  batch_2020_08  \
-    -w 7e14e341-78a4-4f9e-9830-df68fae4bb27 (= job id from terra Job History page) -t rnaseqc
+python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py batch_2020_08  -w 7e14e341-78a4-4f9e-9830-df68fae4bb27 (= job id from terra Job History page) -t rnaseqc
 ```
 
 ---
