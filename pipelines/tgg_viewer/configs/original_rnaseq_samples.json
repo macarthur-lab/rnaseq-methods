@@ -316,7 +316,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1179-1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1179-1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -338,7 +338,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1211-1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1211-1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -357,6 +357,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/1258-1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/1258-1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -378,7 +382,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/126BG_CB_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/126BG_CB_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -400,7 +404,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/146BO_JB_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/146BO_JB_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -422,7 +426,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/149BP_AB_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/149BP_AB_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -444,7 +448,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/153BR_JB_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/153BR_JB_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -466,7 +470,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/163BV_JE_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/163BV_JE_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -488,7 +492,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/164BW_KC_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/164BW_KC_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -510,7 +514,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/167BZ_SP_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/167BZ_SP_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -532,7 +536,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/193CP_LS.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/193CP_LS.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -554,7 +558,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/204H_AM_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/204H_AM_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -576,7 +580,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/205E_BD_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/205E_BD_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -598,7 +602,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/210DB_BW_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/210DB_BW_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -620,7 +624,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/227DJ_JP_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/227DJ_JP_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -642,7 +646,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/247DT_SH_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/247DT_SH_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -664,7 +668,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/250DV_LR_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/250DV_LR_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -686,7 +690,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/251DW_SD_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/251DW_SD_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -708,7 +712,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/252DX_DC_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/252DX_DC_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -730,7 +734,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/253DY_HA_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/253DY_HA_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -752,7 +756,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/254DZ_WP_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/254DZ_WP_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -774,7 +778,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/255EA_GC_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/255EA_GC_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -796,7 +800,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/26I_SK_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/26I_SK_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -854,7 +858,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/37L_NA_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/37L_NA_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -876,7 +880,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/41M_MW_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/41M_MW_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -895,10 +899,6 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/431-1_A_3.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-1_A_3.vcf.gz"
             },
             {
               "type": "alignment",
@@ -920,7 +920,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-2_A_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-2_A_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -942,7 +942,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/432-3_A_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/432-3_A_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -964,7 +964,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-2_A_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-2_A_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -986,7 +986,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-3_A_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-3_A_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1005,10 +1005,6 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/447-3_A_3.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/447-3_A_3.vcf.gz"
             },
             {
               "type": "alignment",
@@ -1030,7 +1026,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/46N_RL_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/46N_RL_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1047,8 +1043,12 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/49O_NM_M1.junctions.bed.gz"
             },
             {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/49O_NM_M1.bigWig"
+            },
+            {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/49O_NM_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/49O_NM_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1070,7 +1070,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/65T_CR_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/65T_CR_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1092,7 +1092,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/81AB_MM_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/81AB_MM_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1114,7 +1114,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/92AI_SM.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/92AI_SM.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1136,7 +1136,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/9C_DH_M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/9C_DH_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1158,7 +1158,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-24-1RNA_UNKNOWN.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-24-1RNA_UNKNOWN.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1179,11 +1179,15 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B09-25-1RNA.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-25-1RNA.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B09-25-1RNA.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>High CK, developmental delay, minimal weakness</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>High CK, developmental delay, minimal weakness</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr></table>",
           "name": "B09-25-1RNA"
         },
         {
@@ -1198,7 +1202,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-40-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B09-40-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1217,6 +1221,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B10-02-1RNA.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B10-02-1RNA.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1238,14 +1246,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-11-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-11-1M.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B11-11-1M.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Unusual progressive myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>MARCKSL1,CHRNG</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr1:32800311, chr2:233409514 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>bonnemann_v9</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Unusual progressive myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>MARCKSL1,CHRNG</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr1:32800311, chr2:233409514 </td></tr></table>",
           "name": "B11-11-1M"
         },
         {
@@ -1257,6 +1265,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B11-25-1M.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-25-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1278,7 +1290,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-48-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B11-48-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1300,14 +1312,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-21-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-21-1M.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-21-1M.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-6</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann_PCRFree_WGS_v5</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s), 2 Known gene for phenotype tag(s), 2 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>TTN phenotype?</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Known cause</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TTN</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr2:179531966 , chr2:179585773 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann_PCRFree_WGS_v5</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s), 2 Known gene for phenotype tag(s), 2 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>TTN phenotype?</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Known cause</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TTN</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr2:179531966 , chr2:179585773 </td></tr></table>",
           "name": "B12-21-1M"
         },
         {
@@ -1322,80 +1334,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-30RNA.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, LIMB-GIRDLE, TYPE 2A; LGMD2A </td></tr></table>",
-          "name": "B12-30RNA"
-        },
-        {
-          "data": [
-            {
-              "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz"
-            },
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B12-30RNA.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.vcf.gz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-30RNA.Aligned.sortedByCoord.out.bam"
-            }
-          ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, LIMB-GIRDLE, TYPE 2A; LGMD2A </td></tr></table>",
-          "name": "B12-30RNA"
-        },
-        {
-          "data": [
-            {
-              "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz"
-            },
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B12-30RNA.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.vcf.gz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-30RNA.Aligned.sortedByCoord.out.bam"
-            }
-          ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, LIMB-GIRDLE, TYPE 2A; LGMD2A </td></tr></table>",
-          "name": "B12-30RNA"
-        },
-        {
-          "data": [
-            {
-              "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz"
-            },
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B12-30RNA.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B12-30RNA.vcf.gz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_0/star/B12-30RNA.Aligned.sortedByCoord.out.bam"
-            }
-          ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, LIMB-GIRDLE, TYPE 2A; LGMD2A </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, LIMB-GIRDLE, TYPE 2A; LGMD2A </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>N</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>high CK, progressive weakness. </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>CAPN3</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>poor quality RNA-seq</td></tr></table>",
           "name": "B12-30RNA"
         },
         {
@@ -1410,14 +1356,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-07-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-07-1M.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-07-1M.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>LGMD/myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES, WGS </td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>LGMD/myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES, WGS </td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
           "name": "B13-07-1M"
         },
         {
@@ -1431,15 +1377,11 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-07-1RNA.bigWig"
             },
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-07-1RNA.vcf.gz"
-            },
-            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-07-1RNA.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
           "name": "B13-07-1RNA"
         },
         {
@@ -1457,7 +1399,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-15RNA.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>congenital hypotonia, chronic respiratory insufficiency (trach/vent dependent) weakness with dysphagia, contractures</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Limb-girdle muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>RNA-seq-BC</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>congenital hypotonia, chronic respiratory insufficiency (trach/vent dependent) weakness with dysphagia, contractures</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Limb-girdle muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr></table>",
           "name": "B13-15RNA"
         },
         {
@@ -1469,6 +1411,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-52-1M.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B13-52-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1490,7 +1436,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-07RNA.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-07RNA.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1509,6 +1455,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-117-1RNA-2.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-117-1RNA-2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1530,7 +1480,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-130-1M.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-130-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1551,6 +1501,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-48-1RNA.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-48-1RNA.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/B14-48-1RNA.Aligned.sortedByCoord.out.bam"
             }
@@ -1567,6 +1521,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B14-70-1RNA.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-70-1RNA.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1588,7 +1546,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-78-1-U.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B14-78-1-U.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1610,7 +1568,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B15-15_1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B15-15_1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1686,7 +1644,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B16-48_1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/B16-48_1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1708,14 +1666,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BB0280_CH_AffF_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BB0280_CH_AffF_2.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BB0280_CH_AffF_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>newcastle_v9</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
           "name": "BB0280_CH_AffF_2"
         },
         {
@@ -1730,7 +1688,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1025-1_T999.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1025-1_T999.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1752,7 +1710,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1078-1_T1071.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1078-1_T1071.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1774,7 +1732,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1230-1_T1227.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1230-1_T1227.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1796,7 +1754,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_14-4_T65.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_14-4_T65.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1818,7 +1776,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1438-1_T1339.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_1438-1_T1339.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1840,7 +1798,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_851-1_T840.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_851-1_T840.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1862,7 +1820,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_887-1_T1240.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_887-1_T1240.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1884,7 +1842,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_916-1_T916.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BEG_916-1_T916.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1906,7 +1864,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B09-27-1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B09-27-1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1946,7 +1904,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-71_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-71_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1965,6 +1923,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B12-74-1_1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-74-1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1986,7 +1948,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-76-1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-76-1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2008,7 +1970,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B13-55_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B13-55_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2027,6 +1989,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-163-1_2.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-163-1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2048,7 +2014,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-20_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-20_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2070,7 +2036,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-51_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-51_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2092,7 +2058,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-60-1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-60-1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2111,6 +2077,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_B14-71-2_1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-71-2_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2132,7 +2102,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-75-1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B14-75-1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2172,7 +2142,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-125_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-125_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2212,7 +2182,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-76-2_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-76-2_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2234,7 +2204,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-98_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B15-98_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2256,7 +2226,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-19_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-19_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2296,7 +2266,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-50_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-50_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2336,7 +2306,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-57_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-57_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2358,7 +2328,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-75-1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16-75-1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2380,7 +2350,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_30_1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_30_1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2402,7 +2372,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_80_1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B16_80_1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2424,7 +2394,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-23_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-23_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2446,7 +2416,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-28_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-28_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2468,7 +2438,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-24_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-24_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2508,7 +2478,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-54_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B18-54_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2527,6 +2497,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/BON_UC219-1_1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_UC219-1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2548,7 +2522,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_UC473_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_UC473_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2570,7 +2544,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_143BN_BB_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_143BN_BB_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2592,7 +2566,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_179CI_GG_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_179CI_GG_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2614,7 +2588,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_180CJ_DP_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_180CJ_DP_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2636,7 +2610,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_214DF_AB_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_214DF_AB_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2658,7 +2632,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_329FK_RR_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_329FK_RR_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2679,6 +2653,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_338FT_DM_2.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_338FT_DM_2.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_338FT_DM_2.Aligned.sortedByCoord.out.bam"
             }
@@ -2695,10 +2673,6 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_388HV_XX_1.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_388HV_XX_1.vcf.gz"
             },
             {
               "type": "alignment",
@@ -2737,10 +2711,6 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/CLA_62R_CaM_3.bigWig"
             },
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_62R_CaM_3.vcf.gz"
-            },
-            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_62R_CaM_3.Aligned.sortedByCoord.out.bam"
             }
@@ -2760,7 +2730,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_79Z_CP_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/CLA_79Z_CP_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2782,7 +2752,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK006_0016.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK006_0016.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2804,7 +2774,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK010_0026.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK010_0026.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2826,7 +2796,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK011_0029.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK011_0029.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2848,7 +2818,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK018_0047_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK018_0047_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2870,7 +2840,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK024_0065.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK024_0065.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2892,7 +2862,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK028_0073.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK028_0073.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2914,7 +2884,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK044_0109.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK044_0109.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2936,7 +2906,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK069-0177_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK069-0177_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2958,7 +2928,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK072-001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK072-001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -2980,7 +2950,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK085-001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK085-001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3002,7 +2972,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK088-001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK088-001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3024,7 +2994,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK101-001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK101-001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3046,7 +3016,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK106-001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK106-001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3068,7 +3038,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/ICCV_458_10CC06258_02.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/ICCV_458_10CC06258_02.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3090,7 +3060,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_GB_408.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_GB_408.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3112,7 +3082,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_GI_456.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_GI_456.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3134,7 +3104,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_HW_389.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_HW_389.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3156,7 +3126,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_HZ_401.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_HZ_401.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3178,7 +3148,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IG_561.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IG_561.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3200,7 +3170,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IK_581.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IK_581.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3222,7 +3192,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IV_615.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/INMR_IV_615.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3244,7 +3214,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/K1157-1-4.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/K1157-1-4.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3266,7 +3236,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/LIA_EDW01_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/LIA_EDW01_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3288,7 +3258,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/LIA_MAS02_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/LIA_MAS02_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3328,14 +3298,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_02.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_02.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_0063_01_02.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neonatal Marfan syndrome, MARFAN SYNDROME; MFS </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MARFAN SYNDROME; MFS, MARFAN SYNDROME; MFS </td></tr></table>",
           "name": "MAN_0063_01_02"
         },
         {
@@ -3350,14 +3320,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_03.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_03.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_0063_01_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neonatal Marfan syndrome, MARFAN SYNDROME; MFS </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MARFAN SYNDROME; MFS, MARFAN SYNDROME; MFS </td></tr></table>",
           "name": "MAN_0063_01_03"
         },
         {
@@ -3372,7 +3342,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_1001_01_M1_D1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_1001_01_M1_D1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3394,7 +3364,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_1438-01-M1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_1438-01-M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3413,6 +3383,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/MBEL028_001_3.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBEL028_001_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3434,7 +3408,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBEL028_002_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBEL028_002_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3456,7 +3430,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBRU030_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MBRU030_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3478,7 +3452,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MCOP008_001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MCOP008_001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3500,7 +3474,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP014_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP014_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3522,7 +3496,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP021_001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP021_001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3544,7 +3518,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP039_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP039_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3566,7 +3540,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MGLA003_001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MGLA003_001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3588,7 +3562,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MMAD002_001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MMAD002_001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3610,7 +3584,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MTEH041_001_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MTEH041_001_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3667,10 +3641,6 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/NH12-1413.bigWig"
             },
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-1413.vcf.gz"
-            },
-            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/NH12-1413.Aligned.sortedByCoord.out.bam"
             }
@@ -3690,7 +3660,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_Fibroblasts.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_Fibroblasts.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3712,7 +3682,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_MyoD_Day5.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/NH12-843_MyoD_Day5.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3734,7 +3704,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK018_0047.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK018_0047.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3756,7 +3726,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK047_0116.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK047_0116.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3778,7 +3748,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK079_001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK079_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3800,7 +3770,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK080_001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK080_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3821,6 +3791,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK081_001.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK081_001.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK081_001.Aligned.sortedByCoord.out.bam"
             }
@@ -3837,6 +3811,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/OUN_HK112_001.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK112_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3876,7 +3854,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK124_001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK124_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3898,7 +3876,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK137_001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/OUN_HK137_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3920,7 +3898,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_248_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3942,14 +3920,14 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_273_3.vcf.bgz"
             },
             {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_273_3.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 8 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>brain malformation, epilepsy, abnormal tone </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-7</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 8 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>brain malformation, epilepsy, abnormal tone </td></tr></table>",
           "name": "RGP_273_3"
         },
         {
@@ -3964,7 +3942,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_54_3_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_54_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -3986,7 +3964,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_56_3_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_56_3_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4008,7 +3986,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4030,7 +4008,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_2_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_2_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4052,7 +4030,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_3_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4074,7 +4052,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_4_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_4_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4096,7 +4074,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_5_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_7_5_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4118,7 +4096,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_800_3_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_800_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4140,7 +4118,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4360,7 +4338,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/TOP_MAAC031_F_Muscle1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/TOP_MAAC031_F_Muscle1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4381,6 +4359,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC223-1RNA.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC223-1RNA.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/UC223-1RNA.Aligned.sortedByCoord.out.bam"
             }
@@ -4397,6 +4379,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC305-1M.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC305-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4417,6 +4403,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC316-1M.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC316-1M.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/UC316-1M.Aligned.sortedByCoord.out.bam"
             }
@@ -4433,6 +4423,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC368-1M.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC368-1M.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4453,11 +4447,15 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/UC393-1M.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC393-1M.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_0/star/UC393-1M.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>COL6 look alike</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Collagen myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES, RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>COL6A</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>Likely deep intronic</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Jan2016-107S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>COL6 look alike</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Collagen myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES, RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>COL6A</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>Likely deep intronic</td></tr></table>",
           "name": "UC393-1M"
         },
         {
@@ -4472,7 +4470,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC84-1RNA.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UC84-1RNA.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4494,7 +4492,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UWA_FAM7_PT_D16-1243_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/UWA_FAM7_PT_D16-1243_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4516,7 +4514,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_DLS_FAM1_1.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_DLS_FAM1_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4538,7 +4536,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM11_32_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM11_32_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4560,7 +4558,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM12_36_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM12_36_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4582,7 +4580,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM147_459_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM147_459_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4604,7 +4602,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM148_462_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM148_462_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4626,7 +4624,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM149_465_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM149_465_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4648,7 +4646,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM150_468_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM150_468_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4670,7 +4668,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM1_1_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM1_1_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4692,7 +4690,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4714,7 +4712,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4736,7 +4734,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM27_84_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM27_84_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4758,7 +4756,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM29_90.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM29_90.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4780,7 +4778,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM2_4_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM2_4_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4802,7 +4800,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM31_97_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM31_97_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4824,7 +4822,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM39_123.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM39_123.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4846,7 +4844,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM3_7_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM3_7_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4868,7 +4866,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM41_129_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM41_129_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4890,7 +4888,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM42_132_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM42_132_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4912,7 +4910,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM49_153.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM49_153.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4934,7 +4932,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM4_13_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM4_13_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4956,7 +4954,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM52_162_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM52_162_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -4978,7 +4976,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM58_181.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM58_181.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -5000,7 +4998,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM61_190.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM61_190.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -5022,7 +5020,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM67_209.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM67_209.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -5044,7 +5042,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM73_227_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM73_227_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -5066,7 +5064,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM84_260.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM84_260.vcf.bgz"
             },
             {
               "type": "alignment",

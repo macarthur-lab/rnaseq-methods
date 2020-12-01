@@ -316,7 +316,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1111-1_T1105.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1111-1_T1105.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -338,7 +338,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1435-01_T1370.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1435-01_T1370.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -360,7 +360,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-006.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-006.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -382,7 +382,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-010.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-010.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -404,7 +404,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-015.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-015.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -426,7 +426,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-022.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-022.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -448,7 +448,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-025.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-025.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -470,7 +470,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-032.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-032.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -492,7 +492,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-035.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-035.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -514,7 +514,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-047.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-047.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -533,6 +533,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-061.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-061.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -572,7 +576,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-001.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -594,7 +598,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-004.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-004.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -615,6 +619,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-073.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-073.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam"
             }
@@ -633,6 +641,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-075.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-075.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam"
             }
@@ -649,6 +661,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-081.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-081.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -670,7 +686,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -689,6 +705,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-087.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-087.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -710,7 +730,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-095.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-095.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -729,6 +749,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-100.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-100.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -750,7 +774,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-104.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-104.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -789,6 +813,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-108.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-108.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam"
             }
@@ -823,6 +851,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-115.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-115.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -861,6 +893,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-119.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-119.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam"
             }
@@ -879,6 +915,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-124.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-124.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
             }
@@ -895,6 +935,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-126.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-126.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -916,7 +960,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -935,6 +979,10 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-131.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-131.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -956,7 +1004,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1013,6 +1061,10 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK060-0154.bigWig"
             },
             {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK060-0154.vcf.bgz"
+            },
+            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam"
             }
@@ -1032,7 +1084,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_552_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_552_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1054,7 +1106,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
             },
             {
               "type": "alignment",

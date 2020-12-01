@@ -315,10 +315,6 @@
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_01.bigWig"
             },
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_01.vcf.gz"
-            },
-            {
               "type": "alignment",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/star/MUN_FAM1_CTRL_01.Aligned.sortedByCoord.out.bam"
             }
@@ -353,10 +349,6 @@
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/bigWig/MUN_FAM1_CTRL_03.bigWig"
-            },
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/grch38_vcfs/MUN_FAM1_CTRL_03.vcf.gz"
             },
             {
               "type": "alignment",

@@ -307,6 +307,42 @@
         {
           "data": [
             {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK044_0110.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/HK044_0110.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/HK044_0110.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 15 Review tag(s), 1 MatchBox (MME) tag(s), 7 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Kabuki-like, Kabuki-like </td></tr></table>",
+          "name": "HK044_0110"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK117_001.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/HK117_001.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/HK117_001.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Known gene, new phenotype tag(s), 10 Review tag(s), 1 Excluded tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CONGENITAL DISORDER OF GLYCOSYLATION </td></tr></table>",
+          "name": "HK117_001"
+        },
+        {
+          "data": [
+            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
             },
@@ -316,7 +352,7 @@
             },
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
             },
             {
               "type": "alignment",
