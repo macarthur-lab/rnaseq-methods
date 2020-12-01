@@ -48,6 +48,7 @@ for _, row in df.iterrows():
 
     if data:
         batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
+        imputed_tissue = row["imputed tissue"]
 
         COLUMN_LABELS = {
             "batch_date_from_hg19_bam_header": "sequencing date",
@@ -81,6 +82,8 @@ for _, row in df.iterrows():
                 d["url"] = "/".join(["batch_all_samples" if "batch_" in p else p for p in d["url"].split("/")])
             all_samples_batch_data.append(d)
         rows_by_batch["all"].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
+        rows_by_batch[imputed_tissue].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
+
 
 #%%
 
