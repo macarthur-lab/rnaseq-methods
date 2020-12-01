@@ -118,7 +118,7 @@ Then, update the metadata paths worksheet again as described above.
 
 **TGG-viewer: Update settings.json**
 
-Run the steps in the `rnaseq_methods/pipelines/tgg_viewer/generate_rna_samples_json.py` notebook.
+Run the steps in the `rnaseq_methods/pipelines/tgg_viewer/update_rna_sample_config_json.py` notebook.
 
 ---
 
