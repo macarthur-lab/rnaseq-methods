@@ -7,6 +7,7 @@ sample_id, star_pipeline_batch, hg19_bam, hg19_bai, etc.
 """
 #%%
 
+
 from __future__ import print_function
 import collections
 import os
@@ -56,8 +57,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         if hg19_bam_path_match.group(2) != sample_id:
             dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
             if dest_path != path:
-                print("Would move " + path + " to " + dest_path)
-                #run("gsutil mv -n " + path + " " + dest_path)
+                #print("Would move " + path + " to " + dest_path)
+                run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
@@ -124,6 +125,9 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         ('coverage_bigwig', "macarthurlab-rnaseq/[^/]+/bigWig/([^/]+).bigWig"),
     ]
 
+    if "batch_all_samples" in path:
+        continue
+
     for label, regexp in regexps:
         match = re.search(regexp, path)
         if not match:
@@ -143,8 +147,8 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         if match.group(1) != sample_id:
             dest_path = "/".join(path.split("/")[0:-1]) + "/" + regexp.replace("$", "").replace("([^/]+)", sample_id).split("/")[-1]
             if dest_path != path and "combined." not in path:
-                print("Would run gsutil mv -n " + path + " " + dest_path)
-                #run("gsutil mv -n " + path + " " + dest_path)
+                #print("Would run gsutil mv -n " + path + " " + dest_path)
+                run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
