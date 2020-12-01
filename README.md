@@ -1,5 +1,5 @@
 
-### TGG-Viewer
+## TGG-Viewer links
 
 - [all samples](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fall_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/all_rnaseq_samples.json))
 - [batch_0](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2foriginal_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/original_rnaseq_samples.json))
@@ -9,7 +9,7 @@
 - [batch_2020_08__walsh](https://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08__walsh_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08__walsh_rnaseq_samples.json))
 
 
-### multiqc
+## MultiQC links
 * [batch_0](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_0.html)
 * [batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)
 * [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)
@@ -17,7 +17,10 @@
 * [batch_2020_08__walsh](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08__walsh.html)
 * combined view across all batches: [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)
 
-### pipelines
+
+## Data Processing Steps
+
+**First Stage Pipelines**
 
 Broad GP currently delivers RNA-seq data as hg19 bams.
    
@@ -49,17 +52,17 @@ Then, the first stage of the TGG RNA-seq pipeline consists of the following step
 
 ---
  
+**Copy Pipeline Output Files from Terra to gs://macarthurlab-rnaseq**
+
 Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucket, run:
 ```
 cd rnaseq_methods/pipelines
-python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] \
-    macarthurlab-rnaseq-terra [RNA-seq batch name]
+python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] [RNA-seq batch name]
 
 ```
 For example:
 ```
-python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py  macarthurlab-rnaseq-terra  batch_2020_08  \
-    -w 7e14e341-78a4-4f9e-9830-df68fae4bb27 (= job id from terra Job History page) -t rnaseqc
+python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py batch_2020_08  -w 7e14e341-78a4-4f9e-9830-df68fae4bb27 (= job id from terra Job History page) -t rnaseqc
 ```
 
 ---
@@ -115,7 +118,7 @@ Then, update the metadata paths worksheet again as described above.
 
 **TGG-viewer: Update settings.json**
 
-Run the steps in the `rnaseq_methods/pipelines/tgg_viewer/generate_rna_samples_json.py` notebook.
+Run the steps in the `rnaseq_methods/pipelines/tgg_viewer/update_rna_sample_config_json.py` notebook.
 
 ---
 
