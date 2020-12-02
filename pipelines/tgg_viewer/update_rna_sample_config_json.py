@@ -82,7 +82,8 @@ for _, row in df.iterrows():
                 d["url"] = "/".join(["batch_all_samples" if "batch_" in p else p for p in d["url"].split("/")])
             all_samples_batch_data.append(d)
         rows_by_batch["all"].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
-        rows_by_batch[imputed_tissue].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
+        if imputed_tissue:
+            rows_by_batch[imputed_tissue].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
 
 
 #%%
