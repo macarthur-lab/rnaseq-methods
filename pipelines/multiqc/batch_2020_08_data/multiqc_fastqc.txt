@@ -2,6 +2,9 @@ Sample	Filename	File type	Encoding	Total Sequences	Sequences flagged as poor qua
 HK044_0110	HK044_0110.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	180333722.0	0.0	101.0	51.0	56.7879876333367	101.0	pass	pass	pass	pass	warn	warn	pass	pass	warn	pass	pass
 HK117_001	HK117_001.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	182763969.0	0.0	101.0	51.0	56.13855409458078	101.0	pass	pass	pass	pass	warn	warn	pass	pass	warn	pass	pass
 RGP_558_3	RGP_558_3.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	222271677.0	0.0	101.0	52.0	33.70176098817029	101.0	pass	pass	fail	pass	warn	warn	pass	pass	fail	warn	pass
+RGP_673_3	RGP_673_3.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	97386605.0	0.0	101.0	54.0	46.65263015600612	101.0	pass	pass	pass	pass	warn	warn	pass	pass	fail	warn	pass
+RGP_677_3	RGP_677_3.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	69212059.0	0.0	101.0	52.0	50.448252753069426	101.0	pass	pass	pass	pass	warn	warn	pass	pass	warn	warn	pass
+RGP_677_4	RGP_677_4.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	108213174.0	0.0	101.0	54.0	41.77815329278343	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	pass
 WAL_OTH2405f-Dec19	WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	156990576.0	0.0	101.0	48.0	58.86726577009605	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
 WAL_OTH2405f-Feb20A	WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	135481561.0	0.0	101.0	47.0	57.004416805691015	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass
 WAL_OTH2405f-Feb20C	WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	149291299.0	0.0	101.0	48.0	54.53387546307492	101.0	pass	pass	fail	pass	warn	pass	pass	pass	warn	pass	pass

@@ -98,6 +98,7 @@
                 "HK-139": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-139.Log.final.out",
                 "RGP_7_1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_7_1_2.Log.final.out",
                 "210DB_BW_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/210DB_BW_M1.Log.final.out",
+                "RGP_677_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_677_3.Log.final.out",
                 "HK-047": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-047.Log.final.out",
                 "HK-100": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-100.Log.final.out",
                 "MUN_FAM1_CTRL_02": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/MUN_FAM1_CTRL_02.Log.final.out",
@@ -132,6 +133,7 @@
                 "VCGS_FAM149_465_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VCGS_FAM149_465_2.Log.final.out",
                 "VIL_17_106": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VIL_17_106.Log.final.out",
                 "UC223-1RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/UC223-1RNA.Log.final.out",
+                "RGP_677_4": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_677_4.Log.final.out",
                 "HK-107": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-107.Log.final.out",
                 "B11-11-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/B11-11-1M.Log.final.out",
                 "OUN_HK124_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/OUN_HK124_001.Log.final.out",
@@ -238,6 +240,7 @@
                 "MESP021_001_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/MESP021_001_2.Log.final.out",
                 "BON_B14-163-1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B14-163-1_2.Log.final.out",
                 "HK044_0109": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK044_0109.Log.final.out",
+                "RGP_673_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_673_3.Log.final.out",
                 "OUN_HK080_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/OUN_HK080_001.Log.final.out",
                 "SRPK3_EM__1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/SRPK3_EM__1.Log.final.out",
                 "VCGS_FAM22_69_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VCGS_FAM22_69_2.Log.final.out",
@@ -398,6 +401,7 @@
                 "HK-073": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-073.ReadsPerGene.out.tab",
                 "37L_NA_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/37L_NA_M1.ReadsPerGene.out.tab",
                 "B15-28_1_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/B15-28_1_1.ReadsPerGene.out.tab",
+                "RGP_677_4": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_677_4.ReadsPerGene.out.tab",
                 "HK018_0047_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK018_0047_2.ReadsPerGene.out.tab",
                 "OUN_HK116_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/OUN_HK116_001.ReadsPerGene.out.tab",
                 "BON_B15-118_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B15-118_1.ReadsPerGene.out.tab",
@@ -543,6 +547,7 @@
                 "UC368-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/UC368-1M.ReadsPerGene.out.tab",
                 "26I_SK_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/26I_SK_M1.ReadsPerGene.out.tab",
                 "RGP_248_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_248_3.ReadsPerGene.out.tab",
+                "RGP_673_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_673_3.ReadsPerGene.out.tab",
                 "VIL_18_061": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VIL_18_061.ReadsPerGene.out.tab",
                 "RGP_552_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_552_3.ReadsPerGene.out.tab",
                 "CLA_214DF_AB_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/CLA_214DF_AB_2.ReadsPerGene.out.tab",
@@ -605,6 +610,7 @@
                 "VCGS_FAM12_36_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VCGS_FAM12_36_2.ReadsPerGene.out.tab",
                 "SRPK3_USA_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/SRPK3_USA_1.ReadsPerGene.out.tab",
                 "MUN_FAM1_CTRL_02": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MUN_FAM1_CTRL_02.ReadsPerGene.out.tab",
+                "RGP_677_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_677_3.ReadsPerGene.out.tab",
                 "437-3_A_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/437-3_A_2.ReadsPerGene.out.tab",
                 "B12-30RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/B12-30RNA.ReadsPerGene.out.tab",
                 "81AB_MM_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/81AB_MM_M1.ReadsPerGene.out.tab",
@@ -712,6 +718,7 @@
                 "BEG_1230-1_T1227": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BEG_1230-1_T1227_fastqc/fastqc_data.txt",
                 "MUN_FAM2_TOTALMDC1A1_02": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MUN_FAM2_TOTALMDC1A1_02_fastqc/fastqc_data.txt",
                 "WAL_OTH2405f-Feb20C": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
+                "RGP_673_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_673_3.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
                 "B13-07-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/B13-07-1M_fastqc/fastqc_data.txt",
                 "HK018_0047_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK018_0047_2_fastqc/fastqc_data.txt",
                 "HK-133": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-133_fastqc/fastqc_data.txt",
@@ -791,13 +798,14 @@
                 "VCGS_FAM148_462_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/VCGS_FAM148_462_2_fastqc/fastqc_data.txt",
                 "MCOP008_001_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MCOP008_001_2_fastqc/fastqc_data.txt",
                 "BON_B12-71_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B12-71_2_fastqc/fastqc_data.txt",
-                "HK044_0110": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK044_0110.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
+                "HK044_0110": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK044_0110.Aligned.sortedByCoord.out_fastqc.zip",
                 "BON_B14-20_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B14-20_1_fastqc/fastqc_data.txt",
                 "BON_B09-27-1_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B09-27-1_1_fastqc/fastqc_data.txt",
                 "T892": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/T892_fastqc/fastqc_data.txt",
                 "HK-134": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-134_fastqc/fastqc_data.txt",
                 "SWE_36223_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/SWE_36223_1_fastqc/fastqc_data.txt",
                 "WAL_OTH2405f-Dec19": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
+                "RGP_677_3": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_677_3.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
                 "HK-126": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-126_fastqc/fastqc_data.txt",
                 "HK024_0065": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK024_0065_fastqc/fastqc_data.txt",
                 "NH12-1413": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/NH12-1413_fastqc/fastqc_data.txt",
@@ -879,7 +887,7 @@
                 "HK028_0073": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK028_0073_fastqc/fastqc_data.txt",
                 "193CP_LS": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/193CP_LS_fastqc/fastqc_data.txt",
                 "B15-15_1_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/B15-15_1_1_fastqc/fastqc_data.txt",
-                "HK117_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK117_001.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
+                "HK117_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK117_001.Aligned.sortedByCoord.out_fastqc.zip",
                 "INMR_IV_615": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/INMR_IV_615_fastqc/fastqc_data.txt",
                 "LIA_TIS03_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/LIA_TIS03_2_fastqc/fastqc_data.txt",
                 "MAN_0063_01_02": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MAN_0063_01_02_fastqc/fastqc_data.txt",
@@ -931,6 +939,7 @@
                 "BEG_1111-1_T1105": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BEG_1111-1_T1105_fastqc/fastqc_data.txt",
                 "46N_RL_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/46N_RL_M1_fastqc/fastqc_data.txt",
                 "MUN_FAM2_TOTALMDC1A1_05": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MUN_FAM2_TOTALMDC1A1_05_fastqc/fastqc_data.txt",
+                "RGP_677_4": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_677_4.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt",
                 "437-3_A_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/437-3_A_2_fastqc/fastqc_data.txt"
             }
         }
@@ -3625,6 +3634,34 @@
                 "unmapped_tooshort": 1941108,
                 "unmapped_other": 59180
             },
+            "RGP_677_3": {
+                "total_reads": 22379004.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 19260883.0,
+                "uniquely_mapped_percent": 86.07,
+                "avg_mapped_read_length": 200.11,
+                "num_splices": 12093740.0,
+                "num_annotated_splices": 12093481.0,
+                "num_GTAG_splices": 12003149.0,
+                "num_GCAG_splices": 76999.0,
+                "num_ATAC_splices": 8535.0,
+                "num_noncanonical_splices": 5057.0,
+                "mismatch_rate": 0.24,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.89,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.6,
+                "multimapped": 2779492.0,
+                "multimapped_percent": 12.42,
+                "multimapped_toomany": 5548.0,
+                "multimapped_toomany_percent": 0.02,
+                "unmapped_mismatches_percent": 0.02,
+                "unmapped_tooshort_percent": 0.82,
+                "unmapped_other_percent": 0.09,
+                "unmapped_mismatches": 7163,
+                "unmapped_tooshort": 293684,
+                "unmapped_other": 32234
+            },
             "HK-047": {
                 "total_reads": 104551268.0,
                 "avg_input_read_length": 202.0,
@@ -4576,6 +4613,34 @@
                 "unmapped_mismatches": 25344,
                 "unmapped_tooshort": 878583,
                 "unmapped_other": 25344
+            },
+            "RGP_677_4": {
+                "total_reads": 30630906.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 24174998.0,
+                "uniquely_mapped_percent": 78.92,
+                "avg_mapped_read_length": 200.3,
+                "num_splices": 15472518.0,
+                "num_annotated_splices": 15472121.0,
+                "num_GTAG_splices": 15356770.0,
+                "num_GCAG_splices": 98070.0,
+                "num_ATAC_splices": 10338.0,
+                "num_noncanonical_splices": 7340.0,
+                "mismatch_rate": 0.28,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.88,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.6,
+                "multimapped": 5989899.0,
+                "multimapped_percent": 19.56,
+                "multimapped_toomany": 13708.0,
+                "multimapped_toomany_percent": 0.04,
+                "unmapped_mismatches_percent": 0.03,
+                "unmapped_tooshort_percent": 0.95,
+                "unmapped_other_percent": 0.09,
+                "unmapped_mismatches": 12681,
+                "unmapped_tooshort": 401576,
+                "unmapped_other": 38044
             },
             "HK-107": {
                 "total_reads": 113795950.0,
@@ -7545,6 +7610,34 @@
                 "unmapped_tooshort": 864994,
                 "unmapped_other": 127205
             },
+            "RGP_673_3": {
+                "total_reads": 28232007.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 22189092.0,
+                "uniquely_mapped_percent": 78.6,
+                "avg_mapped_read_length": 200.19,
+                "num_splices": 15780604.0,
+                "num_annotated_splices": 15780320.0,
+                "num_GTAG_splices": 15666779.0,
+                "num_GCAG_splices": 99559.0,
+                "num_ATAC_splices": 9175.0,
+                "num_noncanonical_splices": 5091.0,
+                "mismatch_rate": 0.24,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.82,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.62,
+                "multimapped": 5635692.0,
+                "multimapped_percent": 19.96,
+                "multimapped_toomany": 5146.0,
+                "multimapped_toomany_percent": 0.02,
+                "unmapped_mismatches_percent": 0.02,
+                "unmapped_tooshort_percent": 0.81,
+                "unmapped_other_percent": 0.08,
+                "unmapped_mismatches": 8837,
+                "unmapped_tooshort": 357893,
+                "unmapped_other": 35347
+            },
             "OUN_HK080_001": {
                 "total_reads": 90577110.0,
                 "avg_input_read_length": 202.0,
@@ -10249,6 +10342,13 @@
                 "percent_duplicates": 45.46612453692508,
                 "percent_fails": 9.090909090909092
             },
+            "RGP_673_3": {
+                "percent_gc": 54.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 97386605.0,
+                "percent_duplicates": 53.34736984399388,
+                "percent_fails": 9.090909090909092
+            },
             "B13-07-1M": {
                 "percent_gc": 50.0,
                 "avg_sequence_length": 76.0,
@@ -10850,6 +10950,13 @@
                 "total_sequences": 156990576.0,
                 "percent_duplicates": 41.13273422990395,
                 "percent_fails": 9.090909090909092
+            },
+            "RGP_677_3": {
+                "percent_gc": 52.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 69212059.0,
+                "percent_duplicates": 49.551747246930574,
+                "percent_fails": 0.0
             },
             "HK-126": {
                 "percent_gc": 48.0,
@@ -11780,6 +11887,13 @@
                 "avg_sequence_length": 101.0,
                 "total_sequences": 89932926.0,
                 "percent_duplicates": 67.91119736589374,
+                "percent_fails": 9.090909090909092
+            },
+            "RGP_677_4": {
+                "percent_gc": 54.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 108213174.0,
+                "percent_duplicates": 58.22184670721657,
                 "percent_fails": 9.090909090909092
             },
             "437-3_A_2": {
@@ -24625,7 +24739,7 @@
                 [
                     5,
                     230,
-                    1
+                    0.5
                 ],
                 [
                     6,
@@ -24640,12 +24754,12 @@
                 [
                     8,
                     230,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
                     230,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -24680,7 +24794,7 @@
                 [
                     5,
                     231,
-                    1
+                    0.5
                 ],
                 [
                     6,
@@ -24700,7 +24814,7 @@
                 [
                     9,
                     231,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -24750,12 +24864,12 @@
                 [
                     8,
                     232,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
                     232,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -24915,12 +25029,12 @@
                 [
                     8,
                     235,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
                     235,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -24955,7 +25069,7 @@
                 [
                     5,
                     236,
-                    0.25
+                    1
                 ],
                 [
                     6,
@@ -24970,12 +25084,12 @@
                 [
                     8,
                     236,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
                     236,
-                    0.25
+                    1
                 ],
                 [
                     10,
@@ -25010,7 +25124,7 @@
                 [
                     5,
                     237,
-                    0.5
+                    1
                 ],
                 [
                     6,
@@ -25025,12 +25139,12 @@
                 [
                     8,
                     237,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
                     237,
-                    0.25
+                    1
                 ],
                 [
                     10,
@@ -25120,7 +25234,7 @@
                 [
                     5,
                     239,
-                    1
+                    0.25
                 ],
                 [
                     6,
@@ -25140,7 +25254,7 @@
                 [
                     9,
                     239,
-                    0.5
+                    0.25
                 ],
                 [
                     10,
@@ -25175,7 +25289,7 @@
                 [
                     5,
                     240,
-                    1
+                    0.5
                 ],
                 [
                     6,
@@ -25195,7 +25309,7 @@
                 [
                     9,
                     240,
-                    1
+                    0.25
                 ],
                 [
                     10,
@@ -25245,7 +25359,7 @@
                 [
                     8,
                     241,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -25300,7 +25414,7 @@
                 [
                     8,
                     242,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -25320,7 +25434,7 @@
                 [
                     1,
                     243,
-                    0.25
+                    1
                 ],
                 [
                     2,
@@ -25335,7 +25449,7 @@
                 [
                     4,
                     243,
-                    0.25
+                    0.5
                 ],
                 [
                     5,
@@ -25345,7 +25459,7 @@
                 [
                     6,
                     243,
-                    0.25
+                    1
                 ],
                 [
                     7,
@@ -25355,7 +25469,7 @@
                 [
                     8,
                     243,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -25375,7 +25489,7 @@
                 [
                     1,
                     244,
-                    0.25
+                    1
                 ],
                 [
                     2,
@@ -25390,7 +25504,7 @@
                 [
                     4,
                     244,
-                    0.25
+                    0.5
                 ],
                 [
                     5,
@@ -25400,7 +25514,7 @@
                 [
                     6,
                     244,
-                    0.25
+                    1
                 ],
                 [
                     7,
@@ -25410,12 +25524,12 @@
                 [
                     8,
                     244,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
                     244,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -25430,7 +25544,7 @@
                 [
                     1,
                     245,
-                    0.25
+                    1
                 ],
                 [
                     2,
@@ -25445,7 +25559,7 @@
                 [
                     4,
                     245,
-                    0.25
+                    0.5
                 ],
                 [
                     5,
@@ -25455,7 +25569,7 @@
                 [
                     6,
                     245,
-                    0.25
+                    1
                 ],
                 [
                     7,
@@ -25465,12 +25579,12 @@
                 [
                     8,
                     245,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
                     245,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -25575,7 +25689,7 @@
                 [
                     8,
                     247,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -25595,12 +25709,12 @@
                 [
                     1,
                     248,
-                    1
+                    0.25
                 ],
                 [
                     2,
                     248,
-                    0.5
+                    1
                 ],
                 [
                     3,
@@ -25610,7 +25724,7 @@
                 [
                     4,
                     248,
-                    0.5
+                    0.25
                 ],
                 [
                     5,
@@ -25620,7 +25734,7 @@
                 [
                     6,
                     248,
-                    1
+                    0.25
                 ],
                 [
                     7,
@@ -25635,7 +25749,7 @@
                 [
                     9,
                     248,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -25650,7 +25764,7 @@
                 [
                     1,
                     249,
-                    1
+                    0.25
                 ],
                 [
                     2,
@@ -25675,7 +25789,7 @@
                 [
                     6,
                     249,
-                    1
+                    0.25
                 ],
                 [
                     7,
@@ -25685,7 +25799,7 @@
                 [
                     8,
                     249,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
@@ -25705,7 +25819,7 @@
                 [
                     1,
                     250,
-                    1
+                    0.25
                 ],
                 [
                     2,
@@ -25730,7 +25844,7 @@
                 [
                     6,
                     250,
-                    1
+                    0.25
                 ],
                 [
                     7,
@@ -25740,7 +25854,7 @@
                 [
                     8,
                     250,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
@@ -25775,7 +25889,7 @@
                 [
                     4,
                     251,
-                    0.25
+                    0.5
                 ],
                 [
                     5,
@@ -25800,7 +25914,7 @@
                 [
                     9,
                     251,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -25930,7 +26044,7 @@
                 [
                     2,
                     254,
-                    1
+                    0.5
                 ],
                 [
                     3,
@@ -25995,7 +26109,7 @@
                 [
                     4,
                     255,
-                    0.5
+                    0.25
                 ],
                 [
                     5,
@@ -26020,7 +26134,7 @@
                 [
                     9,
                     255,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -26050,7 +26164,7 @@
                 [
                     4,
                     256,
-                    0.5
+                    0.25
                 ],
                 [
                     5,
@@ -26105,7 +26219,7 @@
                 [
                     4,
                     257,
-                    0.5
+                    0.25
                 ],
                 [
                     5,
@@ -26125,7 +26239,7 @@
                 [
                     8,
                     257,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -26180,7 +26294,7 @@
                 [
                     8,
                     258,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -26235,7 +26349,7 @@
                 [
                     8,
                     259,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
@@ -26350,7 +26464,7 @@
                 [
                     9,
                     261,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -26460,7 +26574,7 @@
                 [
                     9,
                     263,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -26680,7 +26794,7 @@
                 [
                     9,
                     267,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -26735,7 +26849,7 @@
                 [
                     9,
                     268,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -26845,7 +26959,7 @@
                 [
                     9,
                     270,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -26900,7 +27014,7 @@
                 [
                     9,
                     271,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -27010,7 +27124,7 @@
                 [
                     9,
                     273,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -27120,7 +27234,7 @@
                 [
                     9,
                     275,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -27175,7 +27289,7 @@
                 [
                     9,
                     276,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -27340,7 +27454,7 @@
                 [
                     9,
                     279,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -27470,7 +27584,7 @@
                 [
                     2,
                     282,
-                    0.25
+                    1
                 ],
                 [
                     3,
@@ -27505,7 +27619,7 @@
                 [
                     9,
                     282,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -27525,7 +27639,7 @@
                 [
                     2,
                     283,
-                    0.25
+                    1
                 ],
                 [
                     3,
@@ -27580,7 +27694,7 @@
                 [
                     2,
                     284,
-                    0.25
+                    1
                 ],
                 [
                     3,
@@ -27760,7 +27874,7 @@
                 [
                     5,
                     287,
-                    0.25
+                    1
                 ],
                 [
                     6,
@@ -27780,7 +27894,7 @@
                 [
                     9,
                     287,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -27870,7 +27984,7 @@
                 [
                     5,
                     289,
-                    0.25
+                    1
                 ],
                 [
                     6,
@@ -27890,7 +28004,7 @@
                 [
                     9,
                     289,
-                    0.5
+                    1
                 ],
                 [
                     10,
@@ -27925,7 +28039,7 @@
                 [
                     5,
                     290,
-                    1
+                    0.25
                 ],
                 [
                     6,
@@ -27980,7 +28094,7 @@
                 [
                     5,
                     291,
-                    0.5
+                    1
                 ],
                 [
                     6,
@@ -28035,7 +28149,7 @@
                 [
                     5,
                     292,
-                    1
+                    0.25
                 ],
                 [
                     6,
@@ -28055,7 +28169,7 @@
                 [
                     9,
                     292,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -28110,11 +28224,176 @@
                 [
                     9,
                     293,
-                    1
+                    0.5
                 ],
                 [
                     10,
                     293,
+                    1
+                ],
+                [
+                    0,
+                    294,
+                    1
+                ],
+                [
+                    1,
+                    294,
+                    1
+                ],
+                [
+                    2,
+                    294,
+                    0.25
+                ],
+                [
+                    3,
+                    294,
+                    1
+                ],
+                [
+                    4,
+                    294,
+                    0.5
+                ],
+                [
+                    5,
+                    294,
+                    0.5
+                ],
+                [
+                    6,
+                    294,
+                    1
+                ],
+                [
+                    7,
+                    294,
+                    1
+                ],
+                [
+                    8,
+                    294,
+                    0.5
+                ],
+                [
+                    9,
+                    294,
+                    1
+                ],
+                [
+                    10,
+                    294,
+                    1
+                ],
+                [
+                    0,
+                    295,
+                    1
+                ],
+                [
+                    1,
+                    295,
+                    1
+                ],
+                [
+                    2,
+                    295,
+                    0.25
+                ],
+                [
+                    3,
+                    295,
+                    1
+                ],
+                [
+                    4,
+                    295,
+                    0.5
+                ],
+                [
+                    5,
+                    295,
+                    1
+                ],
+                [
+                    6,
+                    295,
+                    1
+                ],
+                [
+                    7,
+                    295,
+                    1
+                ],
+                [
+                    8,
+                    295,
+                    0.5
+                ],
+                [
+                    9,
+                    295,
+                    1
+                ],
+                [
+                    10,
+                    295,
+                    1
+                ],
+                [
+                    0,
+                    296,
+                    1
+                ],
+                [
+                    1,
+                    296,
+                    1
+                ],
+                [
+                    2,
+                    296,
+                    0.25
+                ],
+                [
+                    3,
+                    296,
+                    1
+                ],
+                [
+                    4,
+                    296,
+                    0.5
+                ],
+                [
+                    5,
+                    296,
+                    1
+                ],
+                [
+                    6,
+                    296,
+                    1
+                ],
+                [
+                    7,
+                    296,
+                    1
+                ],
+                [
+                    8,
+                    296,
+                    0.5
+                ],
+                [
+                    9,
+                    296,
+                    1
+                ],
+                [
+                    10,
+                    296,
                     1
                 ]
             ],
@@ -28362,6 +28641,9 @@
                 "RGP_554_3_2",
                 "RGP_558_3",
                 "RGP_56_3_3",
+                "RGP_673_3",
+                "RGP_677_3",
+                "RGP_677_4",
                 "RGP_7_1_2",
                 "RGP_7_2_2",
                 "RGP_7_3_2",
@@ -31150,6 +31432,34 @@
                 "unmapped_tooshort": 1941108,
                 "unmapped_other": 59180
             },
+            "RGP_677_3": {
+                "total_reads": 22379004.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 19260883.0,
+                "uniquely_mapped_percent": 86.07,
+                "avg_mapped_read_length": 200.11,
+                "num_splices": 12093740.0,
+                "num_annotated_splices": 12093481.0,
+                "num_GTAG_splices": 12003149.0,
+                "num_GCAG_splices": 76999.0,
+                "num_ATAC_splices": 8535.0,
+                "num_noncanonical_splices": 5057.0,
+                "mismatch_rate": 0.24,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.89,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.6,
+                "multimapped": 2779492.0,
+                "multimapped_percent": 12.42,
+                "multimapped_toomany": 5548.0,
+                "multimapped_toomany_percent": 0.02,
+                "unmapped_mismatches_percent": 0.02,
+                "unmapped_tooshort_percent": 0.82,
+                "unmapped_other_percent": 0.09,
+                "unmapped_mismatches": 7163,
+                "unmapped_tooshort": 293684,
+                "unmapped_other": 32234
+            },
             "HK-047": {
                 "total_reads": 104551268.0,
                 "avg_input_read_length": 202.0,
@@ -32101,6 +32411,34 @@
                 "unmapped_mismatches": 25344,
                 "unmapped_tooshort": 878583,
                 "unmapped_other": 25344
+            },
+            "RGP_677_4": {
+                "total_reads": 30630906.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 24174998.0,
+                "uniquely_mapped_percent": 78.92,
+                "avg_mapped_read_length": 200.3,
+                "num_splices": 15472518.0,
+                "num_annotated_splices": 15472121.0,
+                "num_GTAG_splices": 15356770.0,
+                "num_GCAG_splices": 98070.0,
+                "num_ATAC_splices": 10338.0,
+                "num_noncanonical_splices": 7340.0,
+                "mismatch_rate": 0.28,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.88,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.6,
+                "multimapped": 5989899.0,
+                "multimapped_percent": 19.56,
+                "multimapped_toomany": 13708.0,
+                "multimapped_toomany_percent": 0.04,
+                "unmapped_mismatches_percent": 0.03,
+                "unmapped_tooshort_percent": 0.95,
+                "unmapped_other_percent": 0.09,
+                "unmapped_mismatches": 12681,
+                "unmapped_tooshort": 401576,
+                "unmapped_other": 38044
             },
             "HK-107": {
                 "total_reads": 113795950.0,
@@ -35069,6 +35407,34 @@
                 "unmapped_mismatches": 25441,
                 "unmapped_tooshort": 864994,
                 "unmapped_other": 127205
+            },
+            "RGP_673_3": {
+                "total_reads": 28232007.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 22189092.0,
+                "uniquely_mapped_percent": 78.6,
+                "avg_mapped_read_length": 200.19,
+                "num_splices": 15780604.0,
+                "num_annotated_splices": 15780320.0,
+                "num_GTAG_splices": 15666779.0,
+                "num_GCAG_splices": 99559.0,
+                "num_ATAC_splices": 9175.0,
+                "num_noncanonical_splices": 5091.0,
+                "mismatch_rate": 0.24,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.82,
+                "insertion_rate": 0.01,
+                "insertion_length": 1.62,
+                "multimapped": 5635692.0,
+                "multimapped_percent": 19.96,
+                "multimapped_toomany": 5146.0,
+                "multimapped_toomany_percent": 0.02,
+                "unmapped_mismatches_percent": 0.02,
+                "unmapped_tooshort_percent": 0.81,
+                "unmapped_other_percent": 0.08,
+                "unmapped_mismatches": 8837,
+                "unmapped_tooshort": 357893,
+                "unmapped_other": 35347
             },
             "OUN_HK080_001": {
                 "total_reads": 90577110.0,
@@ -38884,6 +39250,28 @@
                 "overrepresented_sequences": "pass",
                 "adapter_content": "pass"
             },
+            "RGP_673_3": {
+                "Filename": "RGP_673_3.Aligned.sortedByCoord.out.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 97386605.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 54.0,
+                "total_deduplicated_percentage": 46.65263015600612,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "warn",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "fail",
+                "overrepresented_sequences": "warn",
+                "adapter_content": "pass"
+            },
             "B13-07-1M": {
                 "Filename": "B13-07-1M.bam",
                 "File type": "Conventional base calls",
@@ -40774,6 +41162,28 @@
                 "sequence_length_distribution": "pass",
                 "sequence_duplication_levels": "warn",
                 "overrepresented_sequences": "pass",
+                "adapter_content": "pass"
+            },
+            "RGP_677_3": {
+                "Filename": "RGP_677_3.Aligned.sortedByCoord.out.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 69212059.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 52.0,
+                "total_deduplicated_percentage": 50.448252753069426,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "warn",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "warn",
+                "overrepresented_sequences": "warn",
                 "adapter_content": "pass"
             },
             "HK-126": {
@@ -43702,6 +44112,28 @@
                 "overrepresented_sequences": "pass",
                 "adapter_content": "pass"
             },
+            "RGP_677_4": {
+                "Filename": "RGP_677_4.Aligned.sortedByCoord.out.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 108213174.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 54.0,
+                "total_deduplicated_percentage": 41.77815329278343,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "pass",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "fail",
+                "overrepresented_sequences": "warn",
+                "adapter_content": "pass"
+            },
             "437-3_A_2": {
                 "Filename": "437-3_A_2.bam",
                 "File type": "Conventional base calls",
@@ -44560,6 +44992,15 @@
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 106309587.0
             },
+            "RGP_677_3": {
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 86.07,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 19260883.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 49.551747246930574,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 52.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 0.0,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 69212059.0
+            },
             "HK-047": {
                 "STAR_mqc-generalstats-star-uniquely_mapped_percent": 94.6,
                 "STAR_mqc-generalstats-star-uniquely_mapped": 98902817.0,
@@ -44855,6 +45296,15 @@
                 "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 76.0,
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 18.181818181818183,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 72663200.0
+            },
+            "RGP_677_4": {
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 78.92,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 24174998.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 58.22184670721657,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 54.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 108213174.0
             },
             "HK-107": {
                 "STAR_mqc-generalstats-star-uniquely_mapped_percent": 94.88,
@@ -45775,6 +46225,15 @@
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 0.0,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 99739925.0
             },
+            "RGP_673_3": {
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 78.6,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 22189092.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 53.34736984399388,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 54.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 97386605.0
+            },
             "OUN_HK080_001": {
                 "STAR_mqc-generalstats-star-uniquely_mapped_percent": 91.3,
                 "STAR_mqc-generalstats-star-uniquely_mapped": 82693008.0,
@@ -46460,7 +46919,7 @@
     "config_analysis_dir": [
         "."
     ],
-    "config_creation_date": "2020-12-01, 17:33",
+    "config_creation_date": "2020-12-02, 17:10",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
