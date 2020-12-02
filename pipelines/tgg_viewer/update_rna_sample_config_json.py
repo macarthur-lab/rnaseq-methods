@@ -1,5 +1,6 @@
 import argparse
 import collections
+import hail as hl
 import json
 import logging
 import os
@@ -10,6 +11,8 @@ from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+
+hl.init(log="/dev/null")
 
 #%%
 
@@ -85,6 +88,29 @@ for _, row in df.iterrows():
         if imputed_tissue:
             rows_by_batch[imputed_tissue].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
 
+#%%
+for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
+    gs_path_prefix = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}."
+    gs_path_suffix = f"_samples.junctions.bed.gz"
+    gs_path = f"{gs_path_prefix}*{gs_path_suffix}"
+    combined_bed_paths = [x["path"] for x in hl.hadoop_ls(gs_path)]
+
+    if not combined_bed_paths:
+        print(f"WARNING: combined file(s) not found: {gs_path}")
+        continue
+    combined_bed_path = combined_bed_paths[-1]
+    num_combined_samples = int(combined_bed_path.replace(gs_path_prefix, "").replace(gs_path_suffix, ""))
+    tissue_label = tissue_name.replace("_", " ").rstrip("s")
+    rows_by_batch[tissue_name].append({
+        'name': f'all {num_combined_samples} {tissue_label} samples',
+        'description': f"All {num_combined_samples} {tissue_label} rare disease samples combined into one track.",
+        'data': [
+            {
+                'type': 'junctions',
+                'url': combined_bed_path,
+            },
+        ],
+    })
 
 #%%
 
