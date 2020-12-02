@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import pprint
+import re
 
 from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
@@ -90,25 +91,34 @@ for _, row in df.iterrows():
 
 #%%
 for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
-    gs_path_prefix = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}."
-    gs_path_suffix = f"_samples.junctions.bed.gz"
-    gs_path = f"{gs_path_prefix}*{gs_path_suffix}"
-    combined_bed_paths = [x["path"] for x in hl.hadoop_ls(gs_path)]
-
-    if not combined_bed_paths:
-        print(f"WARNING: combined file(s) not found: {gs_path}")
+    combined_junctions_bed_gs_path = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}.*_samples.junctions.bed.gz"
+    combined_junctions_bed_paths = [x["path"] for x in hl.hadoop_ls(combined_junctions_bed_gs_path)]
+    if not combined_junctions_bed_paths:
+        print(f"WARNING: combined file not found: {combined_junctions_bed_gs_path}")
         continue
-    combined_bed_path = combined_bed_paths[-1]
-    num_combined_samples = int(combined_bed_path.replace(gs_path_prefix, "").replace(gs_path_suffix, ""))
+    combined_junctions_bed_path = combined_junctions_bed_paths[-1]
+    match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.junctions.bed.gz", combined_junctions_bed_path)
+    num_combined_junctions_bed_samples = match.group(1)
+
+    combined_bigWig_gs_path = f"gs://macarthurlab-rnaseq/combined_bigWigs/{tissue_name}/combined.{tissue_name}.*_samples.bigWig"
+    combined_bigWig_paths = [x["path"] for x in hl.hadoop_ls(combined_bigWig_gs_path)]
+    if not combined_bigWig_paths:
+        print(f"WARNING: combined file not found: {combined_bigWig_gs_path}")
+        continue
+    combined_bigWig_path = combined_bigWig_paths[-1]
+    match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.bigWig", combined_junctions_bed_path)
+    num_combined_bigWig_samples = match.group(1)
+
+    if num_combined_junctions_bed_samples != num_combined_bigWig_samples:
+        raise ValueError(f"num_combined_junctions_bed_samples != num_combined_bigWig_samples: {num_combined_junctions_bed_samples} != {num_combined_bigWig_samples}")
+
     tissue_label = tissue_name.replace("_", " ").rstrip("s")
     rows_by_batch[tissue_name].append({
-        'name': f'all {num_combined_samples} {tissue_label} samples',
-        'description': f"All {num_combined_samples} {tissue_label} rare disease samples combined into one track.",
+        'name': f'all {num_combined_junctions_bed_samples} {tissue_label} samples',
+        'description': f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track.",
         'data': [
-            {
-                'type': 'junctions',
-                'url': combined_bed_path,
-            },
+            {'type': 'coverage', 'url': combined_bigWig_path },
+            {'type': 'junctions', 'url': combined_junctions_bed_path },
         ],
     })
 
