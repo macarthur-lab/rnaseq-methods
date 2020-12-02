@@ -533,7 +533,8 @@ for sample_id in final_df['sample_id']:
         continue
     counters[len(indivs)] += 1
 
-    assert len(indivs) <= 2, "Expected no more than 2 records per sample_id: " + sample_id
+    if len(indivs) > 2:
+        print(f"WARNING: Expected no more than 2 records per sample_id: {sample_id}. Found it in: {', '.join(map(str, [i.family.project for i in indivs]))}")
 
     sample_id_to_indivs[sample_id] = indivs
 
@@ -573,7 +574,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
         elif not seqr_fields['proj2 (seqr)']:
             project_i = 2
         else:
-            print("ERROR: more than 2 projects have individual: " + str(indiv) + ". Skipping...")
+            print("WARNING: more than 2 projects have individual: " + str(indiv) + ". Skipping...")
             continue
 
         project_page_url = "https://seqr.broadinstitute.org/project/%s/project_page" % (project.guid)

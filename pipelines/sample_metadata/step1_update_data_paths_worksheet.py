@@ -149,7 +149,6 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
             if dest_path != path and "combined." not in path:
                 #print("Would run gsutil mv -n " + path + " " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
-                path = dest_path
 
             macarthurlab_rnaseq_bucket_file_paths[path_i] = path
 
