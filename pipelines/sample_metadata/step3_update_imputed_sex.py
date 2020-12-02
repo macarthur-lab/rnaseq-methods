@@ -41,7 +41,7 @@ for _, row in data_paths_df_with_metadata_columns.iterrows():
     try:
         previous_sex = (row['sex'] if row['sex'] and not isinstance(row['sex'], float) else '').strip()
         imputed_sex = (row['imputed sex'] if row['imputed sex'] and not isinstance(row['imputed sex'], float) else '').strip()
-        weighted_sum = row['weighted_sex_gene_expression']
+        #weighted_sum = row['weighted_sex_gene_expression']
 
         if not imputed_sex:
             file = hl.hadoop_open(row['rnaseqc_gene_reads'], "r")
@@ -63,7 +63,7 @@ for _, row in data_paths_df_with_metadata_columns.iterrows():
             'sample_id': sample_id,
             'sex': previous_sex,
             'imputed sex': imputed_sex,
-            'weighted_sex_gene_expression': weighted_sum,
+            #'weighted_sex_gene_expression': weighted_sum,
         }
         print(", ".join(map(str, values.values())))
 
@@ -98,7 +98,7 @@ imputed_sex_df.columns
 assert set(imputed_sex_df.index) == set(df.sample_id), set(imputed_sex_df.index) - set(df.sample_id)
 
 df['imputed sex'] = imputed_sex_df['imputed sex']
-df['weighted_sex_gene_expression'] = imputed_sex_df['weighted_sex_gene_expression']
+#df['weighted_sex_gene_expression'] = imputed_sex_df['weighted_sex_gene_expression']
 
 df.columns
 
