@@ -1,5 +1,5 @@
-TAG1 = weisburd/convert-sj-out-tab-to-junctions-bed:v1
-TAG2 = weisburd/convert-sj-out-tab-to-junctions-bed:latest
+TAG1 = weisburd/junctions-track-pipeline:v1
+TAG2 = weisburd/junctions-track-pipeline:latest
 
 all: build push update_sha
 
