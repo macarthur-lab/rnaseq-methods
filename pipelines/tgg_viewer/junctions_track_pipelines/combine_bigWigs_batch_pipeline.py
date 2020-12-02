@@ -28,8 +28,7 @@ def combine_bigWigs(args, batch, batch_name, bigWig_paths, output_dir):
     j = batch_utils.init_job(batch, f"combine bigWigs: {batch_name} ({len(bigWig_paths)} files)", DOCKER_IMAGE if not args.raw else None, args.cpu, args.cpu*3.75)
     batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    local_fasta = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fasta, use_gcsfuse=True)
-    #local_fasta_fai = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fai, use_gcsfuse=True)
+    local_fasta_fai = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fai, use_gcsfuse=False)
 
     local_bigWig_paths = []
     for bigWig_path in bigWig_paths:
@@ -38,10 +37,11 @@ def combine_bigWigs(args, batch, batch_name, bigWig_paths, output_dir):
 
     local_bigWig_paths = " ".join(local_bigWig_paths)
 
-    j.command(f"""bigWigMerge {local_bigWig_paths} combined.bedGraph
+    j.command(f"""cut -f 1,2 {local_fasta_fai} > {local_fasta_fai}.chromSizes
+bigWigMerge {local_bigWig_paths} combined.bedGraph
 LC_COLLATE=C sort -k1,1 -k2,2n ./combined.bedGraph > combined.sorted.bedGraph
 rm combined.bedGraph
-bedGraphToBigWig combined.sorted.bedGraph {local_fasta} {output_filename}
+bedGraphToBigWig combined.sorted.bedGraph {local_fasta_fai}.chromSizes {output_filename}
 
 gsutil -m cp {output_filename} {output_dir}""")
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     analysis_batches = set([b for b in ANALYSIS_BATCHES.keys() if b])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
-    p = batch_utils.init_arg_parser(default_cpu=1, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("batch_name", nargs="+", choices=analysis_batches | star_pipeline_batches, help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
