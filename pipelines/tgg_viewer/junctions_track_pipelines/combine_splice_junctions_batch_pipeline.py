@@ -15,7 +15,7 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:33b0ff3334a6f73613c2cf4f44e4a53e95793590c9fd0a92f03c74702feb7595"
+DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:1441a2c46bb2d6f203df2fad499643318e2139f2d29c8ef48abccbb70dd20df7"
 
 
 def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_individual_tables, normalize_read_counts, output_dir):
