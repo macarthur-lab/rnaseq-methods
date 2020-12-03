@@ -308,7 +308,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/1179-1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1179-1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -330,7 +330,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/1211-1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1211-1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -352,7 +352,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/1258-1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/1258-1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -374,7 +374,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/126BG_CB_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/126BG_CB_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -396,7 +396,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/146BO_JB_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/146BO_JB_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -418,7 +418,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/149BP_AB_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/149BP_AB_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -440,7 +440,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/153BR_JB_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/153BR_JB_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -462,7 +462,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/163BV_JE_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/163BV_JE_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -484,7 +484,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/164BW_KC_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/164BW_KC_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -506,7 +506,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/167BZ_SP_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/167BZ_SP_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -528,7 +528,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/193CP_LS.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/193CP_LS.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -550,7 +550,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/204H_AM_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/204H_AM_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -572,7 +572,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/205E_BD_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/205E_BD_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -594,7 +594,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/210DB_BW_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/210DB_BW_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -616,7 +616,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/227DJ_JP_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/227DJ_JP_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -638,7 +638,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/247DT_SH_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/247DT_SH_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -660,7 +660,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/250DV_LR_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/250DV_LR_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -682,7 +682,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/251DW_SD_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/251DW_SD_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -704,7 +704,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/252DX_DC_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/252DX_DC_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -726,7 +726,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/253DY_HA_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/253DY_HA_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -748,7 +748,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/254DZ_WP_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/254DZ_WP_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -770,7 +770,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/255EA_GC_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/255EA_GC_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -792,7 +792,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/26I_SK_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/26I_SK_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -814,7 +814,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/361AL_CC_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/361AL_CC_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -832,7 +832,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/373HQ_BTG_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/373HQ_BTG_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -850,7 +850,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/37L_NA_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/37L_NA_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -872,7 +872,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/41M_MW_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/41M_MW_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -894,7 +894,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/46N_RL_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/46N_RL_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -916,7 +916,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/49O_NM_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/49O_NM_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -938,7 +938,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/65T_CR_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/65T_CR_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -960,7 +960,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/81AB_MM_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/81AB_MM_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -982,7 +982,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/92AI_SM.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/92AI_SM.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1004,7 +1004,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/9C_DH_M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/9C_DH_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1026,7 +1026,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B09-24-1RNA_UNKNOWN.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-24-1RNA_UNKNOWN.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1048,7 +1048,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B09-25-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-25-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1070,7 +1070,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B09-40-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B09-40-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1092,7 +1092,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B10-02-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B10-02-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1114,7 +1114,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B11-11-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B11-11-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1136,7 +1136,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B11-48-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B11-48-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1158,7 +1158,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B12-21-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-21-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1180,7 +1180,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B12-30RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1202,7 +1202,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B13-07-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-07-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1224,7 +1224,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B13-15RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-15RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1242,7 +1242,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B13-52-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-52-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1264,7 +1264,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-07RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-07RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1286,7 +1286,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-117-1RNA-2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-117-1RNA-2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1308,7 +1308,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-130-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-130-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1330,7 +1330,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-48-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-48-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1352,7 +1352,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-70-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-70-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1374,7 +1374,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B14-78-1-U.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B14-78-1-U.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1396,7 +1396,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B15-15_1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B15-15_1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1418,7 +1418,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B15-28_1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B15-28_1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1436,7 +1436,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/B16-48_1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B16-48_1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1458,7 +1458,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BB0280_CH_AffF_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BB0280_CH_AffF_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1480,7 +1480,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1025-1_T999.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1025-1_T999.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1502,7 +1502,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1078-1_T1071.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1078-1_T1071.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1524,7 +1524,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1230-1_T1227.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1230-1_T1227.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1546,7 +1546,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_14-4_T65.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_14-4_T65.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1568,7 +1568,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1438-1_T1339.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_1438-1_T1339.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1590,7 +1590,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_851-1_T840.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_851-1_T840.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1612,7 +1612,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_887-1_T1240.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_887-1_T1240.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1634,7 +1634,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_916-1_T916.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BEG_916-1_T916.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1656,7 +1656,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B09-27-1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B09-27-1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1678,7 +1678,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B12-33-2_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-33-2_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1696,7 +1696,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B12-74-1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-74-1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1718,7 +1718,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B12-76-1_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B12-76-1_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1740,7 +1740,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B13-55_1_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B13-55_1_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1762,7 +1762,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B14-163-1_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-163-1_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1784,7 +1784,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B14-20_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-20_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1806,7 +1806,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B14-60-1_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-60-1_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1828,7 +1828,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B14-71-2_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-71-2_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1850,7 +1850,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B14-75-1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B14-75-1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1872,7 +1872,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B15-118_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-118_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1890,7 +1890,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B15-76-2_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B15-76-2_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1912,7 +1912,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16-19_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-19_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1934,7 +1934,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16-22_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-22_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1952,7 +1952,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16-53-1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-53-1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1970,7 +1970,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16-75-1_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16-75-1_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -1992,7 +1992,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16_30_1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16_30_1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2014,7 +2014,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B16_80_1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B16_80_1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2036,7 +2036,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B17-23_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B17-23_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2058,7 +2058,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B18-24_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-24_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2080,7 +2080,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B18-25_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-25_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2098,7 +2098,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_B18-54_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_B18-54_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2120,7 +2120,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_UC219-1_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_UC219-1_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2142,7 +2142,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BON_UC473_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/BON_UC473_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2164,7 +2164,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_143BN_BB_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_143BN_BB_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2186,7 +2186,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_179CI_GG_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_179CI_GG_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2208,7 +2208,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_180CJ_DP_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_180CJ_DP_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2230,7 +2230,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_214DF_AB_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_214DF_AB_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2252,7 +2252,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_329FK_RR_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_329FK_RR_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2274,7 +2274,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_338FT_DM_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_338FT_DM_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2296,7 +2296,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_388HV_XX_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_388HV_XX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2314,7 +2314,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_62R_CaM_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_62R_CaM_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2332,7 +2332,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_62R_CaM_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_62R_CaM_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2350,7 +2350,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/CLA_79Z_CP_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/CLA_79Z_CP_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2372,7 +2372,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK018_0047_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK018_0047_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2394,7 +2394,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK069-0177_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK069-0177_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2416,7 +2416,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK072-001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/HK072-001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2438,7 +2438,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/ICCV_458_10CC06258_02.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/ICCV_458_10CC06258_02.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2460,7 +2460,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_GB_408.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_GB_408.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2482,7 +2482,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_GI_456.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_GI_456.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2504,7 +2504,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_HW_389.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_HW_389.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2526,7 +2526,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_HZ_401.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_HZ_401.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2548,7 +2548,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_IG_561.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_IG_561.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2570,7 +2570,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/INMR_IK_581.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/INMR_IK_581.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2592,7 +2592,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/K1157-1-4.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/K1157-1-4.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2614,7 +2614,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/LIA_EDW01_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_EDW01_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2636,7 +2636,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/LIA_MAS02_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_MAS02_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2658,7 +2658,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/LIA_TIS03_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/LIA_TIS03_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2676,7 +2676,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MAN_0063_01_03.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_0063_01_03.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2698,7 +2698,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MAN_1001_01_M1_D1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_1001_01_M1_D1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2720,7 +2720,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MAN_1438-01-M1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MAN_1438-01-M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2742,7 +2742,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MBEL028_001_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBEL028_001_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2764,7 +2764,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MBEL028_002_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBEL028_002_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2786,7 +2786,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MBRU030_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MBRU030_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2808,7 +2808,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MCOP008_001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MCOP008_001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2830,7 +2830,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MESP021_001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MESP021_001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2852,7 +2852,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MESP039_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MESP039_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2874,7 +2874,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MGLA003_001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MGLA003_001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2896,7 +2896,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MMAD002_001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MMAD002_001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2918,7 +2918,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MTEH041_001_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/MTEH041_001_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2940,7 +2940,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/M_0146-01-H1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/M_0146-01-H1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2958,7 +2958,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/NH11-441.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH11-441.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2976,7 +2976,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/NH12-1413.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/NH12-1413.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -2994,7 +2994,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK018_0047.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK018_0047.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3016,7 +3016,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK047_0116.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK047_0116.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3038,7 +3038,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK079_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK079_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3060,7 +3060,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK080_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK080_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3082,7 +3082,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK081_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK081_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3104,7 +3104,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK112_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK112_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3126,7 +3126,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK116_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK116_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3144,7 +3144,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK124_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK124_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3166,7 +3166,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/OUN_HK137_001.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/OUN_HK137_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3188,7 +3188,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_248_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_248_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3210,7 +3210,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_273_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_273_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3232,7 +3232,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_54_3_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_54_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3254,7 +3254,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_56_3_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_56_3_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3276,7 +3276,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_800_3_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_800_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3298,7 +3298,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/SRPK3_EM__1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_EM__1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3316,7 +3316,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/SRPK3_JAP_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_JAP_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3334,7 +3334,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/SRPK3_USA_1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/SRPK3_USA_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3352,7 +3352,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/T1244.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T1244.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3370,7 +3370,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/T238.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T238.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3388,7 +3388,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/T850.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T850.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3406,7 +3406,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/T892.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/T892.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3424,7 +3424,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/TOP_MAAC031_F_Muscle1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/TOP_MAAC031_F_Muscle1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3446,7 +3446,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC223-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC223-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3468,7 +3468,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC305-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC305-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3490,7 +3490,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC316-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC316-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3512,7 +3512,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC368-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC368-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3534,7 +3534,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC393-1M.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC393-1M.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3556,7 +3556,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UC84-1RNA.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UC84-1RNA.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3578,7 +3578,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/UWA_FAM7_PT_D16-1243_2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/UWA_FAM7_PT_D16-1243_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3600,7 +3600,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM1_CTRL_01.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_01.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3618,7 +3618,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM1_CTRL_02.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_02.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3636,7 +3636,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM1_CTRL_03.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_03.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3654,7 +3654,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM1_CTRL_04.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM1_CTRL_04.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3672,7 +3672,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_02.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_02.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3690,7 +3690,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_03.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_03.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3708,7 +3708,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_05.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM2_TOTALMDC1A1_05.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3726,7 +3726,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_01.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_01.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3744,7 +3744,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_02.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_02.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3762,7 +3762,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_05.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM3_PARTIALMDC1A1_05.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3780,7 +3780,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3798,7 +3798,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3816,7 +3816,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM4_ATYPICALMDC1A_01_R3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3834,7 +3834,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R1.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R1.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3852,7 +3852,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R2.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R2.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3870,7 +3870,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_1_muntoni/junctions_bed_for_igv_js/MUN_FAM5_SIBLINGMDC1A_01_R3.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3888,7 +3888,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1111-1_T1105.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1111-1_T1105.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3910,7 +3910,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/BEG_1435-01_T1370.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1435-01_T1370.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3932,7 +3932,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK060-0154.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK060-0154.junctions.bed.gz"
             },
             {
               "type": "coverage",
@@ -3954,7 +3954,7 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/RGP_552_3.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_552_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
