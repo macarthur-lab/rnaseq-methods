@@ -96,6 +96,10 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
     if not combined_junctions_bed_paths:
         print(f"WARNING: combined file not found: {combined_junctions_bed_gs_path}")
         continue
+    elif len(combined_junctions_bed_paths) > 1:
+        print(f"WARNING: more than one {tissue_name} file found:")
+        print("\n".join(combined_junctions_bed_paths))
+
     combined_junctions_bed_path = combined_junctions_bed_paths[-1]
     match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.junctions.bed.gz", combined_junctions_bed_path)
     num_combined_junctions_bed_samples = match.group(1)
@@ -106,19 +110,20 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
         print(f"WARNING: combined file not found: {combined_bigWig_gs_path}")
         continue
     combined_bigWig_path = combined_bigWig_paths[-1]
-    match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.bigWig", combined_junctions_bed_path)
+    match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.bigWig", combined_bigWig_path)
     num_combined_bigWig_samples = match.group(1)
 
     if num_combined_junctions_bed_samples != num_combined_bigWig_samples:
-        raise ValueError(f"num_combined_junctions_bed_samples != num_combined_bigWig_samples: {num_combined_junctions_bed_samples} != {num_combined_bigWig_samples}")
+        print(f"ERROR:  {tissue_name} num_combined_junctions_bed_samples != num_combined_bigWig_samples: {num_combined_junctions_bed_samples} != {num_combined_bigWig_samples}")
+        continue
 
     tissue_label = tissue_name.replace("_", " ").rstrip("s")
     rows_by_batch[tissue_name].append({
         'name': f'all {num_combined_junctions_bed_samples} {tissue_label} samples',
         'description': f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track.",
         'data': [
-            {'type': 'coverage', 'url': combined_bigWig_path },
-            {'type': 'junctions', 'url': combined_junctions_bed_path },
+            {'type': 'coverage', 'url': combined_bigWig_path},
+            {'type': 'junctions', 'url': combined_junctions_bed_path},
         ],
     })
 

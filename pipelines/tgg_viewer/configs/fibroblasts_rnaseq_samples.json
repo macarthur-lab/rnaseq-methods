@@ -517,7 +517,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/HK006_0016.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 12 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 14 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Mental retardation, autosomal recessive 65 </td></tr></table>",
           "name": "HK006_0016"
         },
         {
@@ -561,7 +561,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/HK011_0029.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates, Solved</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Sanger validated tag(s), 6 Review tag(s), 1 Pathogenic tag(s), 4 Likely Benign tag(s), 3 Known gene for phenotype tag(s), 1 Excluded tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MENTAL RETARDATION, AUTOSOMAL RECESSIVE 13; MRT13, MENTAL RETARDATION, AUTOSOMAL RECESSIVE 13; MRT13 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Sanger validated tag(s), 8 Review tag(s), 1 Pathogenic tag(s), 4 Likely Benign tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MENTAL RETARDATION, AUTOSOMAL RECESSIVE 13; MRT13, MENTAL RETARDATION, AUTOSOMAL RECESSIVE 13; MRT13 </td></tr></table>",
           "name": "HK011_0029"
         },
         {
@@ -649,7 +649,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/HK085-001.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr></table>",
           "name": "HK085-001"
         },
         {
@@ -993,7 +993,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM11_32_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 2 Known gene for phenotype tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>AXENFELD-RIEGER SYNDROME, TYPE 3; RIEG3, AXENFELD-RIEGER SYNDROME, TYPE 3; RIEG3 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved, Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 2 Known gene for phenotype tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>AXENFELD-RIEGER SYNDROME, TYPE 3; RIEG3, AXENFELD-RIEGER SYNDROME, TYPE 3; RIEG3 </td></tr></table>",
           "name": "VCGS_FAM11_32_2"
         },
         {
@@ -1147,7 +1147,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM27_84_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene, Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 1 - Novel gene and phenotype tag(s), 12 Review tag(s), 18 Not Related to Phenotype tag(s), 1 Likely False Positive tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodegenerative condition, Neurodegenerative condition </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 1 - Novel gene and phenotype tag(s), 12 Review tag(s), 18 Not Related to Phenotype tag(s), 1 Likely False Positive tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodegenerative condition, Neurodegenerative condition </td></tr></table>",
           "name": "VCGS_FAM27_84_2"
         },
         {
@@ -1169,7 +1169,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM29_90.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>22 Review tag(s), 1 Not Related to Phenotype tag(s), 2 MatchBox (MME) tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Microcephaly, Microcephaly </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate, Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>22 Review tag(s), 1 Not Related to Phenotype tag(s), 2 MatchBox (MME) tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Microcephaly, Microcephaly </td></tr></table>",
           "name": "VCGS_FAM29_90"
         },
         {
@@ -1191,7 +1191,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM2_4_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 3 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>malformation syndrome, hypotonia, micrognathia and arthrogryposis multiplex </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-8</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 3 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>malformation syndrome, hypotonia, micrognathia and arthrogryposis multiplex </td></tr></table>",
           "name": "VCGS_FAM2_4_2"
         },
         {
@@ -1301,7 +1301,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM42_132_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial complex I deficiency, nuclear type 4\t </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MITOCHONDRIAL COMPLEX I DEFICIENCY, NUCLEAR TYPE 4; MC1DN4 </td></tr></table>",
           "name": "VCGS_FAM42_132_2"
         },
         {
@@ -1345,7 +1345,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM4_13_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene, Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 20 Review tag(s), 4 MatchBox (MME) tag(s), 4 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial disease, Brain malformations </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 20 Review tag(s), 4 MatchBox (MME) tag(s), 4 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial disease, Brain malformations </td></tr></table>",
           "name": "VCGS_FAM4_13_2"
         },
         {
@@ -1389,7 +1389,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM58_181.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Phenotype expansion tag(s), 6 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, AUTOSOMAL DOMINANT, TYPE 2A2A; CMT2A2A, Neurodevelopmental disorder </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-6</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - gene linked to different phenotype, Strong candidate - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Phenotype expansion tag(s), 6 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, AUTOSOMAL DOMINANT, TYPE 2A2A; CMT2A2A, Neurodevelopmental disorder </td></tr></table>",
           "name": "VCGS_FAM58_181"
         },
         {
@@ -1517,7 +1517,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 12 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Sanger validated tag(s), 14 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Mental retardation, autosomal recessive 65 </td></tr></table>",
           "name": "HK-006"
         },
         {
@@ -1561,7 +1561,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy, neurodevelopmental with epilepsy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 11 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy, neurodevelopmental with epilepsy </td></tr></table>",
           "name": "HK-015"
         },
         {
@@ -1843,7 +1843,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell, Silver-Russell </td></tr></table>",
           "name": "HK-085"
         },
         {
@@ -1949,7 +1949,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Oliver-McFarlane syndrome </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>OLIVER-MCFARLANE SYNDROME; OMCS </td></tr></table>",
           "name": "HK-107"
         },
         {
@@ -2073,7 +2073,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
           "name": "HK-124"
         },
         {
@@ -2161,7 +2161,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",
           "name": "HK-133"
         },
         {
@@ -2197,11 +2197,15 @@
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FEBRILE SEIZURES, FAMILIAL, 8; FEB8 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 3 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FEBRILE SEIZURES, FAMILIAL, 8; FEB8 </td></tr></table>",
           "name": "HK-139"
         },
         {
           "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK044_0110.junctions.bed.gz"
+            },
             {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK044_0110.bigWig"
@@ -2221,6 +2225,10 @@
         {
           "data": [
             {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_all_samples/junctions_bed_for_igv_js/HK117_001.junctions.bed.gz"
+            },
+            {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK117_001.bigWig"
             },
@@ -2235,6 +2243,20 @@
           ],
           "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Known gene, new phenotype tag(s), 10 Review tag(s), 1 Excluded tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CONGENITAL DISORDER OF GLYCOSYLATION </td></tr></table>",
           "name": "HK117_001"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/fibroblasts/combined.fibroblasts.86_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.86_samples.junctions.bed.gz"
+            }
+          ],
+          "description": "All 86 fibroblast rare disease samples combined into one track.",
+          "name": "all 86 fibroblast samples"
         }
       ]
     }
