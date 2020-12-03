@@ -1,0 +1,7 @@
+Module	Section	Sample Name	Source
+STAR	SummaryLog	VCGS_FAM26_81_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/star/VCGS_FAM26_81_2.Log.final.out
+STAR	SummaryLog	VCGS_FAM22_69_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/star/VCGS_FAM22_69_2.Log.final.out
+STAR	ReadsPerGene	VCGS_FAM22_69_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/star/genecounts/VCGS_FAM22_69_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	VCGS_FAM26_81_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/star/genecounts/VCGS_FAM26_81_2.ReadsPerGene.out.tab
+FastQC	all_sections	VCGS_FAM22_69_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/fastqc/zip/VCGS_FAM22_69_2_fastqc/fastqc_data.txt
+FastQC	all_sections	VCGS_FAM26_81_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/lymphocytes/fastqc/zip/VCGS_FAM26_81_2_fastqc/fastqc_data.txt

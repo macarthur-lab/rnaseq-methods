@@ -6,20 +6,11 @@ import logging
 import os
 import pprint
 import sys
+from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES, get_joined_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
-
-def parse_args():
-    p = argparse.ArgumentParser()
-    p.add_argument("--clean", action="store_true", help="Delete previous files")
-    p.add_argument("--dont-download", action="store_true", help="Skip the download files step")
-    p.add_argument("batch_name", nargs="+", default=["all"], choices=["all", "batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh"])
-    args = p.parse_args()
-
-    return args
 
 
 def run(cmd):
@@ -39,34 +30,69 @@ def gsutil_cp(source, dest, mkdir=True):
 
 
 def main():
-    args = parse_args()
+    rnaseq_sample_metadata_df = get_joined_metadata_df()
+
+    analysis_batches = set([b for b in ANALYSIS_BATCHES.keys() if b])
+    star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
+
+    p = argparse.ArgumentParser()
+    p.add_argument("--clean", action="store_true", help="Delete previous files")
+    p.add_argument("--dont-download", action="store_true", help="Skip the download files step")
+    p.add_argument("batch_name", nargs="+", choices={"all",} | analysis_batches | star_pipeline_batches)
+    args = p.parse_args()
+
     logger.info("Args: " + pprint.pformat(args.__dict__))
 
     for batch_name in args.batch_name:
         original_dir = os.path.abspath(os.getcwd())
-        source_prefix = "gs://macarthurlab-rnaseq/" + (batch_name if batch_name != "all" else "*")
         dest_prefix = os.path.join(original_dir, "data/")
         if not os.path.isdir(dest_prefix):
             logger.error(dest_prefix + " dir not found.")
             sys.exit(1)
 
         dest_prefix = os.path.join(dest_prefix, batch_name)
-        
-        if args.clean:
-            for subdirs in ["star", "rna_seqc", "fastqc"]:
-                run("rm -r %s" % os.path.join(dest_prefix, subdirs))
+        run(f"mkdir -p {dest_prefix}")
+
+        if batch_name == "all" or batch_name in star_pipeline_batches:
+            if batch_name == "all":
+                source_prefix = "gs://macarthurlab-rnaseq/*"
+            else:
+                source_prefix = f"gs://macarthurlab-rnaseq/{batch_name}"
+            if not args.dont_download:
+                # star
+                gsutil_cp("%s/star/*.Log.final.out" % source_prefix, dest_prefix+"/star/")
+                gsutil_cp("%s/star/*.ReadsPerGene.out.tab.gz" % source_prefix,  dest_prefix+"/star/genecounts/")
+
+                # rnaseqc
+                gsutil_cp("%s/rnaseqc/*.metrics.tsv" % source_prefix,  dest_prefix+"/rna_seqc/metrics/")
+
+                # fastqc
+                gsutil_cp("%s/fastqc/zip/*_fastqc.zip" % source_prefix,  dest_prefix+"/fastqc/zip/")
+
+        elif batch_name in analysis_batches:
+            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES[batch_name]["samples"])]
+            source_prefix = "gs://macarthurlab-rnaseq/*"
+            assert len(df) == len(ANALYSIS_BATCHES[batch_name]["samples"])
+
+            if not args.dont_download:
+                for _, row in df.iterrows():
+                    # star
+                    gsutil_cp(f"%s/star/{row.sample_id}*.Log.final.out" % source_prefix, dest_prefix+"/star/")
+                    gsutil_cp(f"%s/star/{row.sample_id}*.ReadsPerGene.out.tab.gz" % source_prefix,  dest_prefix+"/star/genecounts/")
+
+                    # rnaseqc
+                    gsutil_cp(f"%s/rnaseqc/{row.sample_id}*.metrics.tsv" % source_prefix,  dest_prefix+"/rna_seqc/metrics/")
+
+                    # fastqc
+                    gsutil_cp(f"%s/fastqc/zip/{row.sample_id}*_fastqc.zip" % source_prefix,  dest_prefix+"/fastqc/zip/")
+        else:
+            raise ValueError(batch_name)
+
+        #if args.clean:
+        #    for subdirs in ["star", "rna_seqc", "fastqc"]:
+        #        run("rm -r %s" % os.path.join(dest_prefix, subdirs))
 
         if not args.dont_download:
-            # star
-            gsutil_cp("%s/star/*.Log.final.out" % source_prefix, dest_prefix+"/star/")
-            gsutil_cp("%s/star/*.ReadsPerGene.out.tab.gz" % source_prefix,  dest_prefix+"/star/genecounts/")
-
-            # rnaseqc
-            gsutil_cp("%s/rnaseqc/*.metrics.tsv" % source_prefix,  dest_prefix+"/rna_seqc/metrics/")
-
-            # fastqc
-            gsutil_cp("%s/fastqc/zip/*_fastqc.zip" % source_prefix,  dest_prefix+"/fastqc/zip/")
-            
             # unzip
             run("gunzip -f " + dest_prefix+"/star/genecounts/*.gz")
             chdir(dest_prefix+"/fastqc/zip/")
