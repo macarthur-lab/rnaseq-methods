@@ -118,9 +118,16 @@ TISSUE_NAME_TO_SMTD = {
 
 def main():
     rnaseq_sample_metadata_df = get_joined_metadata_df()
+    all_analysis_sample_ids = set(ANALYSIS_BATCHES["all_analysis_samples"]["samples"])
+
     rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[  # filter to samples
-        rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES["all_analysis_samples"]["samples"])
+        rnaseq_sample_metadata_df.sample_id.isin(all_analysis_sample_ids)
     ]
+    if len(rnaseq_sample_metadata_df) != len(all_analysis_sample_ids):
+        print("ERROR: rnaseq_sample_metadata_df != all_analysis_sample_ids:")
+        print(f"   set(all_analysis_sample_ids) - set(rnaseq_sample_metadata_df) == {set(all_analysis_sample_ids) - set(rnaseq_sample_metadata_df.sample_id)}")
+        sys.exit(0)
+
     gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
 
     all_rdg_samples_df = None
