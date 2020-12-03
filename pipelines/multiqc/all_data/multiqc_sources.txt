@@ -784,7 +784,6 @@ FastQC	all_sections	RGP_800_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_meth
 FastQC	all_sections	HK-119	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-119_fastqc/fastqc_data.txt
 FastQC	all_sections	OUN_HK047_0116	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/OUN_HK047_0116_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-115	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-115_fastqc/fastqc_data.txt
-FastQC	all_sections	HK-015	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-015_fastqc/fastqc_data.txt
 FastQC	all_sections	LIA_EDW01_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/LIA_EDW01_1_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM148_462_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/VCGS_FAM148_462_2_fastqc/fastqc_data.txt
 FastQC	all_sections	MCOP008_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MCOP008_001_2_fastqc/fastqc_data.txt
@@ -932,3 +931,4 @@ FastQC	all_sections	46N_RL_M1	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	MUN_FAM2_TOTALMDC1A1_05	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MUN_FAM2_TOTALMDC1A1_05_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_677_4	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_677_4.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	437-3_A_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/437-3_A_2_fastqc/fastqc_data.txt
+FastQC	all_sections	HK-015	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-015_fastqc.zip
