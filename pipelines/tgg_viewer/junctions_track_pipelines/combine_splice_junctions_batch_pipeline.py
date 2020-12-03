@@ -4,8 +4,7 @@ import os
 from pprint import pprint
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df, \
-    ANALYSIS_BATCHES
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, ANALYSIS_BATCHES
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,7 +19,8 @@ DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:1441a2c46bb2d6f203df2fa
 
 def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_individual_tables, normalize_read_counts, output_dir):
 
-    output_filename = f"combined.{batch_name}.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv.gz"
+    normalized_suffix = ".normalized" if normalize_read_counts else ""
+    output_filename = f"combined.{batch_name}.{len(SJ_out_tab_paths)}_samples{normalized_suffix}.SJ.out.tsv.gz"
     output_path = os.path.join(output_dir, output_filename)
     output_path_exists = hl.hadoop_is_file(output_path)
 
@@ -32,7 +32,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_ind
         logger.info(f"Output files \n{output_path} and \n{output_path2} exist.\n Skipping...")
         return
 
-    j = batch_utils.init_job(batch, f"combine junctions: {batch_name} ({len(SJ_out_tab_paths)} files)", DOCKER_IMAGE if not args.raw else None, args.cpu, args.cpu*3.75)
+    j = batch_utils.init_job(batch, f"combine junctions ({normalized_suffix}): {batch_name} ({len(SJ_out_tab_paths)} files)", DOCKER_IMAGE if not args.raw else None, args.cpu, args.cpu*3.75)
     batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     if args.force or not output_path_exists:
@@ -51,7 +51,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_ind
             f"{save_individual_tables_option} "
             f"{normalize_read_counts_option} "
             f"{local_SJ_out_tab_paths}")
-        j.command(f"mv combined.{len(SJ_out_tab_paths)}_samples.SJ.out.tsv.gz {output_filename}")
+        j.command(f"mv combined.{len(SJ_out_tab_paths)}_samples{normalized_suffix}.SJ.out.tsv.gz {output_filename}")
         j.command(f"""gsutil -m cp {output_filename} {output_dir}""")
         input_path_for_step2 = output_filename
     else:
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     analysis_batches = set([b for b in ANALYSIS_BATCHES.keys() if b])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
-    p = batch_utils.init_arg_parser(default_cpu=1, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("--normalize-read-counts", action="store_true", help="whether to normalize unique- and multi-mapped read counts rather than just summing them across input tables")
     p.add_argument("--save-individual-tables", action="store_true", help="Also export individual .bed files with additional columns")
     p.add_argument("batch_name", nargs="+", choices=analysis_batches | star_pipeline_batches, help="Name of RNA-seq batch to process")
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         hl.init(log="/dev/null", quiet=True)
 
     # process batches
-    batch_label = args.batch_name[0] if len(args.batch_name) == 1 else f"{len(args.batch_name)} batches"
+    batch_label = args.batch_name[0] if len(args.batch_name) == 1 else f"{len(args.batch_name)} batches ({'normalized' if args.normalize_read_counts else ''})"
     with batch_utils.run_batch(args, batch_name=f"combine junctions: {batch_label}") as batch:
         for batch_name in args.batch_name:
             if batch_name in star_pipeline_batches:
