@@ -15,12 +15,18 @@
 [whole blood samples](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fwhole_blood_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/whole_blood_rnaseq_samples.json))  
 
 ## MultiQC links
-* [batch_0](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_0.html)
-* [batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)
-* [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)
-* [batch_2020_08](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08.html)
-* [batch_2020_08__walsh](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08__walsh.html)
-* combined view across all batches: [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)
+[all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)  
+
+[batch_0](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_0.html)   
+[batch_1_muntoni](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_1_muntoni.html)  
+[batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)   
+[batch_2020_08](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08.html)   
+[batch_2020_08__walsh](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08__walsh.html)   
+
+[muscle samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/muscle.html)   
+[fibroblasts samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/fibroblasts.html)   
+[lymphocytes samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/lymphocytes.html)   
+[whole blood samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/whole_blood.html)   
 
 
 ## Data Processing Steps
