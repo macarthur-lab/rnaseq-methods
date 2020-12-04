@@ -97,13 +97,16 @@ def main():
     all_rdg_and_gtex_samples_df = None
     all_rdg_and_gtex_counts_df = None
 
+    os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_counts;
+        gsutil -m cp -n {RDG_GENE_READS_PATH} .""")
+
     for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
         logging.info("----------------")
         logging.info(f"{tissue_name}:")
         samples_df = pd.DataFrame()
         SMTD_value = TISSUE_NAME_TO_SMTD[tissue_name]
 
-        tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['imputed tissue'] == tissue_name]
+        tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES[tissue_name]["samples"])]
         logging.info(f"Got {len(tgg_df)} TGG samples for {tissue_name}")
         samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)
         samples_df['tissue'] = tissue_name
