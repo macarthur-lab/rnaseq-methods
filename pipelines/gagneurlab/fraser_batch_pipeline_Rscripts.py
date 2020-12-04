@@ -144,21 +144,21 @@ if({num_cpu}L == 1L) {{
 }}
 
 sampleSetLabel = "{sample_set_label}"
-for(i in c("psi5", "psi3", "psiSite")) {{
+for(param_type in c("psi5", "psi3", "psiSite")) {{
     print("===============")
-    fds = optimHyperParams(fds, i, plot=FALSE, implementation="PCA", BPPARAM=bpparam)
-    g = plotEncDimSearch(fds, type=i, plotType="auc") 
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_AUC.png", sep=""), g, device="png", type="cairo")
-    g = plotEncDimSearch(fds, type=i, plotType="loss") 
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", i,"_loss.png", sep=""), g, device="png", type="cairo")
+    fds = optimHyperParams(fds, param_type, plot=FALSE, implementation="PCA", BPPARAM=bpparam)
+    g = plotEncDimSearch(fds, type=param_type, plotType="auc") 
+    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", param_type,"_AUC.png", sep=""), g, device="png", type="cairo")
+    g = plotEncDimSearch(fds, type=param_type, plotType="loss") 
+    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", param_type,"_loss.png", sep=""), g, device="png", type="cairo")
     
     print(paste(i, ": ", bestQ(fds, type=i), sep=""))
     gc()
 }}
 
 print("===============")
-for(i in c("psi5", "psi3", "psiSite")) {{
-    print(paste(i, bestQ(fds, type=i), sep=" "))
+for(param_type in c("psi5", "psi3", "psiSite")) {{
+    print(paste(param_type, bestQ(fds, type=param_type), sep=" "))
 }}
 
 saveFraserDataSet(fds)
@@ -192,11 +192,11 @@ if({num_cpu}L == 1L) {{
 sampleSetLabel = "{sample_set_label}"
 
 possibleConfounders = c("tissue", "sex", "stranded", "read_length", "batch") 
-for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_before_correction_", i ,".pdf", sep=""))
+for(param_type in c("psi5", "psi3", "psiSite")) {{
+    plotCountCorHeatmap(fds, type=param_type, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=paste(sampleSetLabel, "_plotCountCorHeatmap_before_correction_", param_type ,".pdf", sep=""))
 }}
-for(i in c("psi5", "psi3", "psiSite")) {{
-    plotCountCorHeatmap(fds, type=i, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_before_correction_", i ,".pdf", sep=""))
+for(param_type in c("psi5", "psi3", "psiSite")) {{
+    plotCountCorHeatmap(fds, type=param_type, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=paste(sampleSetLabel, "_plotCountJunctionSampleHeatmap_before_correction_", param_type ,".pdf", sep=""))
 }}
 
 gc()
@@ -204,23 +204,23 @@ gc()
 message("Running FRASER with q=", bestQ(fds, type="psi5"), ", ", bestQ(fds, type="psi3"), " ", bestQ(fds, type="psiSite"))
 implementation="PCA"
 iterations = 15
-for(i in c("psi5", "psi3", "psiSite")) {{
-    q = bestQ(fds, type=i)
-    message(date(), ": Fit step for: ", i, ". q=", q)
-    fds = fit(fds, implementation = implementation, q = q, iterations=iterations, type=i, BPPARAM=bpparam)
-    message(date(), ": Compute p values for: ", i, ".")
-    fds = calculatePvalues(fds, type=i)
-    message(date(), ": Adjust p values for: ", i, ".")
-    fds = calculatePadjValues(fds, type=i)
-    message(date(), ": Compute Z scores for: ", i, ".")
-    fds = calculateZscore(fds, type = i)
+for(param_type in c("psi5", "psi3", "psiSite")) {{
+    q = bestQ(fds, type=param_type)
+    message(date(), ": Fit step for: ", param_type, ". q=", q)
+    fds = fit(fds, implementation = implementation, q = q, iterations=iterations, type=param_type, BPPARAM=bpparam)
+    message(date(), ": Compute p values for: ", param_type, ".")
+    fds = calculatePvalues(fds, type=param_type)
+    message(date(), ": Adjust p values for: ", param_type, ".")
+    fds = calculatePadjValues(fds, type=param_type)
+    message(date(), ": Compute Z scores for: ", param_type, ".")
+    fds = calculateZscore(fds, type = param_type)
   
-    plot_filename1 = paste(sampleSetLabel, "_using", implementation, "_plotCountCorHeatmap_after_correction_", i, "__q", q, ".pdf", sep="")
-    plot_filename2 = paste(sampleSetLabel, "_using", implementation, "_plotCountJunctionSampleHeatmap_after_correction_", i, "__q", q ,".pdf", sep="")
+    plot_filename1 = paste(sampleSetLabel, "_using", implementation, "_plotCountCorHeatmap_after_correction_", param_type, "__q", q, ".pdf", sep="")
+    plot_filename2 = paste(sampleSetLabel, "_using", implementation, "_plotCountJunctionSampleHeatmap_after_correction_", param_type, "__q", q ,".pdf", sep="")
     message("Creating heatmap plot: ", plot_filename1)  
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=plot_filename1)
+    plotCountCorHeatmap(fds, type=param_type, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="sampleCorrelation", device="pdf", filename=plot_filename1)
     message("Creating heatmap plot: ", plot_filename2)  
-    plotCountCorHeatmap(fds, type=i, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=plot_filename2)
+    plotCountCorHeatmap(fds, type=param_type, normalized=TRUE, logit=TRUE, annotation_col=possibleConfounders, plotType="junctionSample", device="pdf", filename=plot_filename2)
     message("Done creating heatmap plots")  
     gc()
 }}
@@ -253,4 +253,48 @@ gc()
 saveFraserDataSet(fds)
 
 message("Done saving fds dataset")
+"""
+
+
+def get_PLOT_RESULTS(sample_set_label):
+    return f"""
+library(FRASER)
+library(annotables)
+library(data.table)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(purrr)
+library(ggrepel)
+library(plotly)
+library(stringr)
+library(RColorBrewer)
+library(ggsci)
+library(ggplot2)
+library(gtable)
+
+print("#### 1")
+fds = loadFraserDataSet(".")
+print("#### 2")
+res = results(fds, padjCutoff={PADJ_THRESHOLD}, zScoreCutoff=NA, deltaPsiCutoff=NA)
+print("#### 3")
+sample_ids = res$sampleID[!duplicated(res$sampleID)]
+print("#### 4")
+sample_ids = sample_ids[order(sample_ids)]
+print("#### 5")
+for(sample_id in sample_ids) {{    
+    print(paste("Plotting volcano plots for ", sample_id))
+    for(param_type in c("psi5", "psi3", "psiSite")) {{
+        print(paste("Plotting volcano plot", param_type, " for ", sample_id))
+        volcanoPlotLabels = ifelse(names(fds) %in% res[sampleID == sample_id]$geneID, names(fds), "")
+        p = plotVolcano(fds, type="psi5", sample_id, basePlot=TRUE) +
+          geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = 'grey50') +
+          labs(title=sample_id, x = "", y = "") +
+          theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm")) 
+        
+        ggsave(file=paste(sampleSetLabel, "_volcano_", param_type, "_", sample_id, ".png", sep=""), p, width=12, height=8, dpi=150)
+    }}
+}}
+
+#plotQQ(fds, res[1, geneID], main="Q-Q plot for gene: CAPN3 @ q=20")
 """

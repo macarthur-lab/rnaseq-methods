@@ -5,12 +5,12 @@ GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 GCLOUD_PROJECT = "seqr-project"
 
 DOCKER_IMAGE = "weisburd/gagneurlab@sha256:be45788c8696a196bee25be269cb2de97277601bed65cbc3efcadc16acc5a764"
+#DOCKER_IMAGE = "weisburd/gagneurlab@sha256:653d20def50adefa967587413eb7f8667272b67eeb90f935e3e372dda45dd367"
+
 # https://i12g-gagneurweb.in.tum.de/public/workshops/RNAseq_ASHG19/input_data/annotations/gencode.v29lift37.annotation.txdb
 GENCODE_TXDB = "gs://macarthurlab-rnaseq/gagneur/gencode.v26.annotation.txdb"
 ALL_METADATA_TSV = "gs://macarthurlab-rnaseq/gagneur/metadata_table_for_all_RDG_and_GTEX_samples.tsv"
 BAM_HEADER_PATH = "gs://macarthurlab-rnaseq/gagneur/fraser/bam_header.bam"
-
-
 
 import gspread
 import os
