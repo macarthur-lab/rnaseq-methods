@@ -16,7 +16,6 @@ logger = logging.getLogger(__name__)
 RDG_GENE_READS_PATH = os.path.expanduser("~/project__rnaseq/data/samples/expression/rnaseqc_counts/*gene_reads.gct.gz")
 GTEX_GENE_READS_PATH = os.path.expanduser('~/project__rnaseq/data/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.gct.gz')
 
-EXPORT_100_MALE_AND_100_FEMALE_GTEX_SAMPLES = False
 
 def get_sample_set_label(sample_ids):
     byte_string = ", ".join(sorted(sample_ids)).encode()
@@ -118,11 +117,7 @@ def main():
         gtex_df = gtex_df.sort_values(by='SMRIN', ascending=False)
         logging.info(f"Got {len(gtex_df)} GTEx samples for {tissue_name}")
 
-        if EXPORT_100_MALE_AND_100_FEMALE_GTEX_SAMPLES:
-            samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[gtex_df['SEX'] == 'M'][:100], tissue_name)
-            samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[gtex_df['SEX'] == 'F'][:100], tissue_name)
-        else:
-            samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[:100], tissue_name)
+        samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[:100], tissue_name)
 
         samples_df['tissue'] = tissue_name
 
@@ -155,8 +150,8 @@ def main():
         GTEX_sample_ids = [s for s in list(samples_df.sample_id) if "GTEX" in s]
 
         if len(RDG_file_paths) != len(RDG_sample_ids):
-            print(f"ERROR: len(file_paths) != len(samples_df): {len(RDG_file_paths)} != {len(samples_df)}" )
-            continue
+            raise ValueError(f"ERROR: len(file_paths) != len(samples_df): {len(RDG_file_paths)} != {len(samples_df)}. Missing: {set(RDG_sample_ids) - set(RDG_file_paths.keys())}" )
+
         print(f"Found all {len(RDG_sample_ids)} RDG samples and {len(GTEX_sample_ids)} GTEX samples for {tissue_name}")
 
         print(f"Reading {len(GTEX_sample_ids)} GTEX samples from {GTEX_GENE_READS_PATH}")
