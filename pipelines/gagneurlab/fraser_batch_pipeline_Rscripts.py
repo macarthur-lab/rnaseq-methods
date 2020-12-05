@@ -1,7 +1,5 @@
 import os
 
-PADJ_THRESHOLD=0.1
-DELTA_PSI_THRESHOLD=0.3
 
 def get_EXTRACT_SPLICE_JUNCTIONS_Rscript(bam_header_path, num_cpu):
     return f"""
@@ -80,7 +78,7 @@ fds = calculatePSIValues(fds, BPPARAM=bpparam)
 saveFraserDataSet(fds)
 """
 
-def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label):
+def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold):
     return f"""
 library(FRASER)
 library(data.table)
@@ -101,8 +99,10 @@ library(gtable)
 fds = loadFraserDataSet(".")
 sampleSetLabel = "{sample_set_label}"
 
+fds = filterExpressionAndVariability(fds, minDeltaPsi={delta_psi_threshold}, minExpressionInOneSample=2, filter=TRUE)
+
+
 options(repr.plot.width=5, repr.plot.height=4)
-fds = filterExpressionAndVariability(fds, minDeltaPsi={DELTA_PSI_THRESHOLD}, minExpressionInOneSample=2, filter=FALSE)
 g = plotFilterExpression(fds, bins=100)
 ggsave(file=paste(sampleSetLabel, "_plotFilterExpression.png", sep=""), g, device="png", type="cairo")
 
@@ -152,7 +152,7 @@ for(param_type in c("psi5", "psi3", "psiSite")) {{
     g = plotEncDimSearch(fds, type=param_type, plotType="loss") 
     ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch_", param_type,"_loss.png", sep=""), g, device="png", type="cairo")
     
-    print(paste(i, ": ", bestQ(fds, type=i), sep=""))
+    print(paste(param_type, ": ", bestQ(fds, type=param_type), sep=""))
     gc()
 }}
 
@@ -165,7 +165,7 @@ saveFraserDataSet(fds)
 """
 
 
-def get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu):
+def get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu, delta_psi_threshold, padj_threshold):
     return f"""
 library(FRASER)
 library(annotables)
@@ -239,13 +239,13 @@ ggsave(file=paste(sampleSetLabel, "_plotAberrantPerSample.png", sep=""), g, devi
 #write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 #gc()
 
-res = results(fds, padjCutoff={PADJ_THRESHOLD}, zScoreCutoff=NA, deltaPsiCutoff=NA)
-saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.RDS", sep=""))
+res = results(fds, padjCutoff={padj_threshold}, zScoreCutoff=NA, deltaPsiCutoff={delta_psi_threshold})
+saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{padj_threshold}_results.RDS", sep=""))
 message("Done saving results RDS")  
 gc()
 
-message(length(res), " junctions in results with p < {PADJ_THRESHOLD}")
-filename=paste(sampleSetLabel, qLabel, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep="")
+message(length(res), " junctions in results with p < {padj_threshold} and deltaPsi > {delta_psi_threshold}")
+filename=paste(sampleSetLabel, qLabel, "_padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_results.tsv.gz", sep="")
 write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
 message("Done saving ", filename)
 gc()
@@ -256,7 +256,7 @@ message("Done saving fds dataset")
 """
 
 
-def get_PLOT_RESULTS(sample_set_label):
+def get_PLOT_RESULTS(sample_set_label, delta_psi_threshold, padj_threshold):
     return f"""
 library(FRASER)
 library(annotables)
@@ -273,28 +273,33 @@ library(ggsci)
 library(ggplot2)
 library(gtable)
 
-print("#### 1")
 fds = loadFraserDataSet(".")
-print("#### 2")
-res = results(fds, padjCutoff={PADJ_THRESHOLD}, zScoreCutoff=NA, deltaPsiCutoff=NA)
-print("#### 3")
-sample_ids = res$sampleID[!duplicated(res$sampleID)]
-print("#### 4")
+res = results(fds, padjCutoff={padj_threshold}, zScoreCutoff=NA, deltaPsiCutoff={delta_psi_threshold})
+
+sampleSetLabel = "{sample_set_label}"
+
+sample_ids = unique(res$sampleID)
 sample_ids = sample_ids[order(sample_ids)]
-print("#### 5")
 for(sample_id in sample_ids) {{    
-    print(paste("Plotting volcano plots for ", sample_id))
+    print(paste("Plotting ", sample_id))
+    res2plot <- res[res$sampleID == sample_id][1,]
+    p = plotExpression(fds, result=res2plot)
+    ggsave(file=paste(sampleSetLabel, "_expression_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    p = plotQQ(fds, result=res2plot)
+    ggsave(file=paste(sampleSetLabel, "_QQ_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    
+    p = plotExpectedVsObservedPsi(fds, result=res2plot)
+    ggsave(file=paste(sampleSetLabel, "_expectedVsObservedPsi_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    
     for(param_type in c("psi5", "psi3", "psiSite")) {{
         print(paste("Plotting volcano plot", param_type, " for ", sample_id))
-        volcanoPlotLabels = ifelse(names(fds) %in% res[sampleID == sample_id]$geneID, names(fds), "")
-        p = plotVolcano(fds, type="psi5", sample_id, basePlot=TRUE) +
-          geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = 'grey50') +
-          labs(title=sample_id, x = "", y = "") +
-          theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm")) 
-        
-        ggsave(file=paste(sampleSetLabel, "_volcano_", param_type, "_", sample_id, ".png", sep=""), p, width=12, height=8, dpi=150)
+        p = plotVolcano(fds, type=param_type, sample_id)
+        ggsave(file=paste(sampleSetLabel, "_volcano_", param_type, "_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
     }}
 }}
 
-#plotQQ(fds, res[1, geneID], main="Q-Q plot for gene: CAPN3 @ q=20")
 """
+
+
+
+

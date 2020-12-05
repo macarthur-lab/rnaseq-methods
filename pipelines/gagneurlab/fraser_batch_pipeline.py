@@ -5,6 +5,7 @@ import os
 import pandas as pd
 import sys
 
+
 from batch import batch_utils
 from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES
 from gagneurlab.gagneur_utils import ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
@@ -17,6 +18,10 @@ logger = logging.getLogger(__name__)
 
 # NOTE: xvfb-run is used in the Rscript commands below to solve the issue of R graphics libraries requiring a
 # computer monitor and related graphics libraries to be set up in the execution environment
+
+PADJ_THRESHOLD=0.1
+DELTA_PSI_THRESHOLD=0.1
+
 
 def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_cpu, output_file_path_splice_junctions_RDS):
     batch_utils.switch_gcloud_auth_to_user_account(j_extract_splice_junctions, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
@@ -36,7 +41,7 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
     print("Output file path: ", output_file_path_splice_junctions_RDS)
 
 
-def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_path, num_cpu, output_file_path_calculated_psi_values_tar_gz):
+def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_path, output_file_path_calculated_psi_values_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/{sample_set_label}")  # work-around for https://github.com/c-mertes/FRASER/issues/11
@@ -75,7 +80,7 @@ def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calcu
     j_filter_and_annotate_data.command(f"tar xzf {os.path.basename(calculated_psi_values_tar_gz_path)}")
     j_filter_and_annotate_data.command(f"cd {sample_set_label}")
     j_filter_and_annotate_data.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label)}'""")
+    j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD)}'""")
     j_filter_and_annotate_data.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_filter_and_annotate_data.command(f"echo ===============; echo cache dir; echo ===============; find cache")
     j_filter_and_annotate_data.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
@@ -113,7 +118,7 @@ def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(calculated_best_q_tar_gz_path)}")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1)}'""")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {sample_set_label}")
@@ -135,7 +140,7 @@ def run_plots(j_run_fraser_analysis, sample_set_label, fraser_analysis_results_o
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_results_only_tar_gz_path)}")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_PLOT_RESULTS(sample_set_label)}'""")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_PLOT_RESULTS(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_volcano_plots_tar_gz)} {sample_set_label}")
@@ -170,9 +175,10 @@ def main():
 
     batch_label = f"FRASER"
     if args.with_gtex:
-        batch_label += " (with GTEx)"
+        batch_label += f" (with GTEx)"
     batch_label += ": "
     batch_label += ','.join(args.batch_name)
+    batch_label += f" (dPsi={DELTA_PSI_THRESHOLD}, padj={PADJ_THRESHOLD})"
     with batch_utils.run_batch(args, batch_label) as batch:
 
         for batch_name in args.batch_name:
@@ -236,11 +242,11 @@ def main():
 
                     output_file_path_splice_junctions_RDS = os.path.join(output_dir_for_batch_specific_data, f"spliceJunctions_{sample_set_label}.RDS")
                     output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
-                    output_file_path_filter_and_annotate_data_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"filteredAndAnnotated_{sample_set_label}.tar.gz")
-                    output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}.tar.gz")
-                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}.tar.gz")
-                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}_results_only.tar.gz")
-                    output_file_path_fraser_volcano_plots_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserVolcanoPlots_{sample_set_label}.tar.gz")
+                    output_file_path_filter_and_annotate_data_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"filteredAndAnnotated_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}.tar.gz")
+                    output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}_results_only__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_volcano_plots_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserVolcanoPlots_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
 
                     print("Input bam: ", input_bam)
                     if step == 1:
@@ -368,7 +374,6 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         non_split_reads_output_files,
                         output_file_path_splice_junctions_RDS,
                         args.metadata_tsv_path,
-                        num_cpu,
                         output_file_path_calculated_psi_values_tar_gz)
 
             # filter and annotate data

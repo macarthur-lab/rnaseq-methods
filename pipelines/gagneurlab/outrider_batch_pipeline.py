@@ -1,4 +1,5 @@
 import hail as hl
+import hashlib
 import logging
 import os
 import pandas as pd
@@ -14,6 +15,7 @@ logger = logging.getLogger(__name__)
 OUTRIDER_COUNTS_TSV_GZ = "gs://macarthurlab-rnaseq/gagneur/outrider/OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
 OUTPUT_BASE_DIR = "gs://macarthurlab-rnaseq/gagneur/outrider/results/"
 
+PADJ_THRESHOLD = 0.05
 
 def main():
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
@@ -53,32 +55,37 @@ def main():
             batch_tissue = batch_dict['tissue']
             batch_sex = batch_dict['sex']
 
-            num_sample_missing_from_metadata_tsv = len(batch_dict['samples']) - len(metadata_tsv_df.sample_id.isin(batch_dict['samples']))
+            batch_df = metadata_tsv_df[metadata_tsv_df.sample_id.isin(batch_dict['samples'])]
+            byte_string = ", ".join(sorted(batch_df.sample_id)).encode()
+            h = hashlib.md5(byte_string).hexdigest().upper()
+            sample_set_label = f"{batch_name}__{len(batch_df.sample_id)}_samples_{h[:10]}"
+
+            num_sample_missing_from_metadata_tsv = len(batch_dict['samples']) - len(batch_df)
             if num_sample_missing_from_metadata_tsv > 0:
                 raise ValueError(f"{batch_tissue} metadata_tsv_df is missing {num_sample_missing_from_metadata_tsv} sample ids. Download count files and run export_gagneur_metadata_table.py")
-            print(f"Processing {batch_name}: {len(batch_dict['samples'])}")
+            logger.info(f"Processing {sample_set_label}")
 
             c_vector_of_sample_names = 'c("' + '", "'.join(batch_dict['samples']) + '")'
             if args.with_gtex:
                 batch_include_GTEX_samples = "TRUE"
-                batch_name += "_with_GTEX"
+                sample_set_label += "_with_GTEX"
             elif args.only_gtex:
                 c_vector_of_sample_names = "c()"
                 batch_include_GTEX_samples = "TRUE"
-                batch_name += "_only_GTEX"
+                sample_set_label += "_only_GTEX"
             else:
                 batch_include_GTEX_samples = "FALSE"
-                batch_name += "_without_GTEX"
+                sample_set_label += "_without_GTEX"
 
-            j = batch_utils.init_job(batch, batch_name, DOCKER_IMAGE if not args.raw else None, args.cpu, args.memory, disk_size=10)
+            j = batch_utils.init_job(batch, sample_set_label, DOCKER_IMAGE if not args.raw else None, args.cpu, args.memory, disk_size=10)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
             # copy inputs
             j.command(f"""gsutil -m cp {GENCODE_TXDB} .""")
             j.command(f"""gsutil -m cp {args.metadata_tsv_path} {args.counts_tsv_path} .""")
-            output_file = os.path.join(OUTPUT_BASE_DIR, f"{batch_name}.RDS")
+            output_file = os.path.join(OUTPUT_BASE_DIR, f"{sample_set_label}.RDS")
 
             if not args.force and hl.hadoop_is_file(output_file):
-                logger.info(f"Output file exists: {output_file} . Skipping {batch_name}...")
+                logger.info(f"Output file exists: {output_file} . Skipping {sample_set_label}...")
                 return
 
             j.command(f"""time xvfb-run Rscript -e '
@@ -119,7 +126,7 @@ if ({batch_include_GTEX_samples}) {{
 }}
 
 
-sampleLabel = "{batch_name}_"
+sampleLabel = "{sample_set_label}_"
 sampleSubset = {c_vector_of_sample_names}
 sampleSubset = c(sampleSubset, GTEX_sampleIds)
 print("sampleSubset: ")
@@ -182,6 +189,7 @@ print(sort(sizeFactors(ods))[1:5])
 print(paste(length(ods), "genes before filtering"))
 ods <- ods[mcols(ods)$passedFilter,]
 print(paste(length(ods), "genes after filtering"))
+
 plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, filename=paste(sampleLabel, "_plotCountCorHeatmap_before_correction.pdf", sep=""))
 plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", filename=paste(sampleLabel, "_plotCountGeneSampleHeatmap_before_correction.pdf", sep=""))
 
@@ -206,22 +214,19 @@ plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device=
 
 plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", main=paste("Count Gene vs Sample Heatmap q=", q, sep=""), device="pdf", type="cairo", filename=paste(sampleLabel, "_plotCountGeneSampleHeatmap_after_correction.pdf", sep=""))
 
+g = plotAberrantPerSample(ods, padjCutoff={PADJ_THRESHOLD})
+ggsave(file=paste(sampleLabel, "_aberrantPerSample.png", sep=""), g, type="cairo")
+
+
 res = results(ods, padjCutoff=1)
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleLabel, "_ods__", "q", q, "_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleLabel, "_ods__", "q", q, "_all_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
-sample_ids = res$sampleID[!duplicated(res$sampleID)]
-sample_ids = sample_ids[order(sample_ids)]
-for(sample_id in sample_ids) {{
-    volcanoPlotLabels = ifelse(names(ods) %in% res[sampleID == sample_id]$geneID, names(ods), "")
-    p = plotVolcano(ods, sample_id, basePlot=TRUE) +
-      geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = 'grey50') +
-      labs(title=sample_id, x = "", y = "") +
-      theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm"))
-      
-    ggsave(file=paste("volcano_", sample_id, ".png", sep=""), p, width=12, height=8, dpi=150) 
-}}
+res = results(ods, padjCutoff={PADJ_THRESHOLD})
+res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
+res[, "q"] = q
+write.table(res, file=paste(sampleLabel, "_ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
 
             j.command("gzip *.tsv")
@@ -233,3 +238,19 @@ for(sample_id in sample_ids) {{
 if __name__ == "__main__":
     main()
 
+
+"""
+
+sample_ids = unique(res$sampleID)
+sample_ids = sample_ids[order(sample_ids)]
+for(sample_id in sample_ids) {{
+    print(paste("Plotting volcano plots for ", sample_id))
+    volcanoPlotLabels = ifelse(names(ods) %in% res[res$sampleID == sample_id]$geneID, names(ods), "")
+    p = plotVolcano(ods, sample_id) +
+      geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = "grey50") +
+      labs(title=sample_id, x = "", y = "") +
+      theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm"))
+      
+    ggsave(file=paste(sampleSetLabel, "_volcano_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo") 
+}}
+"""
