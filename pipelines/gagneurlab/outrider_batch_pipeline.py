@@ -84,11 +84,13 @@ def main():
             # copy inputs
             j.command(f"""gsutil -m cp {GENCODE_TXDB} .""")
             j.command(f"""gsutil -m cp {args.metadata_tsv_path} {args.counts_tsv_path} .""")
-            step1_output_RDS_file = os.path.join(output_base_dir, f"{sample_set_label}.RDS")
+            step1_output_RDS_file = os.path.join(output_base_dir, f"{sample_set_label}__ods.RDS")
+            step2_output_tar_gz_file = os.path.join(output_base_dir, f"{sample_set_label}__volcano_plots__padj_{PADJ_THRESHOLD}.tar.gz")
 
             if not args.force and hl.hadoop_is_file(step1_output_RDS_file):
-                logger.info(f"Output file exists: {step1_output_RDS_file} . Skipping {sample_set_label}...")
+                logger.info(f"Step 1: output file exists: {step1_output_RDS_file} . Skipping step 1...")
             else:
+                logger.info(f"Step 1: output file: {step1_output_RDS_file}")
                 j.command(f"""time xvfb-run Rscript -e '
 
 # outrider 
@@ -127,7 +129,7 @@ if ({batch_include_GTEX_samples}) {{
 }}
 
 
-sampleSetLabel = "{sample_set_label}_"
+sampleSetLabel = "{sample_set_label}"
 sampleSubset = {c_vector_of_sample_names}
 sampleSubset = c(sampleSubset, GTEX_sampleIds)
 print("sampleSubset: ")
@@ -175,7 +177,7 @@ g = ggplot(data=NULL, aes(y=sortedSizeFactors, x=1:ncol(ods))) +
                    nudge_x = 35, box.padding   = 0.35, point.padding = 0.5, segment.color = "grey50") +
   theme_bw()
 
-ggsave(file=paste(sampleSetLabel, "_sizeFactors.png", sep=""), g, type="cairo")
+ggsave(file=paste(sampleSetLabel, "__sizeFactors.png", sep=""), g, type="cairo")
 
 print(sort(sizeFactors(ods))[1:5])
 
@@ -183,7 +185,7 @@ txdb <- loadDb("{os.path.basename(GENCODE_TXDB)}")
 ods <- filterExpression(ods, gtfFile=txdb, filterGenes=FALSE)   #, fpkmCutoff=100)
 
 g = plotFPKM(ods) + theme_bw() + theme(legend.position="bottom")
-ggsave(file=paste(sampleSetLabel, "_plotFPKM.png", sep=""), g, device="png", type="cairo")
+ggsave(file=paste(sampleSetLabel, "__plotFPKM.png", sep=""), g, device="png", type="cairo")
 
 #plotExpressedGenes(ods)
 
@@ -191,13 +193,13 @@ print(paste(length(ods), "genes before filtering"))
 ods <- ods[mcols(ods)$passedFilter,]
 print(paste(length(ods), "genes after filtering"))
 
-plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, filename=paste(sampleSetLabel, "_plotCountCorHeatmap_before_correction.pdf", sep=""))
-plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", filename=paste(sampleSetLabel, "_plotCountGeneSampleHeatmap_before_correction.pdf", sep=""))
+plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, filename=paste(sampleSetLabel, "__plotCountCorHeatmap_before_correction.pdf", sep=""))
+plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", filename=paste(sampleSetLabel, "__plotCountGeneSampleHeatmap_before_correction.pdf", sep=""))
 
 if (length(sampleSubset) > 5) {{
     ods = findEncodingDim(ods, BPPARAM=MulticoreParam({args.cpu}, progressbar=TRUE))
     g = plotEncDimSearch(ods)
-    ggsave(file=paste(sampleSetLabel, "_plotEncDimSearch", ".png", sep=""), g, type="cairo")
+    ggsave(file=paste(sampleSetLabel, "__plotEncDimSearch", ".png", sep=""), g, type="cairo")
     optimal_q = metadata(ods)$opt
 }} else {{
     optimal_q = length(sampleSubset)
@@ -209,31 +211,44 @@ q = optimal_q
 original_ods = ods
 
 ods = OUTRIDER(original_ods, verbose=TRUE, iterations=15, q=q, BPPARAM=MulticoreParam({args.cpu}, progressbar=TRUE))
-saveRDS(ods, paste(sampleSetLabel, "_ods.RDS", sep=""))
+saveRDS(ods, "{os.path.basename(step1_output_RDS_file)}")
 
-plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, main=paste("Count correlation heatmap q=", q, sep=""), filename=paste(sampleSetLabel, "_plotCountCorHeatmap_after_correction.pdf", sep=""))
+plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, main=paste("Count correlation heatmap q=", q, sep=""), filename=paste(sampleSetLabel, "__plotCountCorHeatmap_after_correction.pdf", sep=""))
 
-plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", main=paste("Count Gene vs Sample Heatmap q=", q, sep=""), device="pdf", type="cairo", filename=paste(sampleSetLabel, "_plotCountGeneSampleHeatmap_after_correction.pdf", sep=""))
+plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", main=paste("Count Gene vs Sample Heatmap q=", q, sep=""), device="pdf", type="cairo", filename=paste(sampleSetLabel, "__plotCountGeneSampleHeatmap_after_correction.pdf", sep=""))
 
 g = plotAberrantPerSample(ods, padjCutoff={PADJ_THRESHOLD})
-ggsave(file=paste(sampleSetLabel, "_aberrantPerSample_padj_{PADJ_THRESHOLD}.png", sep=""), g, type="cairo")
+ggsave(file=paste(sampleSetLabel, "__aberrantPerSample_padj_{PADJ_THRESHOLD}.png", sep=""), g, type="cairo")
 
+# annotate gene names  
+geneIDs <- gsub("\\\\.[0-9]*(_[0-9]*)?.*$", "", rownames(ods))
+geneIdMap <- merge(data.table(ensgene=geneIDs), grch38, sort=FALSE, all.x=TRUE)[!duplicated(ensgene),]
+  
+# set new gene names only if hgnc symbol is present
+if(!"ENSG" %in% colnames(mcols(ods))) {{
+    mcols(ods)$ENSG <- geneIDs
+    rownames(ods) <- geneIdMap[,ifelse(is.na(symbol) | symbol == "" | duplicated(symbol), geneIDs, symbol)]
+}}
 
 res = results(ods, padjCutoff=1)
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "_ods__", "q", q, "_all_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
 res = results(ods, padjCutoff={PADJ_THRESHOLD})
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "_ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
 
-                j.command(f"gsutil -m cp  *.tsv.gz *.pdf *.png *.RDS {output_base_dir}")
 
-            j.command(f"gsutil -m cp -n {step1_output_RDS_file} .")
-            j.command(f"""time xvfb-run Rscript -e '
+            if not args.force and hl.hadoop_is_file(step2_output_tar_gz_file):
+                logger.info(f"Step 2: output file exists: {step2_output_tar_gz_file} . Skipping step 2...")
+            else:
+                logger.info(f"Step 2: output file: {step2_output_tar_gz_file}")
+
+                j.command(f"gsutil -m cp -n {step1_output_RDS_file} .")
+                j.command(f"""time xvfb-run Rscript -e '
 library(OUTRIDER)
 library(annotables)
 library(data.table)
@@ -251,8 +266,8 @@ library(gtable)
 library(grid)
 library(gridExtra)
 
-sampleSetLabel = "{sample_set_label}_"
-ods = readRDS(paste(sampleSetLabel, "_ods.RDS",  sep=""))
+sampleSetLabel = "{sample_set_label}"
+ods = readRDS(paste(sampleSetLabel, "__ods.RDS",  sep=""))
 
 res = results(ods)
 
@@ -261,18 +276,12 @@ sample_ids = sample_ids[order(sample_ids)]
 for(sample_id in sample_ids) {{
     print(paste("Plotting volcano plots for ", sample_id))
     volcanoPlotLabels = ifelse(names(ods) %in% res[res$sampleID == sample_id]$geneID, names(ods), "")
-    p = plotVolcano(ods, sample_id, padjCutoff={PADJ_THRESHOLD}) +
-      geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = "grey50") +
-      labs(title=sample_id, x = "", y = "") +
-      theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm"))
-      
-    ggsave(file=paste(sampleSetLabel, "_volcano__padj_{PADJ_THRESHOLD}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo") 
+    p = plotVolcano(ods, sample_id, padjCutoff={PADJ_THRESHOLD}, basePlot=TRUE) + geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = "grey50") + theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm"))
+    ggsave(file=paste(sampleSetLabel, "__volcano__padj_{PADJ_THRESHOLD}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo") 
 }}
 '""")
-            j.command(f"tar czf {sample_set_label}.tar.gz *.png")
-            j.command(f"gsutil -m cp *.tar.gz {output_base_dir}")
-
-            logger.info(f"Step 1 output: {step1_output_RDS_file}")
+                j.command(f"""tar czf "{os.path.basename(step2_output_tar_gz_file)}" *.png""")
+                j.command(f"""gsutil -m cp "{os.path.basename(step2_output_tar_gz_file)}" {output_base_dir}""")
 
 
 if __name__ == "__main__":
