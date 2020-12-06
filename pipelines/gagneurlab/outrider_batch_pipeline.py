@@ -274,14 +274,14 @@ if(!"ENSG" %in% colnames(mcols(ods))) {{
 res = results(ods, padjCutoff=1)
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
 res = results(ods, padjCutoff={PADJ_THRESHOLD})
 res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
 res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv.gz", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
-                j.command(f"gsutil -m cp  *.tsv.gz *.pdf *.png {output_base_dir}")
+                j.command(f"gsutil -m cp  *.tsv *.pdf *.png {output_base_dir}")
                 j.command(f"""gsutil -m cp "{os.path.basename(step2_output_RDS_file)}" {output_base_dir}""")
 
             if not args.force and hl.hadoop_is_file(step3_output_tar_gz_file):
