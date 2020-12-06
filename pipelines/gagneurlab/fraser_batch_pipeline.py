@@ -243,11 +243,11 @@ def main():
 
                     output_file_path_splice_junctions_RDS = os.path.join(output_dir_for_batch_specific_data, f"spliceJunctions_{sample_set_label}.RDS")
                     output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
-                    output_file_path_filter_and_annotate_data_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"filteredAndAnnotated_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}.tar.gz")
-                    output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}.tar.gz")
-                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
-                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}_results_only__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
-                    output_file_path_fraser_volcano_plots_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserVolcanoPlots_{sample_set_label}__dpsi_threshold_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_filter_and_annotate_data_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"filteredAndAnnotated_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}.tar.gz")
+                    output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}_results_only__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_volcano_plots_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserVolcanoPlots_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
 
                     print("Input bam: ", input_bam)
                     if step == 1:
