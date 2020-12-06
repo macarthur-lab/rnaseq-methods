@@ -227,7 +227,7 @@ for(param_type in c("psi5", "psi3", "psiSite")) {{
 
 qLabel = paste("_using", implementation, "_fds__psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), sep="")
 
-g = plotAberrantPerSample(fds)
+g = plotAberrantPerSample(fds, padjCutoff = {padj_threshold}, deltaPsiCutoff = {delta_psi_threshold})
 ggsave(file=paste(sampleSetLabel, "_plotAberrantPerSample.png", sep=""), g, device="png", type="cairo")
 
 #res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
@@ -240,7 +240,7 @@ ggsave(file=paste(sampleSetLabel, "_plotAberrantPerSample.png", sep=""), g, devi
 #gc()
 
 res = results(fds, padjCutoff={padj_threshold}, zScoreCutoff=NA, deltaPsiCutoff={delta_psi_threshold})
-saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{padj_threshold}_results.RDS", sep=""))
+saveRDS(res, paste(sampleSetLabel, qLabel, "_padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_results.RDS", sep=""))
 message("Done saving results RDS")  
 gc()
 
@@ -284,17 +284,17 @@ for(sample_id in sample_ids) {{
     print(paste("Plotting ", sample_id))
     res2plot <- res[res$sampleID == sample_id][1,]
     p = plotExpression(fds, result=res2plot)
-    ggsave(file=paste(sampleSetLabel, "_expression_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    ggsave(file=paste(sampleSetLabel, "_expression_plot_", "_padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
     p = plotQQ(fds, result=res2plot)
-    ggsave(file=paste(sampleSetLabel, "_QQ_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    ggsave(file=paste(sampleSetLabel, "_QQ_plot_", "_padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
     
     p = plotExpectedVsObservedPsi(fds, result=res2plot)
-    ggsave(file=paste(sampleSetLabel, "_expectedVsObservedPsi_plot_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+    ggsave(file=paste(sampleSetLabel, "_expectedVsObservedPsi_plot_", "_padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
     
     for(param_type in c("psi5", "psi3", "psiSite")) {{
         print(paste("Plotting volcano plot", param_type, " for ", sample_id))
-        p = plotVolcano(fds, type=param_type, sample_id)
-        ggsave(file=paste(sampleSetLabel, "_volcano_", param_type, "_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
+        p = plotVolcano(fds, type=param_type, sample_id, deltaPsiCutoff = {delta_psi_threshold}, padjCutoff = {padj_threshold})
+        ggsave(file=paste(sampleSetLabel, "_volcano_", param_type, "__padj_{padj_threshold}__deltapsi_{delta_psi_threshold}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo")
     }}
 }}
 
