@@ -12,7 +12,7 @@ from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES
 from gagneurlab.gagneur_utils import ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 from gagneurlab.fraser_batch_pipeline_Rscripts import get_EXTRACT_SPLICE_JUNCTIONS_Rscript, \
     get_CALCULATE_PSI_VALUES_Rscript, get_CALCULATE_BEST_Q_Rscript, get_RUN_FRASER_ANALYSIS_Rscript, \
-    get_FILTER_AND_ANNOTATE_DATA_Rscript, get_PLOT_RESULTS
+    get_FILTER_AND_ANNOTATE_DATA_Rscript, get_RESULTS_TABLES_Rscript, get_VOLCANO_PLOTS_Rscript
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
     j_extract_splice_junctions.command(f"""time xvfb-run Rscript -e '{get_EXTRACT_SPLICE_JUNCTIONS_Rscript(BAM_HEADER_PATH, num_cpu)}'""")
     j_extract_splice_junctions.command(f"ls -lh .")
     j_extract_splice_junctions.command(f"echo ===============; echo cache dir; echo ===============; find cache")
-    j_extract_splice_junctions.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
+    j_extract_splice_junctions.command(f"echo ===============; echo savedObjects dir; echo ===============; find savedObjects")
 
     j_extract_splice_junctions.command(f"gsutil -m cp spliceJunctions.RDS {output_file_path_splice_junctions_RDS}")
 
@@ -64,7 +64,7 @@ def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_f
     j_calculate_psi_values.command(f"pwd")
     j_calculate_psi_values.command(f"ls -lh .")
     j_calculate_psi_values.command(f"echo ===============; echo cache dir; echo ===============; find cache")
-    j_calculate_psi_values.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
+    j_calculate_psi_values.command(f"echo ===============; echo savedObjects dir; echo ===============; find savedObjects")
     j_calculate_psi_values.command(f"rm *.tar.gz *.bam")
     j_calculate_psi_values.command(f"cd ..")
     j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path_calculated_psi_values_tar_gz)} {sample_set_label}")
@@ -83,8 +83,6 @@ def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calcu
     j_filter_and_annotate_data.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD)}'""")
     j_filter_and_annotate_data.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
-    j_filter_and_annotate_data.command(f"echo ===============; echo cache dir; echo ===============; find cache")
-    j_filter_and_annotate_data.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
     j_filter_and_annotate_data.command(f"cd ..")
     j_filter_and_annotate_data.command(f"tar czf {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {sample_set_label}")
     j_filter_and_annotate_data.command(f"gsutil -m cp {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {output_file_path_filter_and_annotate_data_tar_gz}")
@@ -102,15 +100,13 @@ def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, filter_and_a
     j_calculate_best_q.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_calculate_best_q.command(f"""time xvfb-run Rscript -e '{get_CALCULATE_BEST_Q_Rscript(sample_set_label, num_cpu)}'""")
     j_calculate_best_q.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
-    j_calculate_best_q.command(f"echo ===============; echo cache dir; echo ===============; find cache")
-    j_calculate_best_q.command(f"echo ===============; echo savedObects dir; echo ===============; find savedObjects")
     j_calculate_best_q.command(f"cd ..")
     j_calculate_best_q.command(f"tar czf {os.path.basename(output_file_path_calculated_best_q_tar_gz)} {sample_set_label}")
     j_calculate_best_q.command(f"gsutil -m cp {os.path.basename(output_file_path_calculated_best_q_tar_gz)} {output_file_path_calculated_best_q_tar_gz}")
     print("Output file path: ", output_file_path_calculated_best_q_tar_gz)
 
 
-def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz, output_file_path_fraser_analysis_results_only_tar_gz):
+def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
@@ -119,29 +115,44 @@ def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(calculated_best_q_tar_gz_path)}")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1)}'""")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {sample_set_label}")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {output_file_path_fraser_analysis_tar_gz}")
     print("Output file path: ", output_file_path_fraser_analysis_tar_gz)
 
-    j_run_fraser_analysis.command(f"rm -rf {sample_set_label}/cache {sample_set_label}/savedObjects")
-    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {sample_set_label}")
-    j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_results_only_tar_gz)} {output_file_path_fraser_analysis_results_only_tar_gz}")
-    print("Output file path (results only): ", output_file_path_fraser_analysis_results_only_tar_gz)
 
-
-def run_plots(j_run_fraser_analysis, sample_set_label, fraser_analysis_results_only_tar_gz_path, output_file_path_fraser_volcano_plots_tar_gz):
+def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_results_tables_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
     j_run_fraser_analysis.command(f"cd /tmp/fraser/")
-    j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_results_only_tar_gz_path} .")
-    j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_results_only_tar_gz_path)}")
+    j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
+    j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_PLOT_RESULTS(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RESULTS_TABLES_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
+    j_run_fraser_analysis.command(f"rm -rf cache savedObjects")
+    j_run_fraser_analysis.command(f"bgzip *.tsv")
+    j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
+    j_run_fraser_analysis.command(f"cd ..")
+    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_results_tables_tar_gz)} {sample_set_label}")
+    j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_results_tables_tar_gz)} {output_file_path_results_tables_tar_gz}")
+    print("Output file path: ", output_file_path_results_tables_tar_gz)
+
+
+def get_volcano_plots(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_fraser_volcano_plots_tar_gz):
+    batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
+
+    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
+    j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
+    j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
+    j_run_fraser_analysis.command(f"cd {sample_set_label}")
+    j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
+    j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_VOLCANO_PLOTS_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
+    j_run_fraser_analysis.command(f"rm -rf cache savedObjects")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
     j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_volcano_plots_tar_gz)} {sample_set_label}")
@@ -157,8 +168,8 @@ def main():
     p.add_argument("--skip-step3", action="store_true", help="Skip filter-and-annotate step")
     p.add_argument("--skip-step4", action="store_true", help="Skip compute-best-Q step")
     p.add_argument("--skip-step5", action="store_true", help="Skip FRASER analysis step")
-    p.add_argument("-m1", "--memory-step1", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
-    p.add_argument("-m2", "--memory-step2", type=float, help="Batch: (optional) memory in gigabytes (eg. 3.75)", default=3.75)
+    p.add_argument("--skip-step6", action="store_true", help="Skip generating results table")
+    p.add_argument("--skip-step7", action="store_true", help="Skip volcano plots")
     p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
     p.add_argument("batch_name", nargs="+", choices=ANALYSIS_BATCHES.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
@@ -245,17 +256,15 @@ def main():
                     output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
                     output_file_path_filter_and_annotate_data_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"filteredAndAnnotated_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}.tar.gz")
                     output_file_path_calculated_best_q_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedBestQ_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}.tar.gz")
-                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
-                    output_file_path_fraser_analysis_results_only_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}_results_only__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
+                    output_file_path_fraser_analysis_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserAnalysis_using_PCA_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}.tar.gz")
+                    output_file_path_results_tables_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserResultsTables_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
                     output_file_path_fraser_volcano_plots_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"fraserVolcanoPlots_{sample_set_label}__dpsi_{DELTA_PSI_THRESHOLD}_padj_{PADJ_THRESHOLD}.tar.gz")
 
                     print("Input bam: ", input_bam)
                     if step == 1:
                         output_file_path = os.path.join(output_dir_for_sample_specific_data, f"fraser_count_split_reads_{sample_id}.tar.gz")
-                        memory = args.memory_step1
                     elif step == 2:
                         output_file_path = os.path.join(output_dir_for_batch_specific_data, f"fraser_count_non_split_reads_{sample_id}__{sample_set_label}.tar.gz")
-                        memory = args.memory_step2
 
                     if step == 1:
                         split_reads_samples.append(sample_id)
@@ -279,7 +288,7 @@ def main():
                         disk_size = None
 
                     job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=args.cpu, memory=memory, disk_size=disk_size, image=DOCKER_IMAGE)
+                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=1, memory=3.75, disk_size=disk_size, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
                     j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bam} {sample_id}.bam")
@@ -345,7 +354,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         logger.info(f"{output_file_path_splice_junctions_RDS} file already exists. Skipping extractSpliceJunctions step...")
                         continue
 
-                    j_extract_splice_junctions = batch_utils.init_job(batch, f"{sample_set_label}: Extract splice-junctions", disk_size=30, memory=60, image=DOCKER_IMAGE)
+                    num_cpu = 16
+                    j_extract_splice_junctions = batch_utils.init_job(batch, f"{sample_set_label}: Extract splice-junctions", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
                     for j in split_reads_jobs.values():
                         j_extract_splice_junctions.depends_on(j)
 
@@ -360,9 +370,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         logger.info(f"{output_file_path_calculated_psi_values_tar_gz} file already exists. Skipping calculatePSIValues step...")
                         continue
 
-                    num_cpu = 4 if args.local else 16
-                    memory = 60
-                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
+                    num_cpu = 16
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
                     if j_extract_splice_junctions:
                         j_calculate_psi_values.depends_on(j_extract_splice_junctions)
                     for j in non_split_reads_jobs.values():
@@ -383,9 +392,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
             elif hl.hadoop_is_file(output_file_path_filter_and_annotate_data_tar_gz) and not args.force:
                 logger.info(f"{output_file_path_filter_and_annotate_data_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
-                num_cpu = 4 if args.local else 16
-                memory = 3.75*num_cpu
-                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
+                num_cpu = 16
+                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
 
                 if j_calculate_psi_values:
                     j_filter_and_annotate_data.depends_on(j_calculate_psi_values)
@@ -402,10 +410,8 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
             elif hl.hadoop_is_file(output_file_path_calculated_best_q_tar_gz) and not args.force:
                 logger.info(f"{output_file_path_calculated_best_q_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
-                num_cpu = 4 if args.local else 16
-                memory = 3.75*num_cpu
-
-                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
+                num_cpu = 16
+                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
 
                 if j_filter_and_annotate_data:
                     j_calculate_best_q.depends_on(j_filter_and_annotate_data)
@@ -420,13 +426,11 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
             # output_file_path_fraser_analysis_tar_gz
             if args.skip_step5:
                 logger.info(f"Skipping FRASER analysis step...")
-            elif hl.hadoop_is_file(output_file_path_fraser_analysis_results_only_tar_gz) and not args.force:
-                logger.info(f"{output_file_path_fraser_analysis_results_only_tar_gz} file already exists. Skipping run_fraser_analysis step...")
+            elif hl.hadoop_is_file(output_file_path_fraser_analysis_tar_gz) and not args.force:
+                logger.info(f"{output_file_path_fraser_analysis_tar_gz} file already exists. Skipping run_fraser_analysis step...")
             else:
-                num_cpu = 4 if args.local else 16
-                memory = 3.75*num_cpu
-
-                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
+                num_cpu = 16
+                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
                 if j_calculate_best_q:
                     j_fraser_analysis.depends_on(j_calculate_best_q)
 
@@ -434,21 +438,36 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     j_fraser_analysis,
                     sample_set_label,
                     output_file_path_calculated_best_q_tar_gz,
-                    output_file_path_fraser_analysis_tar_gz,
-                    output_file_path_fraser_analysis_results_only_tar_gz)
+                    output_file_path_fraser_analysis_tar_gz)
 
-            if hl.hadoop_is_file(output_file_path_fraser_volcano_plots_tar_gz) and not args.force:
-                logger.info(f"{output_file_path_fraser_volcano_plots_tar_gz} file already exists. Skipping run_fraser_analysis step...")
+            if args.skip_step6:
+                logger.info(f"Skipping get_results_table step...")
+            elif hl.hadoop_is_file(output_file_path_results_tables_tar_gz) and not args.force:
+                logger.info(f"{output_file_path_results_tables_tar_gz} file already exists. Skipping get_results_table step...")
             else:
-                num_cpu = 4
-                memory = 3.75*num_cpu
-
-                j_get_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Plots", disk_size=50, cpu=num_cpu, memory=memory, image=DOCKER_IMAGE)
+                num_cpu = 16
+                j_get_results_table = batch_utils.init_job(batch, f"{sample_set_label}: Get Results Tables", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
                 if j_fraser_analysis:
-                    j_get_plots.depends_on(j_fraser_analysis)
+                    j_get_results_table.depends_on(j_fraser_analysis)
 
-                run_plots(
-                    j_get_plots,
+                get_results_table(
+                    j_get_results_table,
+                    sample_set_label,
+                    output_file_path_fraser_analysis_tar_gz,
+                    output_file_path_results_tables_tar_gz)
+
+            if args.skip_step7:
+                logger.info(f"Skipping get_volcano_plots step...")
+            elif hl.hadoop_is_file(output_file_path_fraser_volcano_plots_tar_gz) and not args.force:
+                logger.info(f"{output_file_path_fraser_volcano_plots_tar_gz} file already exists. Skipping get_volcano_plots step...")
+            else:
+                num_cpu = 16
+                j_get_volcano_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Volcano Plots", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                if j_fraser_analysis:
+                    j_get_volcano_plots.depends_on(j_fraser_analysis)
+
+                get_volcano_plots(
+                    j_get_volcano_plots,
                     sample_set_label,
                     output_file_path_fraser_analysis_tar_gz,
                     output_file_path_fraser_volcano_plots_tar_gz)
