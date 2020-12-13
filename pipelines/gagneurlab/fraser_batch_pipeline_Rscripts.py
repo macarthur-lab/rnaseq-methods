@@ -79,7 +79,7 @@ fds = calculatePSIValues(fds, BPPARAM=bpparam)
 saveFraserDataSet(fds)
 """
 
-def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold):
+def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold, min_reads):
     return f"""
 library(FRASER)
 library(data.table)
@@ -100,7 +100,7 @@ library(gtable)
 fds = loadFraserDataSet(".")
 sampleSetLabel = "{sample_set_label}"
 
-fds = filterExpressionAndVariability(fds, minDeltaPsi={delta_psi_threshold}, minExpressionInOneSample=2, filter=TRUE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi={delta_psi_threshold}, minExpressionInOneSample={min_reads}, filter=TRUE)
 
 
 options(repr.plot.width=5, repr.plot.height=4)
