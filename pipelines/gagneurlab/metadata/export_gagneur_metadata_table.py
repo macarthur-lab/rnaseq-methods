@@ -8,6 +8,7 @@ import os
 import pandas as pd
 import sys
 
+from gagneurlab.gagneur_utils import OUTRIDER_COUNTS_TSV_GZ, ALL_METADATA_TSV
 from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df, ANALYSIS_BATCHES
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
@@ -97,9 +98,10 @@ def main():
     all_rdg_and_gtex_samples_df = None
     all_rdg_and_gtex_counts_df = None
 
-    os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_counts;
-        gsutil -m cp -n {RDG_GENE_READS_PATH} .""")
+    print(f"Downloading {RDG_GENE_READS_PATH} to ~/project__rnaseq/data/samples/expression/rnaseqc_counts")
+    os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_counts && gsutil cp -n {RDG_GENE_READS_PATH} .""")
 
+    print("Done downloading counts.")
     for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
         logging.info("----------------")
         logging.info(f"{tissue_name}:")
@@ -200,7 +202,7 @@ def main():
     tsv_output_path = f"metadata_table_for_all_RDG_and_GTEX_samples.tsv"
     all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
-    #os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
+    os.system(f"gsutil cp {tsv_output_path} {ALL_METADATA_TSV}")
 
     #all_rdg_counts_df = all_rdg_counts_df.fillna(0)
     #tsv_output_path = f"OUTRIDER_input_table_RDG_counts_for_all_tissues.tsv"
@@ -211,8 +213,7 @@ def main():
     tsv_output_path = f"OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
     all_rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_counts_df)} genes x {len(all_rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
-
-    #os.system(f"gsutil -m cp {tsv_output_path} gs://seqr-bw/project__rnaseq/")
+    os.system(f"gsutil cp {tsv_output_path} {OUTRIDER_COUNTS_TSV_GZ}")
 
 
 if __name__ == "__main__":

@@ -79,7 +79,7 @@ fds = calculatePSIValues(fds, BPPARAM=bpparam)
 saveFraserDataSet(fds)
 """
 
-def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold, min_reads):
+def get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, min_reads):
     return f"""
 library(FRASER)
 library(data.table)
@@ -100,7 +100,7 @@ library(gtable)
 fds = loadFraserDataSet(".")
 sampleSetLabel = "{sample_set_label}"
 
-fds = filterExpressionAndVariability(fds, minDeltaPsi={delta_psi_threshold}, minExpressionInOneSample={min_reads}, filter=TRUE)
+fds = filterExpressionAndVariability(fds, minDeltaPsi=0.05, minExpressionInOneSample={min_reads}, filter=TRUE)
 
 
 options(repr.plot.width=5, repr.plot.height=4)
@@ -264,12 +264,12 @@ ggsave(file=paste(sampleSetLabel, "_plotAberrantPerSample__padj_{padj_threshold}
 
 qLabel = paste("_using{IMPLEMENTATION}_fds__psi5_q", bestQ(fds, type="psi5"), "__psi3_q", bestQ(fds, type="psi3"), "__psiSite_q", bestQ(fds, type="psiSite"), sep="")
 
-filename=paste(sampleSetLabel, qLabel, "_all_results.tsv", sep="")
-message("Saving ", filename)
-res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
-write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
-message("Done saving ", filename)
-gc()
+# filename=paste(sampleSetLabel, qLabel, "_all_results.tsv", sep="")
+# message("Saving ", filename)
+# res = results(fds, padjCutoff=1, zScoreCutoff=NA, deltaPsiCutoff=NA)
+# write.table(as.data.table(res), file=filename, quote=FALSE, sep="\\t", row.names=FALSE)
+# message("Done saving ", filename)
+# gc()
 
 filename=paste(sampleSetLabel, qLabel, "_padj_{padj_threshold}__dpsi_{delta_psi_threshold}_results.tsv", sep="")
 message("Saving ", filename)

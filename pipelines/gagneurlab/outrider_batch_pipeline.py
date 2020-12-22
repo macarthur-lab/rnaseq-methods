@@ -7,12 +7,12 @@ import pandas as pd
 
 from batch import batch_utils
 from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES
-from gagneurlab.gagneur_utils import ALL_METADATA_TSV, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
+from gagneurlab.gagneur_utils import ALL_METADATA_TSV, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, OUTRIDER_COUNTS_TSV_GZ
+
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-OUTRIDER_COUNTS_TSV_GZ = "gs://macarthurlab-rnaseq/gagneur/outrider/OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
 
 POSSIBLE_CONFOUNDERS = """c("tissue", "sex", "stranded", "read_length", "batch")""" # "RIN"
 PADJ_THRESHOLD = 0.05
@@ -34,11 +34,8 @@ def main():
     if not args.force:
         hl.init(log="/dev/null", quiet=True)
 
-    local_metadata_tsv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.basename(ALL_METADATA_TSV))
-    metadata_tsv_df = pd.read_table(local_metadata_tsv_path)
-
-    print(f"Copying {local_metadata_tsv_path} to {ALL_METADATA_TSV}")
-    hl.hadoop_copy(local_metadata_tsv_path, ALL_METADATA_TSV)
+    with hl.hadoop_open(args.metadata_tsv_path) as f:
+        metadata_tsv_df = pd.read_table(f)
 
     #local_all_counts_tsv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.basename(OUTRIDER_COUNTS_TSV_GZ))
     #print(f"Copying {local_all_counts_tsv_path} to {OUTRIDER_COUNTS_TSV_GZ}")

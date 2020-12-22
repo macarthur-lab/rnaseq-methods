@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 # computer monitor and related graphics libraries to be set up in the execution environment
 
 PADJ_THRESHOLD = 0.1
-DELTA_PSI_THRESHOLD = 0.3
+DELTA_PSI_THRESHOLD = 0.1
 MIN_READS_THRESHOLD = 2
 
 
@@ -42,11 +42,8 @@ def main():
 
     hl.init(log="/dev/null", quiet=True)
 
-    local_metadata_tsv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.basename(ALL_METADATA_TSV))
-    print(f"Copying {local_metadata_tsv_path} to {ALL_METADATA_TSV}")
-    hl.hadoop_copy(local_metadata_tsv_path, ALL_METADATA_TSV)
-    metadata_tsv_df = pd.read_table(local_metadata_tsv_path)
-
+    with hl.hadoop_open(ALL_METADATA_TSV) as f:
+        metadata_tsv_df = pd.read_table(f)
 
     with hl.hadoop_open(args.metadata_tsv_path) as f:
         samples_df_unmodified = pd.read_table(f).set_index("sample_id", drop=False)
@@ -400,7 +397,7 @@ def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calcu
     j_filter_and_annotate_data.command(f"tar xzf {os.path.basename(calculated_psi_values_tar_gz_path)}")
     j_filter_and_annotate_data.command(f"cd {sample_set_label}")
     j_filter_and_annotate_data.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
-    j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, min_reads=MIN_READS_THRESHOLD)}'""")
+    j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, min_reads=MIN_READS_THRESHOLD)}'""")
     j_filter_and_annotate_data.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_filter_and_annotate_data.command(f"cd ..")
     j_filter_and_annotate_data.command(f"tar czf {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {sample_set_label}")

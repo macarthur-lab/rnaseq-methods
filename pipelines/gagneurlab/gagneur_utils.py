@@ -10,6 +10,7 @@ DOCKER_IMAGE = "weisburd/gagneurlab@sha256:be45788c8696a196bee25be269cb2de972776
 # https://i12g-gagneurweb.in.tum.de/public/workshops/RNAseq_ASHG19/input_data/annotations/gencode.v29lift37.annotation.txdb
 GENCODE_TXDB = "gs://macarthurlab-rnaseq/gagneur/gencode.v26.annotation.txdb"
 ALL_METADATA_TSV = "gs://macarthurlab-rnaseq/gagneur/metadata_table_for_all_RDG_and_GTEX_samples.tsv"
+OUTRIDER_COUNTS_TSV_GZ = "gs://macarthurlab-rnaseq/gagneur/outrider/OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
 BAM_HEADER_PATH = "gs://macarthurlab-rnaseq/gagneur/fraser/bam_header.bam"
 
 import gspread
@@ -49,3 +50,18 @@ def get_FRASER_results_spreadsheet():
     global _FRASER_RESULTS_SPREADSHEET
     _FRASER_RESULTS_SPREADSHEET = get_spreasheet("RNA-seq FRASER results")
     return _FRASER_RESULTS_SPREADSHEET
+
+
+_RNASEQ_RESULTS_2020_12_10_SPREADSHEET = None
+def get_RNASEQ_results_spreadsheet():
+    global _RNASEQ_RESULTS_2020_12_10_SPREADSHEET
+    _RNASEQ_RESULTS_2020_12_10_SPREADSHEET = get_spreasheet("RNA-seq results: FRASER, OUTRIDER")
+    return _RNASEQ_RESULTS_2020_12_10_SPREADSHEET
+
+_RNASEQ_TRUTH_DATA_SPREADSHEET = None
+def get_rnaseq_truth_data_spreadsheet():
+    global _RNASEQ_TRUTH_DATA_SPREADSHEET
+    print("Loading 'RNA-seq truth data'")
+    _RNASEQ_TRUTH_DATA_SPREADSHEET = get_spreasheet("RNA-seq truth data")
+    return _RNASEQ_TRUTH_DATA_SPREADSHEET
+
