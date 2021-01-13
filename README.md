@@ -8,6 +8,7 @@
 [batch_2020_04](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_04_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_04_rnaseq_samples.json))  
 [batch_2020_08](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08_rnaseq_samples.json))  
 [batch_2020_08__walsh](https://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2020_08__walsh_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2020_08__walsh_rnaseq_samples.json))  
+[batch_2021_01](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2f2021_01_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/2021_01_rnaseq_samples.json))  
   
 [muscle samples](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2fmuscle_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/muscle_rnaseq_samples.json))  
 [fibroblast samples](http://tgg-viewer.broadinstitute.org/#locus=chr21:45988674-45991233&settingsUrl=~'https*3a*2f*2fraw.githubusercontent.com*2fmacarthur-lab*2frnaseq-methods*2fmaster*2fpipelines*2ftgg_viewer*2fconfigs*2ffibroblasts_rnaseq_samples.json)  ([config](https://github.com/macarthur-lab/rnaseq-methods/blob/master/pipelines/tgg_viewer/configs/fibroblasts_rnaseq_samples.json))   
@@ -22,6 +23,7 @@
 [batch_2020_04](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_04.html)   
 [batch_2020_08](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08.html)   
 [batch_2020_08__walsh](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2020_08__walsh.html)   
+[batch_2021_01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/batch_2021_01.html)   
 
 [muscle samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/muscle.html)   
 [fibroblasts samples](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/fibroblasts.html)   
