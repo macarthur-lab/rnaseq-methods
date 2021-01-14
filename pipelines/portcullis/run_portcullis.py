@@ -17,7 +17,6 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-
 def transfer_metadata_columns_from_df(samples_df, source_df):
     df = pd.DataFrame()
     df.loc[:, 'sample_id'] = source_df['sample_id']
@@ -106,7 +105,7 @@ def main():
 
             j.command(f"time portcullis full -t 4 --orientation FR {stranded_arg} -r {local_gencode_gtf} -v {local_fasta} {local_bam}")
             #j.command(f"find .")
-            
+
             j.command(f"gzip -c ./portcullis_out/2-junc/portcullis_all.junctions.tab > {output_all_junctions_tab_filename}")
             j.command(f"gzip -c ./portcullis_out/3-filt/portcullis_filtered.pass.junctions.tab > {output_filtered_junctions_tab_filename}")
             j.command(f"gzip -c ./portcullis_out/3-filt/portcullis_filtered.pass.junctions.bed > {output_bed_filename}")

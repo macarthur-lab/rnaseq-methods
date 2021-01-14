@@ -1,17 +1,13 @@
-import argparse
-import datetime
 import hail as hl  # used for hadoop file utils
-import hailtop.batch as hb
-import hashlib
 import logging
 import os
 import pandas as pd
-import sys
 
 from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 from batch import batch_utils
 
+hl.init(log="/dev/null")
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -21,6 +17,7 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
+CPU=0.25
 
 def transfer_metadata_columns_from_df(samples_df, source_df):
     df = pd.DataFrame()
@@ -31,7 +28,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     df.loc[source_df.sample_id, 'grch38_vcf'] = source_df['grch38_vcf']
 
     df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(
-        lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/somalier_sample_swap/")
+        lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/somalier_sample_swap")
 
     return pd.concat([samples_df, df], axis="rows")
 
@@ -42,6 +39,7 @@ def main():
 
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     grp = p.add_mutually_exclusive_group(required=True)
+    grp.add_argument("--all", action="store_true", help="Process all samples")
     grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)",
         choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']) | set(["gtex_muscle", "gtex_fibroblasts", "gtex_blood"]))
     grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
@@ -49,8 +47,14 @@ def main():
     args = p.parse_args()
 
     # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
+    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[
+        (rnaseq_sample_metadata_df['star_bam'].str.len() > 1) &
+        (rnaseq_sample_metadata_df['grch38_vcf'].str.len() > 1)
+    ]
     samples_df = pd.DataFrame()
-    if args.rnaseq_batch_name:
+    if args.all:
+        samples_df = transfer_metadata_columns_from_df(samples_df, rnaseq_sample_metadata_df)
+    elif args.rnaseq_batch_name:
         for batch_name in args.rnaseq_batch_name:
             df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'] == batch_name]
             samples_df = transfer_metadata_columns_from_df(samples_df, df)
@@ -86,22 +90,22 @@ def main():
                 logger.info(f"{sample_id} output file already exists: {output_file_path}. Skipping...")
                 continue
 
-            j = batch_utils.init_job(batch, f"somalier: {sample_id}", cpu=0.5, image=DOCKER_IMAGE)
+            j = batch_utils.init_job(batch, f"somalier: {sample_id}", cpu=CPU, memory=CPU*3.75, image=DOCKER_IMAGE)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
             local_fasta = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fasta, use_gcsfuse=True)
             local_vcf_path = batch_utils.localize_file(j, input_vcf, use_gcsfuse=True)
             local_bam_path = batch_utils.localize_file(j, input_bam, use_gcsfuse=True)
 
-            j.command(f"pwd && ls && date")
+            j.command(f"pwd && ls")
 
-            j.command("wget https://github.com/brentp/somalier/files/4566475/sites.hg38.rna.vcf.gz")
-            j.command(f"somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_bam_path}")
-            j.command(f"somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_vcf_path}")
-            j.command(f"somalier relate output/*.somalier")
+            j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_bam_path}")
+            j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_vcf_path}")
+            j.command(f"time somalier relate output/*.somalier")
+
             j.command(f"ls -l")
-            j.command(f"ls -l output")
-            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp output/somalier.groups.tsv {output_file_path}")
+            for key in "samples", "pairs", "groups":
+                j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp somalier.{key}.tsv {output_dir}/{sample_id}.{key}.tsv")
 
             j.command(f"echo Done: {output_file_path}")
             j.command(f"date")

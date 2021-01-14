@@ -150,7 +150,7 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
                 #print("Would run gsutil mv -n " + path + " " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
 
-            macarthurlab_rnaseq_bucket_file_paths[path_i] = path
+            macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
 
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:

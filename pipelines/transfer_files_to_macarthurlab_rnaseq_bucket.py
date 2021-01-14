@@ -21,8 +21,9 @@ def parse_args():
     p.add_argument("-w", "--workflow-id", help="(optional) workflow id. Can specify more than one", action="append")
     p.add_argument("-t", "--file-type", choices=FILE_TYPES, help="(optional) what types of files to transfer", action="append")
     p.add_argument("-f", "--force", action="store_true", help="Force copy even if destination files already exist.")
+    p.add_argument("-d", "--delete-after-copy", action="store_true", help="Delete source files")
 
-    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh"])
+    p.add_argument("batch_name", choices=["batch_0", "batch_1_muntoni", "batch_2020_04", "batch_2020_08", "batch_2020_08__walsh", "batch_2021_01"])
     args = p.parse_args()
 
     if not args.file_type:
@@ -36,12 +37,11 @@ def run(cmd):
     os.system(cmd)
 
 
-def gsutil_cp(source, dest, force=False):
-    if force:
-        run("gsutil -m cp %s  %s" % (source, dest))
-    else:
-        run("gsutil -m cp -n %s  %s" % (source, dest))
+def gsutil_cp(source, dest, force=False, delete_after_copy=False):
+    n_arg = "" if force else "-n"
+    delete_command = f" && gsutil -m rm -rf {source}" if delete_after_copy else ""
 
+    run(f"gsutil -m cp {n_arg} {source} {dest} {delete_command}")
 
 
 def copy_hg19_bams(args):
@@ -76,8 +76,8 @@ def copy_hg19_bams(args):
         ws_total_bais += 1
 
         dest = "gs://%s/%s/hg19_bams/" % (args.dest_bucket, args.batch_name)
-        gsutil_cp(attr['hg19_bam_path'], dest)
-        gsutil_cp(attr['hg19_bam_path'].replace(".bam", "*bai"), dest)
+        gsutil_cp(attr['hg19_bam_path'], dest, delete_after_copy=args.delete_after_copy)
+        gsutil_cp(attr['hg19_bam_path'].replace(".bam", "*bai"), dest, delete_after_copy=args.delete_after_copy)
 
 
 def main():

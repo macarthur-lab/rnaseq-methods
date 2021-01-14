@@ -419,6 +419,12 @@ sample_id_to_seqr_indiv_id = {
     "BB0280_CH_AffF_2": "BB0280-CH-AffF",
     "UC393-1M": "UC393-1",
     "HK117_001": "HK117-001_1",
+    "RGP_800_3_3": "RGP_800_3",
+    "BON_B15-95_CHX_1": "BON_B15-95_1_D1",
+    "BON_B18-23_CHX_1": "BON_B18-23_1_1",
+    "BON_B19-45_CHX_1": "BON_B19-45_1_D1",
+    "BON_B19-54_CHX_1": "BON_B19-54_1_D1",
+    "BON_B19-59_CHX_1": "BON_B19-59_1_D1",
 }
 
 
@@ -592,8 +598,8 @@ for sample_id, indivs in sample_id_to_indivs.items():
             seqr_fields['coded phenotype (seqr)'].append(family.coded_phenotype)
         if family.analysis_summary or family.analysis_notes:
             seqr_fields['anlaysis summary + notes (seqr)'].append((family.analysis_summary or "" + "\n" + family.analysis_notes or "").strip())
-        if family.internal_case_review_notes:
-            seqr_fields['internal case review notes (seqr)'].append((family.internal_case_review_notes or "").strip())
+        if family.case_review_notes:
+            seqr_fields['internal case review notes (seqr)'].append((family.case_review_notes or "").strip())
 
         if indiv.sex and indiv.sex != "U":
             seqr_fields['sex'].append(indiv.sex.decode('UTF-8') if isinstance(indiv.sex, bytes) else indiv.sex)
@@ -644,7 +650,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
     seqr_fields['internal case review notes (seqr)'] = join_fields(seqr_fields['internal case review notes (seqr)'], sep="\n") + " "
     seqr_fields['cram path (seqr)'] = join_fields(sorted(set(seqr_fields['cram path (seqr)']))) + " "
 
-seqr_fields_by_sample_id.values()
+#seqr_fields_by_sample_id.values()
 
 #sys.exit(0)
 #%%
