@@ -5,6 +5,8 @@ import os
 from batch import batch_utils
 from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, ANALYSIS_BATCHES
 
+hl.init(log="/dev/null")
+
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 

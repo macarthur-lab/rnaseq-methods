@@ -521,7 +521,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/167BZ_SP_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Tier 1 - Phenotype expansion tag(s), 3 Sanger validated tag(s), 2 Review tag(s), 3 Pathogenic tag(s), 3 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Arthrogryposis </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Arthrogryposis</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Arthrogryposis</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TTN(3),OBSCN(2)</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>TTN:chr2:179486223,chr2:179582265,\nchr2:179585312 OBSCN:chr1:228559441,\nchr1:228509681</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Tier 1 - Phenotype expansion tag(s), 3 Sanger validated tag(s), 2 Review tag(s), 3 Pathogenic tag(s), 3 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Arthrogryposis </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Arthrogryposis</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Arthrogryposis</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TTN(3),OBSCN(2)</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>TTN:chr2:179486223,chr2:179582265,\nchr2:179585312 OBSCN:chr1:228559441,\nchr1:228509681</td></tr></table>",
           "name": "167BZ_SP_M1"
         },
         {
@@ -543,7 +543,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/193CP_LS.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>12 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness, cognitive impairment, gait disturbance, equinovarus deformity, Muscle weakness, cognitive impairment, gait disturbance, equinovarus deformity </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>12 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness, cognitive impairment, gait disturbance, equinovarus deformity, Muscle weakness, cognitive impairment, gait disturbance, equinovarus deformity </td></tr></table>",
           "name": "193CP_LS"
         },
         {
@@ -697,7 +697,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/251DW_SD_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved, Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Duchenne muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>3kb intronic deletion, inversion</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved, Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Duchenne muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>3kb intronic deletion, inversion</td></tr></table>",
           "name": "251DW_SD_M1"
         },
         {
@@ -763,7 +763,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/254DZ_WP_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>CM</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA, WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>uc</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>CM</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA, WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>uc</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>None</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "254DZ_WP_M1"
         },
         {
@@ -785,7 +785,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/255EA_GC_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Likely Benign tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Duchenne muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Likely Benign tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Duchenne muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>DMD</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>None</td></tr></table>",
           "name": "255EA_GC_M1"
         },
         {
@@ -909,7 +909,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/46N_RL_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Phenotype expansion tag(s), 12 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>congenital myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>LGMD, added facial weakness</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Limb-girdle muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Functional follow up of TP63</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TP63*,SUN2</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr3:189455662,N/A</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2013-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Phenotype expansion tag(s), 12 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>congenital myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>LGMD, added facial weakness</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Limb-girdle muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Functional follow up of TP63</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>TP63*,SUN2</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr3:189455662,N/A</td></tr></table>",
           "name": "46N_RL_M1"
         },
         {
@@ -1517,7 +1517,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1078-1_T1071.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital Fiber Type Disproportion, Congenital Fiber Type Disproportion </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital Fiber Type Disproportion, Congenital Fiber Type Disproportion </td></tr></table>",
           "name": "BEG_1078-1_T1071"
         },
         {
@@ -1539,7 +1539,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_1230-1_T1227.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MYOTONIC DYSTROPHY 1; DM1, MYOTONIC DYSTROPHY 1; DM1 </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MYOTONIC DYSTROPHY 1; DM1, MYOTONIC DYSTROPHY 1; DM1 </td></tr></table>",
           "name": "BEG_1230-1_T1227"
         },
         {
@@ -1561,7 +1561,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_14-4_T65.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>12 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Nemaline myopathy, Nemaline myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>12 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Nemaline myopathy, Nemaline myopathy </td></tr></table>",
           "name": "BEG_14-4_T65"
         },
         {
@@ -1627,7 +1627,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_887-1_T1240.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
           "name": "BEG_887-1_T1240"
         },
         {
@@ -1649,7 +1649,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BEG_916-1_T916.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Sanger validated tag(s), 9 Review tag(s), 2 MatchBox (MME) tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital Myopathy, Congenital myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Sanger validated tag(s), 9 Review tag(s), 2 MatchBox (MME) tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital Myopathy </td></tr></table>",
           "name": "BEG_916-1_T916"
         },
         {
@@ -2051,7 +2051,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B17-23_1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 1 - Novel gene and phenotype tag(s), 5 Review tag(s), 2 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 1 - Novel gene and phenotype tag(s), 5 Review tag(s), 2 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
           "name": "BON_B17-23_1"
         },
         {
@@ -2073,7 +2073,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B18-24_1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Secondary finding tag(s), 20 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive muscle weakness, Progressive muscle weakness </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Secondary finding tag(s), 20 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive muscle weakness, Progressive muscle weakness </td></tr></table>",
           "name": "BON_B18-24_1"
         },
         {
@@ -2113,7 +2113,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/BON_B18-54_1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Tier 2 - Novel gene and phenotype tag(s), 9 Review tag(s), 4 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Tier 2 - Novel gene and phenotype tag(s), 10 Review tag(s), 4 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
           "name": "BON_B18-54_1"
         },
         {
@@ -2179,7 +2179,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_143BN_BB_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 4 Sanger validated tag(s), 1 Pathogenic tag(s), 2 Likely Pathogenic tag(s), 1 Likely Benign tag(s), 5 Known gene for phenotype tag(s), 1 Excluded tag(s), 3 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>NEMALINE MYOPATHY 2; NEM2, NEMALINE MYOPATHY 2; NEM2 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Nemaline myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Nemaline myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 4 Sanger validated tag(s), 1 Pathogenic tag(s), 2 Likely Pathogenic tag(s), 1 Likely Benign tag(s), 5 Known gene for phenotype tag(s), 1 Excluded tag(s), 3 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>NEMALINE MYOPATHY 2; NEM2, NEMALINE MYOPATHY 2; NEM2 </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Nemaline myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Nemaline myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
           "name": "CLA_143BN_BB_2"
         },
         {
@@ -2201,7 +2201,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_179CI_GG_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR - WGS - PCR-Free WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Sanger validated tag(s), 17 Review tag(s), 1 Pathogenic tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s), 1 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Centronuclear myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Centronuclear myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>In sequencing, 2 truncating variants endothelin 4 - ?causative</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>homozygous chr20:57897443 G  GA</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Sanger validated tag(s), 17 Review tag(s), 1 Pathogenic tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s), 1 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Centronuclear myopathy </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Centronuclear myopathy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA,WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>In sequencing, 2 truncating variants endothelin 4 - ?causative</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>homozygous chr20:57897443 G  GA</td></tr></table>",
           "name": "CLA_179CI_GG_2"
         },
         {
@@ -2223,7 +2223,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/CLA_180CJ_DP_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR neuromuscular disease exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Sanger validated tag(s), 3 Review tag(s), 1 Pathogenic tag(s), 3 Likely Pathogenic tag(s), 4 Known gene for phenotype tag(s), 4 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CENTRAL CORE DISEASE OF MUSCLE; CCD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Congenital fiber-type disproportion myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital fiber-type disproportion</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>RYR1</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr19:38958372, chr19:38958362</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-5</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Sanger validated tag(s), 3 Review tag(s), 1 Pathogenic tag(s), 3 Likely Pathogenic tag(s), 4 Known gene for phenotype tag(s), 4 Causal Variant tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CENTRAL CORE DISEASE OF MUSCLE; CCD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Congenital fiber-type disproportion myopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Congenital fiber-type disproportion</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>WES,RNA</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>RYR1</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>chr19:38958372, chr19:38958362</td></tr></table>",
           "name": "CLA_180CJ_DP_2"
         },
         {
@@ -2497,7 +2497,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_GI_456.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Collagen VI-like myopathy, Neurodevelopmental disorder </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, Collagen VI-like myopathy </td></tr></table>",
           "name": "INMR_GI_456"
         },
         {
@@ -2563,7 +2563,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_IG_561.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>20 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Connective tissue disorder, Muscle weakness, joint contractures, microcephaly, atypical scarring of skin </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>20 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness, joint contractures, microcephaly, atypical scarring of skin, Connective tissue disorder </td></tr></table>",
           "name": "INMR_IG_561"
         },
         {
@@ -2585,7 +2585,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/INMR_IK_581.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Arthrogryposis and pulmonary hypoplasia, Multiple congenital anomalies </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>INMR Neuromuscular Disease CMG Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>11 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Arthrogryposis and pulmonary hypoplasia, Multiple congenital anomalies </td></tr></table>",
           "name": "INMR_IK_581"
         },
         {
@@ -2691,7 +2691,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/MAN_0063_01_03.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MARFAN SYNDROME; MFS, MARFAN SYNDROME; MFS </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MARFAN SYNDROME; MFS, MARFAN SYNDROME; MFS </td></tr></table>",
           "name": "MAN_0063_01_03"
         },
         {
@@ -2823,7 +2823,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/MCOP008_001_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-10</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Myoseq_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Waiting for data</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Limb-Girdle Muscle Weakness </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2017-10</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Myoseq_RNAseq</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Waiting for data</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Limb-Girdle Muscle Weakness </td></tr></table>",
           "name": "MCOP008_001_2"
         },
         {
@@ -3031,7 +3031,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK047_0116.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 VUS tag(s), 2 Sanger validated tag(s), 15 Review tag(s), 4 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive spastic paraparesis and dystonias, neuromuscular </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 VUS tag(s), 2 Sanger validated tag(s), 15 Review tag(s), 4 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neuromuscular, Progressive spastic paraparesis and dystonias </td></tr></table>",
           "name": "OUN_HK047_0116"
         },
         {
@@ -3053,7 +3053,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/OUN_HK079_001.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, neurodevelopmental </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-3</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
           "name": "OUN_HK079_001"
         },
         {
@@ -3291,7 +3291,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_800_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2019-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
           "name": "RGP_800_3_2"
         },
         {
@@ -3439,7 +3439,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/TOP_MAAC031_F_Muscle1.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>MYOSEQ_v20</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD, MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Dilated cardiomyopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Becker's muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA, WES, WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-4</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>MYOSEQ_PCRFree_WGS_v5</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD, MUSCULAR DYSTROPHY, DUCHENNE TYPE; DMD </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>Dilated cardiomyopathy</td></tr>\n<tr><td><b>Clinical Diagnosis (Beryl:Supp.):</b></td><td>Becker's muscular dystrophy </td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA, WES, WGS</td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Solved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
           "name": "TOP_MAAC031_F_Muscle1"
         },
         {
@@ -3971,6 +3971,72 @@
           ],
           "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Global developmental delay </td></tr></table>",
           "name": "RGP_552_3"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B09-8_1.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B09-8_1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B09-8_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B09-8_1.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Secondary finding tag(s), 8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Skeletal myopathy and learning disabilities </td></tr></table>",
+          "name": "BON_B09-8_1"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-57_1.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-57_1.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-57_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-57_1.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
+          "name": "BON_B19-57_1"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_800_3_3.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/RGP_800_3_3.bigWig"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/RGP_800_3_3.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/RGP_800_3_3.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
+          "name": "RGP_800_3_3"
         },
         {
           "data": [

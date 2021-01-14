@@ -447,7 +447,7 @@
               "url": "gs://macarthurlab-rnaseq/batch_0/star/VCGS_FAM22_69_2.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability, Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability </td></tr></table>",
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2018-1</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability, Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability </td></tr></table>",
           "name": "VCGS_FAM22_69_2"
         },
         {

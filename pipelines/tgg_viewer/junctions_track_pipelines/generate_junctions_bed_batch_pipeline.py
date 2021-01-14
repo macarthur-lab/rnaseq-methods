@@ -1,17 +1,13 @@
-import argparse
-import datetime
 import hail as hl  # used for hadoop file utils
-import hailtop.batch as hb
-import hashlib
 import logging
 import os
 import pandas as pd
-import sys
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 from batch import batch_utils
 
+hl.init(log="/dev/null")
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
