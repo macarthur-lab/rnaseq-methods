@@ -4,10 +4,15 @@ BON_B12-71_2	BON_B12-71_2.bam	Conventional base calls	Sanger / Illumina 1.9	2214
 BON_B14-51_1_2	BON_B14-51_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	110223752.0	0.0	101.0	49.0	60.020201115168746	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 BON_B15-125_1_2	BON_B15-125_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	157735244.0	0.0	101.0	50.0	48.27334533478672	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	pass	pass
 BON_B15-26_1_1	BON_B15-26_1_1.bam	Conventional base calls	Sanger / Illumina 1.9	107654054.0	0.0	101.0	49.0	56.517220618036966	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+BON_B15-95_CHX_1	BON_B15-95_CHX_1.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	196935683.0	0.0	101.0	50.0	65.74707070947761	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 BON_B15-98_1_2	BON_B15-98_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	124012065.0	0.0	101.0	50.0	50.24065856740309	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 BON_B16-50_1_2	BON_B16-50_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	108114311.0	0.0	101.0	50.0	60.26351126249584	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	warn	pass
 BON_B16-57_1_2	BON_B16-57_1_2.bam	Conventional base calls	Sanger / Illumina 1.9	86024992.0	0.0	101.0	49.0	61.783857684781054	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 BON_B17-28_1	BON_B17-28_1.bam	Conventional base calls	Sanger / Illumina 1.9	291876845.0	0.0	101.0	51.0	49.79794519056032	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	warn	pass
+BON_B18-23_CHX_1	BON_B18-23_CHX_1.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	167143754.0	0.0	101.0	50.0	63.83047109794686	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+BON_B19-45_CHX_1	BON_B19-45_CHX_1.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	166506902.0	0.0	101.0	49.0	65.0487122230892	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+BON_B19-54_CHX_1	BON_B19-54_CHX_1.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	172014609.0	0.0	101.0	49.0	65.1874932699236	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+BON_B19-59_CHX_1	BON_B19-59_CHX_1.Aligned.sortedByCoord.out.bam	Conventional base calls	Sanger / Illumina 1.9	180595741.0	0.0	101.0	50.0	66.10043975448721	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 HK-006	HK-006.bam	Conventional base calls	Sanger / Illumina 1.9	247971498.0	0.0	101.0	48.0	49.386240964815755	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	pass	pass
 HK-010	HK-010.bam	Conventional base calls	Sanger / Illumina 1.9	204865809.0	0.0	101.0	48.0	54.715039773268295	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 HK-015	HK-015.bam	Conventional base calls	Sanger / Illumina 1.9	212834872.0	0.0	101.0	49.0	53.75777608127652	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
