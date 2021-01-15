@@ -12,7 +12,7 @@ hl.init(log="/dev/null")
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE = "weisburd/somalier@sha256:67dde581826e62dc67e4a401e92071cedcc0c6c649df8d92f566e38918c8fd8d"
+DOCKER_IMAGE = "weisburd/somalier@sha256:4823c2cea6e803443a4d2f31fdff75b315f9fe0934fceee091e1fed2de6ec170"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
@@ -46,11 +46,12 @@ def main():
         choices=set(rnaseq_sample_metadata_df['sample_id']) | set(['GTEX-1LG7Z-0005-SM-DKPQ6', 'GTEX-PX3G-0006-SM-5SI7E', 'GTEX-1KXAM-0005-SM-DIPEC']))
     args = p.parse_args()
 
+    #rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[
+    #    (rnaseq_sample_metadata_df['star_bam'].str.len() > 1) &
+    #    (rnaseq_sample_metadata_df['grch38_vcf'].str.len() > 1)
+    #]
+
     # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
-    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[
-        (rnaseq_sample_metadata_df['star_bam'].str.len() > 1) &
-        (rnaseq_sample_metadata_df['grch38_vcf'].str.len() > 1)
-    ]
     samples_df = pd.DataFrame()
     if args.all:
         samples_df = transfer_metadata_columns_from_df(samples_df, rnaseq_sample_metadata_df)
@@ -75,14 +76,10 @@ def main():
             # set job inputs & outputs
             input_bam = metadata_row['star_bam']
             input_vcf = metadata_row['grch38_vcf']
-            if not input_vcf.strip():
-                print(f"WARNING: vcf missing for {sample_id}. Skipping...")
-                continue
-
             output_dir = metadata_row['output_dir']
 
             print("Input bam: ", input_bam)
-            output_filename = f"{sample_id}.groups.tsv"
+            output_filename = f"{sample_id}.somalier_results.tsv"
             output_file_path = os.path.join(output_dir, output_filename)
 
             # check if output file already exists
@@ -94,18 +91,31 @@ def main():
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
             local_fasta = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fasta, use_gcsfuse=True)
-            local_vcf_path = batch_utils.localize_file(j, input_vcf, use_gcsfuse=True)
             local_bam_path = batch_utils.localize_file(j, input_bam, use_gcsfuse=True)
 
             j.command(f"pwd && ls")
 
-            j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_bam_path}")
-            j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_vcf_path}")
-            j.command(f"time somalier relate output/*.somalier")
+            # make sure {sample_id}.groups.tsv exists even if somalier fails to create it
+            j.command(f"touch somalier.groups.tsv")
+            if input_vcf and len(input_vcf.strip()) > 1:
+                local_vcf_path = batch_utils.localize_file(j, input_vcf, use_gcsfuse=True)
+                j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_bam_path}")
+                j.command(f"time somalier extract -f {local_fasta} -s sites.hg38.rna.vcf.gz -d output {local_vcf_path}")
+                j.command(f"time somalier relate output/*.somalier")
 
+                for key in "samples", "pairs", "groups":
+                    j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp somalier.{key}.tsv {output_dir}/{sample_id}.{key}.tsv")
+
+            j.command(f"samtools view -c {local_bam_path} chrX > {sample_id}.chrX_read_count.txt")
+            j.command(f"samtools view -c {local_bam_path} chrY > {sample_id}.chrY_read_count.txt")
+            j.command(f"python3 -c \"print(float(open('{sample_id}.chrX_read_count.txt').read())/float(open('{sample_id}.chrY_read_count.txt').read()))\" > {sample_id}.chrX_over_chrY_read_counts.txt")
+
+            j.command(f"echo -e \"sample_id\\trelatedness\\tchrX/chrY\" >> {sample_id}.somalier_results.tsv")
+            j.command(f"echo -e \"{sample_id}\\t$(cut -f 2 somalier.groups.tsv)\\t$(cut -f 1 {sample_id}.chrX_over_chrY_read_counts.txt)\" >> {sample_id}.somalier_results.tsv")
             j.command(f"ls -l")
-            for key in "samples", "pairs", "groups":
-                j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp somalier.{key}.tsv {output_dir}/{sample_id}.{key}.tsv")
+
+            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp *.txt {output_dir}/")
+            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {sample_id}.somalier_results.tsv {output_dir}/")
 
             j.command(f"echo Done: {output_file_path}")
             j.command(f"date")

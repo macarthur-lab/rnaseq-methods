@@ -36,4 +36,30 @@ RUN wget https://github.com/brentp/somalier/files/4566475/sites.hg38.rna.vcf.gz
 RUN wget https://github.com/brentp/somalier/releases/download/v0.2.12/somalier -O /usr/bin/somalier \
     && chmod 777 /usr/bin/somalier
 
+# install htslib
+ENV SAMTOOLS_VERSION="1.9"
+RUN wget https://github.com/samtools/htslib/releases/download/${SAMTOOLS_VERSION}/htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& tar xjf htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& rm htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& cd htslib-${SAMTOOLS_VERSION} \
+	&& ./configure \
+	&& make \
+	&& make install \
+	&& make clean
+
+## install python3.7 (adds 800Mb)
+RUN apt-get update \
+	&& apt-get dist-upgrade -y \
+	&& apt-get install -y libncursesw5-dev
+
+# install samtools
+RUN wget https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/samtools-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& tar xjf samtools-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& rm samtools-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& cd samtools-${SAMTOOLS_VERSION} \
+	&& ./configure \
+	&& make \
+	&& make install \
+	&& make clean
+
 ENTRYPOINT /bin/bash
