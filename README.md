@@ -71,7 +71,6 @@ Next, to copy output files from the Terra output bucket to the TGG RNA-seq bucke
 ```
 cd rnaseq_methods/pipelines
 python3 ./transfer_files_to_macarthurlab_rnaseq_bucket.py -w [workspace ID] [RNA-seq batch name]
-
 ```
 For example:
 ```
