@@ -166,7 +166,13 @@ if (ncol(cnts) != length(sampleSubset)) {{
 }}
 
 sampleInfo[,sampleID:=sample_id]
-ods <- OutriderDataSet(countData=cnts, colData=sampleInfo)
+
+#print("=============================================================")
+#print("sampleInfo")
+#print(sampleInfo, topn=100, nrows=1000)
+#print("=============================================================")
+
+ods <- OutriderDataSet(countData=cnts[,sampleInfo$sampleID], colData=sampleInfo)
 
 ods <- estimateSizeFactors(ods)
 sortedSizeFactors = sort(sizeFactors(ods))
@@ -210,7 +216,7 @@ if (length(sampleSubset) > 5) {{
 
 saveRDS(ods, "{os.path.basename(step1_output_RDS_file)}")
 '""")
-                j.command(f"gsutil -m cp  *.pdf *.png {output_base_dir}")
+                j.command(f"gsutil -m cp  *.tsv *.pdf *.png {output_base_dir}")
                 j.command(f"""gsutil -m cp "{os.path.basename(step1_output_RDS_file)}" {output_base_dir}""")
 
             if args.skip_step2:
@@ -319,7 +325,7 @@ for(sample_id in sample_ids) {{
     ggsave(file=paste(sampleSetLabel, "__volcano__padj_{PADJ_THRESHOLD}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo") 
 }}
 '""")
-                j.command(f"""tar czf "{os.path.basename(step3_output_tar_gz_file)}" *.png""")
+                j.command(f"""tar czf "{os.path.basename(step3_output_tar_gz_file)}" *.png *.tsv""")
                 j.command(f"""gsutil -m cp "{os.path.basename(step3_output_tar_gz_file)}" {output_base_dir}""")
 
 
