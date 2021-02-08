@@ -105,11 +105,11 @@ def main():
     for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
         logging.info("----------------")
         logging.info(f"{tissue_name}:")
-        samples_df = pd.DataFrame()
         SMTD_value = TISSUE_NAME_TO_SMTD[tissue_name]
 
         tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES[tissue_name]["samples"])]
         logging.info(f"Got {len(tgg_df)} TGG samples for {tissue_name}")
+        samples_df = pd.DataFrame()
         samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)
         samples_df['tissue'] = tissue_name
         samples_df['tissue_detail'] = SMTD_value
