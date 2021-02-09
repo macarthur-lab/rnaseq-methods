@@ -172,7 +172,8 @@ sampleInfo[,sampleID:=sample_id]
 #print(sampleInfo, topn=100, nrows=1000)
 #print("=============================================================")
 
-ods <- OutriderDataSet(countData=cnts[,sampleInfo$sampleID], colData=sampleInfo)
+cnts = cnts[,sampleInfo$sampleID]
+ods <- OutriderDataSet(countData=cnts, colData=sampleInfo)
 
 ods <- estimateSizeFactors(ods)
 sortedSizeFactors = sort(sizeFactors(ods))
@@ -255,6 +256,8 @@ ods = readRDS("{os.path.basename(step1_output_RDS_file)}")
 q = metadata(ods)$opt
 
 ods = OUTRIDER(ods, verbose=TRUE, iterations=15, q=q, BPPARAM=MulticoreParam({args.cpu}, progressbar=TRUE))
+rownames(ods) <- gsub("\\\\.[0-9]*(_[0-9]*)?.*$", "", rownames(ods))
+
 saveRDS(ods, "{os.path.basename(step2_output_RDS_file)}")
 
 plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, device="pdf", type="cairo", nRowCluster=1, nColCluster=1, main=paste("Count correlation heatmap q=", q, sep=""), filename=paste(sampleSetLabel, "__plotCountCorHeatmap_after_correction.pdf", sep=""))
@@ -264,23 +267,18 @@ plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, 
 g = plotAberrantPerSample(ods, padjCutoff={PADJ_THRESHOLD})
 ggsave(file=paste(sampleSetLabel, "__aberrantPerSample_padj_{PADJ_THRESHOLD}.png", sep=""), g, type="cairo")
 
-# annotate gene names  
-geneIDs <- gsub("\\\\.[0-9]*(_[0-9]*)?.*$", "", rownames(ods))
-geneIdMap <- merge(data.table(ensgene=geneIDs), grch38, sort=FALSE, all.x=TRUE)[!duplicated(ensgene),]
-  
-# set new gene names only if hgnc symbol is present
-if(!"ENSG" %in% colnames(mcols(ods))) {{
-    mcols(ods)$ENSG <- geneIDs
-    rownames(ods) <- geneIdMap[,ifelse(is.na(symbol) | symbol == "" | duplicated(symbol), geneIDs, symbol)]
-}}
-
+resultTableColumns = c("sampleID", "geneID", "symbol", "biotype", "pValue", "padjust", "zScore", "rawcounts", "normcounts", "description", "chr", "start", "end", "strand", "meanCorrected","theta", "aberrant", "AberrantBySample", "AberrantByGene")
 res = results(ods, padjCutoff=1)
-res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
+res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
+res = res[, resultTableColumns]
+setorderv(res, c("sampleID", "padjust"))
 res[, "q"] = q
 write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
 res = results(ods, padjCutoff={PADJ_THRESHOLD})
-res = res[,c("sampleID", "geneID", "pValue", "padjust", "zScore", "rawcounts")][order(padjust),]
+res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
+res = res[,resultTableColumns]
+setorderv(res, c("sampleID", "padjust"))
 res[, "q"] = q
 write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
@@ -314,13 +312,18 @@ library(gridExtra)
 sampleSetLabel = "{sample_set_label}"
 ods = readRDS("{os.path.basename(step2_output_RDS_file)}")
 
-res = results(ods)
+res = results(ods, padjCutoff={PADJ_THRESHOLD})
+
+# annotate gene names 
+geneIdMap <- merge(data.table(ensgene=rownames(ods)), grch38, sort=FALSE, all.x=TRUE)[!duplicated(ensgene),]
+geneLabels <- geneIdMap[, ifelse(is.na(symbol) | symbol == "" | duplicated(symbol), ensgene, symbol)]
+
 
 sample_ids = unique(res$sampleID)
 sample_ids = sample_ids[order(sample_ids)]
 for(sample_id in sample_ids) {{
     print(paste("Plotting volcano plots for ", sample_id))
-    volcanoPlotLabels = ifelse(names(ods) %in% res[res$sampleID == sample_id]$geneID, names(ods), "")
+    volcanoPlotLabels = ifelse(names(ods) %in% res[res$sampleID == sample_id]$geneID, geneLabels, "")
     p = plotVolcano(ods, sample_id, padjCutoff={PADJ_THRESHOLD}, basePlot=TRUE) + geom_label_repel(aes(label=volcanoPlotLabels), force=3, nudge_y = -1, box.padding = 0.35, point.padding = 0.5, segment.color = "grey50") + theme(plot.margin=unit(c(0.5, 0, 0, 0), "cm"))
     ggsave(file=paste(sampleSetLabel, "__volcano__padj_{PADJ_THRESHOLD}_", sample_id, ".png", sep=""), p, width=12, height=8, device="png", type="cairo") 
 }}
