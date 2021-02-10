@@ -33,28 +33,29 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
 
 def main():
     rnaseq_sample_metadata_df = get_joined_metadata_df()
-    #gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
+    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip()])
+    star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
     p = batch_utils.init_arg_parser(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
-    grp = p.add_mutually_exclusive_group(required=True)
-    grp.add_argument("-b", "--rnaseq-batch-name", nargs="*", help="RNA-seq batch names to process (eg. -b batch1 batch2)",
-                     choices=set(rnaseq_sample_metadata_df['star_pipeline_batch']))
-    grp.add_argument("-s", "--rnaseq-sample-id", nargs="*", help="RNA-seq sample IDs to process (eg. -s sample1 sample2)",
-                     choices=set(rnaseq_sample_metadata_df['sample_id']))
+    p.add_argument("batch_name_or_sample_id", nargs="+", choices={"all",} | analysis_batches | star_pipeline_batches | set(rnaseq_sample_metadata_df['sample_id']))
     args = p.parse_args()
 
     # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
     samples_df = pd.DataFrame()
-    if args.rnaseq_batch_name:
-        for batch_name in args.rnaseq_batch_name:
+    for batch_name in args.batch_name_or_sample_id:
+        if batch_name == "all":
+            samples_df = transfer_metadata_columns_from_df(samples_df, rnaseq_sample_metadata_df)
+        elif batch_name in star_pipeline_batches:
             df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'] == batch_name]
             samples_df = transfer_metadata_columns_from_df(samples_df, df)
-
-    elif args.rnaseq_sample_id:
-        df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(set(args.rnaseq_sample_id))]
-        samples_df = transfer_metadata_columns_from_df(samples_df, df)
-    else:
-        p.error("Must specify -b or -s")
+        elif batch_name in analysis_batches:
+            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['analysis batch'] == batch_name]
+            samples_df = transfer_metadata_columns_from_df(samples_df, df)
+        elif batch_name in set(rnaseq_sample_metadata_df.sample_id):
+            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id == batch_name]
+            samples_df = transfer_metadata_columns_from_df(samples_df, df)
+        else:
+            p.error(f"Unexpected name {batch_name}")
 
     logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
@@ -76,7 +77,7 @@ def main():
             output_bed_file_path = os.path.join(output_dir, output_bed_filename)
 
             # check if output file already exists
-            if hl.hadoop_is_file(output_filtered_junctions_tab_file_path) and hl.hadoop_isfile(output_bed_file_path) and not args.force:
+            if hl.hadoop_is_file(output_filtered_junctions_tab_file_path) and hl.hadoop_is_file(output_bed_file_path) and not args.force:
                 logger.info(f"{sample_id} output files already exist: {output_filtered_junctions_tab_file_path} {output_bed_file_path}. Skipping...")
                 continue
 
