@@ -58,6 +58,7 @@ def main():
                 source_prefix = "gs://macarthurlab-rnaseq/*"
             else:
                 source_prefix = f"gs://macarthurlab-rnaseq/{batch_name}"
+
             if not args.dont_download:
                 # star
                 gsutil_cp("%s/star/*.Log.final.out" % source_prefix, dest_prefix+"/star/")
@@ -74,16 +75,25 @@ def main():
             source_prefix = "gs://macarthurlab-rnaseq/*"
 
             if not args.dont_download:
+                star_logs = []
+                star_gene_counts = []
+                rnaseqc_metrics = []
+                fastqc_zip = []
                 for _, row in df.iterrows():
                     # star
-                    gsutil_cp(f"%s/star/{row.sample_id}*.Log.final.out" % source_prefix, dest_prefix+"/star/")
-                    gsutil_cp(f"%s/star/{row.sample_id}*.ReadsPerGene.out.tab.gz" % source_prefix,  dest_prefix+"/star/genecounts/")
+                    star_logs.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.Log.final.out")
+                    star_gene_counts.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.ReadsPerGene.out.tab.gz")
 
                     # rnaseqc
-                    gsutil_cp(f"%s/rnaseqc/{row.sample_id}*.metrics.tsv" % source_prefix,  dest_prefix+"/rna_seqc/metrics/")
+                    rnaseqc_metrics.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/rnaseqc/{row.sample_id}*.metrics.tsv")
 
                     # fastqc
-                    gsutil_cp(f"%s/fastqc/zip/{row.sample_id}*_fastqc.zip" % source_prefix,  dest_prefix+"/fastqc/zip/")
+                    fastqc_zip.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/fastqc/zip/{row.sample_id}*_fastqc.zip")
+
+                gsutil_cp(" ".join(star_logs), dest_prefix+"/star/")
+                gsutil_cp(" ".join(star_gene_counts), dest_prefix+"/star/genecounts/")
+                gsutil_cp(" ".join(rnaseqc_metrics), dest_prefix+"/rna_seqc/metrics/")
+                gsutil_cp(" ".join(fastqc_zip), dest_prefix+"/fastqc/zip/")
         else:
             raise ValueError(batch_name)
 

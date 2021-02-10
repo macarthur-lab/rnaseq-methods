@@ -66,6 +66,8 @@ RGP_7_2_2	RGP_7_2_2.bam	Conventional base calls	Sanger / Illumina 1.9	91573742.0
 RGP_7_3_2	RGP_7_3_2.bam	Conventional base calls	Sanger / Illumina 1.9	101865746.0	0.0	101.0	50.0	62.35511615737502	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 RGP_7_4_2	RGP_7_4_2.bam	Conventional base calls	Sanger / Illumina 1.9	84148718.0	0.0	101.0	50.0	60.10545409524439	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 RGP_7_5_2	RGP_7_5_2.bam	Conventional base calls	Sanger / Illumina 1.9	92600278.0	0.0	101.0	50.0	65.04357942185688	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
+SWE_36223_1	SWE_36223_1.bam	Conventional base calls	Sanger / Illumina 1.9	134171081.0	0.0	101.0	50.0	57.99261209956725	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	warn	pass
+SWE_36326_1	SWE_36326_1.bam	Conventional base calls	Sanger / Illumina 1.9	132718788.0	0.0	101.0	49.0	59.71043636372414	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	warn	pass
 VCGS_DLS_FAM1_1	VCGS_DLS_FAM1_1.bam	Conventional base calls	Sanger / Illumina 1.9	152309113.0	0.0	101.0	48.0	45.70781039207831	101.0	pass	pass	pass	pass	warn	pass	pass	pass	fail	pass	pass
 VCGS_FAM11_32_2	VCGS_FAM11_32_2.bam	Conventional base calls	Sanger / Illumina 1.9	96182035.0	0.0	101.0	49.0	59.4835477009972	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	pass	pass
 VCGS_FAM12_36_2	VCGS_FAM12_36_2.bam	Conventional base calls	Sanger / Illumina 1.9	118607612.0	0.0	101.0	50.0	57.45256429111202	101.0	pass	pass	pass	pass	warn	pass	pass	pass	warn	warn	pass
