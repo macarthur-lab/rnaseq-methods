@@ -3,7 +3,7 @@ import logging
 import os
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, ANALYSIS_BATCHES
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 hl.init(log="/dev/null")
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # columns: sample_id, star_pipeline_batch, star_SJ_out_tab, 'imputed sex', 'imputed tissue', 'stranded? (rnaseqc)', 'read length (rnaseqc)'
     rnaseq_sample_metadata_df = get_joined_metadata_df()
 
-    analysis_batches = set([b for b in ANALYSIS_BATCHES.keys() if b])
+    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip() and b != "x"])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
     p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 bigWig_paths = list(rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["star_pipeline_batch"] == batch_name].coverage_bigwig)
             elif batch_name in analysis_batches:
                 output_dir = f"gs://macarthurlab-rnaseq/combined_bigWigs/{batch_name}/"
-                bigWig_paths = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["sample_id"].isin(ANALYSIS_BATCHES[batch_name]["samples"])].coverage_bigwig
+                bigWig_paths = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == batch_name].coverage_bigwig
             else:
                 p.error(f"Unexpected batch name: {batch_name}")
 

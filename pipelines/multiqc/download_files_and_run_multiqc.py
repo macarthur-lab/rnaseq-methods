@@ -6,7 +6,7 @@ import logging
 import os
 import pprint
 import sys
-from sample_metadata.rnaseq_metadata_utils import ANALYSIS_BATCHES, get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
@@ -32,7 +32,7 @@ def gsutil_cp(source, dest, mkdir=True):
 def main():
     rnaseq_sample_metadata_df = get_joined_metadata_df()
 
-    analysis_batches = set([b for b in ANALYSIS_BATCHES.keys() if b])
+    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip() and b != "x"])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
     p = argparse.ArgumentParser()
@@ -70,9 +70,8 @@ def main():
                 gsutil_cp("%s/fastqc/zip/*_fastqc.zip" % source_prefix,  dest_prefix+"/fastqc/zip/")
 
         elif batch_name in analysis_batches:
-            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES[batch_name]["samples"])]
+            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == batch_name]
             source_prefix = "gs://macarthurlab-rnaseq/*"
-            assert len(df) == len(ANALYSIS_BATCHES[batch_name]["samples"])
 
             if not args.dont_download:
                 for _, row in df.iterrows():

@@ -1,3 +1,4 @@
+from collections import defaultdict
 import gspread
 import os
 import pandas as pd
@@ -228,6 +229,45 @@ def get_gtex_wgs_sample_metadata_df():
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
+def get_analysis_batches():
+    df = get_seqr_info_and_other_metadata_df()
+    analysis_batch_to_tissue = defaultdict(set)
+    analysis_batch_to_sex = defaultdict(set)
+
+    analysis_batches = {}
+    for _, r in df.iterrows():
+        analysis_batch = r["analysis batch"]
+        if not analysis_batch:
+            continue
+        analysis_batch = analysis_batch.strip()
+        if analysis_batch or analysis_batch == "x":
+            continue
+
+        analysis_batch_to_tissue[analysis_batch].add(r["imputed tissue"])
+        analysis_batch_to_sex[analysis_batch].add(r["imputed sex"])
+
+    for analysis_batch, tissue in analysis_batch_to_tissue.items():
+        if len(tissue) != 1:
+            raise ValueError(f"Expected 1 tissue for {analysis_batch}. Found: {tissue}")
+        tissue = next(iter(tissue))
+        sex = analysis_batch_to_tissue[analysis_batch]
+        if len(sex) > 1:
+            sex = "both"
+        else:
+            sex = next(iter(sex))
+
+        analysis_batches[analysis_batch] = {
+            "tissue": tissue,
+            "sex": sex,
+            "samples": list(df[df["analysis batch"] == analysis_batch].sample_id)
+        }
+
+    # TODO fix empty values in spreadsheet "analysis batch" column
+    return analysis_batches
+
+#a = get_anaysis_batches()
+#for batch in a: print(batch, set(ANALYSIS_BATCHES[batch]["samples"]) - set(a[batch]["samples"]))
+"""
 ANALYSIS_BATCHES = {
     "muscle_F_101bp": {"tissue": "muscle", "sex": "F", "samples": ['B15-15_1_1', 'B15-28_1_1', 'BEG_14-4_T65', 'BON_B09-27-1_1', 'BON_B12-33-2_1', 'BON_B12-76-1_2', 'BON_B13-55_1_2', 'BON_B14-163-1_2', 'BON_B14-71-2_1', 'BON_B14-75-1_1', 'BON_B15-118_1', 'BON_B16-75-1_2', 'BON_UC473_1', 'CLA_214DF_AB_2', 'CLA_329FK_RR_2', 'CLA_62R_CaM_3', 'HK069-0177_2', 'INMR_HZ_401', 'K1157-1-4', 'LIA_EDW01_1', 'MAN_1438-01-M1', 'MBEL028_001_3', 'MTEH041_001_2', 'OUN_HK116_001', 'OUN_HK137_001', 'RGP_248_3', 'RGP_54_3_2', 'RGP_800_3_2', 'BON_B09-8_1', 'BON_B19-57_1', 'RGP_800_3_3'], },
     "muscle_F_76bp": {"tissue": "muscle", "sex": "F", "samples": ['146BO_JB_M1', '149BP_AB_M1', '164BW_KC_M1', '247DT_SH_M1', '252DX_DC_M1', '26I_SK_M1', '361AL_CC_M1', '37L_NA_M1', '65T_CR_M1', '9C_DH_M1', 'B09-24-1RNA_UNKNOWN', 'B10-02-1RNA', 'B12-21-1M', 'B13-15RNA', 'B14-117-1RNA-2', 'B14-130-1M', 'B14-70-1RNA', 'B14-78-1-U', 'CLA_79Z_CP_2', 'M_0146-01-H1', 'T238', 'T850', 'UC316-1M'], },
@@ -288,4 +328,5 @@ ANALYSIS_BATCHES["fibroblasts"] = {
         ANALYSIS_BATCHES["fibroblasts_M"]["samples"],
     "sex": "both",
 }
+"""
 

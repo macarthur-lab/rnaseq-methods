@@ -110,8 +110,21 @@ for i, row in final_df.iterrows():
 #%%
 # update "analysis_batch" column
 
-for i, row in final_df.iterrows():
-    final_df.at[i, "analysis batch"] = SAMPLE_ID_TO_ANALYSIS_BATCH.get(row.sample_id, "")
+# TODO fix empty values in spreadsheet "analysis batch" column
+
+#for i, row in final_df.iterrows():
+#    final_df.at[i, "analysis batch"] = SAMPLE_ID_TO_ANALYSIS_BATCH.get(row.sample_id, "")
+
+# TODO fix empty values in spreadsheet "analysis batch" column
+
+"""
+muscle_M_76bp {'NH12-1413', 'NH11-441'}
+muscle_F_76bp {'M_0146-01-H1'}
+muscle_M_101bp {'INMR_HW_389', 'OUN_HK081_001', 'MAN_1001_01_M1_D1', 'OUN_HK112_001', 'LIA_TIS03_2', 'MGLA003_001_2', 'MMAD002_001_2', 'HK018_0047_2', 'MCOP008_001_2', 'INMR_GI_456', 'HK072-001_2', 'MESP021_001_2', 'INMR_GB_408', 'RGP_273_3', 'OUN_HK047_0116', 'LIA_MAS02_2', 'MBEL028_002_1', 'OUN_HK080_001', 'ICCV_458_10CC06258_02', 'MBRU030_2', 'INMR_IK_581', 'OUN_HK018_0047', 'MESP039_2', 'INMR_IG_561', 'OUN_HK079_001', 'OUN_HK124_001'}
+fibroblasts_F {'HK010_0026', 'HK006_0016', 'INMR_IV_615', 'HK106-001', 'HK024_0065'}
+muscle_F_101bp {'RGP_54_3_2', 'INMR_HZ_401', 'MAN_1438-01-M1', 'MTEH041_001_2', 'RGP_248_3', 'OUN_HK137_001', 'HK069-0177_2', 'MBEL028_001_3', 'OUN_HK116_001', 'K1157-1-4', 'LIA_EDW01_1'}
+fibroblasts_M {'HK088-001_2', 'HK028_0073', 'HK085-001', 'HK011_0029', 'NH12-843_Fibroblasts', 'HK101-001', 'HK044_0109', 'MESP014_2'}
+"""
 
 #%%
 

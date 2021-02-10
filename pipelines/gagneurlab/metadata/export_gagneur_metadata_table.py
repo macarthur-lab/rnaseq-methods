@@ -9,7 +9,7 @@ import pandas as pd
 import sys
 
 from gagneurlab.gagneur_utils import OUTRIDER_COUNTS_TSV_GZ, ALL_METADATA_TSV
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df, ANALYSIS_BATCHES
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -85,10 +85,10 @@ TISSUE_NAME_TO_SMTD = {
 
 
 def main():
+    # get metadata table and filter out excluded samples
     rnaseq_sample_metadata_df = get_joined_metadata_df()
-    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[  # filter to samples
-        rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES["all_analysis_samples"]["samples"])
-    ]
+    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[~rnaseq_sample_metadata_df["analysis batch"].str.strip().isin(["", "x"])]
+
     gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
     #gtex_rnaseq_sample_metadata_df = gtex_rnaseq_sample_metadata_df #.rename({'SAMPID': 'sample_id'}, axis="columns").set_index('sample_id', drop=False)
 
@@ -107,7 +107,7 @@ def main():
         logging.info(f"{tissue_name}:")
         SMTD_value = TISSUE_NAME_TO_SMTD[tissue_name]
 
-        tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id.isin(ANALYSIS_BATCHES[tissue_name]["samples"])]
+        tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == tissue_name]
         logging.info(f"Got {len(tgg_df)} TGG samples for {tissue_name}")
         samples_df = pd.DataFrame()
         samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)

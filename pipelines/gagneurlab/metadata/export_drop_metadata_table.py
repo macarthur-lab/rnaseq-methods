@@ -8,7 +8,7 @@ import os
 import pandas as pd
 import sys
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df, ANALYSIS_BATCHES
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -117,16 +117,9 @@ TISSUE_NAME_TO_SMTD = {
 
 
 def main():
+    # get metadata table and filter out excluded samples
     rnaseq_sample_metadata_df = get_joined_metadata_df()
-    all_analysis_sample_ids = set(ANALYSIS_BATCHES["all_analysis_samples"]["samples"])
-
-    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[  # filter to samples
-        rnaseq_sample_metadata_df.sample_id.isin(all_analysis_sample_ids)
-    ]
-    if len(rnaseq_sample_metadata_df) != len(all_analysis_sample_ids):
-        print("ERROR: rnaseq_sample_metadata_df != all_analysis_sample_ids:")
-        print(f"   set(all_analysis_sample_ids) - set(rnaseq_sample_metadata_df) == {set(all_analysis_sample_ids) - set(rnaseq_sample_metadata_df.sample_id)}")
-        sys.exit(0)
+    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[~rnaseq_sample_metadata_df["analysis batch"].str.strip().isin(["", "x"])]
 
     gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
 
