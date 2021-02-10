@@ -145,24 +145,21 @@ python3 ./download_files_and_run_multiqc.py all
 ``` 
 
 ---
+**Impute tissue, sex, and check for RNA vs. DNA fingerprint**
+
+Run rnaseq_methods/pipelines/pca_to_impute_tissue/PCA_all_samples.R to compute PCs and plot samples vs. GTEx tissues.
+
+Previous plots:
+* [2020/02/01](file:///Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html)
+
+---
 Now that all new samples are in the  [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693),
 run downstream analyses - using python scripts and [hail Batch](https://hail.is/docs/batch/api.html) ([zulip](https://hail.zulipchat.com/#narrow/stream/223457-Batch-support)).
-
-- QC
-    - Impute tissue 
-    - Impute sex
-    - Check sample ID vs. DNA (?)
-    - Impute Ancestry (?)
     
-- TGG-viewer
-    - add samples to config
-    - TODO: reference data (GTEx, mappability)
-    - TODO: gCNV tracks
-- Majiq
-- Fraser
-- Outrider
+---
+
+- TGG-viewer gCNV tracks
 - Aneva
-- gene lists, chess genes
 
 ---
 
