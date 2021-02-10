@@ -150,7 +150,7 @@ python3 ./download_files_and_run_multiqc.py all
 Run rnaseq_methods/pipelines/pca_to_impute_tissue/PCA_all_samples.R to compute PCs and plot samples vs. GTEx tissues.
 
 Previous plots:
-* [2020/02/01](file:///Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html)
+* [2020/02/01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html)
 
 ---
 Now that all new samples are in the  [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693),
