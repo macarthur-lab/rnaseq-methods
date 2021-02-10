@@ -198,11 +198,14 @@ def main():
     #tsv_output_path = f"metadata_table_for_all_RDG_samples.tsv"
     #all_rdg_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     #print(f"Wrote {len(all_rdg_samples_df)} samples to {tsv_output_path}")
+    def run(cmd):
+        print(cmd)
+        os.system(cmd)
 
     tsv_output_path = f"metadata_table_for_all_RDG_and_GTEX_samples.tsv"
     all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
-    os.system(f"gsutil cp {tsv_output_path} {ALL_METADATA_TSV}")
+    run(f"gsutil cp {tsv_output_path} {ALL_METADATA_TSV}")
 
     #all_rdg_counts_df = all_rdg_counts_df.fillna(0)
     #tsv_output_path = f"OUTRIDER_input_table_RDG_counts_for_all_tissues.tsv"
@@ -213,7 +216,8 @@ def main():
     tsv_output_path = f"OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
     all_rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_counts_df)} genes x {len(all_rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
-    os.system(f"gsutil cp {tsv_output_path} {OUTRIDER_COUNTS_TSV_GZ}")
+    run(f"gsutil cp {tsv_output_path} {OUTRIDER_COUNTS_TSV_GZ}")
+
 
 
 if __name__ == "__main__":

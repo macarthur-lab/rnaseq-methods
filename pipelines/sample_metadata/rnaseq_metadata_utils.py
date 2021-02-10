@@ -240,7 +240,7 @@ def get_analysis_batches():
         if not analysis_batch:
             continue
         analysis_batch = analysis_batch.strip()
-        if analysis_batch or analysis_batch == "x":
+        if not analysis_batch or analysis_batch == "x":
             continue
 
         analysis_batch_to_tissue[analysis_batch].add(r["imputed tissue"])
