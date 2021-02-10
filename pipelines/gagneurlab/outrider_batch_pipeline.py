@@ -232,7 +232,6 @@ saveRDS(ods, "{os.path.basename(step1_output_RDS_file)}")
                 j.command(f"gsutil -m cp -n {step1_output_RDS_file} .")
 
                 j.command(f"""time xvfb-run Rscript -e '
-
 library(OUTRIDER)
 library(annotables)
 library(data.table)
@@ -249,6 +248,7 @@ library(ggplot2)
 library(gtable)
 library(grid)
 library(gridExtra)
+
 
 sampleSetLabel = "{sample_set_label}"
 possibleConfounders = {POSSIBLE_CONFOUNDERS} 
@@ -268,21 +268,6 @@ plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=TRUE, 
 
 g = plotAberrantPerSample(ods, padjCutoff={PADJ_THRESHOLD})
 ggsave(file=paste(sampleSetLabel, "__aberrantPerSample_padj_{PADJ_THRESHOLD}.png", sep=""), g, type="cairo")
-
-resultTableColumns = c("sampleID", "geneID", "symbol", "biotype", "pValue", "padjust", "zScore", "rawcounts", "normcounts", "description", "chr", "start", "end", "strand", "meanCorrected","theta", "aberrant", "AberrantBySample", "AberrantByGene")
-res = results(ods, padjCutoff=1)
-res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
-res = res[, resultTableColumns]
-setorderv(res, c("sampleID", "padjust"))
-res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
-
-res = results(ods, padjCutoff={PADJ_THRESHOLD})
-res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
-res = res[,resultTableColumns]
-setorderv(res, c("sampleID", "padjust"))
-res[, "q"] = q
-write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 '""")
                 j.command(f"gsutil -m cp  *.tsv *.pdf *.png {output_base_dir}")
                 j.command(f"""gsutil -m cp "{os.path.basename(step2_output_RDS_file)}" {output_base_dir}""")
@@ -314,12 +299,26 @@ library(gridExtra)
 sampleSetLabel = "{sample_set_label}"
 ods = readRDS("{os.path.basename(step2_output_RDS_file)}")
 
+resultTableColumns = c("sampleID", "geneID", "symbol", "biotype", "pValue", "padjust", "zScore", "rawcounts", "normcounts", "meanCorrected", "description", "chr", "start", "end", "strand")
+q = metadata(ods)$opt
+
+res = results(ods, padjCutoff=1)
+res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
+res = res[, ..resultTableColumns]
+setorderv(res, c("sampleID", "padjust"))
+res[, "q"] = q
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_all_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
+
 res = results(ods, padjCutoff={PADJ_THRESHOLD})
+res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
+res = res[, ..resultTableColumns]
+setorderv(res, c("sampleID", "padjust"))
+res[, "q"] = q
+write.table(res, file=paste(sampleSetLabel, "__ods__", "q", q, "_padj_{PADJ_THRESHOLD}_results.tsv", sep=""), quote=FALSE, sep="\\t", row.names=FALSE)
 
 # annotate gene names 
 geneIdMap <- merge(data.table(ensgene=rownames(ods)), grch38, sort=FALSE, all.x=TRUE)[!duplicated(ensgene),]
 geneLabels <- geneIdMap[, ifelse(is.na(symbol) | symbol == "" | duplicated(symbol), ensgene, symbol)]
-
 
 sample_ids = unique(res$sampleID)
 sample_ids = sample_ids[order(sample_ids)]
