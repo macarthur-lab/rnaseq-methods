@@ -119,6 +119,7 @@
                 "MESP021_001_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/MESP021_001_2.Log.final.out",
                 "BON_B14-163-1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B14-163-1_2.Log.final.out",
                 "OUN_HK080_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK080_001.Log.final.out",
+                "SRPK3_EM__1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_EM__1.Log.final.out",
                 "CLA_214DF_AB_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/CLA_214DF_AB_2.Log.final.out",
                 "37L_NA_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/37L_NA_M1.Log.final.out",
                 "K1157-1-4": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/K1157-1-4.Log.final.out",
@@ -141,6 +142,7 @@
                 "OUN_HK137_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK137_001.Log.final.out",
                 "NH11-441": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/NH11-441.Log.final.out",
                 "255EA_GC_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/255EA_GC_M1.Log.final.out",
+                "SRPK3_JAP_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_JAP_1.Log.final.out",
                 "OUN_HK081_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK081_001.Log.final.out",
                 "BON_B14-60-1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B14-60-1_2.Log.final.out",
                 "T850": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/T850.Log.final.out",
@@ -154,6 +156,7 @@
                 "B14-70-1RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/B14-70-1RNA.Log.final.out",
                 "9C_DH_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/9C_DH_M1.Log.final.out",
                 "INMR_HW_389": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/INMR_HW_389.Log.final.out",
+                "SRPK3_USA_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_USA_1.Log.final.out",
                 "BON_B15-118_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B15-118_1.Log.final.out",
                 "B13-07-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/B13-07-1M.Log.final.out",
                 "RGP_54_3_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/RGP_54_3_2.Log.final.out",
@@ -210,6 +213,7 @@
                 "BON_B16_30_1_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_B16_30_1_1.ReadsPerGene.out.tab",
                 "OUN_HK079_001": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/OUN_HK079_001.ReadsPerGene.out.tab",
                 "149BP_AB_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/149BP_AB_M1.ReadsPerGene.out.tab",
+                "SRPK3_EM__1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_EM__1.ReadsPerGene.out.tab",
                 "HK060-0154": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/HK060-0154.ReadsPerGene.out.tab",
                 "BEG_1078-1_T1071": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BEG_1078-1_T1071.ReadsPerGene.out.tab",
                 "B14-07RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B14-07RNA.ReadsPerGene.out.tab",
@@ -305,10 +309,12 @@
                 "163BV_JE_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/163BV_JE_M1.ReadsPerGene.out.tab",
                 "BON_B13-55_1_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_B13-55_1_2.ReadsPerGene.out.tab",
                 "UC84-1RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/UC84-1RNA.ReadsPerGene.out.tab",
+                "SRPK3_USA_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_USA_1.ReadsPerGene.out.tab",
                 "B12-30RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B12-30RNA.ReadsPerGene.out.tab",
                 "81AB_MM_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/81AB_MM_M1.ReadsPerGene.out.tab",
                 "CLA_143BN_BB_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/CLA_143BN_BB_2.ReadsPerGene.out.tab",
                 "B14-78-1-U": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B14-78-1-U.ReadsPerGene.out.tab",
+                "SRPK3_JAP_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_JAP_1.ReadsPerGene.out.tab",
                 "B09-25-1RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B09-25-1RNA.ReadsPerGene.out.tab",
                 "BON_UC219-1_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_UC219-1_1.ReadsPerGene.out.tab",
                 "RGP_54_3_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/RGP_54_3_2.ReadsPerGene.out.tab",
@@ -336,6 +342,7 @@
                 "INMR_HW_389": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/INMR_HW_389_fastqc/fastqc_data.txt",
                 "BON_UC473_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BON_UC473_1_fastqc/fastqc_data.txt",
                 "26I_SK_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/26I_SK_M1_fastqc/fastqc_data.txt",
+                "SRPK3_USA_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_USA_1_fastqc/fastqc_data.txt",
                 "BON_B18-54_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BON_B18-54_1_fastqc/fastqc_data.txt",
                 "251DW_SD_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/251DW_SD_M1_fastqc/fastqc_data.txt",
                 "B14-48-1RNA": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B14-48-1RNA_fastqc/fastqc_data.txt",
@@ -344,6 +351,7 @@
                 "146BO_JB_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/146BO_JB_M1_fastqc/fastqc_data.txt",
                 "BEG_1078-1_T1071": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BEG_1078-1_T1071_fastqc/fastqc_data.txt",
                 "B14-130-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B14-130-1M_fastqc/fastqc_data.txt",
+                "SRPK3_JAP_1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_JAP_1_fastqc/fastqc_data.txt",
                 "B11-11-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B11-11-1M_fastqc/fastqc_data.txt",
                 "B09-40-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B09-40-1M_fastqc/fastqc_data.txt",
                 "INMR_HZ_401": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/INMR_HZ_401_fastqc/fastqc_data.txt",
@@ -426,6 +434,7 @@
                 "MMAD002_001_2": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/MMAD002_001_2_fastqc/fastqc_data.txt",
                 "NH11-441": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/NH11-441_fastqc/fastqc_data.txt",
                 "210DB_BW_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/210DB_BW_M1_fastqc/fastqc_data.txt",
+                "SRPK3_EM__1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_EM__1_fastqc/fastqc_data.txt",
                 "UC368-1M": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/UC368-1M_fastqc/fastqc_data.txt",
                 "167BZ_SP_M1": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/167BZ_SP_M1_fastqc/fastqc_data.txt",
                 "92AI_SM": "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/92AI_SM_fastqc/fastqc_data.txt",
@@ -1291,6 +1300,87 @@
                 "Median Exon CV": "0.233131",
                 "Exon CV MAD": "0.224097"
             },
+            "SRPK3_EM__1": {
+                "Sample": "SRPK3_EM__1",
+                "Mapping Rate": "0.989787",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00240811",
+                "End 1 Mapping Rate": "0.992051",
+                "End 2 Mapping Rate": "0.987523",
+                "End 1 Mismatch Rate": "0.00218472",
+                "End 2 Mismatch Rate": "0.00263253",
+                "Expression Profiling Efficiency": "0.945216",
+                "High Quality Rate": "0.949348",
+                "Exonic Rate": "0.95497",
+                "Intronic Rate": "0.0191934",
+                "Intergenic Rate": "0.00987708",
+                "Intragenic Rate": "0.974163",
+                "Ambiguous Alignment Rate": "0.0159599",
+                "High Quality Exonic Rate": "0.961139",
+                "High Quality Intronic Rate": "0.0177882",
+                "High Quality Intergenic Rate": "0.00811611",
+                "High Quality Intragenic Rate": "0.978927",
+                "High Quality Ambiguous Alignment Rate": "0.0129566",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0232441",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.0128363",
+                "End 2 Sense Rate": "0.987958",
+                "Avg. Splits per Read": "0.444853",
+                "Alternative Alignments": "4530100",
+                "Chimeric Reads": "231935",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "27806493",
+                "End 2 Antisense": "338507",
+                "End 1 Bases": "3309098855",
+                "End 2 Bases": "3293997335",
+                "End 1 Mapped Reads": "32763355",
+                "End 2 Mapped Reads": "32613835",
+                "End 1 Mismatches": "7229462",
+                "End 2 Mismatches": "8671533",
+                "End 1 Sense": "361575",
+                "End 2 Sense": "27771804",
+                "Exonic Reads": "62433231",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "62065693",
+                "Intergenic Reads": "645736",
+                "Intragenic Reads": "63688042",
+                "Ambiguous Reads": "1043412",
+                "Intronic Reads": "1254811",
+                "Low Mapping Quality": "3209144",
+                "Low Quality Reads": "3311497",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "65377190",
+                "Mapped Unique Reads": "65377190",
+                "Mismatched Bases": "15900995",
+                "Non-Globin Reads": "65352486",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "65377190",
+                "rRNA Reads": "1519634",
+                "Total Bases": "6603096190",
+                "Total Mapped Pairs": "32555926",
+                "Total Read Number": "70581885",
+                "Unique Mapping, Vendor QC Passed Reads": "66051785",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "18582",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "4343",
+                "Mean 3' bias": "0.455479",
+                "Median 3' bias": "0.423913",
+                "3' bias Std": "0.312426",
+                "3' bias MAD_Std": "0.398922",
+                "3' Bias, 25th Percentile": "0.169173",
+                "3' Bias, 75th Percentile": "0.714286",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "1.00693",
+                "Median Exon CV": "0.267814",
+                "Exon CV MAD": "0.263843"
+            },
             "B14-48-1RNA": {
                 "Sample": "B14-48-1RNA",
                 "Mapping Rate": "0.984256",
@@ -1614,6 +1704,87 @@
                 "Median of Transcript Coverage CV": "0.941836",
                 "Median Exon CV": "0.246776",
                 "Exon CV MAD": "0.233872"
+            },
+            "SRPK3_USA_1": {
+                "Sample": "SRPK3_USA_1",
+                "Mapping Rate": "0.969485",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00389577",
+                "End 1 Mapping Rate": "0.97227",
+                "End 2 Mapping Rate": "0.9667",
+                "End 1 Mismatch Rate": "0.00350679",
+                "End 2 Mismatch Rate": "0.00428699",
+                "Expression Profiling Efficiency": "0.912265",
+                "High Quality Rate": "0.93498",
+                "Exonic Rate": "0.940979",
+                "Intronic Rate": "0.0242851",
+                "Intergenic Rate": "0.0159612",
+                "Intragenic Rate": "0.965264",
+                "Ambiguous Alignment Rate": "0.0187746",
+                "High Quality Exonic Rate": "0.953778",
+                "High Quality Intronic Rate": "0.0210178",
+                "High Quality Intergenic Rate": "0.0100833",
+                "High Quality Intragenic Rate": "0.974795",
+                "High Quality Ambiguous Alignment Rate": "0.0151213",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0288586",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.0160029",
+                "End 2 Sense Rate": "0.985091",
+                "Avg. Splits per Read": "0.366266",
+                "Alternative Alignments": "16401629",
+                "Chimeric Reads": "280323",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "66628154",
+                "End 2 Antisense": "1008834",
+                "End 1 Bases": "7973687501",
+                "End 2 Bases": "7928001969",
+                "End 1 Mapped Reads": "78947401",
+                "End 2 Mapped Reads": "78495069",
+                "End 1 Mismatches": "27962013",
+                "End 2 Mismatches": "33987263",
+                "End 1 Sense": "1083587",
+                "End 2 Sense": "66659168",
+                "Exonic Reads": "148150088",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "147205504",
+                "Intergenic Reads": "2512966",
+                "Intragenic Reads": "151973587",
+                "Ambiguous Reads": "2955917",
+                "Intronic Reads": "3823499",
+                "Low Mapping Quality": "12557105",
+                "Low Quality Reads": "10236966",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "157442470",
+                "Mapped Unique Reads": "157442470",
+                "Mismatched Bases": "61949276",
+                "Non-Globin Reads": "157410819",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "157442470",
+                "rRNA Reads": "4543575",
+                "Total Bases": "15901689470",
+                "Total Mapped Pairs": "78259145",
+                "Total Read Number": "178799682",
+                "Unique Mapping, Vendor QC Passed Reads": "162398053",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "23354",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "11422",
+                "Mean 3' bias": "0.664915",
+                "Median 3' bias": "0.739726",
+                "3' bias Std": "0.28243",
+                "3' bias MAD_Std": "0.290644",
+                "3' Bias, 25th Percentile": "0.467593",
+                "3' Bias, 75th Percentile": "0.909091",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "1.25769",
+                "Median Exon CV": "0.402723",
+                "Exon CV MAD": "0.397661"
             },
             "BB0280_CH_AffF_2": {
                 "Sample": "BB0280_CH_AffF_2",
@@ -3153,6 +3324,87 @@
                 "Median of Transcript Coverage CV": "0.914097",
                 "Median Exon CV": "0.242202",
                 "Exon CV MAD": "0.230485"
+            },
+            "SRPK3_JAP_1": {
+                "Sample": "SRPK3_JAP_1",
+                "Mapping Rate": "0.990801",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00246947",
+                "End 1 Mapping Rate": "0.993141",
+                "End 2 Mapping Rate": "0.988461",
+                "End 1 Mismatch Rate": "0.00209892",
+                "End 2 Mismatch Rate": "0.00284177",
+                "Expression Profiling Efficiency": "0.95236",
+                "High Quality Rate": "0.946688",
+                "Exonic Rate": "0.961202",
+                "Intronic Rate": "0.0150638",
+                "Intergenic Rate": "0.00836284",
+                "Intragenic Rate": "0.976266",
+                "Ambiguous Alignment Rate": "0.015371",
+                "High Quality Exonic Rate": "0.967353",
+                "High Quality Intronic Rate": "0.0136482",
+                "High Quality Intergenic Rate": "0.00691058",
+                "High Quality Intragenic Rate": "0.981001",
+                "High Quality Ambiguous Alignment Rate": "0.0120883",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0176378",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.00999924",
+                "End 2 Sense Rate": "0.990657",
+                "Avg. Splits per Read": "0.449019",
+                "Alternative Alignments": "4518905",
+                "Chimeric Reads": "258135",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "29019932",
+                "End 2 Antisense": "273292",
+                "End 1 Bases": "3416063208",
+                "End 2 Bases": "3399966434",
+                "End 1 Mapped Reads": "33822408",
+                "End 2 Mapped Reads": "33663034",
+                "End 1 Mismatches": "7170044",
+                "End 2 Mismatches": "9661913",
+                "End 1 Sense": "293108",
+                "End 2 Sense": "28977019",
+                "Exonic Reads": "64867167",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "63887662",
+                "Intergenic Reads": "564370",
+                "Intragenic Reads": "65883753",
+                "Ambiguous Reads": "1037319",
+                "Intronic Reads": "1016586",
+                "Low Mapping Quality": "3394598",
+                "Low Quality Reads": "3597780",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "67485442",
+                "Mapped Unique Reads": "67485442",
+                "Mismatched Bases": "16831957",
+                "Non-Globin Reads": "67479637",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "67485442",
+                "rRNA Reads": "1190293",
+                "Total Bases": "6816029642",
+                "Total Mapped Pairs": "33604447",
+                "Total Read Number": "72630920",
+                "Unique Mapping, Vendor QC Passed Reads": "68112015",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "19027",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "4988",
+                "Mean 3' bias": "0.458069",
+                "Median 3' bias": "0.428571",
+                "3' bias Std": "0.316359",
+                "3' bias MAD_Std": "0.412903",
+                "3' Bias, 25th Percentile": "0.171757",
+                "3' Bias, 75th Percentile": "0.738095",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "0.960119",
+                "Median Exon CV": "0.241794",
+                "Exon CV MAD": "0.233831"
             },
             "B13-07-1RNA": {
                 "Sample": "B13-07-1RNA",
@@ -16392,6 +16644,34 @@
                 "unmapped_tooshort": 1785887,
                 "unmapped_other": 223236
             },
+            "SRPK3_EM__1": {
+                "total_reads": 33020520.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 31384063.0,
+                "uniquely_mapped_percent": 95.04,
+                "avg_mapped_read_length": 200.63,
+                "num_splices": 27271125.0,
+                "num_annotated_splices": 27270998.0,
+                "num_GTAG_splices": 26990170.0,
+                "num_GCAG_splices": 261721.0,
+                "num_ATAC_splices": 11113.0,
+                "num_noncanonical_splices": 8121.0,
+                "mismatch_rate": 0.22,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.66,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.42,
+                "multimapped": 1287746.0,
+                "multimapped_percent": 3.9,
+                "multimapped_toomany": 568.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.04,
+                "unmapped_tooshort_percent": 0.54,
+                "unmapped_other_percent": 0.04,
+                "unmapped_mismatches": 22461,
+                "unmapped_tooshort": 303221,
+                "unmapped_other": 22461
+            },
             "CLA_214DF_AB_2": {
                 "total_reads": 38933816.0,
                 "avg_input_read_length": 202.0,
@@ -17008,6 +17288,34 @@
                 "unmapped_tooshort": 388416,
                 "unmapped_other": 13167
             },
+            "SRPK3_JAP_1": {
+                "total_reads": 34050865.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 32313097.0,
+                "uniquely_mapped_percent": 94.9,
+                "avg_mapped_read_length": 200.63,
+                "num_splices": 28349124.0,
+                "num_annotated_splices": 28349047.0,
+                "num_GTAG_splices": 28092405.0,
+                "num_GCAG_splices": 237269.0,
+                "num_ATAC_splices": 13135.0,
+                "num_noncanonical_splices": 6315.0,
+                "mismatch_rate": 0.22,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.55,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.42,
+                "multimapped": 1407136.0,
+                "multimapped_percent": 4.13,
+                "multimapped_toomany": 668.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.03,
+                "unmapped_tooshort_percent": 0.43,
+                "unmapped_other_percent": 0.05,
+                "unmapped_mismatches": 19410,
+                "unmapped_tooshort": 278205,
+                "unmapped_other": 32349
+            },
             "OUN_HK081_001": {
                 "total_reads": 105776439.0,
                 "avg_input_read_length": 202.0,
@@ -17372,6 +17680,34 @@
                 "unmapped_tooshort": 1586367,
                 "unmapped_other": 317273
             },
+            "SRPK3_USA_1": {
+                "total_reads": 81186001.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 75067394.0,
+                "uniquely_mapped_percent": 92.46,
+                "avg_mapped_read_length": 199.9,
+                "num_splices": 53530213.0,
+                "num_annotated_splices": 53530013.0,
+                "num_GTAG_splices": 53100681.0,
+                "num_GCAG_splices": 388836.0,
+                "num_ATAC_splices": 26411.0,
+                "num_noncanonical_splices": 14285.0,
+                "mismatch_rate": 0.35,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.5,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.47,
+                "multimapped": 3884955.0,
+                "multimapped_percent": 4.79,
+                "multimapped_toomany": 3923.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.26,
+                "unmapped_tooshort_percent": 2.14,
+                "unmapped_other_percent": 0.08,
+                "unmapped_mismatches": 233762,
+                "unmapped_tooshort": 1924040,
+                "unmapped_other": 71927
+            },
             "BON_B15-118_1": {
                 "total_reads": 42822622.0,
                 "avg_input_read_length": 202.0,
@@ -17598,6 +17934,13 @@
                 "percent_duplicates": 68.39813760241948,
                 "percent_fails": 36.36363636363637
             },
+            "SRPK3_USA_1": {
+                "percent_gc": 49.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 174010408.0,
+                "percent_duplicates": 74.69552992639237,
+                "percent_fails": 9.090909090909092
+            },
             "BON_B18-54_1": {
                 "percent_gc": 48.0,
                 "avg_sequence_length": 101.0,
@@ -17653,6 +17996,13 @@
                 "total_sequences": 128671236.0,
                 "percent_duplicates": 58.575227786299145,
                 "percent_fails": 18.181818181818183
+            },
+            "SRPK3_JAP_1": {
+                "percent_gc": 49.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 71164528.0,
+                "percent_duplicates": 56.52361729978716,
+                "percent_fails": 9.090909090909092
             },
             "B11-11-1M": {
                 "percent_gc": 49.0,
@@ -18226,6 +18576,13 @@
                 "avg_sequence_length": 76.0,
                 "total_sequences": 106309587.0,
                 "percent_duplicates": 45.745853927394734,
+                "percent_fails": 9.090909090909092
+            },
+            "SRPK3_EM__1": {
+                "percent_gc": 50.0,
+                "avg_sequence_length": 101.0,
+                "total_sequences": 69186894.0,
+                "percent_duplicates": 55.66532759185434,
                 "percent_fails": 9.090909090909092
             },
             "UC368-1M": {
@@ -18811,10 +19168,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -18834,6 +19193,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -18969,10 +19329,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -18992,6 +19354,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19127,10 +19490,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19150,6 +19515,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19285,10 +19651,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19308,6 +19676,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19443,10 +19812,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19466,6 +19837,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19601,10 +19973,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19624,6 +19998,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19759,10 +20134,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19782,6 +20159,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -19917,10 +20295,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -19940,6 +20320,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20075,10 +20456,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20098,6 +20481,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20233,10 +20617,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20256,6 +20642,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20391,10 +20778,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20414,6 +20803,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20549,10 +20939,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20572,6 +20964,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20707,10 +21100,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20730,6 +21125,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -20865,10 +21261,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -20888,6 +21286,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21023,10 +21422,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21046,6 +21447,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21181,10 +21583,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21204,6 +21608,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21339,10 +21744,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21362,6 +21769,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21497,10 +21905,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21520,6 +21930,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21655,10 +22066,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21678,6 +22091,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21813,10 +22227,12 @@
                     "167BZ_SP_M1",
                     "T892",
                     "92AI_SM",
+                    "SRPK3_EM__1",
                     "B14-48-1RNA",
                     "BON_UC219-1_1",
                     "RGP_248_3",
                     "205E_BD_M1",
+                    "SRPK3_USA_1",
                     "BB0280_CH_AffF_2",
                     "CLA_62R_CaM_3",
                     "OUN_HK047_0116",
@@ -21836,6 +22252,7 @@
                     "37L_NA_M1",
                     "OUN_HK081_001",
                     "HK018_0047_2",
+                    "SRPK3_JAP_1",
                     "B13-07-1RNA",
                     "T1244",
                     "BON_B16-22_1",
@@ -21973,10 +22390,12 @@
                     160.007873,
                     75.779812,
                     114.458333,
+                    70.581885,
                     66.29572,
                     59.857172,
                     130.13559,
                     164.529578,
+                    178.799682,
                     72.207869,
                     80.766964,
                     203.272529,
@@ -21996,6 +22415,7 @@
                     129.302862,
                     245.503595,
                     108.528587,
+                    72.63092,
                     66.133665,
                     79.225504,
                     60.112845,
@@ -22131,10 +22551,12 @@
                     32.151049,
                     11.584886,
                     14.797164,
+                    4.5301,
                     12.445389,
                     4.688994,
                     19.003244,
                     44.993373,
+                    16.401629,
                     4.628016,
                     8.535738,
                     23.767692,
@@ -22154,6 +22576,7 @@
                     59.627142,
                     33.902848,
                     13.543475,
+                    4.518905,
                     10.355389,
                     10.882699,
                     5.356548,
@@ -22289,10 +22712,12 @@
                     0.444159,
                     0.280816,
                     2.104366,
+                    0.231935,
                     0.566666,
                     0.489165,
                     1.032031,
                     0.329154,
+                    0.280323,
                     0.256347,
                     0.296074,
                     2.294612,
@@ -22312,6 +22737,7 @@
                     0.037496,
                     2.158246,
                     1.023608,
+                    0.258135,
                     0.351722,
                     0.320435,
                     0.516631,
@@ -22592,6 +23018,9 @@
                     0.0,
                     0.0,
                     0.0,
+                    0.0,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 [
@@ -22605,10 +23034,12 @@
                     62.286334,
                     31.66315,
                     49.140926,
+                    32.763355,
                     26.488095,
                     26.552978,
                     54.614679,
                     57.053575,
+                    78.947401,
                     33.577969,
                     35.790655,
                     89.008538,
@@ -22628,6 +23059,7 @@
                     34.39816,
                     104.89376,
                     46.970228,
+                    33.822408,
                     27.298448,
                     33.794779,
                     26.611414,
@@ -22763,10 +23195,12 @@
                     61.868806,
                     31.527692,
                     48.969599,
+                    32.613835,
                     26.51441,
                     26.397618,
                     54.400049,
                     56.880204,
+                    78.495069,
                     33.429608,
                     35.697109,
                     88.648821,
@@ -22786,6 +23220,7 @@
                     33.931063,
                     104.557296,
                     46.764839,
+                    33.663034,
                     27.405554,
                     33.70585,
                     26.490874,
@@ -22921,10 +23356,12 @@
                     24.255879,
                     7.08004,
                     16.188258,
+                    7.229462,
                     4.430715,
                     26.494996,
                     11.871327,
                     46.43917,
+                    27.962013,
                     7.448672,
                     11.755674,
                     20.309283,
@@ -22944,6 +23381,7 @@
                     7.276447,
                     22.895069,
                     24.824141,
+                    7.170044,
                     4.37082,
                     7.093256,
                     23.922774,
@@ -23079,10 +23517,12 @@
                     30.330637,
                     8.750144,
                     17.49308,
+                    8.671533,
                     5.410914,
                     26.354479,
                     12.237711,
                     42.949742,
+                    33.987263,
                     8.62172,
                     11.104643,
                     25.400784,
@@ -23102,6 +23542,7 @@
                     12.278551,
                     23.90254,
                     18.794997,
+                    9.661913,
                     5.492552,
                     8.145492,
                     23.546732,
@@ -23237,10 +23678,12 @@
                     26.866596,
                     13.511522,
                     0.687369,
+                    0.361575,
                     10.894588,
                     0.388913,
                     1.167054,
                     23.7212,
+                    1.083587,
                     0.385977,
                     0.513594,
                     1.077081,
@@ -23260,6 +23703,7 @@
                     0.801043,
                     1.238662,
                     0.628634,
+                    0.293108,
                     11.389492,
                     14.142001,
                     0.308243,
@@ -23395,10 +23839,12 @@
                     27.490055,
                     13.533113,
                     41.372082,
+                    27.771804,
                     11.001369,
                     21.911832,
                     45.846047,
                     24.374748,
+                    66.659168,
                     27.966098,
                     30.328566,
                     74.958587,
@@ -23418,6 +23864,7 @@
                     25.877087,
                     88.228211,
                     39.150418,
+                    28.977019,
                     11.457183,
                     14.211025,
                     21.511046,
@@ -23553,10 +24000,12 @@
                     2.986637,
                     0.868301,
                     3.43753,
+                    1.043412,
                     1.094,
                     1.535206,
                     2.778787,
                     2.683842,
+                    2.955917,
                     1.089235,
                     1.749203,
                     3.399955,
@@ -23576,6 +24025,7 @@
                     2.056165,
                     3.863318,
                     1.875968,
+                    1.037319,
                     0.946536,
                     1.262996,
                     1.279966,
@@ -23711,10 +24161,12 @@
                     110.243741,
                     57.791495,
                     88.355396,
+                    62.065693,
                     47.883953,
                     47.659223,
                     100.332212,
                     98.407958,
+                    147.205504,
                     63.659435,
                     66.657882,
                     164.333806,
@@ -23734,6 +24186,7 @@
                     54.019928,
                     193.714635,
                     85.888943,
+                    63.887662,
                     49.727506,
                     62.307661,
                     48.064062,
@@ -23869,10 +24322,12 @@
                     13.911399,
                     5.399347,
                     9.755129,
+                    3.311497,
                     5.118552,
                     5.291373,
                     8.682516,
                     15.525821,
+                    10.236966,
                     3.348142,
                     4.829882,
                     13.323553,
@@ -23892,6 +24347,7 @@
                     14.309295,
                     15.736421,
                     7.846124,
+                    3.59778,
                     4.976496,
                     5.192968,
                     5.038226,
@@ -24172,6 +24628,9 @@
                     0.0,
                     0.0,
                     0.0,
+                    0.0,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 [
@@ -24185,10 +24644,12 @@
                     124.15514,
                     63.190842,
                     98.110525,
+                    65.37719,
                     53.002505,
                     52.950596,
                     109.014728,
                     113.933779,
+                    157.44247,
                     67.007577,
                     71.487764,
                     177.657359,
@@ -24208,6 +24669,7 @@
                     68.329223,
                     209.451056,
                     93.735067,
+                    67.485442,
                     54.704002,
                     67.500629,
                     53.102288,
@@ -24343,10 +24805,12 @@
                     124.15514,
                     63.190842,
                     98.110525,
+                    65.37719,
                     53.002505,
                     52.950596,
                     109.014728,
                     113.933779,
+                    157.44247,
                     67.007577,
                     71.487764,
                     177.657359,
@@ -24366,6 +24830,7 @@
                     68.329223,
                     209.451056,
                     93.735067,
+                    67.485442,
                     54.704002,
                     67.500629,
                     53.102288,
@@ -24501,10 +24966,12 @@
                     124.130548,
                     63.187895,
                     98.107048,
+                    65.352486,
                     52.988685,
                     52.948957,
                     109.006172,
                     113.913879,
+                    157.410819,
                     67.003153,
                     71.477879,
                     177.64501,
@@ -24524,6 +24991,7 @@
                     68.189615,
                     209.347001,
                     93.575009,
+                    67.479637,
                     54.698747,
                     67.477614,
                     53.083434,
@@ -24804,6 +25272,9 @@
                     0.0,
                     0.0,
                     0.0,
+                    0.0,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 [
@@ -24817,10 +25288,12 @@
                     2.852599,
                     0.738281,
                     1.067925,
+                    1.519634,
                     0.567303,
                     0.992879,
                     3.854297,
                     1.438192,
+                    4.543575,
                     0.694801,
                     1.477869,
                     3.308425,
@@ -24840,6 +25313,7 @@
                     1.749769,
                     3.520234,
                     0.758706,
+                    1.190293,
                     0.739495,
                     0.763208,
                     0.545483,
@@ -24975,10 +25449,12 @@
                     127.856824,
                     64.194926,
                     99.661169,
+                    66.051785,
                     53.850331,
                     55.168178,
                     111.132346,
                     119.536205,
+                    162.398053,
                     67.579853,
                     72.231226,
                     179.504837,
@@ -24998,6 +25474,7 @@
                     69.67572,
                     211.600747,
                     94.985112,
+                    68.112015,
                     55.778276,
                     68.342805,
                     54.756297,
@@ -33257,7 +33734,7 @@
                 [
                     1,
                     144,
-                    0.25
+                    1
                 ],
                 [
                     2,
@@ -33272,7 +33749,7 @@
                 [
                     4,
                     144,
-                    0.25
+                    0.5
                 ],
                 [
                     5,
@@ -33282,7 +33759,7 @@
                 [
                     6,
                     144,
-                    0.25
+                    1
                 ],
                 [
                     7,
@@ -33292,12 +33769,12 @@
                 [
                     8,
                     144,
-                    0.5
+                    0.25
                 ],
                 [
                     9,
                     144,
-                    1
+                    0.5
                 ],
                 [
                     10,
@@ -33312,7 +33789,7 @@
                 [
                     1,
                     145,
-                    0.25
+                    1
                 ],
                 [
                     2,
@@ -33327,200 +33804,200 @@
                 [
                     4,
                     145,
-                    0.25
-                ],
-                [
-                    5,
-                    145,
-                    1
-                ],
-                [
-                    6,
-                    145,
-                    0.25
-                ],
-                [
-                    7,
-                    145,
-                    1
-                ],
-                [
-                    8,
-                    145,
-                    0.25
-                ],
-                [
-                    9,
-                    145,
-                    1
-                ],
-                [
-                    10,
-                    145,
-                    1
-                ],
-                [
-                    0,
-                    146,
-                    1
-                ],
-                [
-                    1,
-                    146,
-                    0.25
-                ],
-                [
-                    2,
-                    146,
-                    1
-                ],
-                [
-                    3,
-                    146,
-                    1
-                ],
-                [
-                    4,
-                    146,
-                    0.25
-                ],
-                [
-                    5,
-                    146,
-                    1
-                ],
-                [
-                    6,
-                    146,
-                    0.25
-                ],
-                [
-                    7,
-                    146,
-                    1
-                ],
-                [
-                    8,
-                    146,
-                    0.5
-                ],
-                [
-                    9,
-                    146,
-                    1
-                ],
-                [
-                    10,
-                    146,
-                    1
-                ],
-                [
-                    0,
-                    147,
-                    1
-                ],
-                [
-                    1,
-                    147,
-                    0.25
-                ],
-                [
-                    2,
-                    147,
-                    1
-                ],
-                [
-                    3,
-                    147,
-                    1
-                ],
-                [
-                    4,
-                    147,
-                    0.25
-                ],
-                [
-                    5,
-                    147,
-                    1
-                ],
-                [
-                    6,
-                    147,
-                    0.25
-                ],
-                [
-                    7,
-                    147,
-                    1
-                ],
-                [
-                    8,
-                    147,
-                    0.5
-                ],
-                [
-                    9,
-                    147,
-                    1
-                ],
-                [
-                    10,
-                    147,
-                    1
-                ],
-                [
-                    0,
-                    148,
-                    1
-                ],
-                [
-                    1,
-                    148,
-                    1
-                ],
-                [
-                    2,
-                    148,
-                    0.5
-                ],
-                [
-                    3,
-                    148,
-                    1
-                ],
-                [
-                    4,
-                    148,
                     0.5
                 ],
                 [
                     5,
-                    148,
+                    145,
                     1
                 ],
                 [
                     6,
-                    148,
+                    145,
                     1
                 ],
                 [
                     7,
-                    148,
+                    145,
                     1
                 ],
                 [
                     8,
-                    148,
+                    145,
                     0.25
                 ],
                 [
                     9,
-                    148,
+                    145,
                     0.5
                 ],
                 [
                     10,
+                    145,
+                    1
+                ],
+                [
+                    0,
+                    146,
+                    1
+                ],
+                [
+                    1,
+                    146,
+                    1
+                ],
+                [
+                    2,
+                    146,
+                    1
+                ],
+                [
+                    3,
+                    146,
+                    1
+                ],
+                [
+                    4,
+                    146,
+                    0.5
+                ],
+                [
+                    5,
+                    146,
+                    1
+                ],
+                [
+                    6,
+                    146,
+                    1
+                ],
+                [
+                    7,
+                    146,
+                    1
+                ],
+                [
+                    8,
+                    146,
+                    0.25
+                ],
+                [
+                    9,
+                    146,
+                    1
+                ],
+                [
+                    10,
+                    146,
+                    1
+                ],
+                [
+                    0,
+                    147,
+                    1
+                ],
+                [
+                    1,
+                    147,
+                    0.25
+                ],
+                [
+                    2,
+                    147,
+                    1
+                ],
+                [
+                    3,
+                    147,
+                    1
+                ],
+                [
+                    4,
+                    147,
+                    0.25
+                ],
+                [
+                    5,
+                    147,
+                    1
+                ],
+                [
+                    6,
+                    147,
+                    0.25
+                ],
+                [
+                    7,
+                    147,
+                    1
+                ],
+                [
+                    8,
+                    147,
+                    0.5
+                ],
+                [
+                    9,
+                    147,
+                    1
+                ],
+                [
+                    10,
+                    147,
+                    1
+                ],
+                [
+                    0,
+                    148,
+                    1
+                ],
+                [
+                    1,
+                    148,
+                    0.25
+                ],
+                [
+                    2,
+                    148,
+                    1
+                ],
+                [
+                    3,
+                    148,
+                    1
+                ],
+                [
+                    4,
+                    148,
+                    0.25
+                ],
+                [
+                    5,
+                    148,
+                    1
+                ],
+                [
+                    6,
+                    148,
+                    0.25
+                ],
+                [
+                    7,
+                    148,
+                    1
+                ],
+                [
+                    8,
+                    148,
+                    0.25
+                ],
+                [
+                    9,
+                    148,
+                    1
+                ],
+                [
+                    10,
                     148,
                     1
                 ],
@@ -33532,7 +34009,7 @@
                 [
                     1,
                     149,
-                    1
+                    0.25
                 ],
                 [
                     2,
@@ -33557,7 +34034,7 @@
                 [
                     6,
                     149,
-                    1
+                    0.25
                 ],
                 [
                     7,
@@ -33567,7 +34044,7 @@
                 [
                     8,
                     149,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
@@ -33587,7 +34064,7 @@
                 [
                     1,
                     150,
-                    1
+                    0.25
                 ],
                 [
                     2,
@@ -33612,7 +34089,7 @@
                 [
                     6,
                     150,
-                    1
+                    0.25
                 ],
                 [
                     7,
@@ -33622,7 +34099,7 @@
                 [
                     8,
                     150,
-                    0.25
+                    0.5
                 ],
                 [
                     9,
@@ -33657,230 +34134,230 @@
                 [
                     4,
                     151,
-                    0.25
-                ],
-                [
-                    5,
-                    151,
-                    1
-                ],
-                [
-                    6,
-                    151,
-                    1
-                ],
-                [
-                    7,
-                    151,
-                    1
-                ],
-                [
-                    8,
-                    151,
-                    0.25
-                ],
-                [
-                    9,
-                    151,
-                    1
-                ],
-                [
-                    10,
-                    151,
-                    1
-                ],
-                [
-                    0,
-                    152,
-                    1
-                ],
-                [
-                    1,
-                    152,
-                    1
-                ],
-                [
-                    2,
-                    152,
-                    1
-                ],
-                [
-                    3,
-                    152,
-                    1
-                ],
-                [
-                    4,
-                    152,
-                    0.25
-                ],
-                [
-                    5,
-                    152,
-                    1
-                ],
-                [
-                    6,
-                    152,
-                    1
-                ],
-                [
-                    7,
-                    152,
-                    1
-                ],
-                [
-                    8,
-                    152,
-                    0.25
-                ],
-                [
-                    9,
-                    152,
-                    1
-                ],
-                [
-                    10,
-                    152,
-                    1
-                ],
-                [
-                    0,
-                    153,
-                    1
-                ],
-                [
-                    1,
-                    153,
-                    1
-                ],
-                [
-                    2,
-                    153,
-                    1
-                ],
-                [
-                    3,
-                    153,
-                    1
-                ],
-                [
-                    4,
-                    153,
-                    0.25
-                ],
-                [
-                    5,
-                    153,
-                    1
-                ],
-                [
-                    6,
-                    153,
-                    1
-                ],
-                [
-                    7,
-                    153,
-                    1
-                ],
-                [
-                    8,
-                    153,
-                    0.25
-                ],
-                [
-                    9,
-                    153,
-                    1
-                ],
-                [
-                    10,
-                    153,
-                    1
-                ],
-                [
-                    0,
-                    154,
-                    1
-                ],
-                [
-                    1,
-                    154,
-                    1
-                ],
-                [
-                    2,
-                    154,
-                    1
-                ],
-                [
-                    3,
-                    154,
-                    1
-                ],
-                [
-                    4,
-                    154,
-                    0.25
-                ],
-                [
-                    5,
-                    154,
-                    1
-                ],
-                [
-                    6,
-                    154,
-                    1
-                ],
-                [
-                    7,
-                    154,
-                    1
-                ],
-                [
-                    8,
-                    154,
-                    0.25
-                ],
-                [
-                    9,
-                    154,
-                    1
-                ],
-                [
-                    10,
-                    154,
-                    1
-                ],
-                [
-                    0,
-                    155,
-                    1
-                ],
-                [
-                    1,
-                    155,
-                    1
-                ],
-                [
-                    2,
-                    155,
-                    1
-                ],
-                [
-                    3,
-                    155,
-                    1
-                ],
-                [
-                    4,
-                    155,
                     0.5
                 ],
                 [
                     5,
+                    151,
+                    1
+                ],
+                [
+                    6,
+                    151,
+                    1
+                ],
+                [
+                    7,
+                    151,
+                    1
+                ],
+                [
+                    8,
+                    151,
+                    0.25
+                ],
+                [
+                    9,
+                    151,
+                    0.5
+                ],
+                [
+                    10,
+                    151,
+                    1
+                ],
+                [
+                    0,
+                    152,
+                    1
+                ],
+                [
+                    1,
+                    152,
+                    1
+                ],
+                [
+                    2,
+                    152,
+                    1
+                ],
+                [
+                    3,
+                    152,
+                    1
+                ],
+                [
+                    4,
+                    152,
+                    0.25
+                ],
+                [
+                    5,
+                    152,
+                    1
+                ],
+                [
+                    6,
+                    152,
+                    1
+                ],
+                [
+                    7,
+                    152,
+                    1
+                ],
+                [
+                    8,
+                    152,
+                    0.25
+                ],
+                [
+                    9,
+                    152,
+                    1
+                ],
+                [
+                    10,
+                    152,
+                    1
+                ],
+                [
+                    0,
+                    153,
+                    1
+                ],
+                [
+                    1,
+                    153,
+                    1
+                ],
+                [
+                    2,
+                    153,
+                    1
+                ],
+                [
+                    3,
+                    153,
+                    1
+                ],
+                [
+                    4,
+                    153,
+                    0.25
+                ],
+                [
+                    5,
+                    153,
+                    1
+                ],
+                [
+                    6,
+                    153,
+                    1
+                ],
+                [
+                    7,
+                    153,
+                    1
+                ],
+                [
+                    8,
+                    153,
+                    0.25
+                ],
+                [
+                    9,
+                    153,
+                    1
+                ],
+                [
+                    10,
+                    153,
+                    1
+                ],
+                [
+                    0,
+                    154,
+                    1
+                ],
+                [
+                    1,
+                    154,
+                    1
+                ],
+                [
+                    2,
+                    154,
+                    0.5
+                ],
+                [
+                    3,
+                    154,
+                    1
+                ],
+                [
+                    4,
+                    154,
+                    0.25
+                ],
+                [
+                    5,
+                    154,
+                    1
+                ],
+                [
+                    6,
+                    154,
+                    1
+                ],
+                [
+                    7,
+                    154,
+                    1
+                ],
+                [
+                    8,
+                    154,
+                    0.25
+                ],
+                [
+                    9,
+                    154,
+                    1
+                ],
+                [
+                    10,
+                    154,
+                    1
+                ],
+                [
+                    0,
+                    155,
+                    1
+                ],
+                [
+                    1,
+                    155,
+                    1
+                ],
+                [
+                    2,
+                    155,
+                    1
+                ],
+                [
+                    3,
+                    155,
+                    1
+                ],
+                [
+                    4,
+                    155,
+                    0.25
+                ],
+                [
+                    5,
                     155,
                     1
                 ],
@@ -33902,11 +34379,176 @@
                 [
                     9,
                     155,
-                    0.5
+                    1
                 ],
                 [
                     10,
                     155,
+                    1
+                ],
+                [
+                    0,
+                    156,
+                    1
+                ],
+                [
+                    1,
+                    156,
+                    1
+                ],
+                [
+                    2,
+                    156,
+                    1
+                ],
+                [
+                    3,
+                    156,
+                    1
+                ],
+                [
+                    4,
+                    156,
+                    0.25
+                ],
+                [
+                    5,
+                    156,
+                    1
+                ],
+                [
+                    6,
+                    156,
+                    1
+                ],
+                [
+                    7,
+                    156,
+                    1
+                ],
+                [
+                    8,
+                    156,
+                    0.25
+                ],
+                [
+                    9,
+                    156,
+                    1
+                ],
+                [
+                    10,
+                    156,
+                    1
+                ],
+                [
+                    0,
+                    157,
+                    1
+                ],
+                [
+                    1,
+                    157,
+                    1
+                ],
+                [
+                    2,
+                    157,
+                    1
+                ],
+                [
+                    3,
+                    157,
+                    1
+                ],
+                [
+                    4,
+                    157,
+                    0.25
+                ],
+                [
+                    5,
+                    157,
+                    1
+                ],
+                [
+                    6,
+                    157,
+                    1
+                ],
+                [
+                    7,
+                    157,
+                    1
+                ],
+                [
+                    8,
+                    157,
+                    0.25
+                ],
+                [
+                    9,
+                    157,
+                    1
+                ],
+                [
+                    10,
+                    157,
+                    1
+                ],
+                [
+                    0,
+                    158,
+                    1
+                ],
+                [
+                    1,
+                    158,
+                    1
+                ],
+                [
+                    2,
+                    158,
+                    1
+                ],
+                [
+                    3,
+                    158,
+                    1
+                ],
+                [
+                    4,
+                    158,
+                    0.5
+                ],
+                [
+                    5,
+                    158,
+                    1
+                ],
+                [
+                    6,
+                    158,
+                    1
+                ],
+                [
+                    7,
+                    158,
+                    1
+                ],
+                [
+                    8,
+                    158,
+                    0.25
+                ],
+                [
+                    9,
+                    158,
+                    0.5
+                ],
+                [
+                    10,
+                    158,
                     1
                 ]
             ],
@@ -34068,6 +34710,9 @@
                 "RGP_56_3_3",
                 "RGP_800_3_2",
                 "RGP_800_3_3",
+                "SRPK3_EM__1",
+                "SRPK3_JAP_1",
+                "SRPK3_USA_1",
                 "T1244",
                 "T238",
                 "T850",
@@ -34925,6 +35570,87 @@
                 "Median Exon CV": "0.233131",
                 "Exon CV MAD": "0.224097"
             },
+            "SRPK3_EM__1": {
+                "Sample": "SRPK3_EM__1",
+                "Mapping Rate": "0.989787",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00240811",
+                "End 1 Mapping Rate": "0.992051",
+                "End 2 Mapping Rate": "0.987523",
+                "End 1 Mismatch Rate": "0.00218472",
+                "End 2 Mismatch Rate": "0.00263253",
+                "Expression Profiling Efficiency": "0.945216",
+                "High Quality Rate": "0.949348",
+                "Exonic Rate": "0.95497",
+                "Intronic Rate": "0.0191934",
+                "Intergenic Rate": "0.00987708",
+                "Intragenic Rate": "0.974163",
+                "Ambiguous Alignment Rate": "0.0159599",
+                "High Quality Exonic Rate": "0.961139",
+                "High Quality Intronic Rate": "0.0177882",
+                "High Quality Intergenic Rate": "0.00811611",
+                "High Quality Intragenic Rate": "0.978927",
+                "High Quality Ambiguous Alignment Rate": "0.0129566",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0232441",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.0128363",
+                "End 2 Sense Rate": "0.987958",
+                "Avg. Splits per Read": "0.444853",
+                "Alternative Alignments": "4530100",
+                "Chimeric Reads": "231935",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "27806493",
+                "End 2 Antisense": "338507",
+                "End 1 Bases": "3309098855",
+                "End 2 Bases": "3293997335",
+                "End 1 Mapped Reads": "32763355",
+                "End 2 Mapped Reads": "32613835",
+                "End 1 Mismatches": "7229462",
+                "End 2 Mismatches": "8671533",
+                "End 1 Sense": "361575",
+                "End 2 Sense": "27771804",
+                "Exonic Reads": "62433231",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "62065693",
+                "Intergenic Reads": "645736",
+                "Intragenic Reads": "63688042",
+                "Ambiguous Reads": "1043412",
+                "Intronic Reads": "1254811",
+                "Low Mapping Quality": "3209144",
+                "Low Quality Reads": "3311497",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "65377190",
+                "Mapped Unique Reads": "65377190",
+                "Mismatched Bases": "15900995",
+                "Non-Globin Reads": "65352486",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "65377190",
+                "rRNA Reads": "1519634",
+                "Total Bases": "6603096190",
+                "Total Mapped Pairs": "32555926",
+                "Total Read Number": "70581885",
+                "Unique Mapping, Vendor QC Passed Reads": "66051785",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "18582",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "4343",
+                "Mean 3' bias": "0.455479",
+                "Median 3' bias": "0.423913",
+                "3' bias Std": "0.312426",
+                "3' bias MAD_Std": "0.398922",
+                "3' Bias, 25th Percentile": "0.169173",
+                "3' Bias, 75th Percentile": "0.714286",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "1.00693",
+                "Median Exon CV": "0.267814",
+                "Exon CV MAD": "0.263843"
+            },
             "B14-48-1RNA": {
                 "Sample": "B14-48-1RNA",
                 "Mapping Rate": "0.984256",
@@ -35248,6 +35974,87 @@
                 "Median of Transcript Coverage CV": "0.941836",
                 "Median Exon CV": "0.246776",
                 "Exon CV MAD": "0.233872"
+            },
+            "SRPK3_USA_1": {
+                "Sample": "SRPK3_USA_1",
+                "Mapping Rate": "0.969485",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00389577",
+                "End 1 Mapping Rate": "0.97227",
+                "End 2 Mapping Rate": "0.9667",
+                "End 1 Mismatch Rate": "0.00350679",
+                "End 2 Mismatch Rate": "0.00428699",
+                "Expression Profiling Efficiency": "0.912265",
+                "High Quality Rate": "0.93498",
+                "Exonic Rate": "0.940979",
+                "Intronic Rate": "0.0242851",
+                "Intergenic Rate": "0.0159612",
+                "Intragenic Rate": "0.965264",
+                "Ambiguous Alignment Rate": "0.0187746",
+                "High Quality Exonic Rate": "0.953778",
+                "High Quality Intronic Rate": "0.0210178",
+                "High Quality Intergenic Rate": "0.0100833",
+                "High Quality Intragenic Rate": "0.974795",
+                "High Quality Ambiguous Alignment Rate": "0.0151213",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0288586",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.0160029",
+                "End 2 Sense Rate": "0.985091",
+                "Avg. Splits per Read": "0.366266",
+                "Alternative Alignments": "16401629",
+                "Chimeric Reads": "280323",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "66628154",
+                "End 2 Antisense": "1008834",
+                "End 1 Bases": "7973687501",
+                "End 2 Bases": "7928001969",
+                "End 1 Mapped Reads": "78947401",
+                "End 2 Mapped Reads": "78495069",
+                "End 1 Mismatches": "27962013",
+                "End 2 Mismatches": "33987263",
+                "End 1 Sense": "1083587",
+                "End 2 Sense": "66659168",
+                "Exonic Reads": "148150088",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "147205504",
+                "Intergenic Reads": "2512966",
+                "Intragenic Reads": "151973587",
+                "Ambiguous Reads": "2955917",
+                "Intronic Reads": "3823499",
+                "Low Mapping Quality": "12557105",
+                "Low Quality Reads": "10236966",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "157442470",
+                "Mapped Unique Reads": "157442470",
+                "Mismatched Bases": "61949276",
+                "Non-Globin Reads": "157410819",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "157442470",
+                "rRNA Reads": "4543575",
+                "Total Bases": "15901689470",
+                "Total Mapped Pairs": "78259145",
+                "Total Read Number": "178799682",
+                "Unique Mapping, Vendor QC Passed Reads": "162398053",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "23354",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "11422",
+                "Mean 3' bias": "0.664915",
+                "Median 3' bias": "0.739726",
+                "3' bias Std": "0.28243",
+                "3' bias MAD_Std": "0.290644",
+                "3' Bias, 25th Percentile": "0.467593",
+                "3' Bias, 75th Percentile": "0.909091",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "1.25769",
+                "Median Exon CV": "0.402723",
+                "Exon CV MAD": "0.397661"
             },
             "BB0280_CH_AffF_2": {
                 "Sample": "BB0280_CH_AffF_2",
@@ -36787,6 +37594,87 @@
                 "Median of Transcript Coverage CV": "0.914097",
                 "Median Exon CV": "0.242202",
                 "Exon CV MAD": "0.230485"
+            },
+            "SRPK3_JAP_1": {
+                "Sample": "SRPK3_JAP_1",
+                "Mapping Rate": "0.990801",
+                "Unique Rate of Mapped": "1",
+                "Duplicate Rate of Mapped": "0",
+                "Duplicate Rate of Mapped, excluding Globins": "0",
+                "Base Mismatch": "0.00246947",
+                "End 1 Mapping Rate": "0.993141",
+                "End 2 Mapping Rate": "0.988461",
+                "End 1 Mismatch Rate": "0.00209892",
+                "End 2 Mismatch Rate": "0.00284177",
+                "Expression Profiling Efficiency": "0.95236",
+                "High Quality Rate": "0.946688",
+                "Exonic Rate": "0.961202",
+                "Intronic Rate": "0.0150638",
+                "Intergenic Rate": "0.00836284",
+                "Intragenic Rate": "0.976266",
+                "Ambiguous Alignment Rate": "0.015371",
+                "High Quality Exonic Rate": "0.967353",
+                "High Quality Intronic Rate": "0.0136482",
+                "High Quality Intergenic Rate": "0.00691058",
+                "High Quality Intragenic Rate": "0.981001",
+                "High Quality Ambiguous Alignment Rate": "0.0120883",
+                "Discard Rate": "0",
+                "rRNA Rate": "0.0176378",
+                "Chimeric Alignment Rate": "0",
+                "End 1 Sense Rate": "0.00999924",
+                "End 2 Sense Rate": "0.990657",
+                "Avg. Splits per Read": "0.449019",
+                "Alternative Alignments": "4518905",
+                "Chimeric Reads": "258135",
+                "Duplicate Reads": "0",
+                "End 1 Antisense": "29019932",
+                "End 2 Antisense": "273292",
+                "End 1 Bases": "3416063208",
+                "End 2 Bases": "3399966434",
+                "End 1 Mapped Reads": "33822408",
+                "End 2 Mapped Reads": "33663034",
+                "End 1 Mismatches": "7170044",
+                "End 2 Mismatches": "9661913",
+                "End 1 Sense": "293108",
+                "End 2 Sense": "28977019",
+                "Exonic Reads": "64867167",
+                "Failed Vendor QC": "0",
+                "High Quality Reads": "63887662",
+                "Intergenic Reads": "564370",
+                "Intragenic Reads": "65883753",
+                "Ambiguous Reads": "1037319",
+                "Intronic Reads": "1016586",
+                "Low Mapping Quality": "3394598",
+                "Low Quality Reads": "3597780",
+                "Mapped Duplicate Reads": "0",
+                "Mapped Reads": "67485442",
+                "Mapped Unique Reads": "67485442",
+                "Mismatched Bases": "16831957",
+                "Non-Globin Reads": "67479637",
+                "Non-Globin Duplicate Reads": "0",
+                "Reads excluded from exon counts": "0",
+                "Reads used for Intron/Exon counts": "67485442",
+                "rRNA Reads": "1190293",
+                "Total Bases": "6816029642",
+                "Total Mapped Pairs": "33604447",
+                "Total Read Number": "72630920",
+                "Unique Mapping, Vendor QC Passed Reads": "68112015",
+                "Unpaired Reads": "0",
+                "Read Length": "101",
+                "Genes Detected": "19027",
+                "Estimated Library Complexity": "0",
+                "Genes used in 3' bias": "4988",
+                "Mean 3' bias": "0.458069",
+                "Median 3' bias": "0.428571",
+                "3' bias Std": "0.316359",
+                "3' bias MAD_Std": "0.412903",
+                "3' Bias, 25th Percentile": "0.171757",
+                "3' Bias, 75th Percentile": "0.738095",
+                "Median of Avg Transcript Coverage": "0",
+                "Median of Transcript Coverage Std": "0",
+                "Median of Transcript Coverage CV": "0.960119",
+                "Median Exon CV": "0.241794",
+                "Exon CV MAD": "0.233831"
             },
             "B13-07-1RNA": {
                 "Sample": "B13-07-1RNA",
@@ -50026,6 +50914,34 @@
                 "unmapped_tooshort": 1785887,
                 "unmapped_other": 223236
             },
+            "SRPK3_EM__1": {
+                "total_reads": 33020520.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 31384063.0,
+                "uniquely_mapped_percent": 95.04,
+                "avg_mapped_read_length": 200.63,
+                "num_splices": 27271125.0,
+                "num_annotated_splices": 27270998.0,
+                "num_GTAG_splices": 26990170.0,
+                "num_GCAG_splices": 261721.0,
+                "num_ATAC_splices": 11113.0,
+                "num_noncanonical_splices": 8121.0,
+                "mismatch_rate": 0.22,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.66,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.42,
+                "multimapped": 1287746.0,
+                "multimapped_percent": 3.9,
+                "multimapped_toomany": 568.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.04,
+                "unmapped_tooshort_percent": 0.54,
+                "unmapped_other_percent": 0.04,
+                "unmapped_mismatches": 22461,
+                "unmapped_tooshort": 303221,
+                "unmapped_other": 22461
+            },
             "CLA_214DF_AB_2": {
                 "total_reads": 38933816.0,
                 "avg_input_read_length": 202.0,
@@ -50642,6 +51558,34 @@
                 "unmapped_tooshort": 388416,
                 "unmapped_other": 13167
             },
+            "SRPK3_JAP_1": {
+                "total_reads": 34050865.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 32313097.0,
+                "uniquely_mapped_percent": 94.9,
+                "avg_mapped_read_length": 200.63,
+                "num_splices": 28349124.0,
+                "num_annotated_splices": 28349047.0,
+                "num_GTAG_splices": 28092405.0,
+                "num_GCAG_splices": 237269.0,
+                "num_ATAC_splices": 13135.0,
+                "num_noncanonical_splices": 6315.0,
+                "mismatch_rate": 0.22,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.55,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.42,
+                "multimapped": 1407136.0,
+                "multimapped_percent": 4.13,
+                "multimapped_toomany": 668.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.03,
+                "unmapped_tooshort_percent": 0.43,
+                "unmapped_other_percent": 0.05,
+                "unmapped_mismatches": 19410,
+                "unmapped_tooshort": 278205,
+                "unmapped_other": 32349
+            },
             "OUN_HK081_001": {
                 "total_reads": 105776439.0,
                 "avg_input_read_length": 202.0,
@@ -51005,6 +51949,34 @@
                 "unmapped_mismatches": 79318,
                 "unmapped_tooshort": 1586367,
                 "unmapped_other": 317273
+            },
+            "SRPK3_USA_1": {
+                "total_reads": 81186001.0,
+                "avg_input_read_length": 202.0,
+                "uniquely_mapped": 75067394.0,
+                "uniquely_mapped_percent": 92.46,
+                "avg_mapped_read_length": 199.9,
+                "num_splices": 53530213.0,
+                "num_annotated_splices": 53530013.0,
+                "num_GTAG_splices": 53100681.0,
+                "num_GCAG_splices": 388836.0,
+                "num_ATAC_splices": 26411.0,
+                "num_noncanonical_splices": 14285.0,
+                "mismatch_rate": 0.35,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.5,
+                "insertion_rate": 0.0,
+                "insertion_length": 1.47,
+                "multimapped": 3884955.0,
+                "multimapped_percent": 4.79,
+                "multimapped_toomany": 3923.0,
+                "multimapped_toomany_percent": 0.0,
+                "unmapped_mismatches_percent": 0.26,
+                "unmapped_tooshort_percent": 2.14,
+                "unmapped_other_percent": 0.08,
+                "unmapped_mismatches": 233762,
+                "unmapped_tooshort": 1924040,
+                "unmapped_other": 71927
             },
             "BON_B15-118_1": {
                 "total_reads": 42822622.0,
@@ -51472,6 +52444,28 @@
                 "overrepresented_sequences": "pass",
                 "adapter_content": "pass"
             },
+            "SRPK3_USA_1": {
+                "Filename": "SRPK3_USA_1.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 174010408.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 49.0,
+                "total_deduplicated_percentage": 25.304470073607632,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "pass",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "fail",
+                "overrepresented_sequences": "pass",
+                "adapter_content": "pass"
+            },
             "BON_B18-54_1": {
                 "Filename": "BON_B18-54_1.bam",
                 "File type": "Conventional base calls",
@@ -51646,6 +52640,28 @@
                 "sequence_length_distribution": "pass",
                 "sequence_duplication_levels": "fail",
                 "overrepresented_sequences": "pass",
+                "adapter_content": "pass"
+            },
+            "SRPK3_JAP_1": {
+                "Filename": "SRPK3_JAP_1.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 71164528.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 49.0,
+                "total_deduplicated_percentage": 43.47638270021284,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "pass",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "fail",
+                "overrepresented_sequences": "warn",
                 "adapter_content": "pass"
             },
             "B11-11-1M": {
@@ -53452,6 +54468,28 @@
                 "overrepresented_sequences": "pass",
                 "adapter_content": "pass"
             },
+            "SRPK3_EM__1": {
+                "Filename": "SRPK3_EM__1.bam",
+                "File type": "Conventional base calls",
+                "Encoding": "Sanger / Illumina 1.9",
+                "Total Sequences": 69186894.0,
+                "Sequences flagged as poor quality": 0.0,
+                "Sequence length": 101.0,
+                "%GC": 50.0,
+                "total_deduplicated_percentage": 44.33467240814566,
+                "avg_sequence_length": 101.0,
+                "basic_statistics": "pass",
+                "per_base_sequence_quality": "pass",
+                "per_tile_sequence_quality": "pass",
+                "per_sequence_quality_scores": "pass",
+                "per_base_sequence_content": "warn",
+                "per_sequence_gc_content": "pass",
+                "per_base_n_content": "pass",
+                "sequence_length_distribution": "pass",
+                "sequence_duplication_levels": "fail",
+                "overrepresented_sequences": "warn",
+                "adapter_content": "pass"
+            },
             "UC368-1M": {
                 "Filename": "UC368-1M.bam",
                 "File type": "Conventional base calls",
@@ -54674,6 +55712,18 @@
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 109257491.0
             },
+            "SRPK3_EM__1": {
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.945216",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Genes_Detected": "18582",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-rRNA_Rate": "0.0232441",
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 95.04,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 31384063.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 55.66532759185434,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 50.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 69186894.0
+            },
             "B14-48-1RNA": {
                 "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.831842",
                 "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Genes_Detected": "23422",
@@ -54721,6 +55771,18 @@
                 "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 76.0,
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 18.181818181818183,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 125659965.0
+            },
+            "SRPK3_USA_1": {
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.912265",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Genes_Detected": "23354",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-rRNA_Rate": "0.0288586",
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 92.46,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 75067394.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 74.69552992639237,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 49.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 174010408.0
             },
             "BB0280_CH_AffF_2": {
                 "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.931153",
@@ -54949,6 +56011,18 @@
                 "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
                 "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
                 "FastQC_mqc-generalstats-fastqc-total_sequences": 100656454.0
+            },
+            "SRPK3_JAP_1": {
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.95236",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Genes_Detected": "19027",
+                "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-rRNA_Rate": "0.0176378",
+                "STAR_mqc-generalstats-star-uniquely_mapped_percent": 94.9,
+                "STAR_mqc-generalstats-star-uniquely_mapped": 32313097.0,
+                "FastQC_mqc-generalstats-fastqc-percent_duplicates": 56.52361729978716,
+                "FastQC_mqc-generalstats-fastqc-percent_gc": 49.0,
+                "FastQC_mqc-generalstats-fastqc-avg_sequence_length": 101.0,
+                "FastQC_mqc-generalstats-fastqc-percent_fails": 9.090909090909092,
+                "FastQC_mqc-generalstats-fastqc-total_sequences": 71164528.0
             },
             "B13-07-1RNA": {
                 "RNA-SeQCv2_mqc-generalstats-rna_seqcv2-Expression_Profiling_Efficiency": "0.890032",
@@ -56434,7 +57508,7 @@
     "config_analysis_dir": [
         "."
     ],
-    "config_creation_date": "2021-01-14, 08:00",
+    "config_creation_date": "2021-02-10, 10:44",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,

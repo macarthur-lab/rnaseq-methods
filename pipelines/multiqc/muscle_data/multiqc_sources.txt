@@ -116,6 +116,7 @@ STAR	SummaryLog	92AI_SM	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipe
 STAR	SummaryLog	MESP021_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/MESP021_001_2.Log.final.out
 STAR	SummaryLog	BON_B14-163-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B14-163-1_2.Log.final.out
 STAR	SummaryLog	OUN_HK080_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK080_001.Log.final.out
+STAR	SummaryLog	SRPK3_EM__1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_EM__1.Log.final.out
 STAR	SummaryLog	CLA_214DF_AB_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/CLA_214DF_AB_2.Log.final.out
 STAR	SummaryLog	37L_NA_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/37L_NA_M1.Log.final.out
 STAR	SummaryLog	K1157-1-4	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/K1157-1-4.Log.final.out
@@ -138,6 +139,7 @@ STAR	SummaryLog	MGLA003_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_method
 STAR	SummaryLog	OUN_HK137_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK137_001.Log.final.out
 STAR	SummaryLog	NH11-441	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/NH11-441.Log.final.out
 STAR	SummaryLog	255EA_GC_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/255EA_GC_M1.Log.final.out
+STAR	SummaryLog	SRPK3_JAP_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_JAP_1.Log.final.out
 STAR	SummaryLog	OUN_HK081_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/OUN_HK081_001.Log.final.out
 STAR	SummaryLog	BON_B14-60-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B14-60-1_2.Log.final.out
 STAR	SummaryLog	T850	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/T850.Log.final.out
@@ -151,6 +153,7 @@ STAR	SummaryLog	RGP_273_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pi
 STAR	SummaryLog	B14-70-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/B14-70-1RNA.Log.final.out
 STAR	SummaryLog	9C_DH_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/9C_DH_M1.Log.final.out
 STAR	SummaryLog	INMR_HW_389	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/INMR_HW_389.Log.final.out
+STAR	SummaryLog	SRPK3_USA_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/SRPK3_USA_1.Log.final.out
 STAR	SummaryLog	BON_B15-118_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/BON_B15-118_1.Log.final.out
 STAR	SummaryLog	B13-07-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/B13-07-1M.Log.final.out
 STAR	SummaryLog	RGP_54_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/RGP_54_3_2.Log.final.out
@@ -205,6 +208,7 @@ STAR	ReadsPerGene	OUN_HK112_001	/Users/weisburd/project__rnaseq/code/rnaseq_meth
 STAR	ReadsPerGene	BON_B16_30_1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_B16_30_1_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	OUN_HK079_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/OUN_HK079_001.ReadsPerGene.out.tab
 STAR	ReadsPerGene	149BP_AB_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/149BP_AB_M1.ReadsPerGene.out.tab
+STAR	ReadsPerGene	SRPK3_EM__1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_EM__1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK060-0154	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/HK060-0154.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BEG_1078-1_T1071	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BEG_1078-1_T1071.ReadsPerGene.out.tab
 STAR	ReadsPerGene	B14-07RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B14-07RNA.ReadsPerGene.out.tab
@@ -300,10 +304,12 @@ STAR	ReadsPerGene	BON_B16-75-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_met
 STAR	ReadsPerGene	163BV_JE_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/163BV_JE_M1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B13-55_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_B13-55_1_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	UC84-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/UC84-1RNA.ReadsPerGene.out.tab
+STAR	ReadsPerGene	SRPK3_USA_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_USA_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	B12-30RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B12-30RNA.ReadsPerGene.out.tab
 STAR	ReadsPerGene	81AB_MM_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/81AB_MM_M1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	CLA_143BN_BB_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/CLA_143BN_BB_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	B14-78-1-U	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B14-78-1-U.ReadsPerGene.out.tab
+STAR	ReadsPerGene	SRPK3_JAP_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/SRPK3_JAP_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	B09-25-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/B09-25-1RNA.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_UC219-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/BON_UC219-1_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_54_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/star/genecounts/RGP_54_3_2.ReadsPerGene.out.tab
@@ -327,6 +333,7 @@ FastQC	all_sections	1179-1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/p
 FastQC	all_sections	INMR_HW_389	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/INMR_HW_389_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_UC473_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BON_UC473_1_fastqc/fastqc_data.txt
 FastQC	all_sections	26I_SK_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/26I_SK_M1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRPK3_USA_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_USA_1_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B18-54_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BON_B18-54_1_fastqc/fastqc_data.txt
 FastQC	all_sections	251DW_SD_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/251DW_SD_M1_fastqc/fastqc_data.txt
 FastQC	all_sections	B14-48-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B14-48-1RNA_fastqc/fastqc_data.txt
@@ -335,6 +342,7 @@ FastQC	all_sections	M_0146-01-H1	/Users/weisburd/project__rnaseq/code/rnaseq_met
 FastQC	all_sections	146BO_JB_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/146BO_JB_M1_fastqc/fastqc_data.txt
 FastQC	all_sections	BEG_1078-1_T1071	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/BEG_1078-1_T1071_fastqc/fastqc_data.txt
 FastQC	all_sections	B14-130-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B14-130-1M_fastqc/fastqc_data.txt
+FastQC	all_sections	SRPK3_JAP_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_JAP_1_fastqc/fastqc_data.txt
 FastQC	all_sections	B11-11-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B11-11-1M_fastqc/fastqc_data.txt
 FastQC	all_sections	B09-40-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/B09-40-1M_fastqc/fastqc_data.txt
 FastQC	all_sections	INMR_HZ_401	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/INMR_HZ_401_fastqc/fastqc_data.txt
@@ -417,6 +425,7 @@ FastQC	all_sections	BEG_851-1_T840	/Users/weisburd/project__rnaseq/code/rnaseq_m
 FastQC	all_sections	MMAD002_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/MMAD002_001_2_fastqc/fastqc_data.txt
 FastQC	all_sections	NH11-441	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/NH11-441_fastqc/fastqc_data.txt
 FastQC	all_sections	210DB_BW_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/210DB_BW_M1_fastqc/fastqc_data.txt
+FastQC	all_sections	SRPK3_EM__1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/SRPK3_EM__1_fastqc/fastqc_data.txt
 FastQC	all_sections	UC368-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/UC368-1M_fastqc/fastqc_data.txt
 FastQC	all_sections	167BZ_SP_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/167BZ_SP_M1_fastqc/fastqc_data.txt
 FastQC	all_sections	92AI_SM	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/muscle/fastqc/zip/92AI_SM_fastqc/fastqc_data.txt
