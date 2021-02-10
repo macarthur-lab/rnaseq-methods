@@ -32,7 +32,7 @@ def gsutil_cp(source, dest, mkdir=True):
 def main():
     rnaseq_sample_metadata_df = get_joined_metadata_df()
 
-    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip() and b != "x"])
+    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip()])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
 
     p = argparse.ArgumentParser()
