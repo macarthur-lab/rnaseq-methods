@@ -13,6 +13,7 @@ from gagneurlab.gagneur_utils import ALL_METADATA_TSV, GENCODE_TXDB, DOCKER_IMAG
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+hl.init(log="/dev/null")
 
 POSSIBLE_CONFOUNDERS = """c("tissue", "sex", "stranded", "read_length", "batch")""" # "RIN"
 PADJ_THRESHOLD = 0.05
@@ -32,9 +33,6 @@ def main():
 
     p.add_argument("batch_name", nargs="+", choices=analysis_batches.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
-
-    if not args.force:
-        hl.init(log="/dev/null", quiet=True)
 
     with hl.hadoop_open(args.metadata_tsv_path) as f:
         metadata_tsv_df = pd.read_table(f)
