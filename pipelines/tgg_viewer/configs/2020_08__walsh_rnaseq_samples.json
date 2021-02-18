@@ -253,6 +253,16 @@
           ],
           "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
           "name": "100-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "gtf",
+              "url": "gs://tgg-viewer/ref/GRCh38/segdups/segdups.gtf.gz"
+            }
+          ],
+          "description": "Duplications of >1000 Bases of Non-RepeatMasked Sequence downloaded from UCSC",
+          "name": "SegDups >1000 bases"
         }
       ]
     },

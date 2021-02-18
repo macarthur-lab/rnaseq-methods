@@ -253,6 +253,16 @@
           ],
           "description": "Mappability of 100-mers allowing for 2 mismatches. Generated using the same pipeline as the UCSC hg19 mappability tracks.",
           "name": "100-mer mappability "
+        },
+        {
+          "data": [
+            {
+              "type": "gtf",
+              "url": "gs://tgg-viewer/ref/GRCh38/segdups/segdups.gtf.gz"
+            }
+          ],
+          "description": "Duplications of >1000 Bases of Non-RepeatMasked Sequence downloaded from UCSC",
+          "name": "SegDups >1000 bases"
         }
       ]
     },
@@ -1219,6 +1229,24 @@
           ],
           "description": "<table><tr><td><b>sequencing date:</b></td><td>2015-9</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr>\n<tr><td><b>Include in manuscript? (Beryl:Probands):</b></td><td>Y</td></tr>\n<tr><td><b>Phenotype (Beryl:Probands):</b></td><td>LGMD/myopathy</td></tr>\n<tr><td><b>Data_type (Beryl:Probands):</b></td><td>RNA,WES, WGS </td></tr>\n<tr><td><b>Genetic diagnosis Status (Beryl:Probands):</b></td><td>Analyzed, unsolved</td></tr>\n<tr><td><b>CanditateGenes (culprit,if solved) (Beryl:Probands):</b></td><td>-</td></tr>\n<tr><td><b>Candidate  Variants (Beryl:Probands):</b></td><td>-</td></tr></table>",
           "name": "B13-07-1M"
+        },
+        {
+          "data": [
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/B13-07-1RNA.junctions.bed.gz"
+            },
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/B13-07-1RNA.bigWig"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://macarthurlab-rnaseq/batch_0/star/B13-07-1RNA.Aligned.sortedByCoord.out.bam"
+            }
+          ],
+          "description": "<table><tr><td><b>sequencing date:</b></td><td>2016-2</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>76</td></tr>\n<tr><td><b>proj (seqr):</b></td><td>Bonnemann-Int92-Ext123S</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
+          "name": "B13-07-1RNA"
         },
         {
           "data": [
