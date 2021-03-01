@@ -371,6 +371,13 @@ for batch_name, rows in rows_by_batch.items():
                         "data": [
                             { "type": "coverage", "url": "gs://tgg-viewer/ref/GRCh38/mappability/GRCh38_no_alt_analysis_set_GCA_000001405.15-k100_m2.bw" }
                         ]
+                    },
+                    {
+                        "name": "SegDups >1000 bases",
+                        "description": "Duplications of >1000 Bases of Non-RepeatMasked Sequence downloaded from UCSC",
+                        "data": [
+                            { "type": "gtf", "url": "gs://tgg-viewer/ref/GRCh38/segdups/segdups.gtf.gz" }
+                        ]
                     }
                 ]
             },
