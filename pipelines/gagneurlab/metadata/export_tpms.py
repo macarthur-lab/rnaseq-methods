@@ -1,0 +1,234 @@
+import argparse
+import datetime
+import glob
+import gzip
+import hashlib
+import logging
+import os
+import pandas as pd
+import sys
+
+from gagneurlab.gagneur_utils import OUTRIDER_COUNTS_TSV_GZ, ALL_METADATA_TSV, CLOUD_STORAGE_BASE_DIR
+from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
+
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+RDG_GENE_TPMS_PATH = os.path.expanduser("~/project__rnaseq/data/samples/expression/rnaseqc_tpm/*gene_tpm.gct.gz")
+GTEX_GENE_TPMS_PATH = os.path.expanduser('~/project__rnaseq/data/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz')
+
+
+def transfer_metadata_columns_from_df(samples_df, source_df):
+    df = pd.DataFrame()
+    df.loc[:, 'sample_id'] = source_df['sample_id']
+    df.loc[source_df.sample_id, 'batch'] = source_df['star_pipeline_batch']
+    df.loc[source_df.sample_id, 'batch_detail'] = source_df['batch_date_from_hg19_bam_header']
+    df.loc[source_df.sample_id, 'bam_path'] = source_df['star_bam']
+    df.loc[source_df.sample_id, 'bai_path'] = source_df['star_bai']
+    df.loc[source_df.sample_id, 'star_SJ_out_tab'] = source_df['star_SJ_out_tab']
+    df.loc[source_df.sample_id, 'star_reads_per_gene_tab'] = source_df['star_reads_per_gene_tab']
+    df.loc[source_df.sample_id, 'rnaseqc_gene_reads'] = source_df['rnaseqc_gene_reads']
+    df.loc[source_df.sample_id, 'rnaseqc_gene_tpm'] = source_df['rnaseqc_gene_tpm']
+
+    #df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/fraser_count_rna/")
+    df.loc[source_df.sample_id, 'project'] = source_df['proj (seqr)']
+    df.loc[source_df.sample_id, 'sex'] = source_df['imputed sex']
+    df.loc[source_df.sample_id, 'age'] = source_df['Age at muscle biopsy (Beryl:Supp.)'].apply(lambda x: ('' if not x or not x.strip() else ('0' if (x and (x == 'At birth' or 'm' in x)) else x.replace('y', ''))))
+    df.loc[source_df.sample_id, 'cause_of_death'] = None
+    df.loc[source_df.sample_id, 'ancestry'] = None
+    df.loc[source_df.sample_id, 'tissue'] = None
+    df.loc[source_df.sample_id, 'tissue_detail'] = None
+    df.loc[source_df.sample_id, 'read_length'] = source_df['read length (rnaseqc)']
+    df.loc[source_df.sample_id, 'stranded'] = source_df['stranded? (rnaseqc)']
+    df.loc[source_df.sample_id, 'RIN'] = None
+
+    return pd.concat([samples_df, df], axis="rows", sort=True)
+
+
+def transfer_metadata_columns_from_GTEx_df(samples_df, source_df, batch_name):
+    print("Adding")
+    print(source_df[['SAMPID', 'SMRIN']])
+
+    df = pd.DataFrame()
+    df.loc[:, 'sample_id'] = source_df['SAMPID']
+    df.loc[source_df.SAMPID, 'batch'] = 'GTEx_v8'
+    df.loc[source_df.SAMPID, 'bam_path'] = source_df['rnaseq_bam']
+    df.loc[source_df.SAMPID, 'bai_path'] = source_df['rnaseq_bai']
+    df.loc[source_df.SAMPID, 'batch_detail'] = "GTEx_v8 " + source_df['SMNABTCH']
+    #df.loc[source_df.SAMPID, 'output_dir'] = f"gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
+    df.loc[source_df.SAMPID, 'project'] = "gtex_v8"
+    df.loc[source_df.SAMPID, 'sex'] = source_df['SEX']
+    df.loc[source_df.SAMPID, 'age'] = source_df['AGE']
+    df.loc[source_df.SAMPID, 'cause_of_death'] = source_df['DTHHRDY']
+    df.loc[source_df.SAMPID, 'ancestry'] = None
+    df.loc[source_df.SAMPID, 'tissue'] = source_df['SMTS']
+    df.loc[source_df.SAMPID, 'tissue_detail'] = source_df['SMTSD']
+    df.loc[source_df.SAMPID, 'read_length'] = source_df['SMRDLGTH']
+    df.loc[source_df.SAMPID, 'stranded'] = "no"
+    df.loc[source_df.SAMPID, 'RIN'] = source_df['SMRIN']
+
+    return pd.concat([samples_df, df], axis="rows")
+
+
+TISSUE_NAME_TO_SMTD = {
+    "muscle": "Muscle - Skeletal",
+    "fibroblasts": "Cells - Cultured fibroblasts",
+    "whole_blood": "Whole Blood",
+    "lymphocytes": "Cells - EBV-transformed lymphocytes",
+}
+
+
+def main():
+    # get metadata table and filter out excluded samples
+    rnaseq_sample_metadata_df = get_joined_metadata_df()
+    rnaseq_sample_metadata_df = rnaseq_sample_metadata_df[~rnaseq_sample_metadata_df["analysis batch"].str.strip().isin(["", "x"])]
+
+    gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
+    #gtex_rnaseq_sample_metadata_df = gtex_rnaseq_sample_metadata_df #.rename({'SAMPID': 'sample_id'}, axis="columns").set_index('sample_id', drop=False)
+
+    all_rdg_samples_df = None
+    all_rdg_tpms_df = None
+
+    all_rdg_and_gtex_samples_df = None
+    all_rdg_and_gtex_tpms_df = None
+
+    #print(f"Downloading {RDG_GENE_TPMS_PATH} to ~/project__rnaseq/data/samples/expression/rnaseqc_tpms")
+    #os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_tpms && gsutil cp -n {RDG_GENE_TPMS_PATH} .""")
+
+    print("Done downloading tpms.")
+    for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
+        logging.info("----------------")
+        logging.info(f"{tissue_name}:")
+        SMTD_value = TISSUE_NAME_TO_SMTD[tissue_name]
+
+        tgg_df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == tissue_name]
+        logging.info(f"Got {len(tgg_df)} TGG samples for {tissue_name}")
+        samples_df = pd.DataFrame()
+        samples_df = transfer_metadata_columns_from_df(samples_df, tgg_df)
+        samples_df['tissue'] = tissue_name
+        samples_df['tissue_detail'] = SMTD_value
+        if all_rdg_samples_df is None:
+            all_rdg_samples_df = samples_df
+        else:
+            all_rdg_samples_df = pd.concat([all_rdg_samples_df, samples_df])
+
+        gtex_df = gtex_rnaseq_sample_metadata_df[gtex_rnaseq_sample_metadata_df.SMTSD == SMTD_value]
+        gtex_df = gtex_df.sort_values(by='SMRIN', ascending=False)
+        logging.info(f"Got {len(gtex_df)} GTEx samples for {tissue_name}")
+
+        samples_df = transfer_metadata_columns_from_GTEx_df(samples_df, gtex_df[:100], tissue_name)
+
+        samples_df['tissue'] = tissue_name
+
+        if all_rdg_and_gtex_samples_df is None:
+            all_rdg_and_gtex_samples_df = samples_df
+        else:
+            all_rdg_and_gtex_samples_df = pd.concat([all_rdg_and_gtex_samples_df, samples_df])
+
+        #tsv_output_path = f"metadata_table_for_{tissue_name}.tsv"
+        #samples_df.to_csv(tsv_output_path, sep="\t", index=False)
+        #print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
+
+        print("TGG table columns:")
+        print(tgg_df.columns)
+
+        print("GTEx table columns:")
+        print(gtex_df.columns)
+
+        print("Output columns:")
+        print(samples_df.columns)
+
+        # create OUTRIDER data input table
+        RDG_file_paths = {}
+        for file_path in glob.glob(RDG_GENE_TPMS_PATH):
+            sample_id = os.path.basename(file_path).replace(".gene_tpm.gct.gz", "")
+            if sample_id in set(samples_df.sample_id):
+                RDG_file_paths[sample_id] = file_path
+
+        RDG_sample_ids = [s for s in list(samples_df.sample_id) if "GTEX" not in s]
+        GTEX_sample_ids = [s for s in list(samples_df.sample_id) if "GTEX" in s]
+
+        if len(RDG_file_paths) != len(RDG_sample_ids):
+            raise ValueError(f"ERROR: len(file_paths) != len(samples_df): {len(RDG_file_paths)} != {len(samples_df)}. Missing: {set(RDG_sample_ids) - set(RDG_file_paths.keys())}" )
+
+        print(f"Found all {len(RDG_sample_ids)} RDG samples and {len(GTEX_sample_ids)} GTEX samples for {tissue_name}")
+
+        print(f"Reading {len(GTEX_sample_ids)} GTEX samples from {GTEX_GENE_TPMS_PATH}")
+        with gzip.open(os.path.expanduser(GTEX_GENE_TPMS_PATH)) as f:
+            next(f); next(f)
+            gtex_tpms_df = pd.read_table(f, usecols=['Name'] + list(GTEX_sample_ids))
+        gtex_tpms_df = gtex_tpms_df.rename({'Name': 'gene_id'}, axis="columns")
+        gtex_tpms_df = gtex_tpms_df.set_index('gene_id')
+
+        rdg_tpms_df = None
+        for sample_id, file_path in RDG_file_paths.items():
+            print(f"Reading {file_path}")
+            with gzip.open(file_path, "rt") as f:
+                next(f); next(f); next(f)
+                current_gene_reads_df = pd.read_table(f, names=["gene_id", "name", sample_id], usecols=['gene_id', sample_id])
+                current_gene_reads_df = current_gene_reads_df.set_index('gene_id')
+                if rdg_tpms_df is None:
+                    rdg_tpms_df = current_gene_reads_df
+                else:
+                    rdg_tpms_df = pd.merge(rdg_tpms_df, current_gene_reads_df, left_index=True, right_index=True, how="outer")
+
+        print(len(rdg_tpms_df.index), len(set(gtex_tpms_df.index)), len(set(rdg_tpms_df.index) & set(gtex_tpms_df.index)))
+        rdg_and_gtex_tpms_df = pd.merge(rdg_tpms_df, gtex_tpms_df, left_index=True, right_index=True, how="outer")
+        rdg_and_gtex_tpms_df = rdg_and_gtex_tpms_df.fillna(0)
+        #tsv_output_path = f"OUTRIDER_input_table_for_{tissue_name}.tsv"
+        #rdg_and_gtex_tpms_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
+        #print(f"Wrote {len(rdg_and_gtex_tpms_df)} genes x {len(rdg_and_gtex_tpms_df.columns)} samples to {tsv_output_path}")
+
+        if all_rdg_tpms_df is None:
+            all_rdg_tpms_df = rdg_tpms_df
+        else:
+            all_rdg_tpms_df = pd.merge(all_rdg_tpms_df, rdg_tpms_df, left_index=True, right_index=True, how="outer")
+
+        if all_rdg_and_gtex_tpms_df is None:
+            all_rdg_and_gtex_tpms_df = rdg_and_gtex_tpms_df
+        else:
+            all_rdg_and_gtex_tpms_df = pd.merge(all_rdg_and_gtex_tpms_df, rdg_and_gtex_tpms_df, left_index=True, right_index=True, how="outer")
+
+    #tsv_output_path = f"metadata_table_for_all_RDG_samples.tsv"
+    #all_rdg_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
+    #print(f"Wrote {len(all_rdg_samples_df)} samples to {tsv_output_path}")
+    def run(cmd):
+        print(cmd)
+        os.system(cmd)
+
+    timestamp = datetime.datetime.now().strftime("%Y%m%d")
+    tsv_output_path = f"metadata_table_for_all_RDG_and_GTEX_samples__{timestamp}.tsv"
+    print(f"Generating {tsv_output_path}")
+    all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, header=True, sep="\t", index=False)
+    print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
+    run(f"gsutil cp {tsv_output_path} {CLOUD_STORAGE_BASE_DIR}/")
+
+    #all_rdg_tpms_df = all_rdg_tpms_df.fillna(0)
+    #tsv_output_path = f"OUTRIDER_input_table_RDG_tpms_for_all_tissues.tsv"
+    #all_rdg_tpms_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
+    #print(f"Wrote {len(all_rdg_tpms_df)} genes x {len(all_rdg_tpms_df.columns)} samples to {tsv_output_path}")
+
+    tsv_output_path = f"RDG_and_GTEX_tpms_for_all_tissues__{timestamp}.tsv.gz"
+    print(f"Generating {tsv_output_path}")
+    all_rdg_and_gtex_tpms_df = all_rdg_and_gtex_tpms_df.fillna(0).round(2)
+    all_rdg_and_gtex_tpms_df = all_rdg_and_gtex_tpms_df.reset_index()
+    all_rdg_and_gtex_tpms_df['gene_id'] = all_rdg_and_gtex_tpms_df['gene_id'].apply(lambda x: x.split(".")[0])
+    all_rdg_and_gtex_tpms_df.to_csv(tsv_output_path, header=True, sep="\t", index=False)
+    print(f"Wrote {len(all_rdg_and_gtex_tpms_df)} genes x {len(all_rdg_and_gtex_tpms_df.columns)} samples to {tsv_output_path}")
+    #run(f"gsutil cp {tsv_output_path} {CLOUD_STORAGE_BASE_DIR}/")
+
+    tsv_output_path = f"RDG_and_GTEX_tpms_for_all_tissues__with_metadata_pivoted__{timestamp}.tsv.gz"
+    print(f"Generating {tsv_output_path}")
+    pivoted_df = all_rdg_and_gtex_tpms_df.set_index("gene_id").stack().to_frame("tpm")
+    # create pivoted df with columns "gene_id", "sample_id", "tpm"
+    pivoted_df = pivoted_df.reset_index().rename(columns={"level_1": "sample_id"})
+
+    meta_subset_df = all_rdg_and_gtex_samples_df[
+        ["sample_id", "project", "read_length", "sex", "stranded", "tissue", "tissue_detail"]
+    ].set_index("sample_id")
+    pivoted_df = pivoted_df.set_index("sample_id").join(meta_subset_df, how="left")
+    pivoted_df.reset_index().to_csv(tsv_output_path, header=True, sep="\t", index=False)
+
+
+if __name__ == "__main__":
+    main()
