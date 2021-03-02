@@ -10,7 +10,7 @@ DOCKER_IMAGE = "weisburd/gagneurlab@sha256:be45788c8696a196bee25be269cb2de972776
 # https://i12g-gagneurweb.in.tum.de/public/workshops/RNAseq_ASHG19/input_data/annotations/gencode.v29lift37.annotation.txdb
 CLOUD_STORAGE_BASE_DIR = "gs://macarthurlab-rnaseq/gagneur"
 GENCODE_TXDB = f"{CLOUD_STORAGE_BASE_DIR}/gencode.v26.annotation.txdb"
-ALL_METADATA_TSV = f"{CLOUD_STORAGE_BASE_DIR}/metadata_table_for_all_RDG_and_GTEX_samples.tsv"
+#ALL_METADATA_TSV = f"{CLOUD_STORAGE_BASE_DIR}/metadata_table_for_all_RDG_and_GTEX_samples.tsv"
 OUTRIDER_COUNTS_TSV_GZ = f"{CLOUD_STORAGE_BASE_DIR}/outrider/OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
 BAM_HEADER_PATH = f"{CLOUD_STORAGE_BASE_DIR}/fraser/bam_header.bam"
 

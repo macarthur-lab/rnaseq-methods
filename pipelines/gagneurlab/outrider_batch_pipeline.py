@@ -6,8 +6,8 @@ import os
 import pandas as pd
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_analysis_batches
-from gagneurlab.gagneur_utils import ALL_METADATA_TSV, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, OUTRIDER_COUNTS_TSV_GZ
+from sample_metadata.rnaseq_metadata_utils import get_analysis_batches, get_rnaseq_downstream_analysis_metadata_df
+from gagneurlab.gagneur_utils import GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, OUTRIDER_COUNTS_TSV_GZ
 
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
@@ -22,7 +22,6 @@ def main():
     analysis_batches = get_analysis_batches()
 
     p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
-    p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
     p.add_argument("--counts-tsv-path", default=OUTRIDER_COUNTS_TSV_GZ, help="Counts .tsv")
     p.add_argument("--skip-step1", action="store_true", help="Skip initial steps including computing best Q")
     p.add_argument("--skip-step2", action="store_true", help="Skip OUTRIDER fit step")
@@ -34,8 +33,7 @@ def main():
     p.add_argument("batch_name", nargs="+", choices=analysis_batches.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
-    with hl.hadoop_open(args.metadata_tsv_path) as f:
-        metadata_tsv_df = pd.read_table(f)
+    metadata_tsv_df = get_rnaseq_downstream_analysis_metadata_df()
 
     #local_all_counts_tsv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.basename(OUTRIDER_COUNTS_TSV_GZ))
     #print(f"Copying {local_all_counts_tsv_path} to {OUTRIDER_COUNTS_TSV_GZ}")

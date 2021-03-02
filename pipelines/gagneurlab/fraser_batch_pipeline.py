@@ -4,11 +4,11 @@ import hashlib
 import logging
 import os
 import pandas as pd
-
+import sys
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_analysis_batches
-from gagneurlab.gagneur_utils import ALL_METADATA_TSV, BAM_HEADER_PATH, GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
+from sample_metadata.rnaseq_metadata_utils import get_analysis_batches, get_rnaseq_downstream_analysis_metadata_df
+from gagneurlab.gagneur_utils import BAM_HEADER_PATH, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 from gagneurlab.fraser_batch_pipeline_Rscripts import get_EXTRACT_SPLICE_JUNCTIONS_Rscript, \
     get_CALCULATE_PSI_VALUES_Rscript, get_CALCULATE_BEST_Q_Rscript, get_RUN_FRASER_ANALYSIS_Rscript, \
     get_FILTER_AND_ANNOTATE_DATA_Rscript, get_RESULTS_TABLES_Rscript, get_VOLCANO_PLOTS_Rscript
@@ -37,17 +37,14 @@ def main():
     p.add_argument("--skip-step5", action="store_true", help="Skip FRASER analysis step")
     p.add_argument("--skip-step6", action="store_true", help="Skip generating results table")
     p.add_argument("--skip-step7", action="store_true", help="Skip volcano plots")
-    p.add_argument("--metadata-tsv-path", default=ALL_METADATA_TSV, help="Table with columns: sample_id, bam_path, bai_path, batch")
     p.add_argument("batch_name", nargs="+", choices=analysis_batches.keys(), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
     hl.init(log="/dev/null", quiet=True)
 
-    with hl.hadoop_open(ALL_METADATA_TSV) as f:
-        metadata_tsv_df = pd.read_table(f)
+    metadata_tsv_df = get_rnaseq_downstream_analysis_metadata_df()
 
-    with hl.hadoop_open(args.metadata_tsv_path) as f:
-        samples_df_unmodified = pd.read_table(f).set_index("sample_id", drop=False)
+    samples_df_unmodified = metadata_tsv_df.set_index("sample_id", drop=False)
 
     batch_label = f"FRASER"
     if args.with_gtex:
@@ -55,6 +52,7 @@ def main():
     batch_label += ": "
     batch_label += ','.join(args.batch_name)
     batch_label += f" (dPsi={DELTA_PSI_THRESHOLD}, padj={PADJ_THRESHOLD}, min_reads={MIN_READS_THRESHOLD})"
+
     with batch_utils.run_batch(args, batch_label) as batch:
 
         for batch_name in args.batch_name:
@@ -88,9 +86,14 @@ def main():
             h = hashlib.md5(byte_string).hexdigest().upper()
             sample_set_label = f"{batch_name}__{len(samples_df.sample_id)}_samples_{h[:10]}"
 
+            result_dir = sample_set_label
+            if "sequencing_date" in set(samples_df.columns):
+                most_recent_sequencing_date = str(max(samples_df.sequencing_date)).replace("-", "_")
+                result_dir = f"{most_recent_sequencing_date}__{result_dir}"
+
             logger.info(f"Processing {sample_set_label}: {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
-            output_dir_for_batch_specific_data = f"gs://macarthurlab-rnaseq/gagneur/fraser/results/{sample_set_label}"
+            output_dir_for_batch_specific_data = f"gs://macarthurlab-rnaseq/gagneur/fraser/results/{result_dir}"
 
             output_file_path_splice_junctions_RDS = os.path.join(output_dir_for_batch_specific_data, f"spliceJunctions_{sample_set_label}.RDS")
             output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")

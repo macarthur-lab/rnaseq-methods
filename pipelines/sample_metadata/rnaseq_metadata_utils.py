@@ -27,6 +27,7 @@ def get_spreasheet(spreadsheet_name):
     return spreadsheet
 
 ## Spreadsheet must be Shared with 733952080251-compute@developer.gserviceaccount.com
+_RNASEQ_DOWNSTREAM_ANALYSIS_METADATA_WORKSHEET = None
 _RNASEQ_METADATA_SPREADSHEET = None
 _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = None
 _DATA_PATHS_WORKSHEET = None
@@ -90,6 +91,13 @@ def get_data_paths_worksheet():
     return _DATA_PATHS_WORKSHEET
 
 
+
+def get_rnaseq_downstream_analysis_metadata_worksheet():
+    global _RNASEQ_DOWNSTREAM_ANALYSIS_METADATA_WORKSHEET
+    _RNASEQ_DOWNSTREAM_ANALYSIS_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("downstream analysis metadata (auto)")
+    return _RNASEQ_DOWNSTREAM_ANALYSIS_METADATA_WORKSHEET
+
+
 def get_imputed_metadata_worksheet():
     global _IMPUTED_METADATA_WORKSHEET
     _IMPUTED_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("imputed (auto)")
@@ -118,6 +126,9 @@ def get_seqr_info_and_other_metadata_df():
     rows = get_seqr_info_and_other_metadata_worksheet().get()
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
+def get_rnaseq_downstream_analysis_metadata_df():
+    rows = get_rnaseq_downstream_analysis_metadata_worksheet().get()
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 def get_data_paths_df():
     rows = get_data_paths_worksheet().get()
@@ -151,8 +162,8 @@ def get_joined_metadata_df():
     return df1.merge(df2, on="sample_id", how="left").set_index("sample_id", drop=False)
 
 
-def get_date_from_bam_header(bam_path):
-    output = subprocess.check_output("gsutil cat %s | samtools view -H - | grep ^@RG | head -n 1" % bam_path, shell=True, encoding="UTF-8")
+def get_date_from_bam_header(bam_path, gcloud_project="seqr-project"):
+    output = subprocess.check_output(f"gsutil -u {gcloud_project} cat %s | samtools view -H - | grep ^@RG | head -n 1" % bam_path, shell=True, encoding="UTF-8")
     read_group_annotations = {}
     for i, rg_field in enumerate(output.rstrip().split("\t")):
         if i == 0:

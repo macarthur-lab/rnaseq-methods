@@ -21,8 +21,7 @@ from sample_metadata.rnaseq_metadata_utils import \
     get_data_paths_df, \
     get_seqr_info_and_other_metadata_df, \
     get_rnaseqc_metrics, \
-    get_date_from_bam_header, \
-    SAMPLE_ID_TO_ANALYSIS_BATCH
+    get_date_from_bam_header
 
 
 #%%
@@ -89,7 +88,9 @@ final_df = final_df.merge(seqr_info_and_other_metadata_rows[[
     "sample_id",
     "batch_date_from_hg19_bam_header",
     "imputed tissue",
-    "imputed sex"
+    "imputed sex",
+    "analysis batch",
+    "qc notes",
 ]], on="sample_id", how="left")
 
 
@@ -108,15 +109,7 @@ for i, row in final_df.iterrows():
         final_df.at[i, "batch_date_from_hg19_bam_header"] = d
 
 #%%
-# update "analysis_batch" column
-
-# TODO fix empty values in spreadsheet "analysis batch" column
-
-#for i, row in final_df.iterrows():
-#    final_df.at[i, "analysis batch"] = SAMPLE_ID_TO_ANALYSIS_BATCH.get(row.sample_id, "")
-
-# TODO fix empty values in spreadsheet "analysis batch" column
-
+# original "analysis batch" column
 """
 muscle_M_76bp {'NH12-1413', 'NH11-441'}
 muscle_F_76bp {'M_0146-01-H1'}

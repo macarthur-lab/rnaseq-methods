@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, get_gtex_rnaseq_sample_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
 
 hl.init(log="/dev/null")
 
@@ -17,46 +17,42 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-def transfer_metadata_columns_from_df(samples_df, source_df):
-    df = pd.DataFrame()
-    df.loc[:, 'sample_id'] = source_df['sample_id']
-    df.loc[source_df.sample_id, 'stranded'] = source_df['stranded? (rnaseqc)']
-    df.loc[source_df.sample_id, 'batch'] = source_df['star_pipeline_batch']
-    df.loc[source_df.sample_id, 'bam_path'] = source_df['star_bam']
-    df.loc[source_df.sample_id, 'bai_path'] = source_df['star_bai']
-
-    df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(
-        lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/portcullis/")
-
-    return pd.concat([samples_df, df], axis="rows")
-
 
 def main():
-    rnaseq_sample_metadata_df = get_joined_metadata_df()
-    analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip()])
-    star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])
+    metadata_df = get_rnaseq_downstream_analysis_metadata_df()
+    tissues = set([b for b in metadata_df["tissue"] if b.strip()])
+    star_pipeline_batches = set([b for b in metadata_df["batch"] if b])
 
     p = batch_utils.init_arg_parser(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
-    p.add_argument("batch_name_or_sample_id", nargs="+", choices={"all",} | analysis_batches | star_pipeline_batches | set(rnaseq_sample_metadata_df['sample_id']))
+    p.add_argument("tissue_or_sample_id", nargs="+", choices={"all",} | tissues | star_pipeline_batches | set(metadata_df['sample_id']))
+    p.add_argument("-gtex", "--include-gtex-samples", action="store_true")
     args = p.parse_args()
 
-    # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
-    samples_df = pd.DataFrame()
-    for batch_name in args.batch_name_or_sample_id:
-        if batch_name == "all":
-            samples_df = transfer_metadata_columns_from_df(samples_df, rnaseq_sample_metadata_df)
-        elif batch_name in star_pipeline_batches:
-            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['star_pipeline_batch'] == batch_name]
-            samples_df = transfer_metadata_columns_from_df(samples_df, df)
-        elif batch_name in analysis_batches:
-            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df['analysis batch'] == batch_name]
-            samples_df = transfer_metadata_columns_from_df(samples_df, df)
-        elif batch_name in set(rnaseq_sample_metadata_df.sample_id):
-            df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df.sample_id == batch_name]
-            samples_df = transfer_metadata_columns_from_df(samples_df, df)
-        else:
-            p.error(f"Unexpected name {batch_name}")
+    if not args.include_gtex_samples:
+        metadata_df = metadata_df[~metadata_df.sample_id.str.lower().str.startswith("gtex")]
 
+    # Generate samples_df with these columns: sample_id, bam_path, bai_path, output_dir, batch_name, sex, RIN, ancestry, etc.
+    all_samples_df = None
+    for name in args.tissue_or_sample_id:
+        if name == "all":
+            samples_df = metadata_df
+        elif name in star_pipeline_batches:
+            samples_df = metadata_df[metadata_df['batch'] == name]
+        elif name in tissues:
+            samples_df = metadata_df[metadata_df['tissue'] == name]
+        elif name in set(metadata_df.sample_id):
+            samples_df = metadata_df[metadata_df.sample_id == name]
+        else:
+            p.error(f"Unexpected name {name}")
+
+    if all_samples_df is None:
+        all_samples_df = samples_df
+    else:
+        all_samples_df = pd.concat([all_samples_df, samples_df], axis="rows")
+
+    all_samples_df.loc[:, 'output_dir'] = all_samples_df['batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/portcullis/")
+    all_samples_df = all_samples_df.set_index('sample_id', drop=False)
+    samples_df = all_samples_df
     logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
 
     # see https://hail.zulipchat.com/#narrow/stream/223457-Batch-support/topic/auth.20as.20user.20account for more details
