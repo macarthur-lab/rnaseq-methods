@@ -96,7 +96,9 @@ and add the new file paths, run
 cd rnaseq_methods/pipelines/sample_metadata
 python3 -m pip install -r requirements.txt
 ```
-and then run through `step1_update_data_paths_worksheet.py` and `step2_update_seqr_and_other_metadata_worksheet.py` 
+and then run through  
+`step1_update_data_paths_worksheet.py`  
+`step2_update_seqr_and_other_metadata_worksheet.py` 
 interactively
 (TODO convert these to scripts) 
  
@@ -119,6 +121,22 @@ Then, download the vcf.gz files, covert them to bgzipped, tabix them, and copy t
 Then, update the metadata paths worksheet again as described above.
 
 ---
+**Run somalier**
+
+This is used to impute sex and check for sample swaps by checking relatedness 
+of the RNA-seq sample vs its corresponding DNA sample. Relatedness < 0.75 is flagged.
+
+NOTE: relies on single-sample VCFs from previous step. 
+
+```
+cd rnaseq_methods/pipelines/sample_swap_check
+python3 run_somalier.py --cluster -b batch_2021_01
+```
+
+Then interactively run  
+`step3_update_imputed_sex_and_check_sample_swaps.py` 
+
+---
 
 **TGG-viewer: Splice Junction Tracks**
 
@@ -128,7 +146,7 @@ To generate splice-junction tracks (.bed and .bigWig files) that can be displaye
 
 Example:
 ```
- python3 ./tgg_viewer/junctions_track_pipelines/generate_junctions_bed_batch_pipeline.py -b batch_2020_08
+ python3 ./tgg_viewer/junctions_track_pipelines/generate_junctions_bed_batch_pipeline.py -b batch_2021_01
 ```
 
 Then, update the metadata paths worksheet again as described above.
