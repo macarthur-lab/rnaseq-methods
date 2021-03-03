@@ -57,10 +57,17 @@ Then, the first stage of the TGG RNA-seq pipeline consists of the following step
   3a. RNAseQC
     ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/broadinstitute_gtex/rnaseqc2_v1-0_BETA_cfg))
     ([wdl](https://portal.firecloud.org/?return=terra#methods/broadinstitute_gtex/rnaseqc2_v1-0_BETA/2/wdl))
-  
+    - compute QC metrics and gene counts 
+    
   3b. FastQC
-    ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/sanand/FastQC))
-    ([wdl](https://portal.firecloud.org/?return=terra#methods/sanand/FastQC/1/wdl))
+    ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/sanand/FastQC)) 
+    ([wdl](https://portal.firecloud.org/?return=terra#methods/sanand/FastQC/1/wdl)) 
+    - compute additional QC metrics
+
+  3c. bam_to_coverage 
+    ([terra](https://app.terra.bio/#workspaces/macarthurlab-rnaseq-terra/macarthurlab-rnaseq-terra/workflows/broadinstitute_gtex/bam_to_coverage_v1-0_BETA_cfg))
+    ([wdl](https://portal.firecloud.org/?return=terra#methods/broadinstitute_gtex/bam_to_coverage_v1-0_BETA/1/wdl)) 
+    - generate bigWig coverage file for each sample
 
 
 ---
