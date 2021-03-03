@@ -126,7 +126,7 @@ Then, update the metadata paths worksheet again as described above.
 This is used to impute sex and check for sample swaps by checking relatedness 
 of the RNA-seq sample vs its corresponding DNA sample. Relatedness < 0.75 is flagged.
 
-NOTE: relies on single-sample VCFs from previous step. 
+NOTE: this relies on single-sample VCFs from the previous step 
 
 ```
 cd rnaseq_methods/pipelines/sample_swap_check

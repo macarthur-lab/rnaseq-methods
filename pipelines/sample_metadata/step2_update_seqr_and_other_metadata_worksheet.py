@@ -1,5 +1,7 @@
 
+
 #%%
+
 
 from __future__ import print_function
 import collections
@@ -7,6 +9,18 @@ import os
 import pandas as pd
 import sys
 
+
+#%%
+
+sys.path.append(os.path.expanduser("~/code/seqr"))
+
+import django
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+
+django.setup()
+
+
+#%%
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
@@ -23,6 +37,9 @@ from sample_metadata.rnaseq_metadata_utils import \
     get_rnaseqc_metrics, \
     get_date_from_bam_header
 
+
+from metadata.rare_disease_metadata_utils import get_seqr_WGS_metadata_df, get_seqr_WES_metadata_df
+from metadata.seqr_utils import impute_sample_type
 
 #%%
 
@@ -170,16 +187,6 @@ final_df
 # SpliceAI
 # Viewer Link
 # seqr link
-
-#%%
-
-sys.path.append(os.path.expanduser("~/code/seqr"))
-
-import django
-os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
-
-django.setup()
-
 
 #%%
 
@@ -431,6 +438,14 @@ sample_id_to_seqr_indiv_id = {
     "BON_B19-45_CHX_1": "BON_B19-45_1_D1",
     "BON_B19-54_CHX_1": "BON_B19-54_1_D1",
     "BON_B19-59_CHX_1": "BON_B19-59_1_D1",
+
+    "BON_B16-38": "BON_B16-38_D1",
+    "BON_B18_65_CHX_1": "BON_B18_65_1_D1",
+    "BON_B19-03_CHX_1": "BON_B19-03_1_D1",
+    "BON_B19-52_CHX_1": "BON_B19-52_1_D1",
+    #"BON_B20_36_CHX_1": "?",
+    "MAN_0694_01": "MAN_0694_01_1",
+    "RGP_1214_3_M1": "RGP_1214_3",
 }
 
 
@@ -521,7 +536,12 @@ no_seqr_record = {
 from seqr.models import Project, Family, Individual, Sample, IgvSample, SavedVariant, VariantTag, VariantNote
 #print(Individual.objects.all().count())
 
-sample_id_to_indivs = {}
+sample_id_to_indivs = collections.OrderedDict()
+
+excluded_projects = {
+    "kl_temp_manton_orphan-diseases_cmg-samples_exomes_v1",
+    "CMG_Aicardi_WGS",
+}
 
 counters = collections.defaultdict(int)
 for sample_id in final_df['sample_id']:
@@ -530,7 +550,7 @@ for sample_id in final_df['sample_id']:
 
     # find matching indivs
     seqr_id = sample_id_to_seqr_indiv_id.get(sample_id, sample_id)
-    indivs = Individual.objects.filter(individual_id=seqr_id)
+    indivs = Individual.objects.exclude(family__project__name__in=excluded_projects).filter(individual_id=seqr_id).order_by('guid')
     if not indivs:
         indivs = Individual.objects.filter(individual_id__contains=seqr_id)
     if not indivs:
@@ -570,6 +590,12 @@ for sample_id, indivs in sample_id_to_indivs.items():
     for indiv in indivs:
         family = indiv.family
         project = family.project
+        if project.name == "RNA-seq-BC":
+            sample_type = "RNA"
+        else:
+            sample_type, _ = impute_sample_type(indiv)
+            if sample_type is None:
+                continue
 
         saved_variant_ids_for_family = set([sv.pk for sv in family.savedvariant_set.all()])
 
@@ -581,19 +607,20 @@ for sample_id, indivs in sample_id_to_indivs.items():
         #[sv.varianttag_set.all() for sv in family.savedvariant_set.all()]
         #[sv.variantnote_set.all() for sv in family.savedvariant_set.all()]
 
-        if not seqr_fields['proj (seqr)']:
-            project_i = ""
-        elif not seqr_fields['proj2 (seqr)']:
-            project_i = 2
-        else:
-            print("WARNING: more than 2 projects have individual: " + str(indiv) + ". Skipping...")
+        if (sample_type == "WGS") and seqr_fields.get('proj WGS (seqr)'):
+            print(f"WARNING: more than 2 {sample_type} projects have individual: {indiv}. Keeping individual in project {seqr_fields.get('proj WGS (seqr)')}, skipping the individual in project {project}...")
+            continue
+        if (sample_type == "WES") and seqr_fields.get('proj WES (seqr)'):
+            print(f"WARNING: more than 2 {sample_type} projects have individual: {indiv}. Keeping individual in project {seqr_fields.get('proj WES (seqr)')}, skipping the individual in project {project}...")
             continue
 
         project_page_url = "https://seqr.broadinstitute.org/project/%s/project_page" % (project.guid)
         family_page_url = "https://seqr.broadinstitute.org/project/%s/family_page/%s" % (project.guid, family.guid)
 
-        seqr_fields['proj%s (seqr)' % project_i] = '=HYPERLINK("%s", "%s")' % (project_page_url, project.name)
-        seqr_fields['fam%s (seqr)' % project_i] = '=HYPERLINK("%s", "%s")' % (family_page_url, family.family_id)
+        seqr_fields['proj %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (project_page_url, project.name)
+        seqr_fields['fam %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (family_page_url, family.family_id)
+        seqr_fields['proj %s guid (seqr)' % sample_type] = project.guid
+        seqr_fields['fam %s guid (seqr)' % sample_type] = family.guid
 
         seqr_fields['genome (seqr)'].append("hg%s" % project.genome_version)
 
@@ -603,7 +630,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
         if family.coded_phenotype:
             seqr_fields['coded phenotype (seqr)'].append(family.coded_phenotype)
         if family.analysis_summary or family.analysis_notes:
-            seqr_fields['anlaysis summary + notes (seqr)'].append((family.analysis_summary or "" + "\n" + family.analysis_notes or "").strip())
+            seqr_fields['analysis summary + notes (seqr)'].append((family.analysis_summary or "" + "\n" + family.analysis_notes or "").strip())
         if family.case_review_notes:
             seqr_fields['internal case review notes (seqr)'].append((family.case_review_notes or "").strip())
 
@@ -622,9 +649,9 @@ for sample_id, indivs in sample_id_to_indivs.items():
         if sample_types:
             seqr_fields['sample type (seqr)'].append((" ".join(set(sample_types))))
 
-        cram_paths = [sample.file_path for sample in indiv.igvsample_set.all()]
-        if cram_paths:
-            seqr_fields['cram path (seqr)'].append(" ".join(set(cram_paths)))
+        #cram_paths = [sample.file_path for sample in indiv.igvsample_set.all()]
+        #if cram_paths:
+        #    seqr_fields['cram path (seqr)'].append(" ".join(set(cram_paths)))
 
         #if indiv.phenotips_data:
         #    print(json.loads(indiv.phenotips_data))
@@ -652,20 +679,21 @@ for sample_id, indivs in sample_id_to_indivs.items():
     seqr_fields['variant notes (seqr)'] = "%s" % num_variant_notes
 
     seqr_fields['coded phenotype (seqr)'] = join_fields(seqr_fields['coded phenotype (seqr)']) + " "
-    seqr_fields['anlaysis summary + notes (seqr)'] = join_fields(seqr_fields['anlaysis summary + notes (seqr)'], sep="\n") + " "
+    seqr_fields['analysis summary + notes (seqr)'] = join_fields(seqr_fields['analysis summary + notes (seqr)'], sep="\n") + " "
     seqr_fields['internal case review notes (seqr)'] = join_fields(seqr_fields['internal case review notes (seqr)'], sep="\n") + " "
-    seqr_fields['cram path (seqr)'] = join_fields(sorted(set(seqr_fields['cram path (seqr)']))) + " "
+    #seqr_fields['cram path (seqr)'] = join_fields(sorted(set(seqr_fields['cram path (seqr)']))) + " "
 
 #seqr_fields_by_sample_id.values()
 
 #sys.exit(0)
 #%%
+
 SEQR_INFO_COLUMNS = [
     'indiv (seqr)',
-    'proj (seqr)',
-    'fam (seqr)',
-    'proj2 (seqr)',
-    'fam2 (seqr)',
+    'proj WGS (seqr)',
+    'fam WGS (seqr)',
+    'proj WES (seqr)',
+    'fam WES (seqr)',
     'sex',
     'genome (seqr)',
     'population (seqr)',
@@ -675,9 +703,14 @@ SEQR_INFO_COLUMNS = [
     'variant tags (seqr)',
     'variant notes (seqr)',
     'coded phenotype (seqr)',
-    'anlaysis summary + notes (seqr)',
+    'analysis summary + notes (seqr)',
     'internal case review notes (seqr)',
-    'cram path (seqr)',
+    #'wgs cram path (seqr)',
+    #'wes cram path (seqr)',
+    'proj WGS guid (seqr)',
+    'fam WGS guid (seqr)',
+    'proj WES guid (seqr)',
+    'fam WES guid (seqr)',
 ]
 
 seqr_info_df = pd.DataFrame(
@@ -687,6 +720,8 @@ seqr_info_df = pd.DataFrame(
 
 seqr_info_df
 
+#%%
+
 final_df = final_df.merge(seqr_info_df, on="sample_id", how="left")
 
 #%%
@@ -694,6 +729,29 @@ check_for_duplicate_sample_ids(final_df)
 
 #%%
 
+wgs_cram_paths = get_seqr_WGS_metadata_df().reset_index()
+wgs_cram_paths = wgs_cram_paths[wgs_cram_paths.cram_and_crai_exist == "TRUE"]
+wgs_cram_paths = wgs_cram_paths[["individual_id", "project_guid", "cram_path"]]
+wgs_cram_paths = wgs_cram_paths.rename(columns={"individual_id" : "indiv (seqr)", "project_guid": "proj WGS guid (seqr)"})
+
+final_df = final_df.merge(wgs_cram_paths, on=["proj WGS guid (seqr)", "indiv (seqr)"], how="left").rename(columns={"cram_path":  "WGS cram path"})
+
+
+#%%
+check_for_duplicate_sample_ids(final_df)
+
+#%%
+wes_cram_paths = get_seqr_WES_metadata_df().reset_index()
+wes_cram_paths = wes_cram_paths[wes_cram_paths.cram_and_crai_exist == "TRUE"]
+wes_cram_paths = wes_cram_paths[["individual_id", "project_guid", "cram_path"]]
+wes_cram_paths = wes_cram_paths.rename(columns={"individual_id" : "indiv (seqr)", "project_guid": "proj WES guid (seqr)"})
+
+final_df = final_df.merge(wes_cram_paths, on=["proj WES guid (seqr)", "indiv (seqr)"], how="left").rename(columns={"cram_path":  "WES cram path"})
+
+#%%
+check_for_duplicate_sample_ids(final_df)
+
+#%%
 # data_paths_df left join Beryl's tables
 
 beryls_supplementary_table_df = get_beryls_supplementary_table_df()
