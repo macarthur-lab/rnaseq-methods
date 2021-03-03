@@ -1,5 +1,6 @@
 Module	Section	Sample Name	Source
 STAR	SummaryLog	RGP_94_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/RGP_94_3_2.Log.final.out
+STAR	SummaryLog	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/MAN_0694_01.Log.final.out
 STAR	SummaryLog	RGP_94_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/RGP_94_4_2.Log.final.out
 STAR	SummaryLog	RGP_554_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/RGP_554_3_2.Log.final.out
 STAR	SummaryLog	RGP_677_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/RGP_677_3.Log.final.out
@@ -10,6 +11,7 @@ STAR	ReadsPerGene	RGP_554_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_method
 STAR	ReadsPerGene	RGP_677_4	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_677_4.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_94_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_94_4_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_94_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_94_3_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/MAN_0694_01.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_673_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_673_3.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_558_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_558_3.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_677_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/star/genecounts/RGP_677_3.ReadsPerGene.out.tab
@@ -19,4 +21,5 @@ FastQC	all_sections	RGP_94_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_metho
 FastQC	all_sections	RGP_558_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/fastqc/zip/RGP_558_3.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_677_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/fastqc/zip/RGP_677_3.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_554_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/fastqc/zip/RGP_554_3_2_fastqc/fastqc_data.txt
+FastQC	all_sections	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/fastqc/zip/MAN_0694_01.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_677_4	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/whole_blood/fastqc/zip/RGP_677_4.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt

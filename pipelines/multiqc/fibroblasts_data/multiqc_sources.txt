@@ -59,6 +59,7 @@ STAR	SummaryLog	VCGS_FAM67_209	/Users/weisburd/project__rnaseq/code/rnaseq_metho
 STAR	SummaryLog	HK-022	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-022.Log.final.out
 STAR	SummaryLog	RGP_7_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/RGP_7_3_2.Log.final.out
 STAR	SummaryLog	HK-035	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-035.Log.final.out
+STAR	SummaryLog	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/BON_B20_36_CHX_1.Log.final.out
 STAR	SummaryLog	HK-025	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-025.Log.final.out
 STAR	SummaryLog	HK-032	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-032.Log.final.out
 STAR	SummaryLog	RGP_7_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/RGP_7_4_2.Log.final.out
@@ -67,6 +68,7 @@ STAR	SummaryLog	BON_B15-26_1_1	/Users/weisburd/project__rnaseq/code/rnaseq_metho
 STAR	SummaryLog	VCGS_FAM84_260	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/VCGS_FAM84_260.Log.final.out
 STAR	SummaryLog	BON_B19-59_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/BON_B19-59_CHX_1.Log.final.out
 STAR	SummaryLog	HK044_0110	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK044_0110.Log.final.out
+STAR	SummaryLog	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/BON_B18_65_CHX_1.Log.final.out
 STAR	SummaryLog	VCGS_FAM150_468_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/VCGS_FAM150_468_2.Log.final.out
 STAR	SummaryLog	VCGS_FAM12_36_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/VCGS_FAM12_36_2.Log.final.out
 STAR	SummaryLog	HK-116	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-116.Log.final.out
@@ -87,8 +89,10 @@ STAR	SummaryLog	HK-006	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipel
 STAR	SummaryLog	SWE_36223_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/SWE_36223_1.Log.final.out
 STAR	SummaryLog	HK-015	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-015.Log.final.out
 STAR	SummaryLog	HK-108	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-108.Log.final.out
+STAR	SummaryLog	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/BON_B19-52_CHX_1.Log.final.out
 STAR	SummaryLog	HK-061	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-061.Log.final.out
 STAR	SummaryLog	HK-131	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-131.Log.final.out
+STAR	SummaryLog	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/BON_B19-03_CHX_1.Log.final.out
 STAR	SummaryLog	HK-126	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK-126.Log.final.out
 STAR	SummaryLog	HK006_0016	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/HK006_0016.Log.final.out
 STAR	SummaryLog	RGP_7_2_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/RGP_7_2_2.Log.final.out
@@ -140,6 +144,7 @@ STAR	ReadsPerGene	HK044_0110	/Users/weisburd/project__rnaseq/code/rnaseq_methods
 STAR	ReadsPerGene	HK-126	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-126.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_7_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/RGP_7_4_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM41_129_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/VCGS_FAM41_129_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B18_65_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B16-50_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B16-50_1_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-087	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-087.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-035	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-035.ReadsPerGene.out.tab
@@ -153,12 +158,15 @@ STAR	ReadsPerGene	HK106-001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/
 STAR	ReadsPerGene	BON_B15-95_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B15-95_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-015	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-015.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-134	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-134.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B19-52_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM58_181	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/VCGS_FAM58_181.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM29_90	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/VCGS_FAM29_90.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-131	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-131.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM61_190	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/VCGS_FAM61_190.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-010	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-010.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B20_36_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-070	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-070.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/BON_B19-03_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-115	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-115.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK010_0026	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK010_0026.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-075	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/star/genecounts/HK-075.ReadsPerGene.out.tab
@@ -190,6 +198,7 @@ FastQC	all_sections	BON_B19-45_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq
 FastQC	all_sections	HK044_0109	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK044_0109_fastqc/fastqc_data.txt
 FastQC	all_sections	HK106-001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK106-001_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B16-50_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B16-50_1_2_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B20_36_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM11_32_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM11_32_2_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM4_13_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM4_13_2_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_7_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/RGP_7_1_2_fastqc/fastqc_data.txt
@@ -208,6 +217,7 @@ FastQC	all_sections	BON_B15-98_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_m
 FastQC	all_sections	VCGS_FAM147_459_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM147_459_2_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-133	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-133_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM31_97_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM31_97_2_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B19-03_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM49_153	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM49_153_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM2_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM2_4_2_fastqc/fastqc_data.txt
 FastQC	all_sections	MESP014_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/MESP014_2_fastqc/fastqc_data.txt
@@ -216,6 +226,7 @@ FastQC	all_sections	HK-095	/Users/weisburd/project__rnaseq/code/rnaseq_methods/p
 FastQC	all_sections	BON_B17-28_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B17-28_1_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_DLS_FAM1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_DLS_FAM1_1_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-087	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-087_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B18_65_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	HK085-001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK085-001_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM67_209	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM67_209_fastqc/fastqc_data.txt
 FastQC	all_sections	B11-25-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/B11-25-1M_fastqc/fastqc_data.txt
@@ -269,6 +280,7 @@ FastQC	all_sections	HK-108	/Users/weisburd/project__rnaseq/code/rnaseq_methods/p
 FastQC	all_sections	NH12-843_Fibroblasts	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/NH12-843_Fibroblasts_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-104	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-104_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-032	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-032_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/BON_B19-52_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM29_90	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/VCGS_FAM29_90_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-006	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-006_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-114	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/fibroblasts/fastqc/zip/HK-114_fastqc/fastqc_data.txt

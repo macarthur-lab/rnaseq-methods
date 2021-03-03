@@ -46,6 +46,7 @@ STAR	SummaryLog	HK060-0154	/Users/weisburd/project__rnaseq/code/rnaseq_methods/p
 STAR	SummaryLog	VIL_17_121	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VIL_17_121.Log.final.out
 STAR	SummaryLog	163BV_JE_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/163BV_JE_M1.Log.final.out
 STAR	SummaryLog	WAL_OTH2405f-Feb20C	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/WAL_OTH2405f-Feb20C.Log.final.out
+STAR	SummaryLog	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/MAN_0694_01.Log.final.out
 STAR	SummaryLog	HK-119	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-119.Log.final.out
 STAR	SummaryLog	OUN_HK112_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/OUN_HK112_001.Log.final.out
 STAR	SummaryLog	BON_B18-23_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B18-23_CHX_1.Log.final.out
@@ -141,6 +142,7 @@ STAR	SummaryLog	VIL_17_111	/Users/weisburd/project__rnaseq/code/rnaseq_methods/p
 STAR	SummaryLog	BON_B15-125_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B15-125_1_2.Log.final.out
 STAR	SummaryLog	81AB_MM_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/81AB_MM_M1.Log.final.out
 STAR	SummaryLog	VCGS_FAM52_162_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VCGS_FAM52_162_3.Log.final.out
+STAR	SummaryLog	BON_B16-38	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B16-38.Log.final.out
 STAR	SummaryLog	BEG_14-4_T65	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BEG_14-4_T65.Log.final.out
 STAR	SummaryLog	MAN_0063_01_02	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/MAN_0063_01_02.Log.final.out
 STAR	SummaryLog	MBEL028_001_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/MBEL028_001_3.Log.final.out
@@ -166,6 +168,7 @@ STAR	SummaryLog	BON_B16-50_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_metho
 STAR	SummaryLog	T238	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/T238.Log.final.out
 STAR	SummaryLog	T1244	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/T1244.Log.final.out
 STAR	SummaryLog	250DV_LR_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/250DV_LR_M1.Log.final.out
+STAR	SummaryLog	RGP_1214_3_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_1214_3_M1.Log.final.out
 STAR	SummaryLog	205E_BD_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/205E_BD_M1.Log.final.out
 STAR	SummaryLog	BON_B13-55_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B13-55_1_2.Log.final.out
 STAR	SummaryLog	BON_B19-45_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B19-45_CHX_1.Log.final.out
@@ -184,6 +187,7 @@ STAR	SummaryLog	UC368-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pip
 STAR	SummaryLog	RGP_7_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_7_3_2.Log.final.out
 STAR	SummaryLog	HK-035	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-035.Log.final.out
 STAR	SummaryLog	B15-25_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/B15-25_1_2.Log.final.out
+STAR	SummaryLog	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B20_36_CHX_1.Log.final.out
 STAR	SummaryLog	46N_RL_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/46N_RL_M1.Log.final.out
 STAR	SummaryLog	VIL_18_061	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/VIL_18_061.Log.final.out
 STAR	SummaryLog	INMR_IK_581	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/INMR_IK_581.Log.final.out
@@ -218,6 +222,7 @@ STAR	SummaryLog	RGP_558_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pi
 STAR	SummaryLog	BON_B19-59_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B19-59_CHX_1.Log.final.out
 STAR	SummaryLog	HK044_0110	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK044_0110.Log.final.out
 STAR	SummaryLog	BEG_1435-01_T1370	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BEG_1435-01_T1370.Log.final.out
+STAR	SummaryLog	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B18_65_CHX_1.Log.final.out
 STAR	SummaryLog	B13-07-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/B13-07-1RNA.Log.final.out
 STAR	SummaryLog	CLA_329FK_RR_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/CLA_329FK_RR_2.Log.final.out
 STAR	SummaryLog	BEG_916-1_T916	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BEG_916-1_T916.Log.final.out
@@ -305,8 +310,10 @@ STAR	SummaryLog	MUN_FAM3_PARTIALMDC1A1_01	/Users/weisburd/project__rnaseq/code/r
 STAR	SummaryLog	CLA_79Z_CP_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/CLA_79Z_CP_2.Log.final.out
 STAR	SummaryLog	BON_B12-74-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B12-74-1_1.Log.final.out
 STAR	SummaryLog	WAL_OTH2419f-Feb20B	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/WAL_OTH2419f-Feb20B.Log.final.out
+STAR	SummaryLog	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B19-52_CHX_1.Log.final.out
 STAR	SummaryLog	HK-061	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-061.Log.final.out
 STAR	SummaryLog	HK-131	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/HK-131.Log.final.out
+STAR	SummaryLog	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/BON_B19-03_CHX_1.Log.final.out
 STAR	SummaryLog	B11-48-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/B11-48-1M.Log.final.out
 STAR	SummaryLog	CLA_62R_CaM_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/CLA_62R_CaM_2.Log.final.out
 STAR	SummaryLog	RGP_273_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/RGP_273_3.Log.final.out
@@ -376,6 +383,7 @@ STAR	ReadsPerGene	VIL_17_099	/Users/weisburd/project__rnaseq/code/rnaseq_methods
 STAR	ReadsPerGene	K1157-1-4	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/K1157-1-4.ReadsPerGene.out.tab
 STAR	ReadsPerGene	CLA_62R_CaM_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/CLA_62R_CaM_3.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK011_0029	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK011_0029.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B16-38	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B16-38.ReadsPerGene.out.tab
 STAR	ReadsPerGene	MESP021_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MESP021_001_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-119	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-119.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B16-57_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B16-57_1_2.ReadsPerGene.out.tab
@@ -501,7 +509,9 @@ STAR	ReadsPerGene	1211-1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pip
 STAR	ReadsPerGene	B13-07-1RNA	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/B13-07-1RNA.ReadsPerGene.out.tab
 STAR	ReadsPerGene	ICCV_458_10CC06258_02	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/ICCV_458_10CC06258_02.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM41_129_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VCGS_FAM41_129_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B18_65_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B16-50_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B16-50_1_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MAN_0694_01.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B15-76-2_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B15-76-2_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	MMAD002_001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MMAD002_001_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-087	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-087.ReadsPerGene.out.tab
@@ -541,6 +551,7 @@ STAR	ReadsPerGene	VIL_18_045	/Users/weisburd/project__rnaseq/code/rnaseq_methods
 STAR	ReadsPerGene	HK-015	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-015.ReadsPerGene.out.tab
 STAR	ReadsPerGene	UC316-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/UC316-1M.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-134	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-134.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B19-52_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	INMR_IG_561	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/INMR_IG_561.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VIL_18_120	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VIL_18_120.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B14-75-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B14-75-1_1.ReadsPerGene.out.tab
@@ -559,10 +570,12 @@ STAR	ReadsPerGene	RGP_673_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/
 STAR	ReadsPerGene	VIL_18_061	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VIL_18_061.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_552_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_552_3.ReadsPerGene.out.tab
 STAR	ReadsPerGene	CLA_214DF_AB_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/CLA_214DF_AB_2.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B20_36_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-070	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-070.ReadsPerGene.out.tab
 STAR	ReadsPerGene	41M_MW_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/41M_MW_M1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_558_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_558_3.ReadsPerGene.out.tab
 STAR	ReadsPerGene	WAL_OTH2406d-Feb20B	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/WAL_OTH2406d-Feb20B.ReadsPerGene.out.tab
+STAR	ReadsPerGene	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B19-03_CHX_1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	B09-24-1RNA_UNKNOWN	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/B09-24-1RNA_UNKNOWN.ReadsPerGene.out.tab
 STAR	ReadsPerGene	HK-115	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/HK-115.ReadsPerGene.out.tab
 STAR	ReadsPerGene	RGP_273_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_273_3.ReadsPerGene.out.tab
@@ -640,6 +653,7 @@ STAR	ReadsPerGene	BON_UC219-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_meth
 STAR	ReadsPerGene	RGP_54_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_54_3_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	MESP014_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MESP014_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	BON_B18-54_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/BON_B18-54_1.ReadsPerGene.out.tab
+STAR	ReadsPerGene	RGP_1214_3_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/RGP_1214_3_M1.ReadsPerGene.out.tab
 STAR	ReadsPerGene	T1244	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/T1244.ReadsPerGene.out.tab
 STAR	ReadsPerGene	VCGS_FAM26_81_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/VCGS_FAM26_81_2.ReadsPerGene.out.tab
 STAR	ReadsPerGene	MUN_FAM5_SIBLINGMDC1A_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/star/genecounts/MUN_FAM5_SIBLINGMDC1A_01.ReadsPerGene.out.tab
@@ -669,6 +683,7 @@ FastQC	all_sections	HK106-001	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	MBEL028_001_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MBEL028_001_3_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B16-50_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B16-50_1_2_fastqc/fastqc_data.txt
 FastQC	all_sections	UC316-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/UC316-1M_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B20_36_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B20_36_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM11_32_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/VCGS_FAM11_32_2_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B12-76-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B12-76-1_2_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_54_3_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_54_3_2_fastqc/fastqc_data.txt
@@ -737,6 +752,7 @@ FastQC	all_sections	BON_B16-53-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_m
 FastQC	all_sections	OUN_HK112_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/OUN_HK112_001_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_248_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_248_3_fastqc/fastqc_data.txt
 FastQC	all_sections	WAL_OTH2406d-Dec19	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B19-03_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B19-03_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	HK072-001_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK072-001_2_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B17-23_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B17-23_1_fastqc/fastqc_data.txt
 FastQC	all_sections	VCGS_FAM49_153	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/VCGS_FAM49_153_fastqc/fastqc_data.txt
@@ -768,6 +784,7 @@ FastQC	all_sections	447-3_A_3	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	VCGS_DLS_FAM1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/VCGS_DLS_FAM1_1_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-087	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-087_fastqc/fastqc_data.txt
 FastQC	all_sections	T757	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/T757_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B18_65_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B18_65_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B19-57_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B19-57_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	HK085-001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK085-001_fastqc/fastqc_data.txt
 FastQC	all_sections	UC305-1M	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/UC305-1M_fastqc/fastqc_data.txt
@@ -871,6 +888,7 @@ FastQC	all_sections	MESP039_2	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	HK-124	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-124_fastqc/fastqc_data.txt
 FastQC	all_sections	WAL_OTH2406d-Feb20A	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	WAL_OTH2419f-Feb20B	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B16-38	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B16-38.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	HK011_0029	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK011_0029_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-047	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-047_fastqc/fastqc_data.txt
 FastQC	all_sections	OUN_HK137_001	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/OUN_HK137_001_fastqc/fastqc_data.txt
@@ -890,6 +908,7 @@ FastQC	all_sections	K1157-1-4	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	CLA_79Z_CP_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/CLA_79Z_CP_2_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_56_3_3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_56_3_3_fastqc/fastqc_data.txt
 FastQC	all_sections	227DJ_JP_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/227DJ_JP_M1_fastqc/fastqc_data.txt
+FastQC	all_sections	MAN_0694_01	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MAN_0694_01.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_7_4_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_7_4_2_fastqc/fastqc_data.txt
 FastQC	all_sections	RGP_7_5_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_7_5_2_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-071-004	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-071-004_fastqc/fastqc_data.txt
@@ -921,6 +940,7 @@ FastQC	all_sections	CLA_179CI_GG_2	/Users/weisburd/project__rnaseq/code/rnaseq_m
 FastQC	all_sections	254DZ_WP_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/254DZ_WP_M1_fastqc/fastqc_data.txt
 FastQC	all_sections	B16-48_1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/B16-48_1_1_fastqc/fastqc_data.txt
 FastQC	all_sections	HK-032	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/HK-032_fastqc/fastqc_data.txt
+FastQC	all_sections	BON_B19-52_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B19-52_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	MAN_1438-01-M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MAN_1438-01-M1_fastqc/fastqc_data.txt
 FastQC	all_sections	163BV_JE_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/163BV_JE_M1_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B13-55_1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B13-55_1_2_fastqc/fastqc_data.txt
@@ -947,6 +967,7 @@ FastQC	all_sections	B14-07RNA	/Users/weisburd/project__rnaseq/code/rnaseq_method
 FastQC	all_sections	BON_B15-95_CHX_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B15-95_CHX_1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	MUN_FAM4_ATYPICALMDC1A_01_R3	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MUN_FAM4_ATYPICALMDC1A_01_R3_fastqc/fastqc_data.txt
 FastQC	all_sections	SWE_36326_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/SWE_36326_1_fastqc/fastqc_data.txt
+FastQC	all_sections	RGP_1214_3_M1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/RGP_1214_3_M1.Aligned.sortedByCoord.out_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B12-74-1_1	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B12-74-1_1_fastqc/fastqc_data.txt
 FastQC	all_sections	MUN_FAM1_CTRL_02	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/MUN_FAM1_CTRL_02_fastqc/fastqc_data.txt
 FastQC	all_sections	BON_B16-75-1_2	/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/multiqc/data/all/fastqc/zip/BON_B16-75-1_2_fastqc/fastqc_data.txt
