@@ -103,6 +103,15 @@ interactively
 (TODO convert these to scripts) 
  
 ---
+**Impute tissue**
+
+Run rnaseq_methods/pipelines/pca_to_impute_tissue/PCA_all_samples.R to compute PCs and plot samples vs. GTEx tissues.
+
+Plots:
+* [2021/03/03](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210303__all_samples_and_GTEx_PCA.html) 
+* [2021/02/01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html) ([with sample labels](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA_with_sample_labels.html))
+
+---
 
 **TGG-viewer: Single Sample VCFs**
 
@@ -169,22 +178,22 @@ python3 ./download_files_and_run_multiqc.py [batch name]
 python3 ./download_files_and_run_multiqc.py all
 ``` 
 
+
 ---
-**Impute tissue, sex, and check for RNA vs. DNA fingerprint**
+**Update analysis spreadsheet**
 
-Run rnaseq_methods/pipelines/pca_to_impute_tissue/PCA_all_samples.R to compute PCs and plot samples vs. GTEx tissues.
+After tissues have been imputed and all other columns populated in the seqr info + other metadata (auto), run 
 
-Previous plots:
-* [2020/02/01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html) ([with sample labels](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA_with_sample_labels.html))
+```
+step4_update_analysis_metadata_worksheet.py
+```
+
+This updates the `downstream analysis metadata (auto)` sheet which is used by 
+downstream pipelines.
 
 ---
 Now that all new samples are in the  [metadata spreadsheet](https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=421510693),
 run downstream analyses - using python scripts and [hail Batch](https://hail.is/docs/batch/api.html) ([zulip](https://hail.zulipchat.com/#narrow/stream/223457-Batch-support)).
-    
----
-
-- TGG-viewer gCNV tracks
-- Aneva
 
 ---
 
