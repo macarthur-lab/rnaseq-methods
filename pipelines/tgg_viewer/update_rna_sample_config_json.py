@@ -40,55 +40,55 @@ for _, row in df.iterrows():
     if not row.sample_id:
         continue
 
-    data = []
+    rnaseq_data = []
     if row.junctions_bed:
-        data.append({'type': 'junctions', 'url': row.junctions_bed})
+        rnaseq_data.append({'type': 'junctions', 'url': row.junctions_bed})
     if row.coverage_bigwig:
-        data.append({'type': 'coverage', 'url': row.coverage_bigwig})
-    if row.grch38_vcf and row.grch38_vcf.strip():
-        data.append({'type': 'vcf', 'url': row.grch38_vcf})
+        rnaseq_data.append({'type': 'coverage', 'url': row.coverage_bigwig})
     if row.star_bam:
-        data.append({'type': 'alignment', 'url': row.star_bam})
+        rnaseq_data.append({'type': 'alignment', 'url': row.star_bam})
 
-    if data:
-        batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
-        imputed_tissue = row["imputed tissue"]
+    dna_data = []
+    if row.grch38_vcf and row.grch38_vcf.strip():
+        dna_data.append({'type': 'vcf', 'url': row.grch38_vcf})
 
-        COLUMN_LABELS = {
-            "batch_date_from_hg19_bam_header": "sequencing date",
-            "CanditateGenes (culprit,if solved) (Beryl)": "Canditate Genes (Beryl)",
-        }
-        description = "<table>"
-        description += "\n".join([f"<tr><td><b>{COLUMN_LABELS.get(c, c)}:</b></td><td>{row[c]}</td></tr>" for c in [
-            'batch_date_from_hg19_bam_header',
-            'imputed tissue',
-            'read length (rnaseqc)',
-            'proj (seqr)',
-            'analysis status (seqr)',
-            'variant tags (seqr)',
-            'coded phenotype (seqr)',
-            'Include in manuscript? (Beryl:Probands)',
-            'Phenotype (Beryl:Probands)',
-            'Clinical Diagnosis (Beryl:Supp.)',
-            'Data_type (Beryl:Probands)',
-            'Genetic diagnosis Status (Beryl:Probands)',
-            'CanditateGenes (culprit,if solved) (Beryl:Probands)',
-            'Candidate  Variants (Beryl:Probands)',
-        ] if row[c]])
-        description += "</table>"
+    if row["WGS cram path"]:
+        dna_data.append({'type': 'alignment', 'url': row["WGS cram path"]})
+    elif row["WES cram path"]:
+        dna_data.append({'type': 'alignment', 'url': row["WES cram path"]})
 
-        rows_by_batch[batch_name].append({'name': row.sample_id, 'data': data, "description": description})
-        if imputed_tissue:
-            rows_by_batch[imputed_tissue].append({'name': row.sample_id, 'data': data, "description": description})
+    batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
+    imputed_tissue = row["imputed tissue"]
 
-        #all_samples_batch_data = []
-        #for d in data:
-        #    d = dict(d)
-        #    if d["type"] == "junctions":
-        #        d["url"] = "/".join(["batch_all_samples" if "batch_" in p else p for p in d["url"].split("/")])
-        #    all_samples_batch_data.append(d)
-        #rows_by_batch["all"].append({'name': row.sample_id, 'data': all_samples_batch_data, "description": description})
-        rows_by_batch["all"].append({'name': row.sample_id, 'data': data, "description": description})
+    COLUMN_LABELS = {
+        "batch_date_from_hg19_bam_header": "RNA sequencing date",
+        "CanditateGenes (culprit,if solved) (Beryl)": "Canditate Genes (Beryl)",
+    }
+    description = "<table>"
+    description += "\n".join([f"<tr><td><b>{COLUMN_LABELS.get(c, c)}:</b></td><td>{row[c]}</td></tr>" for c in [
+        'batch_date_from_hg19_bam_header',
+        'imputed tissue',
+        'read length (rnaseqc)',
+        'proj WGS (seqr)',
+        'proj WES (seqr)',
+        'analysis status (seqr)',
+        'variant tags (seqr)',
+        'coded phenotype (seqr)',
+        'Include in manuscript? (Beryl:Probands)',
+        'Phenotype (Beryl:Probands)',
+        'Clinical Diagnosis (Beryl:Supp.)',
+        'Data_type (Beryl:Probands)',
+        'Genetic diagnosis Status (Beryl:Probands)',
+        'CanditateGenes (culprit,if solved) (Beryl:Probands)',
+        'Candidate  Variants (Beryl:Probands)',
+    ] if row[c]])
+    description += "</table>"
+
+    for current_batch_name in ["all", batch_name] + ([imputed_tissue] if imputed_tissue else []):
+        if rnaseq_data:
+            rows_by_batch[current_batch_name].append({'name': f"{row.sample_id}", 'data': rnaseq_data, "description": description})
+        if dna_data:
+            rows_by_batch[current_batch_name].append({'name': f"DNA:{row.sample_id}", 'data': dna_data, "description": description})
 
 #%%
 for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:

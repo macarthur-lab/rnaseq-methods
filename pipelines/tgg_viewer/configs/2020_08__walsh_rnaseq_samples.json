@@ -329,7 +329,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2405f-Dec19"
         },
         {
@@ -347,7 +347,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2405f-Feb20A"
         },
         {
@@ -365,7 +365,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2405f-Feb20C"
         },
         {
@@ -383,7 +383,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2406d-Dec19"
         },
         {
@@ -401,7 +401,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2406d-Feb20A"
         },
         {
@@ -419,7 +419,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2406d-Feb20B"
         },
         {
@@ -437,7 +437,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2407d-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2407d-Dec19"
         },
         {
@@ -455,7 +455,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2407d-Feb20A"
         },
         {
@@ -473,7 +473,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2407d-Feb20B"
         },
         {
@@ -491,7 +491,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2419f-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2419f-Dec19"
         },
         {
@@ -509,7 +509,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2419f-Feb20A"
         },
         {
@@ -527,7 +527,7 @@
               "url": "gs://tgg-rnaseq-walsh/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
-          "description": "<table><tr><td><b>sequencing date:</b></td><td>2020-7</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "OTH2419f-Feb20B"
         },
         {
