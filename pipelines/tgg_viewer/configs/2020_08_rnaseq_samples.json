@@ -432,10 +432,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/HK044_0110.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-4220b594-e88e-4468-b4ff-ef782fd51d15/CMG_Broad_Orphan_Estonia-Ounap_WGS_all/G106239/WGS/HK044_0110/v1/HK044_0110.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 16 Review tag(s), 1 MatchBox (MME) tag(s), 7 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Kabuki-like, Kabuki-like </td></tr></table>",
