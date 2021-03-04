@@ -35,7 +35,8 @@ print(os.getcwd())
 
 #row.star_pipeline_batch
 
-rows_by_batch = collections.defaultdict(list)
+rna_rows_by_batch = collections.defaultdict(list)
+dna_rows_by_batch = collections.defaultdict(list)
 for _, row in df.iterrows():
     if not row.sample_id:
         continue
@@ -86,9 +87,9 @@ for _, row in df.iterrows():
 
     for current_batch_name in ["all", batch_name] + ([imputed_tissue] if imputed_tissue else []):
         if rnaseq_data:
-            rows_by_batch[current_batch_name].append({'name': f"{row.sample_id}", 'data': rnaseq_data, "description": description})
+            rna_rows_by_batch[current_batch_name].append({'name': row.sample_id, 'data': rnaseq_data, "description": description})
         if dna_data:
-            rows_by_batch[current_batch_name].append({'name': f"DNA:{row.sample_id}", 'data': dna_data, "description": description})
+            dna_rows_by_batch[current_batch_name].append({'name': row.sample_id, 'data': dna_data, "description": description})
 
 #%%
 for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
@@ -119,7 +120,7 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
         continue
 
     tissue_label = tissue_name.replace("_", " ").rstrip("s")
-    rows_by_batch[tissue_name].append({
+    rna_rows_by_batch[tissue_name].append({
         'name': f'all {num_combined_junctions_bed_samples} {tissue_label} samples',
         'description': f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track.",
         'data': [
@@ -131,7 +132,7 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
 #%%
 
 # handle walsh batch samples - switch bucket, add several non-RNA WGS samples that are in seqr
-rows_by_batch['2020_08__walsh'].extend([
+dna_rows_by_batch['2020_08__walsh'].extend([
     {
         'name': 'WAL_OTH2411b_1086394128_D1',
         'description': 'WGS DNA sample',
@@ -155,7 +156,7 @@ rows_by_batch['2020_08__walsh'].extend([
     }
 ])
 
-for d in rows_by_batch['2020_08__walsh']:
+for d in dna_rows_by_batch['2020_08__walsh']:
     d['name'] = d['name'].replace("WAL_", "").replace("_D1", "")
     for data in d['data']:
         data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
@@ -166,8 +167,9 @@ for d in rows_by_batch['2020_08__walsh']:
 
 #%%
 # output settings
-for batch_name, rows in rows_by_batch.items():
-    rnaseq_sample_rows = json.dumps(rows)
+for batch_name, rna_rows in sorted(rna_rows_by_batch.items()):
+    rnaseq_sample_rows = json.dumps(rna_rows)
+    dna_sample_rows = json.dumps(dna_rows_by_batch[batch_name])
 
     if batch_name == "2020_08__walsh":
         locus = "chr20:1-2,135,825"
@@ -415,8 +417,12 @@ for batch_name, rows in rows_by_batch.items():
                 ]
             },
             {
-                "categoryName": "Samples",
+                "categoryName": "RNA Samples",
                 "rows": %(rnaseq_sample_rows)s
+            },
+            {
+                "categoryName": "DNA Samples",
+                "rows": %(dna_sample_rows)s
             }
         ]
     }

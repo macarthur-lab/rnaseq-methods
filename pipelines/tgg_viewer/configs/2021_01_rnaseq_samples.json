@@ -312,7 +312,7 @@
       ]
     },
     {
-      "categoryName": "Samples",
+      "categoryName": "RNA Samples",
       "rows": [
         {
           "data": [
@@ -335,20 +335,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B09-8_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Oct2019/C2047/Exome/BON_B09-8_1_1/v2/BON_B09-8_1_1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Secondary finding tag(s), 8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Skeletal myopathy and learning disabilities </td></tr></table>",
-          "name": "DNA:BON_B09-8_1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B15-95_CHX_1.junctions.bed.gz"
             },
@@ -363,20 +349,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Known gene for phenotype tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, TYPE 2R; CMT2R </td></tr></table>",
           "name": "BON_B15-95_CHX_1"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B15-95_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B15-95_1_D1/v1/BON_B15-95_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Known gene for phenotype tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, TYPE 2R; CMT2R </td></tr></table>",
-          "name": "DNA:BON_B15-95_CHX_1"
         },
         {
           "data": [
@@ -417,20 +389,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18-23_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-b5b55f61-4559-4ca6-965f-5a360515aaa8/CMG_Broad_Bonnemann_MuscleDisease_WGS_Closed_Jul2019/RP-1425/WGS/BON_B18-23_1_1/v1/BON_B18-23_1_1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive muscle weakness, Progressive muscle weakness </td></tr></table>",
-          "name": "DNA:BON_B18-23_CHX_1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18_65_CHX_1.junctions.bed.gz"
             },
@@ -445,20 +403,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr></table>",
           "name": "BON_B18_65_CHX_1"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18_65_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed/C2047/Exome/BON_B18_65_1_D1/v1/BON_B18_65_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr></table>",
-          "name": "DNA:BON_B18_65_CHX_1"
         },
         {
           "data": [
@@ -481,20 +425,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-03_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B19-03_1_D1/v1/BON_B19-03_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Send for Sanger validation tag(s), 9 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>POLYMICROGYRIA WITH OR WITHOUT VASCULAR-TYPE EHLERS-DANLOS SYNDROME; PMGEDSV </td></tr></table>",
-          "name": "DNA:BON_B19-03_CHX_1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-45_CHX_1.junctions.bed.gz"
             },
@@ -509,20 +439,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
           "name": "BON_B19-45_CHX_1"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-45_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-45_1_D1/v1/BON_B19-45_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
-          "name": "DNA:BON_B19-45_CHX_1"
         },
         {
           "data": [
@@ -545,20 +461,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-52_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-52_1_D1/v1/BON_B19-52_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Test segregation tag(s), 1 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 11 Review tag(s), 2 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
-          "name": "DNA:BON_B19-52_CHX_1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-54_CHX_1.junctions.bed.gz"
             },
@@ -573,20 +475,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Test segregation tag(s), 1 Send for Sanger validation tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
           "name": "BON_B19-54_CHX_1"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-54_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-54_1_D1/v1/BON_B19-54_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Test segregation tag(s), 1 Send for Sanger validation tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
-          "name": "DNA:BON_B19-54_CHX_1"
         },
         {
           "data": [
@@ -609,20 +497,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-57_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-57_1_D1/v1/BON_B19-57_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
-          "name": "DNA:BON_B19-57_1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-59_CHX_1.junctions.bed.gz"
             },
@@ -637,20 +511,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
           "name": "BON_B19-59_CHX_1"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-59_CHX_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-59_1_D1/v1/BON_B19-59_1_D1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
-          "name": "DNA:BON_B19-59_CHX_1"
         },
         {
           "data": [
@@ -691,20 +551,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-da00680d-3e1e-49a1-ba71-82ca679a7b7f/AnVIL_CMG_Broad_Orphan_Manton_WGS_Mar2020/RP-1486/WGS/MAN_0694_01_1/v1/MAN_0694_01_1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
-          "name": "DNA:MAN_0694_01"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_1214_3_M1.junctions.bed.gz"
             },
@@ -723,20 +569,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/RGP_1214_3_M1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_19Aug2020/RP-1457/WGS/RGP_1214_3/v1/RGP_1214_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Known gene, new phenotype tag(s), 11 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle Weakness, Abnormality of binocular vision, Urinary retention </td></tr></table>",
-          "name": "DNA:RGP_1214_3_M1"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_800_3_3.junctions.bed.gz"
             },
@@ -751,6 +583,179 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
           "name": "RGP_800_3_3"
+        }
+      ]
+    },
+    {
+      "categoryName": "DNA Samples",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B09-8_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Oct2019/C2047/Exome/BON_B09-8_1_1/v2/BON_B09-8_1_1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Secondary finding tag(s), 8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Skeletal myopathy and learning disabilities </td></tr></table>",
+          "name": "BON_B09-8_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B15-95_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B15-95_1_D1/v1/BON_B15-95_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Known gene for phenotype tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, TYPE 2R; CMT2R </td></tr></table>",
+          "name": "BON_B15-95_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18-23_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-b5b55f61-4559-4ca6-965f-5a360515aaa8/CMG_Broad_Bonnemann_MuscleDisease_WGS_Closed_Jul2019/RP-1425/WGS/BON_B18-23_1_1/v1/BON_B18-23_1_1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive muscle weakness, Progressive muscle weakness </td></tr></table>",
+          "name": "BON_B18-23_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18_65_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed/C2047/Exome/BON_B18_65_1_D1/v1/BON_B18_65_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr></table>",
+          "name": "BON_B18_65_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-03_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B19-03_1_D1/v1/BON_B19-03_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Send for Sanger validation tag(s), 9 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>POLYMICROGYRIA WITH OR WITHOUT VASCULAR-TYPE EHLERS-DANLOS SYNDROME; PMGEDSV </td></tr></table>",
+          "name": "BON_B19-03_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-45_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-45_1_D1/v1/BON_B19-45_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
+          "name": "BON_B19-45_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-52_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-52_1_D1/v1/BON_B19-52_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Test segregation tag(s), 1 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 11 Review tag(s), 2 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
+          "name": "BON_B19-52_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-54_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-54_1_D1/v1/BON_B19-54_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Test segregation tag(s), 1 Send for Sanger validation tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
+          "name": "BON_B19-54_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-57_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-57_1_D1/v1/BON_B19-57_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
+          "name": "BON_B19-57_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-59_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-59_1_D1/v1/BON_B19-59_1_D1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
+          "name": "BON_B19-59_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-secure-da00680d-3e1e-49a1-ba71-82ca679a7b7f/AnVIL_CMG_Broad_Orphan_Manton_WGS_Mar2020/RP-1486/WGS/MAN_0694_01_1/v1/MAN_0694_01_1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
+          "name": "MAN_0694_01"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/RGP_1214_3_M1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_19Aug2020/RP-1457/WGS/RGP_1214_3/v1/RGP_1214_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Known gene, new phenotype tag(s), 11 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle Weakness, Abnormality of binocular vision, Urinary retention </td></tr></table>",
+          "name": "RGP_1214_3_M1"
         },
         {
           "data": [
@@ -764,7 +769,7 @@
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
-          "name": "DNA:RGP_800_3_3"
+          "name": "RGP_800_3_3"
         }
       ]
     }

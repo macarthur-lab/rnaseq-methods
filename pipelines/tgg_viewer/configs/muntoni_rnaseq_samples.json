@@ -312,7 +312,7 @@
       ]
     },
     {
-      "categoryName": "Samples",
+      "categoryName": "RNA Samples",
       "rows": [
         {
           "data": [
@@ -639,6 +639,10 @@
           "name": "MUN_FAM5_SIBLINGMDC1A_01_R3"
         }
       ]
+    },
+    {
+      "categoryName": "DNA Samples",
+      "rows": []
     }
   ],
   "selectedRowNamesByCategoryName": {

@@ -312,7 +312,7 @@
       ]
     },
     {
-      "categoryName": "Samples",
+      "categoryName": "RNA Samples",
       "rows": [
         {
           "data": [
@@ -353,16 +353,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-2_A_2.vcf.bgz"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
-          "name": "DNA:431-2_A_2"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/432-3_A_2.junctions.bed.gz"
             },
@@ -377,16 +367,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "432-3_A_2"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/432-3_A_2.vcf.bgz"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
-          "name": "DNA:432-3_A_2"
         },
         {
           "data": [
@@ -409,16 +389,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-2_A_2.vcf.bgz"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
-          "name": "DNA:437-2_A_2"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/437-3_A_2.junctions.bed.gz"
             },
@@ -433,16 +403,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "437-3_A_2"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-3_A_2.vcf.bgz"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
-          "name": "DNA:437-3_A_2"
         },
         {
           "data": [
@@ -483,20 +443,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM22_69/v1/VCGS_FAM22_69.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability </td></tr></table>",
-          "name": "DNA:VCGS_FAM22_69_2"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/VCGS_FAM26_81_2.junctions.bed.gz"
             },
@@ -515,20 +461,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM26_81/v1/VCGS_FAM26_81.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>11 Review tag(s), 1 Excluded tag(s), 1 Benign tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Blue sclerae, hip dysplasia, recurrent fractures </td></tr></table>",
-          "name": "DNA:VCGS_FAM26_81_2"
-        },
-        {
-          "data": [
-            {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/combined_bigWigs/lymphocytes/combined.lymphocytes.2_samples.bigWig"
             },
@@ -539,6 +471,79 @@
           ],
           "description": "All 2 lymphocyte rare disease samples combined into one track.",
           "name": "all 2 lymphocyte samples"
+        }
+      ]
+    },
+    {
+      "categoryName": "DNA Samples",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/431-2_A_2.vcf.bgz"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "name": "431-2_A_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/432-3_A_2.vcf.bgz"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "name": "432-3_A_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-2_A_2.vcf.bgz"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "name": "437-2_A_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/437-3_A_2.vcf.bgz"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td> </td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
+          "name": "437-3_A_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM22_69/v1/VCGS_FAM22_69.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability </td></tr></table>",
+          "name": "VCGS_FAM22_69_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM26_81/v1/VCGS_FAM26_81.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>11 Review tag(s), 1 Excluded tag(s), 1 Benign tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Blue sclerae, hip dysplasia, recurrent fractures </td></tr></table>",
+          "name": "VCGS_FAM26_81_2"
         }
       ]
     }

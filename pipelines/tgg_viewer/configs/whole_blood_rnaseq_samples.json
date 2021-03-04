@@ -312,7 +312,7 @@
       ]
     },
     {
-      "categoryName": "Samples",
+      "categoryName": "RNA Samples",
       "rows": [
         {
           "data": [
@@ -331,20 +331,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>suspected hypomyelinating leukodystrophy </td></tr></table>",
           "name": "RGP_94_3_2"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS/RP-1457/WGS/RGP_94_3/v1/RGP_94_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>suspected hypomyelinating leukodystrophy </td></tr></table>",
-          "name": "DNA:RGP_94_3_2"
         },
         {
           "data": [
@@ -385,20 +371,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_10Jan2019/RP-1457/WGS/RGP_554_3/v1/RGP_554_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr></table>",
-          "name": "DNA:RGP_554_3_2"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
             },
@@ -413,20 +385,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
           "name": "RGP_558_3"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_20Feb2019/RP-1457/WGS/RGP_558_3/v1/RGP_558_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
-          "name": "DNA:RGP_558_3"
         },
         {
           "data": [
@@ -449,20 +407,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_Sep2019/RP-1457/WGS/RGP_673_3/v1/RGP_673_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene for known phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disorder </td></tr></table>",
-          "name": "DNA:RGP_673_3"
-        },
-        {
-          "data": [
-            {
               "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_3.junctions.bed.gz"
             },
@@ -477,20 +421,6 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
           "name": "RGP_677_3"
-        },
-        {
-          "data": [
-            {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_August2019/RP-1457/WGS/RGP_677_3/v1/RGP_677_3.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
-          "name": "DNA:RGP_677_3"
         },
         {
           "data": [
@@ -531,20 +461,6 @@
         {
           "data": [
             {
-              "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-da00680d-3e1e-49a1-ba71-82ca679a7b7f/AnVIL_CMG_Broad_Orphan_Manton_WGS_Mar2020/RP-1486/WGS/MAN_0694_01_1/v1/MAN_0694_01_1.cram"
-            }
-          ],
-          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
-          "name": "DNA:MAN_0694_01"
-        },
-        {
-          "data": [
-            {
               "type": "coverage",
               "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.7_samples.bigWig"
             },
@@ -555,6 +471,95 @@
           ],
           "description": "All 7 whole blood rare disease samples combined into one track.",
           "name": "all 7 whole blood samples"
+        }
+      ]
+    },
+    {
+      "categoryName": "DNA Samples",
+      "rows": [
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS/RP-1457/WGS/RGP_94_3/v1/RGP_94_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>suspected hypomyelinating leukodystrophy </td></tr></table>",
+          "name": "RGP_94_3_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_10Jan2019/RP-1457/WGS/RGP_554_3/v1/RGP_554_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr></table>",
+          "name": "RGP_554_3_2"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_20Feb2019/RP-1457/WGS/RGP_558_3/v1/RGP_558_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
+          "name": "RGP_558_3"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_Sep2019/RP-1457/WGS/RGP_673_3/v1/RGP_673_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene for known phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disorder </td></tr></table>",
+          "name": "RGP_673_3"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-8220c146-2192-4085-81e9-e3be2a502635/RGP_Rehm_RareDisease_WGS_August2019/RP-1457/WGS/RGP_677_3/v1/RGP_677_3.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
+          "name": "RGP_677_3"
+        },
+        {
+          "data": [
+            {
+              "type": "vcf",
+              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-secure-da00680d-3e1e-49a1-ba71-82ca679a7b7f/AnVIL_CMG_Broad_Orphan_Manton_WGS_Mar2020/RP-1486/WGS/MAN_0694_01_1/v1/MAN_0694_01_1.cram"
+            }
+          ],
+          "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
+          "name": "MAN_0694_01"
         }
       ]
     }
