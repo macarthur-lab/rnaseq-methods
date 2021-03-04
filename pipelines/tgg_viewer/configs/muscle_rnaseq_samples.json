@@ -3562,25 +3562,11 @@
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/muscle/combined.muscle.162_samples.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/muscle/combined.muscle.162_samples.normalized.junctions.bed.gz"
             }
           ],
-          "description": "All 162 muscle rare disease samples combined into one track.",
-          "name": "all 162 muscle samples"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/muscle/combined.muscle.162_samples.bigWig"
-            },
-            {
-              "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/muscle/combined.muscle.162_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "All 162 muscle rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
-          "name": "all 162 muscle samples"
+          "description": "All 162 muscle rare disease samples combined into one track, with splice junction read counts normalized so that they represent per-sample counts.",
+          "name": "norm. 162 muscle samples"
         },
         {
           "data": [

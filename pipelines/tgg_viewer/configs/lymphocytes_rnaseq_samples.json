@@ -466,20 +466,6 @@
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/lymphocytes/combined.lymphocytes.2_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "All 2 lymphocyte rare disease samples combined into one track.",
-          "name": "all 2 lymphocyte samples"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/lymphocytes/combined.lymphocytes.2_samples.bigWig"
-            },
-            {
-              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/lymphocytes/combined.lymphocytes.2_samples.normalized.junctions.bed.gz"
             }
           ],

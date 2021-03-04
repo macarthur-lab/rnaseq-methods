@@ -2104,20 +2104,6 @@
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.97_samples.junctions.bed.gz"
-            }
-          ],
-          "description": "All 97 fibroblast rare disease samples combined into one track.",
-          "name": "all 97 fibroblast samples"
-        },
-        {
-          "data": [
-            {
-              "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/fibroblasts/combined.fibroblasts.97_samples.bigWig"
-            },
-            {
-              "type": "junctions",
               "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.97_samples.normalized.junctions.bed.gz"
             }
           ],
