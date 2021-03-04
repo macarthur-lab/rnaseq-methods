@@ -2095,6 +2095,48 @@
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
           "name": "BON_B20_36_CHX_1"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/fibroblasts/combined.fibroblasts.97_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.97_samples.junctions.bed.gz"
+            }
+          ],
+          "description": "All 97 fibroblast rare disease samples combined into one track.",
+          "name": "all 97 fibroblast samples"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/fibroblasts/combined.fibroblasts.97_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.97_samples.normalized.junctions.bed.gz"
+            }
+          ],
+          "description": "All 97 fibroblast rare disease samples combined into one track, with splice junction read counts normalized so that they represent per-sample counts.",
+          "name": "norm. 97 fibroblast samples"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/fibroblasts/combined.fibroblasts.97_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/fibroblasts/combined.fibroblasts.97_samples.junctions.bed.gz"
+            }
+          ],
+          "description": "All 97 fibroblast rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
+          "name": "all 97 fibroblast samples"
         }
       ]
     },

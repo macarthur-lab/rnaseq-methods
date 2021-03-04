@@ -471,6 +471,34 @@
           ],
           "description": "All 8 whole blood rare disease samples combined into one track.",
           "name": "all 8 whole blood samples"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.normalized.junctions.bed.gz"
+            }
+          ],
+          "description": "All 8 whole blood rare disease samples combined into one track, with splice junction read counts normalized so that they represent per-sample counts.",
+          "name": "norm. 8 whole blood samples"
+        },
+        {
+          "data": [
+            {
+              "type": "coverage",
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
+            },
+            {
+              "type": "junctions",
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.junctions.bed.gz"
+            }
+          ],
+          "description": "All 8 whole blood rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
+          "name": "all 8 whole blood samples"
         }
       ]
     },

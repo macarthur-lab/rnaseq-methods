@@ -93,19 +93,6 @@ for _, row in df.iterrows():
 
 #%%
 for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
-    combined_junctions_bed_gs_path = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}.*_samples.junctions.bed.gz"
-    combined_junctions_bed_paths = [x["path"] for x in hl.hadoop_ls(combined_junctions_bed_gs_path)]
-    if not combined_junctions_bed_paths:
-        print(f"WARNING: combined file not found: {combined_junctions_bed_gs_path}")
-        continue
-    elif len(combined_junctions_bed_paths) > 1:
-        print(f"WARNING: more than one {tissue_name} file found:")
-        print("\n".join(combined_junctions_bed_paths))
-
-    combined_junctions_bed_path = combined_junctions_bed_paths[-1]
-    match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.junctions.bed.gz", combined_junctions_bed_path)
-    num_combined_junctions_bed_samples = match.group(1)
-
     combined_bigWig_gs_path = f"gs://macarthurlab-rnaseq/combined_bigWigs/{tissue_name}/combined.{tissue_name}.*_samples.bigWig"
     combined_bigWig_paths = [x["path"] for x in hl.hadoop_ls(combined_bigWig_gs_path)]
     if not combined_bigWig_paths:
@@ -115,19 +102,46 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
     match = re.search(f"combined.{tissue_name}.([0-9]+)_samples.bigWig", combined_bigWig_path)
     num_combined_bigWig_samples = match.group(1)
 
-    if num_combined_junctions_bed_samples != num_combined_bigWig_samples:
-        print(f"ERROR:  {tissue_name} num_combined_junctions_bed_samples != num_combined_bigWig_samples: {num_combined_junctions_bed_samples} != {num_combined_bigWig_samples}")
-        continue
+    for normalized_or_raw in "normalized", "raw":
+        if normalized_or_raw == "raw":
+            suffix = "_samples.junctions.bed.gz"
+        else:
+            suffix = "_samples.normalized.junctions.bed.gz"
 
-    tissue_label = tissue_name.replace("_", " ").rstrip("s")
-    rna_rows_by_batch[tissue_name].append({
-        'name': f'all {num_combined_junctions_bed_samples} {tissue_label} samples',
-        'description': f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track.",
-        'data': [
-            {'type': 'coverage', 'url': combined_bigWig_path},
-            {'type': 'junctions', 'url': combined_junctions_bed_path},
-        ],
-    })
+        combined_junctions_bed_gs_path = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}.*{suffix}"
+        combined_junctions_bed_paths = [x["path"] for x in hl.hadoop_ls(combined_junctions_bed_gs_path)]
+        if not combined_junctions_bed_paths:
+            print(f"WARNING: combined file not found: {combined_junctions_bed_gs_path}")
+            continue
+        elif len(combined_junctions_bed_paths) > 1:
+            print(f"WARNING: more than one {tissue_name} file found:")
+            print("\n".join(combined_junctions_bed_paths))
+
+        combined_junctions_bed_path = combined_junctions_bed_paths[-1]
+        match = re.search(f"combined.{tissue_name}.([0-9]+){suffix}", combined_junctions_bed_path)
+        num_combined_junctions_bed_samples = match.group(1)
+
+        if num_combined_junctions_bed_samples != num_combined_bigWig_samples:
+            print(f"ERROR:  {tissue_name} num_combined_junctions_bed_samples != num_combined_bigWig_samples: {num_combined_junctions_bed_samples} != {num_combined_bigWig_samples}")
+            continue
+
+        tissue_label = tissue_name.replace("_", " ").rstrip("s")
+
+        if normalized_or_raw == "raw":
+            name = f'all {num_combined_junctions_bed_samples} {tissue_label} samples'
+            description = f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track. Splice junction read counts are summed across all samples."
+        else:
+            name = f'norm. {num_combined_junctions_bed_samples} {tissue_label} samples'
+            description = f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track, with splice junction read counts normalized so that they represent per-sample counts."
+
+        rna_rows_by_batch[tissue_name].append({
+            'name': name,
+            'description': description,
+            'data': [
+                {'type': 'coverage', 'url': combined_bigWig_path},
+                {'type': 'junctions', 'url': combined_junctions_bed_path},
+            ],
+        })
 
 #%%
 

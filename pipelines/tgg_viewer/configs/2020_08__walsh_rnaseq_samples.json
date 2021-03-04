@@ -572,6 +572,44 @@
           ],
           "description": "Unannotated genes in the chr20:1-2,135,825 linkage region - shared by Victor",
           "name": "linkage region novel genes"
+        },
+        {
+          "data": [
+            {
+              "type": "alignment",
+              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.cram"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2411b_1086394128_D1.vcf.gz"
+            }
+          ],
+          "description": "WGS DNA sample",
+          "name": "OTH2411b_1086394128"
+        },
+        {
+          "data": [
+            {
+              "type": "alignment",
+              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.cram"
+            },
+            {
+              "type": "vcf",
+              "url": "gs://tgg-rnaseq-walsh/WAL_OTH2400_OTH2405_D1.vcf.gz"
+            }
+          ],
+          "description": "WGS DNA sample",
+          "name": "OTH2400_OTH2405"
+        },
+        {
+          "data": [
+            {
+              "type": "bed",
+              "url": "gs://seqr-reference-data/GRCh38/rna-seq/chr20_linkage_region_unnanotated_genes__grch38.bed.gz"
+            }
+          ],
+          "description": "Unannotated genes in the chr20:1-2,135,825 linkage region - shared by Victor",
+          "name": "linkage region novel genes"
         }
       ]
     }
