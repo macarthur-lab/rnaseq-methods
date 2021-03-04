@@ -1176,10 +1176,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-3b2bc739-bbc0-4b14-80fa-65dcf17eac3b/CMG_Broad_Orphan_Estonia-Ounap_WES_all/C2083/Exome/HK085-001/v1/HK085-001.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell </td></tr></table>",
@@ -1280,6 +1276,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-320c791f-64f6-48ed-b979-bd689d463d4a/CMG_Broad_Estonia_OrphanDisease_WES_Closed_Jun2019/RP-1314/Exome/OUN_HK127-001_D1/v1/OUN_HK127-001_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -1300,6 +1300,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-320c791f-64f6-48ed-b979-bd689d463d4a/CMG_Broad_Estonia_OrphanDisease_WES_Closed_Jun2019/RP-1314/Exome/OUN_HK133-001_D1/v1/OUN_HK133-001_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",

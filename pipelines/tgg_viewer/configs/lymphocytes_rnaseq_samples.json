@@ -522,10 +522,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM22_69_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM22_69/v1/VCGS_FAM22_69.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Cleft lip, ptosis, conductive deafness, vertigo, aggressive behavior, disturbed sleep, mild intellectual disability </td></tr></table>",
@@ -536,10 +532,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM26_81_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM26_81/v1/VCGS_FAM26_81.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>lymphocytes</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>11 Review tag(s), 1 Excluded tag(s), 1 Benign tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Blue sclerae, hip dysplasia, recurrent fractures </td></tr></table>",

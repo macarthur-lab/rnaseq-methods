@@ -2116,6 +2116,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B12-71_2.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed/C2047/Exome/BON_B12-71_2_1/v2/BON_B12-71_2_1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>12 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Spasticity and optic neuropathy, Spasticity and optic neuropathy </td></tr></table>",
@@ -2196,6 +2200,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/BON_B17-28_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed/C2047/Exome/BON_B17-28_1_1/v2/BON_B17-28_1_1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>24 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Kyphoscoliosis, short stature, abnormal facial shape, Kyphoscoliosis, short stature, abnormal facial shape </td></tr></table>",
@@ -2266,10 +2274,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/HK085-001.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-3b2bc739-bbc0-4b14-80fa-65dcf17eac3b/CMG_Broad_Orphan_Estonia-Ounap_WES_all/C2083/Exome/HK085-001/v1/HK085-001.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell </td></tr></table>",
@@ -2320,10 +2324,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MAN_0063_01_02.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-9cd5bace-0607-49c0-b62c-837aa8cf195d/CMG_Broad_Orphan_Manton_WES_all/C1992/Exome/MAN_0063_01_01/v2/MAN_0063_01_01.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2017-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>MARFAN SYNDROME; MFS, MARFAN SYNDROME; MFS </td></tr></table>",
@@ -2334,10 +2334,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/MESP014_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-111d9846-e5b6-428f-bfcb-b6cf57a6ae8c/CMG_Broad_Muscle_Myoseq_WES_all/C1847/Exome/MESP014/v1/MESP014.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2017-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>MYOSEQ_PCRFree_WGS_v5</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>MYOSEQ_v20</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Likely Pathogenic tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Limb-Girdle Weakness </td></tr></table>",
@@ -2432,10 +2428,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_DLS_FAM1_1.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM1_1/v1/VCGS_FAM1_1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>20 Review tag(s), 7 Not Related to Phenotype tag(s), 4 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Malformation syndrome </td></tr></table>",
@@ -2446,10 +2438,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM11_32_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM11_32/v1/VCGS_FAM11_32.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 2 Known gene for phenotype tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>AXENFELD-RIEGER SYNDROME, TYPE 3; RIEG3 </td></tr></table>",
@@ -2460,10 +2448,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM12_36_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM12_36/v1/VCGS_FAM12_36.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s), 14 Not Related to Phenotype tag(s), 7 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Craniofacial defects, optic nerve hypoplasia, sensorineural hearing impairment, Muscular hypotonia of the trunk, multiple brain abnormalities including cerebellar hypoplasia </td></tr></table>",
@@ -2514,10 +2498,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM1_1_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM1_1/v1/VCGS_FAM1_1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>20 Review tag(s), 7 Not Related to Phenotype tag(s), 4 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Malformation syndrome </td></tr></table>",
@@ -2528,10 +2508,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM27_84_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM27_84/v1/VCGS_FAM27_84.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 1 - Novel gene and phenotype tag(s), 12 Review tag(s), 18 Not Related to Phenotype tag(s), 1 Likely False Positive tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodegenerative condition </td></tr></table>",
@@ -2542,10 +2518,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM29_90.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM29_90/v1/VCGS_FAM29_90.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>22 Review tag(s), 1 Not Related to Phenotype tag(s), 4 MatchBox (MME) tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Microcephaly </td></tr></table>",
@@ -2556,10 +2528,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM2_4_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM2_4/v2/VCGS_FAM2_4.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 4 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>hypotonia, micrognathia and arthrogryposis multiplex </td></tr></table>",
@@ -2570,10 +2538,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM31_97_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM31_97/v1/VCGS_FAM31_97.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>16 Review tag(s), 2 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>ectodermal dysplasia and intellectual disability </td></tr></table>",
@@ -2584,10 +2548,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM39_123.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM39_123/v1/VCGS_FAM39_123.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>11 Review tag(s), 1 Not Related to Phenotype tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Short stature, craniofacial abnormalities, developmental delay, cryptorchidism, Arnold-Chiari malformation </td></tr></table>",
@@ -2598,10 +2558,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM3_7_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM3_7/v1/VCGS_FAM3_7.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 17 Review tag(s), 6 Not Related to Phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Likely False Positive tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Craniofacial, eye defects, cardiovascular and developmental delay </td></tr></table>",
@@ -2632,10 +2588,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM49_153.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM49_153/v1/VCGS_FAM49_153.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>hypotonia/hypertonia; feeding diffs; external ophthalmoplegia </td></tr></table>",
@@ -2646,10 +2598,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM4_13_2.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM4_13/v1/VCGS_FAM4_13.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 1 - Novel gene and phenotype tag(s), 20 Review tag(s), 4 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Brain malformations </td></tr></table>",
@@ -2660,10 +2608,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM52_162_3.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM52_162/v1/VCGS_FAM52_162.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2018-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene for known phenotype tag(s), 1 Share with KOMP tag(s), 2 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Profound intellectual disability, seizures, hypotonia </td></tr></table>",
@@ -2674,10 +2618,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM58_181.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM58_181/v1/VCGS_FAM58_181.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - gene linked to different phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Phenotype expansion tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -2688,10 +2628,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM61_190.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM61_190/v4/VCGS_FAM61_190.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Second Hit Needed tag(s), 16 Review tag(s), 1 Not Related to Phenotype tag(s), 4 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -2702,10 +2638,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM67_209.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM67_209/v1/VCGS_FAM67_209.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s), 4 Not Related to Phenotype tag(s), 5 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -2730,10 +2662,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/VCGS_FAM84_260.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17/CMG_Broad_Orphan_VCGS-White_WES_all/C2035/Exome/VCGS_FAM84_260/v1/VCGS_FAM84_260.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-06</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_VCGS_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>35 Review tag(s), 1 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Malformation syndrome </td></tr></table>",
@@ -2884,10 +2812,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-3b2bc739-bbc0-4b14-80fa-65dcf17eac3b/CMG_Broad_Orphan_Estonia-Ounap_WES_all/C2083/Exome/HK085-001/v1/HK085-001.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for Sanger validation tag(s), 2 Sanger validated tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell </td></tr></table>",
@@ -2988,6 +2912,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-320c791f-64f6-48ed-b979-bd689d463d4a/CMG_Broad_Estonia_OrphanDisease_WES_Closed_Jun2019/RP-1314/Exome/OUN_HK127-001_D1/v1/OUN_HK127-001_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -3008,6 +2936,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-320c791f-64f6-48ed-b979-bd689d463d4a/CMG_Broad_Estonia_OrphanDisease_WES_Closed_Jun2019/RP-1314/Exome/OUN_HK133-001_D1/v1/OUN_HK133-001_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",
@@ -3042,6 +2974,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B15-95_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B15-95_1_D1/v1/BON_B15-95_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 1 Known gene for phenotype tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CHARCOT-MARIE-TOOTH DISEASE, AXONAL, TYPE 2R; CMT2R </td></tr></table>",
@@ -3066,6 +3002,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18_65_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed/C2047/Exome/BON_B18_65_1_D1/v1/BON_B18_65_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr></table>",
@@ -3076,6 +3016,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-03_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Aug2019/RP-1425/Exome/BON_B19-03_1_D1/v1/BON_B19-03_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Send for Sanger validation tag(s), 9 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>POLYMICROGYRIA WITH OR WITHOUT VASCULAR-TYPE EHLERS-DANLOS SYNDROME; PMGEDSV </td></tr></table>",
@@ -3086,6 +3030,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-45_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-45_1_D1/v1/BON_B19-45_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td> </td></tr></table>",
@@ -3096,6 +3044,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-52_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-52_1_D1/v1/BON_B19-52_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Test segregation tag(s), 1 Send for Sanger validation tag(s), 1 Secondary finding tag(s), 1 Sanger validated tag(s), 1 Sanger did not confirm tag(s), 11 Review tag(s), 2 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -3106,6 +3058,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-54_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-54_1_D1/v1/BON_B19-54_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Test segregation tag(s), 1 Send for Sanger validation tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -3116,6 +3072,10 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-59_CHX_1.vcf.bgz"
+            },
+            {
+              "type": "alignment",
+              "url": "gs://fc-e5087cac-6c2e-47cc-b689-da1a002394b8/CMG_Broad_Bonnemann_MuscleDisease_WES_Closed_Apr2020/RP-1425/Exome/BON_B19-59_1_D1/v1/BON_B19-59_1_D1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",

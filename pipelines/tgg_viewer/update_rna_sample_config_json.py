@@ -55,7 +55,7 @@ for _, row in df.iterrows():
 
     if row["WGS cram path"] and not any(k in row["WGS cram path"].lower() for k in ["anvil", "fc-secure"]):  #  TODO include anvil after igv.js supports requester-pays buckets
         dna_data.append({'type': 'alignment', 'url': row["WGS cram path"]})
-    elif row["WES cram path"] and any(k in row["WES cram path"].lower() for k in ["anvil", "fc-secure"]):  #  TODO include anvil after igv.js supports requester-pays buckets
+    elif row["WES cram path"] and not any(k in row["WES cram path"].lower() for k in ["anvil", "fc-secure"]):  #  TODO include anvil after igv.js supports requester-pays buckets
         dna_data.append({'type': 'alignment', 'url': row["WES cram path"]})
 
     batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")
