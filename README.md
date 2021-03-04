@@ -108,8 +108,8 @@ interactively
 Run rnaseq_methods/pipelines/pca_to_impute_tissue/PCA_all_samples.R to compute PCs and plot samples vs. GTEx tissues.
 
 Plots:
-* [2021/03/03](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210303__all_samples_and_GTEx_PCA.html) 
-* [2021/02/01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA.html) ([with sample labels](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA_with_sample_labels.html))
+* [2021/03/03](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210302__all_samples_and_GTEx_PCA_with_sample_labels.html) 
+* [2021/02/01](https://macarthur-lab.github.io/rnaseq-methods/pipelines/pca_to_impute_tissue/20210210__all_samples_and_GTEx_PCA_with_sample_labels.html)
 
 ---
 
