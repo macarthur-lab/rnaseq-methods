@@ -61,9 +61,6 @@ if __name__ == "__main__":
     p.add_argument("batch_name", nargs="+", choices=analysis_batches | star_pipeline_batches, help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
-    if not args.force:
-        hl.init(log="/dev/null", quiet=True)
-
     # process batches
     batch_label = args.batch_name[0] if len(args.batch_name) == 1 else f"{len(args.batch_name)} batches"
     with batch_utils.run_batch(args, batch_name=f"combine junctions: {batch_label}") as batch:

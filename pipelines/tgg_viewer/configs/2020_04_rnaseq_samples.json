@@ -1264,10 +1264,6 @@
             {
               "type": "vcf",
               "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-104.vcf.bgz"
-            },
-            {
-              "type": "alignment",
-              "url": "gs://fc-secure-4220b594-e88e-4468-b4ff-ef782fd51d15/AnVIL_CMG_Broad_Orphan_Estonia-Ounap_WGS_Mar2020/RP-1512/WGS/HK104-001_D2/v1/HK104-001_D2.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for Sanger validation tag(s), 3 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) </td></tr></table>",

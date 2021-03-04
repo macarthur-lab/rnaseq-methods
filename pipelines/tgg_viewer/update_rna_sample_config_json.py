@@ -53,9 +53,9 @@ for _, row in df.iterrows():
     if row.grch38_vcf and row.grch38_vcf.strip():
         dna_data.append({'type': 'vcf', 'url': row.grch38_vcf})
 
-    if row["WGS cram path"]:
+    if row["WGS cram path"] and "anvil" not in row["WGS cram path"].lower():  #  TODO include anvil after igv.js supports requester-pays buckets
         dna_data.append({'type': 'alignment', 'url': row["WGS cram path"]})
-    elif row["WES cram path"]:
+    elif row["WES cram path"] and "anvil" not in row["WES cram path"].lower():  #  TODO include anvil after igv.js supports requester-pays buckets
         dna_data.append({'type': 'alignment', 'url': row["WES cram path"]})
 
     batch_name = row.star_pipeline_batch.replace("batch_0", "original").replace("batch_1_", "").replace("batch_", "")

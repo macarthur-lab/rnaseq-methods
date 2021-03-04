@@ -462,15 +462,15 @@
           "data": [
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.7_samples.bigWig"
+              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.7_samples.junctions.bed.gz"
+              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.junctions.bed.gz"
             }
           ],
-          "description": "All 7 whole blood rare disease samples combined into one track.",
-          "name": "all 7 whole blood samples"
+          "description": "All 8 whole blood rare disease samples combined into one track.",
+          "name": "all 8 whole blood samples"
         }
       ]
     },
@@ -555,7 +555,7 @@
             },
             {
               "type": "alignment",
-              "url": "gs://fc-secure-da00680d-3e1e-49a1-ba71-82ca679a7b7f/AnVIL_CMG_Broad_Orphan_Manton_WGS_Mar2020/RP-1486/WGS/MAN_0694_01_1/v1/MAN_0694_01_1.cram"
+              "url": "gs://fc-secure-9cd5bace-0607-49c0-b62c-837aa8cf195d/CMG_Broad_Orphan_Manton_WES_all/C1992/Exome/MAN_0694_01_1/v2/MAN_0694_01_1.cram"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
