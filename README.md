@@ -197,5 +197,16 @@ run downstream analyses - using python scripts and [hail Batch](https://hail.is/
 
 ---
 
+**Generate combined splice junction tracks**
 
+```
+cd rnaseq_methods/pipelines/tgg_viewer/junctions_track_pipelines
+python3 combine_bigWigs_batch_pipeline.py --cluster muscle fibroblasts whole_blood lymphocytes
+python3 combine_splice_junctions_batch_pipeline.py --cluster muscle fibroblasts whole_blood lymphocytes
+python3 combine_splice_junctions_batch_pipeline.py --cluster --normalize-read-counts muscle fibroblasts whole_blood lymphocytes
+
+```
+After this, re-generate the TGG viewer settings.json
+
+---
 
