@@ -128,7 +128,7 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
         tissue_label = tissue_name.replace("_", " ").rstrip("s")
 
         if normalized_or_raw == "raw":
-            name = f'all {num_combined_junctions_bed_samples} {tissue_label} samples'
+            name = f'{num_combined_junctions_bed_samples} {tissue_label} samples'
             description = f"All {num_combined_junctions_bed_samples} {tissue_label} rare disease samples combined into one track. Splice junction read counts are summed across all samples."
         else:
             name = f'norm. {num_combined_junctions_bed_samples} {tissue_label} samples'

@@ -2122,7 +2122,7 @@
             }
           ],
           "description": "All 97 fibroblast rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
-          "name": "all 97 fibroblast samples"
+          "name": "97 fibroblast samples"
         }
       ]
     },

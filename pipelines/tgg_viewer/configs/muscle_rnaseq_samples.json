@@ -3580,7 +3580,7 @@
             }
           ],
           "description": "All 162 muscle rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
-          "name": "all 162 muscle samples"
+          "name": "162 muscle samples"
         }
       ]
     },

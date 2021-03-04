@@ -484,7 +484,7 @@
             }
           ],
           "description": "All 2 lymphocyte rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
-          "name": "all 2 lymphocyte samples"
+          "name": "2 lymphocyte samples"
         }
       ]
     },
