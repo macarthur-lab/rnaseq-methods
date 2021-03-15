@@ -5,7 +5,8 @@ GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 GCLOUD_PROJECT = "seqr-project"
 
 DOCKER_IMAGE = "weisburd/gagneurlab@sha256:be45788c8696a196bee25be269cb2de97277601bed65cbc3efcadc16acc5a764"
-#DOCKER_IMAGE = "weisburd/gagneurlab@sha256:653d20def50adefa967587413eb7f8667272b67eeb90f935e3e372dda45dd367"
+#DOCKER_IMAGE = "weisburd/gagneurlab@sha256:75a09c7ec42185b07206eb79f1d2f532ca712e19c18008779e9ea133153c807a"
+
 
 # https://i12g-gagneurweb.in.tum.de/public/workshops/RNAseq_ASHG19/input_data/annotations/gencode.v29lift37.annotation.txdb
 CLOUD_STORAGE_BASE_DIR = "gs://macarthurlab-rnaseq/gagneur"

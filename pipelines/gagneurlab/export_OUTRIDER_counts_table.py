@@ -4,7 +4,9 @@ import logging
 import os
 import pandas as pd
 
+from gagneurlab.gagneur_utils import OUTRIDER_COUNTS_TSV_GZ
 from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
+
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -93,7 +95,7 @@ def main():
     tsv_output_path = f"OUTRIDER_input_table_RDG_and_GTEX_counts_for_all_tissues.tsv.gz"
     all_rdg_and_gtex_counts_df.reset_index().to_csv(tsv_output_path, sep="\t", index=False)
     print(f"Wrote {len(all_rdg_and_gtex_counts_df)} genes x {len(all_rdg_and_gtex_counts_df.columns)} samples to {tsv_output_path}")
-    #run(f"gsutil cp {tsv_output_path} {OUTRIDER_COUNTS_TSV_GZ}")
+    run(f"gsutil cp {tsv_output_path} {OUTRIDER_COUNTS_TSV_GZ}")
 
 
 if __name__ == "__main__":

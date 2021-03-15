@@ -182,7 +182,7 @@ meta_df = meta_df[[
     'variant notes (seqr)',
     'variant tags (seqr)',
     'coded phenotype (seqr)',
-    'anlaysis summary + notes (seqr)',
+    'analysis summary + notes (seqr)',
     'internal case review notes (seqr)',
     #'cram path (seqr)',
     #'Sample ID_x',

@@ -150,6 +150,8 @@ RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com')"
 RUN R -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg19')"
 RUN R -e "BiocManager::install('rmarkdown')"
 RUN R -e "BiocManager::install('ggtheme')"
+RUN R -e "BiocManager::install('TxDb.Hsapiens.UCSC.hg38.knownGene')"
+RUN R -e "BiocManager::install('org.Hs.eg.db')"
 
 # install drop
 ENV DROP_VERSION="ca40b4c"

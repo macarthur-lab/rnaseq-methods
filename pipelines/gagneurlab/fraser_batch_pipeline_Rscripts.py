@@ -96,6 +96,8 @@ library(RColorBrewer)
 library(ggsci)
 library(ggplot2)
 library(gtable)
+#library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+#library(org.Hs.eg.db)
 
 fds = loadFraserDataSet(".")
 sampleSetLabel = "{sample_set_label}"
@@ -117,6 +119,8 @@ fds = fds[mcols(fds, type="j")[,"passed"],]
 print(paste(length(fds), "splice junctions after filtering"))
 
 fds = annotateRanges(fds, GRCh=38)
+#fds = annotateRangesWithTxDb(fds, txdb=TxDb.Hsapiens.UCSC.hg38.knownGene, orgDb=org.Hs.eg.db)
+
 saveFraserDataSet(fds)
 """
 

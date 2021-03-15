@@ -4,7 +4,6 @@ import hashlib
 import logging
 import os
 import pandas as pd
-import sys
 
 from batch import batch_utils
 from sample_metadata.rnaseq_metadata_utils import get_analysis_batches, get_rnaseq_downstream_analysis_metadata_df
@@ -159,7 +158,7 @@ def main():
                         disk_size = None
 
                     job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=1, memory=3.75, disk_size=disk_size, image=DOCKER_IMAGE)
+                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=8, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
                     j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bam} {sample_id}.bam")
@@ -175,7 +174,7 @@ def main():
 library(FRASER)
 library(data.table)
 
-sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"))
+sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"), pairedEnd=c(TRUE))
 print(sampleTable)
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
 
@@ -196,7 +195,7 @@ library(data.table)
 
 spliceJunctions = readRDS("{os.path.basename(output_file_path_splice_junctions_RDS)}")
 
-sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"))
+sampleTable = data.table(sampleID=c("{sample_id}"), bamFile=c("{bam_path}"), pairedEnd=c(TRUE))
 print(sampleTable)
 
 fds = FraserDataSet(colData=sampleTable, workingDir=".", bamParam=ScanBamParam(mapqFilter=0), strandSpecific=0L)
@@ -254,7 +253,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         split_reads_output_files,
                         non_split_reads_output_files,
                         output_file_path_splice_junctions_RDS,
-                        args.metadata_tsv_path,
+                        metadata_tsv_df,
                         output_file_path_calculated_psi_values_tar_gz)
 
             # filter and annotate data
@@ -327,6 +326,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                     output_file_path_fraser_analysis_tar_gz,
                     output_file_path_results_tables_tar_gz)
 
+            args.skip_step7 = True
             if args.skip_step7:
                 logger.info(f"Skipping get_volcano_plots step...")
             elif hl.hadoop_is_file(output_file_path_fraser_volcano_plots_tar_gz) and not args.force:
@@ -362,7 +362,7 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
     print("Output file path: ", output_file_path_splice_junctions_RDS)
 
 
-def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_path, output_file_path_calculated_psi_values_tar_gz):
+def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_df, output_file_path_calculated_psi_values_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
     j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/{sample_set_label}")  # work-around for https://github.com/c-mertes/FRASER/issues/11
@@ -372,6 +372,12 @@ def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_f
     for non_split_reads_output_files_batch in [non_split_reads_files[i:i+10] for i in range(0, len(non_split_reads_files), 10)]:
         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files_batch)} .")
     j_calculate_psi_values.command(f"gsutil -m cp {splice_junctions_RDS_path} .")
+
+    metadata_tsv_filename = f"sample_metadata_{sample_set_label}.tsv"
+    local_metadata_tsv_path = f"/tmp/{metadata_tsv_filename}"
+    metadata_tsv_path = os.path.join(os.path.dirname(splice_junctions_RDS_path), metadata_tsv_filename)
+    metadata_tsv_df.to_csv(local_metadata_tsv_path, header=True, index=False, sep="\t")
+    hl.hadoop_copy(local_metadata_tsv_path, metadata_tsv_path)
     j_calculate_psi_values.command(f"gsutil -m cp {metadata_tsv_path} .")
 
     j_calculate_psi_values.command(f"gsutil -m cp {BAM_HEADER_PATH} .")

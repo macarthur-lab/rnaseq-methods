@@ -13,6 +13,7 @@ from gspread_dataframe import set_with_dataframe
 from gspread import WorksheetNotFound
 
 #%%
+
 # check results vs truth data
 
 rows = get_rnaseq_truth_data_spreadsheet().worksheet("Events to detect").get()
@@ -32,15 +33,18 @@ truth_data_df.loc[:, 'end'] = truth_data_df.end.astype('int')
 
 #%%
 
-star_combined_muscle_df = pd.read_table("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/combined.muscle.153_samples.SJ.out.tsv.gz")
-star_combined_muscle_df = star_combined_muscle_df[["chrom", "start_1based", "end_1based", "strand", "intron_motif", "known_splice_junction", "unique_reads", "multi_mapped_reads", "maximum_overhang", "num_samples_with_this_junction", "num_samples_total"]]
+star_combined_muscle_df = pd.read_table("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab//FRASER_results3/combined.muscle.153_samples.SJ.out.tsv.gz")
+star_combined_muscle_df = star_combined_muscle_df[[
+    "chrom", "start_1based", "end_1based", "strand", "intron_motif", "known_splice_junction", "unique_reads",
+    "multi_mapped_reads", "maximum_overhang", "num_samples_with_this_junction", "num_samples_total",
+]]
 
-star_combined_gtex_muscle_df = pd.read_table("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/combined.gtex_muscle.803_samples.SJ.out.tsv.gz")
-star_combined_gtex_muscle_df = star_combined_gtex_muscle_df[["chrom", "start_1based", "end_1based", "strand", "intron_motif", "known_splice_junction", "unique_reads", "multi_mapped_reads", "maximum_overhang", "num_samples_with_this_junction", "num_samples_total"]]
+#star_combined_gtex_muscle_df = pd.read_table("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/combined.gtex_muscle.803_samples.SJ.out.tsv.gz")
+#star_combined_gtex_muscle_df = star_combined_gtex_muscle_df[["chrom", "start_1based", "end_1based", "strand", "intron_motif", "known_splice_junction", "unique_reads", "multi_mapped_reads", "maximum_overhang", "num_samples_with_this_junction", "num_samples_total"]]
 
 #%%
 
-for i, current_df in enumerate([star_combined_muscle_df, star_combined_gtex_muscle_df]):
+for i, current_df in enumerate([star_combined_muscle_df, ]): # star_combined_gtex_muscle_df
 
     print(i, current_df.columns)
     current_df.loc[:, "chrom"] = current_df["chrom"].str.replace("chr", "")
@@ -51,26 +55,26 @@ for i, current_df in enumerate([star_combined_muscle_df, star_combined_gtex_musc
 #%%
 
 
-fraser_calls_df_with_GTEx = pd.read_table(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/muscle/muscle_with_GTEX__253_samples_98B010A534__dpsi_0.1_padj_0.1_reads_2/"
-    "muscle_with_GTEX__253_samples_98B010A534_usingPCA_fds__psi5_q17__psi3_q14__psiSite_q20_padj_0.1__dpsi_0.1_results.tsv.gz").sort_values("padjust")
+#fraser_calls_df_with_GTEx = pd.read_table(
+#    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/muscle/muscle_with_GTEX__253_samples_98B010A534__dpsi_0.1_padj_0.1_reads_2/"
+#    "muscle_with_GTEX__253_samples_98B010A534_usingPCA_fds__psi5_q17__psi3_q14__psiSite_q20_padj_0.1__dpsi_0.1_results.tsv.gz").sort_values("padjust")
 
 fraser_calls_df_without_GTEx = pd.read_table(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/muscle/muscle_without_GTEX__153_samples_87843E873A_dpsi_threshold_0.1_padj_0.1/"
-    "muscle_without_GTEX__153_samples_87843E873A_usingPCA_fds__psi5_q5__psi3_q8__psiSite_q14_padj_0.1__deltapsi_0.1_results.tsv").sort_values("padjust")
+    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/FRASER_results3/muscle/muscle_without_GTEX__160_samples_D9B517A0F3/"
+    "muscle_without_GTEX__160_samples_D9B517A0F3_usingPCA_fds__psi5_q5__psi3_q5__psiSite_q14_padj_0.1__dpsi_0.1_results.tsv.gz").sort_values("padjust")
 
 #fraser_calls_df_without_GTEx_all_results = pd.read_table(
 #    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/muscle_without_GTEX__153_samples_87843E873A/"
 #    "muscle_without_GTEX__153_samples_87843E873A_usingPCA_fds__psi5_q5__psi3_q8__psiSite_q14_all_results.tsv.gz")
 #fraser_calls_df_without_GTEx_all_results.set_index("Sample ID", inplace=True)
 
-outrider_calls_df_with_GTEx = pd.read_table(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/muscle__153_samples_87843E873A_with_GTEX/"
-    "muscle__153_samples_87843E873A_with_GTEX__ods__q50_padj_0.05_results.tsv")
+#outrider_calls_df_with_GTEx = pd.read_table(
+#    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/muscle__153_samples_87843E873A_with_GTEX/"
+#    "muscle__153_samples_87843E873A_with_GTEX__ods__q50_padj_0.05_results.tsv")
 
 outrider_calls_df_without_GTEx = pd.read_table(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/muscle__153_samples_87843E873A_without_GTEX/"
-    "muscle__153_samples_87843E873A_without_GTEX__ods__q32_padj_0.05_results.tsv"
+    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/OUTRIDER_results3/muscle__160_samples_D9B517A0F3_without_GTEX/"
+    "muscle__160_samples_D9B517A0F3_without_GTEX__ods__q34_all_results.tsv"
 )
 
 #%%
@@ -290,7 +294,8 @@ for with_GTEx, fraser_calls_df, outrider_calls_df in [
             for key_label, current_df in [
                 ("STAR_sample", star_df),
                 ("STAR_combined_muscle", star_combined_muscle_df),
-                ("STAR_combined_GTEx_muscle", star_combined_gtex_muscle_df)]:
+                #("STAR_combined_GTEx_muscle", star_combined_gtex_muscle_df),
+            ]:
                 current_df_matching_rows = current_df[(
                     (current_df["chrom"].replace("chr", "") == row['chrom'].replace("chr", "")) &
                     (abs(current_df["start_1based"] - int(row['start'])) <= 1) &
@@ -462,13 +467,14 @@ spreadsheet = get_RNASEQ_results_spreadsheet()
 # upload tables
 results_tsvs = {
     #"whole_blood": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/fibroblasts/fibroblasts_with_GTEX__186_samples_5A9664E950__dpsi_0.1_padj_0.1/fibroblasts_with_GTEX__186_samples_5A9664E950_usingPCA_fds__psi5_q8__psi3_q8__psiSite_q11_padj_0.1__deltapsi_0.1_results.tsv",
+
     #"FRASER: muscle without GTEx (153 samples, padj_0.1, dpsi_0.1)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/muscle/muscle_without_GTEX__153_samples_87843E873A/muscle_without_GTEX__153_samples_87843E873A_usingPCA_fds__psi5_q5__psi3_q8__psiSite_q14_padj_0.1__dpsi_0.1_results.tsv",
     #"FRASER: fibroblasts without GTEx (86 samples, padj_0.1, dpsi_0.1)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/fibroblasts/fibroblasts_without_GTEX__86_samples_867E0896FE/fibroblasts_without_GTEX__86_samples_867E0896FE_usingPCA_fds__psi5_q2__psi3_q2__psiSite_q5_padj_0.1__dpsi_0.1_results.tsv",
+    #"FRASER: whole blood with GTEx (107 samples, padj_0.1, dpsi_0.1)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/whole_blood/whole_blood_with_GTEX__107_samples_F3E00680DC/whole_blood_with_GTEX__107_samples_F3E00680DC_usingPCA_fds__psi5_q8__psi3_q8__psiSite_q8_padj_0.1__dpsi_0.1_results.tsv.gz",
 
     #"OUTRIDER: muscle without GTEx (153 samples, padj0.05)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/muscle__153_samples_87843E873A_without_GTEX/muscle__153_samples_87843E873A_without_GTEX__ods__q32_padj_0.05_results.tsv",
     #"OUTRIDER: fibroblasts without GTEx (86 samples, padj0.05)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/fibroblasts__86_samples_867E0896FE_without_GTEX/fibroblasts__86_samples_867E0896FE_without_GTEX__ods__q18_padj_0.05_results.tsv",
-    "OUTRIDER: whole blood with GTEx (107 samples, padj0.05)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/whole_blood__7_samples_0BFE4A559F_with_GTEX/whole_blood__7_samples_0BFE4A559F_with_GTEX__ods__q22_padj_0.05_results.tsv",
-    #"FRASER: whole blood with GTEx (107 samples, padj_0.1, dpsi_0.1)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/fraser/whole_blood/whole_blood_with_GTEX__107_samples_F3E00680DC/whole_blood_with_GTEX__107_samples_F3E00680DC_usingPCA_fds__psi5_q8__psi3_q8__psiSite_q8_padj_0.1__dpsi_0.1_results.tsv.gz",
+    #"OUTRIDER: whole blood with GTEx (107 samples, padj0.05)": "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/outrider/whole_blood__7_samples_0BFE4A559F_with_GTEX/whole_blood__7_samples_0BFE4A559F_with_GTEX__ods__q22_padj_0.05_results.tsv",
 }
 
 
