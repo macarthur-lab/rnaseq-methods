@@ -309,8 +309,8 @@ ods = readRDS("{os.path.basename(step2_output_RDS_file)}")
 resultTableColumns = c("sampleID", "geneID", "symbol", "biotype", "pValue", "padjust", "zScore", "rawcounts", "normcounts", "meanCorrected", "description", "chr", "start", "end", "strand")
 q = metadata(ods)$opt
 
-res = results(ods, padjCutoff=1)
-res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)[!duplicated(geneID),]
+res = results(ods, all=TRUE)
+res = merge(res, grch38, by.x="geneID", by.y="ensgene", sort=FALSE, all.x=TRUE)
 res = res[, ..resultTableColumns]
 setorderv(res, c("sampleID", "padjust"))
 res[, "q"] = q
