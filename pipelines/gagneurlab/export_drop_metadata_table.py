@@ -80,10 +80,10 @@ for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
     #print(f"Wrote {len(samples_df)} samples to {tsv_output_path}")
 
 # create separate groups for MAE analysis, including only samples that have a VCF
-#all_rdg_and_gtex_samples_df.loc[
-#    all_rdg_and_gtex_samples_df["DNA_VCF_FILE"].str.len() > 1,
-#    'DROP_GROUP'] = all_rdg_and_gtex_samples_df['DROP_GROUP'].apply(
-#        lambda groups: groups+","+",".join([f"{g}_MAE" for g in groups.split(",")]))
+all_rdg_and_gtex_samples_df.loc[
+    all_rdg_and_gtex_samples_df["DNA_VCF_FILE"].str.len() > 1,
+    'DROP_GROUP'] = all_rdg_and_gtex_samples_df['DROP_GROUP'].apply(
+        lambda groups: groups+","+",".join([f"{g}_MAE" for g in groups.split(",")]))
 
 #%%
 #  RNA_ID
@@ -107,7 +107,7 @@ print("Output columns:")
 print(all_rdg_and_gtex_samples_df.columns)
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-tsv_output_path = f"drop_metadata_table__{timestamp}.tsv"
+tsv_output_path = f"~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/drop_metadata_table__{timestamp}.tsv"
 all_rdg_and_gtex_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
 print(f"Wrote {len(all_rdg_and_gtex_samples_df)} samples to {tsv_output_path}")
 
