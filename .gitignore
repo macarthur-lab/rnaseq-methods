@@ -1,3 +1,5 @@
+
+
 .DS_store
 .vscode
 .idea
@@ -14,9 +16,14 @@ pca_to_impute_tissue/pca_on_gtex/data/
 *.pickle
 *.tab
 *.tab.gz
+*.tsv
+*.tsv.gz
 *.bed
 *.bed.gz
+*.bed.bgz
 *.tbi
+*.gff3
+*.gff3.gz
 
 *.aside
 *.bam
