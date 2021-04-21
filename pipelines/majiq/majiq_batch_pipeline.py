@@ -4,7 +4,7 @@ import hailtop.batch as hb
 import logging
 import os
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 hl.init(log="/dev/null")
 
@@ -17,7 +17,7 @@ GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
 def main():
-    rnaseq_sample_metadata_df = get_joined_metadata_df()
+    rnaseq_sample_metadata_df = get_rnaseq_metadata_joined_with_paths_df()
 
     p = argparse.ArgumentParser()
     grp = p.add_mutually_exclusive_group(required=True)

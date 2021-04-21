@@ -9,7 +9,7 @@ from annotations.get_hgnc_table import get_hgnc_table
 from annotations.get_panel_app_table import get_panel_app_table
 from annotations.get_clingen_table import get_clingen_dosage_sensitivity_table, get_clingen_gene_disease_validity_table
 
-from sample_metadata.rnaseq_metadata_utils import get_seqr_info_and_other_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_df
 
 #%%
 BASE_DIR = os.path.expanduser("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/OUTRIDER_results3")
@@ -153,7 +153,7 @@ annotation_table = annotation_table[[
 
 #%%
 
-meta_df = get_seqr_info_and_other_metadata_df()
+meta_df = get_rnaseq_metadata_df()
 meta_df['total reads x 10^6 (rnaseqc)'] = meta_df['total reads x 10^6 (rnaseqc)'].astype("float").astype("int").astype("str")
 
 meta_df = meta_df[[

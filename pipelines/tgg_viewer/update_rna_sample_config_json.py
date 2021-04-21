@@ -7,7 +7,7 @@ import os
 import pprint
 import re
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
 logger = logging.getLogger()
@@ -17,7 +17,7 @@ hl.init(log="/dev/null")
 
 #%%
 
-df = get_joined_metadata_df()
+df = get_rnaseq_metadata_joined_with_paths_df()
 
 df.columns
 

@@ -3,8 +3,8 @@
 #%%
 
 
-from __future__ import print_function
 import collections
+import datetime
 import os
 import pandas as pd
 import sys
@@ -28,12 +28,12 @@ pd.set_option('display.width', 1000)
 from gspread_dataframe import set_with_dataframe
 
 from sample_metadata.rnaseq_metadata_utils import \
-    get_seqr_info_and_other_metadata_worksheet, \
+    get_rnaseq_metadata_worksheet, \
     get_beryls_supplementary_table_df, \
     get_beryls_rnaseq_probands_df, \
     get_beryls_seqr_data_df, \
     get_data_paths_df, \
-    get_seqr_info_and_other_metadata_df, \
+    get_rnaseq_metadata_df, \
     get_rnaseqc_metrics, \
     get_date_from_bam_header
 
@@ -99,7 +99,7 @@ final_df = data_paths_df[['sample_id',	'star_pipeline_batch', "hg19_bam", "rnase
 #%%
 
 # download current table to allow partial updates to some columns
-seqr_info_and_other_metadata_rows = get_seqr_info_and_other_metadata_df()
+seqr_info_and_other_metadata_rows = get_rnaseq_metadata_df()
 
 final_df = final_df.merge(seqr_info_and_other_metadata_rows[[
     "sample_id",
@@ -614,11 +614,13 @@ for sample_id, indivs in sample_id_to_indivs.items():
             print(f"WARNING: more than 2 {sample_type} projects have individual: {indiv}. Keeping individual in project {seqr_fields.get('proj WES (seqr)')}, skipping the individual in project {project}...")
             continue
 
-        project_page_url = "https://seqr.broadinstitute.org/project/%s/project_page" % (project.guid)
-        family_page_url = "https://seqr.broadinstitute.org/project/%s/family_page/%s" % (project.guid, family.guid)
+        #project_page_url = "https://seqr.broadinstitute.org/project/%s/project_page" % (project.guid)
+        #family_page_url = "https://seqr.broadinstitute.org/project/%s/family_page/%s" % (project.guid, family.guid)
 
-        seqr_fields['proj %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (project_page_url, project.name)
-        seqr_fields['fam %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (family_page_url, family.family_id)
+        #seqr_fields['proj %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (project_page_url, project.name)
+        #seqr_fields['fam %s (seqr)' % sample_type] = '=HYPERLINK("%s", "%s")' % (family_page_url, family.family_id)
+        seqr_fields['proj %s (seqr)' % sample_type] = project.name
+        seqr_fields['fam %s (seqr)' % sample_type] = family.family_id
         seqr_fields['proj %s guid (seqr)' % sample_type] = project.guid
         seqr_fields['fam %s guid (seqr)' % sample_type] = family.guid
 
@@ -643,7 +645,7 @@ for sample_id, indivs in sample_id_to_indivs.items():
 
         sample_ids = [(sample.sample_id.decode('UTF-8') if isinstance(sample.sample_id, bytes) else sample.sample_id) for sample in samples]
         if sample_ids:
-            seqr_fields['sample id (seqr)'].append((", ".join(set(sample_ids))))
+            seqr_fields['sample id (seqr)'].append((", ".join(sorted(set(sample_ids)))))
 
         sample_types = [(sample.sample_type.decode('UTF-8') if isinstance(sample.sample_type, bytes) else sample.sample_type) for sample in samples]
         if sample_types:
@@ -879,11 +881,21 @@ check_for_duplicate_sample_ids(df_export)
 
 # %%
 
-# export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-ws = get_seqr_info_and_other_metadata_worksheet()
+# export joined data to RNASEQ_METADATA_WORKSHEET
+ws = get_rnaseq_metadata_worksheet()
 set_with_dataframe(ws, df_export.fillna(''), resize=True)
 
 print("Updated", ws.title)
 
 
 # %%
+
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+tsv_output_path = f"~/project__rnaseq/code/rnaseq_methods/pipelines/sample_metadata/rnaseq_metadata__{timestamp}.tsv"
+df_export.to_csv(tsv_output_path, sep="\t", index=False)
+print(f"Wrote {len(df_export)} samples to {tsv_output_path}")
+
+#%%
+
+### summarize number of samples per tissue
+df_export.groupby("imputed tissue")

@@ -1,14 +1,13 @@
+import datetime
 import logging
 import pandas as pd
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df, \
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df, \
     get_gtex_rnaseq_sample_metadata_df, \
-    get_date_from_bam_header, \
     get_rnaseq_downstream_analysis_metadata_worksheet
 
 from gspread_dataframe import set_with_dataframe
 
-#%%
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -53,7 +52,7 @@ OUTPUT_COLUMNS = [
 
 #%%
 # get metadata table and filter out excluded samples
-metadata_df = get_joined_metadata_df()
+metadata_df = get_rnaseq_metadata_joined_with_paths_df()
 
 metadata_df = metadata_df[
     ~metadata_df["analysis batch"].str.strip().isin(["", "x"])]
@@ -162,9 +161,22 @@ print("Updated", ws.title)
 
 #%%
 
-#tsv_output_path = f"temp_metadata.tsv"
-#metadata_df.to_csv(tsv_output_path, sep="\t", index=False)
-#print(f"Wrote {len(metadata_df)} samples to {tsv_output_path}")
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+tsv_output_path = f"~/project__rnaseq/code/rnaseq_methods/pipelines/sample_metadata/rnaseq_downstream_analysis_metadata__{timestamp}.tsv"
+metadata_df.to_csv(tsv_output_path, sep="\t", index=False)
+print(f"Wrote {len(metadata_df)} samples to {tsv_output_path}")
 
+
+#%%
+print("Sample counts by batch:")
+metadata_df.groupby(["batch", "tissue"])["sample_id"].nunique()
+
+#%%
+print("GTEx sample counts:")
+metadata_df[metadata_df["batch"] == "GTEx_v8"].groupby(["tissue"])["sample_id"].nunique()
+
+#%%
+print("Non-GTEx sample counts:")
+metadata_df[metadata_df["batch"] != "GTEx_v8"].groupby(["tissue"])["sample_id"].nunique()
 
 #%%

@@ -8,11 +8,11 @@ import sys
 
 from gspread_dataframe import set_with_dataframe
 
-from sample_metadata.rnaseq_metadata_utils import get_seqr_info_and_other_metadata_df, get_seqr_info_and_other_metadata_worksheet
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_df, get_rnaseq_metadata_worksheet
 
 
 #%%
-df = get_seqr_info_and_other_metadata_df()
+df = get_rnaseq_metadata_df()
 df = df.set_index('sample_id', drop=False)
 
 df.columns
@@ -34,8 +34,8 @@ df['imputed tissue'] = imputed_tissues_df['imputed tissue']
 
 
 #%%
-# export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-ws = get_seqr_info_and_other_metadata_worksheet()
+# export joined data to RNASEQ_METADATA_WORKSHEET
+ws = get_rnaseq_metadata_worksheet()
 set_with_dataframe(ws, df.fillna(''), resize=True)
 
 print("Updated", ws.title)

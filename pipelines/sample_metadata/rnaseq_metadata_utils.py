@@ -6,6 +6,20 @@ import subprocess
 from google.oauth2.service_account import Credentials
 
 
+"""
+value_render_option: can be "FORMATTED_VALUE", "UNFORMATTED_VALUE", or "FORMULA":
+
+    FORMATTED_VALUE: For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return "$1.23".
+    UNFORMATTED_VALUE: For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return the number 1.23.
+    FORMULA: The reply will include the formulas. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return "=A1".
+     
+https://developers.google.com/sheets/api/reference/rest/v4/ValueRenderOption
+"""
+
+VALUE_RENDER_OPTION__FORMATTED_VALUE = "FORMATTED_VALUE"
+VALUE_RENDER_OPTION__UNFORMATTED_VALUE = "UNFORMATTED_VALUE"
+VALUE_RENDER_OPTION__FORMULA = "FORMULA"
+
 _GSPREAD_CLIENT = None
 
 def get_spreasheet(spreadsheet_name):
@@ -29,7 +43,7 @@ def get_spreasheet(spreadsheet_name):
 ## Spreadsheet must be Shared with 733952080251-compute@developer.gserviceaccount.com
 _RNASEQ_DOWNSTREAM_ANALYSIS_METADATA_WORKSHEET = None
 _RNASEQ_METADATA_SPREADSHEET = None
-_SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = None
+_RNASEQ_METADATA_WORKSHEET = None
 _DATA_PATHS_WORKSHEET = None
 _IMPUTED_METADATA_WORKSHEET = None
 _BERYLS_WORKSHEET = None
@@ -79,17 +93,16 @@ def get_rnaseq_metadata_spreadsheet():
     return _RNASEQ_METADATA_SPREADSHEET
 
 
-def get_seqr_info_and_other_metadata_worksheet():
-    global _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-    _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("seqr info + other metadata (auto)")
-    return _SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
+def get_rnaseq_metadata_worksheet():
+    global _RNASEQ_METADATA_WORKSHEET
+    _RNASEQ_METADATA_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("seqr info + other metadata (auto)")
+    return _RNASEQ_METADATA_WORKSHEET
 
 
 def get_data_paths_worksheet():
     global _DATA_PATHS_WORKSHEET
     _DATA_PATHS_WORKSHEET = get_rnaseq_metadata_spreadsheet().worksheet("data paths (auto)")
     return _DATA_PATHS_WORKSHEET
-
 
 
 def get_rnaseq_downstream_analysis_metadata_worksheet():
@@ -122,42 +135,42 @@ def get_beryls_seqr_data_worksheet():
     return _BERYLS_WORKSHEET_3
 
 
-def get_seqr_info_and_other_metadata_df():
-    rows = get_seqr_info_and_other_metadata_worksheet().get()
+def get_rnaseq_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_rnaseq_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
-def get_rnaseq_downstream_analysis_metadata_df():
-    rows = get_rnaseq_downstream_analysis_metadata_worksheet().get()
+def get_rnaseq_downstream_analysis_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_rnaseq_downstream_analysis_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
-def get_data_paths_df():
-    rows = get_data_paths_worksheet().get()
-    return pd.DataFrame(data=rows[1:], columns=rows[0])
-
-
-def get_imputed_metadata_df():
-    rows = get_imputed_metadata_worksheet().get()
+def get_data_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_data_paths_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_beryls_supplementary_table_df():
-    rows = get_beryls_supplementary_table_worksheet().get()
+def get_imputed_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_imputed_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_beryls_rnaseq_probands_df():
-    rows = get_beryls_rnaseq_probands_worksheet().get()
+def get_beryls_supplementary_table_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_beryls_supplementary_table_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_beryls_seqr_data_df():
-    rows = get_beryls_seqr_data_worksheet().get()
+def get_beryls_rnaseq_probands_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_beryls_rnaseq_probands_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
 
-def get_joined_metadata_df():
-    df1 = get_data_paths_df()
-    df2 = get_seqr_info_and_other_metadata_df()
+def get_beryls_seqr_data_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_beryls_seqr_data_worksheet().get(value_render_option=value_render_option)
+    return pd.DataFrame(data=rows[1:], columns=rows[0])
+
+
+def get_rnaseq_metadata_joined_with_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    df1 = get_data_paths_df(value_render_option=value_render_option)
+    df2 = get_rnaseq_metadata_df(value_render_option=value_render_option)
     df2 = df2[[c for c in df2.columns if c not in ("star_pipeline_batch")]]  # remove columns that exist in both tables
     return df1.merge(df2, on="sample_id", how="left").set_index("sample_id", drop=False)
 
@@ -225,23 +238,23 @@ RNASEQ_SAMPLE_IDS_TO_EXCLUDE = {
 }
 
 
-def get_gtex_rnaseq_sample_metadata_df():
-    rows = get_gtex_rnaseq_sample_metadata_worksheet().get()
+def get_gtex_rnaseq_sample_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_gtex_rnaseq_sample_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
-def get_gtex_wes_sample_metadata_df():
-    rows = get_gtex_wes_sample_metadata_worksheet().get()
+def get_gtex_wes_sample_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_gtex_wes_sample_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
-def get_gtex_wgs_sample_metadata_df():
-    rows = get_gtex_wgs_sample_metadata_worksheet().get()
+def get_gtex_wgs_sample_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+    rows = get_gtex_wgs_sample_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0]).set_index("SAMPID", drop=False)
 
 
 def get_analysis_batches():
-    df = get_seqr_info_and_other_metadata_df()
+    df = get_rnaseq_downstream_analysis_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE)
     analysis_batch_to_tissue = defaultdict(set)
     analysis_batch_to_sex = defaultdict(set)
 

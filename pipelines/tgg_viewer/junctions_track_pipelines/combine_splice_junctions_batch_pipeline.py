@@ -4,7 +4,7 @@ import os
 from pprint import pprint
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -74,7 +74,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, save_ind
 
 if __name__ == "__main__":
     # columns: sample_id, star_pipeline_batch, star_SJ_out_tab, 'imputed sex', 'imputed tissue', 'stranded? (rnaseqc)', 'read length (rnaseqc)'
-    rnaseq_sample_metadata_df = get_joined_metadata_df()
+    rnaseq_sample_metadata_df = get_rnaseq_metadata_joined_with_paths_df()
 
     analysis_batches = set([b for b in rnaseq_sample_metadata_df["analysis batch"] if b.strip() and b != "x"])
     star_pipeline_batches = set([b for b in rnaseq_sample_metadata_df["star_pipeline_batch"] if b])

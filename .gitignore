@@ -1,4 +1,4 @@
-
+**/data/
 
 .DS_store
 .vscode
@@ -8,9 +8,6 @@
 *.pyc
 
 *.tsv
-
-pipelines/multiqc/data/
-pca_to_impute_tissue/pca_on_gtex/data/
 
 *.log
 *.pickle

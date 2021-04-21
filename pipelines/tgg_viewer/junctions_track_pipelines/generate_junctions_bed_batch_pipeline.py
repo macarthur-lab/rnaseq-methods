@@ -3,7 +3,7 @@ import logging
 import os
 import pandas as pd
 
-from sample_metadata.rnaseq_metadata_utils import get_joined_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 from batch import batch_utils
 
@@ -30,7 +30,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
 
 
 def main():
-    rnaseq_sample_metadata_df = get_joined_metadata_df()
+    rnaseq_sample_metadata_df = get_rnaseq_metadata_joined_with_paths_df()
     #gtex_rnaseq_sample_metadata_df = get_gtex_rnaseq_sample_metadata_df()
 
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))

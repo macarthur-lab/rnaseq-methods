@@ -7,8 +7,7 @@ sample_id, star_pipeline_batch, hg19_bam, hg19_bai, etc.
 """
 #%%
 
-
-from __future__ import print_function
+import datetime
 import collections
 import os
 import pandas as pd
@@ -214,6 +213,14 @@ set_with_dataframe(get_data_paths_worksheet(), all_samples_df.fillna(''), resize
 
 print("Updated", get_data_paths_worksheet().title)
 print(get_data_paths_worksheet().url)
+
+#%%
+
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+tsv_output_path = f"~/project__rnaseq/code/rnaseq_methods/pipelines/sample_metadata/rnaseq_data_paths__{timestamp}.tsv"
+all_samples_df.to_csv(tsv_output_path, sep="\t", index=False)
+print(f"Wrote {len(all_samples_df)} samples to {tsv_output_path}")
+
 
 #%%
 

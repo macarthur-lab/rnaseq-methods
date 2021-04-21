@@ -1,24 +1,25 @@
 
 #%%
+import datetime
+import hail as hl
 import os
 from pprint import pprint
 import pandas as pd
-import hail as hl
 import traceback
 
 from gspread_dataframe import set_with_dataframe
 
 from sample_metadata.rnaseq_metadata_utils import \
-    get_joined_metadata_df, \
-    get_seqr_info_and_other_metadata_df, \
-    get_seqr_info_and_other_metadata_worksheet
+    get_rnaseq_metadata_joined_with_paths_df, \
+    get_rnaseq_metadata_df, \
+    get_rnaseq_metadata_worksheet
 
 #%%
 hl.init(log="/dev/null")
 
 #%%
-data_paths_df_with_metadata_columns = get_joined_metadata_df()
-data_paths_df_with_metadata_columns.columns
+rnaseq_metadata_joined_with_paths_df = get_rnaseq_metadata_joined_with_paths_df()
+rnaseq_metadata_joined_with_paths_df.columns
 
 
 #%%
@@ -46,7 +47,7 @@ os.system(
 imputed_sex_list = []
 imputed_sex_doesnt_match_list = []
 
-for _, row in data_paths_df_with_metadata_columns.iterrows():
+for _, row in rnaseq_metadata_joined_with_paths_df.iterrows():
     sample_id = row['sample_id']
 
     try:
@@ -103,7 +104,7 @@ for _, row in data_paths_df_with_metadata_columns.iterrows():
 
 #%%
 
-df = get_seqr_info_and_other_metadata_df()
+df = get_rnaseq_metadata_df()
 df = df.set_index('sample_id', drop=False)
 
 df.columns
@@ -130,8 +131,8 @@ for v in imputed_sex_doesnt_match_list:
     print(v)
 
 #%%
-# export joined data to SEQR_INFO_AND_OTHER_METADATA_WORKSHEET
-ws = get_seqr_info_and_other_metadata_worksheet()
+# export joined data to RNASEQ_METADATA_WORKSHEET
+ws = get_rnaseq_metadata_worksheet()
 set_with_dataframe(ws, df.fillna(''), resize=True)
 
 print("Updated", ws.title)
@@ -139,4 +140,11 @@ print("Updated", ws.title)
 
 #%%
 
+timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+tsv_output_path = f"~/project__rnaseq/code/rnaseq_methods/pipelines/sample_metadata/rnaseq_metadata_with_sex_and_sample_swaps__{timestamp}.tsv"
+df.to_csv(tsv_output_path, sep="\t", index=False)
+print(f"Wrote {len(df)} samples to {tsv_output_path}")
+
 #%%
+
+
