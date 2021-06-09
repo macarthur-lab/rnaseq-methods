@@ -2,7 +2,6 @@ FROM python:3.8-slim
 
 MAINTAINER Ben Weisburd
 
-
 RUN apt-get update \
   && apt-get install -y \
     python-smbus \
@@ -63,15 +62,11 @@ RUN wget https://github.com/samtools/htslib/releases/download/${SAMTOOLS_VERSION
 	&& make install \
 	&& make clean
 
-
-COPY gencode.v26.annotation.gff3.gz /
-COPY gencode.v35.annotation.gff3.gz /
+# bedtools?
 
 RUN python3 -m pip install pandas psutil
 
-COPY combine_splice_junctions_using_pandas.py /
-COPY convert_SJ_out_tab_to_junctions_bed.py /
-COPY gencode_utils.py /
+COPY annotate_sample_splice_junctions.py /
 
 ENTRYPOINT /bin/bash
 
