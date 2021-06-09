@@ -260,15 +260,15 @@ def get_analysis_batches():
 
     analysis_batches = {}
     for _, r in df.iterrows():
-        analysis_batch = r["analysis batch"]
+        analysis_batch = r["tissue"]
         if not analysis_batch:
             continue
         analysis_batch = analysis_batch.strip()
         if not analysis_batch or analysis_batch == "x":
             continue
 
-        analysis_batch_to_tissue[analysis_batch].add(r["imputed tissue"])
-        analysis_batch_to_sex[analysis_batch].add(r["imputed sex"])
+        analysis_batch_to_tissue[analysis_batch].add(r["tissue"])
+        analysis_batch_to_sex[analysis_batch].add(r["sex"])
 
     for analysis_batch, tissue in analysis_batch_to_tissue.items():
         if len(tissue) != 1:
@@ -283,7 +283,7 @@ def get_analysis_batches():
         analysis_batches[analysis_batch] = {
             "tissue": tissue,
             "sex": sex,
-            "samples": list(df[df["analysis batch"] == analysis_batch].sample_id)
+            "samples": list(df[df["tissue"] == analysis_batch].sample_id)
         }
 
     # TODO fix empty values in spreadsheet "analysis batch" column

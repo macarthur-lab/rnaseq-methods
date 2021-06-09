@@ -47,8 +47,21 @@ RUN wget -P /usr/local/bin http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64
 RUN wget -P /usr/local/bin http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig \
     && chmod 777 /usr/local/bin/bedGraphToBigWig
 
-COPY --from=quay.io/biocontainers/tabix:0.2.6--ha92aebf_0 /usr/local/bin/tabix /usr/local/bin/tabix
-COPY --from=quay.io/biocontainers/tabix:0.2.6--ha92aebf_0 /usr/local/bin/bgzip /usr/local/bin/bgzip
+
+# install htslib  --  install in downstream images with:
+#     COPY --from=weisburd/base-bam-tools:latest  /usr/local/bin/tabix /usr/local/bin/tabix
+#     COPY --from=weisburd/base-bam-tools:latest  /usr/local/bin/htsfile /usr/local/bin/htsfile
+#     COPY --from=weisburd/base-bam-tools:latest  /usr/local/bin/bgzip /usr/local/bin/bgzip
+#     COPY --from=weisburd/base-bam-tools:latest  /usr/local/bin/samtools /usr/local/bin/samtools
+ENV SAMTOOLS_VERSION="1.12"
+RUN wget https://github.com/samtools/htslib/releases/download/${SAMTOOLS_VERSION}/htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& tar xjf htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& rm htslib-${SAMTOOLS_VERSION}.tar.bz2 \
+	&& cd htslib-${SAMTOOLS_VERSION} \
+	&& ./configure \
+	&& make \
+	&& make install \
+	&& make clean
 
 
 COPY gencode.v26.annotation.gff3.gz /

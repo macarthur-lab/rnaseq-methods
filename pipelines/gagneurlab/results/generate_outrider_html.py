@@ -12,7 +12,8 @@ from annotations.get_clingen_table import get_clingen_dosage_sensitivity_table, 
 from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_df
 
 #%%
-BASE_DIR = os.path.expanduser("~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/OUTRIDER_results3")
+BASE_DIR = os.path.expanduser(
+    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/OUTRIDER_results4__2021_02")
 
 os.chdir(BASE_DIR)
 
@@ -152,6 +153,28 @@ annotation_table = annotation_table[[
 ]]
 
 #%%
+"""
+PanelApp definitions:
+
+https://panelapp.genomicsengland.co.uk/#!Content
+
+Gel Status
+This provides the overall rating of the gene, based on either the initial sources or curated evidence.
+
+For panels that are version 0:
+
+3 or 4 = Green = from 3 or 4 of the original sources used to establish an initial gene list, as listed above.
+2 = Amber = from 2 of the original sources.
+1 = Red = from 1 of the original sources.
+0 = Red = a gene from a submitted list or other source.
+For panels that are version 1+ this corresponds to:
+
+3 or 4 = Green = highest level of confidence/evidence for the gene-disease. These genes are used for genome interpretation.
+2 = Amber = moderate level of evidence
+0 or 1 = Red = lowest level of evidence
+
+"""
+#%%
 
 meta_df = get_rnaseq_metadata_df()
 meta_df['total reads x 10^6 (rnaseqc)'] = meta_df['total reads x 10^6 (rnaseqc)'].astype("float").astype("int").astype("str")
@@ -170,10 +193,10 @@ meta_df = meta_df[[
     'total reads x 10^6 (rnaseqc)',
     'mapping rate (rnaseqc)',
     'indiv (seqr)',
-    'proj (seqr)',
-    'fam (seqr)',
-    'proj2 (seqr)',
-    'fam2 (seqr)',
+    'proj WGS guid (seqr)',
+    'fam WGS guid (seqr)',
+    'proj WES guid (seqr)',
+    'fam WES guid (seqr)',
     'genome (seqr)',
     'population (seqr)',
     #'sample id (seqr)',
@@ -221,6 +244,29 @@ meta_df = meta_df.rename(columns={
     "batch_date_from_hg19_bam_header": "sequencing date",
 })
 
+#%%
+
+#project_page_url = "https://seqr.broadinstitute.org/project/%s/project_page" % (project.guid)
+#family_page_url = "https://seqr.broadinstitute.org/project/%s/family_page/%s" % (project.guid, family.guid)
+
+#'proj WGS guid (seqr)'
+#'fam WGS guid (seqr)'
+#'proj WES guid (seqr)'
+#'fam WES guid (seqr)'
+
+def add_links(row):
+    for data_type in "WES", "WGS":
+        if row[f'proj {data_type} guid (seqr)']:
+            #row[f'proj {data_type} page (seqr)'] = '<a href="https://seqr.broadinstitute.org/project/%s/project_page" target="_blank">%s</a>' % (
+            #    row[f'proj {data_type} guid (seqr)'], row[f'proj {data_type} guid (seqr)'])
+            if row[f'fam {data_type} guid (seqr)']:
+                row[f'fam {data_type} page (seqr)'] = '<a href="https://seqr.broadinstitute.org/project/%s/family_page/%s" target="_blank">%s</a>' % (
+                    row[f'proj {data_type} guid (seqr)'], row[f'fam {data_type} guid (seqr)'], row[f'fam {data_type} guid (seqr)'])
+
+    return row
+
+meta_df = meta_df.apply(add_links, axis=1)
+
 
 #%%
 
@@ -248,6 +294,10 @@ def read_OUTRIDER_results_table(path):
 
     results_df = pd.merge(results_df, annotation_table, left_on="geneID", right_on="gene_id", how="left")
     results_df = results_df.fillna(" ")
+
+    #results_df = results_df[~(
+    #        results_df.sampleID.str.startswith("BON") | results_df.sampleID.str.startswith("VCGS") | results_df.sampleID.str.startswith("INMR") | results_df.sampleID.str.startswith("RGP")
+    #)]
 
     return results_df
 
@@ -292,9 +342,17 @@ def generate_html(dir_name, results_df, qc_plots, volcano_plots):
 
     sample_rows_sorted = sorted(sample_rows.items(), key=lambda x: len(x[1]), reverse=True)
     sample_links = "<hr />\n"
-    for i, (sample_id, _) in enumerate(sample_rows_sorted):
-        if i > 0: sample_links += ", &nbsp; "
-        sample_links += f"""<a href="#anchor-{sample_id}">{sample_id}</a>\n"""
+    sample_links += (
+        "<table>"
+            "<tr>"
+                "<td style='padding-right: 10px'>Sample Source</td>"
+                "<td style='padding-right: 10px'>Sample ID</td>" 
+                "<td style='padding-right: 10px'># of outliers</td>" 
+            "</tr>")
+    for i, (sample_id, sample_results_df) in enumerate(sample_rows_sorted):
+        #if i > 0: sample_links += ", &nbsp; "
+        sample_links += f"""<tr><td>{'GTEX' if 'GTEX' in sample_id else 'RDG'}</td><td><a href="#anchor-{sample_id}">{sample_id}</a></td><td>{len(sample_results_df)}</td></tr>\n"""
+    sample_links += "</table>"
 
     samples_html = ""
     for sample_id, sample_results_df in sample_rows_sorted:
@@ -316,7 +374,7 @@ def generate_html(dir_name, results_df, qc_plots, volcano_plots):
             raise ValueError(f"{len(volcano_plot_paths)} volcano plots found for {sample_id}: {volcano_plot_paths}")
         elif len(volcano_plot_paths) == 1:
             volcano_plot_path = volcano_plot_paths[0]
-            volcano_plot_html = f"""<a href="{volcano_plot_path}"><img style="max-width: 100%" src="{volcano_plot_path}"></a>"""
+            volcano_plot_html = f"""<a href="{volcano_plot_path}"><img style="max-width: 30%" src="{volcano_plot_path}"></a>"""
 
         # sample info
         sample_meta = meta_df[meta_df.sample_id == sample_id]
@@ -325,17 +383,18 @@ def generate_html(dir_name, results_df, qc_plots, volcano_plots):
         if len(sample_meta) == 0:
             if not sample_id.startswith("GTEX"):
                 print(f"ERROR: '{sample_id}' not found in sample metadata table")
-            continue
-
-        sample_info_html = "<table>"
-        for key, value in sample_meta.iloc[0].to_dict().items():
-            if value is None or not value or not str(value).strip():
-                continue
-            #key = key.replace("_", "")
-            sample_info_html += "<tr>"
-            sample_info_html += f"""<td style="white-space: nowrap; padding-right: 10px"><b>{key}</b></td><td>{value}</td>"""
-            sample_info_html += "</tr>"
-        sample_info_html += "</table>"
+            #continue
+            sample_info_html = ""
+        else:
+            sample_info_html = "<table>"
+            for key, value in sample_meta.iloc[0].to_dict().items():
+                if value is None or not value or not str(value).strip():
+                    continue
+                #key = key.replace("_", "")
+                sample_info_html += "<tr>"
+                sample_info_html += f"""<td style="white-space: nowrap; padding-right: 10px"><b>{key}</b></td><td>{value}</td>"""
+                sample_info_html += "</tr>"
+            sample_info_html += "</table>"
 
         # sample table
         sample_table_html = "<tr>" + "".join([f"""<td>{c}</td>""" for c in sample_results_df.columns]) + "</tr>\n"
@@ -403,7 +462,7 @@ for dir_name in os.listdir(BASE_DIR):
 
     # get the OUTRIDER results table
     #results_table = glob.glob(f"{dir_name}/*padj_0.05_results.tsv*")
-    results_table = glob.glob(f"{dir_name}/*_all_results.tsv*")
+    results_table = glob.glob(f"{dir_name}/*_padj_0.05_results.tsv*")
     if not results_table:
         raise ValueError(f"results table not found in {BASE_DIR}/{dir_name}")
     if len(results_table) > 1:
@@ -413,7 +472,7 @@ for dir_name in os.listdir(BASE_DIR):
 
     volcano_plots = []
     qc_plots = []
-    for plot_path in glob.glob(f"{dir_name}/*.png"):
+    for plot_path in glob.glob(f"{dir_name}/**/*.png"):
         if "_volcano_" in plot_path:
             volcano_plots.append(plot_path)
         else:

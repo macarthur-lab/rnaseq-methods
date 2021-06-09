@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_analysis_batches, get_rnaseq_downstream_analysis_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
 from gagneurlab.gagneur_utils import GENCODE_TXDB, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, OUTRIDER_COUNTS_TSV_GZ
 
 
@@ -19,7 +19,7 @@ POSSIBLE_CONFOUNDERS = """c("tissue", "sex", "stranded", "read_length", "batch")
 PADJ_THRESHOLD = 0.05
 
 def main():
-    analysis_batches = get_analysis_batches()
+    downstream_analysis_df = get_rnaseq_downstream_analysis_metadata_df()
 
     p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("--counts-tsv-path", default=OUTRIDER_COUNTS_TSV_GZ, help="Counts .tsv")
@@ -30,10 +30,8 @@ def main():
     g.add_argument("--with-gtex", help="Use GTEX controls.", action="store_true")
     g.add_argument("--only-gtex", help="Run on just the GTEX control samples to test FP rate.", action="store_true")
 
-    p.add_argument("batch_name", nargs="+", choices=analysis_batches.keys(), help="Name of RNA-seq batch to process")
+    p.add_argument("tissue", nargs="+", choices=set(downstream_analysis_df["tissue"]), help="Name of RNA-seq batch to process")
     args = p.parse_args()
-
-    metadata_tsv_df = get_rnaseq_downstream_analysis_metadata_df()
 
     #local_all_counts_tsv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.basename(OUTRIDER_COUNTS_TSV_GZ))
     #print(f"Copying {local_all_counts_tsv_path} to {OUTRIDER_COUNTS_TSV_GZ}")
@@ -44,39 +42,36 @@ def main():
     if args.with_gtex:
         batch_label += " (with GTEx)"
     batch_label += ": "
-    batch_label += ','.join(args.batch_name)
+    batch_label += ','.join(args.tissue)
     with batch_utils.run_batch(args, batch_label) as batch:
 
-        for batch_name in args.batch_name:
-            batch_dict = analysis_batches[batch_name]
-            batch_tissue = batch_dict['tissue']
-            batch_sex = batch_dict['sex']
+        for tissue in args.tissue:
+            df = downstream_analysis_df[downstream_analysis_df["tissue"] == tissue]
+            if not args.with_gtex and not args.only_gtex:
+                df = df[~df["sample_id"].str.startswith("GTEX")]
+            elif args.only_gtex:
+                df = df[df["sample_id"].str.startswith("GTEX")]
 
-            batch_df = metadata_tsv_df[metadata_tsv_df.sample_id.isin(batch_dict['samples'])]
-            byte_string = ", ".join(sorted(batch_df.sample_id)).encode()
+            sample_ids = list(sorted(set(df.sample_id)))
+            byte_string = ", ".join(sample_ids).encode()
             h = hashlib.md5(byte_string).hexdigest().upper()
-            sample_set_label = f"{batch_name}__{len(batch_df.sample_id)}_samples_{h[:10]}"
+            sample_set_label = f"{tissue}__{len(sample_ids)}_samples_{h[:10]}"
 
-            num_sample_missing_from_metadata_tsv = len(batch_dict['samples']) - len(batch_df)
-            if num_sample_missing_from_metadata_tsv > 0:
-                raise ValueError(f"{batch_tissue} metadata_tsv_df is missing {num_sample_missing_from_metadata_tsv} sample ids. Download count files and run export_gagneur_metadata_table.py")
             logger.info(f"Processing {sample_set_label}")
 
-            c_vector_of_sample_names = 'c("' + '", "'.join(batch_dict['samples']) + '")'
+            c_vector_of_sample_names = 'c("' + '", "'.join(sample_ids) + '")'
+            print(f"Samples: {c_vector_of_sample_names}")
+
             if args.with_gtex:
-                batch_include_GTEX_samples = "TRUE"
                 sample_set_label += "_with_GTEX"
             elif args.only_gtex:
-                c_vector_of_sample_names = "c()"
-                batch_include_GTEX_samples = "TRUE"
                 sample_set_label += "_only_GTEX"
             else:
-                batch_include_GTEX_samples = "FALSE"
                 sample_set_label += "_without_GTEX"
 
             output_base_dir = f"gs://macarthurlab-rnaseq/gagneur/outrider/results/"
-            if "sequencing_date" in set(batch_df.columns):
-                most_recent_sequencing_date = str(max(batch_df.sequencing_date)).replace("-", "_")
+            if "sequencing_date" in set(df.columns):
+                most_recent_sequencing_date = str(max(df.sequencing_date)).replace("-", "_")
                 output_base_dir += f"{most_recent_sequencing_date}__"
             output_base_dir += f"{sample_set_label}"
 
@@ -84,12 +79,13 @@ def main():
             metadata_tsv_filename = f"sample_metadata_{sample_set_label}.tsv"
             local_metadata_tsv_path = f"/tmp/{metadata_tsv_filename}"
             metadata_tsv_path = os.path.join(output_base_dir, metadata_tsv_filename)
-            metadata_tsv_df.to_csv(local_metadata_tsv_path, header=True, index=False, sep="\t")
+            df.to_csv(local_metadata_tsv_path, header=True, index=False, sep="\t")
             hl.hadoop_copy(local_metadata_tsv_path, metadata_tsv_path)
 
-            j = batch_utils.init_job(batch, sample_set_label, DOCKER_IMAGE if not args.raw else None, args.cpu, args.cpu*3.75)
+            j = batch_utils.init_job(batch, sample_set_label, image=DOCKER_IMAGE if not args.raw else None, cpu=args.cpu, memory=args.cpu*3.75, disk_size=50)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
             # copy inputs
+            j.command(f"""cd /io""")
             j.command(f"""gsutil -m cp {GENCODE_TXDB} .""")
             j.command(f"""gsutil -m cp {metadata_tsv_path} {args.counts_tsv_path} .""")
             step1_output_RDS_file = os.path.join(output_base_dir, f"{sample_set_label}__ods.RDS")
@@ -130,19 +126,8 @@ sample_info_path = "{os.path.basename(metadata_tsv_path)}"
 sampleInfo = fread(sample_info_path)
 sampleInfo$read_length = as.character(sampleInfo$read_length)
 
-GTEX_sampleIds = c()
-if ({batch_include_GTEX_samples}) {{
-    if (("{batch_sex}" == "M") || ("{batch_sex}" == "F")) {{
-        GTEX_sampleIds = sampleInfo[(sampleInfo$sex == "{batch_sex}") & (sampleInfo$tissue == "{batch_tissue}") & grepl("GTEX", sampleInfo$sample_id)]$sample_id
-    }} else {{
-        GTEX_sampleIds = sampleInfo[(sampleInfo$tissue == "{batch_tissue}") & grepl("GTEX", sampleInfo$sample_id)]$sample_id    
-    }}
-}}
-
-
 sampleSetLabel = "{sample_set_label}"
 sampleSubset = {c_vector_of_sample_names}
-sampleSubset = c(sampleSubset, GTEX_sampleIds)
 print("sampleSubset: ")
 print(sampleSubset)
 

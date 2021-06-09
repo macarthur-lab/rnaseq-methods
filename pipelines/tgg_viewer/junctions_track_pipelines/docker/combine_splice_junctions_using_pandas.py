@@ -29,20 +29,13 @@ COLUMN_TYPES = {
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Combines multiple SJ.out.tab tables into one combined .bed file which "
-        "can be loaded into TGG-viewer to visualize splice junctions")
-    p.add_argument("-n", "--batch-size", type=int, default=50, help="How many tables to merge in memory before writing "
-        "to disk. Bigger batch sizes use more memory.")
-    p.add_argument("-m", "--normalize-read-counts", action="store_true", help="whether to normalize unique- and "
-        "multi-mapped read counts rather than just summing them across input tables")
+    p = argparse.ArgumentParser(description="Combines multiple SJ.out.tab tables into one combined .bed file which can be loaded into TGG-viewer to visualize splice junctions")
+    p.add_argument("-n", "--batch-size", type=int, default=50, help="How many tables to merge in memory before writing to disk. Bigger batch sizes use more memory.")
     p.add_argument("-o", "--output-path", help="Combined .bed output path")
-    p.add_argument("-t", "--save-individual-tables", action="store_true", help="Also export individual .bed files with "
-        "additional columns")
-    p.add_argument("--add-sample-id-column", action="store_true", help="Add a sample_id column with a list of samples "
-        "that have each splice junction. This increases compute time by 10x.")
-    p.add_argument("-p", "--save-parquet-files", action="store_true", help="Also export parquet files with matrices "
-        "containing per-sample unique_read and multi-mapped read counts. This allows downstream scripts to use these "
-        "matrices for other kinds of normalization - such as using geometric mean instead of arithmetic mean")
+    p.add_argument("--normalize-read-counts", action="store_true", help="whether to normalize unique- and multi-mapped read counts rather than just summing them across input tables")
+    p.add_argument("--save-individual-tables", action="store_true", help="Also export individual .bed files with additional columns")
+    p.add_argument("--add-sample-id-column", action="store_true", help="Add a sample_id column with a list of samples that have each splice junction. This increases compute time by 10x.")
+    p.add_argument("--save-parquet-files", action="store_true", help="Also export parquet files with matrices containing per-sample unique_read and multi-mapped read counts. This allows downstream scripts to use these matrices for other kinds of normalization - such as using geometric mean instead of arithmetic mean")
     p.add_argument("paths", nargs="+", help="Paths of 1 or more input SJ.out.tab tables")
     return p.parse_args()
 
@@ -123,7 +116,7 @@ def main():
 
     column_names = [
         'strand', 'intron_motif', 'known_splice_junction', 'unique_reads', 'multi_mapped_reads', 'maximum_overhang',
-        'num_samples_with_this_junction', 'num_samples_total', 'strand_counter',
+        'num_samples_with_this_junction', 'num_samples_total', 'num_reads_supporting_junction', 'strand_counter',
     ]
     if args.add_sample_id_column:
         column_names += ['sample_id']
@@ -221,13 +214,15 @@ def main():
 
     # save individual tables
     if args.save_individual_tables:
-        columns_to_add_from_combined_table = ["num_samples_with_this_junction", "num_samples_total"]
+        columns_to_add_from_combined_table = ["num_samples_with_this_junction", "num_samples_total", "sample_id"]
         for path in args.paths:
             df = read_SJ_out_tab(path)
             df.drop(columns=columns_to_add_from_combined_table, inplace=True)
             df = df.join(result[columns_to_add_from_combined_table], how="left")
             out = df.reset_index()
-            out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(f"{path.replace('.tab', '').replace('.gz', '')}.tsv.gz", index=False, sep="\t")
+            output_path = f"{os.path.basename(path).replace('.tab', '').replace('.gz', '')}.tsv.gz"
+            logging.info(f"Wrote out {output_path}")
+            out[["chrom", "start_1based", "end_1based"] + column_names].to_csv(output_path, index=False, sep="\t")
 
     #write_to_parquet(result, output_path)
 

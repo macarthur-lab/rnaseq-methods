@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_analysis_batches, get_rnaseq_downstream_analysis_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
 from gagneurlab.gagneur_utils import BAM_HEADER_PATH, DOCKER_IMAGE, GCLOUD_PROJECT, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT
 from gagneurlab.fraser_batch_pipeline_Rscripts import get_EXTRACT_SPLICE_JUNCTIONS_Rscript, \
     get_CALCULATE_PSI_VALUES_Rscript, get_CALCULATE_BEST_Q_Rscript, get_RUN_FRASER_ANALYSIS_Rscript, \
@@ -24,7 +24,7 @@ MIN_READS_THRESHOLD = 2
 
 
 def main():
-    analysis_batches = get_analysis_batches()
+    downstream_analysis_df = get_rnaseq_downstream_analysis_metadata_df()
 
     p = batch_utils.init_arg_parser(default_cpu=4, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("--with-gtex", help="Use GTEX controls.", action="store_true")
@@ -36,61 +36,46 @@ def main():
     p.add_argument("--skip-step5", action="store_true", help="Skip FRASER analysis step")
     p.add_argument("--skip-step6", action="store_true", help="Skip generating results table")
     p.add_argument("--skip-step7", action="store_true", help="Skip volcano plots")
-    p.add_argument("batch_name", nargs="+", choices=analysis_batches.keys(), help="Name of RNA-seq batch to process")
+    p.add_argument("tissue", nargs="+", choices=set(downstream_analysis_df["tissue"]), help="Name of RNA-seq batch to process")
     args = p.parse_args()
 
     hl.init(log="/dev/null", quiet=True)
-
-    metadata_tsv_df = get_rnaseq_downstream_analysis_metadata_df()
-
-    samples_df_unmodified = metadata_tsv_df.set_index("sample_id", drop=False)
 
     batch_label = f"FRASER"
     if args.with_gtex:
         batch_label += f" (with GTEx)"
     batch_label += ": "
-    batch_label += ','.join(args.batch_name)
+    batch_label += ','.join(args.tissue)
     batch_label += f" (dPsi={DELTA_PSI_THRESHOLD}, padj={PADJ_THRESHOLD}, min_reads={MIN_READS_THRESHOLD})"
 
     with batch_utils.run_batch(args, batch_label) as batch:
 
-        for batch_name in args.batch_name:
-            samples_df = samples_df_unmodified
-            batch_dict = analysis_batches[batch_name]
-            batch_tissue = batch_dict['tissue']
-            batch_sex = batch_dict['sex']
+        for tissue in args.tissue:
+            df = downstream_analysis_df[downstream_analysis_df["tissue"] == tissue]
+            if not args.with_gtex and not args.only_gtex:
+                df = df[~df["sample_id"].str.startswith("GTEX")]
+            elif args.only_gtex:
+                df = df[df["sample_id"].str.startswith("GTEX")]
 
-            num_sample_missing_from_metadata_tsv = len(batch_dict['samples']) - len(metadata_tsv_df.sample_id.isin(batch_dict['samples']))
-            if num_sample_missing_from_metadata_tsv > 0:
-                raise ValueError(f"{batch_tissue} metadata_tsv_df is missing {num_sample_missing_from_metadata_tsv} sample ids. Download count files and run export_gagneur_metadata_table.py")
-
-            sample_ids = list(batch_dict['samples'])
+            sample_ids = list(sorted(set(df.sample_id)))
+            batch_name = tissue
             if args.with_gtex:
                 batch_name += "_with_GTEX"
-                samples_df_filter = (samples_df.tissue == batch_tissue)
-                samples_df_filter &= samples_df.sample_id.str.startswith("GTEX")
-                if batch_sex == "M" or batch_sex == "F":
-                    samples_df_filter &= (samples_df.sex == batch_sex)
-                sample_ids += list(samples_df[samples_df_filter].sample_id)
             elif args.only_gtex:
                 batch_name += "_only_GTEX"
-                samples_df_filter = (samples_df.tissue == batch_tissue)
-                samples_df_filter &= samples_df.sample_id.str.startswith("GTEX")
-                sample_ids = list(samples_df[samples_df_filter].sample_id)
             else:
                 batch_name += "_without_GTEX"
 
-            samples_df = samples_df.loc[sample_ids]
-            byte_string = ", ".join(sorted(samples_df.sample_id)).encode()
+            byte_string = ", ".join(sample_ids).encode()
             h = hashlib.md5(byte_string).hexdigest().upper()
-            sample_set_label = f"{batch_name}__{len(samples_df.sample_id)}_samples_{h[:10]}"
+            sample_set_label = f"{batch_name}__{len(sample_ids)}_samples_{h[:10]}"
 
             result_dir = sample_set_label
-            if "sequencing_date" in set(samples_df.columns):
-                most_recent_sequencing_date = str(max(samples_df.sequencing_date)).replace("-", "_")
+            if "sequencing_date" in set(df.columns):
+                most_recent_sequencing_date = str(max(df.sequencing_date)).replace("-", "_")
                 result_dir = f"{most_recent_sequencing_date}__{result_dir}"
 
-            logger.info(f"Processing {sample_set_label}: {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
+            logger.info(f"Processing {sample_set_label}: {len(df)} sample ids: {', '.join(sample_ids[:20])}")
 
             output_dir_for_batch_specific_data = f"gs://macarthurlab-rnaseq/gagneur/fraser/results/{result_dir}"
 
@@ -119,9 +104,10 @@ def main():
             # based on docs @ https://bioconductor.org/packages/devel/bioc/vignettes/FRASER/inst/doc/FRASER.pdf
             # step 1: count spliced reads
             # step 2: count non-spliced reads at acceptors & donors of splice junctions detected in step 1
+            df = df.set_index("sample_id")
             for step in 1, 2:
-                for sample_id in samples_df.sample_id:
-                    metadata_row = samples_df.loc[sample_id]
+                for sample_id in sample_ids:
+                    metadata_row = df.loc[sample_id]
 
                     # set job inputs & outputs
                     input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
@@ -158,9 +144,10 @@ def main():
                         disk_size = None
 
                     job_label = f"Count {'split' if step == 1 else 'non-split'} reads"
-                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=8, image=DOCKER_IMAGE)
+                    j = batch_utils.init_job(batch, f"{job_label}: {sample_id}", cpu=8, disk_size=50, image=DOCKER_IMAGE)
                     batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
+                    j.command("cd /io")
                     j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bam} {sample_id}.bam")
                     j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {input_bai} {sample_id}.bam.bai")
                     j.command(f"touch {sample_id}.bam.bai")
@@ -225,7 +212,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         continue
 
                     num_cpu = 16
-                    j_extract_splice_junctions = batch_utils.init_job(batch, f"{sample_set_label}: Extract splice-junctions", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                    j_extract_splice_junctions = batch_utils.init_job(batch, f"{sample_set_label}: Extract splice-junctions", cpu=num_cpu, memory=3.75*num_cpu, disk_size=20, image=DOCKER_IMAGE)
                     for j in split_reads_jobs.values():
                         j_extract_splice_junctions.depends_on(j)
 
@@ -241,7 +228,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         continue
 
                     num_cpu = 16
-                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
                     if j_extract_splice_junctions:
                         j_calculate_psi_values.depends_on(j_extract_splice_junctions)
                     for j in non_split_reads_jobs.values():
@@ -253,7 +240,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         split_reads_output_files,
                         non_split_reads_output_files,
                         output_file_path_splice_junctions_RDS,
-                        metadata_tsv_df,
+                        df,
                         output_file_path_calculated_psi_values_tar_gz)
 
             # filter and annotate data
@@ -263,7 +250,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_filter_and_annotate_data_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
                 num_cpu = 16
-                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
 
                 if j_calculate_psi_values:
                     j_filter_and_annotate_data.depends_on(j_calculate_psi_values)
@@ -281,7 +268,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_calculated_best_q_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
                 num_cpu = 16
-                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
 
                 if j_filter_and_annotate_data:
                     j_calculate_best_q.depends_on(j_filter_and_annotate_data)
@@ -300,7 +287,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_fraser_analysis_tar_gz} file already exists. Skipping run_fraser_analysis step...")
             else:
                 num_cpu = 16
-                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
                 if j_calculate_best_q:
                     j_fraser_analysis.depends_on(j_calculate_best_q)
 
@@ -316,7 +303,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_results_tables_tar_gz} file already exists. Skipping get_results_table step...")
             else:
                 num_cpu = 16
-                j_get_results_table = batch_utils.init_job(batch, f"{sample_set_label}: Get Results Tables", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                j_get_results_table = batch_utils.init_job(batch, f"{sample_set_label}: Get Results Tables", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
                 if j_fraser_analysis:
                     j_get_results_table.depends_on(j_fraser_analysis)
 
@@ -333,7 +320,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_fraser_volcano_plots_tar_gz} file already exists. Skipping get_volcano_plots step...")
             else:
                 num_cpu = 16
-                j_get_volcano_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Volcano Plots", cpu=num_cpu, memory=3.75*num_cpu, disk_size=21.875*num_cpu, image=DOCKER_IMAGE)
+                j_get_volcano_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Volcano Plots", cpu=num_cpu, memory=3.75*num_cpu, disk_size=20, image=DOCKER_IMAGE)
                 if j_fraser_analysis:
                     j_get_volcano_plots.depends_on(j_fraser_analysis)
 
@@ -365,13 +352,17 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
 def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_df, output_file_path_calculated_psi_values_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/{sample_set_label}")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_calculate_psi_values.command(f"cd /tmp/fraser/{sample_set_label}")
+    j_calculate_psi_values.command("cd /io")
     for split_reads_output_files_batch in [split_reads_files[i:i+10] for i in range(0, len(split_reads_files), 10)]:
         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files_batch)} .")
     for non_split_reads_output_files_batch in [non_split_reads_files[i:i+10] for i in range(0, len(non_split_reads_files), 10)]:
         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files_batch)} .")
     j_calculate_psi_values.command(f"gsutil -m cp {splice_junctions_RDS_path} .")
+
+    j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_calculate_psi_values.command(f"ln -s /io /tmp/fraser/{sample_set_label}")
+
+    j_calculate_psi_values.command(f"cd /tmp/fraser/{sample_set_label}")
 
     metadata_tsv_filename = f"sample_metadata_{sample_set_label}.tsv"
     local_metadata_tsv_path = f"/tmp/{metadata_tsv_filename}"
@@ -400,11 +391,12 @@ def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_f
 
 def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calculated_psi_values_tar_gz_path, output_file_path_filter_and_annotate_data_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_filter_and_annotate_data, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
-
-    j_filter_and_annotate_data.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_filter_and_annotate_data.command(f"cd /tmp/fraser/")
+    j_filter_and_annotate_data.command("cd /io")
     j_filter_and_annotate_data.command(f"gsutil -m cp {calculated_psi_values_tar_gz_path} .")
     j_filter_and_annotate_data.command(f"tar xzf {os.path.basename(calculated_psi_values_tar_gz_path)}")
+
+    j_filter_and_annotate_data.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_filter_and_annotate_data.command(f"cd /tmp/fraser/")
     j_filter_and_annotate_data.command(f"cd {sample_set_label}")
     j_filter_and_annotate_data.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, min_reads=MIN_READS_THRESHOLD)}'""")
@@ -418,10 +410,12 @@ def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calcu
 def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, filter_and_annotate_data_tar_gz_path, output_file_path_calculated_best_q_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_best_q, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_calculate_best_q.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_calculate_best_q.command(f"cd /tmp/fraser/")
+    j_calculate_best_q.command("cd /io")
     j_calculate_best_q.command(f"gsutil -m cp {filter_and_annotate_data_tar_gz_path} .")
     j_calculate_best_q.command(f"tar xzf {os.path.basename(filter_and_annotate_data_tar_gz_path)}")
+
+    j_calculate_best_q.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_calculate_best_q.command(f"cd /tmp/fraser/")
     j_calculate_best_q.command(f"cd {sample_set_label}")
     j_calculate_best_q.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_calculate_best_q.command(f"""time xvfb-run Rscript -e '{get_CALCULATE_BEST_Q_Rscript(sample_set_label, num_cpu)}'""")
@@ -435,10 +429,12 @@ def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, filter_and_a
 def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
+    j_run_fraser_analysis.command(f"cd /io")
     j_run_fraser_analysis.command(f"gsutil -m cp {calculated_best_q_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(calculated_best_q_tar_gz_path)}")
+
+    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1)}'""")
@@ -452,10 +448,12 @@ def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best
 def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_results_tables_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
+    j_run_fraser_analysis.command(f"cd /io")
     j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
+
+    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RESULTS_TABLES_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
@@ -471,10 +469,12 @@ def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_t
 def get_volcano_plots(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_fraser_volcano_plots_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
+    j_run_fraser_analysis.command(f"cd /io")
     j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
+
+    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_VOLCANO_PLOTS_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
