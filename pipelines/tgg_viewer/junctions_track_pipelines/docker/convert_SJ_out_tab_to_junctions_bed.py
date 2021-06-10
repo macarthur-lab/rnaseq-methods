@@ -145,12 +145,11 @@ for input_path in args.input_path:
                 f"annotated_junction={is_annotated}",
             ]
 
-            if header and 'num_samples_with_this_junction' in header and 'num_samples_total' in header:
-                idx = header.index('num_samples_with_this_junction')
-                output_fields.append(f"num_samples_with_this_junction={int(fields[idx])}")
-
-                idx = header.index('num_samples_total')
-                output_fields.append(f"num_samples_total={int(fields[idx])}")
+            if header:
+                for other_columns in 'num_samples_with_this_junction', 'num_samples_total', 'max_per_sample_unique_reads', 'max_per_sample_total_reads':
+                    if other_columns in header:
+                        idx = header.index(other_columns)
+                        output_fields.append(f"{other_columns}={int(fields[idx])}")
 
             gffTags = ";".join(output_fields)
 

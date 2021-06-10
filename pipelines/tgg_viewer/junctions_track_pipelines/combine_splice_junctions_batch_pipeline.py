@@ -13,7 +13,7 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:9f5258ee03c68cea7fd30d8f494eb81aaba883b68e068d6a6e3fe02188bc36a7"
+DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:5df72f88cbe3e79d0ef0fbb4ebbd08cd0363fa51946bf384dc58f9ee07544663"
 
 hl.init(log="/dev/null")
 batch_utils.set_gcloud_project(GCLOUD_PROJECT)
@@ -49,7 +49,7 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, output_d
         normalize_read_counts_option = "--normalize-read-counts" if args.normalize_read_counts else ""
 
         local_SJ_out_tab_paths = " ".join(local_SJ_out_tab_paths)
-        j.command(f"python3 -u combine_splice_junctions_using_pandas.py --add-sample-id-column -n 20 "
+        j.command(f"python3 -u combine_splice_junctions_using_pandas.py -n 20 "
             f"{save_individual_tables_option} "
             f"{normalize_read_counts_option} "
             f"{local_SJ_out_tab_paths}")
