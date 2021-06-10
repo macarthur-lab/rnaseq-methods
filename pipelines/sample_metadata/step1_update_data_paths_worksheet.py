@@ -118,10 +118,14 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz$"),
         ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz.tbi"),
 
+        ('portcullis_all', "macarthurlab-rnaseq/[^/]+/portcullis/([^/]+).portcullis_all.junctions.tab.gz"),
+        ('portcullis_filtered', "macarthurlab-rnaseq/[^/]+/portcullis/([^/]+).portcullis_filtered.pass.junctions.tab.gz"),
+
         ('junctions_bed', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz$"),
         ('junctions_bed_tbi', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
 
         ('coverage_bigwig', "macarthurlab-rnaseq/[^/]+/bigWig/([^/]+).bigWig"),
+
     ]
 
     if "batch_all_samples" in path:
@@ -190,6 +194,8 @@ all_samples_df = pd.DataFrame(
         'rnaseqc_metrics',
         'junctions_bed',
         'coverage_bigwig',
+        'portcullis_filtered',
+        'portcullis_all',
         'hg19_bam',
         'hg19_bai',
         'fastqc_zip',
