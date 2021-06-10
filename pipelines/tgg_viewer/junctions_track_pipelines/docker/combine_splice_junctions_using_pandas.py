@@ -114,8 +114,8 @@ def read_SJ_out_tab(path, i=None):
 
     df.loc[:, 'num_samples_with_this_junction'] = np.int32(1)
     df.loc[:, 'num_samples_total'] = np.int32(1)
-    df.loc[:, 'max_per_sample_unique_reads'] = np.int32(0)
-    df.loc[:, 'max_per_sample_total_reads'] = np.int32(0)
+    df.loc[:, 'max_per_sample_unique_reads'] = df['unique_reads']
+    df.loc[:, 'max_per_sample_total_reads'] = df['total_reads']
 
     df.loc[:, 'strand_counter'] = df['strand'].apply(lambda s: 1 if s == 1 else (-1 if s == 2 else 0)).astype('int32')
     df.loc[:, 'sample_id'] = os.path.basename(path).replace(".SJ.out.tab", "").replace(".gz", "")
@@ -176,14 +176,17 @@ def process_all_batches(args):
                 current_SJ_out_tab_df.loc[:, f"unique_reads_{sample_i}"] *= scalar / float(total_samples)
                 current_SJ_out_tab_df.loc[:, f"multi_mapped_reads_{sample_i}"] *= scalar / float(total_samples)
                 current_SJ_out_tab_df.loc[:, f"total_reads_{sample_i}"] *= scalar / float(total_samples)
+                current_SJ_out_tab_df.loc[:, f"max_per_sample_unique_reads_{sample_i}"] *= scalar / float(total_samples)
+                current_SJ_out_tab_df.loc[:, f"max_per_sample_total_reads_{sample_i}"] *= scalar / float(total_samples)
 
                 current_SJ_out_tab_df.loc[:, f"unique_reads_{sample_i}"] = current_SJ_out_tab_df[f"unique_reads_{sample_i}"].round(decimals=3)
                 current_SJ_out_tab_df.loc[:, f"multi_mapped_reads_{sample_i}"] = current_SJ_out_tab_df[f"multi_mapped_reads_{sample_i}"].round(decimals=3)
                 current_SJ_out_tab_df.loc[:, f"total_reads_{sample_i}"] = current_SJ_out_tab_df[f"total_reads_{sample_i}"].round(decimals=3)
+                current_SJ_out_tab_df.loc[:, f"max_per_sample_unique_reads_{sample_i}"] = current_SJ_out_tab_df[f"max_per_sample_unique_reads_{sample_i}"].round(decimals=3)
+                current_SJ_out_tab_df.loc[:, f"max_per_sample_total_reads_{sample_i}"] = current_SJ_out_tab_df[f"max_per_sample_total_reads_{sample_i}"].round(decimals=3)
                 logging.info(f"{path} has {int(unique_reads_in_sample)} total unique reads while the "
                              f"per-sample average is {average_unique_reads_per_sample}. Scaling read counts "
                              f"by {scalar} and dividing by {total_samples}")
-
 
             tables_in_batch.append(current_SJ_out_tab_df)
             sample_i += 1
@@ -221,8 +224,8 @@ def process_all_batches(args):
         # compute derived columns
         all_combined_SJ_out_tab_df.loc[:, 'num_samples_with_this_junction'] = all_combined_SJ_out_tab_df[current_batch_columns['num_samples_with_this_junction']].sum(axis=1).astype(COLUMN_TYPES['num_samples_with_this_junction'])
         all_combined_SJ_out_tab_df.loc[:, 'num_samples_total'] = total_samples
-        all_combined_SJ_out_tab_df.loc[:, 'max_per_sample_unique_reads'] = all_combined_SJ_out_tab_df[current_batch_columns['unique_reads']].max(axis=1).astype(COLUMN_TYPES['unique_reads'])
-        all_combined_SJ_out_tab_df.loc[:, 'max_per_sample_total_reads'] = all_combined_SJ_out_tab_df[current_batch_columns['total_reads']].max(axis=1).astype(COLUMN_TYPES['total_reads'])
+        all_combined_SJ_out_tab_df.loc[:, 'max_per_sample_unique_reads'] = all_combined_SJ_out_tab_df[current_batch_columns['max_per_sample_unique_reads']].max(axis=1).astype(COLUMN_TYPES['unique_reads'])
+        all_combined_SJ_out_tab_df.loc[:, 'max_per_sample_total_reads'] = all_combined_SJ_out_tab_df[current_batch_columns['max_per_sample_total_reads']].max(axis=1).astype(COLUMN_TYPES['total_reads'])
 
         if not args.discard_sample_id_column:
             all_combined_SJ_out_tab_df.loc[:, 'sample_id'] = all_combined_SJ_out_tab_df[current_batch_columns['sample_id']].apply(lambda row: ",".join(row[~row.isna()]), axis=1).astype('str')
