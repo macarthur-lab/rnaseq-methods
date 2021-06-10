@@ -3,7 +3,7 @@ import logging
 import os
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df, get_gtex_rnaseq_sample_metadata_df
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
-DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:5df72f88cbe3e79d0ef0fbb4ebbd08cd0363fa51946bf384dc58f9ee07544663"
+DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:f737cbdb703258a75b81812e5ce7a740230c6051251632e380cc8835aca75f51"
 
 hl.init(log="/dev/null")
 batch_utils.set_gcloud_project(GCLOUD_PROJECT)
@@ -55,24 +55,20 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, output_d
             f"{local_SJ_out_tab_paths}")
         j.command(f"mv combined.{len(SJ_out_tab_paths)}_samples{normalized_suffix}.SJ.out.tsv.gz {output_filename}")
         j.command(f"""gsutil -u {GCLOUD_PROJECT} -m cp *.tsv.gz {output_dir}""")
-
-        input_path_for_step2 = output_filename
     else:
         logger.info(f"Output file {output_path} exists. Skipping...")
         local_path = batch_utils.localize_file(j, output_path, use_gcsfuse=False)
         j.command(f"mv {local_path} .")
-        input_path_for_step2 = os.path.basename(local_path)
 
     if args.force or not output_path2_exists:
-        j.command(f"python3 -u convert_SJ_out_tab_to_junctions_bed.py "
-            f"-g gencode.v35.annotation.gff3.gz "
-            f"{input_path_for_step2}")
-        j.command(f"""gsutil -u {GCLOUD_PROJECT} -m cp {output_filename2}* {output_dir}""")
+        j.command(f"for p in *.tsv.gz; do echo Converting $p; python3 -u convert_SJ_out_tab_to_junctions_bed.py -g gencode.v35.annotation.gff3.gz $p ; done")
+        j.command(f"""gsutil -u {GCLOUD_PROJECT} -m cp *.bed.gz* {output_dir}""")
     else:
         logger.info(f"Output file {output_path2} exists. Skipping...")
 
     logger.info(f"Output: {output_path}")
     logger.info(f"Output2: {output_path2}")
+
 
 
 if __name__ == "__main__":

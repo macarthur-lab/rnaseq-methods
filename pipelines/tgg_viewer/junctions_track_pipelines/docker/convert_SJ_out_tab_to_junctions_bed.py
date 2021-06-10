@@ -118,13 +118,17 @@ for input_path in args.input_path:
                 else:
                     continue
 
-
             strand = STRAND_LOOKUP[fields[3]]
             intron_motif = MOTIF_LOOKUP[fields[4]]
             #is_annotated = str(bool(int(fields[5]))).lower()
             num_uniquely_mapped_reads = int(round(float(fields[6])))
             num_multi_mapped_reads = int(round(float(fields[7])))
             maximum_spliced_alignment_overhang = int(fields[8])
+
+            if header:
+                assert header.index("unique_reads") == 6
+                assert header.index("multi_mapped_reads") == 7
+                assert header.index("maximum_overhang") == 8
 
             key = (chrom, start_1based, end_1based)
             if key in gencode_introns_set:
@@ -149,7 +153,7 @@ for input_path in args.input_path:
                 for other_columns in 'num_samples_with_this_junction', 'num_samples_total', 'max_per_sample_unique_reads', 'max_per_sample_total_reads':
                     if other_columns in header:
                         idx = header.index(other_columns)
-                        output_fields.append(f"{other_columns}={int(fields[idx])}")
+                        output_fields.append(f"{other_columns}={float(fields[idx])}")
 
             gffTags = ";".join(output_fields)
 

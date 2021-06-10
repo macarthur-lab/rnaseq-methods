@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import psutil
 import os
+import re
 
 #pd.options.mode.chained_assignment = 'raise'
 
@@ -171,9 +172,11 @@ def process_all_batches(args):
             if args.normalize_read_counts:
                 unique_reads_in_sample = current_SJ_out_tab_df[f"unique_reads_{sample_i}"].sum()
                 scalar = average_unique_reads_per_sample / float(unique_reads_in_sample)
+
                 current_SJ_out_tab_df.loc[:, f"unique_reads_{sample_i}"] *= scalar / float(total_samples)
                 current_SJ_out_tab_df.loc[:, f"multi_mapped_reads_{sample_i}"] *= scalar / float(total_samples)
-                current_SJ_out_tab_df.loc[:, f"total_reads_{sample_i}"] = current_SJ_out_tab_df[f"total_reads_{sample_i}"]
+                current_SJ_out_tab_df.loc[:, f"total_reads_{sample_i}"] *= scalar / float(total_samples)
+
                 current_SJ_out_tab_df.loc[:, f"unique_reads_{sample_i}"] = current_SJ_out_tab_df[f"unique_reads_{sample_i}"].round(decimals=3)
                 current_SJ_out_tab_df.loc[:, f"multi_mapped_reads_{sample_i}"] = current_SJ_out_tab_df[f"multi_mapped_reads_{sample_i}"].round(decimals=3)
                 current_SJ_out_tab_df.loc[:, f"total_reads_{sample_i}"] = current_SJ_out_tab_df[f"total_reads_{sample_i}"].round(decimals=3)
@@ -279,10 +282,10 @@ def main():
             df.drop(columns=AGGREGATED_COLUMNS_TO_ADD_TO_INDIVIDUAL_TABLES, inplace=True)
             df = df.join(all_combined_SJ_out_tab_df[AGGREGATED_COLUMNS_TO_ADD_TO_INDIVIDUAL_TABLES], how="left")
             out = df.reset_index()
-            output_path = f"{os.path.basename(path).replace('.tab', '').replace('.gz', '')}"
+            output_path = re.sub("(.SJ.out)?(.tsv|.tab)(.gz)?$", "", os.path.basename(path))
             if args.normalize_read_counts:
                 output_path += ".normalized"
-            output_path += ".tsv.gz"
+            output_path += ".SJ.out.tsv.gz"
 
             logging.info(f"Wrote out {output_path}")
             out[["chrom", "start_1based", "end_1based"] + COLUMN_NAMES].to_csv(output_path, index=False, sep="\t")

@@ -12,7 +12,7 @@ hl.init(log="/dev/null")
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:5df72f88cbe3e79d0ef0fbb4ebbd08cd0363fa51946bf384dc58f9ee07544663"
+DOCKER_IMAGE = "weisburd/junctions-track-pipeline@sha256:f737cbdb703258a75b81812e5ce7a740230c6051251632e380cc8835aca75f51"
 GCLOUD_PROJECT = "seqr-project"
 GCLOUD_USER_ACCOUNT = "weisburd@broadinstitute.org"
 GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
