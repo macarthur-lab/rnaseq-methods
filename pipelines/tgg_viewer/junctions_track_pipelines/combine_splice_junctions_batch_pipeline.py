@@ -70,7 +70,6 @@ def combine_splice_junctions(args, batch, batch_name, SJ_out_tab_paths, output_d
     logger.info(f"Output2: {output_path2}")
 
 
-
 if __name__ == "__main__":
     # columns: sample_id, star_pipeline_batch, star_SJ_out_tab, 'imputed sex', 'imputed tissue', 'stranded? (rnaseqc)', 'read length (rnaseqc)'
     rnaseq_sample_metadata_df = get_rnaseq_downstream_analysis_metadata_df()
