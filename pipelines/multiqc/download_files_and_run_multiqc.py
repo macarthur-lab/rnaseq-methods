@@ -26,7 +26,7 @@ def chdir(new_dir):
 def gsutil_cp(source, dest, mkdir=True):
     if mkdir:
         run("mkdir -p " + dest)
-    run("gsutil -m cp -n %s  %s" % (source, dest))
+    run("gsutil cp -n %s  %s" % (source, dest))
 
 
 def main():
