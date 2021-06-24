@@ -19,9 +19,8 @@ hl.init(log="/dev/null")
 
 df = get_rnaseq_metadata_joined_with_paths_df()
 
-df.columns
+print(df.columns)
 
-#%%
 batches = collections.Counter(df.star_pipeline_batch)
 
 print(batches)
@@ -31,7 +30,6 @@ print(batches)
 os.chdir("/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/tgg_viewer")
 print(os.getcwd())
 
-#%%
 
 #row.star_pipeline_batch
 
