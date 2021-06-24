@@ -41,7 +41,7 @@ def gsutil_cp(source, dest, force=False, delete_after_copy=False):
     n_arg = "" if force else "-n"
     delete_command = f" && gsutil -m rm -rf {source}" if delete_after_copy else ""
 
-    run(f"gsutil -m cp {n_arg} {source} {dest} {delete_command}")
+    run(f"gsutil cp {n_arg} {source} {dest} {delete_command}")
 
 
 def copy_hg19_bams(args):

@@ -9,6 +9,7 @@ sample_id, star_pipeline_batch, hg19_bam, hg19_bai, etc.
 
 import datetime
 import collections
+import hail as hl
 import os
 import pandas as pd
 import pprint
@@ -25,6 +26,9 @@ from sample_metadata.rnaseq_metadata_utils import get_data_paths_worksheet, RNAS
 def run(cmd):
     print(cmd)
     os.system(cmd)
+
+hl.init(log="/dev/null")
+
 
 #%%
 
@@ -53,9 +57,10 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         sample_id = re.sub("^RP-[0-9]{0,5}_", "", sample_id)
         sample_id = re.sub("_v[1-9]_RNA_OnPrem", "", sample_id)
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
+        #print(sample_id)
         if hg19_bam_path_match.group(2) != sample_id:
             dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
-            if dest_path != path:
+            if dest_path != path and not hl.hadoop_exists(dest_path):
                 #print("Would move " + path + " to " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
             macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
@@ -65,7 +70,9 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
 
         batch = hg19_bam_path_match.group(1)
         if sample_id in all_samples:
-            print("ERROR: " +  sample_id + " found more than once: " + all_samples[sample_id]['star_pipeline_batch'] + ", " + batch)
+            print("ERROR: " + sample_id + " found more than once in the gs://macarthurlab/*/hg19_bams/*.bam: ")
+            print(all_samples[sample_id])
+            print({'sample_id': sample_id, 'star_pipeline_batch': batch, 'hg19_bam': path})
             continue
 
         all_samples[sample_id] = {'sample_id': sample_id, 'star_pipeline_batch': batch, 'hg19_bam': path}
@@ -125,7 +132,6 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         ('junctions_bed_tbi', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
 
         ('coverage_bigwig', "macarthurlab-rnaseq/[^/]+/bigWig/([^/]+).bigWig"),
-
     ]
 
     if "batch_all_samples" in path:
