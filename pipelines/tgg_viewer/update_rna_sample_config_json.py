@@ -83,7 +83,7 @@ for _, row in df.iterrows():
     ] if row[c]])
     description += "</table>"
 
-    for current_batch_name in ["all", batch_name] + ([imputed_tissue] if imputed_tissue else []):
+    for current_batch_name in ["all", batch_name] + ([imputed_tissue] if imputed_tissue else []) + (["bonnemann"] if "BON_" in row.sample_id else []):
         if rnaseq_data:
             rna_rows_by_batch[current_batch_name].append({'name': row.sample_id, 'data': rnaseq_data, "description": description})
         if dna_data:

@@ -36,19 +36,19 @@ hl.init(log="/dev/null")
 
 storage_client = storage.Client()
 bucket = storage_client.get_bucket('tgg-rnaseq')
-macarthurlab_rnaseq_bucket_blobs = bucket.list_blobs()
-macarthurlab_rnaseq_bucket_file_paths = [b.public_url.replace("https://storage.googleapis.com/", "gs://") for b in macarthurlab_rnaseq_bucket_blobs]
+tgg_rnaseq_bucket_blobs = bucket.list_blobs()
+tgg_rnaseq_bucket_file_paths = [b.public_url.replace("https://storage.googleapis.com/", "gs://") for b in tgg_rnaseq_bucket_blobs]
 
-print("Found %s paths" % len(macarthurlab_rnaseq_bucket_file_paths))
+print("Found %s paths" % len(tgg_rnaseq_bucket_file_paths))
 
 
 #%%
 
-# go through all hg19 bam paths in macarthurlab_rnaseq_bucket_file_paths and initialize all_samples dict. with sample_id => {sample id, batch, hg19 bam path}
+# go through all hg19 bam paths in tgg_rnaseq_bucket_file_paths and initialize all_samples dict. with sample_id => {sample id, batch, hg19 bam path}
 all_samples = {}
 
 batch_sample_counters = collections.defaultdict(int)
-for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
+for path_i, path in enumerate(tgg_rnaseq_bucket_file_paths):
     hg19_bam_path_match = re.search("tgg-rnaseq/([^/]+)/hg19_bams/([^/]+).bam$", path)
     if hg19_bam_path_match:
         sample_id = hg19_bam_path_match.group(2).replace(".", "-")
@@ -63,7 +63,7 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
             if dest_path != path and not hl.hadoop_exists(dest_path):
                 #print("Would move " + path + " to " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
-            macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
+            tgg_rnaseq_bucket_file_paths[path_i] = dest_path
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
             continue
@@ -84,7 +84,7 @@ pprint.pprint(dict(batch_sample_counters))
 
 #%%
 
-# add rest of paths in macarthurlab_rnaseq_bucket_file_paths to all_samples dict.
+# add rest of paths in tgg_rnaseq_bucket_file_paths to all_samples dict.
 """
 gs://tgg-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam
 gs://tgg-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam.bai
@@ -101,7 +101,7 @@ gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.gene_tpm.gct.gz
 gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.metrics.tsv
 """
 
-for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
+for path_i, path in enumerate(tgg_rnaseq_bucket_file_paths):
     regexps = [
         ('hg19_bai', "tgg-rnaseq/[^/]+/hg19_bams/([^/]+).bai"),
 
@@ -159,7 +159,7 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
                 #print("Would run gsutil mv -n " + path + " " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
 
-            macarthurlab_rnaseq_bucket_file_paths[path_i] = dest_path
+            tgg_rnaseq_bucket_file_paths[path_i] = dest_path
 
 
         if sample_id in RNASEQ_SAMPLE_IDS_TO_EXCLUDE:
