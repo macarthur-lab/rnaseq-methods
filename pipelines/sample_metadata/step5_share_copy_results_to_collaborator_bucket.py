@@ -11,16 +11,10 @@ from gspread_dataframe import set_with_dataframe
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#%%
-
-destination_bucket = "gs://tgg-rnaseq-bonnemann/"
-
 metadata_df = get_rnaseq_metadata_joined_with_paths_df()
 metadata_df = metadata_df[metadata_df.sample_id.str.startswith("BON_")]   # filter
 list(metadata_df.columns)
 
-
-#%%
 
 metadata_df = metadata_df[[
     'sample_id',
@@ -70,13 +64,18 @@ metadata_df.to_csv(output_path, header=True, index=False, sep="\t")
 
 #%%
 user = "svetlana.gorokhova@univ-amu.fr"
-
-for _, row in metadata_df.iterrows():
+rows = [row for _, row in metadata_df.iterrows()]
+batch_size = 20
+for i in range(0, len(rows), batch_size):
     paths = []
-    for key, value in row.to_dict().items():
-        if value and value.startswith("gs://"):
-            paths.append(value)
-    os.system(f"gsutil -m acl ch -u {user}:R " + " ".join(paths))
+    for row in rows[i:i+batch_size]:
+        for key, value in row.to_dict().items():
+            if value and value.startswith("gs://"):
+                value = os.path.splitext(value)[0] + ".*"  # remove extension, add wildcard to also capture .tbi, etc.
+                paths.append(value)
+    os.system(f"gsutil acl ch -u {user}:R " + " ".join(paths))
+
+# gsutil acl ch -u allUsers:R gs://tgg-viewer-configs/*.json
 
 #%%
 
