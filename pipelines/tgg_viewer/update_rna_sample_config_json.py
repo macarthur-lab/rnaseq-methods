@@ -448,6 +448,7 @@ for batch_name, rna_rows in sorted(rna_rows_by_batch.items()):
     os.system(f"gsutil cp {output_path} gs://tgg-viewer-configs/")
 
 os.system("gsutil acl ch -u AllUsers:R gs://tgg-viewer-configs/*.json")
+# gsutil acl ch -u allUsers:R gs://tgg-viewer-configs/*.json
 
 #%%
 
