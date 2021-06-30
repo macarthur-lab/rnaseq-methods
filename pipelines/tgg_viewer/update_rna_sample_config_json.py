@@ -445,6 +445,14 @@ for batch_name, rna_rows in sorted(rna_rows_by_batch.items()):
         json.dump(json.loads(settings_json.strip()), f, indent=2, sort_keys=True)
     print("Wrote to " + output_path)
 
+    os.system(f"gsutil cp {output_path} gs://tgg-viewer-configs/")
+
+os.system("gsutil acl ch -u AllUsers:R gs://tgg-viewer-configs/*.json")
+
+#%%
+
+
+
 
 #%%
 
