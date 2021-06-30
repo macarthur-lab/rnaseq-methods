@@ -318,15 +318,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1111-1_T1105.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1111-1_T1105.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/BEG_1111-1_T1105.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/BEG_1111-1_T1105.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1111-1_T1105.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/BEG_1111-1_T1105.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, Multiple congenital anomalies </td></tr></table>",
@@ -336,15 +336,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1435-01_T1370.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/BEG_1435-01_T1370.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/BEG_1435-01_T1370.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/BEG_1435-01_T1370.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/BEG_1435-01_T1370.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/BEG_1435-01_T1370.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Central/mini core myopathy, Central/mini core myopathy </td></tr></table>",
@@ -354,15 +354,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-006.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-006.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-006.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-006.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-006.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 2 VUS tag(s), 16 Review tag(s), 1 MatchBox (MME) tag(s), 4 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mental retardation, autosomal recessive 65, Mental retardation, autosomal recessive 65 </td></tr></table>",
@@ -372,15 +372,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-010.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-010.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-010.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-010.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-010.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-010.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 4 Tier 2 - Novel gene and phenotype tag(s), 10 Review tag(s), 4 MatchBox (MME) tag(s), 2 Likely Benign tag(s), 2 Excluded tag(s), 1 Confident AR one hit tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ritscher-Schinzel, Ritscher-Schinzel </td></tr></table>",
@@ -390,15 +390,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-015.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-015.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-015.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-015.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-015.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 11 Review tag(s), 2 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -408,15 +408,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-022.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-022.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-022.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-022.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-022.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-022.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>External solve</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 4 Review tag(s), 1 Likely Benign tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -426,15 +426,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-025.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-025.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-025.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-025.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-025.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-025.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 1 VUS tag(s), 3 Review tag(s), 2 Likely Benign tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
@@ -444,15 +444,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-032.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-032.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-032.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-032.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-032.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-032.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 1 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Secondary finding tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>craniosynostosis with epilepsy, craniosynostosis with epilepsy </td></tr></table>",
@@ -462,15 +462,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-035.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-035.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-035.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-035.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-035.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-035.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 4 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
@@ -480,15 +480,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-047.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-047.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-047.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-047.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-047.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-047.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 6 VUS tag(s), 4 Tier 2 - Novel gene for known phenotype tag(s), 15 Review tag(s), 6 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive spastic paraparesis and dystonias, Progressive spastic paraparesis and dystonias </td></tr></table>",
@@ -498,15 +498,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-061.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-061.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-061.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-061.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-061.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-061.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 3 VUS tag(s), 2 Secondary finding tag(s), 1 Review tag(s), 5 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>holoprosencephaly with hearing loss </td></tr></table>",
@@ -516,15 +516,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-070.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-070.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-070.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-070.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-070.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-070.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 1 Send for validation tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Juvenile idiopathic arthritis with developmetal delay </td></tr></table>",
@@ -534,15 +534,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-001.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-001.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-071-001.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-071-001.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-001.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-071-001.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -552,15 +552,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-004.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-071-004.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-071-004.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-071-004.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-071-004.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-071-004.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -570,15 +570,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-073.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-073.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-073.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-073.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-073.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Secondary finding tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -588,15 +588,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-075.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-075.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-075.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-075.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-075.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -606,15 +606,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-081.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-081.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-081.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-081.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-081.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-081.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mitochondrial DNA depletion syndrome - PS603041 </td></tr></table>",
@@ -624,15 +624,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-085.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-085.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-085.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-085.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-085.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for validation tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell </td></tr></table>",
@@ -642,15 +642,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-087.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-087.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-087.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-087.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-087.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-087.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 VUS tag(s), 3 Secondary finding tag(s), 2 Review tag(s), 1 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CORNELIA DE LANGE SYNDROME 1; CDLS1 </td></tr></table>",
@@ -660,15 +660,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-095.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-095.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-095.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-095.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-095.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-095.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 1 Tier 1 - Novel gene and phenotype tag(s), 1 Send for validation tag(s), 3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>multiple congenital anomalies </td></tr></table>",
@@ -678,15 +678,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-100.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-100.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-100.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-100.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-100.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-100.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 2 Send for validation tag(s), 5 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -696,15 +696,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-104.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-104.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-104.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-104.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-104.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-104.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for validation tag(s), 3 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) </td></tr></table>",
@@ -714,15 +714,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-107.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-107.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-107.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-107.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-107.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>OLIVER-MCFARLANE SYNDROME; OMCS </td></tr></table>",
@@ -732,15 +732,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-108.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-108.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-108.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-108.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-108.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td> </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -750,15 +750,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-114.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-114.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-114.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-114.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-114.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-114.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 1 Tier 1 - Novel gene and phenotype tag(s), 2 Review tag(s), 1 MatchBox (MME) tag(s), 1 Likely Pathogenic tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -768,15 +768,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-115.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-115.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-115.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-115.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-115.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-115.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -786,15 +786,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-116.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-116.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-116.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-116.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-116.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-116.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validation did not confirm tag(s), 2 Validated tag(s), 1 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 5 Review tag(s), 1 MatchBox (MME) tag(s), 3 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>progressive myopathy </td></tr></table>",
@@ -804,15 +804,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-119.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-119.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-119.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-119.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-119.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>SPASTIC PARAPLEGIA 62, AUTOSOMAL RECESSIVE; SPG62 </td></tr></table>",
@@ -822,15 +822,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-124.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-124.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-124.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-124.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-124.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -840,15 +840,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-126.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-126.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-126.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-126.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-126.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-126.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Methylmalonic aciduria, lactic acidemia, recurrent ketosis with hypoglycemia, short stature </td></tr></table>",
@@ -858,15 +858,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-127.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-127.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-127.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-127.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-127.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-127.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>6 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -876,15 +876,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-131.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-131.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-131.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-131.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-131.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-131.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Review tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with dysmorphic features </td></tr></table>",
@@ -894,15 +894,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-133.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-133.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-133.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-133.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-133.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Estonia_WES</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ectodermal dysplasia </td></tr></table>",
@@ -912,15 +912,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-134.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-134.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-134.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-134.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-134.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-134.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 3 VUS tag(s), 2 Tier 1 - Novel gene and phenotype tag(s), 2 Send for validation tag(s), 3 Review tag(s), 2 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, dysmorphic features, short stature </td></tr></table>",
@@ -930,15 +930,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-139.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK-139.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK-139.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK-139.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK-139.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validation did not confirm tag(s), 1 Validated tag(s), 1 VUS tag(s), 1 Send for validation tag(s), 3 Review tag(s), 1 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FEBRILE SEIZURES, FAMILIAL, 8; FEB8 </td></tr></table>",
@@ -948,15 +948,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK060-0154.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/HK060-0154.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/HK060-0154.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/HK060-0154.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/HK060-0154.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 1 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder </td></tr></table>",
@@ -966,15 +966,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_552_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_552_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/RGP_552_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/RGP_552_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_552_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/RGP_552_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Global developmental delay </td></tr></table>",
@@ -984,15 +984,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_554_3_2.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_554_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/RGP_554_3_2.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/RGP_554_3_2.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr></table>",
@@ -1007,7 +1007,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1111-1_T1105.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/BEG_1111-1_T1105.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, Multiple congenital anomalies </td></tr></table>",
@@ -1017,7 +1017,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/BEG_1435-01_T1370.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/BEG_1435-01_T1370.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Beggs_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Beggs_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Central/mini core myopathy, Central/mini core myopathy </td></tr></table>",
@@ -1027,7 +1027,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-006.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-006.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 2 VUS tag(s), 16 Review tag(s), 1 MatchBox (MME) tag(s), 4 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Mental retardation, autosomal recessive 65, Mental retardation, autosomal recessive 65 </td></tr></table>",
@@ -1037,7 +1037,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-010.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-010.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 4 Tier 2 - Novel gene and phenotype tag(s), 10 Review tag(s), 4 MatchBox (MME) tag(s), 2 Likely Benign tag(s), 2 Excluded tag(s), 1 Confident AR one hit tag(s), 1 Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Ritscher-Schinzel, Ritscher-Schinzel </td></tr></table>",
@@ -1047,7 +1047,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-015.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-015.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>5 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 11 Review tag(s), 2 MatchBox (MME) tag(s), 3 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -1057,7 +1057,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-022.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-022.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>External solve</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 VUS tag(s), 4 Review tag(s), 1 Likely Benign tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental with epilepsy, Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -1067,7 +1067,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-025.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-025.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 1 VUS tag(s), 3 Review tag(s), 2 Likely Benign tag(s), 1 Excluded tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
@@ -1077,7 +1077,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-032.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-032.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 1 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 1 Secondary finding tag(s), 6 Review tag(s), 2 MatchBox (MME) tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>craniosynostosis with epilepsy, craniosynostosis with epilepsy </td></tr></table>",
@@ -1087,7 +1087,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-035.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-035.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 4 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 7 Review tag(s), 2 MatchBox (MME) tag(s), 1 Likely Benign tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>neurodevelopmental, Neurodevelopmental disorder </td></tr></table>",
@@ -1097,7 +1097,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-047.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-047.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 6 VUS tag(s), 4 Tier 2 - Novel gene for known phenotype tag(s), 15 Review tag(s), 6 MatchBox (MME) tag(s), 7 Likely Benign tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive spastic paraparesis and dystonias, Progressive spastic paraparesis and dystonias </td></tr></table>",
@@ -1107,7 +1107,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-061.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-061.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1131,7 +1131,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-001.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-071-001.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -1141,7 +1141,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-071-004.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-071-004.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 2 Tier 1 - Phenotype not delineated tag(s), 13 Review tag(s), 2 Pathogenic tag(s), 2 MatchBox (MME) tag(s), 6 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder with epilepsy </td></tr></table>",
@@ -1151,7 +1151,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-073.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-073.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1165,7 +1165,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-075.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-075.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1179,7 +1179,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-081.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-081.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1193,7 +1193,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-085.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Validated tag(s), 2 VUS tag(s), 1 Tier 2 - Novel gene for known phenotype tag(s), 2 Send for validation tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Silver-Russell </td></tr></table>",
@@ -1203,7 +1203,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-087.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-087.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1217,7 +1217,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-095.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-095.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validated tag(s), 1 Tier 1 - Novel gene and phenotype tag(s), 1 Send for validation tag(s), 3 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>multiple congenital anomalies </td></tr></table>",
@@ -1227,7 +1227,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-100.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-100.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1241,7 +1241,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-104.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-104.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 VUS tag(s), 1 Send for validation tag(s), 3 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Multiple congenital anomalies, bilateral aplasia of cochlear nerves, vertebral anomalies (Klippel-Feil-like) </td></tr></table>",
@@ -1261,7 +1261,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-108.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-108.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1285,7 +1285,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-115.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-115.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1309,7 +1309,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-119.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-119.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1323,7 +1323,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-124.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-124.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1337,7 +1337,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-126.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-126.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1351,7 +1351,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-127.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1365,7 +1365,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-131.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-131.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1379,7 +1379,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK-133.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1413,7 +1413,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/HK060-0154.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/HK060-0154.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1427,7 +1427,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_552_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/RGP_552_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -1441,7 +1441,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
             },
             {
               "type": "alignment",

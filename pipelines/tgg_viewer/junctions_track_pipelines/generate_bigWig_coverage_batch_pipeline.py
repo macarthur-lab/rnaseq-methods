@@ -26,7 +26,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     df.loc[source_df.sample_id, 'bai_path'] = source_df['star_bai']
 
     df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(
-        lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/bigWig/")
+        lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/bigWig/")
 
     return pd.concat([samples_df, df], axis="rows")
 

@@ -24,7 +24,7 @@ def transfer_metadata_columns_from_df(samples_df, source_df):
     df.loc[source_df.sample_id, 'batch'] = source_df['star_pipeline_batch']
     df.loc[source_df.sample_id, 'star_SJ_out_tab'] = source_df['star_SJ_out_tab']
     df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(
-        lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/junctions_bed_for_igv_js/")
+        lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/junctions_bed_for_igv_js/")
 
     return pd.concat([samples_df, df], axis="rows")
 
@@ -77,7 +77,7 @@ def main():
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
             j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp {metadata_row['star_SJ_out_tab']} .")
-            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp gs://macarthurlab-rnaseq/ref/gencode.v26.annotation.gff3.gz .")
+            j.command(f"gsutil -u {GCLOUD_PROJECT} -m cp gs://tgg-rnaseq/ref/gencode.v26.annotation.gff3.gz .")
             j.command(f"pwd && ls && date")
 
             j.command(f"python3 /convert_SJ_out_tab_to_junctions_bed.py -g gencode.v26.annotation.gff3.gz {os.path.basename(metadata_row['star_SJ_out_tab'])}")

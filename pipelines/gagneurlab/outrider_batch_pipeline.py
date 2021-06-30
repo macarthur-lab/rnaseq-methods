@@ -69,7 +69,7 @@ def main():
             else:
                 sample_set_label += "_without_GTEX"
 
-            output_base_dir = f"gs://macarthurlab-rnaseq/gagneur/outrider/results/"
+            output_base_dir = f"gs://tgg-rnaseq/gagneur/outrider/results/"
             if "sequencing_date" in set(df.columns):
                 most_recent_sequencing_date = str(max(df.sequencing_date)).replace("-", "_")
                 output_base_dir += f"{most_recent_sequencing_date}__"

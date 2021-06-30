@@ -26,15 +26,15 @@ def main():
     backend = hp.LocalBackend(gsa_key_file=os.path.abspath("misc-270914-cb9992ec9b25.json")) if args.local else hp.BatchBackend(args.project)
     p = hp.Pipeline(backend=backend, name=args.name)
     for i, vcf in enumerate([
-        "gs://macarthurlab-rnaseq/grch38_vcfs/RGP_273_3_R1.SNPs.vcf.gz",
-        "gs://macarthurlab-rnaseq/grch38_vcfs/RGP_248_3.SNPs.vcf.gz",
-        "gs://macarthurlab-rnaseq/grch38_vcfs/RGP_54_3_2.SNPs.vcf.gz",
+        "gs://tgg-rnaseq/grch38_vcfs/RGP_273_3_R1.SNPs.vcf.gz",
+        "gs://tgg-rnaseq/grch38_vcfs/RGP_248_3.SNPs.vcf.gz",
+        "gs://tgg-rnaseq/grch38_vcfs/RGP_54_3_2.SNPs.vcf.gz",
 
-        #"gs://macarthurlab-rnaseq/grch38_vcfs/RGP_7_1_2.SNPs.vcf.gz",
-        #"gs://macarthurlab-rnaseq/grch38_vcfs/RGP_7_2_2.SNPs.vcf.gz",
-        #"gs://macarthurlab-rnaseq/grch38_vcfs/RGP_7_3_2.SNPs.vcf.gz",
-        #"gs://macarthurlab-rnaseq/grch38_vcfs/RGP_7_4_2.SNPs.vcf.gz",
-        #"gs://macarthurlab-rnaseq/grch38_vcfs/RGP_7_5_2.SNPs.vcf.gz",
+        #"gs://tgg-rnaseq/grch38_vcfs/RGP_7_1_2.SNPs.vcf.gz",
+        #"gs://tgg-rnaseq/grch38_vcfs/RGP_7_2_2.SNPs.vcf.gz",
+        #"gs://tgg-rnaseq/grch38_vcfs/RGP_7_3_2.SNPs.vcf.gz",
+        #"gs://tgg-rnaseq/grch38_vcfs/RGP_7_4_2.SNPs.vcf.gz",
+        #"gs://tgg-rnaseq/grch38_vcfs/RGP_7_5_2.SNPs.vcf.gz",
     ]):
 
         t = p.new_task(name=f"olego{i}")
@@ -56,7 +56,7 @@ def main():
         t.command(f"gsutil -m cp {vcf}* .")
         t.command(f"mkdir {output_dir}`")
         t.command(f"create_genomes --fasta {hg38_fasta.fa} --vcf {os.path.basename(vcf)} --outdir {output_dir}")
-        t.command(f"gsutil -m cp -r {output_dir} gs://macarthurlab-rnaseq/grch38_personal_reference/")
+        t.command(f"gsutil -m cp -r {output_dir} gs://tgg-rnaseq/grch38_personal_reference/")
         #if args.local:
         #    p.write_output(t.ofile, 'temp.txt')
         #else:

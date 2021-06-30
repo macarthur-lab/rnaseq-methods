@@ -109,7 +109,7 @@ print(f"Generating {os.path.abspath(tsv_output_filename)}")
 all_rdg_and_gtex_tpms_df = all_rdg_and_gtex_tpms_df.fillna(0).round(2)
 all_rdg_and_gtex_tpms_df = all_rdg_and_gtex_tpms_df.reset_index()
 all_rdg_and_gtex_tpms_df.to_csv(tsv_output_filename, header=True, sep="\t", index=False)
-tsv_output_gs_path = f"gs://macarthurlab-rnaseq/combined_tables/{tsv_output_filename}"
+tsv_output_gs_path = f"gs://tgg-rnaseq/combined_tables/{tsv_output_filename}"
 hl.hadoop_copy(tsv_output_filename, tsv_output_gs_path)
 print(f"Wrote {len(all_rdg_and_gtex_tpms_df)} genes x {len(all_rdg_and_gtex_tpms_df.columns)} samples to {tsv_output_gs_path}")
 
@@ -125,7 +125,7 @@ meta_subset_df = rnaseq_sample_metadata_df[
 ].set_index("sample_id")
 pivoted_df = pivoted_df.set_index("sample_id").join(meta_subset_df, how="left")
 pivoted_df.reset_index().to_csv(tsv_output_filename, header=True, sep="\t", index=False)
-tsv_output_gs_path = f"gs://macarthurlab-rnaseq/combined_tables/{tsv_output_filename}"
+tsv_output_gs_path = f"gs://tgg-rnaseq/combined_tables/{tsv_output_filename}"
 hl.hadoop_copy(tsv_output_filename, tsv_output_gs_path)
 print(f"Wrote {len(all_rdg_and_gtex_tpms_df)} genes x {len(all_rdg_and_gtex_tpms_df.columns)} samples to {tsv_output_gs_path}")
 

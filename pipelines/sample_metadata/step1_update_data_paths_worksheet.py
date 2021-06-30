@@ -1,5 +1,5 @@
 """
-This script finds all rnaseq data files in gs://macarthurlab-rnaseq/
+This script finds all rnaseq data files in gs://tgg-rnaseq/
 and updates the paths in the "Data Paths (auto)" worksheet:
 https://docs.google.com/spreadsheets/d/1S3l28tZqFmzqqwqi_BCzuIkaVFmZz9eGpGtqtH5eVoo/edit#gid=216532559
 
@@ -32,10 +32,10 @@ hl.init(log="/dev/null")
 
 #%%
 
-# Get a list of all file paths in gs://macarthurlab-rnaseq
+# Get a list of all file paths in gs://tgg-rnaseq
 
 storage_client = storage.Client()
-bucket = storage_client.get_bucket('macarthurlab-rnaseq')
+bucket = storage_client.get_bucket('tgg-rnaseq')
 macarthurlab_rnaseq_bucket_blobs = bucket.list_blobs()
 macarthurlab_rnaseq_bucket_file_paths = [b.public_url.replace("https://storage.googleapis.com/", "gs://") for b in macarthurlab_rnaseq_bucket_blobs]
 
@@ -49,7 +49,7 @@ all_samples = {}
 
 batch_sample_counters = collections.defaultdict(int)
 for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
-    hg19_bam_path_match = re.search("macarthurlab-rnaseq/([^/]+)/hg19_bams/([^/]+).bam$", path)
+    hg19_bam_path_match = re.search("tgg-rnaseq/([^/]+)/hg19_bams/([^/]+).bam$", path)
     if hg19_bam_path_match:
         sample_id = hg19_bam_path_match.group(2).replace(".", "-")
         if "ATYPICALMDC1A" not in path.upper() and "SIBLINGMDC1A" not in path.upper():
@@ -59,7 +59,7 @@ for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
         sample_id = sample_id.replace("-Aligned-sortedByCoord-out", "")
         #print(sample_id)
         if hg19_bam_path_match.group(2) != sample_id:
-            dest_path = "gs://macarthurlab-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
+            dest_path = "gs://tgg-rnaseq/" + hg19_bam_path_match.group(1) + "/hg19_bams/" + sample_id + ".bam"
             if dest_path != path and not hl.hadoop_exists(dest_path):
                 #print("Would move " + path + " to " + dest_path)
                 run("gsutil mv -n " + path + " " + dest_path)
@@ -86,52 +86,52 @@ pprint.pprint(dict(batch_sample_counters))
 
 # add rest of paths in macarthurlab_rnaseq_bucket_file_paths to all_samples dict.
 """
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam.bai
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Chimeric.out.junction.gz
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Log.final.out
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Log.out
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.Log.progress.out
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.ReadsPerGene.out.tab.gz
-gs://macarthurlab-rnaseq/batch_0/star/1179-1.SJ.out.tab.gz
+gs://tgg-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam
+gs://tgg-rnaseq/batch_0/star/1179-1.Aligned.sortedByCoord.out.bam.bai
+gs://tgg-rnaseq/batch_0/star/1179-1.Chimeric.out.junction.gz
+gs://tgg-rnaseq/batch_0/star/1179-1.Log.final.out
+gs://tgg-rnaseq/batch_0/star/1179-1.Log.out
+gs://tgg-rnaseq/batch_0/star/1179-1.Log.progress.out
+gs://tgg-rnaseq/batch_0/star/1179-1.ReadsPerGene.out.tab.gz
+gs://tgg-rnaseq/batch_0/star/1179-1.SJ.out.tab.gz
 
-gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.exon_reads.gct.gz
-gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.gene_reads.gct.gz
-gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.gene_tpm.gct.gz
-gs://macarthurlab-rnaseq/batch_0/rnaseqc/1179-1.metrics.tsv
+gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.exon_reads.gct.gz
+gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.gene_reads.gct.gz
+gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.gene_tpm.gct.gz
+gs://tgg-rnaseq/batch_0/rnaseqc/1179-1.metrics.tsv
 """
 
 for path_i, path in enumerate(macarthurlab_rnaseq_bucket_file_paths):
     regexps = [
-        ('hg19_bai', "macarthurlab-rnaseq/[^/]+/hg19_bams/([^/]+).bai"),
+        ('hg19_bai', "tgg-rnaseq/[^/]+/hg19_bams/([^/]+).bai"),
 
-        ('star_bam', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Aligned.sortedByCoord.out.bam$"),
-        ('star_bai', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Aligned.sortedByCoord.out.bam.bai"),
-        ('star_reads_per_gene_tab', "macarthurlab-rnaseq/[^/]+/star/([^/]+).ReadsPerGene.out.tab.gz"),
-        ('star_SJ_out_tab', "macarthurlab-rnaseq/[^/]+/star/([^/]+).SJ.out.tab.gz"),
+        ('star_bam', "tgg-rnaseq/[^/]+/star/([^/]+).Aligned.sortedByCoord.out.bam$"),
+        ('star_bai', "tgg-rnaseq/[^/]+/star/([^/]+).Aligned.sortedByCoord.out.bam.bai"),
+        ('star_reads_per_gene_tab', "tgg-rnaseq/[^/]+/star/([^/]+).ReadsPerGene.out.tab.gz"),
+        ('star_SJ_out_tab', "tgg-rnaseq/[^/]+/star/([^/]+).SJ.out.tab.gz"),
 
-        ('star_chimeric_junction', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Chimeric.out.junction.gz$"),
-        ('star_log_final_out', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Log.final.out$"),
-        ('star_log_out', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Log.out$"),
-        ('star_log_progress_out', "macarthurlab-rnaseq/[^/]+/star/([^/]+).Log.progress.out$"),
+        ('star_chimeric_junction', "tgg-rnaseq/[^/]+/star/([^/]+).Chimeric.out.junction.gz$"),
+        ('star_log_final_out', "tgg-rnaseq/[^/]+/star/([^/]+).Log.final.out$"),
+        ('star_log_out', "tgg-rnaseq/[^/]+/star/([^/]+).Log.out$"),
+        ('star_log_progress_out', "tgg-rnaseq/[^/]+/star/([^/]+).Log.progress.out$"),
 
-        ('rnaseqc_exon_reads', "macarthurlab-rnaseq/[^/]+/rnaseqc/([^/]+).exon_reads.gct.gz"),
-        ('rnaseqc_gene_reads', "macarthurlab-rnaseq/[^/]+/rnaseqc/([^/]+).gene_reads.gct.gz"),
-        ('rnaseqc_gene_tpm', "macarthurlab-rnaseq/[^/]+/rnaseqc/([^/]+).gene_tpm.gct.gz"),
-        ('rnaseqc_metrics', "macarthurlab-rnaseq/[^/]+/rnaseqc/([^/]+).metrics.tsv"),
+        ('rnaseqc_exon_reads', "tgg-rnaseq/[^/]+/rnaseqc/([^/]+).exon_reads.gct.gz"),
+        ('rnaseqc_gene_reads', "tgg-rnaseq/[^/]+/rnaseqc/([^/]+).gene_reads.gct.gz"),
+        ('rnaseqc_gene_tpm', "tgg-rnaseq/[^/]+/rnaseqc/([^/]+).gene_tpm.gct.gz"),
+        ('rnaseqc_metrics', "tgg-rnaseq/[^/]+/rnaseqc/([^/]+).metrics.tsv"),
 
-        ('fastqc_zip', "macarthurlab-rnaseq/[^/]+/fastqc/zip/([^/]+)_fastqc.zip"),
+        ('fastqc_zip', "tgg-rnaseq/[^/]+/fastqc/zip/([^/]+)_fastqc.zip"),
 
-        ('grch38_vcf', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz$"),
-        ('grch38_vcf_tbi', "macarthurlab-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz.tbi"),
+        ('grch38_vcf', "tgg-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz$"),
+        ('grch38_vcf_tbi', "tgg-rnaseq/[^/]+/grch38_vcfs/([^/]+).vcf.bgz.tbi"),
 
-        ('portcullis_all', "macarthurlab-rnaseq/[^/]+/portcullis/([^/]+).portcullis_all.junctions.tab.gz"),
-        ('portcullis_filtered', "macarthurlab-rnaseq/[^/]+/portcullis/([^/]+).portcullis_filtered.pass.junctions.tab.gz"),
+        ('portcullis_all', "tgg-rnaseq/[^/]+/portcullis/([^/]+).portcullis_all.junctions.tab.gz"),
+        ('portcullis_filtered', "tgg-rnaseq/[^/]+/portcullis/([^/]+).portcullis_filtered.pass.junctions.tab.gz"),
 
-        ('junctions_bed', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz$"),
-        ('junctions_bed_tbi', "macarthurlab-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
+        ('junctions_bed', "tgg-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz$"),
+        ('junctions_bed_tbi', "tgg-rnaseq/[^/]+/junctions_bed_for_igv_js/([^/]+).junctions.bed.gz.tbi"),
 
-        ('coverage_bigwig', "macarthurlab-rnaseq/[^/]+/bigWig/([^/]+).bigWig"),
+        ('coverage_bigwig', "tgg-rnaseq/[^/]+/bigWig/([^/]+).bigWig"),
     ]
 
     if "batch_all_samples" in path:

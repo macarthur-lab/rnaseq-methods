@@ -8,7 +8,7 @@ from collections import defaultdict
 
 #%%
 
-# gsutil -m cp gs://macarthurlab-rnaseq/gagneur/outrider/results/*with*.tsv.gz .
+# gsutil -m cp gs://tgg-rnaseq/gagneur/outrider/results/*with*.tsv.gz .
 
 all_tables = defaultdict(list)
 results_tables = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/OUTRIDER_results1/*.tsv.gz"

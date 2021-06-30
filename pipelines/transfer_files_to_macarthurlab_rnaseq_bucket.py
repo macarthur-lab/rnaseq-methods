@@ -1,4 +1,4 @@
-# Transfer files from a Terra bucket to the macarthurlab-rnaseq bucket
+# Transfer files from a Terra bucket to the tgg-rnaseq bucket
 
 import argparse
 import logging
@@ -17,7 +17,7 @@ def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--source-namespace", help="Terra namespace", default="macarthurlab-rnaseq-terra")
     p.add_argument("--source-workspace", help="Terra workspace name", default="macarthurlab-rnaseq-terra")
-    p.add_argument("--dest-bucket", default="macarthurlab-rnaseq")
+    p.add_argument("--dest-bucket", default="tgg-rnaseq")
     p.add_argument("-w", "--workflow-id", help="(optional) workflow id. Can specify more than one", action="append")
     p.add_argument("-t", "--file-type", choices=FILE_TYPES, help="(optional) what types of files to transfer", action="append")
     p.add_argument("-f", "--force", action="store_true", help="Force copy even if destination files already exist.")

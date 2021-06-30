@@ -77,7 +77,7 @@ def main():
 
             logger.info(f"Processing {sample_set_label}: {len(df)} sample ids: {', '.join(sample_ids[:20])}")
 
-            output_dir_for_batch_specific_data = f"gs://macarthurlab-rnaseq/gagneur/fraser/results/{result_dir}"
+            output_dir_for_batch_specific_data = f"gs://tgg-rnaseq/gagneur/fraser/results/{result_dir}"
 
             output_file_path_splice_junctions_RDS = os.path.join(output_dir_for_batch_specific_data, f"spliceJunctions_{sample_set_label}.RDS")
             output_file_path_calculated_psi_values_tar_gz = os.path.join(output_dir_for_batch_specific_data, f"calculatedPSIValues_{sample_set_label}.tar.gz")
@@ -112,9 +112,9 @@ def main():
                     # set job inputs & outputs
                     input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
                     if "GTEX" in sample_id:
-                        output_dir_for_sample_specific_data = "gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
+                        output_dir_for_sample_specific_data = "gs://tgg-rnaseq/gtex_v8/fraser_count_rna/"
                     else:
-                        output_dir_for_sample_specific_data = f"gs://macarthurlab-rnaseq/{metadata_row['batch']}/fraser_count_rna/"
+                        output_dir_for_sample_specific_data = f"gs://tgg-rnaseq/{metadata_row['batch']}/fraser_count_rna/"
 
                     print("Input bam: ", input_bam)
                     if step == 1:

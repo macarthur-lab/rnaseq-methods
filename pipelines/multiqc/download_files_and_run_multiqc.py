@@ -1,4 +1,4 @@
-# Transfer files from a Terra bucket to the macarthurlab-rnaseq bucket
+# Transfer files from a Terra bucket to the tgg-rnaseq bucket
 
 import argparse
 import glob
@@ -55,9 +55,9 @@ def main():
 
         if batch_name == "all" or batch_name in star_pipeline_batches:
             if batch_name == "all":
-                source_prefix = "gs://macarthurlab-rnaseq/*"
+                source_prefix = "gs://tgg-rnaseq/*"
             else:
-                source_prefix = f"gs://macarthurlab-rnaseq/{batch_name}"
+                source_prefix = f"gs://tgg-rnaseq/{batch_name}"
 
             if not args.dont_download:
                 # star
@@ -72,7 +72,7 @@ def main():
 
         elif batch_name in analysis_batches:
             df = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == batch_name]
-            source_prefix = "gs://macarthurlab-rnaseq/*"
+            source_prefix = "gs://tgg-rnaseq/*"
 
             if not args.dont_download:
                 star_logs = []
@@ -81,14 +81,14 @@ def main():
                 fastqc_zip = []
                 for _, row in df.iterrows():
                     # star
-                    star_logs.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.Log.final.out")
-                    star_gene_counts.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.ReadsPerGene.out.tab.gz")
+                    star_logs.append(f"gs://tgg-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.Log.final.out")
+                    star_gene_counts.append(f"gs://tgg-rnaseq/{row.star_pipeline_batch}/star/{row.sample_id}*.ReadsPerGene.out.tab.gz")
 
                     # rnaseqc
-                    rnaseqc_metrics.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/rnaseqc/{row.sample_id}*.metrics.tsv")
+                    rnaseqc_metrics.append(f"gs://tgg-rnaseq/{row.star_pipeline_batch}/rnaseqc/{row.sample_id}*.metrics.tsv")
 
                     # fastqc
-                    fastqc_zip.append(f"gs://macarthurlab-rnaseq/{row.star_pipeline_batch}/fastqc/zip/{row.sample_id}*_fastqc.zip")
+                    fastqc_zip.append(f"gs://tgg-rnaseq/{row.star_pipeline_batch}/fastqc/zip/{row.sample_id}*_fastqc.zip")
 
                 gsutil_cp(" ".join(star_logs), dest_prefix+"/star/")
                 gsutil_cp(" ".join(star_gene_counts), dest_prefix+"/star/genecounts/")

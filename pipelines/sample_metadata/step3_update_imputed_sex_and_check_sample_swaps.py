@@ -27,7 +27,7 @@ rnaseq_metadata_joined_with_paths_df.columns
 # Check for sample swaps:
 #
 os.system(
-    "gsutil cat gs://macarthurlab-rnaseq/*/somalier_sample_swap/*.groups.tsv " +
+    "gsutil cat gs://tgg-rnaseq/*/somalier_sample_swap/*.groups.tsv " +
     "| awk '{ if($2 < 0.75) { print( $2, $1 ) } }' " +
     "| sed 's/,sm1//g' " +
     "| sort -n -r")
@@ -54,7 +54,7 @@ for _, row in rnaseq_metadata_joined_with_paths_df.iterrows():
         previous_sex = (row['sex'] if row['sex'] and not isinstance(row['sex'], float) else '').strip()
         imputed_sex = (row['imputed sex'] if row['imputed sex'] and not isinstance(row['imputed sex'], float) else '').strip()
         if True or not imputed_sex:
-            somalier_results_path = f"gs://macarthurlab-rnaseq/{row['star_pipeline_batch']}/somalier_sample_swap/{row['sample_id']}.somalier_results.tsv"
+            somalier_results_path = f"gs://tgg-rnaseq/{row['star_pipeline_batch']}/somalier_sample_swap/{row['sample_id']}.somalier_results.tsv"
             somalier_results_df = pd.read_table(hl.hadoop_open(somalier_results_path, "r"))
             if "chrX/chrY" not in set(somalier_results_df.columns):
                 print(f"ERROR: chrX/chrY not found in {somalier_results_path}")

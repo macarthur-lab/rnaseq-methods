@@ -318,15 +318,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Dec19.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Dec19.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Dec19.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Dec19.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -336,15 +336,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20A.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20A.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20A.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20A.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -354,15 +354,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20C.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2405f-Feb20C.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20C.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2405f-Feb20C.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2405f-Feb20C.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -372,15 +372,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Dec19.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Dec19.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Dec19.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Dec19.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -390,15 +390,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20A.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20A.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20A.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20A.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -408,15 +408,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20B.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2406d-Feb20B.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20B.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2406d-Feb20B.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20B.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2406d-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -426,15 +426,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Dec19.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Dec19.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Dec19.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Dec19.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Dec19.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -444,15 +444,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20A.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20A.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20A.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20A.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20A.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -462,15 +462,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20B.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2407d-Feb20B.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20B.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2407d-Feb20B.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20B.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2407d-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -480,15 +480,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Dec19.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Dec19.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Dec19.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Dec19.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Dec19.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Dec19.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -498,15 +498,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20A.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20A.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20A.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20A.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20A.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20A.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -516,15 +516,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20B.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/junctions_bed_for_igv_js/WAL_OTH2419f-Feb20B.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20B.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/bigWig/WAL_OTH2419f-Feb20B.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08__walsh/star/WAL_OTH2419f-Feb20B.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",

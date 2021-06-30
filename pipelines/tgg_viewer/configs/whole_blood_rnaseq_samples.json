@@ -318,15 +318,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_3_2.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_94_3_2.bigWig"
+              "url": "gs://tgg-rnaseq/batch_0/bigWig/RGP_94_3_2.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_94_3_2.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_0/star/RGP_94_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s), 3 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>suspected hypomyelinating leukodystrophy </td></tr></table>",
@@ -336,15 +336,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_4_2.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_0/junctions_bed_for_igv_js/RGP_94_4_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_0/bigWig/RGP_94_4_2.bigWig"
+              "url": "gs://tgg-rnaseq/batch_0/bigWig/RGP_94_4_2.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_0/star/RGP_94_4_2.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_0/star/RGP_94_4_2.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-08</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Solved - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 1 MatchBox (MME) tag(s), 1 Excluded tag(s), 3 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>suspected hypomyelinating leukodystrophy </td></tr></table>",
@@ -354,15 +354,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_554_3_2.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/junctions_bed_for_igv_js/RGP_554_3_2.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/bigWig/RGP_554_3_2.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_04/bigWig/RGP_554_3_2.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_04/star/RGP_554_3_2.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-01</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 1 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Seizures, epistaxis, immunodeficiency, hypotonia, arachnoid cyst, global developmental delay </td></tr></table>",
@@ -372,15 +372,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_558_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_558_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_558_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_558_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
@@ -390,15 +390,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_673_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_673_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_673_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_673_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_673_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_673_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene for known phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disorder </td></tr></table>",
@@ -408,15 +408,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_677_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_677_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_677_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_677_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
@@ -426,15 +426,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_4.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_4.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_677_4.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_677_4.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_677_4.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_677_4.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
@@ -444,15 +444,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/MAN_0694_01.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/MAN_0694_01.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/MAN_0694_01.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/MAN_0694_01.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/MAN_0694_01.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/MAN_0694_01.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
@@ -462,11 +462,11 @@
           "data": [
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
+              "url": "gs://tgg-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.normalized.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.normalized.junctions.bed.gz"
             }
           ],
           "description": "All 8 whole blood rare disease samples combined into one track, with splice junction read counts normalized so that they represent per-sample counts.",
@@ -476,11 +476,11 @@
           "data": [
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
+              "url": "gs://tgg-rnaseq/combined_bigWigs/whole_blood/combined.whole_blood.8_samples.bigWig"
             },
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/combined_SJ_out_tables/whole_blood/combined.whole_blood.8_samples.junctions.bed.gz"
             }
           ],
           "description": "All 8 whole blood rare disease samples combined into one track. Splice junction read counts are summed across all samples.",
@@ -495,7 +495,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_0/grch38_vcfs/RGP_94_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -509,7 +509,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_04/grch38_vcfs/RGP_554_3_2.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -523,7 +523,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -537,7 +537,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -551,7 +551,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -565,7 +565,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",

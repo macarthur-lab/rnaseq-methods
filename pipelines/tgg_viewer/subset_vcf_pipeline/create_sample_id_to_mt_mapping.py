@@ -119,7 +119,7 @@ for rna_sample_id, dna_sample_id, vcf_path in SAMPLE_ID_MAP.values():
     SAMPLE_ID_MAP2[rna_sample_id] = (rna_sample_id, dna_sample_id, single_sample_vcf_path)
 
 
-snps_output_path = f"gs://macarthurlab-rnaseq-data/grch38_vcfs/{rna_sample_id.replace(' ', '_')}.SNPs.vcf.gz"
+snps_output_path = f"gs://tgg-rnaseq-data/grch38_vcfs/{rna_sample_id.replace(' ', '_')}.SNPs.vcf.gz"
 
 print(f"{mt.count()} {rna_sample_id}  {dna_sample_id}   {snps_output_path}")
 

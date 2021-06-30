@@ -66,10 +66,10 @@ if __name__ == "__main__":
     with batch_utils.run_batch(args, batch_name=f"combine junctions: {batch_label}") as batch:
         for batch_name in args.batch_name:
             if batch_name in star_pipeline_batches:
-                output_dir = f"gs://macarthurlab-rnaseq/{batch_name}/combined_bigWigs/"
+                output_dir = f"gs://tgg-rnaseq/{batch_name}/combined_bigWigs/"
                 bigWig_paths = list(rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["star_pipeline_batch"] == batch_name].coverage_bigwig)
             elif batch_name in analysis_batches:
-                output_dir = f"gs://macarthurlab-rnaseq/combined_bigWigs/{batch_name}/"
+                output_dir = f"gs://tgg-rnaseq/combined_bigWigs/{batch_name}/"
                 bigWig_paths = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["analysis batch"] == batch_name].coverage_bigwig
             else:
                 p.error(f"Unexpected batch name: {batch_name}")

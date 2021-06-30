@@ -318,15 +318,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/HK044_0110.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/HK044_0110.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK044_0110.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/HK044_0110.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/HK044_0110.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/HK044_0110.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 16 Review tag(s), 1 MatchBox (MME) tag(s), 7 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Kabuki-like, Kabuki-like </td></tr></table>",
@@ -336,15 +336,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/HK117_001.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/HK117_001.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/HK117_001.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/HK117_001.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/HK117_001.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/HK117_001.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Known gene, new phenotype tag(s), 14 Review tag(s), 1 Excluded tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>CONGENITAL DISORDER OF GLYCOSYLATION </td></tr></table>",
@@ -354,15 +354,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_558_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_558_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_558_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_558_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_558_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-07</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Infantile spasms, Severe global developmental delay </td></tr></table>",
@@ -372,15 +372,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_673_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_673_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_673_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_673_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_673_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_673_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene for known phenotype tag(s), 9 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neuromuscular disorder </td></tr></table>",
@@ -390,15 +390,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_677_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_677_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_677_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_677_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
@@ -408,15 +408,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_4.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/junctions_bed_for_igv_js/RGP_677_4.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/bigWig/RGP_677_4.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2020_08/bigWig/RGP_677_4.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/star/RGP_677_4.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2020_08/star/RGP_677_4.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Tier 2 - Novel gene and phenotype tag(s), 1 Share with KOMP tag(s), 4 Review tag(s), 3 MatchBox (MME) tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Neurodevelopmental disorder, immune deficiency, seizures, white matter disease </td></tr></table>",
@@ -431,7 +431,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/HK044_0110.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/HK044_0110.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Estonia_WGS</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>Estonian External Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 VUS tag(s), 2 Tier 2 - Novel gene and phenotype tag(s), 16 Review tag(s), 1 MatchBox (MME) tag(s), 7 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Kabuki-like, Kabuki-like </td></tr></table>",
@@ -441,7 +441,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/HK117_001.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/HK117_001.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -455,7 +455,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_558_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -469,7 +469,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_673_3.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -483,7 +483,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2020_08/grch38_vcfs/RGP_677_3.vcf.bgz"
             },
             {
               "type": "alignment",

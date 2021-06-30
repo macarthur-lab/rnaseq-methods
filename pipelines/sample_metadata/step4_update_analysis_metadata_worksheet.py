@@ -148,8 +148,8 @@ for tissue_smtsd in TISSUE_NAME_TO_SMTSD.values():
     print(f"Found {len(gtex_df_for_tissue)} GTEx {tissue_smtsd} samples")
     metadata_df = pd.concat([metadata_df, gtex_df_for_tissue[:100]])
 
-#df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/fraser_count_rna/")
-#df.loc[source_df.SAMPID, 'output_dir'] = f"gs://macarthurlab-rnaseq/gtex_v8/fraser_count_rna/"
+#df.loc[source_df.sample_id, 'output_dir'] = source_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/fraser_count_rna/")
+#df.loc[source_df.SAMPID, 'output_dir'] = f"gs://tgg-rnaseq/gtex_v8/fraser_count_rna/"
 
 #%%
 metadata_df.sort_values(by=['is_GTEx_sample', 'batch', 'tissue', 'project'], ascending=True, inplace=True)

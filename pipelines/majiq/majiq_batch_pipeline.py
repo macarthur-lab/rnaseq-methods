@@ -54,7 +54,7 @@ def main():
     if args.local:
         genes_gtf = b.read_input("gencode.v26.annotation.gff3", extension=".gff3")
     else:
-        genes_gtf = b.read_input("gs://macarthurlab-rnaseq/ref/gencode.v26.annotation.GRCh38.gff3", extension=".gff3")
+        genes_gtf = b.read_input("gs://tgg-rnaseq/ref/gencode.v26.annotation.GRCh38.gff3", extension=".gff3")
 
     # define parallel execution for samples
     for sample_id in sample_ids:
@@ -67,7 +67,7 @@ def main():
             bai=metadata_row['star_bai'],
         )
 
-        output_dir = f"gs://macarthurlab-rnaseq/{batch_name}/majiq_build/"
+        output_dir = f"gs://tgg-rnaseq/{batch_name}/majiq_build/"
         output_file_path = os.path.join(output_dir, f"majiq_build_{sample_id}.tar.gz")
 
         # check if output file already exists

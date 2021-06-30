@@ -91,7 +91,7 @@ for _, row in df.iterrows():
 
 #%%
 for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
-    combined_bigWig_gs_path = f"gs://macarthurlab-rnaseq/combined_bigWigs/{tissue_name}/combined.{tissue_name}.*_samples.bigWig"
+    combined_bigWig_gs_path = f"gs://tgg-rnaseq/combined_bigWigs/{tissue_name}/combined.{tissue_name}.*_samples.bigWig"
     combined_bigWig_paths = [x["path"] for x in hl.hadoop_ls(combined_bigWig_gs_path)]
     if not combined_bigWig_paths:
         print(f"WARNING: combined file not found: {combined_bigWig_gs_path}")
@@ -106,7 +106,7 @@ for tissue_name in ["muscle", "fibroblasts", "lymphocytes", "whole_blood"]:
         else:
             suffix = "_samples.normalized.junctions.bed.gz"
 
-        combined_junctions_bed_gs_path = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}.*{suffix}"
+        combined_junctions_bed_gs_path = f"gs://tgg-rnaseq/combined_SJ_out_tables/{tissue_name}/combined.{tissue_name}.*{suffix}"
         combined_junctions_bed_paths = [x["path"] for x in hl.hadoop_ls(combined_junctions_bed_gs_path)]
         if not combined_junctions_bed_paths:
             print(f"WARNING: combined file not found: {combined_junctions_bed_gs_path}")
@@ -171,7 +171,7 @@ dna_rows_by_batch['2020_08__walsh'].extend([
 for d in dna_rows_by_batch['2020_08__walsh']:
     d['name'] = d['name'].replace("WAL_", "").replace("_D1", "")
     for data in d['data']:
-        data['url'] = data['url'].replace('macarthurlab-rnaseq', 'tgg-rnaseq-walsh')
+        data['url'] = data['url'].replace('tgg-rnaseq', 'tgg-rnaseq-walsh')
 
 
 

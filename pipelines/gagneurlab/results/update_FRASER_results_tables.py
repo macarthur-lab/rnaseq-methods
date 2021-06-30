@@ -111,10 +111,10 @@ for with_GTEx, fraser_calls_df, outrider_calls_df in [
         print_string = ""
 
         # check portcullis table:
-        with hl.hadoop_open(f"gs://macarthurlab-rnaseq/batch_0/portcullis/{truth_data_sample_id}.portcullis_all.junctions.tab.gz", "r") as f:
+        with hl.hadoop_open(f"gs://tgg-rnaseq/batch_0/portcullis/{truth_data_sample_id}.portcullis_all.junctions.tab.gz", "r") as f:
             portcullis_all_df = pd.read_table(f)
 
-        with hl.hadoop_open(f"gs://macarthurlab-rnaseq/batch_0/portcullis/{truth_data_sample_id}.portcullis_filtered.pass.junctions.tab.gz", "r") as f:
+        with hl.hadoop_open(f"gs://tgg-rnaseq/batch_0/portcullis/{truth_data_sample_id}.portcullis_filtered.pass.junctions.tab.gz", "r") as f:
             portcullis_filtered_df = pd.read_table(f)
 
             # columns: ['index', 'refid', 'refname', 'reflen', 'start', 'end', 'size', 'left',
@@ -242,7 +242,7 @@ for with_GTEx, fraser_calls_df, outrider_calls_df in [
         print(f"OUTRIDER truth rank? {len(list_of_outrider_table_rows)} out of {len(sample_outrider_calls_df)}")
 
 
-        with hl.hadoop_open(f'gs://macarthurlab-rnaseq/batch_0/star/{truth_data_sample_id}.SJ.out.tab.gz', "r") as f:
+        with hl.hadoop_open(f'gs://tgg-rnaseq/batch_0/star/{truth_data_sample_id}.SJ.out.tab.gz', "r") as f:
             star_df = pd.read_table(f, names=["chrom", "start_1based", "end_1based", "strand", "intron_motif", "known_splice_junction", "unique_reads", "multi_mapped_reads", "maximum_overhang"])
             star_df.loc[:,"chrom"] = star_df["chrom"].str.replace("chr", "")
             star_df.loc[:,"start_1based"] = star_df["start_1based"].astype('int')
@@ -359,7 +359,7 @@ all_fraser_calls_df_without_GTEx.columns
 #%%
 #%%
 #%%
-# gsutil -m cp gs://macarthurlab-rnaseq/gagneur/outrider/results/*with*.tsv.gz .
+# gsutil -m cp gs://tgg-rnaseq/gagneur/outrider/results/*with*.tsv.gz .
 
 all_tables = defaultdict(list)
 results_tables = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/FRASER_results1/using_AE/*.tsv.gz"

@@ -7,7 +7,7 @@ gzcat gencode_v32_knownGene.bed.gz | awk -F $'\t' 'BEGIN {OFS=FS} { print "0", $
 
 tabix -s 3 -b 5 -e 6  gencode_v32_knownGene.sorted.txt.gz 
 
-gsutil -m cp gencode_v32_knownGene.sorted.txt.gz* gs://macarthurlab-rnaseq/reference_tracks/
+gsutil -m cp gencode_v32_knownGene.sorted.txt.gz* gs://tgg-rnaseq/reference_tracks/
 
 
 

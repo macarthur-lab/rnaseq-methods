@@ -318,15 +318,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B09-8_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B09-8_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B09-8_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B09-8_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B09-8_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B09-8_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Secondary finding tag(s), 8 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Skeletal myopathy and learning disabilities </td></tr></table>",
@@ -336,15 +336,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B14_48_CHX-_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B14_48_CHX-_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B14_48_CHX-_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B14_48_CHX-_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B14_48_CHX-_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B14_48_CHX-_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -354,15 +354,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B14_48_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B14_48_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B14_48_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B14_48_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B14_48_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B14_48_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -372,15 +372,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B15-95_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B15-95_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B15-95_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B15-95_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B15-95_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B15-95_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>14 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy, Congenital myopathy </td></tr></table>",
@@ -390,15 +390,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-108_CHX-_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-108_CHX-_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B16-108_CHX-_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B16-108_CHX-_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B16-108_CHX-_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B16-108_CHX-_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -408,15 +408,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-108_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-108_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B16-108_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B16-108_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B16-108_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B16-108_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -426,15 +426,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-38.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B16-38.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B16-38.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B16-38.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B16-38.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B16-38.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -444,15 +444,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B17-54_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B17-54_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B17-54_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B17-54_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B17-54_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B17-54_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>21 Review tag(s), 9 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness and hearing impairment, congenital myopathy </td></tr></table>",
@@ -462,15 +462,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18-23_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18-23_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B18-23_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B18-23_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B18-23_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B18-23_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>9 Review tag(s), 2 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Progressive muscle weakness, Progressive muscle weakness </td></tr></table>",
@@ -480,15 +480,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18-37_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18-37_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B18-37_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B18-37_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B18-37_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B18-37_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>26 Review tag(s), 2 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness, congenital myopathy </td></tr></table>",
@@ -498,15 +498,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18_65_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B18_65_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B18_65_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B18_65_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B18_65_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B18_65_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - novel gene</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Novel gene and phenotype tag(s), 4 Review tag(s), 1 MatchBox (MME) tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle weakness </td></tr></table>",
@@ -516,15 +516,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-03_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-03_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-03_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-03_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-03_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-03_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Strong candidate - known gene for phenotype</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>2 Send for validation tag(s), 9 Review tag(s), 2 Known gene for phenotype tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>POLYMICROGYRIA WITH OR WITHOUT VASCULAR-TYPE EHLERS-DANLOS SYNDROME; PMGEDSV </td></tr></table>",
@@ -534,15 +534,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-45_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-45_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-45_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-45_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-45_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-45_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>8 Review tag(s), 1 Confident AR one hit tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital muscular dystrophy </td></tr></table>",
@@ -552,15 +552,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-52_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-52_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-52_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-52_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-52_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-52_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Validation did not confirm tag(s), 1 Validated tag(s), 3 Send for validation tag(s), 1 Secondary finding tag(s), 11 Review tag(s), 2 Excluded tag(s), 2 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -570,15 +570,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-54_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-54_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-54_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-54_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-54_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-54_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Send for validation tag(s), 7 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -588,15 +588,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-57_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-57_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-57_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-57_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-57_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-57_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>3 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -606,15 +606,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-59_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B19-59_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B19-59_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B19-59_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B19-59_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B19-59_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-12</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>10 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Congenital myopathy </td></tr></table>",
@@ -624,15 +624,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B20_36_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_B20_36_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_B20_36_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_B20_36_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_B20_36_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_B20_36_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -642,15 +642,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_FC2_CHX-_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_FC2_CHX-_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_FC2_CHX-_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_FC2_CHX-_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_FC2_CHX-_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_FC2_CHX-_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -660,15 +660,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_FC2_CHX_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_FC2_CHX_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_FC2_CHX_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_FC2_CHX_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_FC2_CHX_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_FC2_CHX_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-03</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr></table>",
@@ -678,15 +678,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_UC522_1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/BON_UC522_1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/BON_UC522_1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/BON_UC522_1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/BON_UC522_1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/BON_UC522_1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2019-09</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>fibroblasts</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Bonnemann_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Bonnemann_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>13 Review tag(s), 1 Excluded tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>congenital myopathy, Neuromuscular disorder with learning disability and hearing impairment </td></tr></table>",
@@ -696,15 +696,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/MAN_0694_01.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/MAN_0694_01.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/MAN_0694_01.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/MAN_0694_01.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/MAN_0694_01.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/MAN_0694_01.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
@@ -714,15 +714,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_1214_3_M1.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_1214_3_M1.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/RGP_1214_3_M1.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/RGP_1214_3_M1.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/RGP_1214_3_M1.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/RGP_1214_3_M1.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Reviewed, currently pursuing candidates</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>1 Tier 2 - Known gene, new phenotype tag(s), 12 Review tag(s), 1 MatchBox (MME) tag(s), 1 Analyst high priority tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Muscle Weakness, Abnormality of binocular vision, Urinary retention </td></tr></table>",
@@ -732,15 +732,15 @@
           "data": [
             {
               "type": "junctions",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_800_3_3.junctions.bed.gz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/junctions_bed_for_igv_js/RGP_800_3_3.junctions.bed.gz"
             },
             {
               "type": "coverage",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/bigWig/RGP_800_3_3.bigWig"
+              "url": "gs://tgg-rnaseq/batch_2021_01/bigWig/RGP_800_3_3.bigWig"
             },
             {
               "type": "alignment",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/star/RGP_800_3_3.Aligned.sortedByCoord.out.bam"
+              "url": "gs://tgg-rnaseq/batch_2021_01/star/RGP_800_3_3.Aligned.sortedByCoord.out.bam"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2020-11</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>muscle</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>Rare Genomes Project_Genomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>4 Review tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>Myopathy </td></tr></table>",
@@ -755,7 +755,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B09-8_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B09-8_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -769,7 +769,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B15-95_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B15-95_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -783,7 +783,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B16-38.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B16-38.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -797,7 +797,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18-23_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B18-23_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -821,7 +821,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B18_65_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B18_65_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -835,7 +835,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-03_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-03_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -849,7 +849,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-45_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-45_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -863,7 +863,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-52_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-52_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -877,7 +877,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-54_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-54_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -891,7 +891,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-57_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-57_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -905,7 +905,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-59_CHX_1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/BON_B19-59_CHX_1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -929,7 +929,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/MAN_0694_01.vcf.bgz"
             }
           ],
           "description": "<table><tr><td><b>RNA sequencing date:</b></td><td>2021-02</td></tr>\n<tr><td><b>imputed tissue:</b></td><td>whole_blood</td></tr>\n<tr><td><b>read length (rnaseqc):</b></td><td>101</td></tr>\n<tr><td><b>proj WGS (seqr):</b></td><td>CMG_Manton_Genomes</td></tr>\n<tr><td><b>proj WES (seqr):</b></td><td>CMG_Manton_Exomes</td></tr>\n<tr><td><b>analysis status (seqr):</b></td><td>Analysis in Progress, Reviewed, no clear candidate</td></tr>\n<tr><td><b>variant tags (seqr):</b></td><td>15 Review tag(s), 1 MatchBox (MME) tag(s), 2 Known gene for phenotype tag(s) </td></tr>\n<tr><td><b>coded phenotype (seqr):</b></td><td>FLOATING-HARBOR SYNDROME; FLHS, FLOATING-HARBOR SYNDROME; FLHS </td></tr></table>",
@@ -939,7 +939,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/RGP_1214_3_M1.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/RGP_1214_3_M1.vcf.bgz"
             },
             {
               "type": "alignment",
@@ -953,7 +953,7 @@
           "data": [
             {
               "type": "vcf",
-              "url": "gs://macarthurlab-rnaseq/batch_2021_01/grch38_vcfs/RGP_800_3_3.vcf.bgz"
+              "url": "gs://tgg-rnaseq/batch_2021_01/grch38_vcfs/RGP_800_3_3.vcf.bgz"
             },
             {
               "type": "alignment",

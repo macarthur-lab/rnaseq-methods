@@ -93,10 +93,10 @@ if __name__ == "__main__":
     with batch_utils.run_batch(args, batch_name=f"combine junctions: {batch_label}") as batch:
         for batch_name in args.batch_name:
             if batch_name in batches:
-                output_dir = f"gs://macarthurlab-rnaseq/{batch_name}/combined_SJ_out_tables/"
+                output_dir = f"gs://tgg-rnaseq/{batch_name}/combined_SJ_out_tables/"
                 SJ_out_tab_paths = list(rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["batch"] == batch_name].star_SJ_out_tab)
             elif batch_name in tissues:
-                output_dir = f"gs://macarthurlab-rnaseq/combined_SJ_out_tables/{batch_name}/"
+                output_dir = f"gs://tgg-rnaseq/combined_SJ_out_tables/{batch_name}/"
                 SJ_out_tab_paths = rnaseq_sample_metadata_df[rnaseq_sample_metadata_df["tissue"] == batch_name].star_SJ_out_tab
             else:
                 p.error(f"Unexpected batch name: {batch_name}")

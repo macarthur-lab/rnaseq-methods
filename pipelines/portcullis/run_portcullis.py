@@ -50,7 +50,7 @@ def main():
     else:
         all_samples_df = pd.concat([all_samples_df, samples_df], axis="rows")
 
-    all_samples_df.loc[:, 'output_dir'] = all_samples_df['batch'].apply(lambda batch_name: f"gs://macarthurlab-rnaseq/{batch_name}/portcullis/")
+    all_samples_df.loc[:, 'output_dir'] = all_samples_df['batch'].apply(lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/portcullis/")
     all_samples_df = all_samples_df.set_index('sample_id', drop=False)
     samples_df = all_samples_df
     logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
