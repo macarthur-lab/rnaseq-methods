@@ -1,7 +1,7 @@
 
 ## TGG-Viewer links
 
-see the #mendelian-rnaseq slack channel for up-to-date links
+see this [#mendelian-rnaseq slack thread](https://the-tgg.slack.com/archives/C11DA2S3S/p1625080808037200) for up-to-date links
 
 ## MultiQC links
 [all batches](https://macarthur-lab.github.io/rnaseq-methods/pipelines/multiqc/all.html)  
