@@ -81,7 +81,7 @@ def main():
             bam_size = int(round(file_stats['size_bytes']/10.**9))
             disk_size = bam_size * 1.5
 
-            j = batch_utils.init_job(batch, f"portcullis: {sample_id}", cpu=4, disk_size=disk_size, image=DOCKER_IMAGE)
+            j = batch_utils.init_job(batch, f"portcullis: {sample_id}", cpu=8, disk_size=disk_size, image=DOCKER_IMAGE)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
             local_fasta = batch_utils.localize_file(j, batch_utils.HG38_REF_PATHS.fasta, use_gcsfuse=True)

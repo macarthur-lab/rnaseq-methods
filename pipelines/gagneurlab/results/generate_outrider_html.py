@@ -13,7 +13,7 @@ from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_df
 
 #%%
 BASE_DIR = os.path.expanduser(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/OUTRIDER_results4__2021_02")
+    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/OUTRIDER_results5__fibroblasts__2021_06_24")
 
 os.chdir(BASE_DIR)
 
@@ -456,9 +456,12 @@ def generate_html(dir_name, results_df, qc_plots, volcano_plots):
 
 
 for dir_name in os.listdir(BASE_DIR):
+
     if not os.path.isdir(dir_name) or dir_name.startswith("."):
+        print(f"Skipping {dir_name}")
         continue
-    print(dir_name)
+    else:
+        print(f"Processing {dir_name}")
 
     # get the OUTRIDER results table
     #results_table = glob.glob(f"{dir_name}/*padj_0.05_results.tsv*")

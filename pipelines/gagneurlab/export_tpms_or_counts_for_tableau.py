@@ -44,7 +44,7 @@ rnaseq_sample_metadata_df = get_rnaseq_downstream_analysis_metadata_df()
 #  raise ValueError(COUNTS_OR_TPMS)
 
 print(f"Downloading {RDG_GENE_FILE_PATH} to ~/project__rnaseq/data/samples/expression/rnaseqc_tpms")
-os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_tpms && gsutil cp -n {RDG_GENE_FILE_PATH} .""")
+os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_tpm && ./download_RDG_samples.sh""")
 print("Done downloading tpms.")
 
 all_rdg_and_gtex_tpms_df = None

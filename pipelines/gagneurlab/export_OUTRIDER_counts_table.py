@@ -19,7 +19,7 @@ def main():
     rnaseq_sample_metadata_df = get_rnaseq_downstream_analysis_metadata_df()
 
     print(f"Downloading {RDG_GENE_READS_PATH} to ~/project__rnaseq/data/samples/expression/rnaseqc_counts")
-    os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_counts && gsutil cp -n {RDG_GENE_READS_PATH} .""")
+    os.system(f"""cd ~/project__rnaseq/data/samples/expression/rnaseqc_counts && ./download_RDG_samples.sh""")
     print("Done downloading counts.")
 
     all_rdg_counts_df = None
