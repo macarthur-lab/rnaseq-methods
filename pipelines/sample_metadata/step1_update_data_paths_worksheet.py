@@ -22,13 +22,14 @@ from firecloud import api
 from google.cloud import storage
 
 from sample_metadata.rnaseq_metadata_utils import get_data_paths_worksheet, RNASEQ_SAMPLE_IDS_TO_EXCLUDE
+from metadata.gcloud_api_utils import get_date_from_bam_header
+
 
 def run(cmd):
     print(cmd)
     os.system(cmd)
 
 hl.init(log="/dev/null")
-
 
 #%%
 
@@ -184,11 +185,20 @@ for path_i, path in enumerate(tgg_rnaseq_bucket_file_paths):
 
 #%%
 
+# get bam dates from header
+for sample_id, record in all_samples.items():
+    if record.get("hg19_bam"):
+        record["batch_date_from_hg19_bam_header"] = get_date_from_bam_header(record["hg19_bam"])
+        print(record["batch_date_from_hg19_bam_header"], record["hg19_bam"])
+
+#%%
+
 # use all_samples dict to init pandas DataFrame
 all_samples_df = pd.DataFrame(
     columns=[
         'sample_id',
         'star_pipeline_batch',
+        'batch_date_from_hg19_bam_header',
         'star_bam',
         'star_bai',
         'star_SJ_out_tab',
@@ -206,7 +216,7 @@ all_samples_df = pd.DataFrame(
         'hg19_bai',
         'fastqc_zip',
     ],
-    data=sorted(all_samples.values(), key=lambda x: (x['star_pipeline_batch'], x['sample_id'])),
+    data=sorted(all_samples.values(), key=lambda x: (x['star_pipeline_batch'], x['batch_date_from_hg19_bam_header'], x['sample_id'])),
 )
 
 all_samples_df
@@ -235,6 +245,8 @@ print(f"Wrote {len(all_samples_df)} samples to {tsv_output_path}")
 
 
 #%%
+
+os.chdir(os.path.expanduser("~/project__rnaseq/code/rnaseq_methods/pipelines/sample_metadata/"))
 
 terra_participants_table = all_samples_df.rename({
     'sample_id': "entity:sample_id",

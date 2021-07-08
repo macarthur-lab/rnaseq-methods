@@ -12,7 +12,7 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logg
 logger = logging.getLogger(__name__)
 
 metadata_df = get_rnaseq_metadata_joined_with_paths_df()
-metadata_df = metadata_df[metadata_df.sample_id.str.startswith("BON_")]   # filter
+metadata_df = metadata_df[metadata_df.star_pipeline_batch == "batch_1_muntoni"]   # filter
 list(metadata_df.columns)
 
 
@@ -58,12 +58,14 @@ metadata_df = metadata_df[[
     'analysis summary + notes (seqr)',
 ]]
 
-output_path = "/tmp/bonnemann_rnaseq_sample_metadata.tsv"
+output_path = "/tmp/muntoni_rnaseq_sample_metadata.tsv"
 metadata_df.to_csv(output_path, header=True, index=False, sep="\t")
+print(f"Wrote {len(metadata_df)} rows to {output_path}")
 
 
 #%%
-user = "svetlana.gorokhova@univ-amu.fr"
+#user = "svetlana.gorokhova@univ-amu.fr"
+user = "veronica.pini01@ateneopv.it"
 rows = [row for _, row in metadata_df.iterrows()]
 batch_size = 20
 for i in range(0, len(rows), batch_size):

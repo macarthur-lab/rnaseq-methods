@@ -4,10 +4,9 @@ import os
 import pandas as pd
 
 from batch import batch_utils
-from sample_metadata.rnaseq_metadata_utils import get_rnaseq_downstream_analysis_metadata_df
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 hl.init(log="/dev/null")
-
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -19,9 +18,9 @@ GCLOUD_CREDENTIALS_LOCATION = "gs://weisburd-misc/creds"
 
 
 def main():
-    metadata_df = get_rnaseq_downstream_analysis_metadata_df()
-    tissues = set([b for b in metadata_df["tissue"] if b.strip()])
-    star_pipeline_batches = set([b for b in metadata_df["batch"] if b])
+    metadata_df = get_rnaseq_metadata_joined_with_paths_df()
+    tissues = set([b.strip() for b in metadata_df["imputed tissue"] if isinstance(b, str)])
+    star_pipeline_batches = set([b for b in metadata_df["star_pipeline_batch"] if b])
 
     p = batch_utils.init_arg_parser(gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("tissue_or_sample_id", nargs="+", choices={"all",} | tissues | star_pipeline_batches | set(metadata_df['sample_id']))
@@ -37,9 +36,9 @@ def main():
         if name == "all":
             samples_df = metadata_df
         elif name in star_pipeline_batches:
-            samples_df = metadata_df[metadata_df['batch'] == name]
+            samples_df = metadata_df[metadata_df['star_pipeline_batch'] == name]
         elif name in tissues:
-            samples_df = metadata_df[metadata_df['tissue'] == name]
+            samples_df = metadata_df[metadata_df['imputed tissue'] == name]
         elif name in set(metadata_df.sample_id):
             samples_df = metadata_df[metadata_df.sample_id == name]
         else:
@@ -50,7 +49,7 @@ def main():
     else:
         all_samples_df = pd.concat([all_samples_df, samples_df], axis="rows")
 
-    all_samples_df.loc[:, 'output_dir'] = all_samples_df['batch'].apply(lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/portcullis/")
+    all_samples_df.loc[:, 'output_dir'] = all_samples_df['star_pipeline_batch'].apply(lambda batch_name: f"gs://tgg-rnaseq/{batch_name}/portcullis/")
     all_samples_df = all_samples_df.set_index('sample_id', drop=False)
     samples_df = all_samples_df
     logger.info(f"Processing {len(samples_df)} sample ids: {', '.join(samples_df.sample_id[:20])}")
@@ -61,7 +60,7 @@ def main():
             metadata_row = samples_df.loc[sample_id]
 
             # set job inputs & outputs
-            input_bam, input_bai = metadata_row['bam_path'], metadata_row['bai_path']
+            input_bam, input_bai = metadata_row['star_bam'], metadata_row['star_bai']
             output_dir = metadata_row['output_dir']
 
             print("Input bam: ", input_bam)
@@ -77,7 +76,7 @@ def main():
                 logger.info(f"{sample_id} output files already exist: {output_filtered_junctions_tab_file_path} {output_bed_file_path}. Skipping...")
                 continue
 
-            file_stats = hl.hadoop_stat(metadata_row['bam_path'])
+            file_stats = hl.hadoop_stat(metadata_row['star_bam'])
             bam_size = int(round(file_stats['size_bytes']/10.**9))
             disk_size = bam_size * 1.5
 
@@ -93,12 +92,12 @@ def main():
 
             j.command(f"pwd && ls && date")
 
-            if metadata_row["stranded"] == "yes":
+            if metadata_row["stranded? (rnaseqc)"] == "yes":
                 stranded_arg = "--strandedness unstranded"
-            elif metadata_row["stranded"] == "no":
+            elif metadata_row["stranded? (rnaseqc)"] == "no":
                 stranded_arg = "--strandedness firststrand"
             else:
-                raise ValueError(f"Unexpected 'stranded' value for {metadata_row['sample_id']} : {metadata_row['stranded']}")
+                raise ValueError(f"Unexpected 'stranded' value for {metadata_row['sample_id']} : {metadata_row['stranded? (rnaseqc)']}")
 
             j.command(f"time portcullis full -t 4 --orientation FR {stranded_arg} -r {local_gencode_gtf} -v {local_fasta} {local_bam}")
             #j.command(f"find .")

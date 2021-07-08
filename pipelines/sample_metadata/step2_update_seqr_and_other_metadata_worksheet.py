@@ -1,14 +1,10 @@
-
-
 #%%
-
 
 import collections
 import datetime
 import os
 import pandas as pd
 import sys
-
 
 #%%
 
@@ -18,7 +14,6 @@ import django
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 django.setup()
-
 
 #%%
 pd.set_option('display.max_rows', 500)
@@ -32,14 +27,13 @@ from sample_metadata.rnaseq_metadata_utils import \
     get_beryls_supplementary_table_df, \
     get_beryls_rnaseq_probands_df, \
     get_beryls_seqr_data_df, \
-    get_data_paths_df, \
+    get_rnaseq_data_paths_df, \
     get_rnaseq_metadata_df, \
-    get_rnaseqc_metrics, \
-    get_date_from_bam_header
-
+    get_rnaseqc_metrics
 
 from metadata.rare_disease_metadata_utils import get_seqr_WGS_metadata_df, get_seqr_WES_metadata_df
 from metadata.seqr_utils import impute_sample_type
+from metadata.gcloud_api_utils import get_date_from_bam_header
 
 #%%
 
@@ -83,7 +77,7 @@ def check_for_duplicate_sample_ids(df, column_name="sample_id"):
 
 #%%
 
-data_paths_df = get_data_paths_df()
+data_paths_df = get_rnaseq_data_paths_df()
 print(data_paths_df.shape)
 print(data_paths_df.columns)
 
@@ -446,6 +440,8 @@ sample_id_to_seqr_indiv_id = {
     #"BON_B20_36_CHX_1": "?",
     "MAN_0694_01": "MAN_0694_01_1",
     "RGP_1214_3_M1": "RGP_1214_3",
+
+    "BON_UC355_CHX_1": "BON_UC355_1_D2",
 }
 
 
@@ -877,6 +873,7 @@ check_for_duplicate_sample_ids(final_df)
 
 df_export = final_df[[c for c in final_df.columns if c not in ('Sample ID', 'hg19_bam', 'rnaseqc_metrics')]]
 
+df_export = df_export.sort_values(["star_pipeline_batch", "batch_date_from_hg19_bam_header", "sample_id"])
 check_for_duplicate_sample_ids(df_export)
 
 # %%
@@ -896,6 +893,3 @@ df_export.to_csv(tsv_output_path, sep="\t", index=False)
 print(f"Wrote {len(df_export)} samples to {tsv_output_path}")
 
 #%%
-
-### summarize number of samples per tissue
-df_export.groupby("imputed tissue")

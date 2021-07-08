@@ -452,7 +452,13 @@ os.system("gsutil acl ch -u AllUsers:R gs://tgg-viewer-configs/*.json")
 
 #%%
 
-
+"""
+https://tgg-viewer.broadinstitute.org/#settingsUrl=~'https://storage.googleapis.com/tgg-viewer-configs/all_rnaseq_samples.json
+https://tgg-viewer.broadinstitute.org/#settingsUrl=~'https://storage.googleapis.com/tgg-viewer-configs/muscle_rnaseq_samples.json
+https://tgg-viewer.broadinstitute.org/#settingsUrl=~'https://storage.googleapis.com/tgg-viewer-configs/fibroblasts_rnaseq_samples.json
+https://tgg-viewer.broadinstitute.org/#settingsUrl=~'https://storage.googleapis.com/tgg-viewer-configs/whole_blood_rnaseq_samples.json
+https://tgg-viewer.broadinstitute.org/#settingsUrl=~'https://storage.googleapis.com/tgg-viewer-configs/lymphocytes_rnaseq_samples.json
+"""
 
 
 #%%

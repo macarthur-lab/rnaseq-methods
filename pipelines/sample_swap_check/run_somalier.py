@@ -3,9 +3,8 @@ import logging
 import os
 import pandas as pd
 
-from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
-
 from batch import batch_utils
+from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_joined_with_paths_df
 
 hl.init(log="/dev/null")
 

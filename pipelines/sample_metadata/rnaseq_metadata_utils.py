@@ -143,10 +143,9 @@ def get_rnaseq_downstream_analysis_metadata_df(value_render_option=VALUE_RENDER_
     rows = get_rnaseq_downstream_analysis_metadata_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
 
-def get_data_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
+def get_rnaseq_data_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
     rows = get_data_paths_worksheet().get(value_render_option=value_render_option)
     return pd.DataFrame(data=rows[1:], columns=rows[0])
-
 
 def get_imputed_metadata_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
     rows = get_imputed_metadata_worksheet().get(value_render_option=value_render_option)
@@ -169,24 +168,10 @@ def get_beryls_seqr_data_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_V
 
 
 def get_rnaseq_metadata_joined_with_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
-    df1 = get_data_paths_df(value_render_option=value_render_option)
+    df1 = get_rnaseq_data_paths_df(value_render_option=value_render_option)
     df2 = get_rnaseq_metadata_df(value_render_option=value_render_option)
     df2 = df2[[c for c in df2.columns if c not in ("star_pipeline_batch")]]  # remove columns that exist in both tables
     return df1.merge(df2, on="sample_id", how="left").set_index("sample_id", drop=False)
-
-
-def get_date_from_bam_header(bam_path, gcloud_project="seqr-project"):
-    output = subprocess.check_output(f"gsutil -u {gcloud_project} cat %s | samtools view -H - | grep ^@RG | head -n 1" % bam_path, shell=True, encoding="UTF-8")
-    read_group_annotations = {}
-    for i, rg_field in enumerate(output.rstrip().split("\t")):
-        if i == 0:
-            continue  # skip @RG prefix
-        key = rg_field[:rg_field.find(":")]
-        value = rg_field[rg_field.find(":")+1:]
-        read_group_annotations[key] = value
-
-    bam_date = read_group_annotations['DT'][:7]
-    return bam_date
 
 
 def get_rnaseqc_metrics(rnaseqc_metrics_file_path):
