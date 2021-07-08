@@ -228,19 +228,20 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                         continue
 
                     num_cpu = 16
-                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
+                    j_calculate_psi_values = batch_utils.init_job(batch, f"{sample_set_label}: Calculate PSI values", cpu=num_cpu, memory="highmem",  disk_size=20, image=DOCKER_IMAGE)
                     if j_extract_splice_junctions:
                         j_calculate_psi_values.depends_on(j_extract_splice_junctions)
                     for j in non_split_reads_jobs.values():
                         j_calculate_psi_values.depends_on(j)
 
+                    sample_metadata_df = df.reset_index()
                     calculate_psi_values(
                         j_calculate_psi_values,
                         sample_set_label,
                         split_reads_output_files,
                         non_split_reads_output_files,
                         output_file_path_splice_junctions_RDS,
-                        df,
+                        sample_metadata_df,
                         output_file_path_calculated_psi_values_tar_gz)
 
             # filter and annotate data
@@ -250,7 +251,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_filter_and_annotate_data_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
                 num_cpu = 16
-                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
+                j_filter_and_annotate_data = batch_utils.init_job(batch, f"{sample_set_label}: Filter and Annotate", cpu=num_cpu, memory="highmem",  disk_size=20, image=DOCKER_IMAGE)
 
                 if j_calculate_psi_values:
                     j_filter_and_annotate_data.depends_on(j_calculate_psi_values)
@@ -268,7 +269,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_calculated_best_q_tar_gz} file already exists. Skipping calculatedBestQ step...")
             else:
                 num_cpu = 16
-                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
+                j_calculate_best_q = batch_utils.init_job(batch, f"{sample_set_label}: Calculate Best Q", cpu=num_cpu, memory="highmem",  disk_size=20, image=DOCKER_IMAGE)
 
                 if j_filter_and_annotate_data:
                     j_calculate_best_q.depends_on(j_filter_and_annotate_data)
@@ -287,7 +288,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_fraser_analysis_tar_gz} file already exists. Skipping run_fraser_analysis step...")
             else:
                 num_cpu = 16
-                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
+                j_fraser_analysis = batch_utils.init_job(batch, f"{sample_set_label}: Run Fraser Analysis", cpu=num_cpu, memory="highmem",  disk_size=20, image=DOCKER_IMAGE)
                 if j_calculate_best_q:
                     j_fraser_analysis.depends_on(j_calculate_best_q)
 
@@ -303,7 +304,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_results_tables_tar_gz} file already exists. Skipping get_results_table step...")
             else:
                 num_cpu = 16
-                j_get_results_table = batch_utils.init_job(batch, f"{sample_set_label}: Get Results Tables", cpu=num_cpu, memory=3.75*num_cpu,  disk_size=20, image=DOCKER_IMAGE)
+                j_get_results_table = batch_utils.init_job(batch, f"{sample_set_label}: Get Results Tables", cpu=num_cpu, memory="highmem",  disk_size=20, image=DOCKER_IMAGE)
                 if j_fraser_analysis:
                     j_get_results_table.depends_on(j_fraser_analysis)
 
@@ -320,7 +321,7 @@ getNonSplitReadCountsForAllSamples(fds, spliceJunctions)  # saves results to cac
                 logger.info(f"{output_file_path_fraser_volcano_plots_tar_gz} file already exists. Skipping get_volcano_plots step...")
             else:
                 num_cpu = 16
-                j_get_volcano_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Volcano Plots", cpu=num_cpu, memory=3.75*num_cpu, disk_size=20, image=DOCKER_IMAGE)
+                j_get_volcano_plots = batch_utils.init_job(batch, f"{sample_set_label}: Get Volcano Plots", cpu=num_cpu, memory="highmem", disk_size=20, image=DOCKER_IMAGE)
                 if j_fraser_analysis:
                     j_get_volcano_plots.depends_on(j_fraser_analysis)
 
