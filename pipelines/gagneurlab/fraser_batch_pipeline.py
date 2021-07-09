@@ -353,17 +353,16 @@ def extract_splice_junctions(j_extract_splice_junctions, split_reads_files, num_
 def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_files, non_split_reads_files, splice_junctions_RDS_path, metadata_tsv_df, output_file_path_calculated_psi_values_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_psi_values, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_calculate_psi_values.command("cd /io")
+    j_calculate_psi_values.command(f"mkdir -p /io/{sample_set_label}")
+    j_calculate_psi_values.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_calculate_psi_values.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_calculate_psi_values.command(f"cd /tmp/fraser/{sample_set_label}")
+
     for split_reads_output_files_batch in [split_reads_files[i:i+10] for i in range(0, len(split_reads_files), 10)]:
         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(split_reads_output_files_batch)} .")
     for non_split_reads_output_files_batch in [non_split_reads_files[i:i+10] for i in range(0, len(non_split_reads_files), 10)]:
         j_calculate_psi_values.command(f"gsutil -m cp {' '.join(non_split_reads_output_files_batch)} .")
     j_calculate_psi_values.command(f"gsutil -m cp {splice_junctions_RDS_path} .")
-
-    j_calculate_psi_values.command(f"mkdir -p /tmp/fraser/")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_calculate_psi_values.command(f"ln -s /io /tmp/fraser/{sample_set_label}")
-
-    j_calculate_psi_values.command(f"cd /tmp/fraser/{sample_set_label}")
 
     metadata_tsv_filename = f"sample_metadata_{sample_set_label}.tsv"
     local_metadata_tsv_path = f"/tmp/{metadata_tsv_filename}"
@@ -385,25 +384,27 @@ def calculate_psi_values(j_calculate_psi_values, sample_set_label, split_reads_f
     j_calculate_psi_values.command(f"echo ===============; echo savedObjects dir; echo ===============; find savedObjects")
     j_calculate_psi_values.command(f"rm *.tar.gz *.bam")
     j_calculate_psi_values.command(f"cd ..")
-    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path_calculated_psi_values_tar_gz)} {sample_set_label}")
+    j_calculate_psi_values.command(f"ls -lh")
+    j_calculate_psi_values.command(f"ls -lh {sample_set_label}/")
+    j_calculate_psi_values.command(f"tar czf {os.path.basename(output_file_path_calculated_psi_values_tar_gz)} {sample_set_label}/")
     j_calculate_psi_values.command(f"gsutil -m cp {os.path.basename(output_file_path_calculated_psi_values_tar_gz)} {output_file_path_calculated_psi_values_tar_gz}")
     print("Output file path: ", output_file_path_calculated_psi_values_tar_gz)
 
 
 def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calculated_psi_values_tar_gz_path, output_file_path_filter_and_annotate_data_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_filter_and_annotate_data, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
-    j_filter_and_annotate_data.command("cd /io")
+    j_filter_and_annotate_data.command(f"mkdir -p /io/{sample_set_label}")
+    j_filter_and_annotate_data.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_filter_and_annotate_data.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_filter_and_annotate_data.command(f"cd /tmp/fraser/")
     j_filter_and_annotate_data.command(f"gsutil -m cp {calculated_psi_values_tar_gz_path} .")
     j_filter_and_annotate_data.command(f"tar xzf {os.path.basename(calculated_psi_values_tar_gz_path)}")
-
-    j_filter_and_annotate_data.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_filter_and_annotate_data.command(f"cd /tmp/fraser/")
     j_filter_and_annotate_data.command(f"cd {sample_set_label}")
     j_filter_and_annotate_data.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_filter_and_annotate_data.command(f"""time xvfb-run Rscript -e '{get_FILTER_AND_ANNOTATE_DATA_Rscript(sample_set_label, min_reads=MIN_READS_THRESHOLD)}'""")
     j_filter_and_annotate_data.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_filter_and_annotate_data.command(f"cd ..")
-    j_filter_and_annotate_data.command(f"tar czf {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {sample_set_label}")
+    j_filter_and_annotate_data.command(f"tar czf {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {sample_set_label}/")
     j_filter_and_annotate_data.command(f"gsutil -m cp {os.path.basename(output_file_path_filter_and_annotate_data_tar_gz)} {output_file_path_filter_and_annotate_data_tar_gz}")
     print("Output file path: ", output_file_path_filter_and_annotate_data_tar_gz)
 
@@ -411,18 +412,19 @@ def filter_and_annotate_data(j_filter_and_annotate_data, sample_set_label, calcu
 def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, filter_and_annotate_data_tar_gz_path, output_file_path_calculated_best_q_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_calculate_best_q, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_calculate_best_q.command("cd /io")
+    j_calculate_best_q.command(f"mkdir -p /io/{sample_set_label}")
+    j_calculate_best_q.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_calculate_best_q.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_calculate_best_q.command(f"cd /tmp/fraser/")
     j_calculate_best_q.command(f"gsutil -m cp {filter_and_annotate_data_tar_gz_path} .")
     j_calculate_best_q.command(f"tar xzf {os.path.basename(filter_and_annotate_data_tar_gz_path)}")
 
-    j_calculate_best_q.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_calculate_best_q.command(f"cd /tmp/fraser/")
     j_calculate_best_q.command(f"cd {sample_set_label}")
     j_calculate_best_q.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_calculate_best_q.command(f"""time xvfb-run Rscript -e '{get_CALCULATE_BEST_Q_Rscript(sample_set_label, num_cpu)}'""")
     j_calculate_best_q.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_calculate_best_q.command(f"cd ..")
-    j_calculate_best_q.command(f"tar czf {os.path.basename(output_file_path_calculated_best_q_tar_gz)} {sample_set_label}")
+    j_calculate_best_q.command(f"tar czf {os.path.basename(output_file_path_calculated_best_q_tar_gz)} {sample_set_label}/")
     j_calculate_best_q.command(f"gsutil -m cp {os.path.basename(output_file_path_calculated_best_q_tar_gz)} {output_file_path_calculated_best_q_tar_gz}")
     print("Output file path: ", output_file_path_calculated_best_q_tar_gz)
 
@@ -430,18 +432,18 @@ def calculate_best_q(j_calculate_best_q, sample_set_label, num_cpu, filter_and_a
 def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best_q_tar_gz_path, output_file_path_fraser_analysis_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"cd /io")
+    j_run_fraser_analysis.command(f"mkdir -p /io/{sample_set_label}")
+    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"gsutil -m cp {calculated_best_q_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(calculated_best_q_tar_gz_path)}")
-
-    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RUN_FRASER_ANALYSIS_Rscript(sample_set_label, num_cpu=1)}'""")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
-    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {sample_set_label}")
+    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {sample_set_label}/")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_analysis_tar_gz)} {output_file_path_fraser_analysis_tar_gz}")
     print("Output file path: ", output_file_path_fraser_analysis_tar_gz)
 
@@ -449,12 +451,13 @@ def run_fraser_analysis(j_run_fraser_analysis, sample_set_label, calculated_best
 def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_results_tables_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"cd /io")
+    j_run_fraser_analysis.command(f"mkdir -p /io/{sample_set_label}")
+    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
 
-    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_RESULTS_TABLES_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
@@ -462,7 +465,7 @@ def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_t
     j_run_fraser_analysis.command(f"gzip *.tsv")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
-    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_results_tables_tar_gz)} {sample_set_label}")
+    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_results_tables_tar_gz)} {sample_set_label}/")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_results_tables_tar_gz)} {output_file_path_results_tables_tar_gz}")
     print("Output file path: ", output_file_path_results_tables_tar_gz)
 
@@ -470,22 +473,22 @@ def get_results_table(j_run_fraser_analysis, sample_set_label, fraser_analysis_t
 def get_volcano_plots(j_run_fraser_analysis, sample_set_label, fraser_analysis_tar_gz_path, output_file_path_fraser_volcano_plots_tar_gz):
     batch_utils.switch_gcloud_auth_to_user_account(j_run_fraser_analysis, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
 
-    j_run_fraser_analysis.command(f"cd /io")
+    j_run_fraser_analysis.command(f"mkdir -p /io/{sample_set_label}")
+    j_run_fraser_analysis.command(f"mkdir -p /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
+    j_run_fraser_analysis.command(f"ln -s /io/{sample_set_label} /tmp/fraser/{sample_set_label}")
+    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"gsutil -m cp {fraser_analysis_tar_gz_path} .")
     j_run_fraser_analysis.command(f"tar xzf {os.path.basename(fraser_analysis_tar_gz_path)}")
 
-    j_run_fraser_analysis.command(f"ln -s /io /tmp/fraser")  # work-around for https://github.com/c-mertes/FRASER/issues/11
-    j_run_fraser_analysis.command(f"cd /tmp/fraser/")
     j_run_fraser_analysis.command(f"cd {sample_set_label}")
     j_run_fraser_analysis.command(f"pwd && ls -lh && date && echo ------- && find cache -name '*.*'")
     j_run_fraser_analysis.command(f"""time xvfb-run Rscript -e '{get_VOLCANO_PLOTS_Rscript(sample_set_label, delta_psi_threshold=DELTA_PSI_THRESHOLD, padj_threshold=PADJ_THRESHOLD)}'""")
     j_run_fraser_analysis.command(f"rm -rf cache savedObjects")
     j_run_fraser_analysis.command(f"echo ===============; echo ls .; echo ===============; pwd; ls -lh .")
     j_run_fraser_analysis.command(f"cd ..")
-    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_volcano_plots_tar_gz)} {sample_set_label}")
+    j_run_fraser_analysis.command(f"tar czf {os.path.basename(output_file_path_fraser_volcano_plots_tar_gz)} {sample_set_label}/")
     j_run_fraser_analysis.command(f"gsutil -m cp {os.path.basename(output_file_path_fraser_volcano_plots_tar_gz)} {output_file_path_fraser_volcano_plots_tar_gz}")
     print("Output file path: ", output_file_path_fraser_volcano_plots_tar_gz)
-
 
 
 if __name__ == "__main__":

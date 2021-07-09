@@ -170,7 +170,7 @@ def get_beryls_seqr_data_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_V
 def get_rnaseq_metadata_joined_with_paths_df(value_render_option=VALUE_RENDER_OPTION__FORMATTED_VALUE):
     df1 = get_rnaseq_data_paths_df(value_render_option=value_render_option)
     df2 = get_rnaseq_metadata_df(value_render_option=value_render_option)
-    df2 = df2[[c for c in df2.columns if c not in ("star_pipeline_batch")]]  # remove columns that exist in both tables
+    df2 = df2[[c for c in df2.columns if c not in ("star_pipeline_batch", "batch_date_from_hg19_bam_header")]]  # remove columns that exist in both tables
     return df1.merge(df2, on="sample_id", how="left").set_index("sample_id", drop=False)
 
 

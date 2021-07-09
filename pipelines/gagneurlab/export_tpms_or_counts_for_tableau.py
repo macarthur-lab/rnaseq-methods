@@ -1,4 +1,5 @@
 import datetime
+import gc
 import glob
 import gzip
 import hail as hl
@@ -63,7 +64,7 @@ for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
             RDG_file_paths[sample_id] = file_path
 
     RDG_sample_ids = [s for s in list(tgg_and_gtex_metadata_df.sample_id) if "GTEX" not in s]
-    GTEX_sample_ids = [s for s in list(tgg_and_gtex_metadata_df.sample_id) if "GTEX" in s]
+    GTEX_sample_ids = [s for s in list(tgg_and_gtex_metadata_df.sample_id) if "GTEX" in s][:20]
 
     if len(RDG_file_paths) != len(RDG_sample_ids):
         raise ValueError(f"ERROR: len(file_paths) != len(samples_df): {len(RDG_file_paths)} != {len(RDG_sample_ids)}. Missing: {set(RDG_sample_ids) - set(RDG_file_paths.keys())}" )
@@ -100,8 +101,8 @@ for tissue_name in ["whole_blood", "lymphocytes", "fibroblasts", "muscle"]:
     else:
         all_rdg_and_gtex_tpms_df = pd.merge(all_rdg_and_gtex_tpms_df, rdg_and_gtex_tpms_df, left_index=True, right_index=True, how="outer")
 
+    gc.collect()
 
-#%%
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d")
 tsv_output_filename = f"RDG_and_GTEX_tpms_for_all_tissues__{timestamp}.tsv.gz"
@@ -113,7 +114,7 @@ tsv_output_gs_path = f"gs://tgg-rnaseq/combined_tables/{tsv_output_filename}"
 hl.hadoop_copy(tsv_output_filename, tsv_output_gs_path)
 print(f"Wrote {len(all_rdg_and_gtex_tpms_df)} genes x {len(all_rdg_and_gtex_tpms_df.columns)} samples to {tsv_output_gs_path}")
 
-#%%
+
 tsv_output_filename = f"RDG_and_GTEX_tpms_for_all_tissues__with_metadata_pivoted__{timestamp}.tsv.gz"
 print(f"Generating {os.path.abspath(tsv_output_filename)}")
 pivoted_df = all_rdg_and_gtex_tpms_df.set_index("gene_id").stack().to_frame("tpm")

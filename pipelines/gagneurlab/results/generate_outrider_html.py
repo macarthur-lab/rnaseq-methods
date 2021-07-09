@@ -12,8 +12,8 @@ from annotations.get_clingen_table import get_clingen_dosage_sensitivity_table, 
 from sample_metadata.rnaseq_metadata_utils import get_rnaseq_metadata_df
 
 #%%
-BASE_DIR = os.path.expanduser(
-    "~/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/OUTRIDER_results5__fibroblasts__2021_06_24")
+BASE_DIR = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/OUTRIDER_results6__2021_07_08/"
+#BASE_DIR = "/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/gagneurlab/results/data/2021_05__fibroblasts__108_samples_C087FFFFF1_without_GTEX"
 
 os.chdir(BASE_DIR)
 
@@ -475,7 +475,7 @@ for dir_name in os.listdir(BASE_DIR):
 
     volcano_plots = []
     qc_plots = []
-    for plot_path in glob.glob(f"{dir_name}/**/*.png"):
+    for plot_path in glob.glob(f"{dir_name}/*.png"):
         if "_volcano_" in plot_path:
             volcano_plots.append(plot_path)
         else:

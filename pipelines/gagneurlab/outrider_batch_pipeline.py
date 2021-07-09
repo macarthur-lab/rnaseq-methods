@@ -18,10 +18,11 @@ hl.init(log="/dev/null")
 POSSIBLE_CONFOUNDERS = """c("tissue", "sex", "stranded", "read_length", "batch")""" # "RIN"
 PADJ_THRESHOLD = 0.05
 
+NUM_CPU = 16
 def main():
     downstream_analysis_df = get_rnaseq_downstream_analysis_metadata_df()
 
-    p = batch_utils.init_arg_parser(default_cpu=16, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
+    p = batch_utils.init_arg_parser(default_cpu=NUM_CPU, gsa_key_file=os.path.expanduser("~/.config/gcloud/misc-270914-cb9992ec9b25.json"))
     p.add_argument("--counts-tsv-path", default=OUTRIDER_COUNTS_TSV_GZ, help="Counts .tsv")
     p.add_argument("--skip-step1", action="store_true", help="Skip initial steps including computing best Q")
     p.add_argument("--skip-step2", action="store_true", help="Skip OUTRIDER fit step")
@@ -82,7 +83,7 @@ def main():
             df.to_csv(local_metadata_tsv_path, header=True, index=False, sep="\t")
             hl.hadoop_copy(local_metadata_tsv_path, metadata_tsv_path)
 
-            j = batch_utils.init_job(batch, sample_set_label, image=DOCKER_IMAGE if not args.raw else None, cpu=args.cpu, memory=args.cpu*3.75, disk_size=50)
+            j = batch_utils.init_job(batch, sample_set_label, image=DOCKER_IMAGE if not args.raw else None, cpu=NUM_CPU, memory="highmem", disk_size=50)
             batch_utils.switch_gcloud_auth_to_user_account(j, GCLOUD_CREDENTIALS_LOCATION, GCLOUD_USER_ACCOUNT, GCLOUD_PROJECT)
             # copy inputs
             j.command(f"""cd /io""")
@@ -200,7 +201,7 @@ plotCountCorHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device
 plotCountGeneSampleHeatmap(ods, colGroups=possibleConfounders, normalized=FALSE, device="pdf", type="cairo", filename=paste(sampleSetLabel, "__plotCountGeneSampleHeatmap_before_correction.pdf", sep=""))
 
 if (length(sampleSubset) > 5) {{
-    ods = findEncodingDim(ods, BPPARAM=MulticoreParam({args.cpu}, progressbar=TRUE))
+    ods = findEncodingDim(ods, BPPARAM=MulticoreParam({NUM_CPU}, progressbar=TRUE))
     g = plotEncDimSearch(ods)
     ggsave(file=paste(sampleSetLabel, "__plotEncDimSearch", ".png", sep=""), g, type="cairo")
     optimal_q = metadata(ods)$opt
@@ -249,7 +250,7 @@ ods = readRDS("{os.path.basename(step1_output_RDS_file)}")
 
 q = metadata(ods)$opt
 
-ods = OUTRIDER(ods, verbose=TRUE, iterations=15, q=q, BPPARAM=MulticoreParam({args.cpu}, progressbar=TRUE))
+ods = OUTRIDER(ods, verbose=TRUE, iterations=15, q=q, BPPARAM=MulticoreParam({NUM_CPU}, progressbar=TRUE))
 rownames(ods) <- gsub("\\\\.[0-9]*(_[0-9]*)?.*$", "", rownames(ods))
 
 saveRDS(ods, "{os.path.basename(step2_output_RDS_file)}")
