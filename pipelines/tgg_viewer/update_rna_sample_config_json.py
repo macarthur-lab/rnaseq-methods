@@ -27,6 +27,7 @@ print(batches)
 
 
 #%%
+
 os.chdir("/Users/weisburd/project__rnaseq/code/rnaseq_methods/pipelines/tgg_viewer")
 print(os.getcwd())
 
